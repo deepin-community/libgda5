@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Methods - metadata: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="libgda-provider-class.html" title="Virtual methods for providers">
+<link rel="prev" href="ch44s08.html" title="Methods - data representation">
+<link rel="next" href="ch44s10.html" title="Methods - misc.">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="libgda-provider-class.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch44s08.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch44s10.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="prov-metadata"></a>Methods - metadata</h2></div></div></div>
+<p>
+      The <a class="link" href="GdaServerProvider.html#GdaServerProviderMeta" title="GdaServerProviderMeta">GdaServerProviderMeta</a> structure defines all the methods
+      which database providers must implement for the meta data extraction feature to work. Each method is
+      used internally by the <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> object when one calls the
+      <a class="link" href="GdaConnection.html#gda-connection-update-meta-store" title="gda_connection_update_meta_store ()">gda_connection_update_meta_store()</a> method (where the
+      connection object itself computes the list and order of methods to call).
+      Each method must update the contents of one table in the connection's associated metadata
+      (in its associated <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> object), each has the same
+      "base" arguments and some have extra arguments further specifying what needs to be updated. 
+    </p>
+<p>
+      For each table to update, there are two methods, which differ in their name only by the fact that one is starting 
+      with an underscore '_'. The method starting with an underscore must update the whole contents of the meta data
+      table, and the other one must accept some more parameters to refine what gets updated. There are exception 
+      to this rule (such as the
+      "tables_views()" method which must update both the "_tables" and 
+      "_views" tables, or the for the
+      tables which have no foreign key (no dependency) to any other table).
+    </p>
+<p> 
+      Also, by convetion, the arguments can't be NULL unless the argument name has the "_n" suffix. For example
+      the signature of the "tables_views()" method has the following signature (as defined in the 
+      <code class="filename">gda-server-provider.h</code> file) 
+      </p>
+<pre class="programlisting">
+gboolean (*tables_views) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                          GdaMetaContext *, GError **,
+                          const GValue *table_catalog, const GValue *table_schema, 
+                          const GValue *table_name_n);
+      </pre>
+<p>
+      which means that the <em class="parameter"><code>table_catalog</code></em> and <em class="parameter"><code>table_schema</code></em>
+      arguments can't be NULL, whereas the <em class="parameter"><code>table_name</code></em> can be NULL (and in this case the 
+      "tables_views()" method must update the "_tables" and 
+      "_views" tables regarding all the tables which
+      are in the specified catalog and schema.
+    </p>
+<p>
+      Make sure you read the information about the meta data's database structure in the
+      <a class="link" href="information_schema.html" title="Database structure">Database structure</a>, and specifically the
+      <a class="link" href="information_schema.html#information_schema:data_types" title="Data types">data types</a> section and the 
+      <a class="link" href="information_schema.html#information_schema:sql_identifiers" title="SQL identifiers">SQL identifiers</a> section.
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.6"></a>Important note about SQL identifiers</h3></div></div></div>
+<p>
+	As mentioned in the <a class="link" href="information_schema.html#information_schema:sql_identifiers" title="SQL identifiers">SQL identifiers</a> section,
+	any SQL identifier in the meta store is represented either:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>between double quotes if the SQL identifier is case sensitive</p></li>
+<li class="listitem"><p>all in lower case if the SQL identifier is not case sensitive</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	For database engines which internally store case insensitive SQL identifiers in lower case
+	(such as PostgreSQL),
+	the meta data reported by the database engine can be used almost AS IS, but for database
+	engines which internally store case insensitive SQL identifiers in upper case (such as Oracle),
+	the upper case needs to be converted to lower case. Also case sensitive SQL identifiers also need
+	to be double quoted.
+      </p>
+<p>
+	To minimize the work required to implement a database provider, <span class="application">Libgda</span> allows the database
+	provider to specifiy how case insensitive SQL identifiers are represented using 
+	<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-identifiers-style" title="gda_meta_store_set_identifiers_style ()">gda_meta_store_set_identifiers_style()</a>
+	and the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> object will perform the work itself (the
+	default being GDA_SQL_IDENTIFIERS_LOWER_CASE in <a class="link" href="libgda-5.0-Misc-API.html#GdaSqlIdentifierStyle" title="enum GdaSqlIdentifierStyle">GdaSqlIdentifierStyle</a>.
+      </p>
+<p>
+	Also note that the extra arguments for each virtual method listed below, when they are present
+	and when they represent an SQL identifier, will be represented:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>for case insensitive SQL identifiers: using all lower or all upper case (depending on the setting
+	      set using <a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-identifiers-style" title="gda_meta_store_set_identifiers_style ()">gda_meta_store_set_identifiers_style()</a>
+	  </p></li>
+<li class="listitem"><p>for case sensitive SQL identifiers: without the double quotes, but possibily with
+	      mixed or not lower and upper characters</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.7"></a>Reserved SQL keywords</h3></div></div></div>
+<p>
+	Every database engine reserves some keywords for its own usage or because they are part of the SQL
+	language. Reserved keywords can be used as SQL identifiers if they are put between double quotes.
+      </p>
+<p>
+	As Each database engine has its own set of reserved keywords, the database provider has to tell the
+	<a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> object what its keywords are, which is done using
+	<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-reserved-keywords-func" title="gda_meta_store_set_reserved_keywords_func ()">gda_meta_store_set_reserved_keywords_func()</a>
+	and passing a function which determines if a specific string is a reserved keyword. The usage of
+	this function is similar to the usage of the
+	<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-identifiers-style" title="gda_meta_store_set_identifiers_style ()">gda_meta_store_set_identifiers_style()</a>
+	mentioned above.
+      </p>
+<p>
+	Writing a function which tests if a string is a reserved keyword is a non complicated but error
+	prone and not optimized, in the same way as writing a parser/lexer directly, so <span class="application">Libgda</span> has a tool
+	which generates a static hash table from a list of reserved keywords, which is in the
+	<code class="filename">keywords.list</code> (several keywords can appear on the same line, separated by spaces or commas
+	but the last line must remain empty).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.8"></a>_info()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_info) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                   GdaMetaContext *, GError **);
+	</pre>
+<p>
+	This method must update the contents of the 
+	"_information_schema_catalog_name"
+	table, which must contain exactly
+	one row describing the catalog name for the connection.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.9"></a>_btypes()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_btypes) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                     GdaMetaContext *, GError **);
+	</pre>
+<p>
+	This method must update the contents of the "_builtin_data_types"
+	table which lists all the
+	database's built in data types. There is no specific parameter.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.10"></a>schemata() and _schemata()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_schemata) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                       GdaMetaContext *, GError **);
+gboolean (*schemata)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                       GdaMetaContext *, GError **,
+                       const GValue *catalog_name, const GValue *schema_name_n);
+	</pre>
+<p>
+        This method must update the contents of the "_schemata" table, 
+	which lists all the schemas (namespaces). 
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.11"></a>tables_views() and _tables_views()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_tables_views) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                           GdaMetaContext *, GError **);
+gboolean (*tables_views)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                           GdaMetaContext *, GError **,
+                           const GValue *table_catalog, const GValue *table_schema, 
+                           const GValue *table_name_n);
+	</pre>
+<p>
+	This method must update the contents of the "_tables" and 
+	"_views" tables which list all the
+	tables and views.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.12"></a>columns() and _columns()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_columns) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                      GdaMetaContext *, GError **);
+gboolean (*columns)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                      GdaMetaContext *, GError **,
+                      const GValue *table_catalog, const GValue *table_schema, 
+                      const GValue *table_name);
+	</pre>
+<p>
+	This method must update the contents of the "_columns" table which lists all the
+	columns of all the tables and views.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.13"></a>constraints_tab() and _constraints_tab()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_constraints_tab) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                              GdaMetaContext *, GError **);
+gboolean (*constraints_tab)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                              GdaMetaContext *, GError **,
+                              const GValue *table_catalog, const GValue *table_schema, 
+                              const GValue *table_name, const GValue *constraint_name_n);
+	</pre>
+<p>
+	This method must update the contents of the "_table_constraints"
+	table which lists all the
+	constraints (primary key, foreign key, unique or check constraints) for each table.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.14"></a>constraints_ref() and _constraints_ref()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_constraints_ref) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                              GdaMetaContext *, GError **);
+gboolean (*constraints_ref)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                              GdaMetaContext *, GError **,
+                              const GValue *table_catalog, const GValue *table_schema, 
+                              const GValue *table_name, const GValue *constraint_name);
+	</pre>
+<p>
+	This method must update the contents of the 
+	"_referential_constraints" table which lists all the
+	referential constraints (which are also listed in the 
+	"_table_constraints" table).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.13.15"></a>key_columns() and _key_columns()</h3></div></div></div>
+<p>
+	</p>
+<pre class="programlisting">
+gboolean (*_key_columns) (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                          GdaMetaContext *, GError **);
+gboolean (*key_columns)  (GdaServerProvider *, GdaConnection *, GdaMetaStore *, 
+                          GdaMetaContext *, GError **,
+                          const GValue *table_catalog, const GValue *table_schema,
+                          const GValue *table_name, const GValue *constraint_name);
+	</pre>
+<p>
+	This method must update the contents of the "_key_column_usage"
+	table which lists all the
+	columns involved in each table constraint (as listed in the 
+	"_table_constraints" table).
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="declared-fk" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Mendeklarasikan foreign key</title>
+  <p>Semua konstrain foreign key (dimana isi dari satu atau lebih kolom dalam sebuah tabel dibatasi di antara salah satu nilai dari satu atau lebih kolom dari tabel lain) dianalisis dan dilaporkan dalam <link xref="schema-browser-perspective">Perspektif Peramban Skema</link>. Konstrain foreign key membantu memahami skema database dan secara otomatis digunakan jika sesuai dengan aplikasi.</p>
+  <p>Namun kadang-kadang perancang database telah melupakan atau tidak berharap untuk menggunakan konstrain foreign key, sehingga mungkin untuk "mendeklarasikan foreign key" yang hanya merupakan deklarasi untuk alat dan tidak benar-benar didefinisikan dalam database.</p>
+  <figure>
+    <title>Foreign key yang dideklarasikan dalam bagan</title>
+    <desc>Ketika ditampilkan dalam bagan, foreign key yang dideklarasikan diwakili oleh garis putus-putus sebagai pengganti garis utuh bagi foreign key</desc>
+    <media type="image" mime="image/png" src="figures/declaredfk.png"/>
+  </figure>
+  <p>Catatan:</p>
+  <list>
+    <item><p>triplet (nama foreign key, tabel, tabel yang diacu) secara unik mengidentifikasi suatu foreign key yang dideklarasikan sehingga mendeklarasikan foreign key baru dengan triplet yang sama akan menghapus deklarasi sebelumnya.</p></item>
+    <item><p>Bila konstrain yang sama benar-benar diwakili oleh foreign key nyata dan juga oleh suatu foreign key yang dideklarasikan, makan definisi foreign key nyata akan menutupi yang dideklarasikan</p></item>
+    <item><p>Foreign key yang dideklarasikan tak punya kebijakan untuk menentukan aksi apa yang dilakukan pada situasi UPDATE atau DELETE, sehingga kebijakan yang dilaporkan selalu "tak ditegakkan"</p></item>
+  </list>
+
+  <section id="declare-new-fk">
+    <title>Mendeklarasikan suatu foreign key baru</title>
+    <p>Foreign key baru dapat dideklarasikan dari <link xref="schema-browser-perspective">Perspektif Peramban Skema</link> memakai menu <guiseq><gui>Tabel</gui><gui>Deklarasikan foreign key</gui></guiseq> uang ada ketika properti tabel ditunjukkan pada tab kini.</p>
+    <p>Cara lain mendeklarasikan foreign key adalah memakai menu konteks pada suatu tabel dalam bagan, dan memilih opsi <guiseq><gui>Deklarasikan foreign key bagi tabel ini</gui></guiseq>.</p>
+    <p>Dengan cara apapun, untuk mendeklarasikan foreign key baru, informasi berikut mesti diberikan:</p>
+    <list>
+      <item><p>Nama foreign key</p></item>
+      <item><p>Tabel yang diacu</p></item>
+      <item><p>Kolom dan kolom yang diacu bagi setiap kolom yang dilibatkan dalam foreign key</p></item>
+    </list>
+    <figure>
+      <title>Informasi untuk mendeklarasikan foreign key baru</title>
+      <desc>Dialog UI yang muncul untuk mendeklarasikan foreign key baru. Disini tabel yang diacu adalah 'warehouses', dan kolom yang terlibat adalah 'county' dan 'city'.</desc>
+      <media type="image" mime="image/png" src="figures/declaredfk-dialog.png"/>
+    </figure>
+  </section>
+  
+  <section id="remove-fk">
+    <title>Hapus suatu foreign key yang dideklarasikan</title>
+    <p>Foreign key yang dideklarasikan dapat dihapus dengan mengklik tautan <guiseq><gui>(Hapus)</gui></guiseq> yang ditampilkan di bawah setiap properti foreign key yang dideklarasikan dalam properti tabel (pada <link xref="schema-browser-perspective">Perspektif Peramban Skema</link>).</p>
+    <p>Cara lain untuk menghapus foreign key yang dideklarasikan adalah dalam halaman <link xref="diagram">bagan</link> melalui menu konteks yang berasosiasi dengan garis putus-putus yang mewakili foreign key yang dideklarasikan, memilih opsi <guiseq><gui>Hapus foreign key yang dideklarasikan ini</gui></guiseq>.</p>
+  </section>
+</page>

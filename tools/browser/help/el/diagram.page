@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="diagram" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Διαγράμματα</title>
+  <p>Τα διαγράμματα εμφανίζονται στον <app>gda-browser</app> και κατασκευάζονται από έναν καμβά στον οποίο εμφανίζονται γραφικά στοιχεία (όπως πίνακες για παράδειγμα).</p>
+  <figure>
+    <title>Διάγραμμα</title>
+    <desc>Το διάγραμμα εμφανίζει μερικούς πίνακες και οι σχέσεις τους αναπαριστώνται από περιορισμούς ξένου κλειδιού (επίσης δείτε <link xref="declared-fk">τα δηλωμένα ξένα κλειδιά</link>)</desc>
+    <media type="image" mime="image/png" src="figures/diagram.png"/>
+  </figure>
+  <p>Τα στοιχεία μπορούν να μετακινηθούν γύρω από τον καμβά (σημειώστε ότι όσο το ολικό διάγραμμα ταιριάζει με τον καμβά, παραμένει κεντραρισμένο σε αυτό). Άλλοι χειρισμοί είναι δυνατοί:</p>
+  <list>
+    <item><p>μεγέθυνση και σμίκρυνση με τη χρήση του τροχού του ποντικιού, ή μέσα από το μενού συμφραζομένων (δεξιό κλικ στον καμβά)· η εστίαση για προσαρμογή στον καμβά είναι επίσης διαθέσιμη στο μενού συμφραζομένων</p></item>
+    <item><p>προσέγγιση ή απομάκρυνση στοιχείων μεταξύ τους χρησιμοποιώντας τον τροχό του ποντικιού ενώ πατάτε το πλήκτρο <key>Shift</key></p></item>
+    <item><p>τακτοποίηση στοιχείων γραμμικά ή ακτινικά, μέσα από μενού συμφραζομένων</p></item>
+    <item><p>εκτύπωση, μέσα από μενού συμφραζομένων</p></item>
+    <item><p>εξαγωγή εικόνων ως PNG ή SVG, μέσα από το μενού συμφραζομένων</p></item>
+    <item><p>προσθήκη στοιχείων, μέσα από το μενού συμφραζομένων</p></item>
+    <item><p>αφαίρεση στοιχείων, μέσα από το μενού συμφραζομένων του στοιχείου</p></item>
+  </list>
+</page>

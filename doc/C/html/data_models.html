@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data handling: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="GdaLdapConnection.html" title="GdaLdapConnection">
+<link rel="next" href="libgda-5.0-Gda-Value.html" title="A single Value">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaLdapConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Gda-Value.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="data_models"></a>Data handling</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Gda-Value.html">A single Value</a></span><span class="refpurpose"> — Assorted functions for dealing with <span class="type">GValue</span> values</span>
+</dt>
+<dt><span class="sect1"><a href="data_models.html#data-validation">Custom data validation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaHolder">GdaHolder controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaSet">GdaSet controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaDataProxy">GdaDataProxy controls</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="data-select.html">Advanced GdaDataSelect usage</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data-select.html#data-select-rerun">Automatic re-run of the SELECT statement</a></span></dt>
+<dt><span class="sect2"><a href="data-select.html#data-select-empty-rs">Invalid parameters</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaBlobOp.html">Blobs</a></span><span class="refpurpose"> — Binary data and BLOBs handling</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModel.html">GdaDataModel</a></span><span class="refpurpose"> — Data model interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataSelect.html">GdaDataSelect</a></span><span class="refpurpose"> — Base class for data models returned by the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaColumn.html">GdaDataModel columns</a></span><span class="refpurpose"> — Management of <span class="type">GdaDataModel</span> column attributes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelIter.html">GdaDataModelIter</a></span><span class="refpurpose"> — Data model iterator</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelImport.html">GdaDataModelImport</a></span><span class="refpurpose"> — Importing data from a string or a file</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataPivot.html">GdaDataPivot</a></span><span class="refpurpose"> — A data model for data summarisation</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataAccessWrapper.html">GdaDataAccessWrapper</a></span><span class="refpurpose"> — Offers a random access on top of a cursor-only access data model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelArray.html">GdaDataModelArray</a></span><span class="refpurpose"> — An implementation of <span class="type">GdaDataModel</span> based on a <span class="type">GArray</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaRow.html">GdaRow</a></span><span class="refpurpose"> — Individual row of a <span class="type">GdaDataModelArray</span> object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelLdap.html">GdaDataModelLdap</a></span><span class="refpurpose"> — GdaDataModel to extract LDAP information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataModelBdb.html">GdaDataModelBdb</a></span><span class="refpurpose"> — GdaDataModel to access Berkeley DB database contents</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelDir.html">GdaDataModelDir</a></span><span class="refpurpose"> — GdaDataModel to list files in filesystem</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataProxy.html">GdaDataProxy</a></span><span class="refpurpose"> — Proxy to hold modifications for any <span class="type">GdaDataModel</span>, providing the <span class="type">GdaDataModel</span> interface itself</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataComparator.html">GdaDataComparator</a></span><span class="refpurpose"> — Simple data model's contents comparison</span>
+</dt>
+<dt><span class="sect1"><a href="gda-data-model-writing.html">Implementing your own data model</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-virtual-methods">Virtual methods</a></span></dt>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-signalling">Signalling changes</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+	<span class="application">Libgda</span> being a data oriented library, data handling is a central point of the library:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>individual values are encapsulated within a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct">GValue</a> 
+	      container (from GLIB)</p></li>
+<li class="listitem">
+<p>value holders which are each a specification for a value: a type, a name, a description,
+	      a default value, etc. Value holders are encapsulated within a 
+	      <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a> container object.</p>
+<p>
+	      Note that it is possible to set a hint to make a value holder have its value constrained
+	      by the values contained in a column of a <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>.
+	    </p>
+</li>
+<li class="listitem">
+<p>lists of value holders which are encapsulated within a 
+	      <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a> container object.</p>
+<p>
+	      The GdaSet object also makes some computations to group value holders which are
+	      constrained by values in the same GdaDataModel (it makes it easy to use value holders
+	      which are not really independent).
+	    </p>
+</li>
+<li class="listitem">
+<p>arrays of values organized in rows and columns. All the data in the same 
+	      column have the same type, and all the data in each row have the same semantic meaning. 
+	      <span class="application">Libgda</span> uses the <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a> 
+	      objects to actually hold the data (note that this is actually an interface which has 
+	      several implementations depending on the real data organization in the data model).</p>
+<p>Note that depending on the real implementation, access to the data can be random or
+	    done using an iterator, and that the data model can be read-only or modifiable.</p>
+</li>
+<li class="listitem"><p>The <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter">GdaDataModelIter</a> object is used to 
+	      iterate through the rows of a <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>.</p></li>
+</ul></div>
+<p>
+      </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="data-validation"></a>Custom data validation</h2></div></div></div>
+<p>
+    <span class="application">Libgda</span> allows the programmer to specify some rules of his own to control data changes (for example
+    business rules). This section details the various control points, how to implement them, and how or when
+    they are invoked.
+  </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-validation-GdaHolder"></a>GdaHolder controls</h3></div></div></div>
+<p>
+      The <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a> object holds a single value 
+      (as a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct">GValue</a>). When that value is to be modified, using for example
+      <a class="link" href="GdaHolder.html#gda-holder-set-value" title="gda_holder_set_value ()">gda_holder_set_value()</a>, 
+      then the proposed new value's validation process is executed:
+      </p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>it is determined if the proposed new value is of the correct type and
+	    if it respects the holder's policy (for example a NULL value won't be accepted if 
+	    the holder can't be NULL). If the proposed value does not respect the policy, then
+	    the value change will be rejected</p></li>
+<li class="listitem"><p>the <a class="link" href="GdaHolder.html#GdaHolder-validate-change" title="The “validate-change” signal">"validate-change"</a> signal is
+	    emitted. If any handler for this signal returns a pointer to a filled <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError">GError</a>
+	    structure, then the signal's propagation is stopped and the value change will be rejected.</p></li>
+</ol></div>
+<p>
+    </p>
+<p>
+      An example illustrating how to use the <a class="link" href="GdaHolder.html#GdaHolder-validate-change" title="The “validate-change” signal">"validate-change"</a> signal
+      is:
+      </p>
+<pre class="programlisting">
+static GError *
+my_validate_change_cb (GdaHolder *h, const GValue *value, gpointer data)
+{
+        GError *error = NULL;
+
+        /* for example check that value is inferior to 5 and not NULL */
+        if (gda_value_is_null (value)) 
+                g_set_error (&amp;error, YOUR_DOMAIN, YOUR_CODE, "NULL values are not allowed!");
+        else if (g_value_get_int (value) &gt;= 5)
+                g_set_error (&amp;error, YOUR_DOMAIN, YOUR_CODE, "Value sould be inferior to 5");
+
+        return error;
+}
+
+{
+        GdaHolder *holder;
+        GError *error = NULL;
+        [...]
+        g_signal_connect (G_OBJECT (holder), "validate-change",
+                G_CALLBACK (my_validate_change_cb), NULL);
+        if (! gda_holder_set_value (holder, value, &amp;error)) {
+                g_print ("Error: %s\n", error-&gt;message);
+                g_error_free (error);
+		[...]
+	}
+}
+      </pre>
+<p>
+    </p>
+<p>
+      </p>
+<div class="mediaobject"><img src="data_validation_holder.png" width="354" alt="GdaHolder's value change control"></div>
+<p>
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-validation-GdaSet"></a>GdaSet controls</h3></div></div></div>
+<p>
+      The <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a> object is an ordered list (or vector) of values,
+      each represented by a <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a> object. One can place controls
+      at two key events:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>
+	    When any value of a <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a> changes, where
+	    the <a class="link" href="GdaSet.html#GdaSet-validate-holder-change" title="The “validate-holder-change” signal">"validate-holder-change"</a> signal is
+	    emitted. If any handler for this signal returns a pointer to a filled <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError">GError</a>
+	    structure, then the signal's propagation is stopped and the value change will be rejected. This
+	    key event allows one to control each holder's value change as they occur.
+	</p></li>
+<li class="listitem"><p>
+	    When the <a class="link" href="GdaSet.html#gda-set-is-valid" title="gda_set_is_valid ()">gda_set_is_valid()</a> method is called,
+	    the <a class="link" href="GdaSet.html#GdaSet-validate-set" title="The “validate-set” signal">"validate-set"</a> signal is
+	    emitted. If any handler for this signal returns a pointer to a filled <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError">GError</a>
+	    structure, then the signal's propagation is stopped and the calling method will return the generated
+	    error. This key event allows one to control the validity of a set of values altogether (for example
+	    before writing to a table).
+	</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      </p>
+<div class="mediaobject"><img src="data_validation_set.png" width="638" alt="GdaSet's changes controls"></div>
+<p>
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-validation-GdaDataProxy"></a>GdaDataProxy controls</h3></div></div></div>
+<p>
+      The <a class="link" href="GdaDataProxy.html" title="GdaDataProxy">GdaDataProxy</a> data model allows one to store temporary modifications
+      to a data model, and then apply (write to the proxied data model) those modifications row by row. Before
+      applying any row modification, the <a class="link" href="GdaDataProxy.html" title="GdaDataProxy">GdaDataProxy</a> data model emits
+      the <a class="link" href="GdaDataProxy.html#GdaDataProxy-validate-row-changes" title="The “validate-row-changes” signal">"validate-row-changes"</a> signal, and
+      if handler for this signal returns a pointer to a filled <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError">GError</a>
+      structure, then the signal's propagation is stopped and the row's modifications are not applied.
+    </p>
+<p>
+      </p>
+<div class="mediaobject"><img src="data_validation_proxy.png" width="354" alt="GdaDataProxy's changes controls"></div>
+<p>
+    </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

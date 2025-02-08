@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-xml-syntax" xml:lang="de">
+<info>
+  <title type="sort">1</title>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+<title>Die XML-Syntax der Datenverwaltung</title>
+<p>Der Wurzelknoten des XML-Baums muss <code>&lt;data&gt;</code> sein, wobei hier noch eine oder mehrere Datenquellendefinitionen enthalten sein können. Jede Datenquelle wird durch <code>&lt;query&gt;</code>- oder <code>&lt;table&gt;</code>-Knoten angegeben, gefolgt von diesen optionalen Attributen:</p>
+<list>
+  <item><p>»id« zum Angeben einer Kennung in Form einer Datenquellen-Zeichenkette. Dies wird benutzt, wenn Datenquellen miteinander verknüpft werden sollen.</p></item>
+  <item><p>»title« zum Angeben eines Titels.</p></item>
+</list>
+<p>Es ist natürlich möglich, sowohl die <code>&lt;query&gt;</code>- als auch die <code>&lt;table&gt;</code> in den gleichen Datenquellenspezifikationen zu verwenden.</p>
+
+<section id="data-manager-exp-variables">
+  <title>Exportierte Variablen</title>
+  <p>Jede Datenquelle exportiert einige Variablen, welche von anderen Datenquellen wiederverwendet werden können, um eine Abhängigkeit zu erzeugen. Wenn die Datenquellen ausgeführt werden, wird der Inhalt der exportierten Variablen abhängig von der aktuell ausgewählten Zeile in der sich ergebenden Tabellenansicht zurückgesetzt. Falls keine Zeile ausgewählt ist, dann wird die Variable nicht gesetzt.</p>
+  <p>Jede von einer Variable abhängige Datenquelle wird erneut ausgeführt, wenn sich die betreffende Variable ändert. Im Falle einer nicht gesetzten Variable ergibt die Ausführung der Datenquelle einen leeren Datensatz.</p>
+</section>
+<section id="data-manager-query-tag">
+  <title>Die <code>&lt;query&gt;</code>-Markierung</title>
+  <p>Verwenden Sie die <code>&lt;query&gt;</code>-Markierung zum Angeben einer SQL SELECT-Anweisung als Inhalt der Markierung. Verknüpfungen zu anderen Datenquellen sind über <link xref="variables-syntax">Variablen</link> im SQL-Code der SELECT-Anweisung möglich.</p>
+
+  <code>
+&lt;data&gt;
+  &lt;query title="Customers" id="customers"&gt;
+    SELECT id, name FROM customers where name like ##name::string
+  &lt;/query&gt;
+  &lt;query title="Customer's details" id="cust_details"&gt;
+    SELECT * FROM customers WHERE id=##customers@id::int
+  &lt;/query&gt;
+&lt;/data&gt;
+  </code>
+  <p>Beispielsweise definiert die vorige XML-Spezifikation zwei Datenquellen:</p>
+  <list>
+    <item><p>Die Datenquelle <code>customers</code>, welche einige Felder aus der Datenquelle <em>customers</em> auswählt und von einer Zeichenketten-Variable namens <code>name</code> abhängt. Diese Variable muss gesetzt werden, wenn die Datenquellen ausgeführt werden, weil sie in dieser Spezifikation von keiner Datenquelle exportiert wird.</p></item>
+    <item><p>Die Datenquelle <code>cust_details</code>, die alle verfügbaren Details zu einem Kunden anhand dessen Kennung auswählt. Diese zweite Datenquelle ist von der vorigen Datenquelle abhängig, weil die <code>customers@id</code>-Variable von der <code>customers</code>-Datenquelle exportiert wird.</p></item>
+  </list>
+  <p>Die Ausführung dieser Datenquellenspezifikation erstellt zwei Tabellenansichten: Eine, in der Sie einen Kunden auswählen können, und eine weitere, welche alle Attribute des ausgewählten Kunden anzeigt.</p>
+
+  <section id="data-manager-query-exp-variables">
+    <title>Exportierte Variablen</title>
+    <p>Jede durch eine <code>&lt;query&gt;</code>-Markierung definierte Datenquelle exportiert die folgende Variable für jede Spalte des resultierenden Datensatzes. Dabei entspricht der Variablentyp dem Spaltentyp:</p>
+    <list>
+      <item><p><code>&lt;data source ID&gt;@&lt;column position&gt;</code>, wobei die Spaltenposition bei 1 beginnt.</p></item>
+      <item><p><code>&lt;data source ID&gt;@&lt;column name&gt;, falls die Spalte des Datensatzes eine Tabellenspalte ist.</code></p></item>
+    </list>
+  </section>
+
+</section>
+
+<section id="data-manager-table-tag">
+  <title>Die <code>&lt;table&gt;</code>-Markierung</title>
+  <p>Verwenden Sie die <code>&lt;table&gt;</code>-Markierung zum Definieren einer Datenquelle, welche den Inhalt einer Tabelle anzeigt. Diese Markierung:</p>
+  <list>
+    <item><p>benötigt das »name«-Attribut, welches den Namen der Tabelle repräsentiert.</p></item>
+    <item><p>kann ein »id«-Attribut enthalten, welches zur Kennung der Datenquelle korrespondiert. Falls nicht vorhanden, wird eine Kennung automatisch zugewiesen.</p></item>
+    <item><p>kann einen <code>&lt;depend&gt;</code>-Knoten enthalten, welcher eine Abhängigkeit zu einer anderen Datenquelle mit dem »foreign_key_table«-Attribut definiert. Dieses Attribut gibt den Namen der Tabelle an, für die Fremdschlüssel zum Definieren der Abhängigkeit verwendet werden. Weiterhin kann das »id«-Attribut eine Datenquellenkennung angeben, die sich von der Kennung der ersten Tabelle unterscheidet.</p></item>
+  </list>
+  <p>Die <code>&lt;depend&gt;</code>-Markierung definiert für eine Datenquelle eine Tabelle eine Abhängigkeit zu einer anderen Datenquelle einer Tabelle:</p>
+    <list>
+    <item><p>benötigt ein »foreign_key_table«-Attribut, welches den Namen der Tabelle definiert, zu welcher Fremdschlüssel referenziert sind, um die Abhängigkeit zu bezeichnen</p></item>
+    <item><p>kann ein »id«-Attribut enthalten, korrespondierend zur Kennung der referenzierten Datenquelle. Falls nicht angegeben, kann die Abhängigkeit ungültig sein, falls es keine Datenquelle gibt, deren Kennung dem »foreign_key_table«-Attribut entspricht.</p></item>
+    <item><p>kann eine oder mehrere <code>&lt;column&gt;</code>-Markierungen enthalten, deren Inhalt die Spalten zur Identifizierung der zu verwendenden Fremdschlüssel bezeichnet. Dies ist erforderlich, falls mehrere Fremdschlüssel existieren, und kann weggelassen werden, falls es nur einen einzigen Fremdschlüssel gibt. Es werden nur diejenigen Spalten der Tabelle aufgelistet, die die Fremdschlüssel enthalten.</p></item>
+  </list>
+
+
+  <code>
+&lt;data&gt;
+  &lt;table id="the_cust" name="customers"/&gt;
+  &lt;table name="orders"&gt;
+    &lt;depend id="the_cust" foreign_key_table="customers"&gt;
+      &lt;column&gt;customer_id&lt;/column&gt;
+    &lt;/depend&gt;
+  &lt;/table&gt;
+&lt;/data&gt;
+  </code>
+  <p>Beispielsweise definiert die vorige XML-Spezifikation zwei Datenquellen:</p>
+  <list>
+    <item><p>die <code>customers</code>-Datenquelle, welche sämtlichen Inhalt der <em>customers</em>-Tabelle auswählt.</p></item>
+    <item><p>die <code>orders</code>-Datenquelle, welche aus dem Inhalt der <code>orders</code>-Tabelle diejenigen Zeilen auswählt, welche zu einer Zeile in der <code>customers</code>-Tabelle korrespondieren. Dies geschieht unter Einsatz der Fremdschlüssels für die Tabellenordnung (?), was die Spalte »orders.customer_id« und den Primärschlüssel der <code>customers</code>-Tabelle mit einbezieht. Das Attribut »id« der <code>&lt;depend&gt;</code>-Markierung ist hier erforderlich, um die referenzierte Datenquelle zu identifizieren.</p></item>
+  </list>
+  <p>In diesem Beispiel ist Folgendes zu beachten:</p>
+  <list>
+    <item><p>Sie müssen die beteiligten Felder im Fremdschlüssel nicht angeben, der die Tabellen <code>Bestellungen</code> und <code>Kunden</code> verknüpft</p></item>
+    <item><p>Den Datenquellenkennungen werden die Namen der ausgewählten Tabellen zugeordnet, weil kein »id«-Attribut für die <code>&lt;table&gt;</code>-Markierungen angegeben wurde</p></item>
+  </list>
+
+  <section id="data-manager-table-exp-variables">
+    <title>Exportierte Variablen</title>
+    <p>Jede durch eine <code>&lt;query&gt;</code>-Markierung definierte Datenquelle exportiert die folgende Variable für jede Tabellenspalte, wobei der Variablentyp dem Spaltentyp entspricht:</p>
+    <list>
+      <item><p><code>&lt;Datenquellenkennung&gt;@&lt;Spaltenname&gt;</code></p></item>
+      <item><p><code>&lt;data source ID&gt;@&lt;column position&gt;</code>, wobei die Spaltenposition bei 1 beginnt.</p></item>
+    </list>
+  </section>
+
+
+</section>
+</page>

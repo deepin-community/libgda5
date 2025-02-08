@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Limitations: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_begin.html" title="Part I. Getting started">
+<link rel="prev" href="provider_notes_jdbc.html" title="For JDBC">
+<link rel="next" href="limitations_mysql.html" title="For MySQL">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_begin.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="provider_notes_jdbc.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="limitations_mysql.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="limitations"></a>Limitations</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="limitations.html#limitations_global">Global limitations</a></span></dt>
+<dt><span class="sect1"><a href="limitations_mysql.html">For MySQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.2">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.3">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.4">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_oracle.html">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="limitations_postgres.html">For PostgreSQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.3">BLOB handling</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.4">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.5">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.6">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.7">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.4">Date and time</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.5">Timezone information</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.6">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.7">Error reporting</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlcipher.html">For SQLCipher</a></span></dt>
+<dt><span class="sect1"><a href="limitations_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.2">User name</a></span></dt>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.3">SSL/TLS certificate validation</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_jdbc.html">For JDBC based providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.4">Multi threaded environment</a></span></dt>
+</dl></dd>
+</dl></div>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="limitations_global"></a>Global limitations</h2></div></div></div>
+<p>
+      <span class="application">Libgda</span>'s global limitations are:
+      </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="threads"></a>Multi threaded environment</h3></div></div></div>
+<p><span class="application">Libgda</span> is not thread safe. However it supports working with threads as long as any object 
+	  (except otherwise stated) created by the API is used by one single thread (that is there is no
+	  situation when two threads try to access the same object at the same time). Exceptions are:
+	  </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><span class="application">Libgda</span>'s <a class="link" href="init_config.html" title="Initialization and configuration">configuration</a> can be accessed from any thread</p></li>
+<li class="listitem"><p>Any object which implements the <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a> interface 
+		can be accessed from any thread. However 
+		one can use the <a class="link" href="GdaLockable.html#gda-lockable-lock" title="gda_lockable_lock ()">gda_lockable_lock()</a> method to specifically 
+		lock an object's usage (especially when getting and
+		setting properties before or after calling methods).</p></li>
+<li class="listitem"><p>Any <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> object can be accessed from any thread 
+		(that object implements the <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a> interface). Also
+		some database providers may impose other limitations (inherited from the database's specific client APIs)
+		such as only one thread can use the connection object, or even that only one thread can use the database
+		provider.</p></li>
+<li class="listitem"><p>Any <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager">GdaAttributesManager</a> can safely be accessed from
+		any thread.</p></li>
+</ul></div>
+<p>
+	</p>
+<p>Note that multi threading support is still at an early stage and may contain bugs</p>
+</div>
+<p>
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

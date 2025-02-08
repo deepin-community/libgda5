@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiDataSelector: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiProviderSelector.html" title="GdauiProviderSelector">
+<link rel="next" href="GdauiDataProxy.html" title="GdauiDataProxy">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiDataSelector.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiDataSelector.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GdauiDataSelector.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations">  <span class="dim">|</span> 
+                  <a href="#GdauiDataSelector.implementations" class="shortcut">Known Implementations</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiDataSelector.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiProviderSelector.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiDataProxy.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiDataSelector"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiDataSelector.top_of_page"></a>GdauiDataSelector</span></h2>
+<p>GdauiDataSelector — Selecting data in a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiDataSelector.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-model" title="gdaui_data_selector_get_model ()">gdaui_data_selector_get_model</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-set-model" title="gdaui_data_selector_set_model ()">gdaui_data_selector_set_model</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-selected-rows" title="gdaui_data_selector_get_selected_rows ()">gdaui_data_selector_get_selected_rows</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="returnvalue">GdaDataModelIter</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-data-set" title="gdaui_data_selector_get_data_set ()">gdaui_data_selector_get_data_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-select-row" title="gdaui_data_selector_select_row ()">gdaui_data_selector_select_row</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-unselect-row" title="gdaui_data_selector_unselect_row ()">gdaui_data_selector_unselect_row</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataSelector.html#gdaui-data-selector-set-column-visible" title="gdaui_data_selector_set_column_visible ()">gdaui_data_selector_set_column_visible</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataSelector.html#GdauiDataSelector-selection-changed" title="The “selection-changed” signal">selection-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdauiDataSelector.html#GdauiDataSelector-struct" title="GdauiDataSelector">GdauiDataSelector</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> GdauiDataSelector
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GdauiDataSelector requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.implementations"></a><h2>Known Implementations</h2>
+<p>
+GdauiDataSelector is implemented by
+ <a class="link" href="GdauiCloud.html" title="GdauiCloud">GdauiCloud</a>,  <a class="link" href="GdauiCombo.html" title="GdauiCombo">GdauiCombo</a>,  <a class="link" href="GdauiForm.html" title="GdauiForm">GdauiForm</a>,  <a class="link" href="GdauiGrid.html" title="GdauiGrid">GdauiGrid</a>,  <a class="link" href="GdauiProviderSelector.html" title="GdauiProviderSelector">GdauiProviderSelector</a>,  <a class="link" href="GdauiRawForm.html" title="GdauiRawForm">GdauiRawForm</a> and  <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid">GdauiRawGrid</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface is implemented by widgets which allow the user
+to select some data from a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. Depending on the actual widget, the selection
+can be a single row or more than one row.</p>
+<p>This interface allows one to set and get the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> from which data is to be selected
+and offers a few other common behaviours.</p>
+<p>Please note that any row number in this interface is in reference to the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> returned by
+the <a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-model" title="gdaui_data_selector_get_model ()"><code class="function">gdaui_data_selector_get_model()</code></a> method.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-data-selector-get-model"></a><h3>gdaui_data_selector_get_model ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gdaui_data_selector_get_model (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>);</pre>
+<p>Queries the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> from which the data displayed by the widget implementing <em class="parameter"><code>iface</code></em>
+
+are. Beware that the returned data model may be different than the one used when the
+widget was created in case it internally uses a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a>.</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-model.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-model.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-set-model"></a><h3>gdaui_data_selector_set_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_selector_set_model (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>,
+                               <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Sets the data model from which the data being displayed are. Also see <a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-model" title="gdaui_data_selector_get_model ()"><code class="function">gdaui_data_selector_get_model()</code></a></p>
+<div class="refsect3">
+<a name="gdaui-data-selector-set-model.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-get-selected-rows"></a><h3>gdaui_data_selector_get_selected_rows ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *
+gdaui_data_selector_get_selected_rows (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>);</pre>
+<p>Gat an array of selected rows. If no row is selected, the the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>Please note that rows refers to the "visible" rows
+at the time it's being called, which may change if the widget implementing this interface
+uses a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> (as is the case for example for the <a class="link" href="GdauiRawForm.html" title="GdauiRawForm"><span class="type">GdauiRawForm</span></a>, <a class="link" href="GdauiForm.html" title="GdauiForm"><span class="type">GdauiForm</span></a>, <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a>
+and <a class="link" href="GdauiGrid.html" title="GdauiGrid"><span class="type">GdauiGrid</span></a>).</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-selected-rows.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-selected-rows.returns"></a><h4>Returns</h4>
+<p>an array of <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> values, one for each selected row. Use <a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#g-array-free"><code class="function">g_array_free()</code></a> when finished (passing <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> as the last argument). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> gint]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-get-data-set"></a><h3>gdaui_data_selector_get_data_set ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="returnvalue">GdaDataModelIter</span></a> *
+gdaui_data_selector_get_data_set (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>);</pre>
+<p>Get the <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object represented the current selected row in <em class="parameter"><code>iface</code></em>
+. This
+function may return either <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or an invalid iterator (see <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()"><code class="function">gda_data_model_iter_is_valid()</code></a>) if
+the selection cannot be represented by a single selected row.</p>
+<p>Note that the returned <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> is actually an iterator iterating on the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>
+returned by the <a class="link" href="GdauiDataSelector.html#gdaui-data-selector-get-model" title="gdaui_data_selector_get_model ()"><code class="function">gdaui_data_selector_get_model()</code></a> method.</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-data-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-selector-get-data-set.returns"></a><h4>Returns</h4>
+<p>a pointer to a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-select-row"></a><h3>gdaui_data_selector_select_row ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_selector_select_row (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);</pre>
+<p>Force the selection of a specific row.</p>
+<p>Please note that <em class="parameter"><code>row</code></em>
+ refers to the "visible" row
+at the time it's being called, which may change if the widget implementing this interface
+uses a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> (as is the case for example for the <a class="link" href="GdauiRawForm.html" title="GdauiRawForm"><span class="type">GdauiRawForm</span></a>, <a class="link" href="GdauiForm.html" title="GdauiForm"><span class="type">GdauiForm</span></a>, <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a>
+and <a class="link" href="GdauiGrid.html" title="GdauiGrid"><span class="type">GdauiGrid</span></a>).</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-select-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>row</p></td>
+<td class="parameter_description"><p>the row to select</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-selector-select-row.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the row has been selected</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-unselect-row"></a><h3>gdaui_data_selector_unselect_row ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_selector_unselect_row (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);</pre>
+<p>Please note that <em class="parameter"><code>row</code></em>
+ refers to the "visible" row
+at the time it's being called, which may change if the widget implementing this interface
+uses a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> (as is the case for example for the <a class="link" href="GdauiRawForm.html" title="GdauiRawForm"><span class="type">GdauiRawForm</span></a>, <a class="link" href="GdauiForm.html" title="GdauiForm"><span class="type">GdauiForm</span></a>, <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a>
+and <a class="link" href="GdauiGrid.html" title="GdauiGrid"><span class="type">GdauiGrid</span></a>).</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-unselect-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>row</p></td>
+<td class="parameter_description"><p>the row to unselect</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-selector-set-column-visible"></a><h3>gdaui_data_selector_set_column_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_selector_set_column_visible
+                               (<em class="parameter"><code><a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *iface</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> column</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> visible</code></em>);</pre>
+<p>Shows or hides the data at column <em class="parameter"><code>column</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-data-selector-set-column-visible.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a column number, starting at <code class="literal">0</code>, or -1 tp apply to all the columns</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>visible</p></td>
+<td class="parameter_description"><p>required visibility of the data in the <em class="parameter"><code>column</code></em>
+column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiDataSelector-struct"></a><h3>GdauiDataSelector</h3>
+<pre class="programlisting">typedef struct _GdauiDataSelector GdauiDataSelector;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataSelector.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiDataSelector-selection-changed"></a><h3>The <code class="literal">“selection-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> *gdauidataselector,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

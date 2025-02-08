@@ -1,0 +1,2603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Misc API for database providers: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="psupport.html" title="Providers' support API">
+<link rel="prev" href="libgda-5.0-SQL-rendering-API.html" title="SQL rendering API">
+<link rel="next" href="pt09.html" title="Part IX. Packaging">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Misc-API.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="psupport.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-SQL-rendering-API.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="pt09.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Misc-API"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Misc-API.top_of_page"></a>Misc API for database providers</span></h2>
+<p>Misc API for database providers — Methods dedicated to implementing providers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-operation-new" title="gda_server_operation_new ()">gda_server_operation_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="returnvalue">GdaSqlParser</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-internal-get-parser" title="gda_server_provider_internal_get_parser ()">gda_server_provider_internal_get_parser</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-perform-operation-default" title="gda_server_provider_perform_operation_default ()">gda_server_provider_perform_operation_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-get-data-handler-default" title="gda_server_provider_get_data_handler_default ()">gda_server_provider_get_data_handler_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-handler-use-default" title="gda_server_provider_handler_use_default ()">gda_server_provider_handler_use_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-handler-find" title="gda_server_provider_handler_find ()">gda_server_provider_handler_find</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-handler-declare" title="gda_server_provider_handler_declare ()">gda_server_provider_handler_declare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-find-file" title="gda_server_provider_find_file ()">gda_server_provider_find_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-load-file-contents" title="gda_server_provider_load_file_contents ()">gda_server_provider_load_file_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-set-provider-data" title="gda_connection_internal_set_provider_data ()">gda_connection_internal_set_provider_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-get-provider-data" title="gda_connection_internal_get_provider_data ()">gda_connection_internal_get_provider_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-get-provider-data-error" title="gda_connection_internal_get_provider_data_error ()">gda_connection_internal_get_provider_data_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-event" title="gda_connection_add_event ()">gda_connection_add_event</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="returnvalue">GdaConnectionEvent</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-event-string" title="gda_connection_add_event_string ()">gda_connection_add_event_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-clear-events-list" title="gda_connection_clear_events_list ()">gda_connection_clear_events_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-event-type" title="gda_connection_event_set_event_type ()">gda_connection_event_set_event_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-description" title="gda_connection_event_set_description ()">gda_connection_event_set_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-code" title="gda_connection_event_set_code ()">gda_connection_event_set_code</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-gda-code" title="gda_connection_event_set_gda_code ()">gda_connection_event_set_gda_code</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-source" title="gda_connection_event_set_source ()">gda_connection_event_set_source</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-event-set-sqlstate" title="gda_connection_event_set_sqlstate ()">gda_connection_event_set_sqlstate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-prepared-statement" title="gda_connection_add_prepared_statement ()">gda_connection_add_prepared_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-del-prepared-statement" title="gda_connection_del_prepared_statement ()">gda_connection_del_prepared_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="returnvalue">GdaPStmt</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-get-prepared-statement" title="gda_connection_get_prepared_statement ()">gda_connection_get_prepared_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-transaction-started" title="gda_connection_internal_transaction_started ()">gda_connection_internal_transaction_started</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-transaction-rolledback" title="gda_connection_internal_transaction_rolledback ()">gda_connection_internal_transaction_rolledback</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-transaction-committed" title="gda_connection_internal_transaction_committed ()">gda_connection_internal_transaction_committed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()">gda_connection_internal_statement_executed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-savepoint-added" title="gda_connection_internal_savepoint_added ()">gda_connection_internal_savepoint_added</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-savepoint-rolledback" title="gda_connection_internal_savepoint_rolledback ()">gda_connection_internal_savepoint_rolledback</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-savepoint-removed" title="gda_connection_internal_savepoint_removed ()">gda_connection_internal_savepoint_removed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-change-transaction-state" title="gda_connection_internal_change_transaction_state ()">gda_connection_internal_change_transaction_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-reset-transaction-status" title="gda_connection_internal_reset_transaction_status ()">gda_connection_internal_reset_transaction_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="returnvalue">GdaConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-open-sqlite" title="gda_connection_open_sqlite ()">gda_connection_open_sqlite</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-modify" title="gda_meta_store_modify ()">gda_meta_store_modify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-modify-v" title="gda_meta_store_modify_v ()">gda_meta_store_modify_v</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-modify-with-context" title="gda_meta_store_modify_with_context ()">gda_meta_store_modify_with_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-identifiers-style" title="gda_meta_store_set_identifiers_style ()">gda_meta_store_set_identifiers_style</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-Misc-API.html#GdaSqlReservedKeywordsFunc" title="GdaSqlReservedKeywordsFunc ()">*GdaSqlReservedKeywordsFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-set-reserved-keywords-func" title="gda_meta_store_set_reserved_keywords_func ()">gda_meta_store_set_reserved_keywords_func</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-compute-dml-statements" title="gda_compute_dml_statements ()">gda_compute_dml_statements</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-compute-select-statement-from-update" title="gda_compute_select_statement_from_update ()">gda_compute_select_statement_from_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-rewrite-sql-statement-for-null-parameters" title="gda_rewrite_sql_statement_for_null_parameters ()">gda_rewrite_sql_statement_for_null_parameters</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-rewrite-statement-for-null-parameters" title="gda_rewrite_statement_for_null_parameters ()">gda_rewrite_statement_for_null_parameters</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-compute-unique-table-row-condition" title="gda_compute_unique_table_row_condition ()">gda_compute_unique_table_row_condition</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-compute-unique-table-row-condition-with-cnc" title="gda_compute_unique_table_row_condition_with_cnc ()">gda_compute_unique_table_row_condition_with_cnc</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-sql-any-part-check-structure" title="gda_sql_any_part_check_structure ()">gda_sql_any_part_check_structure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-statement-rewrite-for-default-values" title="gda_statement_rewrite_for_default_values ()">gda_statement_rewrite_for_default_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-sql-identifier-force-quotes" title="gda_sql_identifier_force_quotes ()">gda_sql_identifier_force_quotes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Misc-API.html#gda-sql-identifier-prepare-for-compare" title="gda_sql_identifier_prepare_for_compare ()">gda_sql_identifier_prepare_for_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Misc-API.html#GdaSqlIdentifierStyle" title="enum GdaSqlIdentifierStyle">GdaSqlIdentifierStyle</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/providers-support/gda-pstmt.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.description"></a><h2>Description</h2>
+<p>The methods mentioned in this section are reserved for database providers implementations and should
+not bu used by developers outside that scope.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-server-operation-new"></a><h3>gda_server_operation_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+gda_server_operation_new (<em class="parameter"><code><a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a> op_type</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml_file</code></em>);</pre>
+<p>IMPORTANT NOTE: Using this funtion is not the recommended way of creating a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object, the
+correct way is to use <a class="link" href="GdaServerProvider.html#gda-server-provider-create-operation" title="gda_server_provider_create_operation ()"><code class="function">gda_server_provider_create_operation()</code></a>; this method is reserved for the database provider's
+implementation.</p>
+<p>Creates a new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object from the <em class="parameter"><code>xml_file</code></em>
+ specifications</p>
+<p>The <em class="parameter"><code>xml_file</code></em>
+ must respect the DTD described in the "libgda-server-operation.dtd" file: its top
+node must be a &lt;serv_op&gt; tag.</p>
+<div class="refsect3">
+<a name="gda-server-operation-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op_type</p></td>
+<td class="parameter_description"><p>type of operation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>xml_file</p></td>
+<td class="parameter_description"><p>a file which has the specifications for the GdaServerOperation object to create</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-internal-get-parser"></a><h3>gda_server_provider_internal_get_parser ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="returnvalue">GdaSqlParser</span></a> *
+gda_server_provider_internal_get_parser
+                               (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>);</pre>
+<p>This is a factory method to get a unique instance of a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object
+for each <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> object
+Don't unref it.</p>
+<div class="refsect3">
+<a name="gda-server-provider-internal-get-parser.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-internal-get-parser.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-perform-operation-default"></a><h3>gda_server_provider_perform_operation_default ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_provider_perform_operation_default
+                               (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs the operation described by <em class="parameter"><code>op</code></em>
+, using the SQL from the rendering of the operation</p>
+<div class="refsect3">
+<a name="gda-server-provider-perform-operation-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object which will be used to perform an action, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-perform-operation-default.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-get-data-handler-default"></a><h3>gda_server_provider_get_data_handler_default ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_server_provider_get_data_handler_default
+                               (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dbms_type</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gda_server_provider_get_data_handler_default</code> has been deprecated since version 5.2 and should not be used in newly-written code.</p>
+<p>use <a class="link" href="libgda-5.0-Misc-API.html#gda-server-provider-handler-use-default" title="gda_server_provider_handler_use_default ()"><code class="function">gda_server_provider_handler_use_default()</code></a> instead</p>
+</div>
+<p>Provides the implementation when the default Libgda's data handlers must be used</p>
+<div class="refsect3">
+<a name="gda-server-provider-get-data-handler-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>a server provider.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dbms_type</p></td>
+<td class="parameter_description"><p>a DBMS type definition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-get-data-handler-default.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-handler-use-default"></a><h3>gda_server_provider_handler_use_default ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_server_provider_handler_use_default
+                               (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Reserved to database provider's implementations. This method defines a default data handler for
+<em class="parameter"><code>provider</code></em>
+, and returns that <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-server-provider-handler-use-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>a server provider</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-handler-use-default.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-handler-find"></a><h3>gda_server_provider_handler_find ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_server_provider_handler_find (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                                  <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> g_type</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dbms_type</code></em>);</pre>
+<p>Reserved to database provider's implementations: get the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> associated to <em class="parameter"><code>prov</code></em>
+
+for connection <em class="parameter"><code>cnc</code></em>
+. You probably want to use <a class="link" href="GdaServerProvider.html#gda-server-provider-get-data-handler-g-type" title="gda_server_provider_get_data_handler_g_type ()"><code class="function">gda_server_provider_get_data_handler_g_type()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-provider-handler-find.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>g_type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dbms_type</p></td>
+<td class="parameter_description"><p>a database type. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-handler-find.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if none found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-handler-declare"></a><h3>gda_server_provider_handler_declare ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_server_provider_handler_declare (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                                     <em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> g_type</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dbms_type</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-find-file"></a><h3>gda_server_provider_find_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_provider_find_file (<em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *inst_dir</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
+<p>Finds the location of a <em class="parameter"><code>filename</code></em>
+. This function should only be used by database provider's
+implementations</p>
+<div class="refsect3">
+<a name="gda-server-provider-find-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>inst_dir</p></td>
+<td class="parameter_description"><p>directory where <em class="parameter"><code>prov</code></em>
+is installed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>name of the file to find</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-find-file.returns"></a><h4>Returns</h4>
+<p>the complete path to <em class="parameter"><code>filename</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-provider-load-file-contents"></a><h3>gda_server_provider_load_file_contents ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_provider_load_file_contents
+                               (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *inst_dir</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data_dir</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
+<p>Loads and returns the contents of <em class="parameter"><code>filename</code></em>
+, which is searched in several places
+This function should only be used by database provider's
+implementations</p>
+<div class="refsect3">
+<a name="gda-server-provider-load-file-contents.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>inst_dir</p></td>
+<td class="parameter_description"><p>directory where the database provider has been installed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data_dir</p></td>
+<td class="parameter_description"><p>DATA directory to look for ($prefix/share)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>name of the file to load</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-provider-load-file-contents.returns"></a><h4>Returns</h4>
+<p>a new string containing <em class="parameter"><code>filename</code></em>
+'s contents, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found or if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-set-provider-data"></a><h3>gda_connection_internal_set_provider_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_set_provider_data
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy_func</code></em>);</pre>
+<p>Note: calling this function more than once will not make it call <em class="parameter"><code>destroy_func</code></em>
+ on any previously
+set opaque <em class="parameter"><code>data</code></em>
+, you'll have to do it yourself.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-set-provider-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>an opaque structure, known only to the provider for which <em class="parameter"><code>cnc</code></em>
+is opened</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy_func</p></td>
+<td class="parameter_description"><p>function to call when the connection closes and <em class="parameter"><code>data</code></em>
+needs to be destroyed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-get-provider-data"></a><h3>gda_connection_internal_get_provider_data ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_connection_internal_get_provider_data
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Get the opaque pointer previously set using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-set-provider-data" title="gda_connection_internal_set_provider_data ()"><code class="function">gda_connection_internal_set_provider_data()</code></a>.
+If it's not set, then add a connection event and returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-get-provider-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-internal-get-provider-data.returns"></a><h4>Returns</h4>
+<p>the pointer to the opaque structure set using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-set-provider-data" title="gda_connection_internal_set_provider_data ()"><code class="function">gda_connection_internal_set_provider_data()</code></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-get-provider-data-error"></a><h3>gda_connection_internal_get_provider_data_error ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_connection_internal_get_provider_data_error
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the opaque pointer previously set using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-set-provider-data" title="gda_connection_internal_set_provider_data ()"><code class="function">gda_connection_internal_set_provider_data()</code></a>.
+If it's not set, then add a connection event and returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-get-provider-data-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-internal-get-provider-data-error.returns"></a><h4>Returns</h4>
+<p>the pointer to the opaque structure set using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-set-provider-data" title="gda_connection_internal_set_provider_data ()"><code class="function">gda_connection_internal_set_provider_data()</code></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-add-event"></a><h3>gda_connection_add_event ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_add_event (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<p>Adds an event to the given connection. This function is usually
+called by providers, to inform clients of events that happened
+during some operation.</p>
+<p>As soon as a provider (or a client, it does not matter) calls this
+function with an <em class="parameter"><code>event</code></em>
+ object which is an error,
+the connection object emits the "error" signal, to which clients can connect to be
+informed of events.</p>
+<p>WARNING: the reference to the <em class="parameter"><code>event</code></em>
+ object is stolen by this function!</p>
+<div class="refsect3">
+<a name="gda-connection-add-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>is stored internally, so you don't need to unref it. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-add-event-string"></a><h3>gda_connection_add_event_string ()</h3>
+<pre class="programlisting"><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="returnvalue">GdaConnectionEvent</span></a> *
+gda_connection_add_event_string (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                 <em class="parameter"><code>...</code></em>);</pre>
+<p>Adds a new error to the given connection object. This is just a convenience
+function that simply creates a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> and then calls
+<span class="type">gda_server_connection_add_error</span>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-add-event-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a format string (see the printf(3) documentation).</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>the arguments to insert in the error message.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-add-event-string.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> object, however the caller does not hold a reference to the returned object, and if need be the caller must call <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-ref"><code class="function">g_object_ref()</code></a> on it. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-clear-events-list"></a><h3>gda_connection_clear_events_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_clear_events_list (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>This function lets you clear the list of <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>'s of the
+given connection.</p>
+<div class="refsect3">
+<a name="gda-connection-clear-events-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-event-type"></a><h3>gda_connection_event_set_event_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_event_type (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventType" title="enum GdaConnectionEventType"><span class="type">GdaConnectionEventType</span></a> type</code></em>);</pre>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s severity (from a simple notice to a fatal event)
+This function should not be called directly.</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-event-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the severity of the event</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-description"></a><h3>gda_connection_event_set_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_description (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *description</code></em>);</pre>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s <em class="parameter"><code>description</code></em>
+. This function should not be called directly.</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>description</p></td>
+<td class="parameter_description"><p>a description, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (to unset current description if any). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-code"></a><h3>gda_connection_event_set_code ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_code (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> code</code></em>);</pre>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s code: the code is specific to the provider being used.
+If you want to have a common understanding of the event codes, use
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-gda-code" title="gda_connection_event_get_gda_code ()"><code class="function">gda_connection_event_get_gda_code()</code></a> instead.</p>
+<p>This function should not be called directly</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-code.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>code</p></td>
+<td class="parameter_description"><p>a code.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-gda-code"></a><h3>gda_connection_event_set_gda_code ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_gda_code (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventCode" title="enum GdaConnectionEventCode"><span class="type">GdaConnectionEventCode</span></a> code</code></em>);</pre>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s gda code: that code is standardized by the libgda
+library. If you want to specify the corresponding provider specific code,
+use <a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-code" title="gda_connection_event_get_code ()"><code class="function">gda_connection_event_get_code()</code></a> or <a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-sqlstate" title="gda_connection_event_get_sqlstate ()"><code class="function">gda_connection_event_get_sqlstate()</code></a> instead.</p>
+<p>This function should not be called directly</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-gda-code.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>code</p></td>
+<td class="parameter_description"><p>a code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-source"></a><h3>gda_connection_event_set_source ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_source (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>);</pre>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s <em class="parameter"><code>source</code></em>
+; this function should not be called directly</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>a source.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-set-sqlstate"></a><h3>gda_connection_event_set_sqlstate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_event_set_sqlstate (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sqlstate</code></em>);</pre>
+<p>Changes the SQLSTATE code of <em class="parameter"><code>event</code></em>
+, this function should not be called directly</p>
+<p>Sets <em class="parameter"><code>event</code></em>
+'s SQL state.</p>
+<div class="refsect3">
+<a name="gda-connection-event-set-sqlstate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sqlstate</p></td>
+<td class="parameter_description"><p>SQL state.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-add-prepared-statement"></a><h3>gda_connection_add_prepared_statement ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_add_prepared_statement (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *gda_stmt</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *prepared_stmt</code></em>);</pre>
+<p>Declares that <em class="parameter"><code>prepared_stmt</code></em>
+ is a prepared statement object associated to <em class="parameter"><code>gda_stmt</code></em>
+ within the connection
+(meaning the connection increments the reference counter of <em class="parameter"><code>prepared_stmt</code></em>
+).</p>
+<p>If <em class="parameter"><code>gda_stmt</code></em>
+ changes or is destroyed, the the association will be lost and the connection will lose the
+reference it has on <em class="parameter"><code>prepared_stmt</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-connection-add-prepared-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gda_stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prepared_stmt</p></td>
+<td class="parameter_description"><p>a prepared statement object (as a <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object, or more likely a descendant)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-del-prepared-statement"></a><h3>gda_connection_del_prepared_statement ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_del_prepared_statement (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *gda_stmt</code></em>);</pre>
+<p>Removes any prepared statement associated to <em class="parameter"><code>gda_stmt</code></em>
+ in <em class="parameter"><code>cnc</code></em>
+: this undoes what
+<a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-prepared-statement" title="gda_connection_add_prepared_statement ()"><code class="function">gda_connection_add_prepared_statement()</code></a> does.</p>
+<div class="refsect3">
+<a name="gda-connection-del-prepared-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gda_stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-get-prepared-statement"></a><h3>gda_connection_get_prepared_statement ()</h3>
+<pre class="programlisting"><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="returnvalue">GdaPStmt</span></a> *
+gda_connection_get_prepared_statement (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *gda_stmt</code></em>);</pre>
+<p>Retrieves a pointer to an object representing a prepared statement for <em class="parameter"><code>gda_stmt</code></em>
+ within <em class="parameter"><code>cnc</code></em>
+. The
+association must have been done using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-prepared-statement" title="gda_connection_add_prepared_statement ()"><code class="function">gda_connection_add_prepared_statement()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-connection-get-prepared-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gda_stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-get-prepared-statement.returns"></a><h4>Returns</h4>
+<p>the prepared statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no association exists. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-transaction-started"></a><h3>gda_connection_internal_transaction_started ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_transaction_started
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *parent_trans</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *trans_name</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaTransactionStatus.html#GdaTransactionIsolation" title="enum GdaTransactionIsolation"><span class="type">GdaTransactionIsolation</span></a> isol_level</code></em>);</pre>
+<p>Internal functions to be called by database providers when a transaction has been started
+to keep track of the transaction status of the connection.</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-transaction-started.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent_trans</p></td>
+<td class="parameter_description"><p>name of the parent transaction, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>trans_name</p></td>
+<td class="parameter_description"><p>transaction's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>isol_level</p></td>
+<td class="parameter_description"><p>isolation level.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-transaction-rolledback"></a><h3>gda_connection_internal_transaction_rolledback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_transaction_rolledback
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *trans_name</code></em>);</pre>
+<p>Internal functions to be called by database providers when a transaction has been rolled
+back to keep track of the transaction status of the connection</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-transaction-rolledback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>trans_name</p></td>
+<td class="parameter_description"><p>transaction's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-transaction-committed"></a><h3>gda_connection_internal_transaction_committed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_transaction_committed
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *trans_name</code></em>);</pre>
+<p>Internal functions to be called by database providers when a transaction has been committed
+to keep track of the transaction status of the connection</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-transaction-committed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>trans_name</p></td>
+<td class="parameter_description"><p>transaction's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-statement-executed"></a><h3>gda_connection_internal_statement_executed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_statement_executed
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *params</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *error</code></em>);</pre>
+<p>Internal functions to be called by database providers when a statement has been executed
+to keep track of the transaction status of the connection</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-statement-executed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> which has been executed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>execution's parameters. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> if the execution failed, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-savepoint-added"></a><h3>gda_connection_internal_savepoint_added ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_savepoint_added
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *parent_trans</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *svp_name</code></em>);</pre>
+<p>Internal functions to be called by database providers when a savepoint has been added
+to keep track of the transaction status of the connection</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-savepoint-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent_trans</p></td>
+<td class="parameter_description"><p>name of the parent transaction, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>svp_name</p></td>
+<td class="parameter_description"><p>savepoint's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-savepoint-rolledback"></a><h3>gda_connection_internal_savepoint_rolledback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_savepoint_rolledback
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *svp_name</code></em>);</pre>
+<p>Internal functions to be called by database providers when a savepoint has been rolled back
+to keep track of the transaction status of the connection</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-savepoint-rolledback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>svp_name</p></td>
+<td class="parameter_description"><p>savepoint's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-savepoint-removed"></a><h3>gda_connection_internal_savepoint_removed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_savepoint_removed
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *svp_name</code></em>);</pre>
+<p>Internal functions to be called by database providers when a savepoint has been removed
+to keep track of the transaction status of the connection</p>
+<p>Note: this function should not be called if <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-internal-statement-executed" title="gda_connection_internal_statement_executed ()"><code class="function">gda_connection_internal_statement_executed()</code></a>
+has already been called because a statement's execution was necessary to perform
+the action.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-savepoint-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>svp_name</p></td>
+<td class="parameter_description"><p>savepoint's name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-change-transaction-state"></a><h3>gda_connection_internal_change_transaction_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_change_transaction_state
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaTransactionStatus.html#GdaTransactionStatusState" title="enum GdaTransactionStatusState"><span class="type">GdaTransactionStatusState</span></a> newstate</code></em>);</pre>
+<p>Internal function to be called by database providers to force a transaction status
+change.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-change-transaction-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>newstate</p></td>
+<td class="parameter_description"><p>the new state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-internal-reset-transaction-status"></a><h3>gda_connection_internal_reset_transaction_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_internal_reset_transaction_status
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Internal function to be called by database providers to reset the transaction status.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-connection-internal-reset-transaction-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-open-sqlite"></a><h3>gda_connection_open_sqlite ()</h3>
+<pre class="programlisting"><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="returnvalue">GdaConnection</span></a> *
+gda_connection_open_sqlite (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *directory</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> auto_unlink</code></em>);</pre>
+<p>Opens an SQLite connection even if the SQLite provider is not installed,
+to be used by database providers which need a temporary database to store
+some information.</p>
+<div class="refsect3">
+<a name="gda-connection-open-sqlite.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>directory</p></td>
+<td class="parameter_description"><p>the directory the database file will be in, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the default TMP directory. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>the database file name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auto_unlink</p></td>
+<td class="parameter_description"><p>if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then the database file will be removed afterwards</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-open-sqlite.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-modify"></a><h3>gda_meta_store_modify ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_modify (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                       <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *new_data</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *condition</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                       <em class="parameter"><code>...</code></em>);</pre>
+<p>Propagates an update to <em class="parameter"><code>store</code></em>
+, the update's contents is represented by <em class="parameter"><code>new_data</code></em>
+, this function is
+primarily reserved to database providers.</p>
+<p>For example tell <em class="parameter"><code>store</code></em>
+ to update its list of tables, <em class="parameter"><code>new_data</code></em>
+ should contain the same columns as the "_tables"
+table of <em class="parameter"><code>store</code></em>
+, and contain one row per table in the store; there should not be any more argument after the <em class="parameter"><code>error</code></em>
+
+argument.</p>
+<p>Now, to update only one table, the <em class="parameter"><code>new_data</code></em>
+ data model should have one row for the table to update (or no row
+at all if the table does not exist anymore), and have values for the primary key of the "_tables" table of
+<em class="parameter"><code>store</code></em>
+, namely "table_catalog", "table_schema" and "table_name".</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-meta-store-modify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>the name of the table to modify within <em class="parameter"><code>store</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> containing the new data to set in <em class="parameter"><code>table_name</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (treated as a data model
+with no row at all). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>condition</p></td>
+<td class="parameter_description"><p>SQL expression (which may contain variables) defining the rows which are being obsoleted by <em class="parameter"><code>new_data</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>a list of (variable name (gchar *), GValue *value) terminated with NULL, representing values for all the
+variables mentioned in <em class="parameter"><code>condition</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-modify.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-modify-v"></a><h3>gda_meta_store_modify_v ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_modify_v (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                         <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *new_data</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *condition</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nvalues</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **value_names</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> **values</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Propagates an update to <em class="parameter"><code>store</code></em>
+, the update's contents is represented by <em class="parameter"><code>new_data</code></em>
+, this function is
+primarily reserved to database providers.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_meta_store_modify]</span></p>
+<div class="refsect3">
+<a name="gda-meta-store-modify-v.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>the name of the table to modify within <em class="parameter"><code>store</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> containing the new data to set in <em class="parameter"><code>table_name</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (treated as a data model
+with no row at all). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>condition</p></td>
+<td class="parameter_description"><p>SQL expression (which may contain variables) defining the rows which are being obsoleted by <em class="parameter"><code>new_data</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nvalues</p></td>
+<td class="parameter_description"><p>number of values in <em class="parameter"><code>value_names</code></em>
+and <em class="parameter"><code>values</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value_names</p></td>
+<td class="parameter_description"><p>names of values. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nvalues]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>values. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nvalues]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-modify-v.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-modify-with-context"></a><h3>gda_meta_store_modify_with_context ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_modify_with_context (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *context</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *new_data</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Propagates an update to <em class="parameter"><code>store</code></em>
+, the update's contents is represented by <em class="parameter"><code>new_data</code></em>
+, this function is
+primarily reserved to database providers.</p>
+<div class="refsect3">
+<a name="gda-meta-store-modify-with-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> context describing what to modify in <em class="parameter"><code>store</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> containing the new data to set in <em class="parameter"><code>table_name</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (treated as a data model
+with no row at all). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-modify-with-context.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-set-identifiers-style"></a><h3>gda_meta_store_set_identifiers_style ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_store_set_identifiers_style (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                      <em class="parameter"><code><a class="link" href="libgda-5.0-Misc-API.html#GdaSqlIdentifierStyle" title="enum GdaSqlIdentifierStyle"><span class="type">GdaSqlIdentifierStyle</span></a> style</code></em>);</pre>
+<p>Specifies how <em class="parameter"><code>store</code></em>
+ must handle SQL identifiers it has to store. This method is mainly used by
+database providers.</p>
+<div class="refsect3">
+<a name="gda-meta-store-set-identifiers-style.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>style</p></td>
+<td class="parameter_description"><p>a style</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlReservedKeywordsFunc"></a><h3>GdaSqlReservedKeywordsFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="c_punctuation">(</span>*GdaSqlReservedKeywordsFunc<span class="c_punctuation">)</span> (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *word</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-set-reserved-keywords-func"></a><h3>gda_meta_store_set_reserved_keywords_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_store_set_reserved_keywords_func
+                               (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-Misc-API.html#GdaSqlReservedKeywordsFunc" title="GdaSqlReservedKeywordsFunc ()"><span class="type">GdaSqlReservedKeywordsFunc</span></a> func</code></em>);</pre>
+<p>Specifies a function which <em class="parameter"><code>store</code></em>
+ will use to determine if a keyword is an SQL reserved
+keyword or not.</p>
+<p>This method is mainly used by database providers.</p>
+<div class="refsect3">
+<a name="gda-meta-store-set-reserved-keywords-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Misc-API.html#GdaSqlReservedKeywordsFunc" title="GdaSqlReservedKeywordsFunc ()"><span class="type">GdaSqlReservedKeywordsFunc</span></a> function, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-compute-dml-statements"></a><h3>gda_compute_dml_statements ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_compute_dml_statements (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *select_stmt</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> require_pk</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> **insert_stmt</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> **update_stmt</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> **delete_stmt</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates an INSERT, an UPDATE and a DELETE statement from a SELECT statement
+using the database metadata available in <em class="parameter"><code>cnc</code></em>
+'s meta store. Each statements are computed only if
+the corresponding place to store the created statement is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<div class="refsect3">
+<a name="gda-compute-dml-statements.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>select_stmt</p></td>
+<td class="parameter_description"><p>a SELECT <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> (compound statements not handled)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>require_pk</p></td>
+<td class="parameter_description"><p>TRUE if the created statement have to use a primary key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>insert_stmt</p></td>
+<td class="parameter_description"><p>a place to store the created INSERT statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update_stmt</p></td>
+<td class="parameter_description"><p>a place to store the created UPDATE statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>delete_stmt</p></td>
+<td class="parameter_description"><p>a place to store the created DELETE statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-compute-dml-statements.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-compute-select-statement-from-update"></a><h3>gda_compute_select_statement_from_update ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+gda_compute_select_statement_from_update
+                               (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *update_stmt</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Computes a SELECT statement which selects all the rows the <em class="parameter"><code>update_stmt</code></em>
+ would update. Beware
+however that this <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> does not select anything (ie it would be rendered as "SELECT FROM ... WHERE ...")
+and before being usable, one needs to add some fields to actually select.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-compute-select-statement-from-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>update_stmt</p></td>
+<td class="parameter_description"><p>an UPDATE statement</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-compute-select-statement-from-update.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> if no error occurred, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-rewrite-sql-statement-for-null-parameters"></a><h3>gda_rewrite_sql_statement_for_null_parameters ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+gda_rewrite_sql_statement_for_null_parameters
+                               (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> *sqlst</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *params</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *out_modified</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Modifies <em class="parameter"><code>sqlst</code></em>
+ to take into account any parameter which might be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>: if <em class="parameter"><code>sqlst</code></em>
+ contains the
+equivalent of "xxx = &lt;parameter definition&gt;" and if that parameter is in <em class="parameter"><code>params</code></em>
+ and
+its value is of type GDA_TYPE_NUL, then that part is replaced with "xxx IS NULL". It also
+handles the "xxx IS NOT NULL" transformation.</p>
+<p>If <em class="parameter"><code>out_modified</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then it will be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>sqlst</code></em>
+ has been modified
+by this function, and to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+<p>This function is used by provider's implementations to make sure one can use parameters with
+NULL values in statements without having to rewrite statements, as database usually don't
+consider that "xxx = NULL" is the same as "xxx IS NULL" when using parameters.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-rewrite-sql-statement-for-null-parameters.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>sqlst</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> to be used as parameters when executing <em class="parameter"><code>stmt</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_modified</p></td>
+<td class="parameter_description"><p>a place to store the boolean which tells if <em class="parameter"><code>stmt</code></em>
+has been modified or not, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-rewrite-sql-statement-for-null-parameters.returns"></a><h4>Returns</h4>
+<p>the modified <em class="parameter"><code>sqlst</code></em>
+statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-rewrite-statement-for-null-parameters"></a><h3>gda_rewrite_statement_for_null_parameters ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_rewrite_statement_for_null_parameters
+                               (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *params</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> **out_stmt</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Modifies <em class="parameter"><code>stmt</code></em>
+ to take into account any parameter which might be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>: if <em class="parameter"><code>stmt</code></em>
+ contains the
+equivalent of "xxx = &lt;parameter definition&gt;" and if that parameter is in <em class="parameter"><code>params</code></em>
+ and
+its value is of type GDA_TYPE_NUL, then that part is replaced with "xxx IS NULL". It also
+handles the "xxx IS NOT NULL" transformation.</p>
+<p>For example the following SELECT:</p>
+<pre class="programlisting">SELECT * FROM data WHERE id = ##id::int::null AND name = ##name::string</pre>
+<p>in case the "id" parameter is set to NULL, is converted to:</p>
+<pre class="programlisting">SELECT * FROM data WHERE id IS NULL AND name = ##name::string</pre>
+<p>if <em class="parameter"><code>out_stmt</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then it will contain:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the modified statement if some modifications were required and no error occured (the function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>)</p></li>
+<li class="listitem"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no modification to <em class="parameter"><code>stmt</code></em> were required and no erro occurred (the function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>)</p></li>
+<li class="listitem"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occured (the function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>)</p></li>
+</ul></div>
+<p>This function is used by provider's implementations to make sure one can use parameters with
+NULL values in statements without having to rewrite statements, as database usually don't
+consider that "xxx = NULL" is the same as "xxx IS NULL" when using parameters.</p>
+<div class="refsect3">
+<a name="gda-rewrite-statement-for-null-parameters.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> to be used as parameters when executing <em class="parameter"><code>stmt</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_stmt</p></td>
+<td class="parameter_description"><p>a place to store the new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-rewrite-statement-for-null-parameters.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>stmt</code></em>
+needs to be transformed to handle NULL parameters, and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-compute-unique-table-row-condition"></a><h3>gda_compute_unique_table_row_condition ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+gda_compute_unique_table_row_condition
+                               (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementSelect" title="GdaSqlStatementSelect"><span class="type">GdaSqlStatementSelect</span></a> *stsel</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaMetaStruct.html#GdaMetaTable" title="GdaMetaTable"><span class="type">GdaMetaTable</span></a> *mtable</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> require_pk</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Computes a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> expression which can be used in the WHERE clause of an UPDATE
+or DELETE statement when a row from the result of the <em class="parameter"><code>stsel</code></em>
+ statement has to be modified.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-compute-unique-table-row-condition.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stsel</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSqlSelectStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mtable</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStruct.html#GdaMetaTable" title="GdaMetaTable"><span class="type">GdaMetaTable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>require_pk</p></td>
+<td class="parameter_description"><p>set to TRUE if a primary key ir required</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-compute-unique-table-row-condition.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-compute-unique-table-row-condition-with-cnc"></a><h3>gda_compute_unique_table_row_condition_with_cnc ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+gda_compute_unique_table_row_condition_with_cnc
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementSelect" title="GdaSqlStatementSelect"><span class="type">GdaSqlStatementSelect</span></a> *stsel</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaMetaStruct.html#GdaMetaTable" title="GdaMetaTable"><span class="type">GdaMetaTable</span></a> *mtable</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> require_pk</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Computes a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> expression which can be used in the WHERE clause of an UPDATE
+or DELETE statement when a row from the result of the <em class="parameter"><code>stsel</code></em>
+ statement has to be modified.</p>
+<p>If <em class="parameter"><code>require_pk</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> then this function will return a non <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> only if it can
+use a primary key of <em class="parameter"><code>mtable</code></em>
+. If <em class="parameter"><code>require_pk</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then it will try to use a primary key of <em class="parameter"><code>mtable</code></em>
+,
+and if none is available, it will use all the columns of <em class="parameter"><code>mtable</code></em>
+ to compute a condition statement.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-compute-unique-table-row-condition-with-cnc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stsel</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSqlSelectStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mtable</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStruct.html#GdaMetaTable" title="GdaMetaTable"><span class="type">GdaMetaTable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>require_pk</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a primary key is required</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-compute-unique-table-row-condition-with-cnc.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred.</p>
+</div>
+<p class="since">Since: 4.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-any-part-check-structure"></a><h3>gda_sql_any_part_check_structure ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_sql_any_part_check_structure (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a> *node</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Checks for any error in <em class="parameter"><code>node</code></em>
+'s structure to make sure it is valid. This
+is the same as <a class="link" href="libgda-5.0-GdaSqlStatement.html#gda-sql-statement-check-structure" title="gda_sql_statement_check_structure ()"><code class="function">gda_sql_statement_check_structure()</code></a> but for individual <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a>
+parts. This function is mainly for database provider's implementations</p>
+<div class="refsect3">
+<a name="gda-sql-any-part-check-structure.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a> pointer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-any-part-check-structure.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-rewrite-for-default-values"></a><h3>gda_statement_rewrite_for_default_values ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+gda_statement_rewrite_for_default_values
+                               (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *params</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> remove</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Rewrites <em class="parameter"><code>stmt</code></em>
+ and creates a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> where all the variables which are to a DEFAULT value
+(as returned by <a class="link" href="GdaHolder.html#gda-holder-value-is-default" title="gda_holder_value_is_default ()"><code class="function">gda_holder_value_is_default()</code></a>) are either removed from the statement (if <em class="parameter"><code>remove</code></em>
+
+is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>) or replaced by the "DEFAULT" keyword (if <em class="parameter"><code>remove</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>).</p>
+<p>This function is only useful for database providers' implementations which have to deal with default
+values when executing statements, and is only relevant in the case of INSERT or UPDATE statements
+(in the latter case an error is returned if <em class="parameter"><code>remove</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>).</p>
+<p>For example the </p>
+<pre class="programlisting">INSERT INTO mytable (id, name) VALUES (23, ##name::string)</pre>
+<p>
+is re-written into </p>
+<pre class="programlisting">INSERT INTO mytable (id, name) VALUES (23, DEFAULT)</pre>
+<p>
+if <em class="parameter"><code>remove</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and into </p>
+<pre class="programlisting">INSERT INTO mytable (id) VALUES (23)</pre>
+<p>
+if <em class="parameter"><code>remove</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-statement-rewrite-for-default-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> containing the variable's values to be bound when executing <em class="parameter"><code>stmt</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remove</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if DEFAULT fields are removed, of <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the "DEFAULT" keyword is used</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-rewrite-for-default-values.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-identifier-force-quotes"></a><h3>gda_sql_identifier_force_quotes ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_sql_identifier_force_quotes (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Add double quotes around the <em class="parameter"><code>str</code></em>
+ identifier. This function is normally used only by database provider's
+implementation. Any double quote character is replaced by two double quote characters.</p>
+<p>For other uses, see <a class="link" href="GdaSqlParser.html#gda-sql-identifier-quote" title="gda_sql_identifier_quote ()"><code class="function">gda_sql_identifier_quote()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-identifier-force-quotes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>an SQL identifier</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-identifier-prepare-for-compare"></a><h3>gda_sql_identifier_prepare_for_compare ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_sql_identifier_prepare_for_compare
+                               (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Prepares <em class="parameter"><code>str</code></em>
+ to be compared:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>if surrounded by double quotes or single quotes, then just remove the quotes</p></li>
+<li class="listitem"><p>otherwise convert to lower case</p></li>
+</ul></div>
+<p>The quoted string:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>must start and finish with the same single or double quotes character</p></li>
+<li class="listitem"><p>can contain the delimiter character (the single or double quotes) in the string if every instance
+    of it is preceeded with a backslash character or with the delimiter character itself</p></li>
+</ul></div>
+<p>This function is normally used only by database provider's implementation.</p>
+<p>WARNING: <em class="parameter"><code>str</code></em>
+ must NOT be a composed identifier (&lt;part1&gt;."&lt;part2&gt;" for example)</p>
+<div class="refsect3">
+<a name="gda-sql-identifier-prepare-for-compare.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a quoted string</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-identifier-prepare-for-compare.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>str</code></em>
+</p>
+</div>
+<p class="since">Since: 5.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Misc-API.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaSqlIdentifierStyle"></a><h3>enum GdaSqlIdentifierStyle</h3>
+<p>Specifies how SQL identifiers are represented by a specific database</p>
+<div class="refsect3">
+<a name="GdaSqlIdentifierStyle.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SQL-IDENTIFIERS-LOWER-CASE:CAPS"></a>GDA_SQL_IDENTIFIERS_LOWER_CASE</p></td>
+<td class="enum_member_description">
+<p>case insensitive SQL identifiers are represented in lower case (meaning that any SQL identifier which has a non lower case character is case sensitive)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SQL-IDENTIFIERS-UPPER-CASE:CAPS"></a>GDA_SQL_IDENTIFIERS_UPPER_CASE</p></td>
+<td class="enum_member_description">
+<p>case insensitive SQL identifiers are represented in upper case (meaning that any SQL identifier which has a non upper case character is case sensitive)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

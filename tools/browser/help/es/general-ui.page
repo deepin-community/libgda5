@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="general-ui" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Organización general de la interfaz</title>
+  <p><app>gda-browser</app> se compone de una o más ventanas de nivel superior, siendo cada ventana relativa a una única conexión (cuyo nombre aparece en el título). Para cualquier conexión dada se pueden abrir varias ventanas (use el menú <guiseq><gui>Ventana</gui><gui>Ventana nueva</gui></guiseq> o el atajo <keyseq><key>Ctrl</key><key>N</key></keyseq>).</p>
+  <figure>
+    <title>Una ventana de conexión</title>
+    <desc>Ventana abierta para la conexión «c1» (y la perspectiva del visor de esquemas)</desc>
+    <media type="image" mime="image/png" src="figures/mainwin.png"/>
+  </figure>
+
+  <p>Dentro de cada ventana hay disponibles varias <em>perspectivas</em> que se adaptan a diferentes actividades:</p>
+  <list>
+    <item><p>la <link xref="schema-browser-perspective">perspectiva del visor de esquemas</link> para ayudarle a entender la distribución de la base de datos</p></item>
+    <item><p>la <link xref="query-execution-perspective">perspectiva de ejecución de una consulta</link> para ejecutar cualquier comando SQL</p></item>
+    <item><p>la <link xref="data-manager-perspective">perspectiva del gestor de datos</link> para navegar a través de los contenidos de la base de datos</p></item>
+  </list>
+  <p>La perspectiva mostrada actualmente se puede cambiar individualmente para cada ventana y, ya que todas las perspectivas tienen un área de acción formada por pestañas, estas pestañas se pueden mover de una ventana a otra si la ventana de origen y la de destino son de la misma conexión, y muestran la misma perspectiva (simplemente arrastre y suelte una pestaña desde una ventana a la otra usando la etiqueta de la pestaña como un tirador).</p>
+</page>

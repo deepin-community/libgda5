@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index" xml:lang="es">
+  <info>
+    <credit type="author">
+      <name>Vivien Malerba</name>
+      <email>malerba@gnome-db.org</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Visor de ayuda de Gda</title>
+  <p><app>gda-browser</app> es una herramienta para administradores de bases de datos: pueden analizar esquemas de bases de datos para entender cómo se organizan los datos, ejecutar comandos SQL interactivamente y, de manera más amplia, administrar los datos contenidos en las bases de datos.</p>
+
+  <p>Se pueden abrir varias conexiones a bases de datos a la vez, permitiendo al usuario trabajar con varias bases de datos al mismo tiempo (también es posible ejecutar comandos en varias conexiones al mismo tiempo).</p>
+
+  <p>Ya que <app>gda-browser</app> usa la biblioteca <app>libgda</app> puede abrir conexiones a bases de datos cuyo controlador (proveedor) exista en <app>libgda</app> (por el momento están soportadas, <link href="http://www.oracle.com">Oracle</link>, <link href="http://www.mysql.org">MySQL</link>, <link href="http://www.postgresql.org/">PostgreSQL</link>, <link href="http://www.sqlite.org">SQLite</link>, MS Access (a traés de la bilbioteca <link href="http://sourceforge.net/projects/mdbtools/">MDBTools</link>), <link href="http://en.wikipedia.org/wiki/LDAP">LDAP</link> and <link href="http://java.sun.com/docs/books/tutorial/jdbc/index.html">JDBC</link>).</p>
+
+  <section id="presentation" style="1column">
+    <title>Presentación</title>
+  </section>
+  <section id="perspectives" style="1column">
+    <title>Perspectivas</title>
+  </section>
+
+  <section id="connections" style="1column">
+    <title>Administración de conexiones</title>
+  </section>
+
+</page>

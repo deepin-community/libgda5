@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="general-ui" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Γενική οργάνωση διεπαφής</title>
+  <p>Ο <app>gda-browser</app> αποτελείται από ένα ή περισσότερα παράθυρα κορυφαίου επιπέδου, κάθε παράθυρο σχετικό με μια μοναδική σύνδεση (της οποίας το όνομα είναι στον τίτλο της). Για οποιαδήποτε δοσμένη σύνδεση, πολλά παράθυρα μπορούν να ανοιχτούν (χρησιμοποιήστε το μενού <guiseq><gui>παράθυρο</gui><gui>νέο παράθυρο</gui></guiseq> ή τη συντόμευση <keyseq><key>Ctrl</key><key>N</key></keyseq>).</p>
+  <figure>
+    <title>Ένα παράθυρο σύνδεσης</title>
+    <desc>Ανοικτό παράθυρο για τη σύνδεση 'c1' (και η προοπτική περιηγητή σχήματος)</desc>
+    <media type="image" mime="image/png" src="figures/mainwin.png"/>
+  </figure>
+
+  <p>Μέσα σε κάθε παράθυρο, πολλές <em>προοπτικές</em> είναι διαθέσιμες που προσαρμόζονται σε διαφορετικές ενέργειες:</p>
+  <list>
+    <item><p>η <link xref="schema-browser-perspective">προοπτική περιηγητή σχήματος</link> για βοήθεια κατανόησης της διάταξης βάσης δεδομένων</p></item>
+    <item><p>η <link xref="query-execution-perspective">προοπτική εκτέλεσης ερωτήματος</link> για εκτέλεση οποιασδήποτε εντολής SQL</p></item>
+    <item><p>η <link xref="data-manager-perspective">προοπτική διαχειριστή δεδομένων</link> για περιήγηση μέσα από τα περιεχόμενα της βάσης δεδομένων</p></item>
+  </list>
+  <p>Η τρέχουσα εμφανιζόμενη προοπτική μπορεί να αλλαχθεί ατομικά για κάθε παράθυρο και καθώς όλες οι προοπτικές έχουν μια περιοχή ενέργειας αποτελούμενη από καρτέλες, οι καρτέλες μπορούν να μετακινηθούν από ένα παράθυρο σε ένα άλλο εάν η πηγή και το παράθυρο προορισμού είναι για την ίδια σύνδεση και να εμφανίσουν την ίδια προοπτική (απλά σύρσιμο και απόθεση μιας καρτέλας από ένα παράθυρο σε ένα άλλο χρησιμοποιώντας την ετικέτα της καρτέλας ως λαβή).</p>
+</page>

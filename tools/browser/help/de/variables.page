@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="variables-syntax" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Variablen im SQL-Code</title>
+  <p>Variablen (gelegentlich als <em>Platzhalter</em> bezeichnet) sind Stellen im SQL-Code, welche durch aktuelle Werte ersetzt werden, wenn der SQL-Code ausgeführt wird. Vorteile sind schnellere Ausführungszeiten, weil der SQL-Code nur einmal verarbeitet werden muss, und ein Schutz gegen SQL-Einbruchsverwundbarkeit.</p>
+  <p>Variablen sind in jeglichem SQL-Code verwendbar und werden durch folgende Syntax definiert:</p>
+  <code>
+##&lt;variable name&gt;[::&lt;variable type&gt;[::NULL]]</code>
+  <p>Hinweise:</p>
+  <list>
+    <item><p>Der <em>Variablenname</em> darf beliebige SQL-Bezeichner und zusätzlich die Zeichen <code>+-.|@?</code> enthalten, wobei Leerzeichen nicht zulässig sind.</p></item>
+    <item><p>Der <em>Variablentyp</em> darf sein: <code>string</code>, <code>boolean</code>, <code>int</code>, <code>date</code>, <code>time</code>, <code>timestamp</code>, <code>guint</code>, <code>blob</code> and <code>binary</code></p></item>
+    <item><p><code>::NULL</code> kann angehängt werden, um festzulegen, dass die Variable den speziellen Wert <code>NULL</code> annehmen kann.</p></item>
+  </list>
+  <p>Beispiele:</p>
+  <code>
+##name::string
+##id::int::NULL
+##sales@3::date::NULL
+##customers@id::int</code>
+</page>

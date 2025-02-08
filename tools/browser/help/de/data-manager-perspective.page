@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-perspective" xml:lang="de">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+<title>Die Datenverwaltungs-Perspektive</title>
+<p>Verwenden Sie die Datenmanager-Perspektive, um durch die Daten in der Datenbank zu navigieren. Wechseln Sie zu dieser Perspektive mit Hilfe des Menüs <guiseq><gui>Perspektive</gui><gui>Datenmanager</gui></guiseq> oder der Tastenkombination <keyseq><key>Strg</key><key>D</key></keyseq></p>
+<p>Der Arbeitsablauf in dieser Perspektive baut auf der Definition einer oder mehrerer <em>Datenquellen</em> auf, welche Daten in der Datenbank auswählen. Wenn diese ausgeführt werden, wird als Ergebnis ein Datensatz in einer tabellarischen Ansicht angezeigt.</p>
+<p>Die Perspektive besteht aus zwei horizontalen Bereichen: dem linken Bereich, in dem bevorzugte Datenquellendefinitionen enthalten sind, sowie dem rechten Bereich, welcher den Aktionsbereich bildet. In diesem Aktionsbereich werden die Datenquellen ausgeführt und die Ergebnisse in einer tabellarischen Ansicht angezeigt.</p>
+<figure>
+  <title>Datenverwaltungs-Perspektive</title>
+  <desc>Die Datenverwaltungs-Perspektive mit zwei Datenquellen</desc>
+  <media type="image" mime="image/png" src="figures/data-man-persp.png"/>
+</figure>
+<p>Im Bild oben gibt es zwei Datenquellen: eine für die Tabelle »customers« und eine für »orders«. Die letztgenannte Quelle listet die Bestellungen für einen Kunden (customer) auf und hängt somit von der ersten Quelle ab, da es einen Fremdschlüssel aus »orders« gibt, welcher »customers« referenziert. Die beiden Datenquellen wurden ausgeführt und das Ergebnis in zwei tabellarischen Ansichten nebeneinander dargestellt.</p>
+<p>Da die Datenquelle »orders« von der Datenquelle »customers« abhängt, befindet sich deren korrespondierende Ansicht rechts von der Datenquelle »customers«. Wenn sich die Zeilenauswahl in der »customers«-Ansicht ändert, wird der gesamte Inhalt der »orders«-Ansicht ebenfalls aktualisiert.</p>
+<section id="data-manager-def-data-source">
+  <title>Definieren von Datenquellen</title>
+  <p>Die einfachste Datenquelle ist diejenige, die alle Daten aus einer Tabelle repräsentiert und bei Ausführung als einzelne tabellarische Ansicht angezeigt wird. Dies ist identisch mit Ausführung der <code>SELECT * FROM mytable</code>-Anweisung in <link xref="query-execution-perspective"/>.</p>
+  <p>Die folgende Abbildung zeigt den Bearbeitungsmodus für Datenquellen. Wechseln sie in den Bearbeitungsmodus mit dem Werkzeugleistenknopf <media type="image" mime="image/png" src="figures/data-man-mode.png"/>.</p>
+  <p>Datenquellen können per <link xref="data-manager-xml-syntax">XML-Syntax</link> definiert werden, oder mittels der <link xref="data-manager-source-editor">voreingestellten Oberfläche</link>.</p>
+  <figure>
+    <title>Bearbeiten der Datenquellen</title>
+    <desc>Bearbeiten von Datenquellen in der Datenmanager-Perspektive aus der XML-Syntax</desc>
+    <media type="image" mime="image/png" src="figures/data-man-xmlcompose.png"/>
+  </figure>
+  <figure>
+    <title>Bearbeiten der Datenquellen</title>
+    <desc>Datenquellen in der Datenverwaltungs-Perspektive mittels der voreingestellten Oberfläche zu bearbeiten: Zwei Datenquellen sind definiert, welche den Inhalt der Tabellen »customers« und »orders« auflisten. Die Anordnung ist die gleiche wie in der Abbildung oben mit der XML-Syntax.</desc>
+    <media type="image" mime="image/png" src="figures/data-man-uicompose.png"/>
+  </figure>
+
+  <p>Folgende Befehle sind über die Befehlsknöpfe erreichbar:</p>
+  <list>
+    <item><p><gui>Zurücksetzen</gui>: Setzt den XML-Editor auf die Standard-XML-Vorlage zurück. Dies ist nur verfügbar, wenn die XML-Ansicht angezeigt wird.</p></item>
+    <item><p><gui>Hinzufügen</gui>: Blendet ein Menü mit Tastenkombinationen ein zum schnellen Hinzufügen von Datenquellen als gesamten Tabelleninhalt (Die Datenbank-Schemata werden auch analysiert und relevante Auswahlmöglichkeiten vorgeschlagen). Dies ist nur verfügbar, wenn der XML-Bearbeitungsmodus nicht ausgewählt ist.</p></item>
+    <item><p><gui>Variablen</gui>: Verbirgt das <link xref="variables-syntax">Variablen</link>-Panel oder zeigt es an, in welchem Sie die Variablen aus dem SQL-Code jeder Datenquellendefinition mit Werten füllen können. Dieses Panel wird automatisch angezeigt, sobald im SQL-Code Variablen erkannt werden.</p></item>
+    <item><p><gui>Ausführen</gui>: Führt die definierten Datenquellen aus.</p></item>
+    <item><p><gui>XML-Ansicht</gui>: Schaltet zwischen dem XML-Editor und dem UI-Editor um.</p></item>
+    <item><p><gui>Hilfe</gui>: Zeigt die Hilfe an.</p></item>
+  </list>
+</section>
+<section id="data-manager-exec-data-source">
+  <title>Ausführen definierter Datenquellen</title>
+  <p>Um eine definierte Reihe von Datenquellen auszuführen, wechseln Sie mit dem Werkzeugleistenknopf <media type="image" mime="image/png" src="figures/data-man-mode.png"/> oder dem <gui>Ausführen</gui>-Knopf in den Ausführungsmodus.</p>
+  <p>Das Layout der tabellarischen Ansicht für jede Datenquelle wird automatisch nach der folgenden Regel in Spalten erzeugt: Falls eine Datenquelle B von einer Datenquelle A abhängt, dann wird deren tabellarische Ansicht rechts von der Ansicht für A angezeigt.</p>
+  <p>Wenn Sie die ausgewählte Zeile einer Tabellenansicht der Datenquelle A ändern, werden die tabellarischen Ansichten aller von der Datenquelle A abhängenden Datenquellen aktualisiert.</p>
+</section>
+</page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="variables-syntax" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  </info>
+  <title>Proměnné v kódu SQL</title>
+  <p>Proměnné (někdy také <em>zástupné proměnné</em>) jsou místa v kódu SQL, která jsou při provádění kódu SQL nahrazena aktuálními hodnotami. Přínosem je rychlejší provedení (kód SQL je analyzován jen jednou) a ochrana proti útokům typu „SQL injection“.</p>
+  <p>Proměnné mohou být použity v libovolném kódu SQL a definují se následující syntaxí:</p>
+  <code>
+##&lt;název proměnné&gt;[::&lt;typ proměnné&gt;[::NULL]]</code>
+  <p>Poznámky:</p>
+  <list>
+    <item><p><em>název proměnné</em> může obsahovat libovolný znak dovolený pro identifikátory SQL a také znaky <code>+-.|@?</code> (mezery dovoleny nejsou)</p></item>
+    <item><p><em>typ proměnné</em> může být: <code>string</code> (řetězec), <code>boolean</code> (pravdivostní hodnota), <code>int</code> (celé číslo), <code>date</code> (datum), <code>time</code> (čas), <code>timestamp</code> (časové razítko), <code>guint</code> (celé číslo glib), <code>blob</code> (rozsáhlý binární objekt) a <code>binary</code> (binární data)</p></item>
+    <item><p>lze připojit <code>::NULL</code> a tím určit, že proměnná může nabývat speciální hodnoty <code>NULL</code> (prázdná hodnota)</p></item>
+  </list>
+  <p>Příklady:</p>
+  <code>
+##jmeno::string
+##id::int::NULL
+##prodej@3::date::NULL
+##zakaznik@id::int</code>
+</page>

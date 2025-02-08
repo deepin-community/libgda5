@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="virtual-connections" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>Svazování připojení (tj. virtuální připojení)</title>
+  <p>Svazování připojení je funkce, které dovoluje „svázat“ několik připojení a/nebo importované datové sady do jednoho připojení, které může být dále použito podobně jako běžné připojení.</p>
+  <p>Tato funkce je užitečná, když potřebujete provést příkaz SQL (například získat data) vůči datům uloženým současně v různých databázích. Bez této funkce je pro získání stejných výsledků nutné postupovat tak, že exportujete potřebná data z každé z databází a pracujete s daty mimo původní databáze.</p>
+  <p>Pro vytvoření nového „svázaného“ připojení (nebo „virtuálního“ připojení) použijte nabídku <guiseq><gui>Připojit</gui><gui>Svázat připojení</gui></guiseq> nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>i</key></keyseq>. Objeví se nové dialogové okno (viz níže), ve kterém můžete definovat prvky, které budou součástí „svázaného“ připojení.</p>
+  <figure>
+    <title>Dialogové okno pro vytvoření nového virtuálního připojení</title>
+    <desc>Zde nyní máme připojení (p1), které bude svázáno ve schématu „p1“</desc>
+    <media type="image" mime="image/png" src="figures/virtual-cnc.png"/>
+  </figure>
+  <p>Použijte tlačítko <guiseq><gui>Přidat do svazku</gui></guiseq> k:</p>
+  <list>	
+    <item><p>navázání připojení, což zahrnuje všechny tabulky takovéhoto připojení: použijte volbu <guiseq><gui>Navázat připojení</gui></guiseq>. Tato volba jednoduše přidá v dialogovém okně nový prvek, který určí název schématu a vybere stávající připojení</p></item>
+    <item><p>navázání datové sady, aby se importovala data z textového souboru jako tabulka: použijte volbu <guiseq><gui>Navázat datovou sadu</gui></guiseq>. Další informace viz následující oddíl.</p></item>
+  </list>
+
+  <section id="vcnc-use-case">
+    <title>Případy použití pro virtuální připojení</title>
+    <p>Pro ilustraci použití virtuálního připojení si ukážeme jednoduchou situaci a uvidíme, jak je to výhodné. Předpokládejme, že máte databázi, která obsahuje seznam serverů, za které zodpovídáte. Pro zjednodušení uvažujme databázi obsahující tabulku s názvem „servery“, která je definována následovně:</p>
+    <code>CREATE TABLE servery (nazev string, misto string);</code>
+    <p>Mějme tuto tabulku obsahující následující informace:</p>
+    <code>
+&gt; select * from servery ;
+nazev    | misto    
+---------+----------
+moon     | mistnost1
+darkstar | mistnost2
+flag     | mistnost3
+alf      | mistnost2
+vador    | mistnost3
+(5 řádků)
+&gt;
+    </code>
+    <p>Nyní uvažujme, že máte aplikaci od třetí strany, které vám poskytuje seznam serverů, které mají potenciálně nějaký problém. Výstupem této aplikace je soubor CSV, který obsahuje sloupec s názvem serveru, sloupec s kódem chyby a sloupec popisující problém. Předpokládejme, že soubor CSV má následující obsah:</p>
+    <code>
+$ cat problemy.csv 
+název serveru,kód chyb,popis chyby
+darkstar,0,zaplněn souborový systém
+vador,1,zastaralá antivirová databáze
+darkstar,2,přetížen
+flag,0,zaplněn souborový systém
+$
+    </code>
+    <p>Předpokládejme, že teď chcete vědět, kde jsou umístěny servery, u kterých nastal problém s chybovým kódem 0. Řešení je svázat připojení k databázi (například ve schématu „p1“), naimportovat soubor CSV problemy (například do tabulky „tab“) a provést následující příkaz SQL:</p>
+    <code>
+SELECT 
+  "název serveru", 
+  misto
+FROM tab
+  INNER JOIN c1.servery AS s ON (tab."název serveru" = s.nazev)
+WHERE "kód chyby"=0
+    </code>
+    <p>Což vrátí očekávané výsledky, jak je ukázáno na následujícím obrázku:</p>
+    <figure>
+      <title>Očekávané výsledky z virtuálního připojení</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-4.png"/>
+    </figure>
+  </section>
+
+
+  <section id="vcnc-import-dataset">
+    <title>Importování datové sady do virtuálního připojení</title>
+    <p>Pro import datové sady do tabulky ve virtuálním připojení (například import souboru „problemy.csv“ použitý v předchozím oddíle) použijte volbu <guiseq><gui>Navázat datovou sadu</gui></guiseq> z dialogového okna pro vytvoření virtuálního připojení:</p>
+    <figure>
+      <title>Import datové sady do virtuálního připojení – 1</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-5.png"/>
+    </figure>
+    <p>Zde pak použijte tlačítko <guiseq><gui>Import</gui></guiseq>, které vám nabídne výběr souboru, který se má importovat, a také definování některých voleb importu (kódování souboru, typ souboru, …). Po tomto kroku je virtuální připojení připraveno k použití:</p>
+    <figure>
+      <title>Import datové sady do virtuálního připojení – 2</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-2.png"/>
+    </figure>
+    <p>Výsledné virtuální připojení, zde označené jako „p2“ je otevřeno v svém vlastním novém okně:</p>
+    <figure>
+      <title>Nově otevřené virtuální připojení</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-3.png"/>
+    </figure>
+  </section>
+
+  <section id="virtual-ddl-sql">
+    <title>SQL použitelné ve virtuálních přípojeních</title>
+    <p>Ve virtuálním připojení můžete využít znalost SQL z <link href="http://sqlite.org/lang.html">SQLite</link>. Uvědomte si ale, že když definujete databázové objekty (mimo rozšíření SQL, které probráno v následujícím oddíle), budou při příštím otevření virtuálního připojení ztraceny.</p>
+    <p>Více informací viz oddíl <link xref="sql-sqlite">Porozumění SQL v připojeních k adresáři LDAP a virtuálních připojeních</link>.</p>
+  </section>
+</page>

@@ -1,0 +1,1945 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaSqlBuilder: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaSqlParser.html" title="GdaSqlParser">
+<link rel="next" href="GdaStatement.html" title="GdaStatement">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaSqlBuilder.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaSqlBuilder.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaSqlBuilder.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaSqlParser.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaStatement.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaSqlBuilder"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaSqlBuilder.top_of_page"></a>GdaSqlBuilder</span></h2>
+<p>GdaSqlBuilder — Factory object for statements</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="returnvalue">GdaSqlBuilder</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-new" title="gda_sql_builder_new ()">gda_sql_builder_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-get-statement" title="gda_sql_builder_get_statement ()">gda_sql_builder_get_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-get-sql-statement" title="gda_sql_builder_get_sql_statement ()">gda_sql_builder_get_sql_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-set-table" title="gda_sql_builder_set_table ()">gda_sql_builder_set_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value" title="gda_sql_builder_add_field_value ()">gda_sql_builder_add_field_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-as-gvalue" title="gda_sql_builder_add_field_value_as_gvalue ()">gda_sql_builder_add_field_value_as_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-id" title="gda_sql_builder_add_field_value_id ()">gda_sql_builder_add_field_value_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-function" title="gda_sql_builder_add_function ()">gda_sql_builder_add_function</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-function-v" title="gda_sql_builder_add_function_v ()">gda_sql_builder_add_function_v</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-id" title="gda_sql_builder_add_id ()">gda_sql_builder_add_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-id" title="gda_sql_builder_add_field_id ()">gda_sql_builder_add_field_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-expr" title="gda_sql_builder_add_expr ()">gda_sql_builder_add_expr</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-expr-value" title="gda_sql_builder_add_expr_value ()">gda_sql_builder_add_expr_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-param" title="gda_sql_builder_add_param ()">gda_sql_builder_add_param</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-case" title="gda_sql_builder_add_case ()">gda_sql_builder_add_case</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-case-v" title="gda_sql_builder_add_case_v ()">gda_sql_builder_add_case_v</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-sub-select" title="gda_sql_builder_add_sub_select ()">gda_sql_builder_add_sub_select</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-cond" title="gda_sql_builder_add_cond ()">gda_sql_builder_add_cond</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-cond-v" title="gda_sql_builder_add_cond_v ()">gda_sql_builder_add_cond_v</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-set-where" title="gda_sql_builder_set_where ()">gda_sql_builder_set_where</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-add-target" title="gda_sql_builder_select_add_target ()">gda_sql_builder_select_add_target</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-add-target-id" title="gda_sql_builder_select_add_target_id ()">gda_sql_builder_select_add_target_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-add-field" title="gda_sql_builder_select_add_field ()">gda_sql_builder_select_add_field</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-join-targets" title="gda_sql_builder_select_join_targets ()">gda_sql_builder_select_join_targets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-join-add-field" title="gda_sql_builder_join_add_field ()">gda_sql_builder_join_add_field</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-order-by" title="gda_sql_builder_select_order_by ()">gda_sql_builder_select_order_by</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-set-distinct" title="gda_sql_builder_select_set_distinct ()">gda_sql_builder_select_set_distinct</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-set-limit" title="gda_sql_builder_select_set_limit ()">gda_sql_builder_select_set_limit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-set-having" title="gda_sql_builder_select_set_having ()">gda_sql_builder_select_set_having</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-group-by" title="gda_sql_builder_select_group_by ()">gda_sql_builder_select_group_by</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-compound-add-sub-select" title="gda_sql_builder_compound_add_sub_select ()">gda_sql_builder_compound_add_sub_select</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-compound-set-type" title="gda_sql_builder_compound_set_type ()">gda_sql_builder_compound_set_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-export-expression" title="gda_sql_builder_export_expression ()">gda_sql_builder_export_expression</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-import-expression" title="gda_sql_builder_import_expression ()">gda_sql_builder_import_expression</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType"><span class="type">GdaSqlStatementType</span></a></td>
+<td class="property_name"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilder--stmt-type" title="The “stmt-type” property">stmt-type</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilder-struct" title="struct GdaSqlBuilder">GdaSqlBuilder</a></td>
+</tr>
+<tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId">GdaSqlBuilderId</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaSqlBuilder
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> can be used to build a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> from its structural description,
+much in the same way a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> can be used to build a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> from an SQL
+string.</p>
+<p>The <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> internally constructs a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> and uses it when requested to produce
+a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> (see <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-get-statement" title="gda_sql_builder_get_statement ()"><code class="function">gda_sql_builder_get_statement()</code></a>), or a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> (see
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-get-sql-statement" title="gda_sql_builder_get_sql_statement ()"><code class="function">gda_sql_builder_get_sql_statement()</code></a>).</p>
+<p>During the building process, some pieces of the statement are constructed, and assembled into the
+final statement. Each of these pieces can be reused anytime in the same <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object, and each
+is identified using a single unsigned integer ID. That ID is dynamically allocated by the object.</p>
+<p>The following example builds the equivalent of the "name='joe' AND age &gt;= #&lt;link linkend="ageparam-int"&gt;&lt;type&gt;“int”&lt;/type&gt;&lt;/link&gt;" expression:</p>
+<pre class="programlisting">
+GdaSqlBuilder *b=...
+guint id_field = gda_sql_builder_add_id (b, "name"); // build the "name" SQL identifier
+guint id_value = gda_sql_builder_add_expr (b, NULL, G_TYPE_STRING, "joe"); // 'joe' expression
+guint id_cond1 = gda_sql_builder_add_cond (b, GDA_SQL_OPERATOR_TYPE_EQ, id_field, id_value, 0); // "name='joe'"
+
+guint id_cond2 = gda_sql_builder_add_cond (b, GDA_SQL_OPERATOR_TYPE_GT,
+     gda_sql_builder_add_id (b, "age"), // build the "age" SQL identifier
+     gda_sql_builder_add_param (b, "ageparam", G_TYPE_INT, FALSE), // parameter
+     0);
+guint id_cond_and = gda_sql_builder_add_cond (b, GDA_SQL_OPERATOR_TYPE_AND, id_cond1, id_cond2, 0); // whole expression
+</pre>
+<p>For more examples, see the <a class="link" href="howto-sqlbuilder.html" title="Build statements without using a parser">Build statements without using a parser</a> section.</p>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-sql-builder-new"></a><h3>gda_sql_builder_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="returnvalue">GdaSqlBuilder</span></a> *
+gda_sql_builder_new (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType"><span class="type">GdaSqlStatementType</span></a> stmt_type</code></em>);</pre>
+<p>Create a new <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object to build <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> or <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a>
+objects of type <em class="parameter"><code>stmt_type</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-sql-builder-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stmt_type</p></td>
+<td class="parameter_description"><p>the type of statement to build</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-new.returns"></a><h4>Returns</h4>
+<p>the newly created object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred (such as unsupported
+statement type). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-get-statement"></a><h3>gda_sql_builder_get_statement ()</h3>
+<pre class="programlisting"><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+gda_sql_builder_get_statement (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> statement from <em class="parameter"><code>builder</code></em>
+'s contents.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-get-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-get-statement.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-get-sql-statement"></a><h3>gda_sql_builder_get_sql_statement ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="returnvalue">GdaSqlStatement</span></a> *
+gda_sql_builder_get_sql_statement (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> structure from <em class="parameter"><code>builder</code></em>
+'s contents.</p>
+<p>The returned pointer belongs to <em class="parameter"><code>builder</code></em>
+'s internal representation.
+Use <a class="link" href="libgda-5.0-GdaSqlStatement.html#gda-sql-statement-copy" title="gda_sql_statement_copy ()"><code class="function">gda_sql_statement_copy()</code></a> if you need to keep it.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-get-sql-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-get-sql-statement.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> pointer. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-set-table"></a><h3>gda_sql_builder_set_table ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_set_table (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>);</pre>
+<p>Valid only for: INSERT, UPDATE, DELETE statements</p>
+<p>Sets the name of the table on which the built statement operates.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-set-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>a table name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-field-value"></a><h3>gda_sql_builder_add_field_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_add_field_value (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                                 <em class="parameter"><code>...</code></em>);</pre>
+<p>Valid only for: INSERT, UPDATE statements.</p>
+<p>Specifies that the field represented by <em class="parameter"><code>field_name</code></em>
+ will be set to the value identified
+by @... of type <em class="parameter"><code>type</code></em>
+. See <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-expr" title="gda_sql_builder_add_expr ()"><code class="function">gda_sql_builder_add_expr()</code></a> for more information.</p>
+<p>This is a C convenience function. See also <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-as-gvalue" title="gda_sql_builder_add_field_value_as_gvalue ()"><code class="function">gda_sql_builder_add_field_value_as_gvalue()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-field-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>a field name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the GType of the following argument</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>value to set the field to, of the type specified by <em class="parameter"><code>type</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-field-value-as-gvalue"></a><h3>gda_sql_builder_add_field_value_as_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_add_field_value_as_gvalue
+                               (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Valid only for: INSERT, UPDATE statements.</p>
+<p>Specifies that the field represented by <em class="parameter"><code>field_name</code></em>
+ will be set to the value identified
+by <em class="parameter"><code>value</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-field-value-as-gvalue.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>a field name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to set the field to, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or a GDA_TYPE_NULL value to represent an SQL NULL. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-field-value-id"></a><h3>gda_sql_builder_add_field_value_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_add_field_value_id (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> field_id</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> value_id</code></em>);</pre>
+<p>Valid only for: INSERT, UPDATE, SELECT statements</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>For UPDATE: specifies that the field represented by <em class="parameter"><code>field_id</code></em> will be set to the value identified
+   by <em class="parameter"><code>value_id</code></em>.</p></li>
+<li class="listitem"><p>For SELECT: add a selected item to the statement, and if <em class="parameter"><code>value_id</code></em> is not <code class="literal">0</code>, then use it as an
+   alias</p></li>
+<li class="listitem"><p>For INSERT: if <em class="parameter"><code>field_id</code></em> represents an SQL identifier (obtained using <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-id" title="gda_sql_builder_add_id ()"><code class="function">gda_sql_builder_add_id()</code></a>): then if
+   <em class="parameter"><code>value_id</code></em> is not <code class="literal">0</code> then specifies that the field represented by <em class="parameter"><code>field_id</code></em> will be set to the
+   value identified by <em class="parameter"><code>value_id</code></em>, otherwise just specifies a named field to be given a value.
+   If <em class="parameter"><code>field_id</code></em> represents a sub SELECT (obtained using <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-sub-select" title="gda_sql_builder_add_sub_select ()"><code class="function">gda_sql_builder_add_sub_select()</code></a>), then
+   this method call defines the sub SELECT from which values to insert are taken.</p></li>
+</ul></div>
+<p>See also <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value" title="gda_sql_builder_add_field_value ()"><code class="function">gda_sql_builder_add_field_value()</code></a> and <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-as-gvalue" title="gda_sql_builder_add_field_value_as_gvalue ()"><code class="function">gda_sql_builder_add_field_value_as_gvalue()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-field-value-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_id</p></td>
+<td class="parameter_description"><p>the ID of the field's name or definition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value_id</p></td>
+<td class="parameter_description"><p>the ID of the value to set the field to, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-function"></a><h3>gda_sql_builder_add_function ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_function (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *func_name</code></em>,
+                              <em class="parameter"><code>...</code></em>);</pre>
+<p>Builds a new expression which represents a function applied to some arguments</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-function.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func_name</p></td>
+<td class="parameter_description"><p>the functions's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>a list, terminated with <code class="literal">0</code>, of each function's argument's ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-function.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-function-v"></a><h3>gda_sql_builder_add_function_v ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_function_v (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *func_name</code></em>,
+                                <em class="parameter"><code>const <a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> *args</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> args_size</code></em>);</pre>
+<p>Builds a new expression which represents a function applied to some arguments</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_sql_builder_add_function]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-function-v.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func_name</p></td>
+<td class="parameter_description"><p>the functions's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>args</p></td>
+<td class="parameter_description"><p>an array of IDs representing the function's arguments. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=args_size]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>args_size</p></td>
+<td class="parameter_description"><p><em class="parameter"><code>args</code></em>
+'s size</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-function-v.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-id"></a><h3>gda_sql_builder_add_id ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_id (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Defines an expression representing an identifier in <em class="parameter"><code>builder</code></em>
+,
+which may be reused to build other parts of a statement,
+for instance as a parameter to <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-cond" title="gda_sql_builder_add_cond ()"><code class="function">gda_sql_builder_add_cond()</code></a> or
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-id" title="gda_sql_builder_add_field_value_id ()"><code class="function">gda_sql_builder_add_field_value_id()</code></a>.</p>
+<p>The new expression will contain the <em class="parameter"><code>str</code></em>
+ literal.
+For example:</p>
+<pre class="programlisting">
+gda_sql_builder_add_id (b, "name")
+gda_sql_builder_add_id (b, "date")
+</pre>
+<p>will be rendered as SQL as:</p>
+<pre class="programlisting">
+name
+"date"
+</pre>
+<p>because "date" is an SQL reserved keyword.</p>
+<p>For fields, see <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-id" title="gda_sql_builder_add_field_id ()"><code class="function">gda_sql_builder_add_field_id()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-id.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-field-id"></a><h3>gda_sql_builder_add_field_id ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_field_id (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>);</pre>
+<p>Defines an expression representing a field in <em class="parameter"><code>builder</code></em>
+,
+which may be reused to build other parts of a statement,
+for instance as a parameter to <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-cond" title="gda_sql_builder_add_cond ()"><code class="function">gda_sql_builder_add_cond()</code></a> or
+<a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-value-id" title="gda_sql_builder_add_field_value_id ()"><code class="function">gda_sql_builder_add_field_value_id()</code></a>.</p>
+<p>Calling this with a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>table_name</code></em>
+ is equivalent to calling <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-id" title="gda_sql_builder_add_id ()"><code class="function">gda_sql_builder_add_id()</code></a>.</p>
+<p>For SELECT queries, see <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-select-add-field" title="gda_sql_builder_select_add_field ()"><code class="function">gda_sql_builder_select_add_field()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-field-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>a field name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>a table name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-field-id.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-expr"></a><h3>gda_sql_builder_add_expr ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_expr (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                          <em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Defines an expression in <em class="parameter"><code>builder</code></em>
+ which may be reused to build other parts of a statement.</p>
+<p>The new expression will contain the value passed as the @... argument.</p>
+<p>If <em class="parameter"><code>type</code></em>
+ is G_TYPE_STRING then it is possible to customize how the value has to be interpreted by passing a
+specific <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> object as <em class="parameter"><code>dh</code></em>
+. This feature is very rarely used and the <em class="parameter"><code>dh</code></em>
+ argument should generally
+be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>Note that for composite types such as <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>, <span class="type">Gdate</span>, <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a>, ... pointer to these
+structures are expected, they should no be passed by value. For example:</p>
+<pre class="programlisting">GDate *date = g_date_new_dmy (27, G_DATE_MAY, 1972);
+id = gda_sql_builder_add_expr (b, NULL, G_TYPE_DATE, date);
+g_date_free (date);
+
+id = gda_sql_builder_add_expr (b, NULL, G_TYPE_STRING, "my string");
+id = gda_sql_builder_add_expr (b, NULL, G_TYPE_INT, 25);
+</pre>
+<p>will correspond in SQL to:</p>
+<pre class="programlisting">
+'05-27-1972'
+'my string'
+25
+</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-expr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>deprecated useless argument, just pass <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the GType of the following argument</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>value to set the expression to, of the type specified by <em class="parameter"><code>type</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-expr.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-expr-value"></a><h3>gda_sql_builder_add_expr_value ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_expr_value (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Defines an expression in <em class="parameter"><code>builder</code></em>
+ which may be reused to build other parts of a statement.</p>
+<p>The new expression will contain the value passed as the <em class="parameter"><code>value</code></em>
+ argument.</p>
+<p>If <em class="parameter"><code>value</code></em>
+'s type is a string then it is possible to customize how the value has to be interpreted by passing a
+specific <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> object as <em class="parameter"><code>dh</code></em>
+. This feature is very rarely used and the <em class="parameter"><code>dh</code></em>
+ argument should generally
+be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-expr-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>deprecated useless argument, just pass <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to set the expression to, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or a GDA_TYPE_NULL value to represent an SQL NULL. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-expr-value.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-param"></a><h3>gda_sql_builder_add_param ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_param (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *param_name</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> nullok</code></em>);</pre>
+<p>Defines a parameter in <em class="parameter"><code>builder</code></em>
+ which may be reused to build other parts of a statement.</p>
+<p>The new expression will contain the <em class="parameter"><code>string</code></em>
+ literal.
+For example:</p>
+<pre class="programlisting">
+gda_sql_builder_add_param (b, "age", G_TYPE_INT, FALSE)
+</pre>
+<p>will be rendered as SQL as:</p>
+<pre class="programlisting">
+##age::int
+
+</pre>
+<div class="refsect3">
+<a name="gda-sql-builder-add-param.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>param_name</p></td>
+<td class="parameter_description"><p>parameter's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>parameter's type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nullok</p></td>
+<td class="parameter_description"><p>TRUE if the parameter can be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-param.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-case"></a><h3>gda_sql_builder_add_case ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_case (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> test_expr</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> else_expr</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Creates a new CASE ... WHEN ... THEN ... ELSE ... END expression.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-case.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>test_expr</p></td>
+<td class="parameter_description"><p>the expression ID representing the test of the CASE, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>else_expr</p></td>
+<td class="parameter_description"><p>the expression ID representing the ELSE expression, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>a list, terminated by a <code class="literal">0</code>, of (WHEN expression ID, THEN expression ID) representing
+all the test cases</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-case.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-case-v"></a><h3>gda_sql_builder_add_case_v ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_case_v (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> test_expr</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> else_expr</code></em>,
+                            <em class="parameter"><code>const <a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> *when_array</code></em>,
+                            <em class="parameter"><code>const <a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> *then_array</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> args_size</code></em>);</pre>
+<p>Creates a new CASE ... WHEN ... THEN ... ELSE ... END expression. The WHEN expression and the THEN
+expression IDs are taken from the <em class="parameter"><code>when_array</code></em>
+ and <em class="parameter"><code>then_array</code></em>
+ at the same index, for each index inferior to
+<em class="parameter"><code>args_size</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_sql_builder_add_case]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-case-v.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>test_expr</p></td>
+<td class="parameter_description"><p>the expression ID representing the test of the CASE, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>else_expr</p></td>
+<td class="parameter_description"><p>the expression ID representing the ELSE expression, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>when_array</p></td>
+<td class="parameter_description"><p>an array containing each WHEN expression ID, having at least <em class="parameter"><code>args_size</code></em>
+elements. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=args_size]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>then_array</p></td>
+<td class="parameter_description"><p>an array containing each THEN expression ID, having at least <em class="parameter"><code>args_size</code></em>
+elements. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=args_size]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>args_size</p></td>
+<td class="parameter_description"><p>the size of <em class="parameter"><code>when_array</code></em>
+and <em class="parameter"><code>then_array</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-case-v.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-sub-select"></a><h3>gda_sql_builder_add_sub_select ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_sub_select (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> *sqlst</code></em>);</pre>
+<p>Adds an expression which is a subselect.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-sub-select.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sqlst</p></td>
+<td class="parameter_description"><p>a pointer to a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a>, which has to be a SELECT or compound SELECT. This will be copied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-sub-select.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-cond"></a><h3>gda_sql_builder_add_cond ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_cond (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                          <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlOperatorType" title="enum GdaSqlOperatorType"><span class="type">GdaSqlOperatorType</span></a> op</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> op1</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> op2</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> op3</code></em>);</pre>
+<p>Builds a new expression which represents a condition (or operation).</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-cond.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>type of condition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op1</p></td>
+<td class="parameter_description"><p>the ID of the 1st argument (not 0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op2</p></td>
+<td class="parameter_description"><p>the ID of the 2nd argument (may be <code class="literal">0</code> if <em class="parameter"><code>op</code></em>
+needs only one operand)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op3</p></td>
+<td class="parameter_description"><p>the ID of the 3rd argument (may be <code class="literal">0</code> if <em class="parameter"><code>op</code></em>
+needs only one or two operand)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-cond.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-add-cond-v"></a><h3>gda_sql_builder_add_cond_v ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_add_cond_v (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                            <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlOperatorType" title="enum GdaSqlOperatorType"><span class="type">GdaSqlOperatorType</span></a> op</code></em>,
+                            <em class="parameter"><code>const <a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> *op_ids</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> op_ids_size</code></em>);</pre>
+<p>Builds a new expression which represents a condition (or operation).</p>
+<p>As a side case, if <em class="parameter"><code>ops_ids_size</code></em>
+ is 1,
+then <em class="parameter"><code>op</code></em>
+ is ignored, and the returned ID represents <em class="parameter"><code>op_ids</code></em>
+[0] (this avoids any problem for example
+when <em class="parameter"><code>op</code></em>
+ is GDA_SQL_OPERATOR_TYPE_AND and there is in fact only one operand).</p>
+<div class="refsect3">
+<a name="gda-sql-builder-add-cond-v.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>type of condition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op_ids</p></td>
+<td class="parameter_description"><p>an array of ID for the arguments (not <code class="literal">0</code>). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=op_ids_size]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op_ids_size</p></td>
+<td class="parameter_description"><p>size of <em class="parameter"><code>ops_ids</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-add-cond-v.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-set-where"></a><h3>gda_sql_builder_set_where ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_set_where (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                           <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> cond_id</code></em>);</pre>
+<p>Valid only for: UPDATE, DELETE, SELECT statements</p>
+<p>Sets the WHERE condition of the statement</p>
+<div class="refsect3">
+<a name="gda-sql-builder-set-where.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cond_id</p></td>
+<td class="parameter_description"><p>the ID of the expression to set as WHERE condition, or 0 to unset any previous WHERE condition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-add-target"></a><h3>gda_sql_builder_select_add_target ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_select_add_target (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *alias</code></em>);</pre>
+<p>Adds a new target to a SELECT statement</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-target.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>the name of the target table</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alias</p></td>
+<td class="parameter_description"><p>the alias to give to the target, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-target.returns"></a><h4>Returns</h4>
+<p> the ID of the new target, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-add-target-id"></a><h3>gda_sql_builder_select_add_target_id ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_select_add_target_id (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                      <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> table_id</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *alias</code></em>);</pre>
+<p>Adds a new target to a SELECT statement. If there already exists a target representing
+the same table and the same alias (or with the same absence of alias) then the same target
+ID is returned instead of the ID of a new target.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-target-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_id</p></td>
+<td class="parameter_description"><p>the ID of the expression holding a table reference (not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alias</p></td>
+<td class="parameter_description"><p>the alias to give to the target, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-target-id.returns"></a><h4>Returns</h4>
+<p> the ID of the new (or existing) target, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-add-field"></a><h3>gda_sql_builder_select_add_field ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_select_add_field (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *alias</code></em>);</pre>
+<p>Valid only for: SELECT statements.</p>
+<p>Add a selected selected item to the SELECT statement.</p>
+<p>For non-SELECT statements, see <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-add-field-id" title="gda_sql_builder_add_field_id ()"><code class="function">gda_sql_builder_add_field_id()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-field.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>a field name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>a table name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alias</p></td>
+<td class="parameter_description"><p>an alias (eg. for the "AS" clause), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-select-add-field.returns"></a><h4>Returns</h4>
+<p> the ID of the added field, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-join-targets"></a><h3>gda_sql_builder_select_join_targets ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_select_join_targets (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> left_target_id</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> right_target_id</code></em>,
+                                     <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectJoinType" title="enum GdaSqlSelectJoinType"><span class="type">GdaSqlSelectJoinType</span></a> join_type</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> join_expr</code></em>);</pre>
+<p>Joins two targets in a SELECT statement, using the <em class="parameter"><code>join_type</code></em>
+ type of join.</p>
+<p>Note: if the target represented by <em class="parameter"><code>left_target_id</code></em>
+ is actually situated after (on the right) of
+the target represented by <em class="parameter"><code>right_target_id</code></em>
+, then the actual type of join may be switched from
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GDA-SQL-SELECT-JOIN-LEFT:CAPS"><code class="literal">GDA_SQL_SELECT_JOIN_LEFT</code></a> to <a class="link" href="libgda-5.0-GdaSqlStatement.html#GDA-SQL-SELECT-JOIN-RIGHT:CAPS"><code class="literal">GDA_SQL_SELECT_JOIN_RIGHT</code></a> or from <a class="link" href="libgda-5.0-GdaSqlStatement.html#GDA-SQL-SELECT-JOIN-RIGHT:CAPS"><code class="literal">GDA_SQL_SELECT_JOIN_RIGHT</code></a> to
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GDA-SQL-SELECT-JOIN-LEFT:CAPS"><code class="literal">GDA_SQL_SELECT_JOIN_LEFT</code></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-join-targets.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>left_target_id</p></td>
+<td class="parameter_description"><p>the ID of the left target to use (not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>right_target_id</p></td>
+<td class="parameter_description"><p>the ID of the right target to use (not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>join_type</p></td>
+<td class="parameter_description"><p>the type of join</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>join_expr</p></td>
+<td class="parameter_description"><p>joining expression's ID, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-select-join-targets.returns"></a><h4>Returns</h4>
+<p> the ID of the new join, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-join-add-field"></a><h3>gda_sql_builder_join_add_field ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_join_add_field (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> join_id</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>);</pre>
+<p>Alter a join in a SELECT statement to make its condition use equal field 
+values in the fields named <em class="parameter"><code>field_name</code></em>
+ in both tables, via the USING keyword.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-join-add-field.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>join_id</p></td>
+<td class="parameter_description"><p>the ID of the join to modify (not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>the name of the field to use in the join condition (not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-order-by"></a><h3>gda_sql_builder_select_order_by ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_select_order_by (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> expr_id</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> asc</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *collation_name</code></em>);</pre>
+<p>Adds a new ORDER BY expression to a SELECT statement.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-order-by.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSqlBuiler</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr_id</p></td>
+<td class="parameter_description"><p>the ID of the expression to use during sorting (not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>asc</p></td>
+<td class="parameter_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for an ascending sorting</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>collation_name</p></td>
+<td class="parameter_description"><p>name of the collation to use when sorting, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-set-distinct"></a><h3>gda_sql_builder_select_set_distinct ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_select_set_distinct (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> distinct</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> expr_id</code></em>);</pre>
+<p>Defines (if <em class="parameter"><code>distinct</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>) or removes (if <em class="parameter"><code>distinct</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>) a DISTINCT clause
+for a SELECT statement.</p>
+<p>If <em class="parameter"><code>distinct</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then the ID of an expression can be specified as the <em class="parameter"><code>expr_id</code></em>
+ argument:
+if not <code class="literal">0</code>, this is the expression used to apply the DISTINCT clause on (the resuting SQL
+will then usually be "... DISTINCT ON &lt;expression&gt;...").</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-set-distinct.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>distinct</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to have the DISTINCT requirement</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr_id</p></td>
+<td class="parameter_description"><p>the ID of the DISTINCT ON expression, or <code class="literal">0</code> if no expression is to be used. It is ignored
+if <em class="parameter"><code>distinct</code></em>
+is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-set-limit"></a><h3>gda_sql_builder_select_set_limit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_select_set_limit (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                  <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> limit_count_expr_id</code></em>,
+                                  <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> limit_offset_expr_id</code></em>);</pre>
+<p>If <em class="parameter"><code>limit_count_expr_id</code></em>
+ is not <code class="literal">0</code>, defines the maximum number of rows in the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>
+resulting from the execution of the built statement. In this case, the offset from which the
+rows must be collected can be defined by the <em class="parameter"><code>limit_offset_expr_id</code></em>
+ expression if not <code class="literal">0</code> (note that
+this feature may not be supported by all the database providers).</p>
+<p>If <em class="parameter"><code>limit_count_expr_id</code></em>
+ is <code class="literal">0</code>, then removes any LIMIT which may have been imposed by a previous
+call to this method.</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-set-limit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>limit_count_expr_id</p></td>
+<td class="parameter_description"><p>the ID of the LIMIT expression, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>limit_offset_expr_id</p></td>
+<td class="parameter_description"><p>the ID of the OFFSET expression, or <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-set-having"></a><h3>gda_sql_builder_select_set_having ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_select_set_having (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> cond_id</code></em>);</pre>
+<p>Valid only for: SELECT statements</p>
+<p>Sets the HAVING condition of the statement</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-set-having.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cond_id</p></td>
+<td class="parameter_description"><p>the ID of the expression to set as HAVING condition, or 0 to unset any previous HAVING condition</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-select-group-by"></a><h3>gda_sql_builder_select_group_by ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_select_group_by (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> expr_id</code></em>);</pre>
+<p>Valid only for: SELECT statements</p>
+<p>Adds the <em class="parameter"><code>expr_id</code></em>
+ expression to the GROUP BY clause's expressions list</p>
+<div class="refsect3">
+<a name="gda-sql-builder-select-group-by.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr_id</p></td>
+<td class="parameter_description"><p>the ID of the expression to set use in the GROUP BY clause, or 0 to unset any previous GROUP BY clause</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-compound-add-sub-select"></a><h3>gda_sql_builder_compound_add_sub_select ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_compound_add_sub_select
+                               (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> *sqlst</code></em>);</pre>
+<p>Add a sub select to a COMPOUND statement</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-compound-add-sub-select.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sqlst</p></td>
+<td class="parameter_description"><p>a pointer to a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a>, which has to be a SELECT or compound SELECT. This will be copied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-compound-set-type"></a><h3>gda_sql_builder_compound_set_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_sql_builder_compound_set_type (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementCompoundType" title="enum GdaSqlStatementCompoundType"><span class="type">GdaSqlStatementCompoundType</span></a> compound_type</code></em>);</pre>
+<p>Changes the type of compound which <em class="parameter"><code>builder</code></em>
+ is making, for a COMPOUND statement</p>
+<div class="refsect3">
+<a name="gda-sql-builder-compound-set-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>compound_type</p></td>
+<td class="parameter_description"><p>a type of compound</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-export-expression"></a><h3>gda_sql_builder_export_expression ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="returnvalue">GdaSqlExpr</span></a> *
+gda_sql_builder_export_expression (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="type">GdaSqlBuilderId</span></a> id</code></em>);</pre>
+<p>Exports a part managed by <em class="parameter"><code>builder</code></em>
+ as a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a>, which can represent any expression
+in a statement.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-export-expression.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the ID of the expression to be exported, (must be a valid ID in <em class="parameter"><code>builder</code></em>
+, not <code class="literal">0</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-export-expression.returns"></a><h4>Returns</h4>
+<p> a pointer to a new <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> structure, free using <a class="link" href="libgda-5.0-GdaSqlStatement.html#gda-sql-expr-free" title="gda_sql_expr_free ()"><code class="function">gda_sql_expr_free()</code></a> when not
+needed anymore. If the part with <em class="parameter"><code>id</code></em>
+as ID cannot be found, the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-builder-import-expression"></a><h3>gda_sql_builder_import_expression ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlBuilder.html#GdaSqlBuilderId" title="GdaSqlBuilderId"><span class="returnvalue">GdaSqlBuilderId</span></a>
+gda_sql_builder_import_expression (<em class="parameter"><code><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> *expr</code></em>);</pre>
+<p>Imports the <em class="parameter"><code>expr</code></em>
+ into <em class="parameter"><code>builder</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-sql-builder-import-expression.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> obtained using <a class="link" href="GdaSqlBuilder.html#gda-sql-builder-export-expression" title="gda_sql_builder_export_expression ()"><code class="function">gda_sql_builder_export_expression()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-builder-import-expression.returns"></a><h4>Returns</h4>
+<p> the ID of the new expression, or <code class="literal">0</code> if there was an error</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaSqlBuilder-struct"></a><h3>struct GdaSqlBuilder</h3>
+<pre class="programlisting">struct GdaSqlBuilder;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlBuilderId"></a><h3>GdaSqlBuilderId</h3>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaSqlBuilder--stmt-type"></a><h3>The <code class="literal">“stmt-type”</code> property</h3>
+<pre class="programlisting">  “stmt-type”                <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType"><span class="type">GdaSqlStatementType</span></a></pre>
+<p>Specifies the type of statement to be built, can only be
+GDA_SQL_STATEMENT_SELECT, GDA_SQL_STATEMENT_INSERT, GDA_SQL_STATEMENT_UPDATE
+or GDA_SQL_STATEMENT_DELETE</p>
+<p>Owner: GdaSqlBuilder</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: GDA_SQL_STATEMENT_UNKNOWN</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlBuilder.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a>, <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> and <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

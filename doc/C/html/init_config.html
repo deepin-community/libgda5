@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Initialization and configuration: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="ch13.html" title="Object Hierarchy">
+<link rel="next" href="libgda-5.0-Libgda-Initialization.html" title="Library initialization">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch13.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Libgda-Initialization.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="init_config"></a>Initialization and configuration</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Libgda-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Configuration.html">Configuration</a></span><span class="refpurpose"> — Access/Management of libgda configuration</span>
+</dt>
+<dt><span class="sect1"><a href="init_config.html#libgda_env_variables">Configuring <span class="application">Libgda</span> with environment variables</a></span></dt>
+</dl></div>
+<p>Configuration examples are given in <a class="link" href="installation-configuring.html" title="Configuring">this introduction section</a></p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="libgda_env_variables"></a>Configuring <span class="application">Libgda</span> with environment variables</h2></div></div></div>
+<p>Some functional aspects of <span class="application">Libgda</span> can be configured using environment variables which are
+	  listed here:
+	  </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>GDA_CONNECTION_EVENTS_SHOW: if set, then lists the type of events which must be displayed on STDOUT
+		(event types are NOTICE, COMMAND, WARNING, ERROR, the variable can contain a list of types separated by
+		colons, commas or spaces)</p></li>
+<li class="listitem"><p>GDA_PROVIDERS_ROOT_DIR: if set, must point to the directory where the providers files are (providers
+	      files are shared libraries)</p></li>
+<li class="listitem"><p>LIBGDA_NO_THREADS (useless since version 5.2.0): if set, then multi threading will be disabled (see the
+		<a class="link" href="limitations.html#threads" title="Multi threaded environment">section about multi threading</a> for more information about
+		<span class="application">Libgda</span> threads' support). Please note that this environment variables is not used anymore
+		since version 5.2.0, as threading is always enabled by Glib.</p></li>
+<li class="listitem"><p>GDA_SHOW_PROVIDER_LOADING_ERROR: if set, then in case a provider fails to be loaded (usually because
+		it requires a library which can't be found) <span class="application">Libgda</span> will display a warning message. This variable
+		is useful to debug the absence of a provider at runtime</p></li>
+<li class="listitem"><p>GDA_DATA_MODEL_DUMP_TITLE: if set, then <a class="link" href="GdaDataModel.html#gda-data-model-dump" title="gda_data_model_dump ()">gda_data_model_dump()</a>
+	      will also output the name of the data model as its first line</p></li>
+<li class="listitem"><p>GDA_DATA_MODEL_DUMP_ROW_NUMBERS: if set, then 
+		<a class="link" href="GdaDataModel.html#gda-data-model-dump" title="gda_data_model_dump ()">gda_data_model_dump()</a> will prepend a column containing row
+		numbers</p></li>
+<li class="listitem"><p>GDA_DATA_MODEL_NULL_AS_EMPTY: if set, then 
+		<a class="link" href="GdaDataModel.html#gda-data-model-dump" title="gda_data_model_dump ()">gda_data_model_dump()</a> will show an empty ("") string
+		for NULL values, instead of the "NULL" string</p></li>
+<li class="listitem"><p>GDA_DATA_MODEL_DUMP_TRUNCATE: if set to a numeric value, then 
+		<a class="link" href="GdaDataModel.html#gda-data-model-dump" title="gda_data_model_dump ()">gda_data_model_dump()</a> will truncates the output to the width specified by the value. If the value is -1 then the actual terminal size (if it can be determined) is used</p></li>
+<li class="listitem"><p>GDA_DATA_MODEL_DUMP_ATTRIBUTES: if set, then 
+		<a class="link" href="GdaDataModel.html#gda-data-model-dump" title="gda_data_model_dump ()">gda_data_model_dump()</a> will also include a description of
+	      the data model's attributes</p></li>
+<li class="listitem"><p>GDA_CONFIG_SYNCHRONOUS: if set, and if the Gnome Keyring is used to store DSN authentification information,
+		then the requests to the Gnome Keyring will be made synchronously. This is useful if Libgda is used in a program where
+		there is no main loop (otherwise no authentification will be fetched).</p></li>
+<li class="listitem"><p>GDA_TREE_DUMP_ALL_ATTRIBUTES: if set, then 
+		<a class="link" href="GdaTree.html#gda-tree-dump" title="gda_tree_dump ()">gda_tree_dump()</a> will dump all the attributes of each
+		node in the tree</p></li>
+<li class="listitem"><p>GDAUI_SHOW_PLUGINS_LOADING: if set, then a trace of Gda UI's plugins loading will be
+		output the first time they are loaded.
+		</p></li>
+</ul></div>
+<p>
+	</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

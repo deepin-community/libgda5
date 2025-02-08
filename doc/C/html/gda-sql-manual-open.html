@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Connections management: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-sql.html" title="Part VII. Gda SQL console's user manual">
+<link rel="prev" href="gda-sql-manual-dsn.html" title="DSN management">
+<link rel="next" href="ch41s02.html" title="Meta data">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-sql.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-sql-manual-dsn.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch41s02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="gda-sql-manual-open"></a>Connections management</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="gda-sql-manual-open.html#id-1.8.6.5">Virtual connections</a></span></dt>
+<dt><span class="sect1"><a href="ch41s02.html">Meta data</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.6">Information about tables</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.7">Information about views</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.8">Information about schemas</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.9">Information about other objects</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+    The console tool is able to handle several connections at the same time, they can dynamically be opened and
+    closed during a session. The current connection in use is indicated by the prompt.
+    Use the <span class="command"><strong>.c</strong></span> command to open a connection with the connection name (the name by which
+    the connection is identified within the tool) and a connection string; for example:
+    </p>
+<pre class="programlisting">
+gda&gt; .c cnc1 SalesTest
+cnc1&gt;
+    </pre>
+<p>
+  </p>
+<p>
+    The list of connection can be listed using the same <span class="command"><strong>.c</strong></span> command without any argument, for example:
+    </p>
+<pre class="programlisting">
+ia32&gt; .c
+          List of opened connections
+Name | Provider | DSN or connection string | Username
+-----+----------+--------------------------+---------
+cnc1 | SQLite   | SalesTest                |         
+ia32 | SQLite   | IA32Instructions         |         
+(2 rows)
+ia32&gt;
+    </pre>
+<p>
+  </p>
+<p>
+    To switch from one connection to the other, use the <span class="command"><strong>.c</strong></span> command with the connection name to use
+    as single argument, for example to switch from using the "ia32" to the "cnc1" connection: 
+    </p>
+<pre class="programlisting">
+ia32&gt; .c cnc1
+cnc1&gt;
+    </pre>
+<p>
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.8.6.5"></a>Virtual connections</h2></div></div></div>
+<p>
+      Multiple connections can be <span class="emphasis"><em>bound together</em></span> into a single connection in which it is possible
+      to runs SQL statements. This effectively allows one to run SQL statements across multiple databases.
+    </p>
+<p>
+      Binding connections together is done using the <span class="command"><strong>.bind CNC_NAME CNC_NAME1 CNC_NAME2 [CNC_NAME ...]</strong></span>
+      command which creates new connection named "CNC_NAME" which binds the connections names "CNC_NAME1" and "CNC_NAME2"
+      together (more connections can be bound); each connection to be bound into a virtual connection must of course
+      already have been opened. The tables of each bound connection will appear into the new virtual connection as named
+      "&lt;cnc name&gt;.&lt;table name&gt;".
+    </p>
+<p>
+      In the following example, there are the "cnc1" and "cnc2" connections opened, and the "cnc3" connection is
+      a virtual connection binding "cnc1" and "cnc2":
+      </p>
+<pre class="programlisting">
+cnc2&gt; .bind cnc3 cnc1 cnc2
+Bound connections are as:
+   cnc1 in the 'cnc1' namespace
+   cnc2 in the 'cnc2' namespace
+cnc3&gt; .c
+          List of opened connections
+Name | Provider | DSN or connection string | Username
+-----+----------+--------------------------+---------
+cnc1 | SQLite   | DB_DIR=.;DB_NAME=pmodel  |         
+cnc2 | SQLite   | SalesTest                |         
+cnc3 |          | namespace cnc1           |         
+                  namespace cnc2                     
+(3 rows)
+cnc3&gt; 
+      </pre>
+<p>
+      The contents of each "customers" table in each of the bound connection is accessible:
+      </p>
+<pre class="programlisting">
+cnc3&gt; select * from cnc1.customers;
+id | name            | last_update           | default_served_by | country | city
+---+-----------------+-----------------------+-------------------+---------+-----
+ 2 | Ed Lamton       | 2008-08-12 00:00:00+0 |                 4 | SP      | MDR 
+ 3 | Lew Bonito      | 2008-08-13 00:00:00+0 |                 1 | FR      | TLS 
+ 4 | Mark Lawrencep  | 2007-12-25 00:00:00+0 |                   | SP      | MDR 
+ 9 | Greg Popoff     | 2007-12-25 00:00:00+0 |                 2 | SP      | MDR 
+10 | Vladimir Zirkov | 2001-01-31 00:00:00+0 |                 4 |         |     
+(5 rows)
+cnc3&gt;  select * from cnc2.customers;
+id | name            | default_served_by | country | city
+---+-----------------+-------------------+---------+-----
+ 2 | Ed Lamton       |                 4 | SP      | MDR 
+ 3 | Lew Bonito      |                 1 | FR      | TLS 
+ 4 | Mark Lawrencep  |                   | SP      | MDR 
+ 9 | Greg Popoff     |                 2 | SP      | MDR 
+10 | Vladimir Zirkov |                 4 |         |     
+(5 rows)
+cnc3&gt; 
+      </pre>
+<p>
+      The list of customers present in both tables are available as:
+      </p>
+<pre class="programlisting">
+cnc3&gt; SELECT * FROM cnc1.customers WHERE name IN (SELECT name FROM cnc2.customers);
+id | name            | last_update           | default_served_by | country | city
+---+-----------------+-----------------------+-------------------+---------+-----
+ 2 | Ed Lamton       | 2008-08-12 00:00:00+0 |                 4 | SP      | MDR 
+ 3 | Lew Bonito      | 2008-08-13 00:00:00+0 |                 1 | FR      | TLS 
+ 4 | Mark Lawrencep  | 2007-12-25 00:00:00+0 |                   | SP      | MDR 
+ 9 | Greg Popoff     | 2007-12-25 00:00:00+0 |                 2 | SP      | MDR 
+10 | Vladimir Zirkov | 2001-01-31 00:00:00+0 |                 4 |         |     
+(5 rows)
+cnc3&gt;
+      </pre>
+<p>
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

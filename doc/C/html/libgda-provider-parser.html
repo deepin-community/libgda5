@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SQL parser: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_providers.html" title="Part VIII. Databases providers for developers">
+<link rel="prev" href="libgda-provider-blobop.html" title="Virtual methods for Blob operations">
+<link rel="next" href="ch47s02.html" title="Tips to write a custom parser">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_providers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-provider-blobop.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch47s02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-provider-parser"></a>SQL parser</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="libgda-provider-parser.html#id-1.9.10.3">Implementation overview</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.3">Generic SQL parser</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.4">Provider specific SQL parser</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch47s02.html">Tips to write a custom parser</a></span></dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaSqlStatement.html">GdaSqlStatement</a></span><span class="refpurpose"> — SQL statement</span>
+</dt>
+</dl></div>
+<p>
+    <span class="application">Libgda</span> implements a generic SQL parser which creates <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> objects from
+    an SQL string. If the database provider needs to implement its own parser because the generic one does not handle
+    the database specific SQL syntax, it can be done using instructions in this chapter. Otherwise, the provider's sources
+    can be cleared of any code related to the parser.
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.9.10.3"></a>Implementation overview</h2></div></div></div>
+<p>
+      This section describes how the generic SQL parser and a provider specific parser are built regarding the files
+      and programs which are involved.
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.10.3.3"></a>Generic SQL parser</h3></div></div></div>
+<p>
+	The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a> object can parse any SQL string of any SQL dialect,
+	while always identifying the variables (which have a <span class="application">Libgda</span>'s specific syntax) in the string. If the parser
+	can identify a structure in the SQL string it understands, then it internally builds a
+	<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement">GdaSqlStatement</a> structure of the correct type, and if it cannot then is simply
+	delimits parts in the SQL string to identify variables and also builds a
+	<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement">GdaSqlStatement</a> structure but of 
+	<a class="link" href="libgda-5.0-GdaSqlStatement.html#GDA-SQL-STATEMENT-UNKNOWN:CAPS">GDA_SQL_STATEMENT_UNKNOWN</a>. If the string
+	cannot be delimited and variables identified, then it returns an error (usually there is a quotes mismatch problem
+	within the SQL string).
+      </p>
+<p>
+	Failing to identify a known structure in the SQL string can have several reasons:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the SQL string is not one of the known types of statements (see 
+	       <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType">GdaSqlStatementType</a>)</p></li>
+<li class="listitem"><p>the SQL uses some database specific extensions</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	The generic SQL parser implementation has its source files in the 
+	<code class="filename">libgda/sql-parser</code> directory; the files which actually implement
+	the parser itself are the <code class="filename">parser.y</code>, <code class="filename">delimiter.y</code> and
+	 <code class="filename">parser_tokens.h</code> files:
+	 </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The <code class="filename">parser.y</code> file contains the grammar used by the parser</p></li>
+<li class="listitem"><p>The <code class="filename">delimiter.y</code> file contains the grammar used by the parser when it 
+	       is operating as a delimiter</p></li>
+<li class="listitem"><p>The <code class="filename">parser_tokens.h</code> defines some hard coded tokens</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	The parser grammar files use the <a class="ulink" href="http://www.hwaci.com/sw/lemon/" target="_top">Lemon parser generator</a> syntax
+	which is a LALR parser similar to <span class="application">YACC</span> or <span class="application">bison</span>. The lexer part
+	however is not <span class="application">LEX</span> but is a custom one integrated in the
+	<code class="filename">gda-sql-parser.c</code> file (this allows a better integration between the lexer and parser parts).
+      </p>
+<p>
+	The following figure illustrates the files involved and how they are produced and used to create
+	the generic SQL parser.
+	</p>
+<div class="mediaobject"><img src="parser_gen.png" alt="Generic SQL parser's implementation"></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The white background indicate files which are sources
+	       (part of <span class="application">Libgda</span>'s distribution)</p></li>
+<li class="listitem"><p>The blue background indicate files that they are produced dynamically</p></li>
+<li class="listitem">
+<p>The pink background indicate programs that are compiled and used themselves in
+	       the compilation process to generate files. These programs are:
+	       </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p><span class="application">lemon</span>: the lemon parser itself</p></li>
+<li class="listitem"><p><span class="application">gen_def</span>: generated the "converters" arrays (see blow)</p></li>
+</ul></div>
+<p>
+	       Note that none of these programs gets installed (and when cross compiling, they are compiled as programs
+	       executing on the host actually making the compilation).
+	   </p>
+</li>
+<li class="listitem"><p>The green background identifies components which are reused when implementing provider specific
+	       parsers</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	The tokenizer (AKA lexer) generates values identified by the "L_" prefix (for example "L_BEGIN"). Because
+	the GdaSqlParser object uses the same lexer with at least two different parsers (namely the parser and delimiter
+	mentioned earlier), and because the Lemon parser generator generates its own value identifiers for tokens, there
+	is a conversion step (the "converter" block in the diagram) which converts the "L_" prefixed tokens with the ones
+	usable by each parser (both converters are defined as arrays in the <code class="filename">token_types.h</code> file.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.10.3.4"></a>Provider specific SQL parser</h3></div></div></div>
+<p>
+	One wants to write a database specific SQL parser when:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the SQL understood by the database differs from the generic SQL. For example
+	      PostgreSQL associates priorities to the compound statement in a different way as the generic SQL.
+	      In this case it is strongly recommended to write a custom SQL parser</p></li>
+<li class="listitem"><p>the SQL understood by the database has specific extensions</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	Using the same background color conventions as the previous diagram, the following diagram illustrates
+	the files involved and how they are produced and used to create a provider specific SQL parser:
+      </p>
+<p>
+	</p>
+<div class="mediaobject"><img src="parser_prov.png" alt="Provider specific SQL parser's implementation"></div>
+<p>
+      </p>
+<p>
+	The key differences are:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The delimiter part of the <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a> object
+	      is the same as for the generic SQL parser implementation</p></li>
+<li class="listitem"><p>While the <span class="application">lemon</span> program is the same as for the generic SQL parser,
+	      the <span class="application">gen_def</span> is different, and takes as its input the ".h" file produced by
+	      the <span class="application">lemon</span> program and the <code class="filename">libgda/sql-parser/token_types.h</code>.
+	  </p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

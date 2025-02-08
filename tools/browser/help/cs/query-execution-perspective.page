@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="query-execution-perspective" xml:lang="cs">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+</info>
+<title>Hledisko pro provádění dotazu</title>
+<p>Hledisko Provádění dotazu použijte ke spouštění příkazů SQL. Do tohoto hlediska se přepnete pomocí nabídky <guiseq><gui>Hledisko</gui><gui>Provádění dotazu (SQL)</gui></guiseq> nebo klávesové zkratky <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+<figure>
+  <title>Hledisko Provádění dotazu</title>
+  <desc>Hledisko Provádění dotazu s jedním příkazem SELECT vybraným ke spuštění</desc>
+  <media type="image" mime="image/png" src="figures/query-exec-persp.png"/>
+</figure>
+
+<p>Hledisko je vodorovně rozděleno do dvou panelů: levý panel pro uživatelem definované oblíbené příkazy a pravý panel je oblastí, ve které se provádí akce.</p>
+<p>Na předchozím obrázku jsou dva oblíbené: příkaz SELECT (pojmenovaný „Seznam zákazníků“) a příkaz INSERT (pojmenovaný „Nový zákazník…“). Příkaz INSERT vyžaduje jeden parametr „name“, zatímco příkaz SELECT ke spuštění žádný parametr nevyžaduje.</p>
+<p>Rozdílné ikony u obou naznačují fakt, že oblíbený příkaz INSERT je rovněž označen jako <link xref="actions">akce</link>: bude předkládán jako spustitelná akce v kontextové nabídce, která se objeví u mřížky zobrazující sadu výsledků.</p>
+<p>Levá část hlediska zobrazuje oblíbené příkazy, které byly definovány uživatelem. Aktivace oblíbeného příkazu (dvojitým kliknutím) vymaže textovou oblast obsahující SQL a nahradí ji vybraným příkazem SQL.</p>
+<p>Pravý panel je složen z žádné nebo více karet, na kterých se zadává a provádí SQL. Na každé kartě jsou:</p>
+<list>
+  <item><p>oblast SQL v levé horní části</p></item>
+  <item><p>příkazová tlačítka v pravé horní části</p></item>
+  <item><p>historie provádění v levé dolní části</p></item>
+  <item><p>výsledky provádění v pravé dolní části</p></item>
+</list>
+
+<section id="query-exec-sql">
+  <title>Oblast SQL</title>
+  <p>Oblast SQL je editor SQL. SQL může být libovolný kód SQL, kterému databáze rozumí, vyjma <link xref="variables-syntax">proměnných</link> (které musí mít specifickou syntaxi).</p>
+  <p>Klávesové zkratky v editoru SQL jsou:</p>
+  <list>
+    <item><p><keyseq><key>Ctrl</key><key>mezerník</key></keyseq> pro získání seznamu dokončování slov</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>Enter</key></keyseq> pro spuštění kódu SQL</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>l</key></keyseq> pro vymazání editoru</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>↑</key></keyseq> a <keyseq><key>Ctrl</key><key>↓</key></keyseq> pro pohyb v historii editoru</p></item>
+  </list>
+</section>
+
+<section id="query-exec-command-buttons">
+  <title>Příkazová tlačítka</title>
+  <p>Příkazy dostupné přes příkazová tlačítka jsou:</p>
+  <list>
+    <item><p><gui>Vymazat</gui>: vymaže obsah editoru (odpovídá to klávesové zkratce <keyseq><key>Ctrl</key><key>l</key></keyseq>)</p></item>
+    <item><p><gui>Proměnné</gui>: zobrazí nebo skryje panel <link xref="variables-syntax">Hodnoty proměnných</link>, kde můžete získat informace o hodnotách proměnných vyskytujících se v kódu SQL. Panel se zobrazí automaticky, když je v kódu SQL nějaká proměnná zjištěna.</p></item>
+    <item><p><gui>Spustit</gui>: provede kód SQL. Pokud kód SQL obsahuje nějakou proměnnou, která nebyla nastavena, objeví se nejprve vyskakovací okno s požadavkem na zadání hodnoty proměnné. Odpovídá to klávesové zkratce <keyseq><key>Ctrl</key><key>Enter</key></keyseq>.</p></item>
+    <item><p><gui>Odsadit</gui>: znovu provede odsazení kódu SQL (varování: tímto se odstraní případné komentáře)</p></item>
+    <item><p><gui>Oblíbené</gui>: přidá aktuální kód SQL do oblíbených</p></item>
+  </list>
+</section>
+
+<section id="query-exec-history">
+  <title>Historie provádění</title>
+  <p>Část s historií provádění obsahuje seznam naposledy provedených příkazů, které jsou seřazené podle data provedení s tím, že je zobrazeno, kdy byl příkaz proveden (na obrázku výše to je před 11 minutami). Po vybrání položky v historii se zobrazí odpovídající výsledky v části s výsledky provádění.</p>
+  <p>Tlačítko <gui>Kopírovat</gui> zkopíruje kód SQL právě vybrané položky v historii do editoru SQL a tlačítko <gui>Vymazat</gui> odstraní z historie všechny položky.</p>
+  <p>Upozorňujeme, že danou položku historie lze odstranit i samostatně pomocí klávesy <key>Suppr</key>.</p>
+</section>
+
+<section id="query-exec-results">
+  <title>Výsledky provádění</title>
+  <p>Část s výsledky provádění zobrazuje výsledky zpracování aktuálně vybrané položky v historii a to v podobě tabulky pro příkaz SELECT, informací pro ostatní typy příkazů nebo poznámkou s chybou provádění, pokud provedení selhalo.</p>
+</section>
+</page>

@@ -1,0 +1,1310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiBasicForm: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiDataProxy.html" title="GdauiDataProxy">
+<link rel="next" href="GdauiForm.html" title="GdauiForm">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiBasicForm.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiBasicForm.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdauiBasicForm.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdauiBasicForm.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiBasicForm.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiDataProxy.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiForm.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiBasicForm"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiBasicForm.top_of_page"></a>GdauiBasicForm</span></h2>
+<p>GdauiBasicForm — Form widget mapping the values contained in a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"><img src="vi-basic-form.png"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiBasicForm.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-new" title="gdaui_basic_form_new ()">gdaui_basic_form_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-new-in-dialog" title="gdaui_basic_form_new_in_dialog ()">gdaui_basic_form_new_in_dialog</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-get-data-set" title="gdaui_basic_form_get_data_set ()">gdaui_basic_form_get_data_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-is-valid" title="gdaui_basic_form_is_valid ()">gdaui_basic_form_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-has-changed" title="gdaui_basic_form_has_changed ()">gdaui_basic_form_has_changed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-reset" title="gdaui_basic_form_reset ()">gdaui_basic_form_reset</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-as-reference" title="gdaui_basic_form_set_as_reference ()">gdaui_basic_form_set_as_reference</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-entry-set-visible" title="gdaui_basic_form_entry_set_visible ()">gdaui_basic_form_entry_set_visible</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-entry-grab-focus" title="gdaui_basic_form_entry_grab_focus ()">gdaui_basic_form_entry_grab_focus</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-entry-set-editable" title="gdaui_basic_form_entry_set_editable ()">gdaui_basic_form_entry_set_editable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-entries-to-default" title="gdaui_basic_form_set_entries_to_default ()">gdaui_basic_form_set_entries_to_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-get-entry-widget" title="gdaui_basic_form_get_entry_widget ()">gdaui_basic_form_get_entry_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-get-label-widget" title="gdaui_basic_form_get_label_widget ()">gdaui_basic_form_get_label_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-layout-from-file" title="gdaui_basic_form_set_layout_from_file ()">gdaui_basic_form_set_layout_from_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-get-place-holder" title="gdaui_basic_form_get_place_holder ()">gdaui_basic_form_get_place_holder</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-add-to-size-group" title="gdaui_basic_form_add_to_size_group ()">gdaui_basic_form_add_to_size_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-remove-from-size-group" title="gdaui_basic_form_remove_from_size_group ()">gdaui_basic_form_remove_from_size_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-unknown-color" title="gdaui_basic_form_set_unknown_color ()">gdaui_basic_form_set_unknown_color</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--can-expand-v" title="The “can-expand-v” property">can-expand-v</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--entries-auto-default" title="The “entries-auto-default” property">entries-auto-default</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--headers-sensitive" title="The “headers-sensitive” property">headers-sensitive</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--paramlist" title="The “paramlist” property">paramlist</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--show-actions" title="The “show-actions” property">show-actions</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm--xml-layout" title="The “xml-layout” property">xml-layout</a></td>
+<td class="property_flags">Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm-activated" title="The “activated” signal">activated</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm-holder-changed" title="The “holder-changed” signal">holder-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm-layout-changed" title="The “layout-changed” signal">layout-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm-populate-popup" title="The “populate-popup” signal">populate-popup</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicForm-struct" title="struct GdauiBasicForm">GdauiBasicForm</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdauiBasicForm.html#GdauiBasicFormPart" title="enum GdauiBasicFormPart">GdauiBasicFormPart</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+            <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+                <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkBox.html#GtkBox-struct">GtkBox</a>
+                    <span class="lineart">╰──</span> GdauiBasicForm
+                        <span class="lineart">╰──</span> <a class="link" href="GdauiRawForm.html" title="GdauiRawForm">GdauiRawForm</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdauiBasicForm implements
+ AtkImplementorIface,  <a href="/usr/share/gtk-doc/html/gtk3/GtkBuildable.html#GtkBuildable-struct">GtkBuildable</a> and  <a href="/usr/share/gtk-doc/html/gtk3/gtk3-Orientable.html#GtkOrientable-struct">GtkOrientable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget is a form containing an entry for each <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object
+contained in a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> (specified when the form is created). A typical usage is when the
+user is requested to enter a value which will be used in a statement (without any error checking for clarity):</p>
+<pre class="programlisting">
+GdaStatement *stmt;
+GdaSet *params;
+stmt = gda_sql_parser_parse_string (parser, "SELECT * FROM customers where name LIKE ##name::string", NULL, NULL);
+gda_statement_get_parameters (stmt, &amp;params, NULL);
+
+GtkWidget *form;
+gint result;
+form = gdaui_basic_form_new_in_dialog (params, NULL, "Customer search", "Enter Customer search expression");
+result = gtk_dialog_run (GTK_DIALOG (form));
+gtk_widget_destroy (form);
+if (result == GTK_RESPONSE_ACCEPT) {
+   // execute statement
+   GdaDataModel *model;
+   model = gda_connection_statement_execute_select (cnc, stmt, params, NULL);
+   [...]
+}
+g_object_unref (params);
+g_object_unref (stmt);
+</pre>
+<p>The default layout within a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> is a vertical column: all the data entry widgets are aligned
+in a single column. This behaviour can be changed using the <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-layout-from-file" title="gdaui_basic_form_set_layout_from_file ()"><code class="function">gdaui_basic_form_set_layout_from_file()</code></a> method or
+setting the <a class="link" href="GdauiBasicForm.html#GdauiBasicForm--xml-layout" title="The “xml-layout” property">xml-layout</a> property.</p>
+<a name="GdauiBasicFormXMLLayout"></a>
+The <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> class parses textual descriptions of XML layout which
+which can be described by the following DTD. 
+
+<pre class="programlisting">
+&lt;!ELEMENT gdaui_layouts (gdaui_form | gdaui_grid)&gt;
+
+&lt;!ELEMENT gdaui_form (gdaui_section | gdaui_column | gdaui_notebook)*&gt;
+&lt;!ATTLIST gdaui_form
+         name CDATA #REQUIRED
+	  container (columns|rows|hpaned|vpaned) #IMPLIED&gt;
+
+&lt;!ELEMENT gdaui_section (gdaui_section | gdaui_column | gdaui_notebook)*&gt;
+&lt;!ATTLIST gdaui_section
+         title CDATA #IMPLIED &gt;
+
+&lt;!ELEMENT gdaui_notebook (gdaui_section | gdaui_column | gdaui_notebook)*&gt;
+
+&lt;!ELEMENT gdaui_column (gdaui_entry | gdaui_placeholder)*&gt;
+
+&lt;!ELEMENT gdaui_entry EMPTY&gt;
+&lt;!ATTLIST gdaui_entry
+         name CDATA #REQUIRED
+	  editable (true|false) #IMPLIED
+	  label CDATA #IMPLIED
+	  plugin CDATA #IMPLIED&gt;
+
+&lt;!ELEMENT gdaui_placeholder EMPTY&gt;
+&lt;!ATTLIST gdaui_placeholder
+	  id CDATA #REQUIRED
+	  label CDATA #IMPLIED&gt;
+</pre>
+<div class="example">
+<a name="id-1.3.13.8.11.8"></a><p class="title"><b>Example 1. A GdauiBasicForm layout example</b></p>
+<div class="example-contents">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">gdaui_layouts</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">gdaui_form</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;customers&quot;</span> <span class="n">container</span><span class="o">=</span><span class="s">&quot;hpaned&quot;</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">gdaui_section</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;Summary&quot;</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">gdaui_column</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="n">gdaui_entry</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;id&quot;</span> <span class="n">editable</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="o">/&gt;</span>
+	<span class="o">&lt;</span><span class="n">gdaui_entry</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="o">/&gt;</span>
+	<span class="o">&lt;</span><span class="n">gdaui_entry</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;comments&quot;</span> <span class="n">plugin</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="o">/&gt;</span>
+	<span class="o">&lt;</span><span class="n">gdaui_entry</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;total_orders&quot;</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;Total ordered&quot;</span> <span class="n">plugin</span><span class="o">=</span><span class="s">&quot;number:NB_DECIMALS=2;CURRENCY=€&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;/</span><span class="n">gdaui_column</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">gdaui_section</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">gdaui_section</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;Photo&quot;</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">gdaui_column</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="n">gdaui_entry</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;photo&quot;</span> <span class="n">plugin</span><span class="o">=</span><span class="s">&quot;picture&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;/</span><span class="n">gdaui_column</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">gdaui_section</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">gdaui_form</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">gdaui_layouts</span><span class="o">&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br class="example-break">
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-basic-form-new"></a><h3>gdaui_basic_form_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_basic_form_new (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *data_set</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget using all the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects provided in <em class="parameter"><code>data_set</code></em>
+.</p>
+<p>The global layout is rendered using a table (a <a href="/usr/share/gtk-doc/html/gtk3/GtkTable.html#GtkTable-struct"><span class="type">GtkTable</span></a>), and an entry is created for each
+node of <em class="parameter"><code>data_set</code></em>
+.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data_set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> structure</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-new.returns"></a><h4>Returns</h4>
+<p>the new widget. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-new-in-dialog"></a><h3>gdaui_basic_form_new_in_dialog ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_basic_form_new_in_dialog (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *data_set</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *title</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *header</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget in the same way as <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-new" title="gdaui_basic_form_new ()"><code class="function">gdaui_basic_form_new()</code></a>
+and puts it into a <a href="/usr/share/gtk-doc/html/gtk3/GtkDialog.html#GtkDialog-struct"><span class="type">GtkDialog</span></a> widget. The returned dialog has the "Ok" and "Cancel" buttons
+which respectively return GTK_RESPONSE_ACCEPT and GTK_RESPONSE_REJECT.</p>
+<p>The <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget is attached to the dialog using the user property
+"form".</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-new-in-dialog.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data_set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>the parent window for the new dialog, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>title</p></td>
+<td class="parameter_description"><p>the title of the dialog window, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a helper text displayed at the top of the dialog, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-new-in-dialog.returns"></a><h4>Returns</h4>
+<p>the new <a href="/usr/share/gtk-doc/html/gtk3/GtkDialog.html#GtkDialog-struct"><span class="type">GtkDialog</span></a> widget. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-get-data-set"></a><h3>gdaui_basic_form_get_data_set ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gdaui_basic_form_get_data_set (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>Get a pointer to the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object which
+is modified by <em class="parameter"><code>form</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-data-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-data-set.returns"></a><h4>Returns</h4>
+<p>a pointer to the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-is-valid"></a><h3>gdaui_basic_form_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_basic_form_is_valid (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>Tells if the form can be used as-is (if all the parameters do have some valid values)</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-is-valid.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the form is valid</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-has-changed"></a><h3>gdaui_basic_form_has_changed ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_basic_form_has_changed (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>Tells if the form has had at least on entry changed since <em class="parameter"><code>form</code></em>
+ was created or
+<a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-as-reference" title="gdaui_basic_form_set_as_reference ()"><code class="function">gdaui_basic_form_set_as_reference()</code></a> has been called.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-has-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-has-changed.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if one entry has changed at least</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-reset"></a><h3>gdaui_basic_form_reset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_reset (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>Resets all the entries in the form to their
+original values</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-reset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-set-as-reference"></a><h3>gdaui_basic_form_set_as_reference ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_set_as_reference (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>Tells <em class="parameter"><code>form</code></em>
+ that the current values in the different entries are
+to be considered as the original values for all the entries; the immediate
+consequence is that any sub-sequent call to <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-has-changed" title="gdaui_basic_form_has_changed ()"><code class="function">gdaui_basic_form_has_changed()</code></a>
+will return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> (of course until any entry is changed).</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-set-as-reference.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-entry-set-visible"></a><h3>gdaui_basic_form_entry_set_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_entry_set_visible (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> show</code></em>);</pre>
+<p>Shows or hides the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> in <em class="parameter"><code>form</code></em>
+ which corresponds to the
+<em class="parameter"><code>holder</code></em>
+ data holder</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-entry-set-visible.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>show</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to show the data entry, and to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to hide it</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-entry-grab-focus"></a><h3>gdaui_basic_form_entry_grab_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_entry_grab_focus (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Makes the data entry corresponding to <em class="parameter"><code>holder</code></em>
+ grab the focus for the window it's in. If <em class="parameter"><code>holder</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+then the focus is on the first entry which needs attention.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-entry-grab-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-entry-set-editable"></a><h3>gdaui_basic_form_entry_set_editable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_entry_set_editable (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);</pre>
+<p>Sets the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> in <em class="parameter"><code>form</code></em>
+ which corresponds to the
+<em class="parameter"><code>holder</code></em>
+ parameter editable or not. If <em class="parameter"><code>holder</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then all the parameters
+are concerned.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-entry-set-editable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object; or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>editable</p></td>
+<td class="parameter_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if corresponding data entry must be editable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-set-entries-to-default"></a><h3>gdaui_basic_form_set_entries_to_default ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_set_entries_to_default
+                               (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>);</pre>
+<p>For each entry in the form, sets it to a default value if it is possible to do so.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-set-entries-to-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-get-entry-widget"></a><h3>gdaui_basic_form_get_entry_widget ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_basic_form_get_entry_widget (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Get the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> in <em class="parameter"><code>form</code></em>
+ which corresponds to the <em class="parameter"><code>holder</code></em>
+ place.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-entry-widget.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-entry-widget.returns"></a><h4>Returns</h4>
+<p>the requested widget, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-get-label-widget"></a><h3>gdaui_basic_form_get_label_widget ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_basic_form_get_label_widget (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Get the label in <em class="parameter"><code>form</code></em>
+ which corresponds to the <em class="parameter"><code>holder</code></em>
+ holder.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-label-widget.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-label-widget.returns"></a><h4>Returns</h4>
+<p>the requested widget, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-set-layout-from-file"></a><h3>gdaui_basic_form_set_layout_from_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_set_layout_from_file (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *file_name</code></em>,
+                                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *form_name</code></em>);</pre>
+<p>Sets a form layout according an XML description contained in <em class="parameter"><code>file_name</code></em>
+, for the form identified
+by the <em class="parameter"><code>form_name</code></em>
+ name (as an XML layout file can contain the descriptions of several forms and grids).</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-set-layout-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file_name</p></td>
+<td class="parameter_description"><p>XML file name to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>form_name</p></td>
+<td class="parameter_description"><p>the name of the form to use, in <em class="parameter"><code>file_name</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-get-place-holder"></a><h3>gdaui_basic_form_get_place_holder ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_basic_form_get_place_holder (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *placeholder_id</code></em>);</pre>
+<p>Retreives a pointer to a place holder widget. This feature is only available if a specific
+layout has been defined for <em class="parameter"><code>form</code></em>
+ using <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-set-layout-from-file" title="gdaui_basic_form_set_layout_from_file ()"><code class="function">gdaui_basic_form_set_layout_from_file()</code></a>.</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-place-holder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>placeholder_id</p></td>
+<td class="parameter_description"><p>the name of the requested place holder</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-basic-form-get-place-holder.returns"></a><h4>Returns</h4>
+<p>a pointer to the requested place holder, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-add-to-size-group"></a><h3>gdaui_basic_form_add_to_size_group ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_add_to_size_group (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkSizeGroup.html#GtkSizeGroup-struct"><span class="type">GtkSizeGroup</span></a> *size_group</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdauiBasicForm.html#GdauiBasicFormPart" title="enum GdauiBasicFormPart"><span class="type">GdauiBasicFormPart</span></a> part</code></em>);</pre>
+<p>Add <em class="parameter"><code>form</code></em>
+'s widgets specified by <em class="parameter"><code>part</code></em>
+ to <em class="parameter"><code>size_group</code></em>
+
+(the widgets can then be removed using <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-remove-from-size-group" title="gdaui_basic_form_remove_from_size_group ()"><code class="function">gdaui_basic_form_remove_from_size_group()</code></a>).</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-add-to-size-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size_group</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkSizeGroup.html#GtkSizeGroup-struct"><span class="type">GtkSizeGroup</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>part</p></td>
+<td class="parameter_description"><p>specifies which widgets in <em class="parameter"><code>form</code></em>
+are concerned</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-remove-from-size-group"></a><h3>gdaui_basic_form_remove_from_size_group ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_remove_from_size_group
+                               (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkSizeGroup.html#GtkSizeGroup-struct"><span class="type">GtkSizeGroup</span></a> *size_group</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdauiBasicForm.html#GdauiBasicFormPart" title="enum GdauiBasicFormPart"><span class="type">GdauiBasicFormPart</span></a> part</code></em>);</pre>
+<p>Removes <em class="parameter"><code>form</code></em>
+'s widgets specified by <em class="parameter"><code>part</code></em>
+ from <em class="parameter"><code>size_group</code></em>
+
+(the widgets must have been added using <a class="link" href="GdauiBasicForm.html#gdaui-basic-form-add-to-size-group" title="gdaui_basic_form_add_to_size_group ()"><code class="function">gdaui_basic_form_add_to_size_group()</code></a>).</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-remove-from-size-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size_group</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkSizeGroup.html#GtkSizeGroup-struct"><span class="type">GtkSizeGroup</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>part</p></td>
+<td class="parameter_description"><p>specifies which widgets in <em class="parameter"><code>form</code></em>
+are concerned</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-basic-form-set-unknown-color"></a><h3>gdaui_basic_form_set_unknown_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_basic_form_set_unknown_color (<em class="parameter"><code><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> red</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> green</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> blue</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> alpha</code></em>);</pre>
+<p>Defines the color to be used when <em class="parameter"><code>form</code></em>
+ displays an invalid value. Any value not
+between 0. and 1. will result in the default hard coded values to be used (grayish).</p>
+<div class="refsect3">
+<a name="gdaui-basic-form-set-unknown-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>red</p></td>
+<td class="parameter_description"><p>the red component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>green</p></td>
+<td class="parameter_description"><p>the green component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blue</p></td>
+<td class="parameter_description"><p>the blue component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alpha</p></td>
+<td class="parameter_description"><p>the alpha component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.3</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiBasicForm-struct"></a><h3>struct GdauiBasicForm</h3>
+<pre class="programlisting">struct GdauiBasicForm;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicFormPart"></a><h3>enum GdauiBasicFormPart</h3>
+<div class="refsect3">
+<a name="GdauiBasicFormPart.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-BASIC-FORM-LABELS:CAPS"></a>GDAUI_BASIC_FORM_LABELS</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-BASIC-FORM-ENTRIES:CAPS"></a>GDAUI_BASIC_FORM_ENTRIES</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdauiBasicForm--can-expand-v"></a><h3>The <code class="literal">“can-expand-v”</code> property</h3>
+<pre class="programlisting">  “can-expand-v”             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm--entries-auto-default"></a><h3>The <code class="literal">“entries-auto-default”</code> property</h3>
+<pre class="programlisting">  “entries-auto-default”     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm--headers-sensitive"></a><h3>The <code class="literal">“headers-sensitive”</code> property</h3>
+<pre class="programlisting">  “headers-sensitive”        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Deprecated</p>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm--paramlist"></a><h3>The <code class="literal">“paramlist”</code> property</h3>
+<pre class="programlisting">  “paramlist”                <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm--show-actions"></a><h3>The <code class="literal">“show-actions”</code> property</h3>
+<pre class="programlisting">  “show-actions”             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm--xml-layout"></a><h3>The <code class="literal">“xml-layout”</code> property</h3>
+<pre class="programlisting">  “xml-layout”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdauiBasicForm</p>
+<p>Flags: Write</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiBasicForm.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiBasicForm-activated"></a><h3>The <code class="literal">“activated”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Emitted when the use has activated any of the <span class="type">GdaDataEntry</span> widget
+in <em class="parameter"><code>form</code></em>
+.</p>
+<div class="refsect3">
+<a name="GdauiBasicForm-activated.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm-holder-changed"></a><h3>The <code class="literal">“holder-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form,
+               <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>      *param,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>        is_user_modif,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Emitted when a GdaHolder changed in <em class="parameter"><code>form</code></em>
+</p>
+<div class="refsect3">
+<a name="GdauiBasicForm-holder-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>param</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> that changed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_user_modif</p></td>
+<td class="parameter_description"><p>TRUE if the modification has been initiated by a user modification</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm-layout-changed"></a><h3>The <code class="literal">“layout-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Emitted when the form's layout changes</p>
+<div class="refsect3">
+<a name="GdauiBasicForm-layout-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiBasicForm-populate-popup"></a><h3>The <code class="literal">“populate-popup”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a> *form,
+               <a href="/usr/share/gtk-doc/html/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a>        *menu,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Connect this signal and modify the popup menu.</p>
+<div class="refsect3">
+<a name="GdauiBasicForm-populate-popup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>form</p></td>
+<td class="parameter_description"><p><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm"><span class="type">GdauiBasicForm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>menu</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a> to modify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+<p class="since">Since: 4.2.4</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

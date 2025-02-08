@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Assembling all the parts: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_providers.html" title="Part VIII. Databases providers for developers">
+<link rel="prev" href="libgda-5.0-GdaSqlStatement.html" title="GdaSqlStatement">
+<link rel="next" href="psupport.html" title="Providers' support API">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_providers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-GdaSqlStatement.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="psupport.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-provider-pack"></a>Assembling all the parts</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="libgda-provider-pack.html#id-1.9.11.4">libmain.c</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.4">plugin_init()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.5">plugin_get_name()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.6">plugin_get_description()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.7">plugin_get_dsn_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.8">plugin_get_auth_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.9">plugin_create_provider()</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+    A database provider is in fact a shared library which is loaded when <span class="application">Libgda</span> is initialized. The skeleton implementations
+    in <code class="filename">providers/skel-implementation</code> propose the following files layout (some of the files
+    are not required for virtual providers).
+  </p>
+<p> Of course this files layout is not required, but make it easy for maintenance. In the following list,
+    the filenames here are the one for the "Capi" provider, and each provider should rename them:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><code class="filename">gda-capi.h</code>: contains the provider name, the include files necessary to use the API and the
+	  declaration of the provider's specific connection data</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-provider.[ch]</code>: are the header and implementation files for the object
+	  inheriting the <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> object. This object must implement its
+	  <a class="link" href="libgda-provider-class.html" title="Virtual methods for providers">virtual methods</a>.</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-recordset.[ch]</code>: are the header and implementation files for the object
+	  inheriting the <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> object. This object must implement its
+	  <a class="link" href="libgda-provider-recordset.html" title="Virtual methods for recordsets">virtual methods</a>.</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-ddl.[ch]</code>: are the files implementing the DDL queries</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-parser.[ch]</code>: are the header and implementation files 
+	  for the object implementing a specific parser,
+	  inheriting <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a>, see the PostgreSQL provider's implementation for 
+	  example.</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-pstmt.[ch]</code>: are the header and implementation files for the object
+      representing prepared statement and inheriting <a class="link" href="GdaPStmt.html" title="GdaPstmt">GdaPStmt</a></p></li>
+<li class="listitem"><p><code class="filename">gda-capi-blob-op.[ch]</code>: are the header and implementation files for the object
+	  inheriting the <a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlopOp</a> object. This object must implement its
+	  <a class="link" href="libgda-provider-blobop.html" title="Virtual methods for Blob operations">virtual methods</a>.</p></li>
+<li class="listitem"><p><code class="filename">gda-capi-meta.[ch]</code>: are the files where the meta-data information extraction
+      is implemented.</p></li>
+<li class="listitem"><p><code class="filename">libmain.c</code>: file to make it possible for <span class="application">Libgda</span> to identify the provider.</p></li>
+<li class="listitem"><p><code class="filename">capi_specs_dsn.xml.in</code>: file where the connection parameters are described, 
+	  before being translated</p></li>
+<li class="listitem"><p><code class="filename">libgda-capi-5.0.pc.in</code>: file to be used by <span class="command"><strong>pkg-config</strong></span> to identify
+	  the provider, before being computed by the <span class="command"><strong>configure</strong></span> script.</p></li>
+<li class="listitem"><p>other .xml.in files: DDL queries' parameters, before translation</p></li>
+</ul></div>
+<p>
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.9.11.4"></a>libmain.c</h2></div></div></div>
+<p>
+      Once the shared library implementing the provider is loaded (and
+      all the necessary dependencies are also loaded), <span class="application">Libgda</span> tries to locate some functions to identify the provider (if any of
+      these function is missing, then the DLL is unloaded and the provider is not availaibe).
+    </p>
+<p>
+      The skeleton implementations in <code class="filename">providers/skel-implementation</code> propose to implement those
+      functions in a <code class="filename">libmain.c</code> file. The functions are the following ones:
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.4"></a>plugin_init()</h3></div></div></div>
+<p>This function initializes the plugin; it has a single argument which is the path where the provider is.
+	As the module can be unloaded, any static data allocated here must be freed when the module is unloaded,
+	in a <a href="/usr/share/gtk-doc/html/glib/glib-Dynamic-Loading-of-Modules.html#GModuleUnload">g_module_unload()</a> function. If the module must not be
+	unloaded, it must be made resident using <a href="/usr/share/gtk-doc/html/glib/glib-Dynamic-Loading-of-Modules.html#g-module-make-resident">g_module_make_resident()</a>, 
+	in a <a href="/usr/share/gtk-doc/html/glib/glib-Dynamic-Loading-of-Modules.html#GModuleCheckInit">g_module_check_init()</a> function</p>
+<p>Note that after a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> object has been 
+	created (ie after plugin_create_provider() has
+	been called once), the module will not be unloaded anymore.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.5"></a>plugin_get_name()</h3></div></div></div>
+<p>This funtion returns the name of the provider, it <span class="emphasis"><em>must</em></span> return the same string as what the
+	<a class="link" href="ch44s03.html#prov-get-name" title="get_name() - mandatory">get_name()</a>'s provider's virtual method returns.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.6"></a>plugin_get_description()</h3></div></div></div>
+<p>This funtion returns a description of the provider.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.7"></a>plugin_get_dsn_spec()</h3></div></div></div>
+<p>This function returns a description of the parameters which have or can be set when opening a connection. This
+	description uses an XML syntax and is usually stored in a separate XML file (for easier translation).</p>
+<p>Here is an example, when only one "DB_NAME" parameter is required:
+	</p>
+<pre class="programlisting">
+&lt;?xml version="1.0"?&gt;
+&lt;data-set-spec&gt;
+  &lt;parameters&gt;
+    &lt;parameter id="DB_NAME" _name="Database name" _descr="The name of a database to use" gdatype="gchararray" nullok="FALSE"/&gt;
+  &lt;/parameters&gt;
+&lt;/data-set-spec&gt;
+	</pre>
+<p>
+	Note that the the attributes which have a name starting with an underscore should be translated (see the
+	<code class="filename">Makefile.am</code> file for some example on ho this is done).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.8"></a>plugin_get_auth_spec()</h3></div></div></div>
+<p>
+	This function returns a description of the authentication information required by the provider. If the
+	only information is a username/password pair, then it is not necessary to implement that function.
+      </p>
+<p>
+	However, if a username is required, then it must be name "USERNAME", and if a password is required,
+	it must be named "PASSWORD".
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.11.4.9"></a>plugin_create_provider()</h3></div></div></div>
+<p>This function actually instantiates a provider object and returns it.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

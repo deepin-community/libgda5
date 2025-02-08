@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="table-insert-data" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Menyisipkan data dalam suatu tabel</title>
+  <p>Dari <link xref="schema-browser-perspective">perspektif peramban skema</link>, ketika suatu properti tabel ditampilkan dalam tab, gunakan menu <guiseq><gui>Tabel</gui><gui>Sisip data</gui></guiseq> untuk memunculkan popup yang memuat entri data bagi setiap kolom tabel tempat menyisipkan data.</p>
+  <p>Popup yang serupa dengan yang berikut akan muncul:</p>
+  <figure>
+    <title>Popup untuk menyisipkan data ke dalam tabel</title>
+    <desc>Suatu popup untuk menyisipkan data dalam suatu tabel</desc>
+    <media type="image" mime="image/png" src="figures/table-insert-data.png"/>
+  </figure>
+  <p>Poin penting disini adalah:</p>
+  <list>
+    <item><p>Ada satu entri data per kolom dalam tabel, dengan perkecualian (tak ditampilkan dalam gambar ini) ruas foreign key berganda yang untuknya ditampilkan widget pilihan drop down tunggal;</p></item>
+    <item><p>Setiap entri data memiliki tombol kecil di kanan yang memberi informasi tentang entri data yang berkaitan, dan mengijinkan Anda mereset nilai entri data ke nilai yang dipunyainya sebelum modifikasi dilakukan, menatanya ke NULL, atau ke nilai baku. Warna tombol memiliki arti berikut:</p>
+	<list>
+	  <item><p>Merah: berarti nilai kini dalam entri data tak valid</p></item>
+	  <item><p>Biru: berarti nilai kini dalam entri data tak dipakai dan nilai baku kolom akan dipakai sebagai gantinya (berguna misalnya untuk kolom yang dinaikkan otomatis)</p></item>
+	  <item><p>Hijau: berarti nilai kini dalam entri data adalah NULL</p></item>
+	  <item><p>Warna yang sama dengan sisa UI: berarti situasi di atas tak ada yang berlaku</p></item>
+	</list>
+    </item>
+    <item><p>Kolom yang menjadi foreign key bagi tabel lain ditampilkan sebagai kotak kombo drop down dimana Anda hanya dapat memilih diantara nilai-nilai dalam tabel yang diacu (petunjuk: untuk menyegarkan daftar nilai Anda mesti menutup dialog pop up dan membuka ulang);</p></item>
+  </list>
+</page>

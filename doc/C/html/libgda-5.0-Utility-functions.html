@@ -1,0 +1,936 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Utility functions: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="misc.html" title="Miscellaneous">
+<link rel="prev" href="misc.html" title="Miscellaneous">
+<link rel="next" href="libgda-5.0-Logging.html" title="Logging">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Utility-functions.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="misc.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="misc.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Logging.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Utility-functions"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Utility-functions.top_of_page"></a>Utility functions</span></h2>
+<p>Utility functions — Utility functions</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Utility-functions.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Utility-functions.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-to-string" title="gda_g_type_to_string ()">gda_g_type_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-from-string" title="gda_g_type_from_string ()">gda_g_type_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-default-escape-string" title="gda_default_escape_string ()">gda_default_escape_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-default-unescape-string" title="gda_default_unescape_string ()">gda_default_unescape_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-identifier-hash" title="gda_identifier_hash ()">gda_identifier_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-identifier-equal" title="gda_identifier_equal ()">gda_identifier_equal</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-completion-list-get" title="gda_completion_list_get ()">gda_completion_list_get</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-rfc1738-encode" title="gda_rfc1738_encode ()">gda_rfc1738_encode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-rfc1738-decode" title="gda_rfc1738_decode ()">gda_rfc1738_decode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-dsn-split" title="gda_dsn_split ()">gda_dsn_split</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-connection-string-split" title="gda_connection_string_split ()">gda_connection_string_split</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-date" title="gda_parse_iso8601_date ()">gda_parse_iso8601_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-time" title="gda_parse_iso8601_time ()">gda_parse_iso8601_time</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-timestamp" title="gda_parse_iso8601_timestamp ()">gda_parse_iso8601_timestamp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-formatted-date" title="gda_parse_formatted_date ()">gda_parse_formatted_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-formatted-time" title="gda_parse_formatted_time ()">gda_parse_formatted_time</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-formatted-timestamp" title="gda_parse_formatted_timestamp ()">gda_parse_formatted_timestamp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Utility-functions.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Utility-functions.description"></a><h2>Description</h2>
+<p>Some useful functions.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Utility-functions.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-g-type-to-string"></a><h3>gda_g_type_to_string ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_g_type_to_string (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Converts a GType to its string representation (use <a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-from-string" title="gda_g_type_from_string ()"><code class="function">gda_g_type_from_string()</code></a> for the
+operation in the other direction).</p>
+<p>This function wraps <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#g-type-name"><code class="function">g_type_name()</code></a> but for common types it provides an easier to
+understand and remember name. For Example the G_TYPE_STRING is converted to "string"
+whereas <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#g-type-name"><code class="function">g_type_name()</code></a> converts it to "gchararray".</p>
+<div class="refsect3">
+<a name="gda-g-type-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>Type to convert from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-g-type-to-string.returns"></a><h4>Returns</h4>
+<p> the GDA's string representing the given <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> or the name
+returned by <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#g-type-name"><span class="type">g_type_name</span></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-g-type-from-string"></a><h3>gda_g_type_from_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+gda_g_type_from_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Converts a named type to ts GType type (also see the <a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-to-string" title="gda_g_type_to_string ()"><code class="function">gda_g_type_to_string()</code></a> function).</p>
+<p>This function is a wrapper around the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#g-type-from-name"><code class="function">g_type_from_name()</code></a> function, but also recognizes
+some type synonyms such as:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"int" for G_TYPE_INT</p></li>
+<li class="listitem"><p>"uint" for G_TYPE_UINT</p></li>
+<li class="listitem"><p>"int64" for G_TYPE_INT64</p></li>
+<li class="listitem"><p>"uint64" for G_TYPE_UINT64</p></li>
+<li class="listitem"><p>"char" for G_TYPE_CHAR</p></li>
+<li class="listitem"><p>"uchar" for G_TYPE_UCHAR</p></li>
+<li class="listitem"><p>"short" for GDA_TYPE_SHORT</p></li>
+<li class="listitem"><p>"ushort" for GDA_TYPE_USHORT</p></li>
+<li class="listitem"><p>"string" for G_TYPE_STRING</p></li>
+<li class="listitem"><p>"date" for G_TYPE_DATE</p></li>
+<li class="listitem"><p>"time" for GDA_TYPE_TIME</p></li>
+<li class="listitem"><p>"timestamp" for GDA_TYPE_TIMESTAMP</p></li>
+<li class="listitem"><p>"boolean" for G_TYPE_BOOLEAN</p></li>
+<li class="listitem"><p>"blob" for GDA_TYPE_BLOB</p></li>
+<li class="listitem"><p>"binary" for GDA_TYPE_BINARY</p></li>
+<li class="listitem"><p>"null" for GDA_TYPE_NULL</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-g-type-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the name of a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>, as returned by <a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-to-string" title="gda_g_type_to_string ()"><code class="function">gda_g_type_to_string()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-g-type-from-string.returns"></a><h4>Returns</h4>
+<p> the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> represented by the given <em class="parameter"><code>str</code></em>
+, or <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#G-TYPE-INVALID:CAPS"><span class="type">G_TYPE_INVALID</span></a> if not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-default-escape-string"></a><h3>gda_default_escape_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_default_escape_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Escapes <em class="parameter"><code>string</code></em>
+ to make it understandable by a DBMS. The escape method is very common and replaces any
+occurrence of "'" with "''" and "\" with "\"</p>
+<div class="refsect3">
+<a name="gda-default-escape-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>string to escape</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-default-escape-string.returns"></a><h4>Returns</h4>
+<p> a new string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-default-unescape-string"></a><h3>gda_default_unescape_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_default_unescape_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Do the reverse of <a class="link" href="libgda-5.0-Utility-functions.html#gda-default-escape-string" title="gda_default_escape_string ()"><code class="function">gda_default_escape_string()</code></a>: transforms any "''" into "'", any
+"\" into "\" and any "\'" into "'".</p>
+<div class="refsect3">
+<a name="gda-default-unescape-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>string to unescape</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-default-unescape-string.returns"></a><h4>Returns</h4>
+<p> a new unescaped string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> in an error was found in <em class="parameter"><code>string</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-identifier-hash"></a><h3>gda_identifier_hash ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_identifier_hash (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>computes a hash string from <em class="parameter"><code>id</code></em>
+, to be used in hash tables as a <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashFunc"><span class="type">GHashFunc</span></a></p>
+<div class="refsect3">
+<a name="gda-identifier-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>an identifier string</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-identifier-hash.returns"></a><h4>Returns</h4>
+<p> a new hash</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-identifier-equal"></a><h3>gda_identifier_equal ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_identifier_equal (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id1</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id2</code></em>);</pre>
+<p>Does the same as strcmp(<em class="parameter"><code>id1</code></em>
+, <em class="parameter"><code>id2</code></em>
+), but handles the case where id1 and/or id2 are enclosed in double quotes.
+can also be used in hash tables as a <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GEqualFunc"><span class="type">GEqualFunc</span></a>.</p>
+<div class="refsect3">
+<a name="gda-identifier-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>id1</p></td>
+<td class="parameter_description"><p>an identifier string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id2</p></td>
+<td class="parameter_description"><p>an identifier string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-identifier-equal.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>id1</code></em>
+and <em class="parameter"><code>id2</code></em>
+are equal.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-completion-list-get"></a><h3>gda_completion_list_get ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+gda_completion_list_get (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> start</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> end</code></em>);</pre>
+<p>Creates an array of strings (terminated by a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) corresponding to possible completions.
+If no completion is available, then the returned array contains just one NULL entry, and
+if it was not possible to try to compute a completions list, then <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned.</p>
+<div class="refsect3">
+<a name="gda-completion-list-get.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql</p></td>
+<td class="parameter_description"><p>a partial SQL statement which is the context of the completion proposal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>start</p></td>
+<td class="parameter_description"><p>starting position within <em class="parameter"><code>sql</code></em>
+of the "token" to complete (starts at 0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>end</p></td>
+<td class="parameter_description"><p>ending position within <em class="parameter"><code>sql</code></em>
+of the "token" to complete</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-completion-list-get.returns"></a><h4>Returns</h4>
+<p>a new array of strings, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (use <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a> to free the returned array). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-rfc1738-encode"></a><h3>gda_rfc1738_encode ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_rfc1738_encode (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Encodes <em class="parameter"><code>string</code></em>
+ using the RFC 1738 recommendations: the</p>
+<code class="constant">&lt;&gt;"#%{}|\^~[]'`;/?:@=&amp;</code> and space characters are replaced by 
+<code class="constant">"%<code class="literal">ab</code>"</code> where
+<code class="constant">ab</code> is the hexadecimal number corresponding to the character.
+<div class="refsect3">
+<a name="gda-rfc1738-encode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string to encode </p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-rfc1738-encode.returns"></a><h4>Returns</h4>
+<p>a new string. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-rfc1738-decode"></a><h3>gda_rfc1738_decode ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_rfc1738_decode (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Decodes <em class="parameter"><code>string</code></em>
+ using the RFC 1738 recommendations: the</p>
+<code class="constant">&lt;&gt;"#%{}|\^~[]'`;/?:@=&amp;</code> and space characters are replaced by 
+<code class="constant">"%<code class="literal">ab</code>"</code> where
+<code class="constant">ab</code> is the hexadecimal number corresponding to the character.
+<p><em class="parameter"><code>string</code></em>
+ should respect the RFC 1738 encoding. If this is not the case (for example if there
+is a "<code class="literal">2z</code>" because 2z is not an hexadecimal value), then the part with the problem
+is not decoded, and the function returns FALSE.</p>
+<p><em class="parameter"><code>string</code></em>
+ is decoded in place, no new string gets created.</p>
+<div class="refsect3">
+<a name="gda-rfc1738-decode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string to decode</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-rfc1738-decode.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-dsn-split"></a><h3>gda_dsn_split ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_dsn_split (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>,
+               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_dsn</code></em>,
+               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_username</code></em>,
+               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_password</code></em>);</pre>
+<p>Extract the DSN, username and password from <em class="parameter"><code>string</code></em>
+. in <em class="parameter"><code>string</code></em>
+, the various parts are strings
+which are expected to be encoded using an RFC 1738 compliant encoding. If they are specified, 
+the returned username and password strings are correctly decoded.</p>
+<p><em class="parameter"><code>out_username</code></em>
+ and <em class="parameter"><code>out_password</code></em>
+ may be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> depending on <em class="parameter"><code>string</code></em>
+'s format.</p>
+<div class="refsect3">
+<a name="gda-dsn-split.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string in the "[&lt;username&gt;[:&lt;password&gt;]@]&lt;DSN&gt;" form</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_dsn</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;DSN&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_username</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;username&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_password</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;password&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-string-split"></a><h3>gda_connection_string_split ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_connection_string_split (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_cnc_params</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_provider</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_username</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_password</code></em>);</pre>
+<p>Extract the provider, connection parameters, username and password from <em class="parameter"><code>string</code></em>
+. 
+in <em class="parameter"><code>string</code></em>
+, the various parts are strings
+which are expected to be encoded using an RFC 1738 compliant encoding. If they are specified, 
+the returned provider, username and password strings are correctly decoded.</p>
+<p>For example all the following connection strings:</p>
+<pre class="programlisting">
+PostgreSQL://meme:pass@DB_NAME=mydb;HOST=server
+PostgreSQL://meme@DB_NAME=mydb;HOST=server;PASSWORD=pass
+PostgreSQL://meme@DB_NAME=mydb;PASSWORD=pass;HOST=server
+PostgreSQL://meme@PASSWORD=pass;DB_NAME=mydb;HOST=server
+PostgreSQL://DB_NAME=mydb;HOST=server;USERNAME=meme;PASSWORD=pass
+PostgreSQL://DB_NAME=mydb;HOST=server;PASSWORD=pass;USERNAME=meme
+PostgreSQL://DB_NAME=mydb;USERNAME=meme;PASSWORD=pass;HOST=server
+PostgreSQL://PASSWORD=pass;USERNAME=meme;DB_NAME=mydb;HOST=server
+PostgreSQL://:pass@USERNAME=meme;DB_NAME=mydb;HOST=server
+PostgreSQL://:pass@DB_NAME=mydb;HOST=server;USERNAME=meme</pre>
+<p>will return the following new strings (double quotes added here to delimit strings):</p>
+<pre class="programlisting">
+out_cnc_params: "DB_NAME=mydb;HOST=server"
+out_provider: "PostgreSQL"
+out_username: "meme"
+out_password: "pass"</pre>
+<div class="refsect3">
+<a name="gda-connection-string-split.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string in the "&amp;lt;provider&amp;gt;://@]&lt;connection_params&gt;" form</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_cnc_params</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;connection_params&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_provider</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;provider&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_username</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;username&gt; part</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_password</p></td>
+<td class="parameter_description"><p>a place to store the new string containing the &lt;password&gt; part, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-iso8601-date"></a><h3>gda_parse_iso8601_date ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_iso8601_date (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a> *gdate</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Extracts date parts from <em class="parameter"><code>value</code></em>
+, and sets <em class="parameter"><code>gdate</code></em>
+'s contents</p>
+<p>Accepted date format is "YYYY-MM-DD" (more or less than 4 digits for years and
+less than 2 digits for month and day are accepted). Years must be in the 1-65535 range,
+a limitation imposed by <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a>.</p>
+<div class="refsect3">
+<a name="gda-parse-iso8601-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>gdate</p></td>
+<td class="parameter_description"><p>a pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-iso8601-date.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+has been sucessfuly parsed as a valid date (see <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#g-date-valid"><code class="function">g_date_valid()</code></a>).</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-iso8601-time"></a><h3>gda_parse_iso8601_time ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_iso8601_time (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> *timegda</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Extracts time parts from <em class="parameter"><code>value</code></em>
+, and sets <em class="parameter"><code>timegda</code></em>
+'s contents</p>
+<p>Accepted date format is "HH:MM:SS.ms" where TZ is +hour or -hour</p>
+<div class="refsect3">
+<a name="gda-parse-iso8601-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>timegda</p></td>
+<td class="parameter_description"><p>a pointer to a <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-iso8601-time.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-iso8601-timestamp"></a><h3>gda_parse_iso8601_timestamp ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_iso8601_timestamp (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> *timestamp</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Extracts date and time parts from <em class="parameter"><code>value</code></em>
+, and sets <em class="parameter"><code>timestamp</code></em>
+'s contents</p>
+<p>Accepted date format is "YYYY-MM-DD HH:MM:SS.ms" where TZ is +hour or -hour</p>
+<div class="refsect3">
+<a name="gda-parse-iso8601-timestamp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GdaTimeStamp</span> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-iso8601-timestamp.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+has been sucessfuly parsed as a valid timestamp (see <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#g-date-valid"><code class="function">g_date_valid()</code></a>)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-formatted-date"></a><h3>gda_parse_formatted_date ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_formatted_date (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a> *gdate</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> first</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> second</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> third</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> sep</code></em>);</pre>
+<p>This function is similar to <a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-date" title="gda_parse_iso8601_date ()"><code class="function">gda_parse_iso8601_date()</code></a> (with <em class="parameter"><code>first</code></em>
+ being <em class="parameter"><code>G_DATE_YEAR</code></em>
+, <em class="parameter"><code>second</code></em>
+ being <em class="parameter"><code>G_DATE_MONTH</code></em>
+,
+<em class="parameter"><code>third</code></em>
+ being <em class="parameter"><code>G_DATE_DAY</code></em>
+ and <em class="parameter"><code>sep</code></em>
+ being '-') but allows one to specify the expected date format.</p>
+<div class="refsect3">
+<a name="gda-parse-formatted-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>gdate</p></td>
+<td class="parameter_description"><p>a pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string to be parsed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears first (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>second</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears second (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>third</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears third (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sep</p></td>
+<td class="parameter_description"><p>spcifies the expected separator character bewteen year, month and day (for example '-')</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-formatted-date.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+has been sucessfuly parsed as a valid date (see <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#g-date-valid"><code class="function">g_date_valid()</code></a>).</p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-formatted-time"></a><h3>gda_parse_formatted_time ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_formatted_time (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> *timegda</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> sep</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-parse-formatted-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>timegda</p></td>
+<td class="parameter_description"><p>a pointer to a <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sep</p></td>
+<td class="parameter_description"><p>the time separator, usually ':'. If equal to <em class="parameter"><code>0</code></em>
+, then the expexted format will be HHMMSS...</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-formatted-time.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-parse-formatted-timestamp"></a><h3>gda_parse_formatted_timestamp ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_parse_formatted_timestamp (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> *timestamp</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> first</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> second</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> third</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> sep</code></em>);</pre>
+<p>This function is similar to <a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-timestamp" title="gda_parse_iso8601_timestamp ()"><code class="function">gda_parse_iso8601_timestamp()</code></a> (with <em class="parameter"><code>first</code></em>
+ being <em class="parameter"><code>G_DATE_YEAR</code></em>
+, <em class="parameter"><code>second</code></em>
+ being <em class="parameter"><code>G_DATE_MONTH</code></em>
+,
+<em class="parameter"><code>third</code></em>
+ being <em class="parameter"><code>G_DATE_DAY</code></em>
+ and <em class="parameter"><code>sep</code></em>
+ being '-') but allows one to specify the expected date format.</p>
+<div class="refsect3">
+<a name="gda-parse-formatted-timestamp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GdaTimeStamp</span> structure which will be filled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string to be parsed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears first (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>second</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears second (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>third</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> specifying which of year, month or day appears third (in the first bytes) in <em class="parameter"><code>value</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sep</p></td>
+<td class="parameter_description"><p>spcifies the expected separator character bewteen year, month and day (for example '-')</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-parse-formatted-timestamp.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>value</code></em>
+has been sucessfuly parsed as a valid date (see <a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#g-date-valid"><code class="function">g_date_valid()</code></a>).</p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

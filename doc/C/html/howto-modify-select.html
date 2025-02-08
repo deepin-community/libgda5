@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Modify the result of a SELECT command: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="howto.html" title="HOWTO for common tasks">
+<link rel="prev" href="howto-exec-select.html" title="Execute a SELECT command">
+<link rel="next" href="howto-exec-non-select.html" title="Execute an INSERT, UPDATE or DELETE command">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="howto.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="howto-exec-select.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="howto-exec-non-select.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="howto-modify-select"></a>Modify the result of a SELECT command</h2></div></div></div>
+<p>
+      The <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> data model (which is the data model returned
+      after the successful execution of a SELECT statement) is by default read-only, but can be made writable
+      after giving it information about:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>how to identify a single row in the modified table
+	    (the columns composing the primary key)</p></li>
+<li class="listitem"><p>which statements to execute when the data model's values are modified or some rows
+	    are inserted or removed</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      The following example illustrates this using a table created as (SQLite syntax):
+      CREATE TABLE customers (id integer NOT NULL PRIMARY KEY AUTOINCREMENT, name string NOT NULL, last_update timestamp NOT NULL, country string);, where we select all the rows where the "country" column is "SP" and we modify
+      only one row:
+      </p>
+<pre class="programlisting">
+GError *error = NULL;
+GdaDataModel *model;
+GdaStatement *stmt, *mod_stmt;
+GdaSet *params;
+GValue *value;
+
+/* create GdaDataSelect */
+stmt = stmt_from_string ("SELECT * FROM customers WHERE country = ##country::string");
+if (!gda_statement_get_parameters (stmt, &amp;params, &amp;error)) {
+   /* treat error */
+}
+if (! gda_set_set_holder_value (params, &amp;error, "country", "SP")) {
+   /* treat error */
+}
+model = gda_connection_statement_execute_select (cnc, stmt, params, &amp;error);
+g_object_unref (params);
+
+/* specify an UPDATE query */
+mod_stmt = stmt_from_string ("UPDATE customers SET name = ##+1::string, last_update = ##+2::timestamp WHERE id = ##-0::gint");
+if (!gda_data_select_set_modification_statement (GDA_DATA_SELECT (model), mod_stmt, &amp;error)) {
+   /* treat error */
+}
+
+/* Now modify the data model */
+g_value_set_string ((value = gda_value_new (G_TYPE_STRING)), "Jack");
+if (! check_set_value_at (model, 1, 0, value, cnc, stmt, NULL)) {
+   /* treat error */
+}
+gda_value_free (value);
+      </pre>
+<p>
+    </p>
+<p>
+      Note that in the code sample above, it would not have been possible to add or remove a row as no
+      INSERT or DELETE statement have been specified.
+    </p>
+<p>
+      Now, if the meta data associated to the connection is up to date (after having called
+      <a class="link" href="GdaConnection.html#gda-connection-update-meta-store" title="gda_connection_update_meta_store ()">gda_connection_update_meta_store()</a>), then the code
+      above can be simplified as (and as a side benefit, it would also be possible to add or remove rows):
+      </p>
+<pre class="programlisting">
+GError *error = NULL;
+GdaDataModel *model;
+GdaStatement *stmt;
+GdaSet *params;
+GValue *value;
+
+/* create GdaDataSelect */
+stmt = stmt_from_string ("SELECT * FROM customers WHERE country = ##country::string");
+if (!gda_statement_get_parameters (stmt, &amp;params, &amp;error)) {
+   /* treat error */
+}
+if (! gda_set_set_holder_value (params, &amp;error, "country", "SP")) {
+   /* treat error */
+}
+model = gda_connection_statement_execute_select (cnc, stmt, params, &amp;error);
+g_object_unref (params);
+
+/* specify that the data model can be writable */
+if (! gda_data_select_compute_modification_statements (GDA_DATA_SELECT (model), &amp;error)) {
+   /* treat error */
+}
+
+/* Now modify the data model */
+g_value_set_string ((value = gda_value_new (G_TYPE_STRING)), "Jack");
+if (! check_set_value_at (model, 1, 0, value, cnc, stmt, NULL)) {
+   /* treat error */
+}
+gda_value_free (value);
+      </pre>
+<p>
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

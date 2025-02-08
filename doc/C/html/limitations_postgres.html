@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>For PostgreSQL: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="limitations.html" title="Limitations">
+<link rel="prev" href="limitations_oracle.html" title="For Oracle">
+<link rel="next" href="limitations_sqlite.html" title="For SQLite">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="limitations.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="limitations_oracle.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="limitations_sqlite.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="limitations_postgres"></a>For PostgreSQL</h2></div></div></div>
+<p>
+      The following limitations apply to PostgreSQL databases accessed via Libgda:
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.12.5.3"></a>BLOB handling</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Postgres uses the "Oid" data type to internally store BLOBs, but this type is also used
+	      to store other information within the database. Libgda assumes that any column of type "Oid" represents a
+	      blob. If this is not the case, then you must cast it to the correct data type within your SQL query (for example
+	      as "SELECT oid::varchar FROM...")</p></li>
+<li class="listitem">
+<p><span class="application">Libgda</span> does not try to avoid orphaned BLOBs, to solve the problem of orphaned BLOBs, set up
+	      the "lo" extension from PostgreSQL's contrib, and/or use the "vacuumlo" also from the contrib.</p>
+<p>Note that in the future the PostgreSQL's provider will have an option to ensure that there are no
+	    orphaned BLOBs itself.</p>
+</li>
+<li class="listitem"><p>BLOB manipulations can only occur within a transaction, 
+	      so you should start a transaction before any operation
+	      on BLOBs, otherwise Libgda will automatically start one</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.12.5.4"></a>Last inserted row's values</h3></div></div></div>
+<p>
+	The <a class="link" href="GdaConnection.html#gda-connection-statement-execute-non-select" title="gda_connection_statement_execute_non_select ()">gda_connection_statement_execute_non_select()</a>'s
+	last_insert_row parameter will return a new <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a> object only if the table has OIDs
+	(to ensure this, the "WITH OIDS" option should be added at the end of a CREATE TABLE query).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.12.5.5"></a>Multi threaded environment</h3></div></div></div>
+<p>
+	If PostgreSQL was not compiled with the <code class="option">--enable-thread-safety</code> flag, 
+	then the database provider will only allow
+	connections to be opened from the thread which initializes <span class="application">Libgda</span>. Otherwise there is no limitation.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.12.5.6"></a>Statements execution</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>It is not possible to execute a SELECT statement with invalid parameters and
+	      with the GDA_STATEMENT_MODEL_ALLOW_NOPARAM flag if the GDA_STATEMENT_MODEL_CURSOR_FORWARD
+	      flag is also specified</p></li></ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.12.5.7"></a>Timezone information</h3></div></div></div>
+<p>
+	Timezone information associated with time and timestamp data types is not stored by PostgreSQL, so when executing
+	statements all the variables containing a time or timestamp information are converted to GMT (timezone 0) before
+	the execution happens. The consequence is that for example if a variable holds the "11:23:55+2" time (11 hours,
+	23 minutes and 55 seconds, at GMT + 2), then the actual time stored in the database will be "09:23:55", the same
+	time but GMT.
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

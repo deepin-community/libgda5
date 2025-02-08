@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="es">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+<title>La perspectiva del visor de esquemas</title>
+<p>Use la perspectiva del visor de esquemas para comprender la organización de la base de datos (esquema). Para cambiar a esta perspectiva, use el menú <guiseq><gui>Perspectiva</gui><gui>Visor de esquemas</gui></guiseq> o el atajo <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+<p>La perspectiva se divide en dos paneles horizontales: el panel de la izquierda para los favoritos definidos por el usuario, y el panel de la derecha que es el área de acción.</p>
+<figure>
+  <title>Vista predeterminada de la perspectiva del visor de esquemas</title>
+  <desc>La perspectiva predeterminada del visor de esquemas</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>La parte izquierda de la perspectiva lista los objetos de la base de datos favoritos o los diagramas. Una doble pulsación sobre un favorito abre sus propiedades en el panel derecho.</p>
+<p>El panel derecho se compone de distintos tipos de pestañas:</p>
+<list>
+  <item><p>una pestaña que lista todas las tablas y vistas de la base de datos, en una vista de <em>nube</em> donde las tablas con más relaciones que otras se muestran con una tipografía más grande; está pestaña está siempre presente</p></item>
+  <item><p>cero o más pestañas que representan las propiedades de una tabla o una vista: la lista de columnas, la lista de restricciones (claves primarias o externas y restricciones de unicidad), un <link xref="diagram">diagrama</link> que muestra las tablas relacionadas y un área para definir preferencias de visualización para los datos de cada columna</p></item>
+  <item><p>cero o más <link xref="diagram">diagramas</link> en los que se puede representar cualquier número de tablas, y donde están enlazadas usando sus relaciones (como restricciones de clave externa)</p></item>
+</list>
+
+<figure>
+  <title>Pestaña que muestra información sobre una tabla</title>
+  <desc>Ejemplo de información mostrada para cada tabla. Tenga en cuenta la diferencia entre las claves externas implementadas en la base de datos y las <link xref="declared-fk">claves externas declaradas</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>

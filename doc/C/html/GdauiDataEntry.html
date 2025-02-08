@@ -1,0 +1,926 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiDataEntry: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="libgda-5.0-UI-plugins.html" title="UI plugins">
+<link rel="next" href="GdauiDataStore.html" title="GdauiDataStore">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiDataEntry.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiDataEntry.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GdauiDataEntry.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiDataEntry.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-UI-plugins.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiDataStore.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiDataEntry"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiDataEntry.top_of_page"></a>GdauiDataEntry</span></h2>
+<p>GdauiDataEntry — Data entry widget</p>
+</td>
+<td class="gallery_image" valign="top" align="right"><img src="vi-data-entry.png"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiDataEntry.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-value-type" title="gdaui_data_entry_set_value_type ()">gdaui_data_entry_set_value_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-value-type" title="gdaui_data_entry_get_value_type ()">gdaui_data_entry_get_value_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-value" title="gdaui_data_entry_set_value ()">gdaui_data_entry_set_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-value" title="gdaui_data_entry_get_value ()">gdaui_data_entry_get_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-content-is-valid" title="gdaui_data_entry_content_is_valid ()">gdaui_data_entry_content_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-reference-value" title="gdaui_data_entry_set_reference_value ()">gdaui_data_entry_set_reference_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-reference-value" title="gdaui_data_entry_get_reference_value ()">gdaui_data_entry_get_reference_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-reference-current" title="gdaui_data_entry_set_reference_current ()">gdaui_data_entry_set_reference_current</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-default-value" title="gdaui_data_entry_set_default_value ()">gdaui_data_entry_set_default_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-attributes" title="gdaui_data_entry_set_attributes ()">gdaui_data_entry_set_attributes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Gda-Value.html#GdaValueAttribute" title="enum GdaValueAttribute"><span class="returnvalue">GdaValueAttribute</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-attributes" title="gdaui_data_entry_get_attributes ()">gdaui_data_entry_get_attributes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-handler" title="gdaui_data_entry_get_handler ()">gdaui_data_entry_get_handler</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-can-expand" title="gdaui_data_entry_can_expand ()">gdaui_data_entry_can_expand</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-editable" title="gdaui_data_entry_set_editable ()">gdaui_data_entry_set_editable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-get-editable" title="gdaui_data_entry_get_editable ()">gdaui_data_entry_get_editable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-grab-focus" title="gdaui_data_entry_grab_focus ()">gdaui_data_entry_grab_focus</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-unknown-color" title="gdaui_data_entry_set_unknown_color ()">gdaui_data_entry_set_unknown_color</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-contents-activated" title="The “contents-activated” signal">contents-activated</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-contents-modified" title="The “contents-modified” signal">contents-modified</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-contents-valid" title="The “contents-valid” signal">contents-valid</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-expand-changed" title="The “expand-changed” signal">expand-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-status-changed" title="The “status-changed” signal">status-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdauiDataEntry.html#GdauiDataEntry-struct" title="GdauiDataEntry">GdauiDataEntry</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> GdauiDataEntry
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GdauiDataEntry requires
+ <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.description"></a><h2>Description</h2>
+<p>The <span class="type">GdaUiDataEntry</span> is an interface for widgets (simple or complex)
+which lets the user view and/or modify a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p>This interface is implemented by widgets which feature data editing (usually composed of an editing
+area and a button to have some more control on the value being edited).
+The interface allows to control how the widget works and to query the value and the attributes
+of the data held by the widget.</p>
+<p>The widget can store the original value (to be able to tell if the value has been changed
+by the user) and a default value (which will be returned if the user explicitly forces the widget
+to be set to the default value).
+Control methods allow to set the type of value to be edited (the requested type must be
+compatible with what the widget can handle), set the value (which replaces the currently edited
+value), set the value and the original value (the value passed as argument is set and is also
+considered to be the original value).</p>
+<p><span class="type">GdaUiDataEntry</span> widgets are normally created using the <a class="link" href="libgda-5.0-UI-Utility-functions.html#gdaui-new-data-entry" title="gdaui_new_data_entry ()"><code class="function">gdaui_new_data_entry()</code></a> function.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-value-type"></a><h3>gdaui_data_entry_set_value_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_value_type (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Sets the type of value the GdauiDataEntry will handle. The type must be compatible with what
+the widget can handle.</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-value-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the data to be displayed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-value-type"></a><h3>gdaui_data_entry_get_value_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+gdaui_data_entry_get_value_type (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Fetch the type of data the GdauiDataEntry handles</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-value-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-value-type.returns"></a><h4>Returns</h4>
+<p> the GType type</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-value"></a><h3>gdaui_data_entry_set_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_value (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Push a value into the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a>. The value parameter must either be:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>of type GDA_TYPE_NULL (may be created using <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-null" title="gda_value_new_null ()"><code class="function">gda_value_new_null()</code></a>) to 
+     represent a NULL value (SQL NULL), or</p></li>
+<li class="listitem"><p>of type specified using <a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-value-type" title="gdaui_data_entry_set_value_type ()"><code class="function">gdaui_data_entry_set_value_type()</code></a>, or</p></li>
+<li class="listitem"><p>NULL to represent an undetermined value (usually an error)</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-value"></a><h3>gdaui_data_entry_get_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gdaui_data_entry_get_value (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Fetch the value held in the GdauiDataEntry widget. If the value is set to NULL,
+the returned value is of type GDA_TYPE_NULL. If the value is set to default,
+then the returned value is of type GDA_TYPE_NULL or is the default value if it
+has been provided to the widget (and is of the same type as the one provided by <em class="parameter"><code>de</code></em>
+).</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-value.returns"></a><h4>Returns</h4>
+<p>a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-content-is-valid"></a><h3>gdaui_data_entry_content_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_entry_content_is_valid (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="warning"><p><code class="literal">gdaui_data_entry_content_is_valid</code> has been deprecated since version 5.2 and should not be used in newly-written code.</p></div>
+<p>Tests the validity of <em class="parameter"><code>de</code></em>
+'s contents. The validity is a determined from:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the <em class="parameter"><code>de</code></em> widget itself if it is capable of doing it (depending on the implementation)</p></li>
+<li class="listitem"><p>the results of the "contents-valid" signal which can be connected from </p></li>
+</ul></div>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gdaui-data-entry-content-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-content-is-valid.returns"></a><h4>Returns</h4>
+<p> TRUE if <em class="parameter"><code>de</code></em>
+'s contents is valid</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-reference-value"></a><h3>gdaui_data_entry_set_reference_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_reference_value (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Push a value into the GdauiDataEntry in the same way as <a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-value" title="gdaui_data_entry_set_value ()"><code class="function">gdaui_data_entry_set_value()</code></a> but
+also sets this value as the reference value.</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-reference-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-reference-value"></a><h3>gdaui_data_entry_get_reference_value ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gdaui_data_entry_get_reference_value (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Fetch the reference value held in the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> widget</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-reference-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-reference-value.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> (not modifiable). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-reference-current"></a><h3>gdaui_data_entry_set_reference_current ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_reference_current
+                               (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Tells that the current value in <em class="parameter"><code>de</code></em>
+ is to be considered as the reference value</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-reference-current.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-default-value"></a><h3>gdaui_data_entry_set_default_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_default_value (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Sets the default value for the GdauiDataEntry which gets displayed when the
+user forces the default value. If it is not set then it is set to type GDA_TYPE_NULL.
+The value parameter must either be:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>NULL or of type GDA_TYPE_NULL, or</p></li>
+<li class="listitem"><p>of type specified using <a class="link" href="GdauiDataEntry.html#gdaui-data-entry-set-value-type" title="gdaui_data_entry_set_value_type ()"><code class="function">gdaui_data_entry_set_value_type()</code></a>.</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-default-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-attributes"></a><h3>gdaui_data_entry_set_attributes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_attributes (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                 <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaValueAttribute" title="enum GdaValueAttribute"><span class="type">GdaValueAttribute</span></a> attrs</code></em>,
+                                 <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaValueAttribute" title="enum GdaValueAttribute"><span class="type">GdaValueAttribute</span></a> mask</code></em>);</pre>
+<p>Sets the parameters of the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a>. Only the attributes corresponding to the
+mask are set, the other ones are ignored.</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-attributes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attrs</p></td>
+<td class="parameter_description"><p>the attributes to set (OR'ed between them)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mask</p></td>
+<td class="parameter_description"><p>the mask corresponding to the considered attributes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-attributes"></a><h3>gdaui_data_entry_get_attributes ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Gda-Value.html#GdaValueAttribute" title="enum GdaValueAttribute"><span class="returnvalue">GdaValueAttribute</span></a>
+gdaui_data_entry_get_attributes (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Retrieves the parameters of the GdauiDataEntry widget.</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-attributes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-attributes.returns"></a><h4>Returns</h4>
+<p> the OR'ed bits corresponding to the attributes.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-handler"></a><h3>gdaui_data_entry_get_handler ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gdaui_data_entry_get_handler (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Fetch the GdaDataHandler the GdauiDataEntry is using</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-handler.returns"></a><h4>Returns</h4>
+<p>the GdaDataHandler object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-can-expand"></a><h3>gdaui_data_entry_can_expand ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_entry_can_expand (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> horiz</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gdaui_data_entry_can_expand</code> has been deprecated since version 5.2 and should not be used in newly-written code.</p>
+<p>use the GtkWidget::hexpand, GtkWidget::wexpand or GtkWidget::expand properties</p>
+</div>
+<p>Used for the layout of <span class="type">GdaDataEntry</span> widgets in containers: queries if <em class="parameter"><code>de</code></em>
+ requires
+horizontal or vertical expansion, depending on <em class="parameter"><code>horiz</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-can-expand.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>horiz</p></td>
+<td class="parameter_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to query horizontal expansion requirements, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> for vertical</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-can-expand.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the widget requires expansion</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-editable"></a><h3>gdaui_data_entry_set_editable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_editable (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);</pre>
+<p>Set if <em class="parameter"><code>de</code></em>
+ can be modified or not by the user</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-editable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>editable</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to have an editable data entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-get-editable"></a><h3>gdaui_data_entry_get_editable ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_entry_get_editable (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>de</code></em>
+ can be edited by the user</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-editable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-entry-get-editable.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>de</code></em>
+is editable</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-grab-focus"></a><h3>gdaui_data_entry_grab_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_grab_focus (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>);</pre>
+<p>Makes <em class="parameter"><code>de</code></em>
+ grab the focus for the window it's in</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-grab-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-entry-set-unknown-color"></a><h3>gdaui_data_entry_set_unknown_color ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_entry_set_unknown_color (<em class="parameter"><code><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *de</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> red</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> green</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> blue</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> alpha</code></em>);</pre>
+<p>Defines the color to be used when <em class="parameter"><code>de</code></em>
+ displays an invalid value. Any value not
+between 0. and 1. will result in the default hard coded values to be used (grayish).</p>
+<div class="refsect3">
+<a name="gdaui-data-entry-set-unknown-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>de</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> object which implements the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>red</p></td>
+<td class="parameter_description"><p>the red component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>green</p></td>
+<td class="parameter_description"><p>the green component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blue</p></td>
+<td class="parameter_description"><p>the blue component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alpha</p></td>
+<td class="parameter_description"><p>the alpha component of a color</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.3</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiDataEntry-struct"></a><h3>GdauiDataEntry</h3>
+<pre class="programlisting">typedef struct _GdauiDataEntry GdauiDataEntry;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataEntry.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiDataEntry-contents-activated"></a><h3>The <code class="literal">“contents-activated”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *gdauidataentry,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataEntry-contents-modified"></a><h3>The <code class="literal">“contents-modified”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *gdauidataentry,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataEntry-contents-valid"></a><h3>The <code class="literal">“contents-valid”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *model,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        error,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Gets emitted when data entered to the <span class="type">GdaDataEntry</span> widget must be validated.</p>
+<p>For bindings use <span class="type">gdaui_data_entry_validate</span> function.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="warning"><p><code class="literal">GdauiDataEntry::contents-valid</code> has been deprecated since version 5.2.0 and should not be used in newly-written code.</p></div>
+<div class="refsect3">
+<a name="GdauiDataEntry-contents-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> to set erros to or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdauiDataEntry-contents-valid.returns"></a><h4>Returns</h4>
+<p> TRUE when the data was successfull validated, FALSE otherwise.</p>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataEntry-expand-changed"></a><h3>The <code class="literal">“expand-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *gdauidataentry,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataEntry-status-changed"></a><h3>The <code class="literal">“status-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry"><span class="type">GdauiDataEntry</span></a> *gdauidataentry,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,4 +1,69 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs
+export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
+
 %:
 	dh $@
+
+override_dh_makeshlibs:
+	dh_makeshlibs -X /usr/lib/$(DEB_HOST_MULTIARCH)/libgda-5.0/providers \
+		-plibgda-5.0-4 -- -c4
+	dh_makeshlibs -X /usr/lib/$(DEB_HOST_MULTIARCH)/libgda-5.0/providers
+
+# Parallel builds break the test suite, see
+# https://bugzilla.gnome.org/show_bug.cgi?id=723038
+override_dh_auto_test:
+	dh_auto_test --no-parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--with-postgres		\
+		--with-mysql		\
+		--without-libsecret	\
+		--without-libsoup	\
+		--without-bdb		\
+		--without-oracle	\
+		--without-ldap		\
+		--without-firebird	\
+		--without-mdb		\
+		--without-java		\
+		--without-gnome-keyring	\
+		--without-ui		\
+		--disable-gdaui-gi	\
+		--enable-system-sqlite	\
+		--enable-introspection	\
+		--enable-vala		\
+		--disable-crypto	\
+		--enable-gtk-doc
+
+execute_after_dh_auto_install:
+	# Drop trml2{html,pdf} python2 tools, build system in future 6.0/master
+	# disables libgda-report (and thus these tools) by default.
+	rm -rf debian/tmp/usr/share/libgda-5.0/gda_trml2*
+
+execute_after_dh_install-indep:
+	# Don't ship our own copy of jquery.js
+	ln -s ../../javascript/jquery/jquery.js \
+		debian/libgda-5.0-common/usr/share/libgda-5.0/web/
+
+execute_after_dh_install-arch:
+	set -e; for pkg in libgda-5.0-bin libgda-5.0-dev \
+	  libgda-5.0-mysql libgda-5.0-postgres; \
+	do \
+		rm -rf debian/$$pkg/usr/share/doc; \
+		dh_link -p$$pkg usr/share/doc/libgda-5.0-4 usr/share/doc/$$pkg; \
+	done
+
+	find debian -name '*.la' -delete
+	# remove test database, not shipped.
+	rm -f debian/tmp/etc/libgda-5.0/sales_test.db
+	# remove unversioned binaries, the -5.0 counterparts are installed.
+	rm -f debian/tmp/usr/bin/gda-list-config \
+		debian/tmp/usr/bin/gda-list-server-op \
+		debian/tmp/usr/bin/gda-sql
+	rm -f debian/tmp/usr/share/man/man1/gda-sql.1
+
+override_dh_missing:
+	dh_missing --list-missing

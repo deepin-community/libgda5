@@ -1,15 +1,163 @@
-Source: template-repository
-Section: unknown
+Source: libgda5
+Section: libs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Uploaders: Emilio Pozuelo Monfort <pochu@debian.org>, Jeremy Bícha <jbicha@ubuntu.com>, Jordi Mallach <jordi@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dpkg-dev (>= 1.22.5),
+               dh-sequence-gir,
+               autoconf-archive,
+               intltool (>= 0.40.6),
+               pkgconf,
+               yelp-tools,
+               yelp-xsl,
+               libjson-glib-dev,
+               libgee-0.8-dev,
+               libglib2.0-dev (>= 2.32.0),
+               libsqlite3-dev (>= 3.10.12),
+               libxml2-dev (>= 2.4.22),
+               libxslt1-dev (>= 1.0.18),
+               default-libmysqlclient-dev,
+               libncurses-dev,
+               libpq-dev,
+               libreadline-dev,
+               gobject-introspection (>= 1.30.0),
+               libgirepository1.0-dev (>= 1.30.0),
+               gtk-doc-tools,
+               valac (>= 0.41.7)
+Build-Depends-Indep: libglib2.0-doc, libgtk-3-doc
+Standards-Version: 4.7.0
+Homepage: http://www.gnome-db.org/
+Vcs-Git: https://salsa.debian.org/gnome-team/libgda5.git
+Vcs-Browser: https://salsa.debian.org/gnome-team/libgda5
 
-Package: template-repository
+Package: libgda-5.0-4
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: same
+Depends: libgda-5.0-common (>= ${source:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: libgda-5.0-bin,
+          libgda-5.0-mysql,
+          libgda-5.0-postgres
+Description: data abstraction library based on GLib
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+
+Package: libgda-5.0-bin
+Section: database
+Architecture: any
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: data abstraction library based on GLib -- binary files
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains binary files for libgda.
+
+
+Package: libgda-5.0-common
+Section: database
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         libjs-jquery
+Recommends: libgda-5.0-4
+Description: data abstraction library based on GLib -- common files
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains common files for libgda.
+
+Package: libgda-5.0-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libgda-5.0-4 (= ${binary:Version}),
+         gir1.2-gda-5.0 (= ${binary:Version}),
+         libglib2.0-dev (>= 2.32.0),
+         libxslt1-dev,
+         ${misc:Depends}
+Suggests: libgda-5.0-doc
+Description: data abstraction library based on GLib -- development files
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains the header files and libraries needed for
+ development.
+
+Package: libgda-5.0-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Suggests: devhelp
+Description: data abstraction library based on GLib -- documentation files
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains document files about libgda API.
+
+Package: libgda-5.0-mysql
+Section: database
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: MySQL provider for libgda database abstraction library
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains the provider needed to access MySQL databases
+ through libgda.
+
+Package: libgda-5.0-postgres
+Section: database
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: PostgreSQL provider for libgda database abstraction library
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains the provider needed to access PostgreSQL
+ databases through libgda.
+
+Package: gir1.2-gda-5.0
+Section: introspection
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${gir:Depends}
+Description: data abstraction library based on GLib -- GObject Introspection
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains introspection data for libgda.

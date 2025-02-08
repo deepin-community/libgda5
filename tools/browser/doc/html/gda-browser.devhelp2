@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="GdaBrowser hacking manual" link="index.html" author="Vivien Malerba" name="gda-browser" version="2" language="c">
+  <chapters>
+    <sub name="Getting started" link="part_begin.html">
+      <sub name="Purpose" link="why.html"/>
+      <sub name="Program's structure" link="prog_struct.html"/>
+      <sub name="Code organization" link="code_orga.html"/>
+    </sub>
+    <sub name="API reference" link="part_api.html">
+      <sub name="Core objects" link="core.html">
+        <sub name="BrowserCore" link="BrowserCore.html"/>
+        <sub name="BrowserConnection" link="BrowserConnection.html"/>
+        <sub name="ToolsFavorites" link="gda-browser-browser-favorites.html"/>
+        <sub name="Support functions" link="gda-browser-Support-functions.html"/>
+      </sub>
+      <sub name="Browser windows" link="windows.html">
+        <sub name="BrowserWindow" link="BrowserWindow.html"/>
+        <sub name="BrowserPerspective" link="BrowserPerspective.html"/>
+        <sub name="BrowserPage" link="gda-browser-BrowserPage.html"/>
+      </sub>
+      <sub name="Extra widgets" link="extrawidgets.html">
+        <sub name="UiFormgrid" link="gda-browser-UiFormgrid.html"/>
+        <sub name="GdauiBar" link="gda-browser-gdaui-bar.html"/>
+        <sub name="PopupContainer" link="gda-browser-popup-container.html"/>
+      </sub>
+      <sub name="Perspectives' objects" link="perspectives.html">
+        <sub name="MgrFavorites" link="MgrFavorites.html"/>
+        <sub name="Schema Browser perspective" link="gda-browser-Schema-Browser-perspective.html"/>
+        <sub name="Data Manager perspective" link="gda-browser-Data-Manager-perspective.html"/>
+        <sub name="Query Exec perspective" link="gda-browser-Query-Exec-perspective.html"/>
+      </sub>
+    </sub>
+    <sub name="API Deprecated" link="api-deprecated.html"/>
+    <sub name="API Deprecated" link="api-index-full.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html">
+      <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+    </sub>
+    <sub name="Appendix" link="part_index.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="BrowserCoreInitFactories ()" link="BrowserCore.html#BrowserCoreInitFactories"/>
+    <keyword type="function" name="browser_core_exists ()" link="BrowserCore.html#browser-core-exists"/>
+    <keyword type="function" name="browser_core_get ()" link="BrowserCore.html#browser-core-get"/>
+    <keyword type="function" name="browser_core_take_window ()" link="BrowserCore.html#browser-core-take-window"/>
+    <keyword type="function" name="browser_core_get_windows ()" link="BrowserCore.html#browser-core-get-windows"/>
+    <keyword type="function" name="browser_core_close_window ()" link="BrowserCore.html#browser-core-close-window"/>
+    <keyword type="function" name="browser_core_take_connection ()" link="BrowserCore.html#browser-core-take-connection"/>
+    <keyword type="function" name="browser_core_get_connections ()" link="BrowserCore.html#browser-core-get-connections"/>
+    <keyword type="function" name="browser_core_close_connection ()" link="BrowserCore.html#browser-core-close-connection"/>
+    <keyword type="function" name="browser_core_quit ()" link="BrowserCore.html#browser-core-quit"/>
+    <keyword type="function" name="browser_core_get_default_factory ()" link="BrowserCore.html#browser-core-get-default-factory"/>
+    <keyword type="function" name="browser_core_set_default_factory ()" link="BrowserCore.html#browser-core-set-default-factory"/>
+    <keyword type="function" name="browser_core_get_factories ()" link="BrowserCore.html#browser-core-get-factories"/>
+    <keyword type="function" name="browser_core_get_factory ()" link="BrowserCore.html#browser-core-get-factory"/>
+    <keyword type="struct" name="BrowserCorePrivate" link="BrowserCore.html#BrowserCorePrivate"/>
+    <keyword type="struct" name="BrowserCore" link="BrowserCore.html#BrowserCore-struct"/>
+    <keyword type="struct" name="BrowserPerspectiveFactory" link="BrowserCore.html#BrowserPerspectiveFactory"/>
+    <keyword type="signal" name="The “connection-added” signal" link="BrowserCore.html#BrowserCore-connection-added"/>
+    <keyword type="signal" name="The “connection-removed” signal" link="BrowserCore.html#BrowserCore-connection-removed"/>
+    <keyword type="function" name="browser_connection_new ()" link="BrowserConnection.html#browser-connection-new"/>
+    <keyword type="function" name="browser_connection_get_name ()" link="BrowserConnection.html#browser-connection-get-name"/>
+    <keyword type="function" name="browser_connection_get_long_name ()" link="BrowserConnection.html#browser-connection-get-long-name"/>
+    <keyword type="function" name="browser_connection_get_information ()" link="BrowserConnection.html#browser-connection-get-information"/>
+    <keyword type="function" name="browser_connection_is_virtual ()" link="BrowserConnection.html#browser-connection-is-virtual"/>
+    <keyword type="function" name="browser_connection_is_busy ()" link="BrowserConnection.html#browser-connection-is-busy"/>
+    <keyword type="function" name="browser_connection_update_meta_data ()" link="BrowserConnection.html#browser-connection-update-meta-data"/>
+    <keyword type="function" name="browser_connection_meta_data_changed ()" link="BrowserConnection.html#browser-connection-meta-data-changed"/>
+    <keyword type="function" name="browser_connection_get_meta_struct ()" link="BrowserConnection.html#browser-connection-get-meta-struct"/>
+    <keyword type="function" name="browser_connection_get_meta_store ()" link="BrowserConnection.html#browser-connection-get-meta-store"/>
+    <keyword type="function" name="browser_connection_get_dictionary_file ()" link="BrowserConnection.html#browser-connection-get-dictionary-file"/>
+    <keyword type="function" name="browser_connection_get_favorites ()" link="BrowserConnection.html#browser-connection-get-favorites"/>
+    <keyword type="function" name="browser_connection_get_completions ()" link="BrowserConnection.html#browser-connection-get-completions"/>
+    <keyword type="function" name="browser_connection_create_parser ()" link="BrowserConnection.html#browser-connection-create-parser"/>
+    <keyword type="function" name="browser_connection_render_pretty_sql ()" link="BrowserConnection.html#browser-connection-render-pretty-sql"/>
+    <keyword type="function" name="browser_connection_execute_statement ()" link="BrowserConnection.html#browser-connection-execute-statement"/>
+    <keyword type="function" name="browser_connection_execution_get_result ()" link="BrowserConnection.html#browser-connection-execution-get-result"/>
+    <keyword type="function" name="BrowserConnectionExecuteCallback ()" link="BrowserConnection.html#BrowserConnectionExecuteCallback"/>
+    <keyword type="function" name="browser_connection_execute_statement_cb ()" link="BrowserConnection.html#browser-connection-execute-statement-cb"/>
+    <keyword type="function" name="browser_connection_normalize_sql_statement ()" link="BrowserConnection.html#browser-connection-normalize-sql-statement"/>
+    <keyword type="function" name="browser_connection_check_sql_statement_validify ()" link="BrowserConnection.html#browser-connection-check-sql-statement-validify"/>
+    <keyword type="function" name="browser_connection_rerun_select ()" link="BrowserConnection.html#browser-connection-rerun-select"/>
+    <keyword type="function" name="browser_connection_rerun_select_cb ()" link="BrowserConnection.html#browser-connection-rerun-select-cb"/>
+    <keyword type="function" name="browser_connection_begin ()" link="BrowserConnection.html#browser-connection-begin"/>
+    <keyword type="function" name="browser_connection_commit ()" link="BrowserConnection.html#browser-connection-commit"/>
+    <keyword type="function" name="browser_connection_rollback ()" link="BrowserConnection.html#browser-connection-rollback"/>
+    <keyword type="function" name="browser_connection_get_transaction_status ()" link="BrowserConnection.html#browser-connection-get-transaction-status"/>
+    <keyword type="function" name="browser_connection_set_table_column_attribute ()" link="BrowserConnection.html#browser-connection-set-table-column-attribute"/>
+    <keyword type="function" name="browser_connection_get_table_column_attribute ()" link="BrowserConnection.html#browser-connection-get-table-column-attribute"/>
+    <keyword type="function" name="browser_connection_define_ui_plugins_for_batch ()" link="BrowserConnection.html#browser-connection-define-ui-plugins-for-batch"/>
+    <keyword type="function" name="browser_connection_define_ui_plugins_for_stmt ()" link="BrowserConnection.html#browser-connection-define-ui-plugins-for-stmt"/>
+    <keyword type="function" name="browser_connection_keep_variables ()" link="BrowserConnection.html#browser-connection-keep-variables"/>
+    <keyword type="function" name="browser_connection_load_variables ()" link="BrowserConnection.html#browser-connection-load-variables"/>
+    <keyword type="struct" name="BrowserConnectionPrivate" link="BrowserConnection.html#BrowserConnectionPrivate"/>
+    <keyword type="struct" name="BrowserConnection" link="BrowserConnection.html#BrowserConnection-struct"/>
+    <keyword type="property" name="The “gda-connection” property" link="BrowserConnection.html#BrowserConnection--gda-connection"/>
+    <keyword type="signal" name="The “busy” signal" link="BrowserConnection.html#BrowserConnection-busy"/>
+    <keyword type="signal" name="The “favorites-changed” signal" link="BrowserConnection.html#BrowserConnection-favorites-changed"/>
+    <keyword type="signal" name="The “meta-changed” signal" link="BrowserConnection.html#BrowserConnection-meta-changed"/>
+    <keyword type="signal" name="The “table-column-pref-changed” signal" link="BrowserConnection.html#BrowserConnection-table-column-pref-changed"/>
+    <keyword type="signal" name="The “transaction-status-changed” signal" link="BrowserConnection.html#BrowserConnection-transaction-status-changed"/>
+    <keyword type="function" name="gda_tools_favorites_get_actions ()" link="gda-browser-browser-favorites.html#gda-tools-favorites-get-actions"/>
+    <keyword type="function" name="gda_tools_favorites_free_action ()" link="gda-browser-browser-favorites.html#gda-tools-favorites-free-action"/>
+    <keyword type="function" name="gda_tools_favorites_free_actions_list ()" link="gda-browser-browser-favorites.html#gda-tools-favorites-free-actions-list"/>
+    <keyword type="struct" name="ToolsFavoriteAction" link="gda-browser-browser-favorites.html#ToolsFavoriteAction"/>
+    <keyword type="function" name="browser_connection_open ()" link="gda-browser-Support-functions.html#browser-connection-open"/>
+    <keyword type="function" name="browser_connection_close ()" link="gda-browser-Support-functions.html#browser-connection-close"/>
+    <keyword type="function" name="browser_show_error ()" link="gda-browser-Support-functions.html#browser-show-error"/>
+    <keyword type="function" name="browser_show_message ()" link="gda-browser-Support-functions.html#browser-show-message"/>
+    <keyword type="function" name="browser_show_help ()" link="gda-browser-Support-functions.html#browser-show-help"/>
+    <keyword type="function" name="browser_make_tab_label_with_stock ()" link="gda-browser-Support-functions.html#browser-make-tab-label-with-stock"/>
+    <keyword type="function" name="browser_make_tab_label_with_pixbuf ()" link="gda-browser-Support-functions.html#browser-make-tab-label-with-pixbuf"/>
+    <keyword type="function" name="browser_make_small_button ()" link="gda-browser-Support-functions.html#browser-make-small-button"/>
+    <keyword type="function" name="browser_make_tree_view ()" link="gda-browser-Support-functions.html#browser-make-tree-view"/>
+    <keyword type="function" name="browser_find_parent_widget ()" link="gda-browser-Support-functions.html#browser-find-parent-widget"/>
+    <keyword type="function" name="browser_get_pixbuf_icon ()" link="gda-browser-Support-functions.html#browser-get-pixbuf-icon"/>
+    <keyword type="function" name="browser_get_connections_list ()" link="gda-browser-Support-functions.html#browser-get-connections-list"/>
+    <keyword type="enum" name="enum BrowserIconType" link="gda-browser-Support-functions.html#BrowserIconType"/>
+    <keyword type="function" name="browser_window_new ()" link="BrowserWindow.html#browser-window-new"/>
+    <keyword type="function" name="browser_window_get_connection ()" link="BrowserWindow.html#browser-window-get-connection"/>
+    <keyword type="function" name="browser_window_push_status ()" link="BrowserWindow.html#browser-window-push-status"/>
+    <keyword type="function" name="browser_window_pop_status ()" link="BrowserWindow.html#browser-window-pop-status"/>
+    <keyword type="function" name="browser_window_show_notice ()" link="BrowserWindow.html#browser-window-show-notice"/>
+    <keyword type="function" name="browser_window_show_notice_printf ()" link="BrowserWindow.html#browser-window-show-notice-printf"/>
+    <keyword type="function" name="browser_window_customize_perspective_ui ()" link="BrowserWindow.html#browser-window-customize-perspective-ui"/>
+    <keyword type="function" name="browser_window_change_perspective ()" link="BrowserWindow.html#browser-window-change-perspective"/>
+    <keyword type="function" name="browser_window_is_fullscreen ()" link="BrowserWindow.html#browser-window-is-fullscreen"/>
+    <keyword type="function" name="browser_window_set_fullscreen ()" link="BrowserWindow.html#browser-window-set-fullscreen"/>
+    <keyword type="struct" name="BrowserWindowPrivate" link="BrowserWindow.html#BrowserWindowPrivate"/>
+    <keyword type="struct" name="BrowserWindow" link="BrowserWindow.html#BrowserWindow-struct"/>
+    <keyword type="signal" name="The “fullscreen-changed” signal" link="BrowserWindow.html#BrowserWindow-fullscreen-changed"/>
+    <keyword type="macro" name="BROWSER_PERSPECTIVE()" link="BrowserPerspective.html#BROWSER-PERSPECTIVE:CAPS"/>
+    <keyword type="macro" name="IS_BROWSER_PERSPECTIVE()" link="BrowserPerspective.html#IS-BROWSER-PERSPECTIVE:CAPS"/>
+    <keyword type="macro" name="BROWSER_PERSPECTIVE_GET_CLASS()" link="BrowserPerspective.html#BROWSER-PERSPECTIVE-GET-CLASS:CAPS"/>
+    <keyword type="function" name="browser_perspective_get_type ()" link="BrowserPerspective.html#browser-perspective-get-type"/>
+    <keyword type="function" name="browser_perspective_get_window ()" link="BrowserPerspective.html#browser-perspective-get-window"/>
+    <keyword type="function" name="browser_perspective_get_actions_group ()" link="BrowserPerspective.html#browser-perspective-get-actions-group"/>
+    <keyword type="function" name="browser_perspective_get_actions_ui ()" link="BrowserPerspective.html#browser-perspective-get-actions-ui"/>
+    <keyword type="function" name="browser_perspective_get_current_customization ()" link="BrowserPerspective.html#browser-perspective-get-current-customization"/>
+    <keyword type="function" name="browser_perspective_page_tab_label_change ()" link="BrowserPerspective.html#browser-perspective-page-tab-label-change"/>
+    <keyword type="function" name="browser_perspective_declare_notebook ()" link="BrowserPerspective.html#browser-perspective-declare-notebook"/>
+    <keyword type="macro" name="BROWSER_PERSPECTIVE_TYPE" link="BrowserPerspective.html#BROWSER-PERSPECTIVE-TYPE:CAPS"/>
+    <keyword type="struct" name="BrowserPerspective" link="BrowserPerspective.html#BrowserPerspective-struct"/>
+    <keyword type="macro" name="BROWSER_PAGE()" link="gda-browser-BrowserPage.html#BROWSER-PAGE:CAPS"/>
+    <keyword type="macro" name="IS_BROWSER_PAGE()" link="gda-browser-BrowserPage.html#IS-BROWSER-PAGE:CAPS"/>
+    <keyword type="macro" name="BROWSER_PAGE_GET_CLASS()" link="gda-browser-BrowserPage.html#BROWSER-PAGE-GET-CLASS:CAPS"/>
+    <keyword type="function" name="browser_page_get_type ()" link="gda-browser-BrowserPage.html#browser-page-get-type"/>
+    <keyword type="function" name="browser_page_get_actions_group ()" link="gda-browser-BrowserPage.html#browser-page-get-actions-group"/>
+    <keyword type="function" name="browser_page_get_actions_ui ()" link="gda-browser-BrowserPage.html#browser-page-get-actions-ui"/>
+    <keyword type="function" name="browser_page_get_perspective ()" link="gda-browser-BrowserPage.html#browser-page-get-perspective"/>
+    <keyword type="function" name="browser_page_get_tab_label ()" link="gda-browser-BrowserPage.html#browser-page-get-tab-label"/>
+    <keyword type="macro" name="BROWSER_PAGE_TYPE" link="gda-browser-BrowserPage.html#BROWSER-PAGE-TYPE:CAPS"/>
+    <keyword type="struct" name="BrowserPageIface" link="gda-browser-BrowserPage.html#BrowserPageIface"/>
+    <keyword type="function" name="ui_formgrid_new ()" link="gda-browser-UiFormgrid.html#ui-formgrid-new"/>
+    <keyword type="function" name="ui_formgrid_handle_user_prefs ()" link="gda-browser-UiFormgrid.html#ui-formgrid-handle-user-prefs"/>
+    <keyword type="function" name="ui_formgrid_get_selection ()" link="gda-browser-UiFormgrid.html#ui-formgrid-get-selection"/>
+    <keyword type="function" name="ui_formgrid_get_form_data_set ()" link="gda-browser-UiFormgrid.html#ui-formgrid-get-form-data-set"/>
+    <keyword type="function" name="ui_formgrid_get_grid_data_set ()" link="gda-browser-UiFormgrid.html#ui-formgrid-get-grid-data-set"/>
+    <keyword type="function" name="ui_formgrid_set_sample_size ()" link="gda-browser-UiFormgrid.html#ui-formgrid-set-sample-size"/>
+    <keyword type="function" name="ui_formgrid_get_grid_widget ()" link="gda-browser-UiFormgrid.html#ui-formgrid-get-grid-widget"/>
+    <keyword type="function" name="ui_formgrid_set_connection ()" link="gda-browser-UiFormgrid.html#ui-formgrid-set-connection"/>
+    <keyword type="struct" name="struct UiFormGrid" link="gda-browser-UiFormgrid.html#UiFormGrid-struct"/>
+    <keyword type="property" name="The “compute-mod-statements” property" link="gda-browser-UiFormgrid.html#UiFormGrid--compute-mod-statements"/>
+    <keyword type="property" name="The “raw-form” property" link="gda-browser-UiFormgrid.html#UiFormGrid--raw-form"/>
+    <keyword type="property" name="The “raw-grid” property" link="gda-browser-UiFormgrid.html#UiFormGrid--raw-grid"/>
+    <keyword type="property" name="The “scroll-form” property" link="gda-browser-UiFormgrid.html#UiFormGrid--scroll-form"/>
+    <keyword type="property" name="The “widget-info” property" link="gda-browser-UiFormgrid.html#UiFormGrid--widget-info"/>
+    <keyword type="signal" name="The “data-set-changed” signal" link="gda-browser-UiFormgrid.html#UiFormGrid-data-set-changed"/>
+    <keyword type="function" name="gdaui_bar_new ()" link="gda-browser-gdaui-bar.html#gdaui-bar-new"/>
+    <keyword type="function" name="gdaui_bar_get_text ()" link="gda-browser-gdaui-bar.html#gdaui-bar-get-text"/>
+    <keyword type="function" name="gdaui_bar_set_text ()" link="gda-browser-gdaui-bar.html#gdaui-bar-set-text"/>
+    <keyword type="function" name="gdaui_bar_set_icon_from_pixbuf ()" link="gda-browser-gdaui-bar.html#gdaui-bar-set-icon-from-pixbuf"/>
+    <keyword type="function" name="gdaui_bar_set_icon_from_file ()" link="gda-browser-gdaui-bar.html#gdaui-bar-set-icon-from-file"/>
+    <keyword type="function" name="gdaui_bar_set_icon_from_stock ()" link="gda-browser-gdaui-bar.html#gdaui-bar-set-icon-from-stock"/>
+    <keyword type="function" name="gdaui_bar_set_show_icon ()" link="gda-browser-gdaui-bar.html#gdaui-bar-set-show-icon"/>
+    <keyword type="function" name="gdaui_bar_get_show_icon ()" link="gda-browser-gdaui-bar.html#gdaui-bar-get-show-icon"/>
+    <keyword type="struct" name="GdauiBarPrivate" link="gda-browser-gdaui-bar.html#GdauiBarPrivate"/>
+    <keyword type="struct" name="struct GdauiBar" link="gda-browser-gdaui-bar.html#GdauiBar-struct"/>
+    <keyword type="property" name="The “show-icon” property" link="gda-browser-gdaui-bar.html#GdauiBar--show-icon"/>
+    <keyword type="property" name="The “text” property" link="gda-browser-gdaui-bar.html#GdauiBar--text"/>
+    <keyword type="function" name="mgr_favorites_new ()" link="MgrFavorites.html#mgr-favorites-new"/>
+    <keyword type="struct" name="struct MgrFavorites" link="MgrFavorites.html#MgrFavorites-struct"/>
+    <keyword type="macro" name="MGR_FAVORITES_NAME_ATT_NAME" link="MgrFavorites.html#MGR-FAVORITES-NAME-ATT-NAME:CAPS"/>
+    <keyword type="macro" name="MGR_FAVORITES_CONTENTS_ATT_NAME" link="MgrFavorites.html#MGR-FAVORITES-CONTENTS-ATT-NAME:CAPS"/>
+    <keyword type="macro" name="MGR_FAVORITES_ID_ATT_NAME" link="MgrFavorites.html#MGR-FAVORITES-ID-ATT-NAME:CAPS"/>
+    <keyword type="macro" name="MGR_FAVORITES_TYPE_ATT_NAME" link="MgrFavorites.html#MGR-FAVORITES-TYPE-ATT-NAME:CAPS"/>
+    <keyword type="macro" name="MGR_FAVORITES_POSITION_ATT_NAME" link="MgrFavorites.html#MGR-FAVORITES-POSITION-ATT-NAME:CAPS"/>
+    <keyword type="property" name="The “browser-connection” property" link="MgrFavorites.html#MgrFavorites--browser-connection"/>
+    <keyword type="macro" name="SCHEMA_BROWSER_PERSPECTIVE()" link="gda-browser-Schema-Browser-perspective.html#SCHEMA-BROWSER-PERSPECTIVE:CAPS"/>
+    <keyword type="macro" name="IS_SCHEMA_BROWSER_PERSPECTIVE()" link="gda-browser-Schema-Browser-perspective.html#IS-SCHEMA-BROWSER-PERSPECTIVE:CAPS"/>
+    <keyword type="function" name="schema_browser_perspective_display_table_info ()" link="gda-browser-Schema-Browser-perspective.html#schema-browser-perspective-display-table-info"/>
+    <keyword type="function" name="schema_browser_perspective_display_diagram ()" link="gda-browser-Schema-Browser-perspective.html#schema-browser-perspective-display-diagram"/>
+    <keyword type="struct" name="struct SchemaBrowserPerspective" link="gda-browser-Schema-Browser-perspective.html#SchemaBrowserPerspective-struct"/>
+    <keyword type="macro" name="DATA_MANAGER_PERSPECTIVE()" link="gda-browser-Data-Manager-perspective.html#DATA-MANAGER-PERSPECTIVE:CAPS"/>
+    <keyword type="macro" name="IS_DATA_MANAGER_PERSPECTIVE()" link="gda-browser-Data-Manager-perspective.html#IS-DATA-MANAGER-PERSPECTIVE:CAPS"/>
+    <keyword type="function" name="data_manager_perspective_get_type ()" link="gda-browser-Data-Manager-perspective.html#data-manager-perspective-get-type"/>
+    <keyword type="function" name="data_manager_perspective_new_tab ()" link="gda-browser-Data-Manager-perspective.html#data-manager-perspective-new-tab"/>
+    <keyword type="struct" name="struct DataManagerPerspective" link="gda-browser-Data-Manager-perspective.html#DataManagerPerspective-struct"/>
+    <keyword type="macro" name="QUERY_EXEC_PERSPECTIVE()" link="gda-browser-Query-Exec-perspective.html#QUERY-EXEC-PERSPECTIVE:CAPS"/>
+    <keyword type="macro" name="IS_QUERY_EXEC_PERSPECTIVE()" link="gda-browser-Query-Exec-perspective.html#IS-QUERY-EXEC-PERSPECTIVE:CAPS"/>
+    <keyword type="struct" name="struct QueryExecPerspective" link="gda-browser-Query-Exec-perspective.html#QueryExecPerspective-struct"/>
+    <keyword type="constant" name="BROWSER_ICON_BOOKMARK" link="gda-browser-Support-functions.html#BROWSER-ICON-BOOKMARK:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_SCHEMA" link="gda-browser-Support-functions.html#BROWSER-ICON-SCHEMA:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_TABLE" link="gda-browser-Support-functions.html#BROWSER-ICON-TABLE:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_COLUMN" link="gda-browser-Support-functions.html#BROWSER-ICON-COLUMN:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_COLUMN_PK" link="gda-browser-Support-functions.html#BROWSER-ICON-COLUMN-PK:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_COLUMN_FK" link="gda-browser-Support-functions.html#BROWSER-ICON-COLUMN-FK:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_COLUMN_FK_NN" link="gda-browser-Support-functions.html#BROWSER-ICON-COLUMN-FK-NN:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_COLUMN_NN" link="gda-browser-Support-functions.html#BROWSER-ICON-COLUMN-NN:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_REFERENCE" link="gda-browser-Support-functions.html#BROWSER-ICON-REFERENCE:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_DIAGRAM" link="gda-browser-Support-functions.html#BROWSER-ICON-DIAGRAM:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_QUERY" link="gda-browser-Support-functions.html#BROWSER-ICON-QUERY:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_ACTION" link="gda-browser-Support-functions.html#BROWSER-ICON-ACTION:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_MENU_INDICATOR" link="gda-browser-Support-functions.html#BROWSER-ICON-MENU-INDICATOR:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_ENTRY" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-ENTRY:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_GROUP" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-GROUP:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_ORGANIZATION" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-ORGANIZATION:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_PERSON" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-PERSON:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_CLASS_STRUCTURAL" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-CLASS-STRUCTURAL:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_CLASS_ABSTRACT" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-CLASS-ABSTRACT:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_CLASS_AUXILIARY" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-CLASS-AUXILIARY:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LDAP_CLASS_UNKNOWN" link="gda-browser-Support-functions.html#BROWSER-ICON-LDAP-CLASS-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="BROWSER_ICON_LAST" link="gda-browser-Support-functions.html#BROWSER-ICON-LAST:CAPS"/>
+  </functions>
+</book>

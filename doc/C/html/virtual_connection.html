@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Virtual connections: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="libgda-5.0-GdaXaTransaction.html" title="GdaXaTransaction">
+<link rel="next" href="GdaVirtualProvider.html" title="GdaVirtualProvider">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-GdaXaTransaction.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaVirtualProvider.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="virtual_connection"></a>Virtual connections</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualProvider.html">GdaVirtualProvider</a></span><span class="refpurpose"> — Base class for all virtual provider objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderDataModel.html">GdaVproviderDataModel</a></span><span class="refpurpose"> — Virtual provider for connections based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderHub.html">GdaVproviderHub</a></span><span class="refpurpose"> — Virtual provider for connections based on other connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualConnection.html">GdaVirtualConnection</a></span><span class="refpurpose"> — Base class for all virtual connection objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionDataModel.html">GdaVconnectionDataModel</a></span><span class="refpurpose"> — Virtual connection based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionHub.html">GdaVconnectionHub</a></span><span class="refpurpose"> — Virtual connection which bind together connections</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaLdapConnection.html">GdaLdapConnection</a></span><span class="refpurpose"> — LDAP connection objects</span>
+</dt>
+</dl></div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="VirtualIntro"></a>Introduction to virtual connections</h3></div></div></div>
+<p>
+    <span class="application">Libgda</span> implements so called virtual connections which are used like normal 
+    <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> objects (open, close, execute SQL commands, etc)
+    but which in fact don't access any real DBMS.
+  </p>
+<p>
+    Virtual connections allow one to use SQL to work on data when it is normally not available, such as sorting data
+    physically stored in CSV or XML files.
+  </p>
+<p>
+    A virtual connection is not created in the same way as for a normal connection:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>A specific <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> object is required</p></li>
+<li class="listitem"><p>No data source (DSN) or connection string can be used</p></li>
+<li class="listitem"><p>One must use the <a class="link" href="GdaVirtualConnection.html#gda-virtual-connection-open" title="gda_virtual_connection_open ()">gda_virtual_connection_open()</a>
+	  method which creates and "opens" a virtual connection. </p></li>
+</ul></div>
+<p>
+    Here is an example of code on how to create a virtual connection using the <a class="link" href="GdaVproviderDataModel.html" title="GdaVproviderDataModel">GdaVproviderDataModel</a> virtual provider:
+    </p>
+<pre class="programlisting">
+GdaConnection *cnc;
+GdaVirtualProvider *provider;
+
+provider = gda_vprovider_data_model_new ();
+cnc = gda_virtual_connection_open (provider, NULL);
+    </pre>
+<p>
+  </p>
+<p>
+    Some examples of virtual connections usage can be found in the source distribution of Libgda in:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><code class="filename">samples/Virtual</code></p></li>
+<li class="listitem"><p><code class="filename">samples/DirDataModel</code></p></li>
+<li class="listitem"><p><code class="filename">samples/F-Spot</code></p></li>
+<li class="listitem"><p><code class="filename">testing/virtual-test.c</code></p></li>
+<li class="listitem"><p><code class="filename">testing/virtual-test-2.c</code></p></li>
+</ul></div>
+<p>
+  </p>
+<p>Note that virtual connections have some inherent limitations
+  <a href="#ftn.id-1.3.7.2.6.1" class="footnote" name="id-1.3.7.2.6.1"><sup class="footnote">[1]</sup></a>due to the implementation.
+</p>
+</div>
+<div class="footnotes">
+<br><hr style="width:100; text-align:left;margin-left: 0">
+<div id="ftn.id-1.3.7.2.6.1" class="footnote">
+<p><a href="#id-1.3.7.2.6.1" class="para"><sup class="para">[1] </sup></a>
+      As virtual connections are implemented using 
+      <a class="ulink" href="http://www.sqlite.org/cvstrac/wiki?p=VirtualTables" target="_top">SQLite's virtual table</a> features, 
+      the SQL dialect which can be used
+      is the SQLite one (see the <a class="ulink" href="http://sqlite.org/lang.html" target="_top">SQL as Understood By SQLite</a> page), and
+      there are a few limitations inherent to this implementation (see link for more information).
+    </p>
+<p>
+      Also note that it is possible to create temporary tables in virtual connections using "CREATE TEMP TABLE..." statements,
+      but the contents of such tables will be lost once the connection is closed.
+    </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

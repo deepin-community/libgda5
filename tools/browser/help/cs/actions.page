@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="actions" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  </info>
+  <title>Akce</title>
+  <p>Akce jsou kousky kódu SQL, který závisí na proměnných a mohou být spouštěny z kontextové nabídky libovolné datové sady zobrazené v mřížce.</p>
+  <p>Pokud třeba máme tabulku „vyrobky“, ve které jsou uvedeny nějaké druhy výrobků a tabulku „komentare“, ve které jsou k jednotlivým výrobkům komentáře uživatelů (tabulka „komentare“ bude mít nejspíše cizí klíč v tabulce „vyrobky“, který na ni bude odkazovat).</p>
+  <p>Nějaká akce může být definována za účelem zobrazit všechny záznamy v tabulce „komentare“, která poskytuje klíč určující výrobek. Kdykoliv je ve výsledné sadě uveden výrobek, bude kontextová nabídka poskytovat uživateli spuštění této akce a tak si zobrazí všechny komentáře pro vybraný výrobek. Tato situace je ilustrována na následujících obrázcích.</p>
+  <p>Prvním krokem je definovat akci, která není ničím jiným, než oblíbenou položkou v hledisku <link xref="query-execution-perspective">Provádění dotazu</link>, která definuje akci: otevřete vlastnosti oblíbené položky a ujistěte se, že je zaškrtnuto „Jde o akci“:</p>
+  <figure>
+    <title>Akce – definice akce</title>
+    <desc>Definice akce pro vypsání komentářů k výrobku, z hlediska Provádění dotazu</desc>
+    <media type="image" mime="image/png" src="figures/action-4.png"/>
+  </figure>
+  <figure>
+    <title>Akce – zobrazení seznamu výrobků</title>
+    <desc>V hledisku Provádění dotazu vyberme všechny výrobky. Všimněte si, že jsou zde definovány dvě akce: „Přidat komentář k výrobku“ a „Vypsat komentáře k výrobku“</desc>
+    <media type="image" mime="image/png" src="figures/action-1.png"/>
+  </figure>
+  <p>Nyní zobrazme kontextovou nabídku:</p>
+  <figure>
+    <title>Akce – kontextová nabídka</title>
+    <desc>Zobrazena kontextová nabídka s vybranou položkou <guiseq><gui>Provést akci</gui><gui>Vypsat komentáře k výrobku</gui></guiseq></desc>
+    <media type="image" mime="image/png" src="figures/action-2.png"/>
+  </figure>
+  <p>Po potvrzení požadavku na parametr pro spuštění akce zde máme výsledek:</p>
+  <figure>
+    <title>Akce – spuštěna</title>
+    <desc>Akce je nyní spuštěna</desc>
+    <media type="image" mime="image/png" src="figures/action-3.png"/>
+  </figure>
+</page>

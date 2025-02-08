@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-browser-perspective" xml:lang="el">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+<title>Η προοπτική του περιηγητή LDAP</title>
+<p>Χρησιμοποιήστε την προοπτική του περιηγητή LDAP για προβολή και χειρισμό αποθηκευμένων δεδομένων σε έναν κατάλογο LDAP. Για εναλλαγή σε αυτήν την προοπτική, χρησιμοποιήστε το μενού <guiseq><gui>προοπτική</gui><gui>περιηγητής LDAP</gui></guiseq>, ή τη συντόμευση <keyseq><key>Ctrl</key><key>P</key></keyseq>. Αυτή η προοπτική είναι φυσικά διαθέσιμη μόνο όταν η ανοιχτή σύνδεση είναι μια <link xref="ldap-connection">σύνδεση LDAP</link>.</p>
+<p>Η προοπτική διαιρείται σε δύο οριζόντια μέρη: το αριστερό για να ορίσει ο χρήστης τα αγαπημένα (για να κρατήσει τις αναφορές σε συγκεκριμένες καταχωρίσεις LDAP ή σε συγκεκριμένες τάξεις LDAP) και το δεξιό μέρος για την περιοχή ενέργειας.</p>
+<figure>
+  <title>Η καρτέλα καταχώρισης του περιηγητή LDAP</title>
+  <desc>Καρτέλα καταχωρίσεων LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-browser-persp.png"/>
+</figure>
+
+<p>Το αριστερό τμήμα της προοπτικής καταχωρίζει τις αγαπημένες καταχωρίσεις ή κλάσεις. Διπλό κλικ σε αγαπημένο ανοίγει τις ιδιότητες του στο δεξιό τμήμα. Σημειώστε ότι οι αγαπημένες καταχωρίσεις LDAP θα εμφανίζονται πάντοτε πριν τις κλάσεις των αγαπημένων.</p>
+<p>Το δεξί τμήμα αποτελείται από καρτέλες πολλών τύπων:</p>
+<list>
+  <item><p>καρτέλες για περιήγηση στο LDAP DIT (δένδρο πληροφοριών καταλόγου): όταν μια είσοδος επιλέγεται από το δένδρο, τα γνωρίσματα του εμφανίζονται (μόνο τα γνωρίσματα με τιμή εμφανίζονται, τα γνωρίσματα χωρίς τιμή αποκρύβονται) και το DN (διακριτό όνομα) της καταχώρισης εμφανίζεται πάντοτε πρώτο. Επίσης σημειώστε ότι οι κατιόντες κάθε καταχώρισης προσκομίζονται μόνο όταν απαιτείται για αποφυγή περιττών αιτήσεων για τον εξυπηρετητή LDAP.</p></item>
+  <item><p>καρτέλες για περιήγηση των κλάσεων του LDAP, δείτε την παρακάτω εικόνα. Για μια επιλεγμένη κλάση, όλες οι πληροφορίες που αφορούν την κλάση εμφανίζονται (περιγραφή, OID, τύπος, ...)</p></item>
+  <item><p>καρτέλες για εκτέλεση αναζητήσεων LDAP, δείτε την παρακάτω εικόνα. Ένας ορισμός αναζήτησης LDAP μπορεί να αποθηκευτεί ως εικονικός πίνακας, δείτε την <link xref="ldap-connection#ldap-table-mapping">απεικόνιση του πίνακα LDAP</link>.</p></item>
+</list>
+<figure>
+  <title>Καρτέλα κλάσεων του περιηγητή LDAP</title>
+  <desc>Καρτέλα κλάσεων LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-classes.png"/>
+</figure>
+<figure>
+  <title>Καρτέλα αναζήτησης του περιηγητή LDAP</title>
+  <desc>Καρτέλα αναζήτησης LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-search.png"/>
+</figure>
+<p>Σύνδεσμοι σε αυτές τις καρτέλες (ταυτοποιούμενες από γαλάζιο και υπογραμμισμένο κείμενο) ανοίγουν μια νέα καρτέλα, η χρησιμοποιήστε την πρώτη καρτέλα δίπλα στην τρέχουσα καρτέλα για εμφάνιση πληροφοριών σχετικά με τον επιλεγμένο σύνδεσμο. Για παράδειγμα στην παραπάνω εικόνα απεικονίζεται μια καρτέλα καταχωρίσεων LDAP, κλικ στο "inetOrgPerson" θα ανοίξει μια νέα καρτέλα "κλάσεων LDAP" και θα εμφανίσει τις πληροφορίες σχετικά με αυτήν την κλάση.</p>
+
+</page>

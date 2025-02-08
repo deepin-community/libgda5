@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-connection" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Koneksi LDAP</title>
+  <p>Koneksi LDAP berbeda dengan koneksi lain dalam hal bahwa basis data LDAP menyimpan data secara hirarkis, dalam DIT (Directory Information Tree, pohon informasi direktori), sementara basis data lain yang dapat diakses melalui aplikasi <app>gda-browser</app> adalah basis data relasional.</p>
+  <p>Akibatnya, koneksi LDAP diperlakukan secara khusus: sebagai koneksi normal dengan tabel (lihat pemetaan tabel yang dijelaskan selanjutnya), dan melalui kehadiran <link xref="ldap-browser-perspective">Perspektif peramban LDAP</link></p>
+  <p>Perhatikan bahwa koneksi LDAP mungkin tak tersedia bila penyedia basis data LDAP tak terpasang atau bila dukungan LDAP dimatikan selama kompilasi.</p>
+
+  <section id="ldap-table-mapping">
+    <title>Pemetaan tabel LDAP</title>
+    <p>Dalam suatu koneksi LDAP, mungkin untuk mendeklarasikan tabel virtual yang dipetakan ke suatu pencarian LDAP. Tabel virtual ini kemudian dapat dipakai seperti sebarang tabel lainnya. Kolom pertama dari setiap tabel virtual LDAP akan selalu berupa DN (Distinguished Name) dari entri yang diwakili dalam baris; kolom lain bergantung kepada definisi tabel.</p>
+    <p>Suatu tabel virtual LDAP didefinisikan oleh atribut-atribut berikut:</p>
+    <list>
+      <item><p>suatu nama tabel</p></item>
+      <item><p>DN basis bagi pencarian: entri LDAP tempat pencarian dimulai (bila tak dinyatakan maka entri aras puncak dari koneksi LDAP dipakai)</p></item>
+      <item><p>penyaring pencarian: suatu penyaring pencarian LDAP yang alid (bila tak diberikan maka penyaring pencarian baku adalah "(objectClass=*)", meminta sebarang entri LDAP).</p></item>
+      <item><p>atribut: atribut yang akan diambil, setiap atribut akan dipetakan ke suatu kolom dari tabel. Atribut mesti berupa daftar atribut yang dipisah dengan koma, dimana setiap atribut dapat dipilih untuk diberi suatu tipe dan suatu opsi nilai berganda (lihat di bawah).</p></item>
+      <item><p>skup: skup pencarian, "subtree" (untuk mencari DN basis dan seluruh sub tree di bawah), "onelevel" (untuk mencari hanya anak langsung dari entri DN basis), atau "base"  (untuk mencari hanya DN basis)</p></item>
+    </list>
+    <figure>
+      <title>Properti tabel LDAP</title>
+      <desc>Properti tabel LDAP</desc>
+      <media type="image" mime="image/png" src="figures/ldap-table-mapping.png"/>
+    </figure>
+    <p>Sebagai contoh pada gambar di atas, tabel "users" akan "memuat" semua entri LDAP dari aras puncak entri LDAP koneksi, dan memiliki 3 kolom, DN, "cn" dan "jpegPhoto".</p>
+  </section>
+
+  <section id="ldap-columns-mapping">
+    <title>Pemetaan atribut ke kolom</title>
+    <p>Seperti yang disebutkan di seksi sebelumnya, setiap atribut akan dipetakan ke kolom. Tipe kolom biasanya ditentukan secara otomatis (string, angka, ...) tapi dapat dipaksa dengan menambahkan ke nama atribut "::&lt;type&gt;" bagi tipe yang diminta.</p>
+    <p>Karena beberapa atribut dapat memiliki nilai berganda, konstruksi tabel menangani atribut multi nilai dengan cara berbeda, bergantung kepada setiap opsi atribut. Suatu opsi dapat dinyatakan dengan menambahkan "::&lt;option&gt;" ke nama atribut. Opsi yang valid adalah:</p>
+    <list>
+      <item><p>"NULL" atau "0": suatu nilai NULL akan dikembalikan bagi atribut</p></item>
+      <item><p>"CSV": nilai yang dipisah koma dengan semua nilai dari atribut akan dikembalikan. Ini hanya bekerja bagi tipe atribut string.</p></item>
+      <item><p>"MULT" atau "*": satu baris akan dikembalikan bagi setiap nilai dari atribut, secara efektif mengalikan cacah baris yang dikembalikan</p></item>
+      <item><p>"1": hanya nilai pertama dari atribut yang akan dipakai, nilai lain diabaikan</p></item>
+      <item><p>"CONCAT": nilai atribut akan disambung (dengan karakter baris-baru antar setiap nilai)</p></item>
+      <item><p>"ERROR": nilai galat akan dikembalikan (ini adalah perilaku baku)</p></item>
+    </list>
+  </section>
+
+  <section id="ldap-ddl-sql">
+    <title>SQL yang dapat dipakai dengan koneksi LDAP</title>
+    <p>Anda dapat memakai SQL yang dipahami oleh <link href="http://sqlite.org/lang.html">SQLite</link> dalam sebarang koneksi LDAP. Namun sadarilah bahwa bila Anda mendefinisikan objek basis data (di luar dari SQL yang diperluas seperti dibahas di bagian selanjutnya), mereka akan hilang kali berikutnya koneksi LDAP dibuka.</p>
+    <p>Maka sebagai contoh, sepenuhnya aman untuk membuat tabel untuk menyimpan sebagian data LDAP yang mungkin memerlukan waktu lama untuk memperolehnya, tapi setelah menutup koneksi LDAP, tabel dan datanya akan hilang.</p>
+    <p>Lihat bagian <link xref="sql-sqlite">SQL yang dipahami oleh koneksi LDAP dan koneksi virtual</link> untuk informasi lebih lanjut.</p>
+  </section>
+
+  <section id="ldap-sql">
+    <title>Ekstensi SQL untuk menangani tabel LDAP</title>
+    <p>Tabel LDAP dapat dibuat memakai set yang diperluas dari perintah SQL:</p>
+    <list>
+      <item><p><code>CREATE LDAP TABLE &lt;nama_tabel&gt; [BASE='&lt;base_dn&gt;'] [FILTER='&lt;filter&gt;'] [ATTRIBUTES='&lt;filter&gt;'] [SCOPE='&lt;filter&gt;']</code> untuk mendeklarasikan tabel virtual LDAP baru</p></item>
+      <item><p><code>DESCRIBE LDAP TABLE &lt;nama_tabel&gt;</code> untuk menunjukkan definisi tabel virtual LDAP</p></item>
+      <item><p><code>ALTER LDAP TABLE &lt;nama_tabel&gt; [BASE='&lt;base_dn&gt;'] [FILTER='&lt;filter&gt;'] [ATTRIBUTES='&lt;filter&gt;'] [SCOPE='&lt;filter&gt;']</code> untuk mengubah definisi tabel virtual LDAP (hanya bagian yang dinyatakan yang benar-benar diubah)</p></item>
+      <item><p><code>DROP LDAP TABLE &lt;nama_tabel&gt;</code> untuk menghapus tabel virtual DLAP. Perhatikan bahwa <code>DROP TABLE &lt;nama_tabel&gt;</code> yang biasa juga dapat dipakai.</p></item>
+    </list>
+    <p>Sebagai contoh kode SQL berikut:</p>
+    <code>
+      CREATE LDAP TABLE users FILTER='(objectClass=inetOrgPerson)'
+              ATTRIBUTES='cn,sn,givenName,seeAlso::*' SCOPE='subtree';
+      SELECT * FROM users WHERE cn like '%john%';
+      ALTER LDAP TABLE users FILTER='(&amp;(objectClass=inetOrgPerson)(cn=*john*))';
+      SELECT * FROM users;
+      DROP LDAP TABLE users;
+    </code>
+    <p>mesti menampilkan hasil yang sama dua kali, yang mendaftar semua entri LDAP dari kelas "inetOrgPerson" dengan CommonName (cn) yang memuat string "john".</p>
+  </section>
+</page>

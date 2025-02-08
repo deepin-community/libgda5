@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="id">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+<title>Perspektif peramban skema</title>
+<p>Gunakan perspektif peramban skema untuk memahami organisasi basis data (skema). Untuk berpindah ke perspektif ini, gunakan menu <guiseq><gui>Perspektif</gui><gui>Peramban skema</gui></guiseq>, atau pintasan <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+<p>Perspektif dibagi menjadi dua bidang horisontal: panel kiri bagi favorit yang didefinisikan pengguna, dan panel kanan adalah area aksi.</p>
+<figure>
+  <title>Tilikan baku perspektif peramban skema</title>
+  <desc>Perspektif peramban skema baku</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>Perspektif bagian kiri mendaftar diagram atau objek basis data favorit. Klik ganda pada suatu favorit membuka propertinya pada panel kanan.</p>
+<p>Panel kanan tersusun atas beberapa tipe tab:</p>
+<list>
+  <item><p>suatu tab yang mendaftar semua view dan tabel basis data, dalam suatu tilikan <em>awan</em> dimana tabel dengan relasi ke tabel lain lebih banyak ditampilkan dalam fonta yang lebih besar; tab ini selalu ada</p></item>
+  <item><p>nol atau lebih tab mewakili properti tabel atau view: daftar kolom, daftar konstrain (kunci primer atau foreign key, dan konstrain unik), <link xref="diagram">bagan</link> yang menunjukkan tabel yang terhubung, dan suatu area untuk menentukan preferensi tampilan bagi data untuk setiap kolom</p></item>
+  <item><p>nol atau lebih <link xref="diagram">bagan</link> dimana berapa banyakpun tabel dapat diwakili, dimana mereka ditautkan memakai relasi mereka (sebagai konstrain foreign key)</p></item>
+</list>
+
+<figure>
+  <title>Tab menunjukkan informasi tentang suatu tabel</title>
+  <desc>Contoh dari informasi yang ditampilkan bagi setiap tabel, perhatikan perbedaan antara foreign key yang diimplementasikan dalam basis data dan <link xref="declared-fk">foreign key yang dideklarasikan</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>

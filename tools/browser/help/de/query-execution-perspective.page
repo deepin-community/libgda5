@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="query-execution-perspective" xml:lang="de">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+<title>Die Abfrageausführungs-Perspektive</title>
+<p>Verwenden Sie die Abfrageperspektive zur Ausführung von SQL-Anweisungen. Um in diese Perspektive zu wechseln, verwenden Sie das Menü <guiseq><gui>Perspektive</gui><gui>Abfrageausführung (SQL)</gui></guiseq> oder die Tastenkombination <keyseq><key>Strg</key><key>S</key></keyseq>.</p>
+<figure>
+  <title>Abfrageausführungs-Perspektive</title>
+  <desc>Die Abfrageausführungs-Perspektive mit einer ausgeführten SELECT-Anweisung</desc>
+  <media type="image" mime="image/png" src="figures/query-exec-persp.png"/>
+</figure>
+
+<p>Die Perspektive ist horizontal in zwei Bereiche unterteilt: der linke Bereich für benutzerdefinierte bevorzugte Anweisungen und der rechte Bereich als Bedienfläche.</p>
+<p>In der obigen Abbildung sind zwei Favoriten zu sehen: Eine SELECT-Anweisung (»Kunden auflisten« genannt) und eine INSERT-Anweisung (»Neuer Kunde …« genannt). Die INSERT-Anweisung benötigt den Parameter »Name«, wohingegen die SELECT-Anweisung zur Ausführung keinen Parameter erfordert.</p>
+<p>Die unterschiedlichen Symbole zeigen hier, dass der INSERT-Favorit auch als <link xref="actions">Aktion</link> markiert ist: Es ist die vorgeschlagene Aktion, die beim Anzeigen eines Kontextmenüs in einer Rasteransicht einer Reihe von Ergebnissen ausgeführt wird.</p>
+<p>Der linke Teil der Perspektive listet die bevorzugten Anweisungen auf, die durch den Benutzer definiert wurden. Die Aktivierung eines dieser Favoriten durch Doppelklick setzt den Inhalt des SQL-Textbereichs auf die SQL der aktuellen Anweisung.</p>
+<p>Die rechte Leiste wird aus null oder mehr Reitern gebildet, in denen der SQL-Code eingegeben und ausgeführt wird. In jedem der Reiter gibt es:</p>
+<list>
+  <item><p>Einen SQL-Bereich links oben</p></item>
+  <item><p>Befehlsknöpfe im oberen rechten Bereich</p></item>
+  <item><p>Die Ausführungschronik im linken unteren Bereich</p></item>
+  <item><p>Die Ausführungsergebnisse im rechten unteren Bereich</p></item>
+</list>
+
+<section id="query-exec-sql">
+  <title>SQL-Bereich</title>
+  <p>Der SQL-Bereich ist ein SQL-Editor. Dabei ist jeder von der Datenbank akzeptierte SQL-Code möglich, mit Ausnahme von <link xref="variables-syntax">Variablen</link>, für die eine spezielle Syntax erforderlich ist.</p>
+  <p>Folgende Tastenkombinationen stehen im SQL-Editor zur Verfügung:</p>
+  <list>
+    <item><p><keyseq><key>Strg</key><key>Leertaste</key></keyseq> zum Aufruf einer Vervollständigungsliste</p></item>
+    <item><p><keyseq><key>Strg</key><key>Eingabetaste</key></keyseq> zum Ausführen des SQL-Codes</p></item>
+    <item><p><keyseq><key>Strg</key><key>l</key></keyseq> zum Leeren des Editors</p></item>
+    <item><p><keyseq><key>Strg</key><key>Pfeiltaste hoch</key></keyseq> und <keyseq><key>Strg</key><key>Pfeiltaste runter</key></keyseq> zum Navigieren durch die Chronik des Editors</p></item>
+  </list>
+</section>
+
+<section id="query-exec-command-buttons">
+  <title>Befehlsknöpfe</title>
+  <p>Folgende Befehle sind über die Befehlsknöpfe erreichbar:</p>
+  <list>
+    <item><p><gui>Leeren</gui>: leert den Editor (ähnlich der Tastenkombination <keyseq><key>Strg</key><key>l</key></keyseq>)</p></item>
+    <item><p><gui>Variablen</gui>: zeigt oder verbirgt den <link xref="variables-syntax">Variablen</link>-Bereich, wo Sie den im SQL-Code enthaltenen Variablen Werte geben können. Der Bereich wird automatisch angezeigt, wenn die Variable im SQL-Code erkannt wird.</p></item>
+    <item><p><gui>Ausführen</gui>: führt den SQL-Code aus. Falls der SQL-Code einige nicht gesetzte Variablen enthält, erscheint zuerst ein Dialog, in dem Sie um die Eingabe der passenden Werte für die Variablen gebeten werden. Dies ist ähnlich zur Tastenkombination <keyseq><key>Strg</key><key>Eingabetaste</key></keyseq>.</p></item>
+    <item><p><gui>Einzug</gui>: Zieht den SQL-Code neu ein (Achtung: dadurch werden jegliche Kommentare entfernt)</p></item>
+    <item><p><gui>Favoriten</gui>: fügt den aktuellen SQL-Code zu den Favoriten hinzu</p></item>
+  </list>
+</section>
+
+<section id="query-exec-history">
+  <title>Ausführungschronik</title>
+  <p>Die Ausführungschronik enthält eine Liste der bereits ausgeführten Anweisungen, geordnet nach Ausführungsdatum, mit einem Hinweis, wann die Anweisung ausgeführt wurde (11 Minuten im Bild oben). Durch die Auswahl eines Chronikeintrags wird das zugehörige Ergebnis in den Ausführungsergebnissen angezeigt.</p>
+  <p>Der Knopf <gui>Kopieren</gui> kopiert den SQL-Code des aktuell ausgewählten Chronikeintrags in den SQL-Editor. Der Knopf <gui>Leeren</gui> löscht alle Chronikeinträge.</p>
+  <p>Beachten Sie, dass jeder angegebene Chronikeintrag auch einzeln mit Hilfe der <key>Entf</key>-Taste entfernt werden kann.</p>
+</section>
+
+<section id="query-exec-results">
+  <title>Ergebnisse der Ausführung</title>
+  <p>Der Bildbereich der Ausführungsergebnisse zeigt die Ergebnisse des aktuell ausgewählten Eintrags der Ausführungschronik als eine Tabelle mit SELECT-Anweisungen an, mit angegebenen Informationen anderer Anweisungstypen oder die Fehlermeldung der Ausführung, falls diese fehlgeschlagen ist.</p>
+</section>
+</page>

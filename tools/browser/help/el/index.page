@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index" xml:lang="el">
+  <info>
+    <credit type="author">
+      <name>Vivien Malerba</name>
+      <email>malerba@gnome-db.org</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Βοήθεια περιηγητή Gda</title>
+  <p>Ο <app>gda-browser</app> είναι ένα εργαλείο για διαχειριστές βάσης δεδομένων: μπορούν να αναλύσουν σχήματα της βάσης δεδομένων για να κατανοήσουν την οργάνωση δεδομένων, να εκτελέσουν εντολές SQL διαδραστικά και, υπο μια ευρύτερη έννοια, να διαχειρισθούν τα δεδομένα που εμπεριέχονται στις βάσεις δεδομένων.</p>
+
+  <p>Πολλές συνδέσεις σε βάσεις δεδομένων μπορούν να ανοιχτούν μονομιάς, επιτρέποντας στον χρήστη να δουλέψει σε πολλαπλές βάσεις δεδομένων μονομιάς (είναι επίσης δυνατό να εκτελεστούν εντολές σε πολλές συνδέσεις ταυτόχρονα).</p>
+
+  <p>Καθώς ο <app>gda-browser</app> χρησιμοποιεί τη βιβλιοθήκη <app>libgda</app>, μπορεί να ανοίξει συνδέσεις σε βάσεις δεδομένων για τις οποίες ένας οδηγός (πάροχος) βάσης δεδομένων υπάρχει στην <app>libgda</app> (<link href="http://www.oracle.com">Oracle</link>, <link href="http://www.mysql.org">MySQL</link>, <link href="http://www.postgresql.org/">PostgreSQL</link>, <link href="http://www.sqlite.org">SQLite</link>, MS Access (μέσα από <link href="http://sourceforge.net/projects/mdbtools/">MDBTools</link> library), <link href="http://en.wikipedia.org/wiki/LDAP">LDAP</link> και <link href="http://java.sun.com/docs/books/tutorial/jdbc/index.html">JDBC</link> υποστηρίζονται προς το παρόν).</p>
+
+  <section id="presentation" style="1column">
+    <title>Παρουσίαση</title>
+  </section>
+  <section id="perspectives" style="1column">
+    <title>Προοπτικές</title>
+  </section>
+
+  <section id="connections" style="1column">
+    <title>Διαχείριση συνδέσεων</title>
+  </section>
+
+</page>

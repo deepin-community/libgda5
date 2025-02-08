@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-perspective" xml:lang="es">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+<title>La perspectiva del administrador de datos</title>
+<p>Use la perspectiva del gestor de datos para navegar a través de los datos de la base de datos. Para cambiar esta perspectiva, use el menú <guiseq><gui>Perspectiva</gui><gui>Gestor de datos</gui></guiseq> o el atajo <keyseq><key>Ctrl</key><key>D</key></keyseq>.</p>
+<p>El flujo de trabajo en esta perspectiva  se organiza en torno a la definición de uno o más <em>orígenes de datos</em> (que seleccionan datos en la base de datos) y que, cuando se ejecutan, el resultado es un conjunto de datos mostrados en una vista de tabular.</p>
+<p>La perspectiva se divide en dos paneles horizontales: el panel de la izquierda, para mantener las definiciones de los orígenes de datos favoritas y el panel de la derecha, que es el área de acción, donde se ejecuta cada origen de datos y se presentan los resultados en una vista tabular.</p>
+<figure>
+  <title>Perspectiva del administrador de datos</title>
+  <desc>La perspectiva del administrador de datos, con dos orígenes de datos</desc>
+  <media type="image" mime="image/png" src="figures/data-man-persp.png"/>
+</figure>
+<p>En la siguiente figura, hay dos fuentes de datos: una para la tabla «clientes» y otra para la tabla «pedidos» (que lista los pedidos de un cliente), la fuente de datos más adelante en función de la anterior, ya que es una clave externa de la tabla «pedidos» que hace referencia a la tabla «clientes». Las dos fuentes de datos se han ejecutado y el resultado se compone de dos vistas tabulares.</p>
+<p>Debido a que la fuente de datos «órdenes» depende de la fuente de datos «clientes» de datos, su vista correspondiente está a la derecha de la correspondiente a la fuente de datos «clientes». También cuando la selección de la fila de la vista «clientes» cambia,  se actualiza todo el contenido de la vista «órdenes».</p>
+<section id="data-manager-def-data-source">
+  <title>Definir fuentes de datos</title>
+  <p>La fuente de datos más sencilla es la que representa todos los datos de una tabla, mostrados cuando se ejecuta como una sola vista tabular, como si alguien ejecutara la sentencia <code>SELECT * FROM mitabla</code> en la <link xref="query-execution-perspective"/>.</p>
+  <p>La siguiente figura muestra el modo de edición de las fuentes de datos (cambie al modo de edición usando el <media type="image" mime="image/png" src="figures/data-man-mode.png"/> botón de la barra de herramientas).</p>
+  <p>Se pueden definir las fuentes de datos usando una <link xref="data-manager-xml-syntax">sintaxis XML</link>, o usando la <link xref="data-manager-source-editor">interfaz predeterminada</link>.</p>
+  <figure>
+    <title>Editar las fuentes de datos</title>
+    <desc>Editar fuentes de datos en la perspectiva del gestor de datos, desde la sintaxis XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-xmlcompose.png"/>
+  </figure>
+  <figure>
+    <title>Editar las fuentes de datos</title>
+    <desc>Editar fuentes de datos en la perspectiva del gestor de datos, usando la interfaz predeterminada: se definen dos fuentes de datos que listan los contenidos de las tablas «clientes» y «pedidos». La configuración es la misma que la de la figura anterior que muestra la sintaxis XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-uicompose.png"/>
+  </figure>
+
+  <p>Los comandos disponibles a través de los botones de comandos son:</p>
+  <list>
+    <item><p><gui>Restablecer</gui>: restablece el editor XML a una plantilla XML predeterminada, sólo disponible cuando la vista XML se muestra actualmente</p></item>
+    <item><p><gui>Añadir</gui>: muestra un menú emergente con atajos para definir rápidamente nuevos orígenes de datos como contenido de la tabla completa (también analiza el esquema de la base de datos para proponer elecciones relevantes), sólo disponible cuando el modo de edición XML no está seleccionado</p></item>
+    <item><p><gui>Variables</gui>: muestra u oculta el panel <link xref="variables-syntax">variables</link> donde puede asignar valores a las variables presentes en el código SQL de cualquier definición de orígenes de datos. El panel se muestra automáticamente cuando se detecta una variable en el código SQL.</p></item>
+    <item><p><gui>Ejecutar</gui>: ejecuta los orígenes de datos definidos</p></item>
+    <item><p><gui>Ver XML</gui>: alterna entre el editor XML y el editor del IU</p></item>
+    <item><p><gui>Ayuda</gui>: muestra alguna ayuda</p></item>
+  </list>
+</section>
+<section id="data-manager-exec-data-source">
+  <title>Ejecutar orígenes de datos definidos</title>
+  <p>Para ejecutar un conjunto de orígenes de datos definidos, simplemente cambie al modo de ejecución usando el <media type="image" mime="image/png" src="figures/data-man-mode.png"/> botón de la barra de herramientas o el botón <gui>Ejecutar</gui>.</p>
+  <p>La disposición de las vistas tabulares para cada fuente de datos se genera automáticamente en columnas usando la siguiente regla: si una fuente de datos B depende de otra A, su vista tabular se muestra a la derecha de la de A.</p>
+  <p>Además, si cambia la fila seleccionada de la vista tabular de una fuente de datos «A», también se actualizará la vista tabular de todas las fuentes de datos que dependen de «A».</p>
+</section>
+</page>

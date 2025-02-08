@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dictionary - metadata: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="GdaHandlerType.html" title="GdaHanderType">
+<link rel="next" href="GdaMetaStoreCustomData.html" title="Adding custom data">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaHandlerType.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaMetaStoreCustomData.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="gda-dict"></a>Dictionary - metadata</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="gda-dict.html#GdaMetaStoreSetup">Setup</a></span></dt>
+<dt><span class="sect1"><a href="GdaMetaStoreCustomData.html">Adding custom data</a></span></dt>
+<dt><span class="sect1"><a href="information_schema.html">Database structure</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:data_types">Data types</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:sql_identifiers">SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.5">Short and full names</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.6">Declared foreign keys</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.7">Individual table description</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStore.html">GdaMetaStore</a></span><span class="refpurpose"> — Dictionary object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStruct.html">GdaMetaStruct</a></span><span class="refpurpose"> — In memory representation of some database objects</span>
+</dt>
+</dl></div>
+<p>
+	Each connection has a dictionary object (a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a>) attached to it. That
+	dictionary is either created by the connection when it needs it, or is created and set by the user 
+	(to be able to re-use a dictionary), using the <a class="link" href="GdaConnection.html#GdaConnection--meta-store" title="The “meta-store” property">"meta-store"</a> 
+	property of the <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> object.
+      </p>
+<p>
+	Previous versions of <span class="application">Libgda</span> used an XML file based dictionary which had several drawbacks (see the 
+	<a class="link" href="migration-2-dict.html" title="Dictionary changes">migrations notes</a> for more details), now a database is used: the default
+	is to use an SQLite base database which is easily transportable and can be used in the same way the previous
+	XML based dictionary was used.
+      </p>
+<p>
+	Each <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> requires (and creates) a dictionary 
+	structure which is a set of tables implementing an 
+	"information schema" schema (as defined in the information schema SQL standard (ISO/IEC 9075), and adapted). 
+	The user is then free to add more database objects (tables and views) to contain his own data in the dictionary,
+	using the <a class="link" href="GdaMetaStore.html#gda-meta-store-schema-add-custom-object" title="gda_meta_store_schema_add_custom_object ()">gda_meta_store_schema_add_custom_object()</a>
+	method.
+      </p>
+<p>
+	Extracting information can be done using SQL statements on the dictionary database (a special 
+	gda_meta_store_extract() method), or, for information about
+	the database structure, using the <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct">GdaMetaStruct</a> object which creates
+	an easy to use in-memory representation	of some database objects.
+      </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="GdaMetaStoreSetup"></a>Setup</h2></div></div></div>
+<p>
+	  Each <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> object internally uses a (private)
+	  <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> connection object. The following figure illustrates
+	  the situation when the programmer uses a <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> connection object
+	  when the meta data is stored in a different database (usually an SQLite file):
+	  </p>
+<div class="mediaobject">
+<img src="MetaStore1.png"><div class="caption"><p>
+		GdaConnection object and its associated GdaMetaStore using its own database to store the
+		meta data.
+              </p></div>
+</div>
+<p>
+	</p>
+<p>
+	  From a programmer's point of view, the following code example shows how to get a connection's associated
+	  meta store object, without being able to specify anything about the meta store's private connection (in which
+	  case the private connection will be an in-memory database destroyed when the meta store object is destroyed):
+	  </p>
+<pre class="programlisting">
+GdaConnection *cnc;
+GdaMetaStore *store;
+
+cnc = gda_connection_open_from_dsn (...);
+g_object_get (G_OBJECT (cnc), "meta-store", &amp;store, NULL);
+
+[... use the meta store object ...]
+g_object_unref (store);
+	  </pre>
+<p>
+	</p>
+<p>
+	  One can also specify the meta store object to be used by a connection, as in:
+	  </p>
+<pre class="programlisting">
+GdaConnection *cnc;
+GdaMetaStore *store;
+
+cnc = gda_connection_open_from_dsn (...);
+store = gda_meta_store_new_with_file ("/path/to/file");
+/* or */
+store = gda_meta_store_new ("PostgreSQL://DB_NAME=meta_db");
+
+g_object_set (G_OBJECT (cnc), "meta-store", store, NULL);
+g_object_unref (store);
+	  </pre>
+<p>
+	</p>
+<p>
+	  The meta data can also be stored in the same database as the connection the meta data is for. In this case
+	  (and if the associated database provider supports it), the dictionary structure can be placed into a spearate
+	  schema. The next figure illustrates this situation:
+	  </p>
+<div class="mediaobject">
+<img src="MetaStore2.png"><div class="caption"><p>
+		GdaConnection object and its associated GdaMetaStore using the same database.
+              </p></div>
+</div>
+<p>
+	</p>
+<p>
+	  From a programmer's point of view, the following code example shows how to do the setup:
+	  </p>
+<pre class="programlisting">
+GdaConnection *cnc;
+GdaMetaStore *store;
+
+cnc = gda_connection_open_from_dsn (...);
+store = GDA_META_STORE (g_object_new (GDA_TYPE_META_STORE, "cnc", cnc, NULL));
+g_object_set (G_OBJECT (cnc), "meta-store", store, NULL);
+g_object_unref (store);
+	  </pre>
+<p>
+	</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

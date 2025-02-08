@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Object Hierarchy: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="ch12s13.html" title="Add your own data to a GdaMetaStore">
+<link rel="next" href="init_config.html" title="Initialization and configuration">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch12s13.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="init_config.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="id-1.3.4"></a>Object Hierarchy</h2></div></div></div>
+<pre class="screen">
+    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlobOp</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaColumn.html" title="GdaDataModel columns">GdaColumn</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Configuration.html#GdaConfig">GdaConfig</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdaVirtualConnection.html" title="GdaVirtualConnection">GdaVirtualConnection</a>
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="GdaVconnectionDataModel.html" title="GdaVconnectionDataModel">GdaVconnectionDataModel</a>
+    <span class="lineart">│</span>           <span class="lineart">├──</span> <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection">GdaLdapConnection</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="GdaVconnectionHub.html" title="GdaVconnectionHub">GdaVconnectionHub</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent">GdaConnectionEvent</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerTime.html" title="GdaHanderTime">GdaHandlerTime</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerBoolean.html" title="GdaHanderBoolean">GdaHandlerBoolean</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerString.html" title="GdaHanderString">GdaHandlerString</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerNumerical.html" title="GdaHanderNumerical">GdaHandlerNumerical</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerBin.html" title="GdaHanderBin">GdaHandlerBin</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHandlerType.html" title="GdaHanderType">GdaHandlerType</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataModelArray.html" title="GdaDataModelArray">GdaDataModelArray</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> GdaSqliteProvider
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="GdaVirtualProvider.html" title="GdaVirtualProvider">GdaVirtualProvider</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="GdaVproviderDataModel.html" title="GdaVproviderDataModel">GdaVproviderDataModel</a>
+    <span class="lineart">│</span>               <span class="lineart">╰──</span> <a class="link" href="GdaVproviderHub.html" title="GdaVproviderHub">GdaVproviderHub</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter">GdaDataModelIter</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataModelLdap.html" title="GdaDataModelLdap">GdaDataModelLdap</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrLdap.html" title="GdaTreeMgrLdap">GdaTreeMgrLdap</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns">GdaTreeMgrColumns</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrLabel.html" title="GdaTreeMgrLabel">GdaTreeMgrLabel</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas">GdaTreeMgrSchemas</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrSelect.html" title="GdaTreeMgrSelect">GdaTreeMgrSelect</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataModelDir.html" title="GdaDataModelDir">GdaDataModelDir</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaRow.html" title="GdaRow">GdaRow</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport">GdaDataModelImport</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataAccessWrapper.html" title="GdaDataAccessWrapper">GdaDataAccessWrapper</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataProxy.html" title="GdaDataProxy">GdaDataProxy</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaTransactionStatus.html" title="GdaTransactionStatus">GdaTransactionStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaReportEngine.html" title="GdaReportEngine">GdaReportEngine</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaReportDocument.html" title="GdaReportDocument">GdaReportDocument</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdaReportRmlDocument.html" title="GdaReportRmlDocument">GdaReportRmlDocument</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdaReportDocbookDocument.html" title="GdaReportDocbookDocument">GdaReportDocbookDocument</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaBatch.html" title="GdaBatch">GdaBatch</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct">GdaMetaStruct</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaTree.html" title="GdaTree">GdaTree</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaTreeNode.html" title="GdaTreeNode">GdaTreeNode</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder">GdaSqlBuilder</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper">GdaThreadWrapper</a>
+    <span class="lineart">├──</span> <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+    <span class="lineart">│</span>           <span class="lineart">├──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkBox.html#GtkBox-struct">GtkBox</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm">GdauiBasicForm</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdauiRawForm.html" title="GdauiRawForm">GdauiRawForm</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiDataFilter.html" title="GdauiDataFilter">GdauiDataFilter</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiDataProxyInfo.html" title="GdauiDataProxyInfo">GdauiDataProxyInfo</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiForm.html" title="GdauiForm">GdauiForm</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiGrid.html" title="GdauiGrid">GdauiGrid</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiLogin.html" title="GdauiLogin">GdauiLogin</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiServerOperation.html" title="GdauiServerOperation">GdauiServerOperation</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="GdauiCloud.html" title="GdauiCloud">GdauiCloud</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor">GdauiRtEditor</a>
+    <span class="lineart">│</span>           <span class="lineart">├──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkBin.html#GtkBin-struct">GtkBin</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkComboBox.html#GtkComboBox-struct">GtkComboBox</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="GdauiCombo.html" title="GdauiCombo">GdauiCombo</a>
+    <span class="lineart">│</span>           <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="GdauiProviderSelector.html" title="GdauiProviderSelector">GdauiProviderSelector</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct">GtkTreeView</a>
+    <span class="lineart">│</span>               <span class="lineart">╰──</span> <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid">GdauiRawGrid</a>
+    <span class="lineart">├──</span> <a class="link" href="GdauiDataStore.html" title="GdauiDataStore">GdauiDataStore</a>
+    <span class="lineart">├──</span> <a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore">GdauiTreeStore</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdaPStmt.html" title="GdaPstmt">GdaPStmt</a>
+    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler">GdaDataHandler</a>
+    <span class="lineart">├──</span> <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>
+    <span class="lineart">├──</span> <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector">GdauiDataSelector</a>
+    <span class="lineart">├──</span> <a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry">GdauiDataEntry</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy">GdauiDataProxy</a>
+    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList">GdaQuarkList</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Gda-Value.html#GdaGeometricPoint">GdaGeometricPoint</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric">GdaNumeric</a>
+    <span class="lineart">├──</span> <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime">GdaTime</a>
+    <span class="lineart">╰──</span> <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp">GdaTimestamp</a>
+</pre>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

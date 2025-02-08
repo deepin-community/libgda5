@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="features" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>	
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Fitur</title>
+  <p>Fitur-fitur <app>gda-browser</app> kini adalah:</p>
+  <section id="features-gen-ui">
+    <title>Antar muka pengguna umum</title>
+    <list>	
+      <item><p>multi threaded: setiap koneksi ditangani dalam threadnya sendiri, yang berarti bahwa tak ada koneksi tunggal yang dapat mengunci aplikasi</p></item>
+      <item><p>beberapa jendela dapat dibuka bagi koneksi tunggal</p></item>
+      <item><p>mode layar penuh dapat dipakai untuk memaksimalkan pemakaian ruang layar</p></item>
+    </list>
+  </section>
+  <section id="features-cnc-mgmt">
+    <title>Manajemen koneksi</title>
+    <list>
+      <item><p>beberapa koneksi simultan dapat dibuka sekaligus</p></item>
+      <item><p>pengikatan koneksi: dimungkinkan untuk <link type="topic" xref="virtual-connections">"mengikat"</link> beberapa koneksi menjadi satu untuk mengeksekusi perintah SQL pada beberapa koneksi sekaligus</p></item>
+      <item><p>multi threaded: setiap koneksi ditangani dalam threadnya sendiri, yang berarti bahwa tak ada koneksi tunggal yang dapat mengunci aplikasi</p></item>
+    </list>
+  </section>
+  <section id="features-activities">
+    <title>Aktivitas</title>
+    <p>Aktivitas dikelompokkan menurut tema di sekitar gagasan <link type="topic" xref="general-ui">perspektif</link>, yang berikut ini kini diimplementasikan:</p>
+    <list>	
+      <item><p>menganalisa skema basis data (tabel, relasi, ...), lihat <link xref="schema-browser-perspective">Perspektif peramban skema</link></p></item>
+      <item><p>mengeksekusi perintah SQL, lihat <link xref="query-execution-perspective">Perspektif eksekusi query</link></p></item>
+      <item><p>menganalisa isi tabel, lihat <link xref="data-manager-perspective"> Perspektif manajer data</link></p></item>
+      <item><p>untuk <link xref="ldap-connection">koneksi LDAP</link>, kelola data hirarkis dalam pohon LDAP, lihat <link xref="ldap-browser-perspective">perspektif peramban LDAP</link></p></item>
+    </list>
+    <p>Lihat juga seksi tentang <link xref="actions">aksi</link></p>
+  </section>
+  <section id="features-open">
+    <title>Keterbukaan</title>
+    <list>
+      <item><p>CSV dan berkas teks lain dapat diimpor dan dipakai bersama-sama<link type="topic" xref="virtual-connections">pengikatan koneksi</link></p></item>
+      <item><p>kerangka kerja umum telah cukup dibuka untuk menambah fitur-fitur integrasi baru: secara khusus, siapapun dapat mengembangkan <link type="topic" xref="general-ui">perspektif</link> baru</p></item>      
+    </list>
+  </section>
+</page>

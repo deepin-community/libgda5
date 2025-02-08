@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataModelImport: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaDataModelIter.html" title="GdaDataModelIter">
+<link rel="next" href="libgda-5.0-GdaDataPivot.html" title="GdaDataPivot">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelImport.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelImport.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelImport.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelImport.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaDataModelIter.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaDataPivot.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaDataModelImport"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaDataModelImport.top_of_page"></a>GdaDataModelImport</span></h2>
+<p>GdaDataModelImport — Importing data from a string or a file</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaDataModelImport.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelImport.html#gda-data-model-import-new-file" title="gda_data_model_import_new_file ()">gda_data_model_import_new_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelImport.html#gda-data-model-import-new-mem" title="gda_data_model_import_new_mem ()">gda_data_model_import_new_mem</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelImport.html#gda-data-model-import-new-xml-node" title="gda_data_model_import_new_xml_node ()">gda_data_model_import_new_xml_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelImport.html#gda-data-model-import-get-errors" title="gda_data_model_import_get_errors ()">gda_data_model_import_get_errors</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelImport.html#gda-data-model-import-clean-errors" title="gda_data_model_import_clean_errors ()">gda_data_model_import_clean_errors</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--data-string" title="The “data-string” property">data-string</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--filename" title="The “filename” property">filename</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--options" title="The “options” property">options</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--random-access" title="The “random-access” property">random-access</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--strict" title="The “strict” property">strict</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport--xml-node" title="The “xml-node” property">xml-node</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImport-struct" title="struct GdaDataModelImport">GdaDataModelImport</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImportClass" title="struct GdaDataModelImportClass">GdaDataModelImportClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaDataModelImport.html#GdaDataModelImportPrivate" title="GdaDataModelImportPrivate">GdaDataModelImportPrivate</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaDataModelImport
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaDataModelImport implements
+ <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> data model imports data from a string or a file. The data can either be
+in a CSV (comma separated values) format or in an XML format as described by the libgda-array.dtd DTD (as a side
+way it is also possible to import data from an already-build XML tree validated against that DTD).</p>
+<p>The caller must decide, upon construction, if the new <a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> must support random access or simply
+a cursor based access. Random access makes it easier to use the resulting data model but consumes more memory as
+all the data is copied in memory, and is thus not suitable for large data sets. Note that importing from an 
+already-build XML tree will always result in a random access data model.</p>
+<p>Various import options can be specified using parameters in a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object. The available options
+depend on the format of the imported data listed here:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"SEPARATOR" (string, CVS import only): specifies the separator to consider</p></li>
+<li class="listitem"><p>"ESCAPE_CHAR" (string, CVS import only): specifies the character used to "escape" the strings
+      contained between two separators</p></li>
+<li class="listitem"><p>"ENCODING" (string, CVS import only): specifies the character set used in the imported data</p></li>
+<li class="listitem"><p>"TITLE_AS_FIRST_LINE" (boolean, CVS import only): TRUE to specify that the first line of the 
+      imported data contains the column names</p></li>
+<li class="listitem"><p>"G_TYPE_&lt;col number&gt;" (GType, CVS import only): specifies the requested GType type for the column
+	numbered "col number"</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-model-import-new-file"></a><h3>gda_data_model_import_new_file ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_data_model_import_new_file (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> random_access</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *options</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object which contains the data stored within the <em class="parameter"><code>filename</code></em>
+ file.</p>
+<p>The options are the following ones:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>For the CSV format:
+     </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>ENCODING (string): specifies the encoding of the data in the file</p></li>
+<li class="listitem"><p>SEPARATOR (string): specifies the CSV separator (comma as default)</p></li>
+<li class="listitem"><p>QUOTE (string): specifies the character used as quote (double quote as default)</p></li>
+<li class="listitem"><p>NAMES_ON_FIRST_LINE (boolean): consider that the first line of the file contains columns' titles (note that the TITLE_AS_FIRST_LINE option is also accepted as a synonym)</p></li>
+<li class="listitem"><p>G_TYPE_&lt;column number&gt; (GType): specifies the type of value expected in column &lt;column number&gt;</p></li>
+</ul></div>
+<p>
+  </p>
+</li>
+<li class="listitem"><p>Other formats: no option</p></li>
+</ul></div>
+<p>Note: after the creation, please use <a class="link" href="GdaDataModelImport.html#gda-data-model-import-get-errors" title="gda_data_model_import_get_errors ()"><code class="function">gda_data_model_import_get_errors()</code></a> to check any error.</p>
+<div class="refsect3">
+<a name="gda-data-model-import-new-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>the file to import data from</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>random_access</p></td>
+<td class="parameter_description"><p>TRUE if random access will be required</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>options</p></td>
+<td class="parameter_description"><p>importing options. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-import-new-file.returns"></a><h4>Returns</h4>
+<p>a pointer to the newly created <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-import-new-mem"></a><h3>gda_data_model_import_new_mem ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_data_model_import_new_mem (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> random_access</code></em>,
+                               <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *options</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object which contains the data stored in the <em class="parameter"><code>data</code></em>
+ string.</p>
+<p>Important note: the <em class="parameter"><code>data</code></em>
+ string is not copied for memory efficiency reasons and should not
+therefore be altered in any way as long as the returned data model exists.</p>
+<div class="refsect3">
+<a name="gda-data-model-import-new-mem.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a string containing the data to import</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>random_access</p></td>
+<td class="parameter_description"><p>TRUE if random access will be required</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>options</p></td>
+<td class="parameter_description"><p>importing options, see <a class="link" href="GdaDataModelImport.html#gda-data-model-import-new-file" title="gda_data_model_import_new_file ()"><code class="function">gda_data_model_import_new_file()</code></a> for more information. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-import-new-mem.returns"></a><h4>Returns</h4>
+<p>a pointer to the newly created <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-import-new-xml-node"></a><h3>gda_data_model_import_new_xml_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_data_model_import_new_xml_node (<em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> and loads the data in <em class="parameter"><code>node</code></em>
+. The resulting data model
+can be accessed in a random way.</p>
+<div class="refsect3">
+<a name="gda-data-model-import-new-xml-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>an XML node corresponding to a &lt;data-array&gt; tag. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-import-new-xml-node.returns"></a><h4>Returns</h4>
+<p>a pointer to the newly created <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-import-get-errors"></a><h3>gda_data_model_import_get_errors ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+gda_data_model_import_get_errors (<em class="parameter"><code><a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> *model</code></em>);</pre>
+<p>Get the list of errors which <em class="parameter"><code>model</code></em>
+ has to report. The returned list is a list of
+<a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> structures, and must not be modified</p>
+<div class="refsect3">
+<a name="gda-data-model-import-get-errors.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-import-get-errors.returns"></a><h4>Returns</h4>
+<p>the list of errors (which must not be modified), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GLib.Error]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-import-clean-errors"></a><h3>gda_data_model_import_clean_errors ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_data_model_import_clean_errors (<em class="parameter"><code><a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> *model</code></em>);</pre>
+<p>Clears the history of errors <em class="parameter"><code>model</code></em>
+ has to report</p>
+<div class="refsect3">
+<a name="gda-data-model-import-clean-errors.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelImport.html" title="GdaDataModelImport"><span class="type">GdaDataModelImport</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataModelImport-struct"></a><h3>struct GdaDataModelImport</h3>
+<pre class="programlisting">struct GdaDataModelImport;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImportClass"></a><h3>struct GdaDataModelImportClass</h3>
+<pre class="programlisting">struct GdaDataModelImportClass {
+	GObjectClass               parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImportPrivate"></a><h3>GdaDataModelImportPrivate</h3>
+<pre class="programlisting">typedef struct _GdaDataModelImportPrivate GdaDataModelImportPrivate;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaDataModelImport--data-string"></a><h3>The <code class="literal">“data-string”</code> property</h3>
+<pre class="programlisting">  “data-string”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Data to import, as a string.</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImport--filename"></a><h3>The <code class="literal">“filename”</code> property</h3>
+<pre class="programlisting">  “filename”                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Name of the file to import.</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImport--options"></a><h3>The <code class="literal">“options”</code> property</h3>
+<pre class="programlisting">  “options”                  <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *</pre>
+<p>Data model options.</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImport--random-access"></a><h3>The <code class="literal">“random-access”</code> property</h3>
+<pre class="programlisting">  “random-access”            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Defines if the data model will be accessed randomly or through a cursor. If set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>,
+access will have to be done using a cursor.</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImport--strict"></a><h3>The <code class="literal">“strict”</code> property</h3>
+<pre class="programlisting">  “strict”                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Defines the behaviour in case the imported data contains recoverable errors (usually too
+many or too few data per row). If set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, an error will be reported and the import
+will stop, and if set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then the error will be reported but the import will not stop.</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+<p class="since">Since: 4.2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelImport--xml-node"></a><h3>The <code class="literal">“xml-node”</code> property</h3>
+<pre class="programlisting">  “xml-node”                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Data to import, as a pointer to an XML node (a <span class="type">xmlNodePtr</span>).</p>
+<p>Owner: GdaDataModelImport</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelImport.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

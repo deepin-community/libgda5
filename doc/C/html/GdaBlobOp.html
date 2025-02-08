@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Blobs: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="data-select.html" title="Advanced GdaDataSelect usage">
+<link rel="next" href="GdaDataModel.html" title="GdaDataModel">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaBlobOp.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaBlobOp.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="data-select.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaDataModel.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaBlobOp"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaBlobOp.top_of_page"></a>Blobs</span></h2>
+<p>Blobs — Binary data and BLOBs handling</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaBlobOp.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaBlobOp.html#gda-blob-op-get-length" title="gda_blob_op_get_length ()">gda_blob_op_get_length</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaBlobOp.html#gda-blob-op-read" title="gda_blob_op_read ()">gda_blob_op_read</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaBlobOp.html#gda-blob-op-read-all" title="gda_blob_op_read_all ()">gda_blob_op_read_all</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaBlobOp.html#gda-blob-op-write" title="gda_blob_op_write ()">gda_blob_op_write</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaBlobOp.html#gda-blob-op-write-all" title="gda_blob_op_write_all ()">gda_blob_op_write_all</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaBlobOp.html#GdaBlobOp-struct" title="GdaBlobOp">GdaBlobOp</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaBlobOp
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-blob-op.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.description"></a><h2>Description</h2>
+<p>This object is a base class for individual database providers which support BLOB types. It supports
+operations to read and write data in a BLOB value (of type GDA_BLOB_TYPE).</p>
+<p>Libgda offers two methods to manipulate binary values as two containers: <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a>
+and <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob">GdaBlob</a>:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>When reading from a data model returned by <span class="application">Libgda</span> binary data will often be in a GdaBlob
+  object, and the associated <a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlobOp</a> object can be used to manipulate the
+  binary object (in a database for example)</p></li>
+<li class="listitem"><p>When the binary value is created by the user, then there is no point in using a GdaBlob as
+  there can not be any <a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlobOp</a> object, so the GdaBinary container is
+  enough.</p></li>
+</ul></div>
+<p>Note that a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob">GdaBlob</a> value (the "data" attribute) will often not contain any data
+(or only some part of the actual BLOB)
+and that it's up to the user to use the associated <a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlobOp</a> object to
+"load" the data into the container (into the actual process heap).</p>
+<p>For example to load the 1st 40 bytes of a blob:</p>
+<pre class="programlisting">
+GValue *blob_value = ...
+GdaBlob *blob;
+
+blob = (GdaBlob*) gda_value_get_blob (blob_value);
+gda_blob_op_read (blob-&gt;op, blob, 0, 40);
+ </pre>
+<p>Another example is to write the contents of a blob to a file on disk, using a special</p>
+<a class="link" href="GdaBlobOp.html" title="Blobs">GdaBlobOp</a> object (internal to <span class="application">Libgda</span> which interfaces
+<p> with a file in a filesystem):</p>
+<pre class="programlisting">
+GValue *blob_value; // value to copy from
+GValue *tmp_value;
+GdaBlob *file_blob;
+
+GValue *blob_value = ...
+tmp_value = gda_value_new_blob_from_file ("MyFile.bin");
+file_blob = (GdaBlob*) gda_value_get_blob (tmp_value);
+
+if (! gda_blob_op_write_all (file_blob-&gt;op, gda_value_get_blob (blob_value))) {
+      // error
+}
+else {
+      gsize size;
+      size = gda_blob_op_get_length (file_blob-&gt;op);
+      g_print ("Wrote %s, size = %d\n", filename, size);
+}
+gda_value_free (tmp_value);
+ </pre>
+<p>For further information, see:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the section about <a class="link" href="gen_blobs.html" title="Binary large objects (BLOBs)">Binary large objects (BLOBs)</a>'s
+       abstraction</p></li>
+<li class="listitem"><p><a class="link" href="libgda-provider-blobop.html" title="Virtual methods for Blob operations">Virtual methods for Blob operations</a>
+       section for more information
+       about how to implement the virtual methods when creating a database provider</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-blob-op-get-length"></a><h3>gda_blob_op_get_length ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_blob_op_get_length (<em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-blob-op-get-length.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>an existing <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-op-get-length.returns"></a><h4>Returns</h4>
+<p> the length of the blob in bytes. In case of error, -1 is returned and the
+provider should have added an error (a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>) to the connection.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-op-read"></a><h3>gda_blob_op_read ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_blob_op_read (<em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>,
+                  <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> offset</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> size</code></em>);</pre>
+<p>Reads a chunk of bytes from the BLOB accessible through <em class="parameter"><code>op</code></em>
+ into <em class="parameter"><code>blob</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-blob-op-read.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> to read data to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset to read from the start of the blob (starts at 0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>maximum number of bytes to read.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-op-read.returns"></a><h4>Returns</h4>
+<p> the number of bytes actually read. In case of error, -1 is returned and the
+provider should have added an error to the connection.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-op-read-all"></a><h3>gda_blob_op_read_all ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_blob_op_read_all (<em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>,
+                      <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>);</pre>
+<p>Reads the whole contents of the blob manipulated by <em class="parameter"><code>op</code></em>
+ into <em class="parameter"><code>blob</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-blob-op-read-all.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> to read data to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-op-read-all.returns"></a><h4>Returns</h4>
+<p> TRUE if <em class="parameter"><code>blob-&gt;data</code></em>
+contains the whole BLOB manipulated by <em class="parameter"><code>op</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-op-write"></a><h3>gda_blob_op_write ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_blob_op_write (<em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>,
+                   <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> offset</code></em>);</pre>
+<p>Writes a chunk of bytes from a <em class="parameter"><code>blob</code></em>
+ to the BLOB accessible through <em class="parameter"><code>op</code></em>
+, <em class="parameter"><code>blob</code></em>
+ is unchanged after
+this call.</p>
+<p>If <em class="parameter"><code>blob</code></em>
+ has an associated <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> (ie. if <em class="parameter"><code>blob-&gt;op</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) then the data to be written
+using <em class="parameter"><code>op</code></em>
+ is the data fetched using <em class="parameter"><code>blob-&gt;op</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-blob-op-write.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> which contains the data to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>offset</p></td>
+<td class="parameter_description"><p>offset to write from the start of the blob (starts at 0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-op-write.returns"></a><h4>Returns</h4>
+<p> the number of bytes written. In case of error, -1 is returned and the
+provider should have added an error to the connection.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-op-write-all"></a><h3>gda_blob_op_write_all ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_blob_op_write_all (<em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>,
+                       <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>);</pre>
+<p>Writes the whole contents of <em class="parameter"><code>blob</code></em>
+ into the blob manipulated by <em class="parameter"><code>op</code></em>
+. If necessary the resulting
+blob is truncated from its previous length.</p>
+<div class="refsect3">
+<a name="gda-blob-op-write-all.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> which contains the data to write</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-op-write-all.returns"></a><h4>Returns</h4>
+<p> TRUE on success</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaBlobOp.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaBlobOp-struct"></a><h3>GdaBlobOp</h3>
+<pre class="programlisting">typedef struct _GdaBlobOp GdaBlobOp;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

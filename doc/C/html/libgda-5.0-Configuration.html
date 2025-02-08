@@ -1,0 +1,893 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Configuration: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="init_config.html" title="Initialization and configuration">
+<link rel="prev" href="libgda-5.0-Libgda-Initialization.html" title="Library initialization">
+<link rel="next" href="connection.html" title="Connections &amp; commands">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Configuration.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Configuration.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Configuration.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Configuration.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="init_config.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-Libgda-Initialization.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="connection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Configuration"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Configuration.top_of_page"></a>Configuration</span></h2>
+<p>Configuration — Access/Management of libgda configuration</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="returnvalue">GdaDsnInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-dsn-info" title="gda_config_get_dsn_info ()">gda_config_get_dsn_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-define-dsn" title="gda_config_define_dsn ()">gda_config_define_dsn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-remove-dsn" title="gda_config_remove_dsn ()">gda_config_remove_dsn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-dsn-needs-authentication" title="gda_config_dsn_needs_authentication ()">gda_config_dsn_needs_authentication</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-list-dsn" title="gda_config_list_dsn ()">gda_config_list_dsn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-nb-dsn" title="gda_config_get_nb_dsn ()">gda_config_get_nb_dsn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-dsn-info-index" title="gda_config_get_dsn_info_index ()">gda_config_get_dsn_info_index</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="returnvalue">GdaDsnInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-dsn-info-at-index" title="gda_config_get_dsn_info_at_index ()">gda_config_get_dsn_info_at_index</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-can-modify-system-config" title="gda_config_can_modify_system_config ()">gda_config_can_modify_system_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Configuration.html#GdaProviderInfo" title="struct GdaProviderInfo"><span class="returnvalue">GdaProviderInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-provider-info" title="gda_config_get_provider_info ()">gda_config_get_provider_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="returnvalue">GdaServerProvider</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get-provider" title="gda_config_get_provider ()">gda_config_get_provider</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-list-providers" title="gda_config_list_providers ()">gda_config_list_providers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="returnvalue">GdaConfig</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get" title="gda_config_get ()">gda_config_get</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig--system-filename" title="The “system-filename” property">system-filename</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig--user-filename" title="The “user-filename” property">user-filename</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig-dsn-added" title="The “dsn-added” signal">dsn-added</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig-dsn-changed" title="The “dsn-changed” signal">dsn-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig-dsn-removed" title="The “dsn-removed” signal">dsn-removed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig-dsn-to-be-removed" title="The “dsn-to-be-removed” signal">dsn-to-be-removed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GdaConfig"></a><div class="refsect1">
+<a name="libgda-5.0-Configuration.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig-struct" title="GdaConfig">GdaConfig</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo">GdaDsnInfo</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Configuration.html#GdaProviderInfo" title="struct GdaProviderInfo">GdaProviderInfo</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaConfig
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.description"></a><h2>Description</h2>
+<p>The functions in this section allow applications an easy access to libgda's
+configuration (the list of data sources and database providers).</p>
+<p>As soon as a <a class="link" href="libgda-5.0-Configuration.html#GdaConfig">GdaConfig</a> is needed (for example when requesting information
+about a data source or about a server provider), a single instance object is created,
+and no other will need to be created. A pointer to this object can be obtained with</p>
+<a class="link" href="libgda-5.0-Configuration.html#gda-config-get" title="gda_config_get ()"><code class="function">gda_config_get()</code></a>. Of course one can (right after having called
+<a class="link" href="libgda-5.0-Libgda-Initialization.html#gda-init" title="gda_init ()"><code class="function">gda_init()</code></a>) force the creation of a GdaConfig object with some
+<p>specific properties set, using a simple call like:</p>
+<pre class="programlisting">
+g_object_new (GDA_TYPE_CONFIG, "user-filename", "my_file", NULL);
+</pre>
+<p>Please note that after that call, the caller has a reference to the newly created object, and should technically
+call <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><GTKDOCLINK HREF="g-object-unref"><code class="function">g_object_unref()</code></a></GTKDOCLINK> when finished using it. It is safe to do this
+but also pointless since that object should not be destroyed (as no other will be created) as <span class="application">Libgda</span> also
+keeps a reference for itself.</p>
+<p>Data sources are defined in a per-user configuration file which is by default <code class="filename">${HOME}/.libgda/config</code> and
+in a system wide configuration file which is by default <code class="filename">${prefix}/etc/libgda-4.0/config</code>. Those
+filenames can be modified by setting the user-file and</p>
+system-file properties for the single <a class="link" href="libgda-5.0-Configuration.html#GdaConfig">GdaConfig</a><p>instance. Note that setting either of these properties to <code class="literal">NULL</code> will disable using the corresponding
+configuration file (DSN will exist only in memory and their definition will be lost when the application finishes).</p>
+<p>The <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object implements its own locking mechanism so it is thread-safe.</p>
+<p>Note about localization: when the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> loads configuration files, it filters the
+contents based on the current locale, so for example if your current locale is "de" then
+all the loaded strings (for the ones which are translated) will be in the German language.
+Changing the locale afterwards will have no effect on the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> and the already loaded
+configuration.
+The consequence is that you should first call <code class="function">setlocale()</code> youself in your code before using
+a <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object. As a side note you should also call <a href="/usr/share/gtk-doc/html/gtk3/gtk3-General.html#gtk-init"><code class="function">gtk_init()</code></a> before <a class="link" href="libgda-5.0-LibgdaUI-Initialization.html#gdaui-init" title="gdaui_init ()"><code class="function">gdaui_init()</code></a> because
+<a href="/usr/share/gtk-doc/html/gtk3/gtk3-General.html#gtk-init"><code class="function">gtk_init()</code></a> calls <code class="function">setlocale()</code>.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-config-get-dsn-info"></a><h3>gda_config_get_dsn_info ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="returnvalue">GdaDsnInfo</span></a> *
+gda_config_get_dsn_info (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dsn_name</code></em>);</pre>
+<p>Get information about the DSN named <em class="parameter"><code>dsn_name</code></em>
+. </p>
+<p><em class="parameter"><code>dsn_name</code></em>
+'s format is "[&lt;username&gt;[:&lt;password&gt;]@]&lt;DSN&gt;" (if &lt;username&gt;
+and optionally &lt;password&gt; are provided, they are ignored). Also see the <a class="link" href="libgda-5.0-Utility-functions.html#gda-dsn-split" title="gda_dsn_split ()"><code class="function">gda_dsn_split()</code></a> utility
+function.</p>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dsn_name</p></td>
+<td class="parameter_description"><p>the name of the DSN to look for</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info.returns"></a><h4>Returns</h4>
+<p>a pointer to read-only <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a> structure, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-define-dsn"></a><h3>gda_config_define_dsn ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_config_define_dsn (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a> *info</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Add or update a DSN from the definition in <em class="parameter"><code>info</code></em>
+.</p>
+<p>This method may fail with a <code class="literal">GDA_CONFIG_ERROR</code> domain error (see the <span class="type">GdaConfigError</span> error codes).</p>
+<div class="refsect3">
+<a name="gda-config-define-dsn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>a pointer to a filled GdaDsnInfo structure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-define-dsn.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-remove-dsn"></a><h3>gda_config_remove_dsn ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_config_remove_dsn (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dsn_name</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Remove the DSN named <em class="parameter"><code>dsn_name</code></em>
+.</p>
+<p>This method may fail with a <code class="literal">GDA_CONFIG_ERROR</code> domain error (see the <span class="type">GdaConfigError</span> error codes).</p>
+<div class="refsect3">
+<a name="gda-config-remove-dsn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dsn_name</p></td>
+<td class="parameter_description"><p>the name of the DSN to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-remove-dsn.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-dsn-needs-authentication"></a><h3>gda_config_dsn_needs_authentication ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_config_dsn_needs_authentication (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dsn_name</code></em>);</pre>
+<p>Tells if the data source identified as <em class="parameter"><code>dsn_name</code></em>
+ needs any authentication. If a &lt;username&gt;
+and optionally a &lt;password&gt; are specified, they are ignored.</p>
+<div class="refsect3">
+<a name="gda-config-dsn-needs-authentication.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dsn_name</p></td>
+<td class="parameter_description"><p>the name of a DSN, in the "[&lt;username&gt;[:&lt;password&gt;]@]&lt;DSN&gt;" format</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-dsn-needs-authentication.returns"></a><h4>Returns</h4>
+<p> TRUE if an authentication is needed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-list-dsn"></a><h3>gda_config_list_dsn ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_config_list_dsn (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> representing all the configured DSN, and keeping itself up to date with
+the changes in the declared DSN.</p>
+<p>The returned data model is composed of the following columns:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>DSN name</p></li>
+<li class="listitem"><p>Provider name</p></li>
+<li class="listitem"><p>Description</p></li>
+<li class="listitem"><p>Connection string</p></li>
+<li class="listitem"><p>Username if it exists</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-config-list-dsn.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get-nb-dsn"></a><h3>gda_config_get_nb_dsn ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_config_get_nb_dsn (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get the number of defined DSN</p>
+<div class="refsect3">
+<a name="gda-config-get-nb-dsn.returns"></a><h4>Returns</h4>
+<p> the number of defined DSN</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get-dsn-info-index"></a><h3>gda_config_get_dsn_info_index ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_config_get_dsn_info_index (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dsn_name</code></em>);</pre>
+<p>Get the index (starting at 0) of the DSN named <em class="parameter"><code>dsn_name</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info-index.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dsn_name</p></td>
+<td class="parameter_description"><p>a DSN</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info-index.returns"></a><h4>Returns</h4>
+<p> the index or -1 if not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get-dsn-info-at-index"></a><h3>gda_config_get_dsn_info_at_index ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="returnvalue">GdaDsnInfo</span></a> *
+gda_config_get_dsn_info_at_index (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> index</code></em>);</pre>
+<p>Get a pointer to a read-only <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a> at the <em class="parameter"><code>index</code></em>
+ position</p>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info-at-index.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>index</p></td>
+<td class="parameter_description"><p>an index</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-get-dsn-info-at-index.returns"></a><h4>Returns</h4>
+<p>the pointer or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no DSN exists at position <em class="parameter"><code>index</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-can-modify-system-config"></a><h3>gda_config_can_modify_system_config ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_config_can_modify_system_config (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Tells if the global (system) configuration can be modified (considering
+system permissions and settings)</p>
+<div class="refsect3">
+<a name="gda-config-can-modify-system-config.returns"></a><h4>Returns</h4>
+<p> TRUE if system-wide configuration can be modified</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get-provider-info"></a><h3>gda_config_get_provider_info ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Configuration.html#GdaProviderInfo" title="struct GdaProviderInfo"><span class="returnvalue">GdaProviderInfo</span></a> *
+gda_config_get_provider_info (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_name</code></em>);</pre>
+<p>Get some information about the a database provider (adapter) named</p>
+<div class="refsect3">
+<a name="gda-config-get-provider-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>provider_name</p></td>
+<td class="parameter_description"><p>a database provider</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-get-provider-info.returns"></a><h4>Returns</h4>
+<p>a pointer to read-only <a class="link" href="libgda-5.0-Configuration.html#GdaProviderInfo" title="struct GdaProviderInfo"><span class="type">GdaProviderInfo</span></a> structure, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get-provider"></a><h3>gda_config_get_provider ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="returnvalue">GdaServerProvider</span></a> *
+gda_config_get_provider (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider_name</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get a pointer to the session-wide <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> for the
+provider named <em class="parameter"><code>provider_name</code></em>
+. The caller must not call <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> on the
+returned object.</p>
+<p>This method may fail with a <code class="literal">GDA_CONFIG_ERROR</code> domain error (see the <span class="type">GdaConfigError</span> error codes).</p>
+<div class="refsect3">
+<a name="gda-config-get-provider.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider_name</p></td>
+<td class="parameter_description"><p>a database provider</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-config-get-provider.returns"></a><h4>Returns</h4>
+<p>a pointer to the <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-list-providers"></a><h3>gda_config_list_providers ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_config_list_providers (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> representing all the installed database providers.</p>
+<p>The returned data model is composed of the following columns:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Provider name</p></li>
+<li class="listitem"><p>Description</p></li>
+<li class="listitem"><p>DSN parameters</p></li>
+<li class="listitem"><p>Authentication parameters</p></li>
+<li class="listitem"><p>File name of the plugin</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-config-list-providers.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-config-get"></a><h3>gda_config_get ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="returnvalue">GdaConfig</span></a> *
+gda_config_get (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a pointer to the global (unique) <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object. This functions increments
+the reference count of the object, so you need to call <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> on it once finished.</p>
+<div class="refsect3">
+<a name="gda-config-get.returns"></a><h4>Returns</h4>
+<p>a non <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> pointer to the unique <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaConfig-struct"></a><h3>GdaConfig</h3>
+<pre class="programlisting">typedef struct _GdaConfig GdaConfig;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDsnInfo"></a><h3>struct GdaDsnInfo</h3>
+<pre class="programlisting">struct GdaDsnInfo {
+        gchar    *name;
+        gchar    *provider;
+        gchar    *description;
+        gchar    *cnc_string;
+        gchar    *auth_string;
+        gboolean  is_system;
+};
+</pre>
+<p>This structure defines the properties of a named data source (DSN).</p>
+<div class="refsect3">
+<a name="GdaDsnInfo.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaDsnInfo.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>the (unique) name of the DSN (plain text, not RFC 1738 encoded)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaDsnInfo.provider"></a>provider</code></em>;</p></td>
+<td class="struct_member_description"><p>the ID of the database provider to be used (plain text, not RFC 1738 encoded)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaDsnInfo.description"></a>description</code></em>;</p></td>
+<td class="struct_member_description"><p>a descriptive string (plain text, not RFC 1738 encoded), can be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaDsnInfo.cnc-string"></a>cnc_string</code></em>;</p></td>
+<td class="struct_member_description"><p>the connection string, a semi-colon separated &lt;key&gt;=&lt;value&gt; list where &lt;key&gt; and &lt;value&gt; are RFC 1738 encoded </p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaDsnInfo.auth-string"></a>auth_string</code></em>;</p></td>
+<td class="struct_member_description"><p>the authentication string, a semi-colon separated &lt;key&gt;=&lt;value&gt; list where &lt;key&gt; and &lt;value&gt; are RFC 1738 encoded. Can be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> <em class="structfield"><code><a name="GdaDsnInfo.is-system"></a>is_system</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the DSN is a system wide defined data source</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaProviderInfo"></a><h3>struct GdaProviderInfo</h3>
+<pre class="programlisting">struct GdaProviderInfo {
+        gchar             *id;
+        gchar             *location;
+        gchar             *description;
+        GdaSet            *dsn_params;  /* Specs to create a DSN */
+	GdaSet            *auth_params; /* Specs to authenticate a client */
+};
+</pre>
+<p>This structure holds the information associated to a database provider as discovered by Libgda.</p>
+<div class="refsect3">
+<a name="GdaProviderInfo.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaProviderInfo.id"></a>id</code></em>;</p></td>
+<td class="struct_member_description"><p>the unique identifier of the database provider</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaProviderInfo.location"></a>location</code></em>;</p></td>
+<td class="struct_member_description"><p>the complete path to the shared library implementing the database provider</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaProviderInfo.description"></a>description</code></em>;</p></td>
+<td class="struct_member_description"><p>provider's description</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *<em class="structfield"><code><a name="GdaProviderInfo.dsn-params"></a>dsn_params</code></em>;</p></td>
+<td class="struct_member_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> containing all the parameters which can/must be specified when opening a connection or defining a named data source (DSN)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *<em class="structfield"><code><a name="GdaProviderInfo.auth-params"></a>auth_params</code></em>;</p></td>
+<td class="struct_member_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> containing all the authentication parameters</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaConfig--system-filename"></a><h3>The <code class="literal">“system-filename”</code> property</h3>
+<pre class="programlisting">  “system-filename”          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>File to use for system-wide DSN list. When changed, the whole list of DSN will be reloaded.</p>
+<p>Owner: GdaConfig</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConfig--user-filename"></a><h3>The <code class="literal">“user-filename”</code> property</h3>
+<pre class="programlisting">  “user-filename”            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>File to use for per-user DSN list. When changed, the whole list of DSN will be reloaded.</p>
+<p>Owner: GdaConfig</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Configuration.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaConfig-dsn-added"></a><h3>The <code class="literal">“dsn-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> *conf,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   new_dsn,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever a new DSN has been defined</p>
+<div class="refsect3">
+<a name="GdaConfig-dsn-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>conf</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_dsn</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConfig-dsn-changed"></a><h3>The <code class="literal">“dsn-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> *conf,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   dsn,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever a DSN's definition has been changed</p>
+<div class="refsect3">
+<a name="GdaConfig-dsn-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>conf</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dsn</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConfig-dsn-removed"></a><h3>The <code class="literal">“dsn-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> *conf,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   old_dsn,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever a DSN has been removed</p>
+<div class="refsect3">
+<a name="GdaConfig-dsn-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>conf</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_dsn</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConfig-dsn-to-be-removed"></a><h3>The <code class="literal">“dsn-to-be-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> *conf,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   old_dsn,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever a DSN is about to be removed</p>
+<div class="refsect3">
+<a name="GdaConfig-dsn-to-be-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>conf</p></td>
+<td class="parameter_description"><p>the <a class="link" href="libgda-5.0-Configuration.html#GdaConfig"><span class="type">GdaConfig</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_dsn</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Configuration.html#GdaDsnInfo" title="struct GdaDsnInfo"><span class="type">GdaDsnInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

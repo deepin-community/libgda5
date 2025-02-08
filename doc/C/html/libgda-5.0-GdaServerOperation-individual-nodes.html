@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaServerOperation: individual nodes: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch21.html" title="Data definition (DDL) queries">
+<link rel="prev" href="GdaServerOperation.html" title="GdaServerOperation">
+<link rel="next" href="libgda-5.0-GdaServerOperation-sequences.html" title="GdaServerOperation: sequences">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-GdaServerOperation-individual-nodes.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch21.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaServerOperation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaServerOperation-sequences.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-GdaServerOperation-individual-nodes.top_of_page"></a>GdaServerOperation: individual nodes</span></h2>
+<p>GdaServerOperation: individual nodes — Getting information about parts (nodes) composing a path</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode"><span class="returnvalue">GdaServerOperationNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-node-info" title="gda_server_operation_get_node_info ()">gda_server_operation_get_node_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-root-nodes" title="gda_server_operation_get_root_nodes ()">gda_server_operation_get_root_nodes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeType" title="enum GdaServerOperationNodeType"><span class="returnvalue">GdaServerOperationNodeType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-node-type" title="gda_server_operation_get_node_type ()">gda_server_operation_get_node_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-node-parent" title="gda_server_operation_get_node_parent ()">gda_server_operation_get_node_parent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-node-path-portion" title="gda_server_operation_get_node_path_portion ()">gda_server_operation_get_node_path_portion</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeType" title="enum GdaServerOperationNodeType">GdaServerOperationNodeType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeStatus" title="enum GdaServerOperationNodeStatus">GdaServerOperationNodeStatus</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode">GdaServerOperationNode</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.description"></a><h2>Description</h2>
+<p>To each part of a path is associated a node (as a <a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode"><span class="type">GdaServerOperationNode</span></a> structure). For example the
+"/TABLE_DEF_P/TABLE_NAME" path has two nodes, one associated to "/TABLE_DEF_P" and one to
+"/TABLE_DEF_P/TABLE_NAME". For more information about the path's format, see the
+<a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()"><code class="function">gda_server_operation_set_value_at()</code></a>'s documentation.</p>
+<p>This API is designed to get information about all the nodes present in a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object (refer to the
+<a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#gda-server-operation-get-root-nodes" title="gda_server_operation_get_root_nodes ()"><code class="function">gda_server_operation_get_root_nodes()</code></a> function) and about each node of a path, and allows inspection
+of its contents. It is mainly reserved for database provider's implementations but can have its purpose
+outside of this scope.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-server-operation-get-node-info"></a><h3>gda_server_operation_get_node_info ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode"><span class="returnvalue">GdaServerOperationNode</span></a> *
+gda_server_operation_get_node_info (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path_format</code></em>,
+                                    <em class="parameter"><code>...</code></em>);</pre>
+<p>Get information about the node identified by <em class="parameter"><code>path</code></em>
+. The returned <a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode"><span class="type">GdaServerOperationNode</span></a> structure can be 
+copied but not modified; it may change or cease to exist if <em class="parameter"><code>op</code></em>
+ changes</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path_format</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/") as a format string, similar to <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strdup-printf"><code class="function">g_strdup_printf()</code></a>'s argument</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>the arguments to insert into the format string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-info.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode"><span class="type">GdaServerOperationNode</span></a> structure, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the node was not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-root-nodes"></a><h3>gda_server_operation_get_root_nodes ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+gda_server_operation_get_root_nodes (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>);</pre>
+<p>Get an array of strings containing the paths of nodes situated at the root of <em class="parameter"><code>op</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-root-nodes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-root-nodes.returns"></a><h4>Returns</h4>
+<p>a new array, which must be freed with <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-node-type"></a><h3>gda_server_operation_get_node_type ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeType" title="enum GdaServerOperationNodeType"><span class="returnvalue">GdaServerOperationNodeType</span></a>
+gda_server_operation_get_node_type (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                    <em class="parameter"><code><a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeStatus" title="enum GdaServerOperationNodeStatus"><span class="type">GdaServerOperationNodeStatus</span></a> *status</code></em>);</pre>
+<p>Convenience function to get the type of a node.</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>a place to store the status of the node, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-type.returns"></a><h4>Returns</h4>
+<p> the type of node, or GDA_SERVER_OPERATION_NODE_UNKNOWN if the node was not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-node-parent"></a><h3>gda_server_operation_get_node_parent ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_get_node_parent (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>Get the complete path to the parent of the node defined by <em class="parameter"><code>path</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-parent.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-parent.returns"></a><h4>Returns</h4>
+<p>a new string or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the node does not have any parent or does not exist. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-node-path-portion"></a><h3>gda_server_operation_get_node_path_portion ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_get_node_path_portion
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>Get the last part of <em class="parameter"><code>path</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-path-portion.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-node-path-portion.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaServerOperationNodeType"></a><h3>enum GdaServerOperationNodeType</h3>
+<div class="refsect3">
+<a name="GdaServerOperationNodeType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-PARAMLIST:CAPS"></a>GDA_SERVER_OPERATION_NODE_PARAMLIST</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-DATA-MODEL:CAPS"></a>GDA_SERVER_OPERATION_NODE_DATA_MODEL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-PARAM:CAPS"></a>GDA_SERVER_OPERATION_NODE_PARAM</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-SEQUENCE:CAPS"></a>GDA_SERVER_OPERATION_NODE_SEQUENCE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-SEQUENCE-ITEM:CAPS"></a>GDA_SERVER_OPERATION_NODE_SEQUENCE_ITEM</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-DATA-MODEL-COLUMN:CAPS"></a>GDA_SERVER_OPERATION_NODE_DATA_MODEL_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-NODE-UNKNOWN:CAPS"></a>GDA_SERVER_OPERATION_NODE_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperationNodeStatus"></a><h3>enum GdaServerOperationNodeStatus</h3>
+<div class="refsect3">
+<a name="GdaServerOperationNodeStatus.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-STATUS-OPTIONAL:CAPS"></a>GDA_SERVER_OPERATION_STATUS_OPTIONAL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-STATUS-REQUIRED:CAPS"></a>GDA_SERVER_OPERATION_STATUS_REQUIRED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-STATUS-UNKNOWN:CAPS"></a>GDA_SERVER_OPERATION_STATUS_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperationNode"></a><h3>GdaServerOperationNode</h3>
+<pre class="programlisting">typedef struct {
+	GdaServerOperationNodeType    type;
+	GdaServerOperationNodeStatus  status;
+
+	GdaSet                       *plist;
+	GdaDataModel                 *model;
+	GdaColumn                    *column;
+	GdaHolder                    *param;
+
+	gpointer                      priv;
+} GdaServerOperationNode;
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-individual-nodes.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

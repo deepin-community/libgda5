@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DDL example: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="getting_started.html" title="Code examples">
+<link rel="prev" href="main_example.html" title="Full example">
+<link rel="next" href="blobs_example.html" title="Binary large objects (BLOBs) example">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="getting_started.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="main_example.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="blobs_example.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="ddl_example"></a>DDL example</h2></div></div></div>
+<p>
+      The following example illustrates (in a very simple way) how to use the 
+      <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a> object to perform a CREATE TABLE query.
+      For more information about how <span class="application">Libgda</span> handles DDL queries, see <a class="link" href="ch21.html#DDLIntro" title="General words about DDL queries">the DDL introduction</a>.
+      The following code simply executes the equivalent of "CREATE TABLE products (id int PRIMARY KEY, product_name string NOT NULL);" 
+      in a generic way, where the "id" field is the primary key and should be auto incremented (the SQL is generally 
+      specific to each DBMS for that last part).
+    </p>
+<p>
+      For SQLite, the actual executed SQL statement is:
+      </p>
+<pre class="programlisting">
+	CREATE TABLE products (id integer PRIMARY KEY AUTOINCREMENT, product_name varchar(50) NOT NULL);
+      </pre>
+<p>
+      whereas for MySQL, the code would be:
+      </p>
+<pre class="programlisting">
+	CREATE TABLE products (id integer AUTO_INCREMENT PRIMARY KEY, product_name varchar(50) NOT NULL) ENGINE=InnoDB;
+      </pre>
+<p>
+    </p>
+<p>
+      The code is:
+      </p>
+<pre class="programlisting">
+void
+create_table (GdaConnection *cnc)
+{
+	GError *error = NULL;
+	GdaServerProvider *provider;
+	GdaServerOperation *op;
+	gint i;
+
+	/* create a new GdaServerOperation object */
+	provider = gda_connection_get_provider (cnc);
+	op = gda_server_provider_create_operation (provider, cnc, GDA_SERVER_OPERATION_CREATE_TABLE, NULL, &amp;error);
+	if (!op) {
+		g_print ("CREATE TABLE operation is not supported by the provider: %s\n",
+			 error &amp;&amp; error-&gt;message ? error-&gt;message : "No detail");
+		exit (1);
+	}
+
+	/* Set parameter's values */
+	/* table name */
+	if (!gda_server_operation_set_value_at (op, "products", &amp;error, "/TABLE_DEF_P/TABLE_NAME")) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "InnoDB", &amp;error, "/TABLE_OPTIONS_P/TABLE_ENGINE")) goto on_set_error;
+
+	/* "id' field */
+	i = 0;
+	if (!gda_server_operation_set_value_at (op, "id", &amp;error, "/FIELDS_A/@COLUMN_NAME/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "integer", &amp;error, "/FIELDS_A/@COLUMN_TYPE/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "TRUE", &amp;error, "/FIELDS_A/@COLUMN_AUTOINC/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "TRUE", &amp;error, "/FIELDS_A/@COLUMN_PKEY/%d", i)) goto on_set_error;
+	
+	/* 'product_name' field */
+	i++;
+	if (!gda_server_operation_set_value_at (op, "product_name", &amp;error, "/FIELDS_A/@COLUMN_NAME/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "varchar", &amp;error, "/FIELDS_A/@COLUMN_TYPE/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "50", &amp;error, "/FIELDS_A/@COLUMN_SIZE/%d", i)) goto on_set_error;
+	if (!gda_server_operation_set_value_at (op, "TRUE", &amp;error, "/FIELDS_A/@COLUMN_NNUL/%d", i)) goto on_set_error;
+
+
+	/* Actually execute the operation */
+	if (! gda_server_provider_perform_operation (provider, cnc, op, &amp;error)) {
+		g_print ("Error executing the operation: %s\n",
+			 error &amp;&amp; error-&gt;message ? error-&gt;message : "No detail");
+		exit (1);
+	}
+	g_object_unref (op);
+	return;
+
+ on_set_error:
+	g_print ("Error setting value in GdaSererOperation: %s\n",
+		 error &amp;&amp; error-&gt;message ? error-&gt;message : "No detail");
+	exit (1);
+}
+      </pre>
+<p>
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

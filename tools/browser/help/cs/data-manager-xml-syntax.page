@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-xml-syntax" xml:lang="cs">
+<info>
+  <title type="sort">1</title>
+</info>
+<title>Syntaxe XML ve správě dat</title>
+<p>Kořenovým uzlem stromu XML musí být <code>&lt;data&gt;</code>, který může obsahovat jednu nebo více definic zdrojů dat. Každý zdroj dat je definován uzly <code>&lt;query&gt;</code> nebo <code>&lt;table&gt;</code>, přičemž oba přijímají následující volitelné atributy:</p>
+<list>
+  <item><p>„id“ pro určení identifikátoru zdroje dat, který se použije při odkazování z jednoho zdroje dat na druhý;</p></item>
+  <item><p>„title“ pro určení názvu</p></item>
+</list>
+<p>Samozřejmě je možné použít naráz značku <code>&lt;query&gt;</code> i <code>&lt;table&gt;</code> v jedné specifikaci zdroje dat.</p>
+
+<section id="data-manager-exp-variables">
+  <title>Exportované proměnné</title>
+  <p>Každý zdroj dat exportuje nějaké proměnné, které je možné použít v jiném zdroji dat a tak vytvořit závislosti. Když je zdroj dat spuštěn, je obsah těchto exportovaných proměnných znovu nastaven podle řádku aktuálně vybraného v zobrazení tabulky s výsledky. Pokud není vybrán žádný řádek, zůstane proměnná nenastavena.</p>
+  <p>Jakýkoliv zdroj dat, který závisí na proměnné je znovu spuštěn, pokud se proměnná změní a v případě, že je proměnná nenastavena, je výsledkem spuštění zdroje dat prázdná datová sada.</p>
+</section>
+<section id="data-manager-query-tag">
+  <title>Značka <code>&lt;query&gt;</code></title>
+  <p>Značku <code>&lt;query&gt;</code> použijte ke specifikaci příkazu SQL SELECT, který je přímo obsahem této značky. Odkazu na jiný zdroj dat dosáhnete použitím<link xref="variables-syntax">proměnných</link> v příkazu SELECT.</p>
+
+  <code>
+&lt;data&gt;
+  &lt;query title="Zákazníci" id="customers"&gt;
+    SELECT id, name FROM customers where name like ##name::string
+  &lt;/query&gt;
+  &lt;query title="Podrobnosti o zákazníkovi" id="cust_details"&gt;
+    SELECT * FROM customers WHERE id=##customers@id::int
+  &lt;/query&gt;
+&lt;/data&gt;
+  </code>
+  <p>Například předchozí specifikace XML definuje dva zdroje dat:</p>
+  <list>
+    <item><p>datový zdroj <code>zakaznici</code>, který vybírá některé z polí z tabulky <em>zakaznici</em> a který závisí na řetězcové proměnné s názvem <code>jmeno</code>. Tato proměnná bude nastavena při spuštění zdroje dat, protože není exportována žádným zdrojem dat v této specifikaci.</p></item>
+    <item><p>datový zdroj <code>detail_zakaznika</code>, který vybírá všechny podrobnosti o zákazníkovi určením pomocí jeho ID. Tento druhý zdroj dat závisí na tom předchozím, protože proměnná <code>zakaznici@id</code> je exportována ze zdroje dat <code>zakaznici</code>.</p></item>
+  </list>
+  <p>Spuštěním těchto zdrojů dat se vytvoří dva pohledy na tabulky: jeden, ve kterém si můžete vybírat zákazníka a jeden, který zobrazuje všechny vlastnosti vybraného zákazníka.</p>
+
+  <section id="data-manager-query-exp-variables">
+    <title>Exportované proměnné</title>
+    <p>Každý ze zdrojů dat definovaný značkou <code>&lt;query&gt;</code> exportuje následující proměnné pro každý ze sloupců výsledné datové sady (typ proměnné je stejný jako typ sloupce):</p>
+    <list>
+      <item><p><code>&lt;ID zdroje dat&gt;@&lt;pozice sloupce&gt;</code> kde se pozice sloupce počítá od 1</p></item>
+      <item><p><code>&lt;ID zdroje dat&gt;@&lt;název sloupce&gt; pokud je sloupec zdroje dat sloupcem tabulky</code></p></item>
+    </list>
+  </section>
+
+</section>
+
+<section id="data-manager-table-tag">
+  <title>Značka <code>&lt;table&gt;</code></title>
+  <p>Značku <code>&lt;table&gt;</code> použijte k definici zdroje dat, který bude zobrazovat obsah tabulky. Tato značka:</p>
+  <list>
+    <item><p>vyžaduje atribut „name“, který představuje název tabulky.</p></item>
+    <item><p>může mít atribut „id“, který odpovídá identifikátoru zdroje dat. Pokud není přítomen, přiřadí se ID automaticky.</p></item>
+    <item><p>může obsahovat značku <code>&lt;depend&gt;</code>, která definuje závislost na jiném zdroji dat s atributem „foreign_key_table“ definujícím název tabulky, ve které jsou cizí klíče použity k určení závislosti, a atribut „id“ může určovat ID zdroje dat, pokud je jiný, než výše zmíněná tabulka</p></item>
+  </list>
+  <p>Značka <code>&lt;depend&gt;</code>, která pro zdroj dat z tabulky definuje závislost na jiném zdroji dat z tabulky:</p>
+    <list>
+    <item><p>vyžaduje atribut „foreign_key_table“ definující název tabulky, ve které jsou cizí klíče použity k určení závislosti</p></item>
+    <item><p>může mít atribut „id“, který odpovídá identifikátoru odkazovaného zdroje dat. Pokud není přítomen, může závislost selhat v případě, že neexistuje žádný zdroj dat, jehož ID je atributem „foreign_key_table“.</p></item>
+    <item><p>může obsahovat jednu nebo více značek <code>&lt;column&gt;</code>, které obsahují definice sloupců určujících cizí klíče, které se mají použít. To je nutné, pokud je cizích klíčů více a může být vynecháno, pokud je jen jeden možný cizí klíč. Vyjmenované sloupce jsou z tabulky, ve které jsou cizí klíče.</p></item>
+  </list>
+
+
+  <code>
+&lt;data&gt;
+  &lt;table id="the_cust" name="zakaznici"/&gt;
+  &lt;table name="objednavky"&gt;
+    &lt;depend id="the_cust" foreign_key_table="zakaznici"&gt;
+      &lt;column&gt;id_zakaznika&lt;/column&gt;
+    &lt;/depend&gt;
+  &lt;/table&gt;
+&lt;/data&gt;
+  </code>
+  <p>Například předchozí specifikace XML definuje dva zdroje dat:</p>
+  <list>
+    <item><p>zdroj dat <code>zakaznici</code>, který vybírá veškerý obsah z tabulky <em>zakaznici</em>.</p></item>
+    <item><p>zdroj dat <code>objednavky</code>, který vybírá z obsahu tabulky <code>objednavky</code> řádky, které odpovídají řádku v tabulce <code>zakaznici</code>. Výběr se provádí pomocí cizího klíče v tabulce objednavky, která je navázána přes sloupec „objednavky.id_zakaznika“ a primární klíč tabulky zakaznici. Atribut „id“ ve značce <code>&lt;depend&gt;</code> je v tomto případě nutný k určení odkazovaného zdroje dat.</p></item>
+  </list>
+  <p>Poznámky k tomuto příkladu:</p>
+  <list>
+    <item><p>nemusíte specifikovat vazební pole v cizím klíči provazujícím tabulky <code>objednavky</code> a <code>zakaznici</code></p></item>
+    <item><p>identifikátorům zdrojů dat byly přiřazeny názvy vybraných tabulek, protože nebyl zadán žádný atribut „id“ pro značku <code>&lt;table&gt;</code>.</p></item>
+  </list>
+
+  <section id="data-manager-table-exp-variables">
+    <title>Exportované proměnné</title>
+    <p>Každý zdroj dat definovaný značkou <code>&lt;query&gt;</code> exportuje následující proměnné pro každý ze sloupců tabulky (typ proměnné je stejný jako typ sloupce):</p>
+    <list>
+      <item><p><code>&lt;ID zdroje dat&gt;@&lt;název sloupce&gt;</code></p></item>
+      <item><p><code>&lt;ID zdroje dat&gt;@&lt;pozice sloupce&gt;</code> kde se pozice sloupce počítá od 1</p></item>
+    </list>
+  </section>
+
+
+</section>
+</page>

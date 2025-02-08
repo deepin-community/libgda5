@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="table-insert-data" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  </info>
+  <title>Vkládání dat do tabulky</title>
+  <p>Když je zobrazena karta s vlastnostmi tabulky v <link xref="schema-browser-perspective">hledisku prohlížeče schématu</link>, použijte nabídku <guiseq><gui>Tabulka</gui><gui>Vložit data</gui></guiseq> k zobrazení dialogového okna, které obsahuje vstupní pole pro zadání dat pro každý ze sloupců tabulky.</p>
+  <p>Objeví se dialogové okno podobné následujícímu:</p>
+  <figure>
+    <title>Dialogové okno pro vkládání dat do tabulky</title>
+    <desc>Dialogové okno pro vkládání dat do tabulky</desc>
+    <media type="image" mime="image/png" src="figures/table-insert-data.png"/>
+  </figure>
+  <p>Za zmínku stojí, že:</p>
+  <list>
+    <item><p>Pro každý sloupec tabulky je jedno vstupní pole s výjimkou (na obrázku není) polí vícenásobných cizích klíčů, pro které je zobrazen jeden rozbalovací seznam;</p></item>
+    <item><p>Každé vstupní pole má na pravé straně malé tlačítko, které podává informaci a příslušném datovém záznamu a umožňuje vrátit hodnotu záznamu na hodnotu před provedením změn, nastavit hodnotu na prázdnou (NULL) a nebo nastavit hodnotu na výchozí hodnotu. Barva tlačítka má následující význam:</p>
+	<list>
+	  <item><p>Červená: znamená, že aktuální hodnota v datovém záznamu je neplatná</p></item>
+	  <item><p>Modrá: znamená, že aktuální hodnota v datovém záznamu je nepoužita a místo ní bude použita výchozí hodnota sloupce (použitelné např. pro sloupce s automaticky zvyšovanou hodnotou)</p></item>
+	  <item><p>Červená: znamená, že aktuální hodnota v datovém záznamu je prázdná (NULL)</p></item>
+	  <item><p>Stejná barva jako v ostatních částech uživatelského rozhraní: znamená, že nenastala ani jedna z předchozích situací</p></item>
+	</list>
+    </item>
+    <item><p>Sloupce, které mají cizí klíče směřující do jiných tabulek jsou prezentovány rozbalovací seznamem, ve kterém si můžete vybírat pouze z hodnot v odkazované tabulce (rada: pokud potřebujete seznam hodnot aktualizovat, zavřete dialogové okno a znovu jej otevřete);</p></item>
+  </list>
+</page>

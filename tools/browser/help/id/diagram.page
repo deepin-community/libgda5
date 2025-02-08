@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="diagram" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Diagram</title>
+  <p>Bagan ada di seluruh <app>gda-browser</app>, dan dibuat dari kanvas tempat butir-butir grafis ditampilkan (sebagai contoh adalah tabel).</p>
+  <figure>
+    <title>Diagram</title>
+    <desc>Bagan yang menampilkan beberapa tabel dan relasi mereka diwakili oleh konstrain foreign key (lihat juga <link xref="declared-fk">foreign key yang dideklarasikan</link>)</desc>
+    <media type="image" mime="image/png" src="figures/diagram.png"/>
+  </figure>
+  <p>Butir-butir dapat dipindah-pinda pada kanvas (perhatikan bahwa selama seluruh bagan pas dalam kanvas, itu akan tetap di tengahnya). Manipulasi lain yang mungkin:</p>
+  <list>
+    <item><p>zum perbesar dan perkecil memakai roda tetikus, atau melalui menu konteks (klik kanan pada kanvas); zum untuk pas ukuran kanvas juga tersedia dalam menu konteks</p></item>
+    <item><p>mendekatkan atau menjauhkan butir-butir satu sama lain memakai roda tetikus ketika menahan tombol <key>Shift</key></p></item>
+    <item><p>manata butir-butir secara linier atau radial, melalui menu konteks</p></item>
+    <item><p>mencetak, melalui menu kontekstual</p></item>
+    <item><p>mengekspor sebagai gambar PNG atau SVG, melalui menu kontekstual</p></item>
+    <item><p>menambah butir, melalui menu kontekstual</p></item>
+    <item><p>menghapus butir, melalui menu kontekstual butir</p></item>
+  </list>
+</page>

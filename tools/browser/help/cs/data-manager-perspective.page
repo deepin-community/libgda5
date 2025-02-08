@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-perspective" xml:lang="cs">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+</info>
+<title>Hledisko pro správu dat</title>
+<p>Použijte hledisko správce dat k procházení dat databáze. K přepnutí do tohoto hlediska použijte nabídku <guiseq><gui>Hledisko</gui><gui>Správce dat</gui></guiseq> nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>D</key></keyseq>.</p>
+<p>Pracovní postup v tomto hledisku se točí okolo definování jednoho nebo více <em>zdrojů dat</em> (které vybírají data v databázi), které po spuštění vrací výsledek v podobě datové sady zobrazené v tabulkovém zobrazení.</p>
+<p>Hledisko je vodorovně rozděleno do dvou panelu: v levém panelu jsou uchovány definice nastavení oblíbených zdrojů dat a pravý panel je oblastí, ve které se provádí akce, kde je každý zdroj dat spouštěn a prezentovány výsledky v tabulkovém zobrazení.</p>
+<figure>
+  <title>Hledisko správce dat</title>
+  <desc>Hledisko správce dat, se dvěma zdroji dat</desc>
+  <media type="image" mime="image/png" src="figures/data-man-persp.png"/>
+</figure>
+<p>Na předchozím obrázku jsou dva zdroje dat: jeden pro tabulku „customers“ (zakaznici) a jeden pro tabulku „orders“ (objednavky) (vypisuje objednávky od zákazníka). Druhý jmenovaný zdroj dat závisí na prvním, protože má cizí klíč z tabulky „orders“, který odkazuje na tabulku „customers“. Oba zdroje dat byly spuštěny a výsledek je složen do dvou zobrazení tabulek vedle sebe.</p>
+<p>Protože zdroj dat „orders“ závisí na zdroji dat „customers“, je příslušné zobrazení napravo od odpovídajícího zdroje dat „customers“. Rovněž funguje, že když se změní výběr řádku v zobrazení „customers“, aktualizuje se celý obsah zobrazení „orders“.</p>
+<section id="data-manager-def-data-source">
+  <title>Definování zdrojů dat</title>
+  <p>Nejjednodušší zdroj dat je takový, který představuje všechna data z tabulky, zobrazená při spuštění zobrazení jedné tabulky, podobně jako při provedení příkazu <code>SELECT * FROM mojetabulka</code> (viz <link xref="query-execution-perspective"/>).</p>
+  <p>Následující obrázek ukazuje režim úpravy zdroje dat (do režimu úprav se přepnete pomocí tlačítka <media type="image" mime="image/png" src="figures/data-man-mode.png"/> na liště nástrojů).</p>
+  <p>Zdroje dat se dají definovat pomocí <link xref="data-manager-xml-syntax">syntaxe XML</link> nebo pomocí <link xref="data-manager-source-editor">výchozího rozhraní</link>.</p>
+  <figure>
+    <title>Úprava zdrojů dat</title>
+    <desc>Úprava zdrojů dat v hledisku správce dat, v podobě syntaxe XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-xmlcompose.png"/>
+  </figure>
+  <figure>
+    <title>Úprava zdrojů dat</title>
+    <desc>Úprava zdrojů dat v hledisku správce dat, pomocí výchozího rozhraní: jsou definovány dva zdroje dat, které vypisují obsah tabulek „zakaznici“ a „objednavky“. Nastavení je stejné, jako na předchozím obrázku se syntaxí XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-uicompose.png"/>
+  </figure>
+
+  <p>Příkazy dostupné přes příkazová tlačítka jsou:</p>
+  <list>
+    <item><p><gui>Vymazat</gui>: přemaže obsah editoru XML na výchozí šablonu XML, přístupné jen pokud je zrovna zobrazeno XML</p></item>
+    <item><p><gui>Přidat</gui>: zobrazí vyskakovací nabídku se zkratkami na rychle definované nové zdroje dat v podobě kompletního obsahu tabulky (rovněž analyzuje databázové schéma kvůli náležitým volbám); dostupné je jen když není vybrán režim úprav XML</p></item>
+    <item><p><gui>Proměnné</gui>: zobrazí/skryje panel <link xref="variables-syntax">proměnných</link>, ve kterém máte přehled o proměnných obsažených v kódu SQL pro definici libovolného zdroje dat. Pokud je v kódu SQL nějaká proměnná zjištěna, zobrazí se panel automaticky.</p></item>
+    <item><p><gui>Spustit</gui>: spustit definovaný zdroj dat</p></item>
+    <item><p><gui>Zobrazit XML</gui>: přepne mezi editorem XML a editorem uživatelského rozhraní</p></item>
+    <item><p><gui>Nápověda</gui>: zobrazí nápovědu</p></item>
+  </list>
+</section>
+<section id="data-manager-exec-data-source">
+  <title>Spouštění zdrojů dat</title>
+  <p>Když chcete definovaný zdroj dat spustit, jednoduše se přepněte do režimu provádění pomocí tlačítka <media type="image" mime="image/png" src="figures/data-man-mode.png"/> na liště nástrojů nebo pomocí tlačítka <gui>Spustit</gui>.</p>
+  <p>Rozvržení zobrazené tabulky pro každý ze zdrojů dat se vygeneruje automaticky po sloupcích za těchto pravidel: pokud zdroj dat B závisí na zdroji dat A, je v zobrazení tabulky umístěn napravo od A.</p>
+  <p>Rovněž, pokud se změní vybraný řádek zobrazení tabulky ze zdroje dat A, bude aktualizováno zobrazení tabulek ze všech zdrojů data závisejících na A.</p>
+</section>
+</page>

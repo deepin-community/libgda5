@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-xml-syntax" xml:lang="id">
+<info>
+  <title type="sort">1</title>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+<title>Sintaks XML manajer data</title>
+<p>Node akar pohon XML mesti berupa <code>&lt;data&gt;</code>, yang diperbolehkan memuat satu atau lebih definisi sumber data. Setiap sumber data didefinisikan oleh node <code>&lt;query&gt;</code> atau <code>&lt;table&gt;</code>, keduanya menerima atribut opsional berikut:</p>
+<list>
+  <item><p>"id" untuk menyatakan suatu ID string sumber data, dipakai ketika mengaitkan sumber data satu sama lain;</p></item>
+  <item><p>"title" untuk menyatakan judul.</p></item>
+</list>
+<p>Tentu saja mungkin memakai kedua tag <code>&lt;query&gt;</code> atau <code>&lt;table&gt;</code> dalam spesifikasi sumber data yang sama.</p>
+
+<section id="data-manager-exp-variables">
+  <title>Variabel yang diekspor</title>
+  <p>Setiap sumber data mengekspor beberapa variabel yang dapat dipakai ulang oleh sumber data lain untuk memperkenalkan kebergantungan. Ketika sumber data dieksekusi, isi dari variabel yang diekspor direset bergantung pada baris yang benar-benar dipilih dalam tilikan tabulasi hasilnya. Bila tak ada baris yang dipilih maka variabel dikosongkan.</p>
+  <p>Sebarang sumber data yang bergantung pada suatu variabel dieksekusi lagi ketika variabel berubah, dan bila variabelnya kosong, hasil eksekusi sumber data adalam set data kosong.</p>
+</section>
+<section id="data-manager-query-tag">
+  <title>Tag <code>&lt;query&gt;</code></title>
+  <p>Pakai tag <code>&lt;query&gt;</code> untuk menyatakan pernyataan SQL SELECT, sebagai isi tab. Tautan ke sumber data lain dapat dicapai memakai <link xref="variables-syntax">variabel</link> dalam SQL milik SELECT.</p>
+
+  <code>
+&lt;data&gt;
+  &lt;query title="Customers" id="customers"&gt;
+    SELECT id, name FROM customers where name like ##name::string
+  &lt;/query&gt;
+  &lt;query title="Customer's details" id="cust_details"&gt;
+    SELECT * FROM customers WHERE id=##customers@id::int
+  &lt;/query&gt;
+&lt;/data&gt;
+  </code>
+  <p>Sebagai contoh spesifikasi XML sebelumnya mendefinisikan dua sumber data:</p>
+  <list>
+    <item><p>sumber data <code>customers</code> yang memilih beberapa ruas dari tabel <em>customers</em>, dan yang bergantung kepada suatu variabel string bernama <code>name</code>. Variabel ini mesti sudah diisi ketika sumber data dieksekusi karena itu tak akan diekspor oleh sebarang sumber data dalam spesifikasi ini.</p></item>
+    <item><p>sumber data <code>cust_details</code> yang memilih semua rincian dari suatu pelanggan dinyatakan memakai IDnya. Sumber data kedua ini bergantung kepada yang sebelumnya karena variabel <code>customers@id</code> diekspor dari sumber data <code>customers</code>.</p></item>
+  </list>
+  <p>Mengeksekusi spesifikasi sumber data ini akan membuat dua tilikan tabulasi: satu dimana Anda dapat memilih suatu pelanggan, dan satu yang menampilkan semua atribut bagi pelanggan yang dipilih.</p>
+
+  <section id="data-manager-query-exp-variables">
+    <title>Variabel yang diekspor</title>
+    <p>Setiap sumber data yang didefinisikan oleh suatu tag <code>&lt;query&gt;</code> mengekspor variabel berikut bagi setiap kolom dari set data hasilnya (tipe variabel sama dengan tipe kolom):</p>
+    <list>
+      <item><p><code>&lt;ID sumber data&gt;@&lt;posisi kolom&gt;</code> dimana posis kolom dimulai dari 1</p></item>
+      <item><p><code>&lt;ID sumber data&gt;@&lt;nama kolom&gt; bila kolom set data adalah kolom tabel</code></p></item>
+    </list>
+  </section>
+
+</section>
+
+<section id="data-manager-table-tag">
+  <title>Tag <code>&lt;table&gt;</code></title>
+  <p>Pakai tag <code>&lt;table&gt;</code> untuk mendefinisikan sumber data yang akan menampilkan isi dari suatu tabel. Tag ini:</p>
+  <list>
+    <item><p>memerlukan atribut "name" yang mewakili nama tabel.</p></item>
+    <item><p>bisa punya atribut "id" yang terkait dengan ID sumber data. Bila tak ada, ID akan diberikan secara otomatis.</p></item>
+    <item><p>bisa memuat tag <code>&lt;depend&gt;</code> yang menentukan dependensi pada sumber data lain dengan atribut "foreign_key_table" yang menentukan nama tabel yang mana ada foreign key yang dipakai untuk menentukan kebergantungan, dan atribut "id" dapat menyatakan ID sumber data bila berbeda dengan tabel yang disebut sebelumnya</p></item>
+  </list>
+  <p>Tag <code>&lt;depend&gt;</code>, yang bagi sumber data dari suatu tabel, mendefinisikan dependensi ke sumber data lain dari suatu tabel:</p>
+    <list>
+    <item><p>memerlukan atribut "foreign_key_table yang menentukan nama tabel yang mana ada foreign key yang dipakai untuk menentukan kebergantungan</p></item>
+    <item><p>bisa memiliki atribut "id" yang berkaitan dengan ID dari sumber data yang diacu. Bila tak diberikan, maka kebergantungan bisa gagal bila tak ada sumber data yang IDnya adalah atribut "foreign_key_table".</p></item>
+    <item><p>dapat memuat satu atau lebih tag <code>&lt;column&gt;</code> yang isinya menentukan kolom yang mengidentifikasikan foreign key yang akan dipakai; ini diperlukan bila ada beberapa foreign key, dan dapat diabaikan bila hanya ada satu foreign key yang mungkin. Kolom yang didaftar adalah yang dari tabel dimana foreign key berada.</p></item>
+  </list>
+
+
+  <code>
+&lt;data&gt;
+  &lt;table id="the_cust" name="customers"/&gt;
+  &lt;table name="orders"&gt;
+    &lt;depend id="the_cust" foreign_key_table="customers"&gt;
+      &lt;column&gt;customer_id&lt;/column&gt;
+    &lt;/depend&gt;
+  &lt;/table&gt;
+&lt;/data&gt;
+  </code>
+  <p>Sebagai contoh spesifikasi XML sebelumnya mendefinisikan dua sumber data:</p>
+  <list>
+    <item><p>Sumber data <code>customers</code> yang memilih semua isi dari tabel <em>customers</em>.</p></item>
+    <item><p>Sumber data <code>orders</code> yang memilih dari dalam isi tabel <code>orders</code>, baris-baris yang berkaitan dengan suatu baris dalam tabel <code>customers</code> memakai foreign key pada tabel orders yang melibatkan kolom "orders.customer_id" dan kunci primer dari tabel customers. Atribut "id" dari tag <code>&lt;depend&gt;</code> perlu disini untuk mengidentifikasi sumber data yang diacu.</p></item>
+  </list>
+  <p>Perhatikan dalam contoh ini bahwa:</p>
+  <list>
+    <item><p>Anda tak perlu menyatakan ruas yang terlibat dalam foreign key yang menaut tabel <code>orders</code> dan <code>customers</code></p></item>
+    <item><p>ID sumber data telah diberi nama dari tabel yang dipilih karena tidak ada atribut "id" yang telah dinyatakan bagi tag <code>&lt;table&gt;</code>.</p></item>
+  </list>
+
+  <section id="data-manager-table-exp-variables">
+    <title>Variabel yang diekspor</title>
+    <p>Setiap sumber data yang didefinisikan oleh tag <code>&lt;query&gt;</code> mengekspor variabel berikut bagi kolom setiap tabel (tipe variabel sama dengan tipe kolom):</p>
+    <list>
+      <item><p><code>&lt;ID sumber data&gt;@&lt;nama kolom&gt;</code></p></item>
+      <item><p><code>&lt;ID sumber data&gt;@&lt;posisi kolom&gt;</code> dimana posis kolom dimulai dari 1</p></item>
+    </list>
+  </section>
+
+
+</section>
+</page>

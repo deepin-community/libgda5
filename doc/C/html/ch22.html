@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User interface API reference: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="libgda-5.0-GdaServerOperation-sequences.html" title="GdaServerOperation: sequences">
+<link rel="next" href="libgda-5.0-LibgdaUI-Initialization.html" title="Library initialization">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-GdaServerOperation-sequences.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-LibgdaUI-Initialization.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="id-1.3.13"></a>User interface API reference</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-LibgdaUI-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiLogin.html">GdauiLogin</a></span><span class="refpurpose"> — Connection opening widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiProviderSelector.html">GdauiProviderSelector</a></span><span class="refpurpose"> — Select a database provider from a combo box</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataSelector.html">GdauiDataSelector</a></span><span class="refpurpose"> — Selecting data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxy.html">GdauiDataProxy</a></span><span class="refpurpose"> — Displaying and modifying data in a <span class="type">GdaDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiBasicForm.html">GdauiBasicForm</a></span><span class="refpurpose"> — Form widget mapping the values contained in a <span class="type">GdaSet</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiForm.html">GdauiForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawForm.html">GdauiRawForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiGrid.html">GdauiGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawGrid.html">GdauiRawGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCombo.html">GdauiCombo</a></span><span class="refpurpose"> — Combo box to choose from the contents of a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCloud.html">GdauiCloud</a></span><span class="refpurpose"> — Cloud widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRtEditor.html">GdauiRtEditor</a></span><span class="refpurpose"> — Rich text editor which uses a subset of the txt2tags markup.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-plugins.html">UI plugins</a></span><span class="refpurpose"> — Plugin to customize dana entry widgets and call renderers in tree views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataEntry.html">GdauiDataEntry</a></span><span class="refpurpose"> — Data entry widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataStore.html">GdauiDataStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaDataModel</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataFilter.html">GdauiDataFilter</a></span><span class="refpurpose"> — Entrer rules to filter the rows in a <span class="type">GdauiDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxyInfo.html">GdauiDataProxyInfo</a></span><span class="refpurpose"> — Shows information &amp; actions about a <span class="type">GdauiDataProxy</span> widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiServerOperation.html">GdauiServerOperation</a></span><span class="refpurpose"> — Enter information to perform a DDL query</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiTreeStore.html">GdauiTreeStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaTree</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-Utility-functions.html">UI Utility functions</a></span><span class="refpurpose"> — Set of UI related functions</span>
+</dt>
+</dl></div>
+<div class="container">
+<div class="gallery-spacer"></div>
+  <div class="gallery-float"><a class="link" href="GdauiBasicForm.html" title="GdauiBasicForm">
+    <img src="vi-basic-form.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiCombo.html" title="GdauiCombo">
+    <img src="vi-combo.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiDataEntry.html" title="GdauiDataEntry">
+    <img src="vi-data-entry.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiLogin.html" title="GdauiLogin">
+    <img src="vi-login.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiProviderSelector.html" title="GdauiProviderSelector">
+    <img src="vi-provider-selector.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiCloud.html" title="GdauiCloud">
+    <img src="vi-cloud.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid">
+    <img src="vi-raw-grid.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiDataProxyInfo.html" title="GdauiDataProxyInfo">
+    <img src="vi-info.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiDataFilter.html" title="GdauiDataFilter">
+    <img src="vi-filter.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiServerOperation.html" title="GdauiServerOperation">
+    <img src="vi-server-op.png">
+  </a></div>
+  <div class="gallery-float"><a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor">
+    <img src="vi-rte.png">
+  </a></div>
+<div class="gallery-spacer"></div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

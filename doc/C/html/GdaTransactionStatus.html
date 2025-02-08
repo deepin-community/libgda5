@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaTransactionStatus: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaConnectionEvent.html" title="GdaConnectionEvent">
+<link rel="next" href="libgda-5.0-GdaXaTransaction.html" title="GdaXaTransaction">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaTransactionStatus.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaTransactionStatus.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaConnectionEvent.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaXaTransaction.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaTransactionStatus"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaTransactionStatus.top_of_page"></a>GdaTransactionStatus</span></h2>
+<p>GdaTransactionStatus — Keeps track of the transaction status of a connection</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaTransactionStatus.html#GdaTransactionStatus-struct" title="struct GdaTransactionStatus">GdaTransactionStatus</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaTransactionStatus.html#GdaTransactionIsolation" title="enum GdaTransactionIsolation">GdaTransactionIsolation</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaTransactionStatus.html#GdaTransactionStatusEvent" title="struct GdaTransactionStatusEvent">GdaTransactionStatusEvent</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaTransactionStatus.html#GdaTransactionStatusEventType" title="enum GdaTransactionStatusEventType">GdaTransactionStatusEventType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaTransactionStatus.html#GdaTransactionStatusState" title="enum GdaTransactionStatusState">GdaTransactionStatusState</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaTransactionStatus
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.description"></a><h2>Description</h2>
+<p>On any connection (as a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object), if the database provider used by the connection
+supports it, transactions may be started, committed or rolledback, or savepoints added, removed or rolledback.
+These operations can be performed using Libgda's API (such as <a class="link" href="GdaConnection.html#gda-connection-begin-transaction" title="gda_connection_begin_transaction ()"><code class="function">gda_connection_begin_transaction()</code></a>), or directly
+using some SQL on the connection (usually a "BEGIN;" command). The <a class="link" href="GdaTransactionStatus.html" title="GdaTransactionStatus"><span class="type">GdaTransactionStatus</span></a>'s aim is to 
+make it easy to keep track of all the commands which have been issued on a connection regarding transactions.</p>
+<p>One <a class="link" href="GdaTransactionStatus.html" title="GdaTransactionStatus"><span class="type">GdaTransactionStatus</span></a> object is automatically attached to a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> when a transaction is started, and
+is destroyed when the transaction is finished. A pointer to this object can be fetched using
+<a class="link" href="GdaConnection.html#gda-connection-get-transaction-status" title="gda_connection_get_transaction_status ()"><code class="function">gda_connection_get_transaction_status()</code></a> (beware that it should then not be modified). The end user is not
+supposed to instantiate <a class="link" href="GdaTransactionStatus.html" title="GdaTransactionStatus"><span class="type">GdaTransactionStatus</span></a> objects</p>
+<p><a class="link" href="GdaTransactionStatus.html" title="GdaTransactionStatus"><span class="type">GdaTransactionStatus</span></a>'s attributes are directly accessible using the public members of the object.</p>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaTransactionStatus-struct"></a><h3>struct GdaTransactionStatus</h3>
+<pre class="programlisting">struct GdaTransactionStatus;</pre>
+<div class="refsect3">
+<a name="GdaTransactionStatus.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTransactionIsolation"></a><h3>enum GdaTransactionIsolation</h3>
+<div class="refsect3">
+<a name="GdaTransactionIsolation.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-ISOLATION-UNKNOWN:CAPS"></a>GDA_TRANSACTION_ISOLATION_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-ISOLATION-READ-COMMITTED:CAPS"></a>GDA_TRANSACTION_ISOLATION_READ_COMMITTED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-ISOLATION-READ-UNCOMMITTED:CAPS"></a>GDA_TRANSACTION_ISOLATION_READ_UNCOMMITTED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-ISOLATION-REPEATABLE-READ:CAPS"></a>GDA_TRANSACTION_ISOLATION_REPEATABLE_READ</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-ISOLATION-SERIALIZABLE:CAPS"></a>GDA_TRANSACTION_ISOLATION_SERIALIZABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTransactionStatusEvent"></a><h3>struct GdaTransactionStatusEvent</h3>
+<pre class="programlisting">struct GdaTransactionStatusEvent {
+	GdaTransactionStatus         *trans;
+	GdaTransactionStatusEventType type;
+	union {
+		gchar                *svp_name; /* save point name if this event corresponds to a new save point */
+		gchar                *sql;      /* SQL to store SQL queries in transactions */
+		GdaTransactionStatus *sub_trans;/* sub transaction event */
+	} pl;
+	GdaConnectionEvent           *conn_event;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTransactionStatusEventType"></a><h3>enum GdaTransactionStatusEventType</h3>
+<div class="refsect3">
+<a name="GdaTransactionStatusEventType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-STATUS-EVENT-SAVEPOINT:CAPS"></a>GDA_TRANSACTION_STATUS_EVENT_SAVEPOINT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-STATUS-EVENT-SQL:CAPS"></a>GDA_TRANSACTION_STATUS_EVENT_SQL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-STATUS-EVENT-SUB-TRANSACTION:CAPS"></a>GDA_TRANSACTION_STATUS_EVENT_SUB_TRANSACTION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTransactionStatusState"></a><h3>enum GdaTransactionStatusState</h3>
+<div class="refsect3">
+<a name="GdaTransactionStatusState.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-STATUS-STATE-OK:CAPS"></a>GDA_TRANSACTION_STATUS_STATE_OK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-TRANSACTION-STATUS-STATE-FAILED:CAPS"></a>GDA_TRANSACTION_STATUS_STATE_FAILED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTransactionStatus.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

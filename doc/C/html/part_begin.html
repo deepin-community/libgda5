@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Part I. Getting started: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="prev" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="next" href="introduction.html" title="Introduction">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="index.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="introduction.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="part">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="part_begin"></a>Part I. Getting started</h1></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="chapter"><a href="introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="features.html">Features</a></span></dt>
+<dt><span class="chapter"><a href="architecture.html">Architecture</a></span></dt>
+<dt><span class="chapter"><a href="ch04.html">Foreword about abstraction</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch04.html#placeholders">Variables syntax in SQL</a></span></dt>
+<dt><span class="sect1"><a href="null_handling.html">NULL handling when using variables</a></span></dt>
+<dt><span class="sect1"><a href="gen_sql_identifiers.html">SQL identifiers</a></span></dt>
+<dt><span class="sect1"><a href="gen_blobs.html">Binary large objects (BLOBs)</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="installation.html">Installation</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="installation.html#installation-introduction">Getting the library</a></span></dt>
+<dt><span class="sect1"><a href="installation-installing.html">Installing from the sources</a></span></dt>
+<dt><span class="sect1"><a href="compiling.html">Compiling your code using the <span class="application">Libgda</span> library</a></span></dt>
+<dt><span class="sect1"><a href="installation-configuring.html">Configuring</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-development">Configuration for development</a></span></dt>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-client">Configuration for accessing a database</a></span></dt>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-provider">Provider's specific information</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="getting_started.html">Code examples</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="getting_started.html#initializing">Initializing</a></span></dt>
+<dt><span class="sect1"><a href="connections.html">Connecting</a></span></dt>
+<dt><span class="sect1"><a href="ch06s03.html">Executing queries</a></span></dt>
+<dt><span class="sect1"><a href="data-model.html">Managing data models</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data-model.html#data-model-table-access">Example using random access</a></span></dt>
+<dt><span class="sect2"><a href="data-model.html#data-model-row-access">Example using an iterator</a></span></dt>
+<dt><span class="sect2"><a href="data-model.html#data-model-free">Freeing data models</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="transactions.html">Managing transactions</a></span></dt>
+<dt><span class="sect1"><a href="managing-errors.html">Managing connection's events and errors</a></span></dt>
+<dt><span class="sect1"><a href="main_example.html">Full example</a></span></dt>
+<dt><span class="sect1"><a href="ddl_example.html">DDL example</a></span></dt>
+<dt><span class="sect1"><a href="blobs_example.html">Binary large objects (BLOBs) example</a></span></dt>
+<dt><span class="sect1"><a href="other_examples.html">Other examples</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-1.html">Migration from 1.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-1.html#id-1.2.8.2">GdaValue and GdaDataModel changes</a></span></dt>
+<dt><span class="sect1"><a href="ch07s02.html">GdaClient, GdaConnection and GdaError</a></span></dt>
+<dt><span class="sect1"><a href="ch07s03.html">Various API changes</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-2.html">Migration from 3.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-2.html#id-1.2.9.2">Overview</a></span></dt>
+<dt><span class="sect1"><a href="ch08s02.html">New unique parser</a></span></dt>
+<dt><span class="sect1"><a href="ch08s03.html">GdaQuery and GdaCommand merge into GdaStatement</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-dict.html">Dictionary changes</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-exec.html">Statement execution</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-report.html">Reports</a></span></dt>
+<dt><span class="sect1"><a href="ch08s07.html">Other changes</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.2">Multi threading environment</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.3">Configuration management</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.4">Database provider's changes</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.5">API changes</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.6">List of removed objects and interfaces</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.7">List of removed functions</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-3.html">Migration from 4.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-3.html#id-1.2.10.2">Overview</a></span></dt>
+<dt><span class="sect1"><a href="ch09s02.html">GDA_TYPE_NULL</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="provider-notes.html">Provider's notes</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="provider-notes.html#provider_notes_oracle">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="provider_notes_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.3">The <code class="function">gda_file_exists()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.4">The <code class="function">gda_hex_print()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.5">The <code class="function">gda_hex()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.6">The <code class="function">gda_rmdiacr()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.7">The <code class="function">gda_upper()</code> and <code class="function">gda_lower()</code> functions</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.8">The <code class="function">regexp_match()</code> function</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_sqlcipher.html">For SQLCipher</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.4">How to create and encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.5">How to encrypt an existing plaintext database to an encrypted database file</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.6">How to change the passphrase of an encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.7">How to decrypt an existing database to a plaintext database</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.2">Authentication</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.3">Mapping to GdaDataModel</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_jdbc.html">For JDBC</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.2">How it works</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.3">JDBC drivers' location</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.4">Connection parameters</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="limitations.html">Limitations</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="limitations.html#limitations_global">Global limitations</a></span></dt>
+<dt><span class="sect1"><a href="limitations_mysql.html">For MySQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.2">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.3">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.4">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_oracle.html">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="limitations_postgres.html">For PostgreSQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.3">BLOB handling</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.4">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.5">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.6">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.7">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.4">Date and time</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.5">Timezone information</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.6">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.7">Error reporting</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlcipher.html">For SQLCipher</a></span></dt>
+<dt><span class="sect1"><a href="limitations_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.2">User name</a></span></dt>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.3">SSL/TLS certificate validation</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_jdbc.html">For JDBC based providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.4">Multi threaded environment</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

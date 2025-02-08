@@ -1,0 +1,876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaTree: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="trees.html" title="Trees">
+<link rel="prev" href="trees.html" title="Trees">
+<link rel="next" href="GdaTreeManager.html" title="GdaTreeManager">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaTree.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaTree.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaTree.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaTree.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="trees.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="trees.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaTreeManager.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaTree"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaTree.top_of_page"></a>GdaTree</span></h2>
+<p>GdaTree — A tree-structure</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaTree.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaTree.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTree.html" title="GdaTree"><span class="returnvalue">GdaTree</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-new" title="gda_tree_new ()">gda_tree_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-add-manager" title="gda_tree_add_manager ()">gda_tree_add_manager</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-clean" title="gda_tree_clean ()">gda_tree_clean</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-update-all" title="gda_tree_update_all ()">gda_tree_update_all</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-update-part" title="gda_tree_update_part ()">gda_tree_update_part</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-update-children" title="gda_tree_update_children ()">gda_tree_update_children</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-get-nodes-in-path" title="gda_tree_get_nodes_in_path ()">gda_tree_get_nodes_in_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-get-node" title="gda_tree_get_node ()">gda_tree_get_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-get-node-path" title="gda_tree_get_node_path ()">gda_tree_get_node_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-get-node-manager" title="gda_tree_get_node_manager ()">gda_tree_get_node_manager</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-set-attribute" title="gda_tree_set_attribute ()">gda_tree_set_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTree.html#gda-tree-dump" title="gda_tree_dump ()">gda_tree_dump</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaTree.html#GdaTree--is-list" title="The “is-list” property">is-list</a></td>
+<td class="property_flags">Read</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaTree.html#GdaTree-node-changed" title="The “node-changed” signal">node-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaTree.html#GdaTree-node-deleted" title="The “node-deleted” signal">node-deleted</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaTree.html#GdaTree-node-has-child-toggled" title="The “node-has-child-toggled” signal">node-has-child-toggled</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaTree.html#GdaTree-node-inserted" title="The “node-inserted” signal">node-inserted</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaTree.html#GdaTree-struct" title="GdaTree">GdaTree</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaTree
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTree.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTree.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> is the top level object representing hierarchically structured data. From this object it
+is also possible (depending on the tree managers it uses), to clean (remove all the nodes) the whole tree,
+or to request a complete or partial update of the nodes.</p>
+<p>It is also possible to set attributes to the tree itself (as it is possible to do for tree nodes),
+or to dump the whole or part of a tree in an indented and easy to read fashion.</p>
+</div>
+<div class="refsect1">
+<a name="GdaTree.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-tree-new"></a><h3>gda_tree_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTree.html" title="GdaTree"><span class="returnvalue">GdaTree</span></a> *
+gda_tree_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p>
+<div class="refsect3">
+<a name="gda-tree-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-add-manager"></a><h3>gda_tree_add_manager ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_add_manager (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                      <em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>);</pre>
+<p>Sets <em class="parameter"><code>manager</code></em>
+ as a top <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object, which will be responsible for creating top level nodes in <em class="parameter"><code>tree</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-tree-add-manager.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-clean"></a><h3>gda_tree_clean ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_clean (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>);</pre>
+<p>Removes any node in <em class="parameter"><code>tree</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-tree-clean.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-update-all"></a><h3>gda_tree_update_all ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_tree_update_all (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>tree</code></em>
+ be populated with nodes. If an error occurs, then <em class="parameter"><code>tree</code></em>
+'s contents is left
+unchanged, and otherwise <em class="parameter"><code>tree</code></em>
+'s previous contents is completely replaced by the new one.</p>
+<div class="refsect3">
+<a name="gda-tree-update-all.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-update-all.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-update-part"></a><h3>gda_tree_update_part ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_tree_update_part (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                      <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>tree</code></em>
+ be populated with nodes, starting from <em class="parameter"><code>node</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-tree-update-part.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> node in <em class="parameter"><code>tree</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-update-part.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-update-children"></a><h3>gda_tree_update_children ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_tree_update_children (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Update the children of <em class="parameter"><code>node</code></em>
+ in <em class="parameter"><code>tree</code></em>
+ (not recursively, to update recursively, use
+<a class="link" href="GdaTree.html#gda-tree-update-part" title="gda_tree_update_part ()"><code class="function">gda_tree_update_part()</code></a>). If <em class="parameter"><code>node</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the top level nodes are updated.</p>
+<div class="refsect3">
+<a name="gda-tree-update-children.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> node in <em class="parameter"><code>tree</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-update-children.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-get-nodes-in-path"></a><h3>gda_tree_get_nodes_in_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+gda_tree_get_nodes_in_path (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tree_path</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_names</code></em>);</pre>
+<p>The returned list is a list of all the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> nodes <span class="emphasis"><em>below</em></span> the node
+at the specified path.</p>
+<p>As a corner case if <em class="parameter"><code>tree_path</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the returned list contains all the top level nodes.</p>
+<div class="refsect3">
+<a name="gda-tree-get-nodes-in-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>tree_path</p></td>
+<td class="parameter_description"><p>full path to the required nodes (if <em class="parameter"><code>use_names</code></em>
+is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then it must start with '/'), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>use_names</p></td>
+<td class="parameter_description"><p>if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <em class="parameter"><code>tree_path</code></em>
+will be interpreted as a unix style path, and if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>,
+then <em class="parameter"><code>tree_path</code></em>
+will be interpreted similarly to the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreePath-struct"><span class="type">GtkTreePath</span></a>'s string representation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-get-nodes-in-path.returns"></a><h4>Returns</h4>
+<p>a new list of <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> pointers, free it with <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#g-slist-free"><code class="function">g_slist_free()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaTreeNode]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-get-node"></a><h3>gda_tree_get_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+gda_tree_get_node (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tree_path</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_names</code></em>);</pre>
+<p>Locates a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> using the <em class="parameter"><code>tree_path</code></em>
+ path.</p>
+<div class="refsect3">
+<a name="gda-tree-get-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>tree_path</p></td>
+<td class="parameter_description"><p>full path to the required nodes (if <em class="parameter"><code>use_names</code></em>
+is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then it must start with '/')</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>use_names</p></td>
+<td class="parameter_description"><p>if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <em class="parameter"><code>tree_path</code></em>
+will be interpreted as a unix style path, and if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>,
+then <em class="parameter"><code>tree_path</code></em>
+will be interpreted similarly to the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreePath-struct"><span class="type">GtkTreePath</span></a>'s string representation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-get-node.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> pointer, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-get-node-path"></a><h3>gda_tree_get_node_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_tree_get_node_path (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                        <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>);</pre>
+<p>Get the path associated to <em class="parameter"><code>node</code></em>
+ in <em class="parameter"><code>tree</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-tree-get-node-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> node in <em class="parameter"><code>tree</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-get-node-path.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>node</code></em>
+is not in <em class="parameter"><code>tree</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-get-node-manager"></a><h3>gda_tree_get_node_manager ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+gda_tree_get_node_manager (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                           <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>);</pre>
+<p>Get the <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> which created <em class="parameter"><code>node</code></em>
+ in <em class="parameter"><code>tree</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-tree-get-node-manager.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> present in <em class="parameter"><code>tree</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-get-node-manager.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>node</code></em>
+is not present in <em class="parameter"><code>tree</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-set-attribute"></a><h3>gda_tree_set_attribute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_set_attribute (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy</code></em>);</pre>
+<p>Sets an attribute to <em class="parameter"><code>tree</code></em>
+, which will be accessible to any node in it.</p>
+<div class="refsect3">
+<a name="gda-tree-set-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute</p></td>
+<td class="parameter_description"><p>attribute name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy</p></td>
+<td class="parameter_description"><p>a function to be called when <em class="parameter"><code>attribute</code></em>
+is not needed anymore, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-dump"></a><h3>gda_tree_dump ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_dump (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+               <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>,
+               <em class="parameter"><code><span class="type">FILE</span> *stream</code></em>);</pre>
+<p>Dumps the contents of <em class="parameter"><code>tree</code></em>
+ to <em class="parameter"><code>stream</code></em>
+, using a hierarchical view.</p>
+<div class="refsect3">
+<a name="gda-tree-dump.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> to start the dump from, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for a full dump. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a stream to send the dump to, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for STDOUT. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaTree-struct"></a><h3>GdaTree</h3>
+<pre class="programlisting">typedef struct _GdaTree GdaTree;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaTree--is-list"></a><h3>The <code class="literal">“is-list”</code> property</h3>
+<pre class="programlisting">  “is-list”                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Tells if the GdaTree is a list or a tree.</p>
+<p>Owner: GdaTree</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTree.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaTree-node-changed"></a><h3>The <code class="literal">“node-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>     *tree,
+               <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Gets emitted when a <em class="parameter"><code>node</code></em>
+ has changed in <em class="parameter"><code>tree</code></em>
+</p>
+<div class="refsect3">
+<a name="GdaTree-node-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> which has changed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTree-node-deleted"></a><h3>The <code class="literal">“node-deleted”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>   *node_path,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data)</pre>
+<p>Gets emitted when a <em class="parameter"><code>node</code></em>
+ has been removed from <em class="parameter"><code>tree</code></em>
+</p>
+<div class="refsect3">
+<a name="GdaTree-node-deleted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node_path</p></td>
+<td class="parameter_description"><p>the position the node held in <em class="parameter"><code>tree</code></em>
+as a tree path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTree-node-has-child-toggled"></a><h3>The <code class="literal">“node-has-child-toggled”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>     *tree,
+               <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Gets emitted when a <em class="parameter"><code>node</code></em>
+ has has a child when it did not have any or when it
+does not have a ny children anymore when it had some</p>
+<div class="refsect3">
+<a name="GdaTree-node-has-child-toggled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> which changed from having children to being a
+leaf or the other way around</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTree-node-inserted"></a><h3>The <code class="literal">“node-inserted”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>     *tree,
+               <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Gets emitted when a <em class="parameter"><code>node</code></em>
+ has been inserted in <em class="parameter"><code>tree</code></em>
+</p>
+<div class="refsect3">
+<a name="GdaTree-node-inserted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> which has inserted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,1631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaServerOperation: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch21.html" title="Data definition (DDL) queries">
+<link rel="prev" href="ch21.html" title="Data definition (DDL) queries">
+<link rel="next" href="libgda-5.0-GdaServerOperation-individual-nodes.html" title="GdaServerOperation: individual nodes">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaServerOperation.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaServerOperation.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaServerOperation.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaServerOperation.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch21.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch21.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaServerOperation-individual-nodes.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaServerOperation"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaServerOperation.top_of_page"></a>GdaServerOperation</span></h2>
+<p>GdaServerOperation — Handles any DDL query in an abstract way</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaServerOperation.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="returnvalue">GdaServerOperationType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-get-op-type" title="gda_server_operation_get_op_type ()">gda_server_operation_get_op_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-op-type-to-string" title="gda_server_operation_op_type_to_string ()">gda_server_operation_op_type_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="returnvalue">GdaServerOperationType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-string-to-op-type" title="gda_server_operation_string_to_op_type ()">gda_server_operation_string_to_op_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-get-value-at" title="gda_server_operation_get_value_at ()">gda_server_operation_get_value_at</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-get-value-at-path" title="gda_server_operation_get_value_at_path ()">gda_server_operation_get_value_at_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-get-sql-identifier-at" title="gda_server_operation_get_sql_identifier_at ()">gda_server_operation_get_sql_identifier_at</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-get-sql-identifier-at-path" title="gda_server_operation_get_sql_identifier_at_path ()">gda_server_operation_get_sql_identifier_at_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()">gda_server_operation_set_value_at</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at-path" title="gda_server_operation_set_value_at_path ()">gda_server_operation_set_value_at_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNodePtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-save-data-to-xml" title="gda_server_operation_save_data_to_xml ()">gda_server_operation_save_data_to_xml</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-load-data-from-xml" title="gda_server_operation_load_data_from_xml ()">gda_server_operation_load_data_from_xml</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-is-valid" title="gda_server_operation_is_valid ()">gda_server_operation_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-database" title="gda_server_operation_prepare_create_database ()">gda_server_operation_prepare_create_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-create-database" title="gda_server_operation_perform_create_database ()">gda_server_operation_perform_create_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-drop-database" title="gda_server_operation_prepare_drop_database ()">gda_server_operation_prepare_drop_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-drop-database" title="gda_server_operation_perform_drop_database ()">gda_server_operation_perform_drop_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-table" title="gda_server_operation_prepare_create_table ()">gda_server_operation_prepare_create_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-create-table" title="gda_server_operation_perform_create_table ()">gda_server_operation_perform_create_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-drop-table" title="gda_server_operation_prepare_drop_table ()">gda_server_operation_prepare_drop_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-drop-table" title="gda_server_operation_perform_drop_table ()">gda_server_operation_perform_drop_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation--connection" title="The “connection” property">connection</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation--op-type" title="The “op-type” property">op-type</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation--provider" title="The “provider” property">provider</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation--spec-filename" title="The “spec-filename” property">spec-filename</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation-sequence-item-added" title="The “sequence-item-added” signal">sequence-item-added</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation-sequence-item-remove" title="The “sequence-item-remove” signal">sequence-item-remove</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaServerOperation.html#GdaServerOperation-struct" title="GdaServerOperation">GdaServerOperation</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType">GdaServerOperationType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaServerOperation.html#GdaServerOperationError" title="enum GdaServerOperationError">GdaServerOperationError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaServerOperation.html#GdaServerOperationCreateTableFlag" title="enum GdaServerOperationCreateTableFlag">GdaServerOperationCreateTableFlag</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaServerOperation
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.description"></a><h2>Description</h2>
+<p>This object is basically just a data store: it can store named values, the values being
+organized hierarchically by their name which are similar to a Unix file path. For example a value can be read from its path
+using the <a class="link" href="GdaServerOperation.html#gda-server-operation-get-value-at" title="gda_server_operation_get_value_at ()"><code class="function">gda_server_operation_get_value_at()</code></a> method, or set using the <a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()"><code class="function">gda_server_operation_set_value_at()</code></a> method.</p>
+<p>Each <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> contains some structure which is usually defined by a database provider to implement
+a specific operation. The structure is composed of the following building blocks:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Named values (internally represented as a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object)</p></li>
+<li class="listitem"><p>Named values in a vector (internally represented as a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object)</p></li>
+<li class="listitem"><p>Values in an array (internally represented as a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object)</p></li>
+<li class="listitem"><p>Sequences of one or more of the previous blocks. A sequence can contain any number of
+  instances of the template block (there may be lower and upper boundaries to the number of instances)</p></li>
+</ul></div>
+<p><span class="emphasis"><em>Important note:</em></span> <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> objects are usually not created 
+manually using <a class="link" href="libgda-5.0-Misc-API.html#gda-server-operation-new" title="gda_server_operation_new ()"><code class="function">gda_server_operation_new()</code></a>, but
+using a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> object with <a class="link" href="GdaServerProvider.html#gda-server-provider-create-operation" title="gda_server_provider_create_operation ()"><code class="function">gda_server_provider_create_operation()</code></a>.
+See the <a class="link" href="ch21.html#DDLIntro" title="General words about DDL queries">global introduction about DDL</a> for more information.
+Alternatively one can use the Convenience functions
+which internally manipulate <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> objects.</p>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-server-operation-get-op-type"></a><h3>gda_server_operation_get_op_type ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="returnvalue">GdaServerOperationType</span></a>
+gda_server_operation_get_op_type (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>);</pre>
+<p>Get the type of operation <em class="parameter"><code>op</code></em>
+ is for</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-op-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-op-type.returns"></a><h4>Returns</h4>
+<p> a <a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a> enum</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-op-type-to-string"></a><h3>gda_server_operation_op_type_to_string ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_op_type_to_string
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a> type</code></em>);</pre>
+<p>Get a string version of <em class="parameter"><code>type</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-server-operation-op-type-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a> value</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-op-type-to-string.returns"></a><h4>Returns</h4>
+<p>a non <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> string (do not free or modify). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-string-to-op-type"></a><h3>gda_server_operation_string_to_op_type ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="returnvalue">GdaServerOperationType</span></a>
+gda_server_operation_string_to_op_type
+                               (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Performs the reverse of <a class="link" href="GdaServerOperation.html#gda-server-operation-op-type-to-string" title="gda_server_operation_op_type_to_string ()"><code class="function">gda_server_operation_op_type_to_string()</code></a></p>
+<div class="refsect3">
+<a name="gda-server-operation-string-to-op-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-string-to-op-type.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a> represented by <em class="parameter"><code>str</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#G-MAXINT:CAPS"><span class="type">G_MAXINT</span></a> if <em class="parameter"><code>str</code></em>
+is not a valid representation
+of a <a class="link" href="GdaServerOperation.html#GdaServerOperationType" title="enum GdaServerOperationType"><span class="type">GdaServerOperationType</span></a></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-value-at"></a><h3>gda_server_operation_get_value_at ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_server_operation_get_value_at (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path_format</code></em>,
+                                   <em class="parameter"><code>...</code></em>);</pre>
+<p>Get the value for the node at the path formed using <em class="parameter"><code>path_format</code></em>
+ and ... (the rules are the same as
+for <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strdup-printf"><code class="function">g_strdup_printf()</code></a>)</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_server_operation_get_value_at_format]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-get-value-at.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path_format</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>arguments to use with <em class="parameter"><code>path_format</code></em>
+to make a complete path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-value-at.returns"></a><h4>Returns</h4>
+<p>a constant <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> if a value has been defined, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value is undefined or
+if the <em class="parameter"><code>path</code></em>
+is not defined or <em class="parameter"><code>path</code></em>
+does not hold any value. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-value-at-path"></a><h3>gda_server_operation_get_value_at_path ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_server_operation_get_value_at_path
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>Get the value for the node at the <em class="parameter"><code>path</code></em>
+ path</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_server_operation_get_value_at]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-get-value-at-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-value-at-path.returns"></a><h4>Returns</h4>
+<p>a constant <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> if a value has been defined, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value is undefined or if the <em class="parameter"><code>path</code></em>
+is not defined or <em class="parameter"><code>path</code></em>
+does not hold any value. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sql-identifier-at"></a><h3>gda_server_operation_get_sql_identifier_at ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_get_sql_identifier_at
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path_format</code></em>,
+                                <em class="parameter"><code>...</code></em>);</pre>
+<p>This method is similar to <a class="link" href="GdaServerOperation.html#gda-server-operation-get-value-at" title="gda_server_operation_get_value_at ()"><code class="function">gda_server_operation_get_value_at()</code></a>, but for SQL identifiers: a new string
+is returned instead of a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>. Also the returned string is assumed to represents an SQL identifier
+and will correctly be quoted to be used with <em class="parameter"><code>cnc</code></em>
+, or <em class="parameter"><code>prov</code></em>
+ if <em class="parameter"><code>cnc</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (a generic quoting rule
+will be applied if both are <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-get-sql-identifier-at.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path_format</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>arguments to use with <em class="parameter"><code>path_format</code></em>
+to make a complete path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sql-identifier-at.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value is undefined or
+if the <em class="parameter"><code>path</code></em>
+is not defined or <em class="parameter"><code>path</code></em>
+does not hold any value, or if the value held is not a string
+(in that last case a warning is shown). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sql-identifier-at-path"></a><h3>gda_server_operation_get_sql_identifier_at_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_get_sql_identifier_at_path
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>This method is similar to <a class="link" href="GdaServerOperation.html#gda-server-operation-get-value-at" title="gda_server_operation_get_value_at ()"><code class="function">gda_server_operation_get_value_at()</code></a>, but for SQL identifiers: a new string
+is returned instead of a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>. Also the returned string is assumed to represents an SQL identifier
+and will correctly be quoted to be used with <em class="parameter"><code>cnc</code></em>
+, or <em class="parameter"><code>prov</code></em>
+ if <em class="parameter"><code>cnc</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (a generic quoting rule
+will be applied if both are <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).</p>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_server_operation_get_sql_identifier_at]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-get-sql-identifier-at-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sql-identifier-at-path.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value is undefined or
+if the <em class="parameter"><code>path</code></em>
+is not defined or <em class="parameter"><code>path</code></em>
+does not hold any value, or if the value held is not a string
+(in that last case a warning is shown). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-set-value-at"></a><h3>gda_server_operation_set_value_at ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_set_value_at (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path_format</code></em>,
+                                   <em class="parameter"><code>...</code></em>);</pre>
+<p>Set the value for the node at the path formed using <em class="parameter"><code>path_format</code></em>
+ and the ... ellipse (the rules are the same as
+for <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strdup-printf"><code class="function">g_strdup_printf()</code></a>). </p>
+<p>Note that trying to set a value for a path which is not used by the current
+provider, such as "/TABLE_OPTIONS_P/TABLE_ENGINE" for a PostgreSQL connection (this option is only supported for MySQL), 
+will <span class="emphasis"><em>not</em></span> generate
+any error; this allows one to give values to a superset of the parameters and thus use the same code for several providers.</p>
+<p>Here are the possible formats of <em class="parameter"><code>path_format</code></em>
+:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>If the path corresponds to a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>, then the parameter is set to "&lt;parameter&gt;value&lt;/parameter&gt;"</p></li>
+<li class="listitem">
+<p>If the path corresponds to a sequence item like for example "/SEQUENCE_NAME/5/NAME" for
+    the "NAME" value of the 6th item of the "SEQUENCE_NAME" sequence then:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>if the sequence already has 6 or more items, then the value is just set to the corresponding 
+          value in the 6th item of the sequence</p></li>
+<li class="listitem"><p>if the sequence has less then 6 items, then items are added up to the 6th one before setting
+          the value to the corresponding in the 6th item of the sequence</p></li>
+</ul></div>
+<p>
+ </p>
+</li>
+<li class="listitem">
+<p>If the path corresponds to a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>, like for example "/ARRAY/@<em class="parameter"><code>COLUMN</code></em>/5" for the value at the
+    6th row of the "COLUMN" column of the "ARRAY" data model, then:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>if the data model already contains 6 or more rows, then the value is just set</p></li>
+<li class="listitem"><p>if the data model has less than 6 rows, then rows are added up to the 6th one before setting
+          the value</p></li>
+</ul></div>
+<p>
+ </p>
+</li>
+</ul></div>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-set-value-at.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path_format</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>arguments to use with <em class="parameter"><code>path_format</code></em>
+to make a complete path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-set-value-at.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-set-value-at-path"></a><h3>gda_server_operation_set_value_at_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_set_value_at_path
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Set the value for the node at the path formed using <em class="parameter"><code>path_format</code></em>
+ and the ... ellipse (the rules are the same as
+for <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strdup-printf"><code class="function">g_strdup_printf()</code></a>). </p>
+<p>Note that trying to set a value for a path which is not used by the current
+provider, such as "/TABLE_OPTIONS_P/TABLE_ENGINE" for a PostgreSQL connection (this option is only supported for MySQL), 
+will <span class="emphasis"><em>not</em></span> generate
+any error; this allows one to give values to a superset of the parameters and thus use the same code for several providers.</p>
+<p>Here are the possible formats of <em class="parameter"><code>path_format</code></em>
+:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>If the path corresponds to a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>, then the parameter is set to "&lt;parameter&gt;value&lt;/parameter&gt;"</p></li>
+<li class="listitem">
+<p>If the path corresponds to a sequence item like for example "/SEQUENCE_NAME/5/NAME" for
+    the "NAME" value of the 6th item of the "SEQUENCE_NAME" sequence then:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>if the sequence already has 6 or more items, then the value is just set to the corresponding 
+          value in the 6th item of the sequence</p></li>
+<li class="listitem"><p>if the sequence has less then 6 items, then items are added up to the 6th one before setting
+          the value to the corresponding in the 6th item of the sequence</p></li>
+</ul></div>
+<p>
+ </p>
+</li>
+<li class="listitem">
+<p>If the path corresponds to a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>, like for example "/ARRAY/@<em class="parameter"><code>COLUMN</code></em>/5" for the value at the
+    6th row of the "COLUMN" column of the "ARRAY" data model, then:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>if the data model already contains 6 or more rows, then the value is just set</p></li>
+<li class="listitem"><p>if the data model has less than 6 rows, then rows are added up to the 6th one before setting
+          the value</p></li>
+</ul></div>
+<p>
+ </p>
+</li>
+</ul></div>
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_server_operation_set_value_at]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-set-value-at-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a string. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-set-value-at-path.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-save-data-to-xml"></a><h3>gda_server_operation_save_data_to_xml ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNodePtr</span>
+gda_server_operation_save_data_to_xml (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <span class="type">xmlNodePtr</span> tree which can be used to save the <span class="type">op</span> object. This
+XML structure can then be saved to disk if necessary. Use xmlFreeNode to free
+the associated memory when not needed anymore.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-server-operation-save-data-to-xml.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-save-data-to-xml.returns"></a><h4>Returns</h4>
+<p>a new <span class="type">xmlNodePtr</span> structure, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-load-data-from-xml"></a><h3>gda_server_operation_load_data_from_xml ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_load_data_from_xml
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Loads the contents of <em class="parameter"><code>node</code></em>
+ into <em class="parameter"><code>op</code></em>
+. The XML tree passed through the <em class="parameter"><code>node</code></em>
+
+argument must correspond to an XML tree saved using <a class="link" href="GdaServerOperation.html#gda-server-operation-save-data-to-xml" title="gda_server_operation_save_data_to_xml ()"><code class="function">gda_server_operation_save_data_to_xml()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-operation-load-data-from-xml.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <span class="type">xmlNodePtr</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-load-data-from-xml.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-is-valid"></a><h3>gda_server_operation_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_is_valid (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml_file</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Tells if all the required values in <em class="parameter"><code>op</code></em>
+ have been defined.</p>
+<p>if <em class="parameter"><code>xml_file</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the validity of <em class="parameter"><code>op</code></em>
+ is tested against that specification, 
+and not against the current <em class="parameter"><code>op</code></em>
+'s specification.</p>
+<div class="refsect3">
+<a name="gda-server-operation-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>xml_file</p></td>
+<td class="parameter_description"><p>an XML specification file (see <a class="link" href="libgda-5.0-Misc-API.html#gda-server-operation-new" title="gda_server_operation_new ()"><code class="function">gda_server_operation_new()</code></a>) or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-is-valid.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>op</code></em>
+is valid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-prepare-create-database"></a><h3>gda_server_operation_prepare_create_database ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+gda_server_operation_prepare_create_database
+                               (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *db_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object which contains the specifications required
+to create a database. Once these specifications provided, use
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-create-database" title="gda_server_operation_perform_create_database ()"><code class="function">gda_server_operation_perform_create_database()</code></a> to perform the database creation.</p>
+<p>If <em class="parameter"><code>db_name</code></em>
+ is left <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the name of the database to create will have to be set in the
+returned <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> using <a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()"><code class="function">gda_server_operation_set_value_at()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-create-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>the database provider to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>db_name</p></td>
+<td class="parameter_description"><p>the name of the database to create, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-create-database.returns"></a><h4>Returns</h4>
+<p>new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the provider does not support database
+creation. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-perform-create-database"></a><h3>gda_server_operation_perform_create_database ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_perform_create_database
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new database using the specifications in <em class="parameter"><code>op</code></em>
+. <em class="parameter"><code>op</code></em>
+ can be obtained using
+<a class="link" href="GdaServerProvider.html#gda-server-provider-create-operation" title="gda_server_provider_create_operation ()"><code class="function">gda_server_provider_create_operation()</code></a>, or <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-database" title="gda_server_operation_prepare_create_database ()"><code class="function">gda_server_operation_prepare_create_database()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-operation-perform-create-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>the database provider to use, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>op</code></em>
+has been created using <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-database" title="gda_server_operation_prepare_create_database ()"><code class="function">gda_server_operation_prepare_create_database()</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object obtained using <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-database" title="gda_server_operation_prepare_create_database ()"><code class="function">gda_server_operation_prepare_create_database()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store en error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-perform-create-database.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred and the database has been created, FALSE otherwise</p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-prepare-drop-database"></a><h3>gda_server_operation_prepare_drop_database ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+gda_server_operation_prepare_drop_database
+                               (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *db_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object which contains the specifications required
+to drop a database. Once these specifications provided, use
+<a class="link" href="GdaServerOperation.html#gda-server-operation-perform-drop-database" title="gda_server_operation_perform_drop_database ()"><code class="function">gda_server_operation_perform_drop_database()</code></a> to perform the database creation.</p>
+<p>If <em class="parameter"><code>db_name</code></em>
+ is left <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the name of the database to drop will have to be set in the
+returned <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> using <a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()"><code class="function">gda_server_operation_set_value_at()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-drop-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>the database provider to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>db_name</p></td>
+<td class="parameter_description"><p>the name of the database to drop, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-drop-database.returns"></a><h4>Returns</h4>
+<p>new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the provider does not support database
+destruction. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-perform-drop-database"></a><h3>gda_server_operation_perform_drop_database ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_perform_drop_database
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Destroys an existing database using the specifications in <em class="parameter"><code>op</code></em>
+. <em class="parameter"><code>op</code></em>
+ can be obtained using
+<a class="link" href="GdaServerProvider.html#gda-server-provider-create-operation" title="gda_server_provider_create_operation ()"><code class="function">gda_server_provider_create_operation()</code></a>, or <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-drop-database" title="gda_server_operation_prepare_drop_database ()"><code class="function">gda_server_operation_prepare_drop_database()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-server-operation-perform-drop-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>the database provider to use, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>op</code></em>
+has been created using <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-drop-database" title="gda_server_operation_prepare_drop_database ()"><code class="function">gda_server_operation_prepare_drop_database()</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object obtained using <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-drop-database" title="gda_server_operation_prepare_drop_database ()"><code class="function">gda_server_operation_prepare_drop_database()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store en error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-perform-drop-database.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred and the database has been destroyed</p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-prepare-create-table"></a><h3>gda_server_operation_prepare_create_table ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+gda_server_operation_prepare_create_table
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                                <em class="parameter"><code>...</code></em>);</pre>
+<p>Add more arguments if the flag needs them:</p>
+<p>GDA_SERVER_OPERATION_CREATE_TABLE_FKEY_FLAG:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>string with the table's name referenced</p></li>
+<li class="listitem"><p>an integer with the number pairs "local_field", "referenced_field"
+  used in the reference</p></li>
+<li class="listitem"><p>Pairs of "local_field", "referenced_field" to use, must match
+   the number specified above.</p></li>
+<li class="listitem"><p>a string with the action for ON DELETE; can be: "RESTRICT", "CASCADE",
+   "NO ACTION", "SET NULL" and "SET DEFAULT". Example: "ON UPDATE CASCADE".</p></li>
+<li class="listitem"><p>a string with the action for ON UPDATE (see above).</p></li>
+</ul></div>
+<p>Create a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object using an opened connection, taking three
+arguments, a column's name the column's GType and <a class="link" href="GdaServerOperation.html#GdaServerOperationCreateTableFlag" title="enum GdaServerOperationCreateTableFlag"><span class="type">GdaServerOperationCreateTableFlag</span></a>
+flag, you need to finish the list using <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>You'll be able to modify the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object to add custom options * to the operation. When finished call <a class="link" href="GdaServerOperation.html#gda-server-operation-perform-create-table" title="gda_server_operation_perform_create_table ()"><span class="type">gda_server_operation_perform_create_table</span></a>
+or <a class="link" href="GdaServerProvider.html#gda-server-provider-perform-operation" title="gda_server_provider_perform_operation ()"><span class="type">gda_server_provider_perform_operation</span></a>
+in order to execute the operation.</p>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-create-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>an opened connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>name of the table to create</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>group of three arguments for column's name, column's <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>
+and a <a class="link" href="GdaServerOperation.html#GdaServerOperationCreateTableFlag" title="enum GdaServerOperationCreateTableFlag"><span class="type">GdaServerOperationCreateTableFlag</span></a> flag, finished with <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-create-table.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> if no errors; NULL and set <em class="parameter"><code>error</code></em>
+otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-perform-create-table"></a><h3>gda_server_operation_perform_create_table ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_perform_create_table
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs a prepared <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> to create a table. This could perform
+an operation created by <a class="link" href="GdaServerOperation.html#gda-server-operation-prepare-create-table" title="gda_server_operation_prepare_create_table ()"><span class="type">gda_server_operation_prepare_create_table</span></a> or any other using the
+the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> API.</p>
+<div class="refsect3">
+<a name="gda-server-operation-perform-create-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a valid <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-perform-create-table.returns"></a><h4>Returns</h4>
+<p> TRUE if the table was created; FALSE and set <em class="parameter"><code>error</code></em>
+otherwise</p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-prepare-drop-table"></a><h3>gda_server_operation_prepare_drop_table ()</h3>
+<pre class="programlisting"><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="returnvalue">GdaServerOperation</span></a> *
+gda_server_operation_prepare_drop_table
+                               (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>This is just a convenient function to create a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> to drop a
+table in an opened connection.</p>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-drop-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>an opened connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>name of the table to drop</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-prepare-drop-table.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if couldn't create the opereration. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-perform-drop-table"></a><h3>gda_server_operation_perform_drop_table ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_perform_drop_table
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>This is just a convenient function to perform a drop a table operation.</p>
+<div class="refsect3">
+<a name="gda-server-operation-perform-drop-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-perform-drop-table.returns"></a><h4>Returns</h4>
+<p> TRUE if the table was dropped</p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaServerOperation-struct"></a><h3>GdaServerOperation</h3>
+<pre class="programlisting">typedef struct _GdaServerOperation GdaServerOperation;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperationType"></a><h3>enum GdaServerOperationType</h3>
+<div class="refsect3">
+<a name="GdaServerOperationType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-DB:CAPS"></a>GDA_SERVER_OPERATION_CREATE_DB</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-DB:CAPS"></a>GDA_SERVER_OPERATION_DROP_DB</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-TABLE:CAPS"></a>GDA_SERVER_OPERATION_DROP_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-RENAME-TABLE:CAPS"></a>GDA_SERVER_OPERATION_RENAME_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-ADD-COLUMN:CAPS"></a>GDA_SERVER_OPERATION_ADD_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-COLUMN:CAPS"></a>GDA_SERVER_OPERATION_DROP_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-INDEX:CAPS"></a>GDA_SERVER_OPERATION_CREATE_INDEX</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-INDEX:CAPS"></a>GDA_SERVER_OPERATION_DROP_INDEX</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-VIEW:CAPS"></a>GDA_SERVER_OPERATION_CREATE_VIEW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-VIEW:CAPS"></a>GDA_SERVER_OPERATION_DROP_VIEW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-COMMENT-TABLE:CAPS"></a>GDA_SERVER_OPERATION_COMMENT_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-COMMENT-COLUMN:CAPS"></a>GDA_SERVER_OPERATION_COMMENT_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-USER:CAPS"></a>GDA_SERVER_OPERATION_CREATE_USER</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-ALTER-USER:CAPS"></a>GDA_SERVER_OPERATION_ALTER_USER</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-DROP-USER:CAPS"></a>GDA_SERVER_OPERATION_DROP_USER</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-LAST:CAPS"></a>GDA_SERVER_OPERATION_LAST</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperationError"></a><h3>enum GdaServerOperationError</h3>
+<div class="refsect3">
+<a name="GdaServerOperationError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-OBJECT-NAME-ERROR:CAPS"></a>GDA_SERVER_OPERATION_OBJECT_NAME_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-INCORRECT-VALUE-ERROR:CAPS"></a>GDA_SERVER_OPERATION_INCORRECT_VALUE_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-XML-ERROR:CAPS"></a>GDA_SERVER_OPERATION_XML_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperationCreateTableFlag"></a><h3>enum GdaServerOperationCreateTableFlag</h3>
+<div class="refsect3">
+<a name="GdaServerOperationCreateTableFlag.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-NOTHING-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_NOTHING_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-PKEY-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_PKEY_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-NOT-NULL-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_NOT_NULL_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-UNIQUE-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_UNIQUE_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-AUTOINC-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_AUTOINC_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-FKEY-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_FKEY_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SERVER-OPERATION-CREATE-TABLE-PKEY-AUTOINC-FLAG:CAPS"></a>GDA_SERVER_OPERATION_CREATE_TABLE_PKEY_AUTOINC_FLAG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaServerOperation--connection"></a><h3>The <code class="literal">“connection”</code> property</h3>
+<pre class="programlisting">  “connection”               <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</pre>
+<p>Connection to use.</p>
+<p>Owner: GdaServerOperation</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperation--op-type"></a><h3>The <code class="literal">“op-type”</code> property</h3>
+<pre class="programlisting">  “op-type”                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Type of operation to be done.</p>
+<p>Owner: GdaServerOperation</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: [0,15]</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperation--provider"></a><h3>The <code class="literal">“provider”</code> property</h3>
+<pre class="programlisting">  “provider”                 <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *</pre>
+<p>Database provider which created the object.</p>
+<p>Owner: GdaServerOperation</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperation--spec-filename"></a><h3>The <code class="literal">“spec-filename”</code> property</h3>
+<pre class="programlisting">  “spec-filename”            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>XML file which contains the object's data structure.</p>
+<p>Owner: GdaServerOperation</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaServerOperation.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaServerOperation-sequence-item-added"></a><h3>The <code class="literal">“sequence-item-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>              *seq_path,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                item_index,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)</pre>
+<p>Gets emitted whenever a new sequence item (from a sequence template) has been added</p>
+<div class="refsect3">
+<a name="GdaServerOperation-sequence-item-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>seq_path</p></td>
+<td class="parameter_description"><p>the path to the new sequence item</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>item_index</p></td>
+<td class="parameter_description"><p>the index (starting from 0) of the new sequence item in the sequence</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaServerOperation-sequence-item-remove"></a><h3>The <code class="literal">“sequence-item-remove”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>              *seq_path,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                item_index,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)</pre>
+<p>Gets emitted whenever a sequence item is about to be removed</p>
+<div class="refsect3">
+<a name="GdaServerOperation-sequence-item-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>seq_path</p></td>
+<td class="parameter_description"><p>the path to the sequence item to be removed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>item_index</p></td>
+<td class="parameter_description"><p>the index (starting from 0) of the sequence item in the sequence</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

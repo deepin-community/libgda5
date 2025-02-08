@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quark list: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="psupport.html" title="Providers' support API">
+<link rel="prev" href="GdaPStmt.html" title="GdaPstmt">
+<link rel="next" href="libgda-5.0-SQL-rendering-API.html" title="SQL rendering API">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Quark-lists.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Quark-lists.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="psupport.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaPStmt.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-SQL-rendering-API.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Quark-lists"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Quark-lists.top_of_page"></a>Quark list</span></h2>
+<p>Quark list — Manages lists of KEY=VALUE pairs</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-new" title="gda_quark_list_new ()">gda_quark_list_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-new-from-string" title="gda_quark_list_new_from_string ()">gda_quark_list_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-copy" title="gda_quark_list_copy ()">gda_quark_list_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-free" title="gda_quark_list_free ()">gda_quark_list_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-clear" title="gda_quark_list_clear ()">gda_quark_list_clear</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-add-from-string" title="gda_quark_list_add_from_string ()">gda_quark_list_add_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-find" title="gda_quark_list_find ()">gda_quark_list_find</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-protect-values" title="gda_quark_list_protect_values ()">gda_quark_list_protect_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-remove" title="gda_quark_list_remove ()">gda_quark_list_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-foreach" title="gda_quark_list_foreach ()">gda_quark_list_foreach</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GdaQuarkList"></a><div class="refsect1">
+<a name="libgda-5.0-Quark-lists.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList-struct" title="GdaQuarkList">GdaQuarkList</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">╰──</span> GdaQuarkList
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.description"></a><h2>Description</h2>
+<p>This object is used to store KEY=VALUE pairs. It is mainly used internally by Libgda to store connection
+parameters.</p>
+<p>Authentification values are kept in a mangled form in memory, and unmangled when
+they are requested using <a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-find" title="gda_quark_list_find ()"><code class="function">gda_quark_list_find()</code></a>, and when you don't need them anymore,
+call <a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-protect-values" title="gda_quark_list_protect_values ()"><code class="function">gda_quark_list_protect_values()</code></a> to remove the unmangled version.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-quark-list-new"></a><h3>gda_quark_list_new ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+gda_quark_list_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>, which is a set of key-&gt;value pairs,
+very similar to GLib's GHashTable, but with the only purpose to
+make easier the parsing and creation of data source connection
+strings.</p>
+<div class="refsect3">
+<a name="gda-quark-list-new.returns"></a><h4>Returns</h4>
+<p>the newly created <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p>
+<p>Free-function: gda_quark_list_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-new-from-string"></a><h3>gda_quark_list_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+gda_quark_list_new_from_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> given a string.</p>
+<p><em class="parameter"><code>string</code></em>
+ must be a semi-colon separated list of "&lt;key&gt;=&lt;value&gt;" strings (for example
+"DB_NAME=notes;USERNAME=alfred"). Each key and value must respect the RFC 1738 recommendations: the</p>
+<code class="constant">&lt;&gt;"#%{}|\^~[]'`;/?:@=&amp;</code> and space characters are replaced by 
+<code class="constant">"%<code class="literal">ab</code>"</code> where
+<code class="constant">ab</code> is the hexadecimal number corresponding to the character (for example the
+<p>"DB_NAME=notes;USERNAME=al%<code class="literal">20fred</code>" string will specify a username as "al fred"). If this formalism
+is not respected, then some unexpected results may occur.</p>
+<div class="refsect3">
+<a name="gda-quark-list-new-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-quark-list-new-from-string.returns"></a><h4>Returns</h4>
+<p>the newly created <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p>
+<p>Free-function: gda_quark_list_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-copy"></a><h3>gda_quark_list_copy ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="returnvalue">GdaQuarkList</span></a> *
+gda_quark_list_copy (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> from an existing one.</p>
+<div class="refsect3">
+<a name="gda-quark-list-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>quark_list to get a copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-quark-list-copy.returns"></a><h4>Returns</h4>
+<p> a newly allocated <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> with a copy of the data in <em class="parameter"><code>qlist</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-free"></a><h3>gda_quark_list_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_free (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>);</pre>
+<p>Releases all memory occupied by the given <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p>
+<div class="refsect3">
+<a name="gda-quark-list-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-clear"></a><h3>gda_quark_list_clear ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_clear (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>);</pre>
+<p>Removes all strings in the given <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p>
+<div class="refsect3">
+<a name="gda-quark-list-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-add-from-string"></a><h3>gda_quark_list_add_from_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_add_from_string (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> cleanup</code></em>);</pre>
+<p><em class="parameter"><code>string</code></em>
+ must be a semi-colon separated list of "&lt;key&gt;=&lt;value&gt;" strings (for example
+"DB_NAME=notes;USERNAME=alfred"). Each key and value must respect the RFC 1738 recommendations: the</p>
+<code class="constant">&lt;&gt;"#%{}|\^~[]'`;/?:@=&amp;</code> and space characters are replaced by 
+<code class="constant">"%<code class="literal">ab</code>"</code> where
+<code class="constant">ab</code> is the hexadecimal number corresponding to the character (for example the
+<p>"DB_NAME=notes;USERNAME=al%<code class="literal">20fred</code>" string will specify a username as "al fred"). If this formalism
+is not respected, then some unexpected results may occur.</p>
+<p>Adds new key-&gt;value pairs from the given <em class="parameter"><code>string</code></em>
+. If <em class="parameter"><code>cleanup</code></em>
+ is
+set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the previous contents will be discarded before adding
+the new pairs.</p>
+<div class="refsect3">
+<a name="gda-quark-list-add-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cleanup</p></td>
+<td class="parameter_description"><p>whether to cleanup the previous content or not.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-find"></a><h3>gda_quark_list_find ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_quark_list_find (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>,
+                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Searches for the value identified by <em class="parameter"><code>name</code></em>
+ in the given <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>. For protected values
+(authentification data), don't forget to call <a class="link" href="libgda-5.0-Quark-lists.html#gda-quark-list-protect-values" title="gda_quark_list_protect_values ()"><code class="function">gda_quark_list_protect_values()</code></a> when you
+don't need them anymore (when needed again, they will be unmangled again).</p>
+<div class="refsect3">
+<a name="gda-quark-list-find.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>the name of the value to search for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-quark-list-find.returns"></a><h4>Returns</h4>
+<p> the value associated with the given key if found, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-protect-values"></a><h3>gda_quark_list_protect_values ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_protect_values (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>);</pre>
+<p>Call this function to get rid of the clear version of the value associated to
+<em class="parameter"><code>name</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-quark-list-protect-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-remove"></a><h3>gda_quark_list_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_remove (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Removes an entry from the <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a>, given its name.</p>
+<div class="refsect3">
+<a name="gda-quark-list-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> structure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>an entry name.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-quark-list-foreach"></a><h3>gda_quark_list_foreach ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_quark_list_foreach (<em class="parameter"><code><a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> *qlist</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHFunc"><span class="type">GHFunc</span></a> func</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Calls the given function for each of the key/value pairs in <em class="parameter"><code>qlist</code></em>
+. The function is passed the key and value 
+of each pair, and the given user_data parameter. <em class="parameter"><code>qlist</code></em>
+ may not be modified while iterating over it.</p>
+<div class="refsect3">
+<a name="gda-quark-list-foreach.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>qlist</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Quark-lists.html#GdaQuarkList"><span class="type">GdaQuarkList</span></a> structure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>the function to call for each key/value pair. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data to pass to the function. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Quark-lists.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaQuarkList-struct"></a><h3>GdaQuarkList</h3>
+<pre class="programlisting">typedef struct _GdaQuarkList GdaQuarkList;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

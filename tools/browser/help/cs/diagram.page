@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="diagram" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+  </info>
+  <title>Diagramy</title>
+  <p>Diagramy se objevují v aplikaci <app>gda-browser</app> všude možně a jsou tvořeny plochou, na které jsou zobrazeny grafické prvky (jako třeba tabulky).</p>
+  <figure>
+    <title>Diagram</title>
+    <desc>Diagram zobrazující nějaké tabulky a vztahy mezi nimi vyjádřené cizími klíči (viz také <link xref="declared-fk">deklarace cizích klíčů</link>)</desc>
+    <media type="image" mime="image/png" src="figures/diagram.png"/>
+  </figure>
+  <p>Položky lze po ploše posouvat (všimněte si, že pokud se celý diagram vleze na plochu, je umístěn na střed). Dále můžete provádět tyto věci:</p>
+  <list>
+    <item><p>zvětšování nebo zmenšování pomocí kolečka myši nebo přes kontextovou nabídku (kliknutí pravým tlačítkem na plochu); v kontextové nabídce je také dostupná možnost pro zvětšení optimální vůči ploše</p></item>
+    <item><p>posouvat položky k sobě nebo od sebe pomocí kolečka myš za současného držení klávesy <key>Shift</key></p></item>
+    <item><p>uspořádávání položek do řady nebo do kruhu, přes kontextovou nabídku</p></item>
+    <item><p>tisk, přes kontextovou nabídku</p></item>
+    <item><p>exportování obrázků PNG nebo SVG, přes kontextovou nabídku</p></item>
+    <item><p>přidávání položek, přes kontextovou nabídku</p></item>
+    <item><p>odstraňování položek, přes kontextovou nabídku položky</p></item>
+  </list>
+</page>

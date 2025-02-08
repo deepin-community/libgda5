@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="transactions" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Transaktionen</title>
+  <p>Transaktionen können verbindungsbezogen gestartet, eingespielt oder zurückgenommen werden:</p>
+  <list>
+    <item><p>Verwenden Sie den <media type="image" mime="image/png" src="figures/trans-begin.png"/>-Werkzeugleistenknopf zum Starten einer Transaktion</p></item>
+    <item><p>Verwenden Sie den <media type="image" mime="image/png" src="figures/trans-commit.png"/>-Werkzeugleistenknopf zum Einspielen der aktuellen Transaktion (Anwenden aller Änderungen)</p></item>
+    <item><p>Verwenden Sie den <media type="image" mime="image/png" src="figures/trans-rollback.png"/>-Werkzeugleistenknopf zum Abbrechen der aktuellen Transaktion (Verwerfen aller Änderungen)</p></item>
+  </list>
+  <note>
+    <p>Eine Transaktion kann automatisch durch Ausführen einer SELECT-Anweisung gestartet werden, wobei binäre Objekte beteiligt sind (BLOBs). Die Transaktion kann dabei gesperrt werden und der Ergebnisdatensatz wird im Speicher vorgehalten. Um Daten in einer <link xref="query-execution-perspective">Abfrageausführungs-Perspektive</link> zu löschen, leeren Sie den zum Datensatz gehörenden Chronikeintrag.</p>
+  </note>
+</page>

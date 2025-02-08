@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="zh-CN">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+</info>
+<title>方案浏览器透视</title>
+<p>使用方案浏览器透视来理解数据库的组织方式(方案，schema)。要切换到此透视，使用<guiseq><gui>透视</gui><gui>方案浏览器</gui></guiseq> 菜单或 <keyseq><key>Ctrl</key><key>B</key></keyseq> 快捷键。</p>
+<p>透视分为两个水平面板：左面板为用户定义的收藏，右面板为操作区。</p>
+<figure>
+  <title>方案浏览器透视的默认视图</title>
+  <desc>默认的方案浏览器视图</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>透视的左半部分，列出了收藏的数据库对象或图。双击一个收藏，在右面板中会打开它的属性。</p>
+<p>右侧面板由几类标签构成：</p>
+<list>
+  <item><p>一个以<em>云</em>视图方式列出数据库中所有表和视图的标签，与其他表关系较多的表以更大的字体显示；这个标签总是存在</p></item>
+  <item><p>zero or more tabs representing a table or views' properties: the list of columns,
+      the list of constraints (primary or foreign keys, and unique constraints), a <link xref="diagram">diagram</link> showing the
+      related tables, and an area to define display preferences for each column's data</p></item>
+  <item><p>zero or more <link xref="diagram">diagrams</link> in which any number of tables can be represented, where they are
+      linked using their relations (as foreign key constraints)</p></item>
+</list>
+
+<figure>
+  <title>Tab showing information about a table</title>
+  <desc>Example of information displayed for each table, note the difference between foreign keys implemented in
+  the database and <link xref="declared-fk">declared foreign keys</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>

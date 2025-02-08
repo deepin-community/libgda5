@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="declared-fk" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Claves externas declaradas</title>
+  <p>Todas las restricciones de clave externa (donde el contenido de una o más columnas en una tabla está restringido a estar entre los valores de una o más columnas de otra tabla) se analizan y se muestran en la <link xref="schema-browser-perspective">perspectiva del visor de esquemas</link>. Las restricciones de clave externa ayudan a entender el esquema y la aplicación las usa automáticamente donde es apropiado.</p>
+  <p>Sin embargo, algunas veces el diseñador de una base de datos ha olvidado o no ha querido usar restricciones de clave externa, y es posible «declarar claves externas» que son sólo declaraciones de la herramienta que actualmente no se definen en la base de datos.</p>
+  <figure>
+    <title>Claves externas declaradas en diagramas</title>
+    <desc>Cuando se muestran en diagramas, las claves externas declaradas se representan usando una línea discontinua en lugar de una línea continua para las claves externas actuales.</desc>
+    <media type="image" mime="image/png" src="figures/declaredfk.png"/>
+  </figure>
+  <p>Notas:</p>
+  <list>
+    <item><p>la tripla (nombre de clave externa, tabla, tabla referenciada) identifica de manera única una clave externa declarada y, por lo tanto, declarar una clave externa nueva con la misma tripleta quitará cualquiera que se haya declarado anteriormente.</p></item>
+    <item><p>Si la misma restricción se representa actualmente por una clave externa real y también por una clave externa declarada, la definición de la clave externa real enmascarará a la declarada.</p></item>
+    <item><p>La clave externa declarada no tiene ninguna política para determinar qué acción realizar en casos de UPDATE o DELETE, por lo que la política indicada será siempre «no forzado»</p></item>
+  </list>
+
+  <section id="declare-new-fk">
+    <title>Declarar una clave externa nueva</title>
+    <p>Se puede declarar una clave externa nueva desde la <link xref="schema-browser-perspective">perspectiva del visor de esquemas</link>, usando el menú <guiseq><gui>Tabla</gui><gui>Declarar clave externa</gui></guiseq>, que está presente cuando se muestran las propiedades de una tabla en la pestaña actual.</p>
+    <p>Otra manera de declarar una clave externa es usar el menú contextual de una tabla en un diagrama, y elegir la opción <guiseq><gui>Declarar una clave externa para esta tabla</gui></guiseq>.</p>
+    <p>De cualquier modo, para declarar una clave externa nueva se debe proporcionar la siguiente información:</p>
+    <list>
+      <item><p>El nombre de una clave externa</p></item>
+      <item><p>La tabla referenciada</p></item>
+      <item><p>Columnas y columnas referenciadas para cada columna implicada en la clave externa</p></item>
+    </list>
+    <figure>
+      <title>Información para declarar una clave externa nueva</title>
+      <desc>Diálogo emergente de la IU para declarar una clave externa nueva. Aquí, la tabla referencia es «almacenes», y las columnas involucradas son «país» y «ciudad».</desc>
+      <media type="image" mime="image/png" src="figures/declaredfk-dialog.png"/>
+    </figure>
+  </section>
+  
+  <section id="remove-fk">
+    <title>Quitar una clave externa declarada</title>
+    <p>Se puede quitar una clave externa declara pulsando en el enlace <guiseq><gui>(Quitar)</gui></guiseq> mostrado junto a las propiedades de cada clave externa declarada en las propiedades de la tabla (en la <link xref="schema-browser-perspective">perspectiva del visor de esquemas</link>).</p>
+    <p>Otra forma de quitar una clave externa declara es en la página de un <link xref="diagram">diagrama</link>, a través del menú contextual asociado con la línea discontinua que representa la clave externa declarada, seleccionando la opción <guiseq><gui>Quitar esta clave externa declarada</gui></guiseq>.</p>
+  </section>
+</page>

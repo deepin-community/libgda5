@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaBrowser hacking manual: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<meta name="description" content="Documentation to help improve and extend the GdaBrowser tool. All the objects and widgets used by GdaBrowser are not included in this documentation, in order to make it easier to understand; if you need them, go and look in the code.">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="next" href="part_begin.html" title="Part I. Getting started">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">GdaBrowser hacking manual</p></th></tr></table></div>
+<div><div class="authorgroup"><div class="author">
+<h3 class="author">
+<span class="firstname">Vivien</span> <span class="surname">Malerba</span>
+</h3>
+<span class="contrib">Current maintainer
+        </span> <div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:malerba@gnome-db.org">malerba@gnome-db.org</a>&gt;</code></p></div></div>
+</div></div></div>
+<div><p class="copyright">Copyright © 2009 - 2011 The GNOME Foundation</p></div>
+<div><div class="legalnotice">
+<a name="legalnotice"></a><p>
+        Permission is granted to copy, distribute and/or modify this document
+        under the terms of the <a class="link" href="fdl.html" title="Appendix A. GNU Free Documentation License"><em class="citetitle">GNU
+        Free Documentation License</em></a>, Version 1.1 or any later
+        version published by the Free Software Foundation with no Invariant
+        Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the
+        license can be found in <a class="link" href="fdl.html" title="Appendix A. GNU Free Documentation License">the appendix</a>.
+      </p>
+<p>
+        Many of the names used by companies to distinguish their products and
+        services are claimed as trademarks. Where those names appear in any
+        GNOME documentation, and those trademarks are made aware to the members
+        of the GNOME Documentation Project, the names have been printed in caps
+        or initial caps.
+      </p>
+</div></div>
+<div><div class="abstract">
+<p class="title"><b>Abstract</b></p>
+<p>
+	Documentation to help improve and extend the GdaBrowser tool. All the objects and
+	widgets used by GdaBrowser are not included in this documentation, in order to
+	make it easier to understand; if you need them, go and look in the code.
+      </p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl class="toc">
+<dt><span class="part"><a href="part_begin.html">I. Getting started</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="why.html">Purpose</a></span></dt>
+<dt><span class="chapter"><a href="prog_struct.html">Program's structure</a></span></dt>
+<dt><span class="chapter"><a href="code_orga.html">Code organization</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="part_api.html">II. API reference</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="core.html">Core objects</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="BrowserCore.html">BrowserCore</a></span><span class="refpurpose"> — Singleton holding the global browser information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="BrowserConnection.html">BrowserConnection</a></span><span class="refpurpose"> — An opened connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-browser-favorites.html">ToolsFavorites</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-Support-functions.html">Support functions</a></span><span class="refpurpose"> — Misc. functions for various situations</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="windows.html">Browser windows</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="BrowserWindow.html">BrowserWindow</a></span><span class="refpurpose"> — A top level browser window</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="BrowserPerspective.html">BrowserPerspective</a></span><span class="refpurpose"> — A "perspective" in a <span class="type">BrowserWindow</span> window</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-BrowserPage.html">BrowserPage</a></span><span class="refpurpose"> — A "page" within a <span class="type">BrowserPerspective</span> widget</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="extrawidgets.html">Extra widgets</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-UiFormgrid.html">UiFormgrid</a></span><span class="refpurpose"> — Widget embedding both a form and a grid to display a <span class="type">GdaDataModel</span>'s contents</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-gdaui-bar.html">GdauiBar</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-popup-container.html">PopupContainer</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="perspectives.html">Perspectives' objects</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="MgrFavorites.html">MgrFavorites</a></span><span class="refpurpose"> — A <span class="type">GdaTreeManager</span> for the stored favorites</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-Schema-Browser-perspective.html">Schema Browser perspective</a></span><span class="refpurpose"> — Perspective to analyse the database's schema</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-Data-Manager-perspective.html">Data Manager perspective</a></span><span class="refpurpose"> — Perspective to manipulate data contained in the database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gda-browser-Query-Exec-perspective.html">Query Exec perspective</a></span><span class="refpurpose"> — Perspective to execute SQL commands</span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="api-deprecated.html">III. API Deprecated</a></span></dt>
+<dt><span class="part"><a href="api-index-full.html">IV. API Deprecated</a></span></dt>
+<dt><span class="part"><a href="annotation-glossary.html">V. Annotation Glossary</a></span></dt>
+<dd><dl><dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt></dl></dd>
+<dt><span class="part"><a href="part_index.html">VI. Appendix</a></span></dt>
+<dd><dl>
+<dt><span class="appendix"><a href="fdl.html">A. GNU Free Documentation License</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="fdl.html#fdl-preamble">0. PREAMBLE</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section1.html">1. APPLICABILITY AND DEFINITIONS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section2.html">2. VERBATIM COPYING</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section3.html">3. COPYING IN QUANTITY</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section4.html">4. MODIFICATIONS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section5.html">5. COMBINING DOCUMENTS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section6.html">6. COLLECTIONS OF DOCUMENTS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section7.html">7. AGGREGATION WITH INDEPENDENT WORKS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section8.html">8. TRANSLATION</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section9.html">9. TERMINATION</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section10.html">10. FUTURE REVISIONS OF THIS LICENSE</a></span></dt>
+<dt><span class="sect1"><a href="fdl-using.html">Addendum</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl></div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

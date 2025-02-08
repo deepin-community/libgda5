@@ -1,0 +1,25 @@
+From: Cyril Brulebois <kibi@debian.org>
+Date: Sat, 17 Mar 2018 15:16:45 +0000
+Subject: Link sqlite provider against sqlite3
+
+The sqlite provider uses dlopen() to load the sqlite3 library.
+As a consequence, libgda-5.0-4 did not have a dependency on libsqlite3-0
+so it was not guaranteed that libsqlite3-0 was actually installed when
+applications, like anjuta, were using the sqlite provider.
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=667751
+---
+ providers/sqlite/Makefile.am | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/providers/sqlite/Makefile.am b/providers/sqlite/Makefile.am
+index 25dcc09..a0be2af 100644
+--- a/providers/sqlite/Makefile.am
++++ b/providers/sqlite/Makefile.am
+@@ -18,6 +18,7 @@ libgda_sqlite_la_SOURCES = \
+ libgda_sqlite_la_LDFLAGS = -export-dynamic -module -avoid-version $(NO_UNDEFINED) $(LIBTOOL_PROV_EXPORT_OPTIONS)
+ libgda_sqlite_la_LIBADD = \
+ 	$(top_builddir)/libgda/libgda-5.0.la \
++	$(SQLITE_LIBS) \
+ 	$(COREDEPS_LIBS)
+ 
+ xmldir   = $(datadir)/libgda-5.0

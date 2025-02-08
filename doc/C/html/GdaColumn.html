@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataModel columns: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaDataSelect.html" title="GdaDataSelect">
+<link rel="next" href="GdaDataModelIter.html" title="GdaDataModelIter">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaColumn.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaColumn.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaColumn.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaColumn.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaDataSelect.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaDataModelIter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaColumn"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaColumn.top_of_page"></a>GdaDataModel columns</span></h2>
+<p>GdaDataModel columns — Management of <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> column attributes</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaColumn.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaColumn.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="returnvalue">GdaColumn</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-new" title="gda_column_new ()">gda_column_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="returnvalue">GdaColumn</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-copy" title="gda_column_copy ()">gda_column_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-name" title="gda_column_get_name ()">gda_column_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-description" title="gda_column_get_description ()">gda_column_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-dbms-type" title="gda_column_get_dbms_type ()">gda_column_get_dbms_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-g-type" title="gda_column_get_g_type ()">gda_column_get_g_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-allow-null" title="gda_column_get_allow_null ()">gda_column_get_allow_null</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-auto-increment" title="gda_column_get_auto_increment ()">gda_column_get_auto_increment</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-position" title="gda_column_get_position ()">gda_column_get_position</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-default-value" title="gda_column_get_default_value ()">gda_column_get_default_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-get-attribute" title="gda_column_get_attribute ()">gda_column_get_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-set-attribute" title="gda_column_set_attribute ()">gda_column_set_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="GdaColumn.html#gda-column-set-attribute-static" title="gda_column_set_attribute_static()">gda_column_set_attribute_static</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaColumn.html#GdaColumn--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaColumn.html#GdaColumn-g-type-changed" title="The “g-type-changed” signal">g-type-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaColumn.html#GdaColumn-name-changed" title="The “name-changed” signal">name-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaColumn.html#GdaColumn-struct" title="GdaColumn">GdaColumn</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaColumn
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> object represents a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>'s column and handle all its properties.</p>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-column-new"></a><h3>gda_column_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="returnvalue">GdaColumn</span></a> *
+gda_column_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-new.returns"></a><h4>Returns</h4>
+<p> a newly allocated <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-copy"></a><h3>gda_column_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="returnvalue">GdaColumn</span></a> *
+gda_column_copy (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> object from an existing one.</p>
+<div class="refsect3">
+<a name="gda-column-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>column to get a copy from. 	 </p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-copy.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> with a copy of the data
+in <em class="parameter"><code>column</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-name"></a><h3>gda_column_get_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_column_get_name (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-name.returns"></a><h4>Returns</h4>
+<p> the name of <em class="parameter"><code>column</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-description"></a><h3>gda_column_get_description ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_column_get_description (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-description.returns"></a><h4>Returns</h4>
+<p> the column's description, in any</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-dbms-type"></a><h3>gda_column_get_dbms_type ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_column_get_dbms_type (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-dbms-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-dbms-type.returns"></a><h4>Returns</h4>
+<p> the database type of <em class="parameter"><code>column</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-g-type"></a><h3>gda_column_get_g_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+gda_column_get_g_type (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-g-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-g-type.returns"></a><h4>Returns</h4>
+<p> the type of <em class="parameter"><code>column</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-allow-null"></a><h3>gda_column_get_allow_null ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_column_get_allow_null (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<p>Gets the 'allow null' flag of the given column.</p>
+<div class="refsect3">
+<a name="gda-column-get-allow-null.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-allow-null.returns"></a><h4>Returns</h4>
+<p> whether the given column allows null values or not (<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>).</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-auto-increment"></a><h3>gda_column_get_auto_increment ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_column_get_auto_increment (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-auto-increment.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-auto-increment.returns"></a><h4>Returns</h4>
+<p> whether the given column is an auto incremented one (<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>).</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-position"></a><h3>gda_column_get_position ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_column_get_position (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-position.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-position.returns"></a><h4>Returns</h4>
+<p> the position of the column refer to in the
+containing data model.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-default-value"></a><h3>gda_column_get_default_value ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_column_get_default_value (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-column-get-default-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-default-value.returns"></a><h4>Returns</h4>
+<p><em class="parameter"><code>column</code></em>
+'s default value, as a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if column does not have a default value. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-get-attribute"></a><h3>gda_column_get_attribute ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_column_get_attribute (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>);</pre>
+<p>Get the value associated to a named attribute.</p>
+<p>Attributes can have any name, but Libgda proposes some default names, see this section.</p>
+<div class="refsect3">
+<a name="gda-column-get-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute</p></td>
+<td class="parameter_description"><p>attribute name as a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-column-get-attribute.returns"></a><h4>Returns</h4>
+<p> a read-only <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not attribute named <em class="parameter"><code>attribute</code></em>
+has been set for <em class="parameter"><code>column</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-set-attribute"></a><h3>gda_column_set_attribute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_column_set_attribute (<em class="parameter"><code><a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy</code></em>);</pre>
+<p>Set the value associated to a named attribute. The <em class="parameter"><code>attribute</code></em>
+ string is 'stolen' by this method, and
+the memory it uses will be freed using the <em class="parameter"><code>destroy</code></em>
+ function when no longer needed (if <em class="parameter"><code>destroy</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+then the string will not be freed at all).</p>
+<p>Attributes can have any name, but Libgda proposes some default names, 
+see this section.</p>
+<p>If there is already an attribute named <em class="parameter"><code>attribute</code></em>
+ set, then its value is replaced with the new value (<em class="parameter"><code>value</code></em>
+ is
+copied), except if <em class="parameter"><code>value</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, in which case the attribute is removed.</p>
+<p>For example one would use it as:</p>
+<code class="code">
+gda_column_set_attribute (holder, g_strdup (my_attribute), g_free, my_value);
+gda_column_set_attribute (holder, GDA_ATTRIBUTE_NAME, NULL, my_value);
+</code><p>Note: this method does not modify in any way the contents of the data model for which <em class="parameter"><code>column</code></em>
+ is a column (nor
+does it modify the table definition of the tables used by a SELECT statement is the model was created from a
+SELECT statement).</p>
+<div class="refsect3">
+<a name="gda-column-set-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute</p></td>
+<td class="parameter_description"><p>attribute name as a static string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy</p></td>
+<td class="parameter_description"><p>a function to be called when <em class="parameter"><code>attribute</code></em>
+is not needed anymore, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-column-set-attribute-static"></a><h3>gda_column_set_attribute_static()</h3>
+<pre class="programlisting">#define             gda_column_set_attribute_static(holder,attribute,value)</pre>
+<p>This function is similar to <a class="link" href="GdaColumn.html#gda-column-set-attribute" title="gda_column_set_attribute ()"><code class="function">gda_column_set_attribute()</code></a> but for static strings</p>
+<div class="refsect3">
+<a name="gda-column-set-attribute-static.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute</p></td>
+<td class="parameter_description"><p>attribute's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to set the attribute to, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaColumn-struct"></a><h3>GdaColumn</h3>
+<pre class="programlisting">typedef struct _GdaColumn GdaColumn;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaColumn--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Column's Id (warning: the column's ID is not guaranteed to be unique in a GdaDataModel).</p>
+<p>Owner: GdaColumn</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaColumn-g-type-changed"></a><h3>The <code class="literal">“g-type-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column,
+               <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>     *old_type,
+               <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>     *new_type,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever <em class="parameter"><code>column</code></em>
+'s type has been changed</p>
+<div class="refsect3">
+<a name="GdaColumn-g-type-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_type</p></td>
+<td class="parameter_description"><p>the column's previous type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_type</p></td>
+<td class="parameter_description"><p>the column's new type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaColumn-name-changed"></a><h3>The <code class="literal">“name-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> *column,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>     *old_name,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted whenever <em class="parameter"><code>column</code></em>
+'s name has been changed</p>
+<div class="refsect3">
+<a name="GdaColumn-name-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_name</p></td>
+<td class="parameter_description"><p>the column's previous name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaColumn.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

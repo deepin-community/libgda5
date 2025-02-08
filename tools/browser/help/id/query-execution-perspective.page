@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="query-execution-perspective" xml:lang="id">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+<title>Perspektif eksekusi query</title>
+<p>Pakai perspektif query untuk mengeksekusi pernyataan SQL. Untuk bertukar ke perspektif ini, gunakan menu <guiseq><gui>Perspektif</gui><gui>Eksekusi query (SQL)</gui></guiseq>, atau pintasan <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+<figure>
+  <title>Perspektif query exec</title>
+  <desc>Perspektif query exec dengan satu pernyataan SELECT dieksekusi</desc>
+  <media type="image" mime="image/png" src="figures/query-exec-persp.png"/>
+</figure>
+
+<p>Perspektif dibagi menjadi dua panel horisontal: panel kiri bagi pernyataan favorit yang didefinisikan pengguna, dan panel kanan adalah area aksi.</p>
+<p>Pada gambar di atas, ada dua favorit: suatu pernyataan SELECT (dinamai "List customers") dan suatu pernyataan INSERT (dinamai "New customer ..."). Pernyataan INSERT memerlukan satu parameter "name", sedangkan pernyataan SELECT tak memerlukan parameter untuk dieksekusi.</p>
+<p>Perbedaan ikon antara keduanya mengilustrasikan fakta bahwa favorit INSERT juga ditandai sebagai <link xref="action">aksi</link>: ini akan diusulkan sebagai aksi untuk dieksekusi ketika menu kontekstual dimunculkan dalam representasi kisi manapun dari set hasil.</p>
+<p>Panel kiri dari perspektif mendaftar pernyataan favorit yang telah didefinisikan oleh pengguna. Mengaktifkan suatu favorit (klik ganda) mereset isi area teks SQL ke SQL pernyataan yang dipilih.</p>
+<p>Panel kanan tersusun dari nol atau lebih tab dimana SQL dimasukkan dan dieksekusi. Dalam setiap tab ada:</p>
+<list>
+  <item><p>suatu area SQL di bagian kiri atas</p></item>
+  <item><p>tombol perintah di bagian kanan atas</p></item>
+  <item><p>riwayat eksekusi di bagian kiri bawah</p></item>
+  <item><p>hasil eksekusi di bagian kanan bawah</p></item>
+</list>
+
+<section id="query-exec-sql">
+  <title>Area SQL</title>
+  <p>Area SQL adalan suatu penyunting SQL. SQL bisa berupa sebarang SQL yang dimengerti oleh basis data tersebut, dengan pengecualian <link xref="variables-syntax">variabel</link> (yang mesti memiliki sintaks tertentu).</p>
+  <p>Pintasan papan tik dalam penyunting SQL adalah:</p>
+  <list>
+    <item><p><keyseq><key>Ctrl</key><key>SPASI</key></keyseq> untuk memperoleh daftar pelengkapan</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>ENTER</key></keyseq> untuk mengeksekusi kode SQL</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>l</key></keyseq> untuk membersihkan penyunting</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>Up</key></keyseq> dan <keyseq><key>Ctrl</key><key>Down</key></keyseq> untuk navitasi dalam riwayat penyunting</p></item>
+  </list>
+</section>
+
+<section id="query-exec-command-buttons">
+  <title>Tombol perintah</title>
+  <p>Perintah yang tersedia melalui tombol perintah adalah:</p>
+  <list>
+    <item><p><gui>Bersihkan</gui>: bersihkan penyunting (serupa dengan pintasan <keyseq><key>Ctrl</key><key>l</key></keyseq>)</p></item>
+    <item><p><gui>Variabel</gui>: menampilkan atau menyembunyikan panel <link xref="variables-syntax">variabel</link> dimana Anda dapat memberikan nilai-nilai ke variabel yang ada dalam kode SQL. Panel otomatis ditampilkan ketika suatu variabel terdeteksi dalam kode SQL</p></item>
+    <item><p><gui>Eksekusi</gui>: eksekusi kode SQL. Bila kode SQL memuat beberapa variabel yang belum ditata, maka akan muncul popup yang meminta agar variabel diisi nilainya. Ini serupa dengan pintasan <keyseq><key>Ctrl</key><key>ENTER</key></keyseq></p></item>
+    <item><p><gui>Indentasi</gui>: indentasi ulang kode SQL (peringatan: ini menghapus semua komentar)</p></item>
+    <item><p><gui>Favorit</gui>: menambahkan kode SQL kini ke favorit</p></item>
+  </list>
+</section>
+
+<section id="query-exec-history">
+  <title>Riwayat eksekusi</title>
+  <p>Bagian riwayat eksekusi memuat daftar dari pernyataan yang pernah dieksekusi, diurutkan menurut tanggal eksekusi ditambah dengan indikasi kapan pernyataan dieksekusi (11 menit pada gambar di atas). Memilih butir riwayat akan menampilkan hasil yang bersangkutan pada bagian hasil eksekusi.</p>
+  <p>Tombol <gui>Salin</gui> menyalin kode SQL butir riwayat yang kini dipilih ke penyunting SQL, dan tombol <gui>Bersihkan</gui> menghapus semua butir riwayat.</p>
+  <p>Perhatikan bahwa sebarang butir riwayat yang diberikan juga dapat dihapus secara individu memakai tombol <key>Suppr</key>.</p>
+</section>
+
+<section id="query-exec-results">
+  <title>Hasil eksekusi</title>
+  <p>Bagian hasil eksekusi menampilkan hasil eksekusi dari butir riwayat eksekusi yang kini dipilih, sebagai suatu tabel bagi pernyataan SELECT, memberikan informasi bagi pernyataan tipe lain, atau memberi pemberitahuan galat eksekusi bila eksekusi gagal.</p>
+</section>
+</page>

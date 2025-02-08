@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiDataStore: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiDataEntry.html" title="GdauiDataEntry">
+<link rel="next" href="GdauiDataFilter.html" title="GdauiDataFilter">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiDataStore.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiDataStore.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdauiDataStore.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdauiDataStore.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiDataEntry.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiDataFilter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiDataStore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiDataStore.top_of_page"></a>GdauiDataStore</span></h2>
+<p>GdauiDataStore — Bridge between a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> and a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiDataStore.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-new" title="gdaui_data_store_new ()">gdaui_data_store_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="returnvalue">GdaDataProxy</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-get-proxy" title="gdaui_data_store_get_proxy ()">gdaui_data_store_get_proxy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-get-row-from-iter" title="gdaui_data_store_get_row_from_iter ()">gdaui_data_store_get_row_from_iter</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-get-iter-from-values" title="gdaui_data_store_get_iter_from_values ()">gdaui_data_store_get_iter_from_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-set-value" title="gdaui_data_store_set_value ()">gdaui_data_store_set_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-delete" title="gdaui_data_store_delete ()">gdaui_data_store_delete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-undelete" title="gdaui_data_store_undelete ()">gdaui_data_store_undelete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataStore.html#gdaui-data-store-append" title="gdaui_data_store_append ()">gdaui_data_store_append</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdauiDataStore.html#GdauiDataStore--model" title="The “model” property">model</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiDataStore.html#GdauiDataStore--prepend-null-entry" title="The “prepend-null-entry” property">prepend-null-entry</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdauiDataStore.html#GdauiDataStore--proxy" title="The “proxy” property">proxy</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdauiDataStore.html#GdauiDataStore-struct" title="struct GdauiDataStore">GdauiDataStore</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdauiDataStore
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdauiDataStore implements
+ <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct">GtkTreeModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object implements the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> interface
+on top of a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> to be able to display its contents
+in a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct"><span class="type">GtkTreeView</span></a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-data-store-new"></a><h3>gdaui_data_store_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+gdaui_data_store_new (<em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Creates a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> interface with a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+<div class="refsect3">
+<a name="gdaui-data-store-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-new.returns"></a><h4>Returns</h4>
+<p>the new object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-get-proxy"></a><h3>gdaui_data_store_get_proxy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="returnvalue">GdaDataProxy</span></a> *
+gdaui_data_store_get_proxy (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>);</pre>
+<div class="refsect3">
+<a name="gdaui-data-store-get-proxy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-get-proxy.returns"></a><h4>Returns</h4>
+<p>the internal <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> being used by <em class="parameter"><code>store</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-get-row-from-iter"></a><h3>gdaui_data_store_get_row_from_iter ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gdaui_data_store_get_row_from_iter (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>);</pre>
+<p>Get the number of the row represented by <em class="parameter"><code>iter</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-data-store-get-row-from-iter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a valid <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-get-row-from-iter.returns"></a><h4>Returns</h4>
+<p> the row number, or -1 if an error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-get-iter-from-values"></a><h3>gdaui_data_store_get_iter_from_values ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_store_get_iter_from_values (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>,
+                                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *values</code></em>,
+                                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *cols_index</code></em>);</pre>
+<p>Sets <em class="parameter"><code>iter</code></em>
+ to the first row where all the values in <em class="parameter"><code>values</code></em>
+ at the columns identified at
+<em class="parameter"><code>cols_index</code></em>
+ match. If the row can't be identified, then the contents of <em class="parameter"><code>iter</code></em>
+ is not modified.</p>
+<p>NOTE: the <em class="parameter"><code>cols_index</code></em>
+ array MUST contain a column index for each value in <em class="parameter"><code>values</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-data-store-get-iter-from-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>an unset <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> to set to the requested row. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>a list of <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> values. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GValue]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cols_index</p></td>
+<td class="parameter_description"><p>an array of <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> containing the column number to match each value of <em class="parameter"><code>values</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-get-iter-from-values.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the row has been identified <em class="parameter"><code>iter</code></em>
+was set</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-set-value"></a><h3>gdaui_data_store_set_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_store_set_value (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> col</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Stores a value in the <em class="parameter"><code>store</code></em>
+ data model.</p>
+<div class="refsect3">
+<a name="gdaui-data-store-set-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>the considered row</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col</p></td>
+<td class="parameter_description"><p>the data model column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to store (gets copied)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-set-value.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-delete"></a><h3>gdaui_data_store_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_store_delete (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>);</pre>
+<p>Marks the row pointed by <em class="parameter"><code>iter</code></em>
+ to be deleted</p>
+<div class="refsect3">
+<a name="gdaui-data-store-delete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>the considered row</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-undelete"></a><h3>gdaui_data_store_undelete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_store_undelete (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>);</pre>
+<p>Remove the "to be deleted" mark the row pointed by <em class="parameter"><code>iter</code></em>
+, if it existed.</p>
+<div class="refsect3">
+<a name="gdaui-data-store-undelete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>the considered row</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-store-append"></a><h3>gdaui_data_store_append ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_store_append (<em class="parameter"><code><a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> *store</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>);</pre>
+<p>Appends a new row.</p>
+<div class="refsect3">
+<a name="gdaui-data-store-append.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataStore.html" title="GdauiDataStore"><span class="type">GdauiDataStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>an unset <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> to set to the appended row</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-store-append.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiDataStore-struct"></a><h3>struct GdauiDataStore</h3>
+<pre class="programlisting">struct GdauiDataStore;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataStore.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdauiDataStore--model"></a><h3>The <code class="literal">“model”</code> property</h3>
+<pre class="programlisting">  “model”                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdauiDataStore</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataStore--prepend-null-entry"></a><h3>The <code class="literal">“prepend-null-entry”</code> property</h3>
+<pre class="programlisting">  “prepend-null-entry”       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: GdauiDataStore</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataStore--proxy"></a><h3>The <code class="literal">“proxy”</code> property</h3>
+<pre class="programlisting">  “proxy”                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdauiDataStore</p>
+<p>Flags: Read</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

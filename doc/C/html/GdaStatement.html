@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaStatement: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaSqlBuilder.html" title="GdaSqlBuilder">
+<link rel="next" href="libgda-5.0-GdaRepetitiveStatement.html" title="GdaRepetitiveStatement">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaStatement.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaStatement.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaStatement.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaStatement.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaSqlBuilder.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaRepetitiveStatement.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaStatement"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaStatement.top_of_page"></a>GdaStatement</span></h2>
+<p>GdaStatement — Single SQL statement</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaStatement.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaStatement.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-new" title="gda_statement_new ()">gda_statement_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-copy" title="gda_statement_copy ()">gda_statement_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-serialize" title="gda_statement_serialize ()">gda_statement_serialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-get-parameters" title="gda_statement_get_parameters ()">gda_statement_get_parameters</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-to-sql" title="gda_statement_to_sql()">gda_statement_to_sql</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-to-sql-extended" title="gda_statement_to_sql_extended ()">gda_statement_to_sql_extended</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType"><span class="returnvalue">GdaSqlStatementType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-get-statement-type" title="gda_statement_get_statement_type ()">gda_statement_get_statement_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-is-useless" title="gda_statement_is_useless ()">gda_statement_is_useless</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-check-structure" title="gda_statement_check_structure ()">gda_statement_check_structure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-check-validity" title="gda_statement_check_validity ()">gda_statement_check_validity</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaStatement.html#gda-statement-normalize" title="gda_statement_normalize ()">gda_statement_normalize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdaStatement.html#GdaStatement--structure" title="The “structure” property">structure</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaStatement.html#GdaStatement-checked" title="The “checked” signal">checked</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaStatement.html#GdaStatement-reset" title="The “reset” signal">reset</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaStatement.html#GdaStatement-struct" title="GdaStatement">GdaStatement</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaStatement.html#GdaStatementSqlFlag" title="enum GdaStatementSqlFlag">GdaStatementSqlFlag</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaStatement.html#GdaStatementModelUsage" title="enum GdaStatementModelUsage">GdaStatementModelUsage</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaStatement.html#GdaStatementError" title="enum GdaStatementError">GdaStatementError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaStatement
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda-report/gda-report-engine.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> represents a single SQL statement (multiple statements can be grouped in a <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object).</p>
+<p> A <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> can either be built by describing its constituing parts using a <a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a> object,
+ or from an SQL statement using a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object.</p>
+<p> A <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> can use a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> to:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>prepare it for a future execution, the preparation step involves converting the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a>
+object into a structure used by the database's own API, see <a class="link" href="GdaConnection.html#gda-connection-statement-prepare" title="gda_connection_statement_prepare ()"><code class="function">gda_connection_statement_prepare()</code></a></p></li>
+<li class="listitem"><p>execute it using <a class="link" href="GdaConnection.html#gda-connection-statement-execute-select" title="gda_connection_statement_execute_select ()"><code class="function">gda_connection_statement_execute_select()</code></a> if it is known that the statement is a
+selection statement, <a class="link" href="GdaConnection.html#gda-connection-statement-execute-non-select" title="gda_connection_statement_execute_non_select ()"><code class="function">gda_connection_statement_execute_non_select()</code></a> if it is not a selection statement, or
+<a class="link" href="GdaConnection.html#gda-connection-statement-execute" title="gda_connection_statement_execute ()"><code class="function">gda_connection_statement_execute()</code></a> when the type of expected result is unknown.</p></li>
+</ul></div>
+<p> Note that it is possible to use the same <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object at the same time with several <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> objects.</p>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-statement-new"></a><h3>gda_statement_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+gda_statement_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p>
+<div class="refsect3">
+<a name="gda-statement-new.returns"></a><h4>Returns</h4>
+<p> the new object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-copy"></a><h3>gda_statement_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+gda_statement_copy (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *orig</code></em>);</pre>
+<p>Copy constructor</p>
+<div class="refsect3">
+<a name="gda-statement-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>orig</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> to make a copy of</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-copy.returns"></a><h4>Returns</h4>
+<p>a the new copy of <em class="parameter"><code>orig</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-serialize"></a><h3>gda_statement_serialize ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_statement_serialize (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>);</pre>
+<p>Creates a string representing the contents of <em class="parameter"><code>stmt</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-statement-serialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-serialize.returns"></a><h4>Returns</h4>
+<p> a string containing the serialized version of <em class="parameter"><code>stmt</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-get-parameters"></a><h3>gda_statement_get_parameters ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_statement_get_parameters (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> **out_params</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object which groups all the execution parameters
+which <em class="parameter"><code>stmt</code></em>
+ needs. This new object is returned though <em class="parameter"><code>out_params</code></em>
+.</p>
+<p>Note that if <em class="parameter"><code>stmt</code></em>
+ does not need any parameter, then <em class="parameter"><code>out_params</code></em>
+ is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<div class="refsect3">
+<a name="gda-statement-get-parameters.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_params</p></td>
+<td class="parameter_description"><p>a place to store a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-get-parameters.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-to-sql"></a><h3>gda_statement_to_sql()</h3>
+<pre class="programlisting">#define             gda_statement_to_sql(stmt,params,error)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-to-sql-extended"></a><h3>gda_statement_to_sql_extended ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_statement_to_sql_extended (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                               <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                               <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *params</code></em>,
+                               <em class="parameter"><code><a class="link" href="GdaStatement.html#GdaStatementSqlFlag" title="enum GdaStatementSqlFlag"><span class="type">GdaStatementSqlFlag</span></a> flags</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> **params_used</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Renders <em class="parameter"><code>stmt</code></em>
+ as an SQL statement, with some control on how it is rendered.</p>
+<p>If <em class="parameter"><code>cnc</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the rendered SQL will better be suited to be used by <em class="parameter"><code>cnc</code></em>
+ (in particular
+it may include some SQL tweaks and/or proprietary extensions specific to the database engine used by <em class="parameter"><code>cnc</code></em>
+):
+in this case the result is similar to calling <a class="link" href="GdaConnection.html#gda-connection-statement-to-sql" title="gda_connection_statement_to_sql ()"><code class="function">gda_connection_statement_to_sql()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-statement-to-sql-extended.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>parameters contained in a single <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>a set of flags to control the rendering</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params_used</p></td>
+<td class="parameter_description"><p>a place to store the list of actual <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects in <em class="parameter"><code>params</code></em>
+used to do the rendering, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaHolder][<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-to-sql-extended.returns"></a><h4>Returns</h4>
+<p>a new string if no error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-get-statement-type"></a><h3>gda_statement_get_statement_type ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementType" title="enum GdaSqlStatementType"><span class="returnvalue">GdaSqlStatementType</span></a>
+gda_statement_get_statement_type (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>);</pre>
+<p>Get the type of statement held by <em class="parameter"><code>stmt</code></em>
+. It returns GDA_SQL_STATEMENT_NONE if
+<em class="parameter"><code>stmt</code></em>
+ does not hold any statement</p>
+<div class="refsect3">
+<a name="gda-statement-get-statement-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-get-statement-type.returns"></a><h4>Returns</h4>
+<p>the statement type. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-is-useless"></a><h3>gda_statement_is_useless ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_statement_is_useless (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>stmt</code></em>
+ is composed only of spaces (that is it has no real SQL code), and is completely
+useless as such.</p>
+<div class="refsect3">
+<a name="gda-statement-is-useless.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-is-useless.returns"></a><h4>Returns</h4>
+<p> TRUE if executing <em class="parameter"><code>stmt</code></em>
+does nothing</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-check-structure"></a><h3>gda_statement_check_structure ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_statement_check_structure (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Checks that <em class="parameter"><code>stmt</code></em>
+'s structure is correct.</p>
+<div class="refsect3">
+<a name="gda-statement-check-structure.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-check-structure.returns"></a><h4>Returns</h4>
+<p> TRUE if <em class="parameter"><code>stmt</code></em>
+'s structure is correct</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-check-validity"></a><h3>gda_statement_check_validity ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_statement_check_validity (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>If <em class="parameter"><code>cnc</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then checks that every object (table, field, function) used in <em class="parameter"><code>stmt</code></em>
+ 
+actually exists in <em class="parameter"><code>cnc</code></em>
+'s database</p>
+<p>If <em class="parameter"><code>cnc</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then cleans anything related to <em class="parameter"><code>cnc</code></em>
+ in <em class="parameter"><code>stmt</code></em>
+.</p>
+<p>See <a class="link" href="libgda-5.0-GdaSqlStatement.html#gda-sql-statement-check-validity" title="gda_sql_statement_check_validity ()"><code class="function">gda_sql_statement_check_validity()</code></a> for more information.</p>
+<div class="refsect3">
+<a name="gda-statement-check-validity.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-check-validity.returns"></a><h4>Returns</h4>
+<p> TRUE if every object actually exists in <em class="parameter"><code>cnc</code></em>
+'s database</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-normalize"></a><h3>gda_statement_normalize ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_statement_normalize (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                         <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>"Normalizes" some parts of <em class="parameter"><code>stmt</code></em>
+, see <a class="link" href="libgda-5.0-GdaSqlStatement.html#gda-sql-statement-normalize" title="gda_sql_statement_normalize ()"><code class="function">gda_sql_statement_normalize()</code></a> for more
+information.</p>
+<div class="refsect3">
+<a name="gda-statement-normalize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-normalize.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaStatement-struct"></a><h3>GdaStatement</h3>
+<pre class="programlisting">typedef struct _GdaStatement GdaStatement;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaStatementSqlFlag"></a><h3>enum GdaStatementSqlFlag</h3>
+<p>Specifies rendering options</p>
+<div class="refsect3">
+<a name="GdaStatementSqlFlag.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-AS-VALUES:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_AS_VALUES</p></td>
+<td class="enum_member_description">
+<p>rendering will replace parameters with their values</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PRETTY:CAPS"></a>GDA_STATEMENT_SQL_PRETTY</p></td>
+<td class="enum_member_description">
+<p>rendering will include newlines and indentation to make it easy to read</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-LONG:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_LONG</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the "/* name:&lt;param_name&gt; ... */" syntax</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-SHORT:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_SHORT</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the "##&lt;param_name&gt;..." syntax</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-AS-COLON:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_AS_COLON</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the ":&lt;param_name&gt;" syntax</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-AS-DOLLAR:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_AS_DOLLAR</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the "$&lt;param_number&gt;" syntax where parameters are numbered starting from 1</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-AS-QMARK:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_AS_QMARK</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the "?&lt;param_number&gt;" syntax where parameters are numbered starting from 1</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-PARAMS-AS-UQMARK:CAPS"></a>GDA_STATEMENT_SQL_PARAMS_AS_UQMARK</p></td>
+<td class="enum_member_description">
+<p>parameters will be rendered using the "?" syntax</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SQL-TIMEZONE-TO-GMT:CAPS"></a>GDA_STATEMENT_SQL_TIMEZONE_TO_GMT</p></td>
+<td class="enum_member_description">
+<p>time and timestamp with a timezone information are converted to GMT before rendering, and rendering does not show the timezone information</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaStatementModelUsage"></a><h3>enum GdaStatementModelUsage</h3>
+<p>These flags specify how the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> returned when executing a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> will be used</p>
+<div class="refsect3">
+<a name="GdaStatementModelUsage.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-RANDOM-ACCESS:CAPS"></a>GDA_STATEMENT_MODEL_RANDOM_ACCESS</p></td>
+<td class="enum_member_description">
+<p>access to the data model will be random (usually this will result in a data model completely stored in memory)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-CURSOR-FORWARD:CAPS"></a>GDA_STATEMENT_MODEL_CURSOR_FORWARD</p></td>
+<td class="enum_member_description">
+<p>access to the data model will be done using a cursor moving forward</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-CURSOR-BACKWARD:CAPS"></a>GDA_STATEMENT_MODEL_CURSOR_BACKWARD</p></td>
+<td class="enum_member_description">
+<p>access to the data model will be done using a cursor moving backward</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-CURSOR:CAPS"></a>GDA_STATEMENT_MODEL_CURSOR</p></td>
+<td class="enum_member_description">
+<p>access to the data model will be done using a cursor (moving both forward and backward)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-ALLOW-NOPARAM:CAPS"></a>GDA_STATEMENT_MODEL_ALLOW_NOPARAM</p></td>
+<td class="enum_member_description">
+<p>specifies that the data model should be executed even if some parameters required to execute it are invalid (in this case the data model will have no row, and will automatically be re-run when the missing parameters are once again valid)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-MODEL-OFFLINE:CAPS"></a>GDA_STATEMENT_MODEL_OFFLINE</p></td>
+<td class="enum_member_description">
+<p>specifies that the data model's contents will be fully loaded into the client side (the memory of the process using Libgda), not requiring the server any more to access the data (the default behaviour is to access the server any time data is to be read, and data is cached in memory). This flag is useful only if used in conjunction with the GDA_STATEMENT_MODEL_RANDOM_ACCESS flag (otherwise an error will be returned).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaStatementError"></a><h3>enum GdaStatementError</h3>
+<div class="refsect3">
+<a name="GdaStatementError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-PARSE-ERROR:CAPS"></a>GDA_STATEMENT_PARSE_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-SYNTAX-ERROR:CAPS"></a>GDA_STATEMENT_SYNTAX_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-NO-CNC-ERROR:CAPS"></a>GDA_STATEMENT_NO_CNC_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-CNC-CLOSED-ERROR:CAPS"></a>GDA_STATEMENT_CNC_CLOSED_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-EXEC-ERROR:CAPS"></a>GDA_STATEMENT_EXEC_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-PARAM-TYPE-ERROR:CAPS"></a>GDA_STATEMENT_PARAM_TYPE_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-STATEMENT-PARAM-ERROR:CAPS"></a>GDA_STATEMENT_PARAM_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaStatement--structure"></a><h3>The <code class="literal">“structure”</code> property</h3>
+<pre class="programlisting">  “structure”                <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdaStatement</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaStatement-checked"></a><h3>The <code class="literal">“checked”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a>  *gdastatement,
+               <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>       arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)</pre>
+<p>Gets emitted whenever the structure and contents
+of the statement have been verified (emitted after <a class="link" href="GdaStatement.html#gda-statement-check-validity" title="gda_statement_check_validity ()"><code class="function">gda_statement_check_validity()</code></a>).</p>
+<div class="refsect3">
+<a name="GdaStatement-checked.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaStatement-reset"></a><h3>The <code class="literal">“reset”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *gdastatement,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>Gets emitted whenever the statement has changed</p>
+<div class="refsect3">
+<a name="GdaStatement-reset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaStatement.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

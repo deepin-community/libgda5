@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BrowserPerspective: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="windows.html" title="Browser windows">
+<link rel="prev" href="BrowserWindow.html" title="BrowserWindow">
+<link rel="next" href="gda-browser-BrowserPage.html" title="BrowserPage">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#BrowserPerspective.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#BrowserPerspective.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#BrowserPerspective.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations">  <span class="dim">|</span> 
+                  <a href="#BrowserPerspective.implementations" class="shortcut">Known Implementations</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="windows.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="BrowserWindow.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gda-browser-BrowserPage.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="BrowserPerspective"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="BrowserPerspective.top_of_page"></a>BrowserPerspective</span></h2>
+<p>BrowserPerspective — A "perspective" in a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> window</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="BrowserPerspective.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#BROWSER-PERSPECTIVE:CAPS" title="BROWSER_PERSPECTIVE()">BROWSER_PERSPECTIVE</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#IS-BROWSER-PERSPECTIVE:CAPS" title="IS_BROWSER_PERSPECTIVE()">IS_BROWSER_PERSPECTIVE</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#BROWSER-PERSPECTIVE-GET-CLASS:CAPS" title="BROWSER_PERSPECTIVE_GET_CLASS()">BROWSER_PERSPECTIVE_GET_CLASS</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-get-type" title="browser_perspective_get_type ()">browser_perspective_get_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="returnvalue">BrowserWindow</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-get-window" title="browser_perspective_get_window ()">browser_perspective_get_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-get-actions-group" title="browser_perspective_get_actions_group ()">browser_perspective_get_actions_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-get-actions-ui" title="browser_perspective_get_actions_ui ()">browser_perspective_get_actions_ui</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-get-current-customization" title="browser_perspective_get_current_customization ()">browser_perspective_get_current_customization</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-page-tab-label-change" title="browser_perspective_page_tab_label_change ()">browser_perspective_page_tab_label_change</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserPerspective.html#browser-perspective-declare-notebook" title="browser_perspective_declare_notebook ()">browser_perspective_declare_notebook</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="BrowserPerspective.html#BROWSER-PERSPECTIVE-TYPE:CAPS" title="BROWSER_PERSPECTIVE_TYPE">BROWSER_PERSPECTIVE_TYPE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserPerspective.html#BrowserPerspective-struct" title="BrowserPerspective">BrowserPerspective</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> BrowserPerspective
+</pre>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+BrowserPerspective requires
+ <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>.</p>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.implementations"></a><h2>Known Implementations</h2>
+<p>
+BrowserPerspective is implemented by
+ <a class="link" href="gda-browser-Data-Manager-perspective.html#DataManagerPerspective">DataManagerPerspective</a>,  <a class="link" href="gda-browser-Query-Exec-perspective.html#QueryExecPerspective">QueryExecPerspective</a> and  <a class="link" href="gda-browser-Schema-Browser-perspective.html#SchemaBrowserPerspective">SchemaBrowserPerspective</a>.</p>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.description"></a><h2>Description</h2>
+<p><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> is an interface used by the <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> object to switch
+between the activities ("perspectives"); it requires the <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a>.</p>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="BROWSER-PERSPECTIVE:CAPS"></a><h3>BROWSER_PERSPECTIVE()</h3>
+<pre class="programlisting">#define BROWSER_PERSPECTIVE(obj)            (G_TYPE_CHECK_INSTANCE_CAST (obj, BROWSER_PERSPECTIVE_TYPE, BrowserPerspective))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="IS-BROWSER-PERSPECTIVE:CAPS"></a><h3>IS_BROWSER_PERSPECTIVE()</h3>
+<pre class="programlisting">#define IS_BROWSER_PERSPECTIVE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE (obj, BROWSER_PERSPECTIVE_TYPE))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BROWSER-PERSPECTIVE-GET-CLASS:CAPS"></a><h3>BROWSER_PERSPECTIVE_GET_CLASS()</h3>
+<pre class="programlisting">#define BROWSER_PERSPECTIVE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_INTERFACE ((obj), BROWSER_PERSPECTIVE_TYPE, BrowserPerspectiveIface))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-get-type"></a><h3>browser_perspective_get_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+browser_perspective_get_type (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-get-window"></a><h3>browser_perspective_get_window ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="returnvalue">BrowserWindow</span></a> *
+browser_perspective_get_window (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-perspective-get-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-perspective-get-window.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> <em class="parameter"><code>perspective</code></em>
+is in. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-get-actions-group"></a><h3>browser_perspective_get_actions_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+browser_perspective_get_actions_group (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>);</pre>
+<p>Get the <a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a> from a <em class="parameter"><code>pers</code></em>
+ to represent its specific actions.</p>
+<div class="refsect3">
+<a name="browser-perspective-get-actions-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-perspective-get-actions-group.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-get-actions-ui"></a><h3>browser_perspective_get_actions_ui ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_perspective_get_actions_ui (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>);</pre>
+<p>Get the UI definition from a perspective to represent how its specific actions (obtained
+using <a class="link" href="BrowserPerspective.html#browser-perspective-get-actions-group" title="browser_perspective_get_actions_group ()"><code class="function">browser_perspective_get_actions_group()</code></a>) are to be integrated in a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a>'s menu
+and toolbar.</p>
+<div class="refsect3">
+<a name="browser-perspective-get-actions-ui.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-perspective-get-actions-ui.returns"></a><h4>Returns</h4>
+<p> a read-only string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-get-current-customization"></a><h3>browser_perspective_get_current_customization ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_perspective_get_current_customization
+                               (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a> **out_agroup</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_ui</code></em>);</pre>
+<p>Rem: *<em class="parameter"><code>out_agroup</code></em>
+ is a new object and should be unref'ed when not needed anymore</p>
+<div class="refsect3">
+<a name="browser-perspective-get-current-customization.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_agroup</p></td>
+<td class="parameter_description"><p>a place to store the returned GtkActionGroup, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_ui</p></td>
+<td class="parameter_description"><p>a place to store the returned UI string, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-page-tab-label-change"></a><h3>browser_perspective_page_tab_label_change ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_perspective_page_tab_label_change
+                               (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>,
+                                <em class="parameter"><code><span class="type">BrowserPage</span> *page</code></em>);</pre>
+<p>When <em class="parameter"><code>pers</code></em>
+ organizes its contents as pages in a notebook, each page may
+request that the tab's label may be changed, and the purpose of this method
+is to request that <em class="parameter"><code>pers</code></em>
+ update the tab's label associated to <em class="parameter"><code>page</code></em>
+.</p>
+<div class="refsect3">
+<a name="browser-perspective-page-tab-label-change.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>an object implementing the <span class="type">BrowserPage</span> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-perspective-declare-notebook"></a><h3>browser_perspective_declare_notebook ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_perspective_declare_notebook (<em class="parameter"><code><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> *perspective</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkNotebook.html#GtkNotebook-struct"><span class="type">GtkNotebook</span></a> *nb</code></em>);</pre>
+<p>Internally used by browser's perspectives to declare they internally use a notebook
+which state is modified when switching to and from fullscreen</p>
+<div class="refsect3">
+<a name="browser-perspective-declare-notebook.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pers</p></td>
+<td class="parameter_description"><p>an object implementing the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nb</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkNotebook.html#GtkNotebook-struct"><span class="type">GtkNotebook</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserPerspective.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="BROWSER-PERSPECTIVE-TYPE:CAPS"></a><h3>BROWSER_PERSPECTIVE_TYPE</h3>
+<pre class="programlisting">#define BROWSER_PERSPECTIVE_TYPE            (browser_perspective_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserPerspective-struct"></a><h3>BrowserPerspective</h3>
+<pre class="programlisting">typedef struct _BrowserPerspective BrowserPerspective;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

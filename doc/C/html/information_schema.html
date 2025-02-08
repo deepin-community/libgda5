@@ -1,0 +1,2823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Database structure: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-dict.html" title="Dictionary - metadata">
+<link rel="prev" href="GdaMetaStoreCustomData.html" title="Adding custom data">
+<link rel="next" href="GdaMetaStore.html" title="GdaMetaStore">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-dict.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaMetaStoreCustomData.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaMetaStore.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="information_schema"></a>Database structure</h2></div></div></div>
+<p>
+	  <span class="application">Libgda</span> imposes its own structure (based on objects such as tables and views which name starts with an 
+	  underscore '_') for the meta data database associated to a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a> object,
+	  but a user can also add its own tables or other database objects. The following diagram shows the tables 
+	  defined by <span class="application">Libgda</span> for its internal needs:
+	  </p>
+<div class="mediaobject"><img src="information_schema.png" width="744" alt="Dictionary's tables and views initially defined by Libgda"></div>
+<p>
+	</p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="information_schema:data_types"></a>Data types</h3></div></div></div>
+<p>
+	    Data types (as reported for example for table's columns) can be one of the following kinds:
+	    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Builtin data types offered by the database engine such as integers, varchar, etc. Those data 
+		  types are all listed in the 
+		  "_builtin_data_types" table.</p></li>
+<li class="listitem"><p>Database domains: domains are data types with optional constraints 
+		  (restrictions on the allowed set of values). A domain refers to the base data type from which it is defined
+		  (that base data type can also be an array). Those data types are all listed in the
+		  "_domains" table.</p></li>
+<li class="listitem"><p>User defined data types (which are not part of the SQL standard but featured by some databases
+		  such as PostgreSQL) are simple or composed data types based on existing data types 
+		  (which may also be arrays). Those data types are all listed in the
+		  "_udt" table.</p></li>
+<li class="listitem"><p>Arrays of any of the previous data types (one or more dimensions). Arrays are not per-se data
+		  types, but rather refer to an existing data type. Arrays are described in the 
+		  "_element_types" table.</p></li>
+</ul></div>
+<p>
+	    Note that the data types which are built in, domains or user defined are all also listed in the
+	    "_all_types" view as a convenience.
+	  </p>
+<p>
+	    The impact of that data types' hierarchy is that every time a data type is referenced (from a table's column
+	    definition for example), there will be two attributes for the data type: one named 
+	    <em class="parameter"><code>data_type</code></em> which, if not NULL, refers to a data type listed in the
+	    "_all_types" view (thus a built in, domain or user defined data type), and
+	    one named <em class="parameter"><code>array_spec</code></em> which, if not NULL, refers to an array, listed in the
+	    "_element_types" table. Any of these attributes can be NULL, but they
+	    should never be both NULL at the same time.
+	  </p>
+<p>
+	    Single dimension arrays will have the <em class="parameter"><code>data_type</code></em> attribute referencing a data type in the
+	    "_all_types" view (and the <em class="parameter"><code>array_spec</code></em> attribute
+	    set to NULL), whereas multi dimension arrays will have the <em class="parameter"><code>data_type</code></em> attribute set to NULL
+	    and the <em class="parameter"><code>array_spec</code></em> attribute referencing another tow in the 
+	    "_element_types" table.
+	  </p>
+<p>
+	    The following diagram illustrates the data types representation and how they are referred from table's columns,
+	    domains, and other database objects which refer to a data type:
+	    </p>
+<div class="mediaobject"><img src="i_s_data_types.png" alt="Dictioanry's tables and views initially defined by Libgda"></div>
+<p>
+	  </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="information_schema:sql_identifiers"></a>SQL identifiers</h3></div></div></div>
+<p>
+	    Please refer to the <a class="link" href="gen_sql_identifiers.html" title="SQL identifiers">SQL identifiers and abstraction</a> section
+	    for an overview of how SQL identifiers are handled thoughout <span class="application">Libgda</span>
+	  </p>
+<p>
+	    Considering that each database has its own
+	    internal way of representing case insensitive SQL identifiers (for instance PostgreSQL
+	    represents them in lower
+	    case whereas Oracle represents them in upper case and MySQL represents them in upper or lower case
+	    depending on the platform and the configuration), <span class="application">Libgda</span> has chosen by convention
+	    to represent <span class="emphasis"><em>case insensitive SQL identifiers in lower case 
+	      and case sensitive SQL identifiers enclosed between double quotes</em></span> when storing
+	    meta data in <a class="link" href="GdaMetaStore.html" title="GdaMetaStore">GdaMetaStore</a>. 
+	  </p>
+<p>
+	    This convention has been made necessary to avoid confusion. To illustrate the problem, let's consider a 
+	    table named <span class="emphasis"><em>mytable</em></span>. Without this convention, if that table was in a PostgreSQL
+	    database, then the meta data would report it as <span class="emphasis"><em>mytable</em></span>, and if it was in an ORACLE,
+	    it would report it as <span class="emphasis"><em>MYTABLE</em></span>. Now, a programmer which wants to compare the schemas
+	    of the PostgreSQL and Oracle databases has to know that the PostgreSQL's <span class="emphasis"><em>mytable</em></span> and
+	    Oracle's <span class="emphasis"><em>MYTABLE</em></span> represent in fact the same table which means he needs to know
+	    how each database internally stores SQL identifiers, which is not a good choice because it makes
+	    the application less portable between database engines. Better let each database provider do the job.
+
+	    Note that things can even get more confusing if MySQL is used because then one needs to figure out on
+	    which platform the MySQL server is running and how it's configured, a task which makes an application
+	    even less portable.
+	  </p>
+<p>
+	    To keep the same example, to build some SQL using the SQL identifier as reported by the meta data
+	    (<span class="emphasis"><em>mytable</em></span> for PostgreSQL and <span class="emphasis"><em>MYTABLE</em></span> for Oracle), one has either
+	    to determine if the SQL identifier needs to be quoted or not (which limits the application's portability),
+	    or systematically enquote the SQL identifier which is not something <span class="application">Libgda</span> can impose to
+	    application developpers.
+	  </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.3.11.8.5"></a>Short and full names</h3></div></div></div>
+<p>
+	    Database objects will have two associated names, the <span class="emphasis"><em>short name</em></span> and the
+	    <span class="emphasis"><em>long name</em></span>, the difference being the same as machine in a local network being called
+	    either by its machine name such as "moon" or by its fully qualified domain name such as "moon.my.network", but
+	    applied to databases and schemas. The full name corresponding to the 
+	    &lt;database&gt;.&lt;schema&gt;.&lt;object_name&gt; or &lt;schema&gt;.&lt;object_name&gt;, and the
+	    short name corresponding to the &lt;object_name&gt;.
+	  </p>
+<p>
+	    Short name and full name differ when the schema being accessed is not the schema containing the named
+	    database object, in which case the full name must be used. Some database specific features may also alter
+	    the differences between the short name and the sull name such as the "search_path" variable for PostgreSQL
+	    (which is to a unix PATH variable but for schemas).
+	  </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.3.11.8.6"></a>Declared foreign keys</h3></div></div></div>
+<p>
+	    Foreign key constraints are used to constraint the contents of one or more columns of a table
+	    to the columns of another table. They are also use to help understand the database structure
+	    and withing UI programs to present relevant choices.
+	  </p>
+<p>
+	    <span class="application">Libgda</span> reports existing foreign key constraints in its meta data.
+	  </p>
+<p>
+	    There are however some situations where the database developper does not whish to use
+	    foreign keys to actually implement the constraint, but the relation between the tables
+	    still exists. <span class="application">Libgda</span> allows one to declare foreign keys, an operation which does not
+	    alter the database's schema, but add information to the database's meta data, specifically
+	    into the "__declared_fk" table. For more information, see the
+	    <a class="link" href="GdaMetaStore.html#gda-meta-store-declare-foreign-key" title="gda_meta_store_declare_foreign_key ()">gda_meta_store_declare_foreign_key()</a> and
+	    <a class="link" href="GdaMetaStore.html#gda-meta-store-undeclare-foreign-key" title="gda_meta_store_undeclare_foreign_key ()">gda_meta_store_undeclare_foreign_key</a> methods.
+	  </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.3.11.8.7"></a>Individual table description</h3></div></div></div>
+<p>This section individually describes each table.</p>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_attributes"></a>_attributes table</h4></div></div></div>
+<p>Table to store (key,value) pairs (keys starting with '_' are reserved)</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">att_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">att_value</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_information_schema_catalog_name"></a>_information_schema_catalog_name table</h4></div></div></div>
+<p>Name of the current database (current catalog), has only one row</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody><tr>
+<td align="justify">catalog_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_schemata"></a>_schemata table</h4></div></div></div>
+<p>List of schemas</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">catalog_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the catalog that contains the schema</td>
+</tr>
+<tr>
+<td align="justify">schema_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">schema_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the schema</td>
+</tr>
+<tr>
+<td align="justify">schema_internal</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Tells if the schema is specific to the database implementation (and usually can't be modified)</td>
+</tr>
+<tr>
+<td align="justify">schema_default</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Tells if the schema is used by default when creating a new table without schema name</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(catalog_name) references _information_schema_catalog_name(catalog_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_builtin_data_types"></a>_builtin_data_types table</h4></div></div></div>
+<p>List of built-in data types such as varchar, int, ...</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">short_type_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Short name of the data type</td>
+</tr>
+<tr>
+<td align="justify">full_type_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Full name of the data type</td>
+</tr>
+<tr>
+<td align="justify">gtype</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">synonyms</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">internal</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Tells if the data type is reserved for the database implementation and should not be used in applications</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_udt"></a>_udt table</h4></div></div></div>
+<p>User defined data types</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">udt_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the catalog that contains the data type</td>
+</tr>
+<tr>
+<td align="justify">udt_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the schema that contains the data type</td>
+</tr>
+<tr>
+<td align="justify">udt_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the data type</td>
+</tr>
+<tr>
+<td align="justify">udt_gtype</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">GType associated to the data type</td>
+</tr>
+<tr>
+<td align="justify">udt_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">udt_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">udt_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">udt_internal</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Tells if the data type is reserved for the database implementation and should not be used in applications</td>
+</tr>
+<tr>
+<td align="justify">udt_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(udt_catalog, udt_schema) references _schemata(catalog_name, schema_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_udt_columns"></a>_udt_columns table</h4></div></div></div>
+<p>List of components for a user defined data type for composed data types (such as a complex number data type which has real and imaginary parts)</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">udt_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the catalog that contains the user defined data type for which the column is</td>
+</tr>
+<tr>
+<td align="justify">udt_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the schema that contains the user defined data type for which the column is</td>
+</tr>
+<tr>
+<td align="justify">udt_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the user defined data type for which the column is</td>
+</tr>
+<tr>
+<td align="justify">udt_column</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the column (part)</td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Column position, starts at 1</td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type of the column (if the column is an array, then 'array_spec' is set, and this may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the column is an array</td>
+</tr>
+<tr>
+<td align="justify">character_maximum_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_octet_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">numeric_precision</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">numeric_scale</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">datetime_precision</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(udt_catalog, udt_schema, udt_name) references _udt(udt_catalog, udt_schema, udt_name) </p></li>
+<li class="listitem"><p>(array_spec) references _element_types(specific_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_enums"></a>_enums table</h4></div></div></div>
+<p>List of possible enumeration labels for enumerations</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">udt_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the catalog that contains the ENUM user defined data type</td>
+</tr>
+<tr>
+<td align="justify">udt_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the schema that contains the ENUM user defined data type</td>
+</tr>
+<tr>
+<td align="justify">udt_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the ENUM user defined data type</td>
+</tr>
+<tr>
+<td align="justify">label</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Position, starts at 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(udt_catalog, udt_schema, udt_name) references _udt(udt_catalog, udt_schema, udt_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_element_types"></a>_element_types table</h4></div></div></div>
+<p>Array specific attributes for array data types</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">specific_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">No specific meaning, used as a primary key, and for joining</td>
+</tr>
+<tr>
+<td align="justify">object_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Name of the catalog that contains the object that uses the array being described</td>
+</tr>
+<tr>
+<td align="justify">object_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Name of the schema that contains the object that uses the array being described</td>
+</tr>
+<tr>
+<td align="justify">object_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Name of the object that uses the array being described</td>
+</tr>
+<tr>
+<td align="justify">object_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">The type of the object that uses the array being described TABLE_COL, DOMAIN, UDT_COL, ROUTINE_COL, ROUTINE_PAR</td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Base data type of the array (if the base data type is an array, then 'array_spec' is set, and this may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the base data type is an array</td>
+</tr>
+<tr>
+<td align="justify">min_cardinality</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">max_cardinality</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_domains"></a>_domains table</h4></div></div></div>
+<p>List of domains</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">domain_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of catalog that contains the domain</td>
+</tr>
+<tr>
+<td align="justify">domain_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of schema that contains the domain</td>
+</tr>
+<tr>
+<td align="justify">domain_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the domain</td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type of the domain (if the domain is an array, then 'array_spec' is set, and this may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the domain is an array</td>
+</tr>
+<tr>
+<td align="justify">domain_gtype</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_maximum_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_octet_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of catalog that contains the associated collation</td>
+</tr>
+<tr>
+<td align="justify">collation_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of schema that contains the associated collation</td>
+</tr>
+<tr>
+<td align="justify">collation_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the associated collation</td>
+</tr>
+<tr>
+<td align="justify">character_set_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of catalog that contains the associated character set</td>
+</tr>
+<tr>
+<td align="justify">character_set_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of schema that contains the associated character set</td>
+</tr>
+<tr>
+<td align="justify">character_set_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the associated character set</td>
+</tr>
+<tr>
+<td align="justify">numeric_precision</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">numeric_scale</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_default</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_internal</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(domain_catalog, domain_schema) references _schemata(catalog_name, schema_name) </p></li>
+<li class="listitem"><p>(array_spec) references _element_types(specific_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_tables"></a>_tables table</h4></div></div></div>
+<p>List of tables (tables, views or other objects which can contain data)</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of catalog that contains the table</td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of schema that contains the table</td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the table</td>
+</tr>
+<tr>
+<td align="justify">table_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Type of table: BASE TABLE, VIEW, LOCAL TEMPORARY, SYSTEM TABLE, GLOBAL TEMPORARY, ALIAS or SYNONYM</td>
+</tr>
+<tr>
+<td align="justify">is_insertable_into</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Tells if the table's contents can be modified</td>
+</tr>
+<tr>
+<td align="justify">table_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(table_catalog, table_schema) references _schemata(catalog_name, schema_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_views"></a>_views table</h4></div></div></div>
+<p>List of views and their specific information</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of catalog that contains the view</td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of schema that contains the view</td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the view</td>
+</tr>
+<tr>
+<td align="justify">view_definition</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">View as SQL</td>
+</tr>
+<tr>
+<td align="justify">check_option</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">CASCADE if the statement used to create the view included the WITH CHECK OPTION; otherwise, NONE</td>
+</tr>
+<tr>
+<td align="justify">is_updatable</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Tells if the view's contents can be modified</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(table_catalog, table_schema, table_name) references _tables(table_catalog, table_schema, table_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_collations"></a>_collations table</h4></div></div></div>
+<p>List of collations methods</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">collation_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(collation_catalog, collation_schema) references _schemata(catalog_name, schema_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_character_sets"></a>_character_sets table</h4></div></div></div>
+<p>List of character sets</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">character_set_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">default_collate_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">default_collate_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">default_collate_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(character_set_catalog, character_set_schema) references _schemata(catalog_name, schema_name) </p></li>
+<li class="listitem"><p>(default_collate_catalog, default_collate_schema, default_collate_name) references _collations(collation_catalog, collation_schema, collation_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_routines"></a>_routines table</h4></div></div></div>
+<p>List of functions and stored procedures (note: the primary jey for that table is composed of (specific_catalog, specific_schema, specific_name))</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">specific_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Specific name of catalog that contains the routine</td>
+</tr>
+<tr>
+<td align="justify">specific_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Specific name of schema that contains the routine</td>
+</tr>
+<tr>
+<td align="justify">specific_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Specific name of the routine (may be mangled for polymorphic routines)</td>
+</tr>
+<tr>
+<td align="justify">routine_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of catalog that contains the routine (may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">routine_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of schema that contains the routine (may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">routine_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Name of the routine</td>
+</tr>
+<tr>
+<td align="justify">routine_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">FUNCTION, PROCEDURE, AGGREGATE</td>
+</tr>
+<tr>
+<td align="justify">return_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type returned by the routine (may be NULL if routine does not return any value)</td>
+</tr>
+<tr>
+<td align="justify">returns_set</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">True if routine returns a set (i.e., multiple values of the specified data type or if data type may vary)</td>
+</tr>
+<tr>
+<td align="justify">nb_args</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Number of arguments (-1 for variable number of arguments)</td>
+</tr>
+<tr>
+<td align="justify">routine_body</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">If the routine is an SQL function, then SQL, else EXTERNAL</td>
+</tr>
+<tr>
+<td align="justify">routine_definition</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">The source text of the routine</td>
+</tr>
+<tr>
+<td align="justify">external_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">If the routine is an external function, then the external name (link symbol) of the function</td>
+</tr>
+<tr>
+<td align="justify">external_language</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">The language the routine is written in</td>
+</tr>
+<tr>
+<td align="justify">parameter_style</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Parameter style (GENERAL, JAVA, SQL, GENERAL WITH NULLS)</td>
+</tr>
+<tr>
+<td align="justify">is_deterministic</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Tells if the routine returns the same results given the same arguments forever</td>
+</tr>
+<tr>
+<td align="justify">sql_data_access</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Whether the routine contains SQL and whether it reads or modifies data (NONE, CONTAINS, READS, MODIFIES)</td>
+</tr>
+<tr>
+<td align="justify">is_null_call</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Tells if the routine will be called if any one of its arguments is NULL</td>
+</tr>
+<tr>
+<td align="justify">routine_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">routine_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">routine_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">routine_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(specific_catalog, specific_schema) references _schemata(catalog_name, schema_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_triggers"></a>_triggers table</h4></div></div></div>
+<p>List of triggers</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">trigger_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">trigger_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">trigger_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">event_manipulation</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Event that fires the trigger (INSERT, UPDATE, or DELETE)</td>
+</tr>
+<tr>
+<td align="justify">event_object_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the database that contains the table that the trigger is defined on</td>
+</tr>
+<tr>
+<td align="justify">event_object_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the schema that contains the table that the trigger is defined on</td>
+</tr>
+<tr>
+<td align="justify">event_object_table</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Name of the table that the trigger is defined on</td>
+</tr>
+<tr>
+<td align="justify">action_statement</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Statement that is executed by the trigger</td>
+</tr>
+<tr>
+<td align="justify">action_orientation</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Identifies whether the trigger fires once for each processed row or once for each statement (ROW or STATEMENT)</td>
+</tr>
+<tr>
+<td align="justify">condition_timing</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Time at which the trigger fires (BEFORE or AFTER)</td>
+</tr>
+<tr>
+<td align="justify">trigger_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">trigger_short_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">trigger_full_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(trigger_catalog, trigger_schema) references _schemata(catalog_name, schema_name) </p></li>
+<li class="listitem"><p>(event_object_catalog, event_object_schema, event_object_table) references _tables(table_catalog, table_schema, table_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_columns"></a>_columns table</h4></div></div></div>
+<p>List of columns composing tables</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Column position, starts at 1</td>
+</tr>
+<tr>
+<td align="justify">column_default</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">is_nullable</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type of the column (if the column is an array, then 'array_spec' is set, and this may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the column is an array</td>
+</tr>
+<tr>
+<td align="justify">gtype</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_maximum_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_octet_length</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">numeric_precision</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">If data_type identifies a numeric type, this column contains the precision of the type for this column (the number of significant digits)</td>
+</tr>
+<tr>
+<td align="justify">numeric_scale</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">If data_type identifies an exact numeric type, this column contains the scale of the type for this column (the number of significant digits to the right of the decimal point)</td>
+</tr>
+<tr>
+<td align="justify">datetime_precision</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">character_set_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">collation_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">extra</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">CSV string with: AUTO_INCREMENT</td>
+</tr>
+<tr>
+<td align="justify">is_updatable</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(table_catalog, table_schema, table_name) references _tables(table_catalog, table_schema, table_name) </p></li>
+<li class="listitem"><p>(character_set_catalog, character_set_schema, character_set_name) references _character_sets(character_set_catalog, character_set_schema, character_set_name) </p></li>
+<li class="listitem"><p>(collation_catalog, collation_schema, collation_name) references _collations(collation_catalog, collation_schema, collation_name) </p></li>
+<li class="listitem"><p>(array_spec) references _element_types(specific_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_table_constraints"></a>_table_constraints table</h4></div></div></div>
+<p>List of constraints applied to tables (Check, primary or foreign key, or unique constraints)</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">constraint_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the catalog that contains the constraint</td>
+</tr>
+<tr>
+<td align="justify">constraint_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the schema that contains the constraint</td>
+</tr>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">constraint_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">CHECK, FOREIGN KEY, PRIMARY KEY or UNIQUE</td>
+</tr>
+<tr>
+<td align="justify">check_clause</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">The check expression if the constraint is a check constraint, NULL otherwise</td>
+</tr>
+<tr>
+<td align="justify">is_deferrable</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">initially_deferred</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(table_catalog, table_schema, table_name) references _tables(table_catalog, table_schema, table_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_referential_constraints"></a>_referential_constraints table</h4></div></div></div>
+<p>List of foreign key constraints, along with some specific attributes</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_constraint_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">match_option</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">FULL, PARTIAL or NONE</td>
+</tr>
+<tr>
+<td align="justify">update_rule</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">CASCADE, SET NULL, SET DEFAULT, RESTRICT, NO ACTION or NONE</td>
+</tr>
+<tr>
+<td align="justify">delete_rule</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">CASCADE, SET NULL, SET DEFAULT, RESTRICT, NO ACTION or NONE</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(table_catalog, table_schema, table_name, constraint_name) references _table_constraints(table_catalog, table_schema, table_name, constraint_name) </p></li>
+<li class="listitem"><p>(ref_table_catalog, ref_table_schema, ref_table_name, ref_constraint_name) references _table_constraints(table_catalog, table_schema, table_name, constraint_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_key_column_usage"></a>_key_column_usage table</h4></div></div></div>
+<p>List of primary key constraints and the name of the tables' columns involved</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify">Ordinal position of the column within the constraint key (count starts at 1)</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(table_catalog, table_schema, table_name, constraint_name) references _table_constraints(table_catalog, table_schema, table_name, constraint_name) </p></li>
+<li class="listitem"><p>(table_catalog, table_schema, table_name, column_name) references _columns(table_catalog, table_schema, table_name, column_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:__declared_fk"></a>__declared_fk table</h4></div></div></div>
+<p>List of foreign key constraints, declared in Libgda and unknown to the database</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ref_column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ts</td>
+<td align="justify">timestamp</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">descr</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_check_column_usage"></a>_check_column_usage table</h4></div></div></div>
+<p>List of check constraints and the name of the tables' columns involved</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(table_catalog, table_schema, table_name, constraint_name) references _table_constraints(table_catalog, table_schema, table_name, constraint_name) </p></li>
+<li class="listitem"><p>(table_catalog, table_schema, table_name, column_name) references _columns(table_catalog, table_schema, table_name, column_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_view_column_usage"></a>_view_column_usage table</h4></div></div></div>
+<p>List of the tables' columns involved in a view</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">view_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">view_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">view_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(view_catalog, view_schema, view_name) references _views(table_catalog, table_schema, table_name) </p></li>
+<li class="listitem"><p>(table_catalog, table_schema, table_name, column_name) references _columns(table_catalog, table_schema, table_name, column_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_domain_constraints"></a>_domain_constraints table</h4></div></div></div>
+<p>List of constraints applicable to domains</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">constraint_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the catalog that contains the constraint</td>
+</tr>
+<tr>
+<td align="justify">constraint_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the schema that contains the constraint</td>
+</tr>
+<tr>
+<td align="justify">constraint_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">domain_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">check_clause</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">is_deferrable</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">initially_deferred</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(domain_catalog, domain_schema, domain_name) references _domains(domain_catalog, domain_schema, domain_name) </p></li>
+<li class="listitem"><p>(constraint_catalog, constraint_schema) references _schemata(catalog_name, schema_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_parameters"></a>_parameters table</h4></div></div></div>
+<p>List of routines' (functions and stored procedures) parameters (may not contain data for some routines which accept any type of parameter)</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">specific_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">specific_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">specific_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">parameter_mode</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">parameter_name</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type of the parameter (if the parameter is an array, then 'array_spec' is set, and this may be NULL; can also be NULL if any type of parameter is accepted)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the parameter is an array</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(specific_catalog, specific_schema, specific_name) references _routines(specific_catalog, specific_schema, specific_name) </p></li>
+<li class="listitem"><p>(array_spec) references _element_types(specific_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_routine_columns"></a>_routine_columns table</h4></div></div></div>
+<p>List of routines' (functions and stored procedures) returned values' parts (columns) for routines returning composed values</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">specific_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">specific_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">specific_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify">Yes</td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">data_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Data type of the column (if the column is an array, then 'array_spec' is set, and this may be NULL)</td>
+</tr>
+<tr>
+<td align="justify">array_spec</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Array description if the column is an array</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>(specific_catalog, specific_schema, specific_name) references _routines(specific_catalog, specific_schema, specific_name) </p></li>
+<li class="listitem"><p>(array_spec) references _element_types(specific_name) </p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_table_indexes"></a>_table_indexes table</h4></div></div></div>
+<p>List of tables' indexes which do not relate to primary keys</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">index_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the catalog that contains the index</td>
+</tr>
+<tr>
+<td align="justify">index_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the schema that contains the index</td>
+</tr>
+<tr>
+<td align="justify">index_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">is_unique</td>
+<td align="justify">boolean</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">index_def</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Index definition</td>
+</tr>
+<tr>
+<td align="justify">index_type</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">Database specific type of index such as BTREE, ...</td>
+</tr>
+<tr>
+<td align="justify">extra</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify">CSV string with: ASCENDING, ...</td>
+</tr>
+<tr>
+<td align="justify">index_owner</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">index_comments</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(table_catalog, table_schema, table_name) references _tables(table_catalog, table_schema, table_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_index_column_usage"></a>_index_column_usage table</h4></div></div></div>
+<p>List of the tables' columns involved in an index listed in the _table_indexes table</p>
+<p>The following table describes the columns:</p>
+<div class="informaltable"><table class="informaltable" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column name</th>
+<th align="justify">Type</th>
+<th align="justify">Key</th>
+<th align="justify">Can be NULL</th>
+<th align="justify">description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">index_catalog</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">index_schema</td>
+<td align="justify">string</td>
+<td align="justify"> </td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">index_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_catalog</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_schema</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">table_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">No</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_name</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">column_expr</td>
+<td align="justify">string</td>
+<td align="justify">Yes</td>
+<td align="justify">Yes</td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">ordinal_position</td>
+<td align="justify">gint</td>
+<td align="justify"> </td>
+<td align="justify">No</td>
+<td align="justify">Column position in the index, starts at 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>(index_name, table_catalog, table_schema, table_name) references _table_indexes(index_name, table_catalog, table_schema, table_name) </p></li></ul></div>
+<p>
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_all_types"></a>_all_types view</h4></div></div></div>
+<p>List of all the data types</p>
+<p>Definition is:</p>
+<pre class="programlisting" width="80">SELECT short_type_name AS short_type_name, gtype, full_type_name AS full_type_name, comments, internal AS internal, synonyms,
+       NULL AS domain_catalog, NULL AS domain_schema, NULL AS domain_name,
+       NULL AS udt_catalog, NULL AS udt_schema, NULL AS udt_name
+       FROM _builtin_data_types
+UNION
+SELECT udt_short_name, udt_gtype, udt_full_name, udt_comments, udt_internal, NULL,
+       NULL, NULL, NULL, udt_catalog, udt_schema, udt_name FROM _udt
+UNION
+SELECT domain_short_name, domain_gtype, domain_full_name, domain_comments, domain_internal, NULL,
+       domain_catalog, domain_schema, domain_name , NULL, NULL, NULL FROM _domains</pre>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="is:_detailed_fk"></a>_detailed_fk view</h4></div></div></div>
+<p>For each foreign key constraint, lists all the tables' columns involved and the constraint name</p>
+<p>Definition is:</p>
+<pre class="programlisting" width="80">SELECT rc.table_catalog as fk_table_catalog, rc.table_schema as fk_table_schema, rc.table_name as fk_table_name, kc1.column_name as fk_column,
+      rc.ref_table_catalog as ref_table_catalog, rc.ref_table_schema as ref_table_schema, rc.ref_table_name as ref_table_name, kc2.column_name as ref_column,
+      rc.constraint_name as fk_constraint_name, kc1.ordinal_position as ordinal_position
+      FROM _referential_constraints rc 
+      INNER JOIN _key_column_usage kc2 ON (rc.ref_table_catalog=kc2.table_catalog AND rc.ref_table_schema=kc2.table_schema AND rc.ref_table_name=kc2.table_name AND rc.ref_constraint_name=kc2.constraint_name) 
+      INNER JOIN _key_column_usage kc1 ON (rc.table_catalog=kc1.table_catalog AND rc.table_schema=kc1.table_schema AND rc.table_name=kc1.table_name AND rc.constraint_name=kc1.constraint_name) 
+      WHERE kc1.ordinal_position = kc2.ordinal_position 
+      ORDER BY rc.table_catalog, rc.table_schema, rc.table_name, kc1.ordinal_position
+    </pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

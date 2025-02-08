@@ -1,0 +1,1621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BrowserConnection: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="core.html" title="Core objects">
+<link rel="prev" href="BrowserCore.html" title="BrowserCore">
+<link rel="next" href="gda-browser-browser-favorites.html" title="ToolsFavorites">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#BrowserConnection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#BrowserConnection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#BrowserConnection.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#BrowserConnection.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="BrowserCore.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gda-browser-browser-favorites.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="BrowserConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="BrowserConnection.top_of_page"></a>BrowserConnection</span></h2>
+<p>BrowserConnection — An opened connection</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="BrowserConnection.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="returnvalue">BrowserConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-new" title="browser_connection_new ()">browser_connection_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-name" title="browser_connection_get_name ()">browser_connection_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-long-name" title="browser_connection_get_long_name ()">browser_connection_get_long_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GdaDsnInfo</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-information" title="browser_connection_get_information ()">browser_connection_get_information</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-is-virtual" title="browser_connection_is_virtual ()">browser_connection_is_virtual</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-is-busy" title="browser_connection_is_busy ()">browser_connection_is_busy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-update-meta-data" title="browser_connection_update_meta_data ()">browser_connection_update_meta_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-meta-data-changed" title="browser_connection_meta_data_changed ()">browser_connection_meta_data_changed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaMetaStruct</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-meta-struct" title="browser_connection_get_meta_struct ()">browser_connection_get_meta_struct</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaMetaStore</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-meta-store" title="browser_connection_get_meta_store ()">browser_connection_get_meta_store</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-dictionary-file" title="browser_connection_get_dictionary_file ()">browser_connection_get_dictionary_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">ToolsFavorites</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-favorites" title="browser_connection_get_favorites ()">browser_connection_get_favorites</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-completions" title="browser_connection_get_completions ()">browser_connection_get_completions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaSqlParser</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-create-parser" title="browser_connection_create_parser ()">browser_connection_create_parser</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-render-pretty-sql" title="browser_connection_render_pretty_sql ()">browser_connection_render_pretty_sql</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-execute-statement" title="browser_connection_execute_statement ()">browser_connection_execute_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-execution-get-result" title="browser_connection_execution_get_result ()">browser_connection_execution_get_result</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="BrowserConnection.html#BrowserConnectionExecuteCallback" title="BrowserConnectionExecuteCallback ()">*BrowserConnectionExecuteCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-execute-statement-cb" title="browser_connection_execute_statement_cb ()">browser_connection_execute_statement_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-normalize-sql-statement" title="browser_connection_normalize_sql_statement ()">browser_connection_normalize_sql_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-check-sql-statement-validify" title="browser_connection_check_sql_statement_validify ()">browser_connection_check_sql_statement_validify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-rerun-select" title="browser_connection_rerun_select ()">browser_connection_rerun_select</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-rerun-select-cb" title="browser_connection_rerun_select_cb ()">browser_connection_rerun_select_cb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-begin" title="browser_connection_begin ()">browser_connection_begin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-commit" title="browser_connection_commit ()">browser_connection_commit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-rollback" title="browser_connection_rollback ()">browser_connection_rollback</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaTransactionStatus</span> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-transaction-status" title="browser_connection_get_transaction_status ()">browser_connection_get_transaction_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-set-table-column-attribute" title="browser_connection_set_table_column_attribute ()">browser_connection_set_table_column_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-get-table-column-attribute" title="browser_connection_get_table_column_attribute ()">browser_connection_get_table_column_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-define-ui-plugins-for-batch" title="browser_connection_define_ui_plugins_for_batch ()">browser_connection_define_ui_plugins_for_batch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-define-ui-plugins-for-stmt" title="browser_connection_define_ui_plugins_for_stmt ()">browser_connection_define_ui_plugins_for_stmt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-keep-variables" title="browser_connection_keep_variables ()">browser_connection_keep_variables</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserConnection.html#browser-connection-load-variables" title="browser_connection_load_variables ()">browser_connection_load_variables</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<span class="type">GdaConnection</span> *</td>
+<td class="property_name"><a class="link" href="BrowserConnection.html#BrowserConnection--gda-connection" title="The “gda-connection” property">gda-connection</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserConnection.html#BrowserConnection-busy" title="The “busy” signal">busy</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserConnection.html#BrowserConnection-favorites-changed" title="The “favorites-changed” signal">favorites-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserConnection.html#BrowserConnection-meta-changed" title="The “meta-changed” signal">meta-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserConnection.html#BrowserConnection-table-column-pref-changed" title="The “table-column-pref-changed” signal">table-column-pref-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserConnection.html#BrowserConnection-transaction-status-changed" title="The “transaction-status-changed” signal">transaction-status-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserConnection.html#BrowserConnectionPrivate" title="BrowserConnectionPrivate">BrowserConnectionPrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserConnection.html#BrowserConnection-struct" title="BrowserConnection">BrowserConnection</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> BrowserConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.description"></a><h2>Description</h2>
+<p>The <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object wraps a <span class="type">GdaConnection</span> with some
+additionnal features. The wrapped <span class="type">GdaConnection</span> is only accessible from within
+the <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object, so to use a connection, you have to use the
+<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a>'s methods.</p>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="browser-connection-new"></a><h3>browser_connection_new ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="returnvalue">BrowserConnection</span></a> *
+browser_connection_new (<em class="parameter"><code><span class="type">GdaConnection</span> *cnc</code></em>);</pre>
+<p>Creates a new <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object wrapping <em class="parameter"><code>cnc</code></em>
+. The <a class="link" href="BrowserCore.html#browser-core-take-connection" title="browser_core_take_connection ()"><code class="function">browser_core_take_connection()</code></a> method
+must be called on the new object to mahe it managed by the browser.</p>
+<p>To close the new connection, use <a class="link" href="BrowserCore.html#browser-core-close-connection" title="browser_core_close_connection ()"><code class="function">browser_core_close_connection()</code></a>.</p>
+<div class="refsect3">
+<a name="browser-connection-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaConnection</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-new.returns"></a><h4>Returns</h4>
+<p> a new object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-name"></a><h3>browser_connection_get_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_connection_get_name (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-connection-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-name.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>bcnc</code></em>
+'s name</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-long-name"></a><h3>browser_connection_get_long_name ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_connection_get_long_name (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Get the "long" name of <em class="parameter"><code>bcnc</code></em>
+</p>
+<div class="refsect3">
+<a name="browser-connection-get-long-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-long-name.returns"></a><h4>Returns</h4>
+<p> a new string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-information"></a><h3>browser_connection_get_information ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GdaDsnInfo</span> *
+browser_connection_get_information (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Get some information about the connection</p>
+<div class="refsect3">
+<a name="browser-connection-get-information.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-information.returns"></a><h4>Returns</h4>
+<p> a pointer to the associated <span class="type">GdaDsnInfo</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-is-virtual"></a><h3>browser_connection_is_virtual ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_is_virtual (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>bcnc</code></em>
+ is a virtual connection or not</p>
+<div class="refsect3">
+<a name="browser-connection-is-virtual.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-is-virtual.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>bcnc</code></em>
+is a virtual connection</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-is-busy"></a><h3>browser_connection_is_busy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_is_busy (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_reason</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>bcnc</code></em>
+ is currently busy or not.</p>
+<div class="refsect3">
+<a name="browser-connection-is-busy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_reason</p></td>
+<td class="parameter_description"><p>a pointer to store a copy of the reason <em class="parameter"><code>bcnc</code></em>
+is busy (will be set
+to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>bcnc</code></em>
+is not busy), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-is-busy.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>bcnc</code></em>
+is busy</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-update-meta-data"></a><h3>browser_connection_update_meta_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_update_meta_data (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Make <em class="parameter"><code>bcnc</code></em>
+ update its meta store in the background.</p>
+<div class="refsect3">
+<a name="browser-connection-update-meta-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-meta-data-changed"></a><h3>browser_connection_meta_data_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_meta_data_changed (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Call this function if the meta data has been changed directly (ie. for example after
+declaring or undeclaring a foreign key). This call creates a new <span class="type">GdaMetaStruct</span> internally used.</p>
+<div class="refsect3">
+<a name="browser-connection-meta-data-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-meta-struct"></a><h3>browser_connection_get_meta_struct ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaMetaStruct</span> *
+browser_connection_get_meta_struct (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Get the <span class="type">GdaMetaStruct</span> maintained up to date by <em class="parameter"><code>bcnc</code></em>
+.</p>
+<div class="refsect3">
+<a name="browser-connection-get-meta-struct.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-meta-struct.returns"></a><h4>Returns</h4>
+<p> a <span class="type">GdaMetaStruct</span>, the caller does not have any reference to it.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-meta-store"></a><h3>browser_connection_get_meta_store ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaMetaStore</span> *
+browser_connection_get_meta_store (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-connection-get-meta-store.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-meta-store.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>bcnc</code></em>
+'s <span class="type">GdaMetaStore</span>, the caller does not have any reference to it.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-dictionary-file"></a><h3>browser_connection_get_dictionary_file ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_connection_get_dictionary_file
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-connection-get-dictionary-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-dictionary-file.returns"></a><h4>Returns</h4>
+<p> the dictionary file name used by <em class="parameter"><code>bcnc</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-favorites"></a><h3>browser_connection_get_favorites ()</h3>
+<pre class="programlisting"><span class="returnvalue">ToolsFavorites</span> *
+browser_connection_get_favorites (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Get <em class="parameter"><code>bcnc</code></em>
+'s favorites handler</p>
+<div class="refsect3">
+<a name="browser-connection-get-favorites.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-favorites.returns"></a><h4>Returns</h4>
+<p>the <span class="type">ToolsFavorites</span> used by <em class="parameter"><code>bcnc</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-completions"></a><h3>browser_connection_get_completions ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+browser_connection_get_completions (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> start</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> end</code></em>);</pre>
+<p>See <code class="function">gda_completion_list_get()</code></p>
+<div class="refsect3">
+<a name="browser-connection-get-completions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-completions.returns"></a><h4>Returns</h4>
+<p> a new array of strings, or NULL (use <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a> to free the returned array)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-create-parser"></a><h3>browser_connection_create_parser ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaSqlParser</span> *
+browser_connection_create_parser (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Get a new <span class="type">GdaSqlParser</span> object for <em class="parameter"><code>bcnc</code></em>
+</p>
+<div class="refsect3">
+<a name="browser-connection-create-parser.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-create-parser.returns"></a><h4>Returns</h4>
+<p> a new <span class="type">GdaSqlParser</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-render-pretty-sql"></a><h3>browser_connection_render_pretty_sql ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_connection_render_pretty_sql (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                      <em class="parameter"><code><span class="type">GdaStatement</span> *stmt</code></em>);</pre>
+<p>Renders <em class="parameter"><code>stmt</code></em>
+ as SQL well indented</p>
+<div class="refsect3">
+<a name="browser-connection-render-pretty-sql.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-render-pretty-sql.returns"></a><h4>Returns</h4>
+<p> a new string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-execute-statement"></a><h3>browser_connection_execute_statement ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+browser_connection_execute_statement (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                      <em class="parameter"><code><span class="type">GdaStatement</span> *stmt</code></em>,
+                                      <em class="parameter"><code><span class="type">GdaSet</span> *params</code></em>,
+                                      <em class="parameter"><code><span class="type">GdaStatementModelUsage</span> model_usage</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> need_last_insert_row</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Executes <em class="parameter"><code>stmt</code></em>
+ by <em class="parameter"><code>bcnc</code></em>
+. Unless specific requirements, it's easier to use
+<a class="link" href="BrowserConnection.html#browser-connection-execute-statement-cb" title="browser_connection_execute_statement_cb ()"><code class="function">browser_connection_execute_statement_cb()</code></a>.</p>
+<div class="refsect3">
+<a name="browser-connection-execute-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> as parameters, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model_usage</p></td>
+<td class="parameter_description"><p>how the returned data model (if any) will be used</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>need_last_insert_row</p></td>
+<td class="parameter_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the values of the last interted row must be computed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-execute-statement.returns"></a><h4>Returns</h4>
+<p> a job ID, to be used with <a class="link" href="BrowserConnection.html#browser-connection-execution-get-result" title="browser_connection_execution_get_result ()"><code class="function">browser_connection_execution_get_result()</code></a>, or <code class="literal">0</code> if an
+error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-execution-get-result"></a><h3>browser_connection_execution_get_result ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+browser_connection_execution_get_result
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> exec_id</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSet</span> **last_insert_row</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Pick up the result of the <em class="parameter"><code>exec_id</code></em>
+'s execution.</p>
+<div class="refsect3">
+<a name="browser-connection-execution-get-result.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>exec_id</p></td>
+<td class="parameter_description"><p>the ID of the excution</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>last_insert_row</p></td>
+<td class="parameter_description"><p>a place to store the last inserted row, if any, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-execution-get-result.returns"></a><h4>Returns</h4>
+<p> the execution result, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if either an error occurred or the result is not yet ready</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnectionExecuteCallback"></a><h3>BrowserConnectionExecuteCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*BrowserConnectionExecuteCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> exec_id</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a> *out_result</code></em>,
+                                     <em class="parameter"><code><span class="type">GdaSet</span> *out_last_inserted_row</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Callback function called by <a class="link" href="BrowserConnection.html#browser-connection-execute-statement-cb" title="browser_connection_execute_statement_cb ()"><code class="function">browser_connection_execute_statement_cb()</code></a>. If you need to keep
+some of the arguments for a later usage, you need to ref/copy them.</p>
+<p>None of the passed arguments must not be modified</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-execute-statement-cb"></a><h3>browser_connection_execute_statement_cb ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+browser_connection_execute_statement_cb
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaStatement</span> *stmt</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSet</span> *params</code></em>,
+                                <em class="parameter"><code><span class="type">GdaStatementModelUsage</span> model_usage</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> need_last_insert_row</code></em>,
+                                <em class="parameter"><code><a class="link" href="BrowserConnection.html#BrowserConnectionExecuteCallback" title="BrowserConnectionExecuteCallback ()"><span class="type">BrowserConnectionExecuteCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Executes <em class="parameter"><code>stmt</code></em>
+ by <em class="parameter"><code>bcnc</code></em>
+ and calls <em class="parameter"><code>callback</code></em>
+ when done. This occurs in the UI thread and avoids
+having to set up a waiting mechanism to call <a class="link" href="BrowserConnection.html#browser-connection-execution-get-result" title="browser_connection_execution_get_result ()"><code class="function">browser_connection_execution_get_result()</code></a>
+repeatedly.</p>
+<div class="refsect3">
+<a name="browser-connection-execute-statement-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> as parameters, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model_usage</p></td>
+<td class="parameter_description"><p>how the returned data model (if any) will be used</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>need_last_insert_row</p></td>
+<td class="parameter_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the values of the last interted row must be computed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call when statement has been executed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>data to pass to <em class="parameter"><code>callback</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-execute-statement-cb.returns"></a><h4>Returns</h4>
+<p> a job ID, or <code class="literal">0</code> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-normalize-sql-statement"></a><h3>browser_connection_normalize_sql_statement ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_normalize_sql_statement
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSqlStatement</span> *sqlst</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>See <code class="function">gda_sql_statement_normalize()</code>.</p>
+<div class="refsect3">
+<a name="browser-connection-normalize-sql-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sqlst</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSqlStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-normalize-sql-statement.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-check-sql-statement-validify"></a><h3>browser_connection_check_sql_statement_validify ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_check_sql_statement_validify
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSqlStatement</span> *sqlst</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-rerun-select"></a><h3>browser_connection_rerun_select ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+browser_connection_rerun_select (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                 <em class="parameter"><code><span class="type">GdaDataModel</span> *model</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Re-execute <em class="parameter"><code>model</code></em>
+</p>
+<div class="refsect3">
+<a name="browser-connection-rerun-select.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaDataModel</span>, which has to ba a <span class="type">GdaDataSelect</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-rerun-select.returns"></a><h4>Returns</h4>
+<p> a job ID, or <code class="literal">0</code> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-rerun-select-cb"></a><h3>browser_connection_rerun_select_cb ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+browser_connection_rerun_select_cb (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                    <em class="parameter"><code><span class="type">GdaDataModel</span> *model</code></em>,
+                                    <em class="parameter"><code><a class="link" href="BrowserConnection.html#BrowserConnectionExecuteCallback" title="BrowserConnectionExecuteCallback ()"><span class="type">BrowserConnectionExecuteCallback</span></a> callback</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Re-execute <em class="parameter"><code>model</code></em>
+.</p>
+<p>Warning: <code class="function">gda_data_model_freeze()</code> and <code class="function">gda_data_model_thaw()</code> should be used
+before and after this call since the model will signal its changes in a thread
+which is not the GUI thread.</p>
+<div class="refsect3">
+<a name="browser-connection-rerun-select-cb.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaDataModel</span>, which has to ba a <span class="type">GdaDataSelect</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the function to call when statement has been executed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>data to pass to <em class="parameter"><code>callback</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-rerun-select-cb.returns"></a><h4>Returns</h4>
+<p> a job ID, or <code class="literal">0</code> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-begin"></a><h3>browser_connection_begin ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_begin (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Begins a transaction</p>
+<div class="refsect3">
+<a name="browser-connection-begin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-commit"></a><h3>browser_connection_commit ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_commit (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Commits a transaction</p>
+<div class="refsect3">
+<a name="browser-connection-commit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-rollback"></a><h3>browser_connection_rollback ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_rollback (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Rolls back a transaction</p>
+<div class="refsect3">
+<a name="browser-connection-rollback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-transaction-status"></a><h3>browser_connection_get_transaction_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaTransactionStatus</span> *
+browser_connection_get_transaction_status
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Retuns: the <span class="type">GdaTransactionStatus</span> of the connection, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+<div class="refsect3">
+<a name="browser-connection-get-transaction-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-set-table-column-attribute"></a><h3>browser_connection_set_table_column_attribute ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_set_table_column_attribute
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaMetaTable</span> *table</code></em>,
+                                <em class="parameter"><code><span class="type">GdaMetaTableColumn</span> *column</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attr_name</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-connection-set-table-column-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>attr_name</p></td>
+<td class="parameter_description"><p>attribute name, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to set, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-set-table-column-attribute.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-get-table-column-attribute"></a><h3>browser_connection_get_table_column_attribute ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_connection_get_table_column_attribute
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaMetaTable</span> *table</code></em>,
+                                <em class="parameter"><code><span class="type">GdaMetaTableColumn</span> *column</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attr_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-connection-get-table-column-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>may be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_name</p></td>
+<td class="parameter_description"><p>attribute name, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-get-table-column-attribute.returns"></a><h4>Returns</h4>
+<p> the requested attribute (as a new string), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not set or if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-define-ui-plugins-for-batch"></a><h3>browser_connection_define_ui_plugins_for_batch ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_define_ui_plugins_for_batch
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaBatch</span> *batch</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSet</span> *params</code></em>);</pre>
+<p>Calls <a class="link" href="BrowserConnection.html#browser-connection-define-ui-plugins-for-stmt" title="browser_connection_define_ui_plugins_for_stmt ()"><code class="function">browser_connection_define_ui_plugins_for_stmt()</code></a> for each statement in <em class="parameter"><code>batch</code></em>
+</p>
+<div class="refsect3">
+<a name="browser-connection-define-ui-plugins-for-batch.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>batch</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaBatch</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> (usually created with <code class="function">gda_batch_get_parameters()</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-define-ui-plugins-for-stmt"></a><h3>browser_connection_define_ui_plugins_for_stmt ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_define_ui_plugins_for_stmt
+                               (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                <em class="parameter"><code><span class="type">GdaStatement</span> *stmt</code></em>,
+                                <em class="parameter"><code><span class="type">GdaSet</span> *params</code></em>);</pre>
+<p>Analyses <em class="parameter"><code>stmt</code></em>
+ and assign plugins to each <span class="type">GdaHolder</span> in <em class="parameter"><code>params</code></em>
+ according to the preferences stored
+for each table's field, defined at some point using <a class="link" href="BrowserConnection.html#browser-connection-set-table-column-attribute" title="browser_connection_set_table_column_attribute ()"><code class="function">browser_connection_set_table_column_attribute()</code></a>.</p>
+<div class="refsect3">
+<a name="browser-connection-define-ui-plugins-for-stmt.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaStatement</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> (usually created with <code class="function">gda_statement_get_parameters()</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-keep-variables"></a><h3>browser_connection_keep_variables ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_keep_variables (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                   <em class="parameter"><code><span class="type">GdaSet</span> *set</code></em>);</pre>
+<p>Makes a copy of the variables in <em class="parameter"><code>set</code></em>
+ and keep them in <em class="parameter"><code>bcnc</code></em>
+. Retreive them
+using <a class="link" href="BrowserConnection.html#browser-connection-load-variables" title="browser_connection_load_variables ()"><code class="function">browser_connection_load_variables()</code></a></p>
+<div class="refsect3">
+<a name="browser-connection-keep-variables.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> containing variables for which a copy has to be done</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-load-variables"></a><h3>browser_connection_load_variables ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_connection_load_variables (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                                   <em class="parameter"><code><span class="type">GdaSet</span> *set</code></em>);</pre>
+<p>For each <span class="type">GdaHolder</span> in <em class="parameter"><code>set</code></em>
+, set the value if one is available in <em class="parameter"><code>bcnc</code></em>
+.</p>
+<div class="refsect3">
+<a name="browser-connection-load-variables.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaSet</span> which will in the end contain (if any) variables stored in <em class="parameter"><code>bcnc</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="BrowserConnectionPrivate"></a><h3>BrowserConnectionPrivate</h3>
+<pre class="programlisting">typedef struct {
+	GdaThreadWrapper *wrapper;
+	GIOChannel       *ioc;
+	guint             ioc_watch_id;
+	GSList           *wrapper_jobs;
+	guint             wrapper_results_timer;
+	gboolean          long_timer;
+	gint              nb_no_job_waits; /* number of times check_for_wrapper_result() has been
+					      called without any job */
+
+	GHashTable       *executed_statements; /* key = guint exec ID, value = a StatementResult pointer */
+
+	gulong            meta_store_signal;
+	gulong            transaction_status_signal;
+
+	gchar         *name;
+	GdaConnection *cnc;
+	gchar         *dict_file_name;
+        GdaSqlParser  *parser;
+
+	GdaDsnInfo     dsn_info;
+	GMutex        mstruct_mutex;
+	GSList        *p_mstruct_list; /* private GdaMetaStruct list: while they are being created */
+	GdaMetaStruct *c_mstruct; /* last GdaMetaStruct up to date, ready to be passed as @mstruct */
+	GdaMetaStruct *mstruct; /* public GdaMetaStruct: once it has been created and is no more modified */
+
+	ToolsFavorites *bfav;
+
+	gboolean  busy;
+	gchar    *busy_reason;
+
+	GdaConnection *store_cnc;
+
+	GdaSet        *variables;
+
+	GSList        *results_list; /* list of #ExecCallbackData pointers */
+	gulong         results_timer_id;
+} BrowserConnectionPrivate;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnection-struct"></a><h3>BrowserConnection</h3>
+<pre class="programlisting">typedef struct _BrowserConnection BrowserConnection;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="BrowserConnection--gda-connection"></a><h3>The <code class="literal">“gda-connection”</code> property</h3>
+<pre class="programlisting">  “gda-connection”           <span class="type">GdaConnection</span> *</pre>
+<p>Connection to use.</p>
+<p>Owner: BrowserConnection</p>
+<p>Flags: Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserConnection.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="BrowserConnection-busy"></a><h3>The <code class="literal">“busy”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *browserconnection,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>           arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>             *arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnection-favorites-changed"></a><h3>The <code class="literal">“favorites-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *browserconnection,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnection-meta-changed"></a><h3>The <code class="literal">“meta-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *browserconnection,
+               <span class="type">GdaMetaStruct</span>     *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnection-table-column-pref-changed"></a><h3>The <code class="literal">“table-column-pref-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *browserconnection,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>             *arg3,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>             *arg4,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserConnection-transaction-status-changed"></a><h3>The <code class="literal">“transaction-status-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *browserconnection,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="general-ui" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Organisasi antar muka umum</title>
+  <p><app>gda-browser</app> disusun dari satu atau lebih jendela aras puncak, setiap jendela berkaitan dengan suatu koneks tunggal (yang namanya menjadi judul). Bagi setiap koneksi, beberapa jendela dapat dibuka (gunakan menu <guiseq><gui>Jendela</gui><gui>Jendela baru</gui></guiseq> atau pintasan <keyseq><key>Ctrl</key><key>N</key></keyseq>).</p>
+  <figure>
+    <title>Suatu jendela koneksi</title>
+    <desc>Jendela yang dibuka bagi koneksi 'c1' (dan perspektif peramban Skema)</desc>
+    <media type="image" mime="image/png" src="figures/mainwin.png"/>
+  </figure>
+
+  <p>Dalam setiap jendela, tersedia beberapa <em>perspektif</em> yang disesuaikan ke aktivitas berbeda:</p>
+  <list>
+    <item><p><link xref="schema-browser-perspective">Perspektif peramban skema</link> untuk membantu memahami tata letak basis data</p></item>
+    <item><p><link xref="query-execution-perspective">Perspektif eksekusi query</link> untuk mengeksekusi sebarang perintah SQL</p></item>
+    <item><p><link xref="data-manager-perspective">Perspektif manajer data</link> untuk menavigasi melalui isi basis data</p></item>
+  </list>
+  <p>Perspektif yang kini ditampilkan dapat diubah secara individu bagi setiap jendela, dan seperti semua perspektif, memiliki area aksi yang tersusun atas tab; tab dapat dipindahkan dari satu jendela ke lainnya bisa jendela sumber dan tujuan memakai koneksi yang sama, dan menampilkan perspektif yang sama (cukup seret dan jatuhkan suatu tab dari satu jendela ke lainnya memakai label tab sebagai pegangan).</p>
+</page>

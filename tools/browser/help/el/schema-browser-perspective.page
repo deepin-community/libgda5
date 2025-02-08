@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="el">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+<title>Το σχήμα προοπτικής του φυλλομετρητή</title>
+<p>Χρησιμοποιήστε την προοπτική περιηγητή σχήματος για κατανόηση της οργάνωσης της βάσης δεδομένων (σχήμα). Για εναλλαγή σε αυτήν την προοπτική, χρησιμοποιήστε το μενού <guiseq><gui>προοπτική</gui><gui>περιηγητής σχήματος</gui></guiseq>, ή τη συντόμευση <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+<p>Η προοπτική διαιρείται σε δύο οριζόντια μέρη: το αριστερό για τα οριζόμενα αγαπημένα του χρήστη και το δεξί που είναι η περιοχή επενέργειας.</p>
+<figure>
+  <title>Η προεπιλεγμένη προβολή της προοπτικής περιηγητή σχήματος</title>
+  <desc>Το προεπιλεγμένο σχήμα προοπτικής του φυλλομετρητή</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>Το αριστερό τμήμα της προοπτικής καταχωρίζει τα αγαπημένα αντικείμενα ή διαγράμματα της βάσης δεδομένων. Διπλό κλικ σε ένα αγαπημένο ανοίγει τις ιδιότητες του στο δεξιό μέρος.</p>
+<p>Το δεξί τμήμα αποτελείται από καρτέλες πολλών τύπων:</p>
+<list>
+  <item><p>μία καρτέλα με την λίστα όλων πινάκων και προβολών των βάσεων δεδομένων, σε μία προβολή <em>σύννεφου</em> όπου οι πίνακες με τις περισσότερες σχέσεις με άλλους πίνακες εμφανίζονται σε μία μεγαλύτερη γραμματοσειρά· αυτή η καρτέλα παρουσιάζεται πάντα</p></item>
+  <item><p>καμία ή περισσότερες καρτέλες που εκπροσωπούν τις ιδιότητες ενός πίνακα ή προβολών: την λίστα στηλών, την λίστα περιορισμών (κύρια ή ξένα κλειδιά, και μοναδικοί περιορισμοί), ένα <link xref="diagram">διάγραμμα</link> που εμφανίζει τους σχετικούς πίνακες και μία περιοχή για τον καθορισμό των προτιμήσεων προβολής για τα δεδομένα κάθε στήλης</p></item>
+  <item><p>κανένα ή περισσότερα <link xref="diagram">διαγράμματα</link> στα οποία μπορεί να εκπροσωπηθεί οποιοσδήποτε αριθμός πινάκων, όπου συνδέονται χρησιμοποιώντας τις σχέσεις τους (όπως οι περιορισμοί των ξένων κλειδιών)</p></item>
+</list>
+
+<figure>
+  <title>Καρτέλα που εμφανίζει πληροφορίες για έναν πίνακα</title>
+  <desc>Παράδειγμα εμφανιζόμενων πληροφοριών για κάθε πίνακα, σημειώστε τη διαφορά μεταξύ ξένων κλειδιών που εφαρμόζονται στη βάση δεδομένων και <link xref="declared-fk">δηλωμένων ξένων κλειδιών</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>

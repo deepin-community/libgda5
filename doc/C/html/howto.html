@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HOWTO for common tasks: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="next" href="ch12s02.html" title="Define a data source (DSN)">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="part_libgda_api.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch12s02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="howto"></a>HOWTO for common tasks</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="howto.html#id-1.3.3.3">Open a connection</a></span></dt>
+<dt><span class="sect1"><a href="ch12s02.html">Define a data source (DSN)</a></span></dt>
+<dt><span class="sect1"><a href="howto-sqlbuilder.html">Build statements without using a parser</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.4">INSERT INTO customers (e, f, g) VALUES (##p1::string, 15, 'joe')</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.5">SELECT people.firstname AS person, people.lastname, "date" AS birthdate, age FROM people</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.6">SELECT c."date", name AS person FROM "select" AS c INNER JOIN orders USING (id)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.7">UPDATE products set ref='A0E''FESP' WHERE id = 14</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.8">DELETE FROM items WHERE id = ##theid::int</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.9">SELECT myfunc (a, 5, 'Joe') FROM mytable</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.10">SELECT name FROM master WHERE id IN (SELECT id FROM subdata)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.11">INSERT INTO customers (e, f, g) SELECT id, name, location FROM subdate</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.12">SELECT id, name FROM subdata1 UNION SELECT ident, lastname FROM subdata2</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.13">SELECT CASE tag WHEN 'Alpha' THEN 1 WHEN 'Bravo' THEN 2 WHEN 'Charlie' THEN 3 ELSE 0 END FROM data</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.14">SELECT product_id, name, sum (4 * 5 * price * 1.200000) FROM invoice_lines</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.15">SELECT id, name, adress, cntry_id, countries.name FROM customers INNER JOIN countries ON (countries.id = cntry_id)</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="howto-exec-select.html">Execute a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-modify-select.html">Modify the result of a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-exec-non-select.html">Execute an INSERT, UPDATE or DELETE command</a></span></dt>
+<dt><span class="sect1"><a href="ch12s07.html">Get the last inserted row</a></span></dt>
+<dt><span class="sect1"><a href="ch12s08.html">Execute a DDL command</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta1.html">Get information about a table's columns</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta2.html">Update the meta data about a table</a></span></dt>
+<dt><span class="sect1"><a href="ch12s11.html">Validate a DML statement</a></span></dt>
+<dt><span class="sect1"><a href="ch12s12.html">Control value's assignment to various objects</a></span></dt>
+<dt><span class="sect1"><a href="ch12s13.html">Add your own data to a GdaMetaStore</a></span></dt>
+</dl></div>
+<p>
+    This section is a list of small HOWTOs to get started quickly for some specific tasks, without the
+    need to read all the documentation: quickly get to the code and read the corresponding documentation
+    for further details.
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.3.3.3"></a>Open a connection</h2></div></div></div>
+<p>
+      Opening a connection to a database creates a <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a>
+      object which is required to execute commands. The connections' parameters (which are specific to each
+      type of database) can be either specified when opening the connection, or be used to define a
+      data source (<a class="link" href="connections.html" title="Connecting">DSN</a>) and the DSN name is then specified to open the connection.
+    </p>
+<p>
+      For example, opening a connection to a PostgreSQL database named "mydb" one could use the following code:
+      </p>
+<pre class="programlisting">
+GdaConnection *connection;
+connection = gda_connection_open_from_string ("PostgreSQL", "DB_NAME=mydb", 
+                                              "USERNAME=martin;PASSWORD=luther",
+                                              GDA_CONNECTION_OPTIONS_READ_ONLY, NULL);
+if (!connection)
+    g_print ("CONNECTION FAILED\n");
+else {
+    /* use the opened connection */
+
+    /* close the connection (assuming it's not used by another object) */
+    g_object_unref (connection);
+}
+      </pre>
+<p>
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="transactions" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Συναλλαγές</title>
+  <p>Οι ανταλλαγές μπορούν να ξεκινήσουν, καταχωρούνται ή ακυρώνονται σε μία βάση ανά σύνδεση:</p>
+  <list>
+    <item><p>χρησιμοποιήστε το κουμπί εργαλειοθήκης <media type="image" mime="image/png" src="figures/trans-begin.png"/> για να ξεκινήσετε μία ανταλλαγή</p></item>
+    <item><p>Χρησιμοποιήστε το κουμπί εργαλειοθήκης <media type="image" mime="image/png" src="figures/trans-commit.png"/> για να καταχωρήσετε την τρέχουσα ανταλλαγή (εφαρμογή όλων των αλλαγών)</p></item>
+    <item><p>Χρησιμοποιήστε το κουμπί εργαλειοθήκης <media type="image" mime="image/png" src="figures/trans-rollback.png"/> για να ακυρώσετε την τρέχουσα ανταλλαγή (απόρριψη όλων των αλλαγών)</p></item>
+  </list>
+  <note>
+    <p>Μια συναλλαγή μπορεί να ξεκινήσει αυτόματα κατά την εκτέλεση μιας πρότασης SELECT που περιλαμβάνει δυαδικά αντικείμενα (BLOBs) και η συναλλαγή μπορεί να κλειδωθεί ενώ το τελικό σύνολο δεδομένων κρατιέται στη μνήμη (για απαλλαγή από ένα σύνολο δεδομένων σε μια <link xref="query-execution-perspective">προοπτική εκτέλεσης ερωτήματος</link>, καθαρίστε το στοιχείο ιστορικού που σχετίζεται με το σύνολο δεδομένων).</p>
+  </note>
+</page>

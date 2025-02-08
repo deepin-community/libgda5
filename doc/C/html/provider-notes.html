@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Provider's notes: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_begin.html" title="Part I. Getting started">
+<link rel="prev" href="ch09s02.html" title="GDA_TYPE_NULL">
+<link rel="next" href="provider_notes_sqlite.html" title="For SQLite">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_begin.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch09s02.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="provider_notes_sqlite.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="provider-notes"></a>Provider's notes</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="provider-notes.html#provider_notes_oracle">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="provider_notes_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.3">The <code class="function">gda_file_exists()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.4">The <code class="function">gda_hex_print()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.5">The <code class="function">gda_hex()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.6">The <code class="function">gda_rmdiacr()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.7">The <code class="function">gda_upper()</code> and <code class="function">gda_lower()</code> functions</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.8">The <code class="function">regexp_match()</code> function</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_sqlcipher.html">For SQLCipher</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.4">How to create and encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.5">How to encrypt an existing plaintext database to an encrypted database file</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.6">How to change the passphrase of an encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.7">How to decrypt an existing database to a plaintext database</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.2">Authentication</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.3">Mapping to GdaDataModel</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_jdbc.html">For JDBC</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.2">How it works</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.3">JDBC drivers' location</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.4">Connection parameters</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+    This section lists some notes and recommendations on how to use each database provider.
+  </p>
+<p>
+    Before opening a connection with a database provider, one needs to specify the connection parameters. These
+    parameters, even though some are shared by many database providers, are specific to each provider and
+    the <a class="link" href="libgda-sql.html" title="gda-sql">gda-sql</a> or the
+    <a class="link" href="libgda-tools-list-config.html" title="gda-list-config-5.0">gda-list-config</a> tools can be used to obtain a complete list.
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="provider_notes_oracle"></a>For Oracle</h2></div></div></div>
+<p>
+      The following arguments are used to connect to an Oracle database:
+      </p>
+<div class="table">
+<a name="id-1.2.11.4.2.1"></a><p class="title"><b>Table 1. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Argument name</th>
+<th align="justify">Description</th>
+<th align="justify">Required</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">DB_NAME</td>
+<td align="justify">Service name: global database name entered during database creation (it combines a database name with a domain name), can be left empty to connect to the default database.</td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">HOST</td>
+<td align="justify">Database server: host on which the database server is running</td>
+<td align="justify">Yes</td>
+</tr>
+<tr>
+<td align="justify">PORT</td>
+<td align="justify">Port: database server port (leave this field empty for the default 1521 port)</td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">SCHEMA</td>
+<td align="justify">Schema: Name of the schema to use. If not specified, the schema defaults to that of the connected user.</td>
+<td align="justify">No</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+      Note however all the arguments above can be replaced by a single TNSNAME argument (see
+      the "Oracle Database Net Services Administrator's Guide" for more information about defining
+      connection identifiers).
+    </p>
+<p>
+      Also refer to the <a class="link" href="limitations_oracle.html" title="For Oracle">Oracle's provider's limitations</a>.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

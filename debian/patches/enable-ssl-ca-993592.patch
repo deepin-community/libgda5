@@ -1,0 +1,30 @@
+From: "Rebecca N. Palmer" <rebecca_palmer@zoho.com>
+Date: Sat, 7 Dec 2024 18:05:28 +0000
+Subject: Enable SSL certificate validation (CVE-2021-39359)
+
+This probably doesn't affect current Debian as we don't build with
+libsoup or ship the browser component (see #657613), but
+that might change and adding the fix is easier than verifying it.
+
+Closes: #993592
+
+Origin: https://gitlab.gnome.org/GNOME/libgda/-/merge_requests/189
+---
+ providers/web/gda-web-provider.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/providers/web/gda-web-provider.c b/providers/web/gda-web-provider.c
+index 4acbca6..394e914 100644
+--- a/providers/web/gda-web-provider.c
++++ b/providers/web/gda-web-provider.c
+@@ -385,8 +385,8 @@ gda_web_provider_open_connection (GdaServerProvider *provider, GdaConnection *cn
+ 	cdata->mutex = gda_mutex_new ();
+ 	cdata->server_id = NULL;
+ 	cdata->forced_closing = FALSE;
+-	cdata->worker_session = soup_session_sync_new ();
+-	cdata->front_session = soup_session_sync_new_with_options ("max-conns-per-host", 1, NULL);
++	cdata->worker_session = soup_session_sync_new_with_options ("ssl-use-system-ca-file", TRUE, NULL);
++	cdata->front_session = soup_session_sync_new_with_options ("max-conns-per-host", 1, "ssl-use-system-ca-file", TRUE, NULL);
+ 	if (use_ssl) {
+ 		server_url = g_string_new ("https://");
+ 		g_print ("USING SSL\n");
