@@ -1,0 +1,6 @@
+01-link-sqlite-provider-against-sqlite3.patch
+don-t-install-jquery.patch
+MySQL-bool-is-here-again.patch
+fix-mysql-detection.patch
+gcc-14-compat-1075169.patch
+enable-ssl-ca-993592.patch

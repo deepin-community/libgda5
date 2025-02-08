@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Support functions: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="core.html" title="Core objects">
+<link rel="prev" href="gda-browser-browser-favorites.html" title="ToolsFavorites">
+<link rel="next" href="windows.html" title="Browser windows">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gda-browser-Support-functions.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-browser-browser-favorites.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="windows.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gda-browser-Support-functions"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gda-browser-Support-functions.top_of_page"></a>Support functions</span></h2>
+<p>Support functions — Misc. functions for various situations</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="returnvalue">BrowserConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-connection-open" title="browser_connection_open ()">browser_connection_open</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-connection-close" title="browser_connection_close ()">browser_connection_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-show-error" title="browser_show_error ()">browser_show_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-show-message" title="browser_show_message ()">browser_show_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-show-help" title="browser_show_help ()">browser_show_help</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-make-tab-label-with-stock" title="browser_make_tab_label_with_stock ()">browser_make_tab_label_with_stock</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-make-tab-label-with-pixbuf" title="browser_make_tab_label_with_pixbuf ()">browser_make_tab_label_with_pixbuf</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-make-small-button" title="browser_make_small_button ()">browser_make_small_button</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-make-tree-view" title="browser_make_tree_view ()">browser_make_tree_view</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-find-parent-widget" title="browser_find_parent_widget ()">browser_find_parent_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="returnvalue">GdkPixbuf</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-get-pixbuf-icon" title="browser_get_pixbuf_icon ()">browser_get_pixbuf_icon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaDataModel</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-Support-functions.html#browser-get-connections-list" title="browser_get_connections_list ()">browser_get_connections_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gda-browser-Support-functions.html#BrowserIconType" title="enum BrowserIconType">BrowserIconType</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="browser-connection-open"></a><h3>browser_connection_open ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="returnvalue">BrowserConnection</span></a> *
+browser_connection_open (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Display a login dialog and, if validated, create a new <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p>
+<div class="refsect3">
+<a name="browser-connection-open.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-open.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (the caller DOES NOT OWN a reference to the returned value)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-connection-close"></a><h3>browser_connection_close ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_connection_close (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                          <em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Displays a warning dialog and close <em class="parameter"><code>bcnc</code></em>
+</p>
+<div class="refsect3">
+<a name="browser-connection-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-connection-close.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the connection has been closed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-show-error"></a><h3>browser_show_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_show_error (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                    <em class="parameter"><code>...</code></em>);</pre>
+<p>Displays an error message until the user aknowledges it. I <em class="parameter"><code>parent</code></em>
+ is a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a>, then
+the error message is displayed in the window if possible</p>
+<div class="refsect3">
+<a name="browser-show-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>format</p></td>
+<td class="parameter_description"><p>printf() style format string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>arguments for <em class="parameter"><code>format</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-show-message"></a><h3>browser_show_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_show_message (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                      <em class="parameter"><code>...</code></em>);</pre>
+<p>Displays an error message until the user aknowledges it. I <em class="parameter"><code>parent</code></em>
+ is a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a>, then
+the error message is displayed in the window if possible</p>
+<div class="refsect3">
+<a name="browser-show-message.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>format</p></td>
+<td class="parameter_description"><p>printf() style format string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>arguments for <em class="parameter"><code>format</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-show-help"></a><h3>browser_show_help ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_show_help (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWindow.html#GtkWindow-struct"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *topic</code></em>);</pre>
+<div class="refsect3">
+<a name="browser-show-help.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>topic</p></td>
+<td class="parameter_description"><p>the help topic, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the global index. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-make-tab-label-with-stock"></a><h3>browser_make_tab_label_with_stock ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_make_tab_label_with_stock (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *stock_id</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> with_close</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> **out_close_button</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-make-tab-label-with-pixbuf"></a><h3>browser_make_tab_label_with_pixbuf ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_make_tab_label_with_pixbuf (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> *pixbuf</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> with_close</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> **out_close_button</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-make-small-button"></a><h3>browser_make_small_button ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_make_small_button (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_toggle</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> with_arrow</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *stock_id</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tooltip</code></em>);</pre>
+<p>Creates a small button</p>
+<div class="refsect3">
+<a name="browser-make-small-button.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-make-tree-view"></a><h3>browser_make_tree_view ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_make_tree_view (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> *model</code></em>);</pre>
+<p>Creates a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct"><span class="type">GtkTreeView</span></a> which, when right clicked, selects the row underneath the mouse
+cursor.</p>
+<div class="refsect3">
+<a name="browser-make-tree-view.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-make-tree-view.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-find-parent-widget"></a><h3>browser_find_parent_widget ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_find_parent_widget (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> *current</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> requested_type</code></em>);</pre>
+<p>Finds the 1st parent widget of <em class="parameter"><code>current</code></em>
+ which is of the <em class="parameter"><code>requested_type</code></em>
+ type.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-get-pixbuf-icon"></a><h3>browser_get_pixbuf_icon ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="returnvalue">GdkPixbuf</span></a> *
+browser_get_pixbuf_icon (<em class="parameter"><code><a class="link" href="gda-browser-Support-functions.html#BrowserIconType" title="enum BrowserIconType"><span class="type">BrowserIconType</span></a> type</code></em>);</pre>
+<p>Get a pointer to an internal <a href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a> for the requested <em class="parameter"><code>type</code></em>
+. Don't unref it!</p>
+<div class="refsect3">
+<a name="browser-get-pixbuf-icon.returns"></a><h4>Returns</h4>
+<p> an already existing <a href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html#GdkPixbuf-struct"><span class="type">GdkPixbuf</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the icon was not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-get-connections-list"></a><h3>browser_get_connections_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaDataModel</span> *
+browser_get_connections_list (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a unique instance of tree model listing all the connections, and returns
+a pointer to it. The object will always exist after it has been created, so no need
+to reference it.</p>
+<div class="refsect3">
+<a name="browser-get-connections-list.returns"></a><h4>Returns</h4>
+<p> a pointer to the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a>, the caller must not assume it has a reference to it.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-Support-functions.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="BrowserIconType"></a><h3>enum BrowserIconType</h3>
+<div class="refsect3">
+<a name="BrowserIconType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-BOOKMARK:CAPS"></a>BROWSER_ICON_BOOKMARK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-SCHEMA:CAPS"></a>BROWSER_ICON_SCHEMA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-TABLE:CAPS"></a>BROWSER_ICON_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-COLUMN:CAPS"></a>BROWSER_ICON_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-COLUMN-PK:CAPS"></a>BROWSER_ICON_COLUMN_PK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-COLUMN-FK:CAPS"></a>BROWSER_ICON_COLUMN_FK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-COLUMN-FK-NN:CAPS"></a>BROWSER_ICON_COLUMN_FK_NN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-COLUMN-NN:CAPS"></a>BROWSER_ICON_COLUMN_NN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-REFERENCE:CAPS"></a>BROWSER_ICON_REFERENCE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-DIAGRAM:CAPS"></a>BROWSER_ICON_DIAGRAM</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-QUERY:CAPS"></a>BROWSER_ICON_QUERY</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-ACTION:CAPS"></a>BROWSER_ICON_ACTION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-MENU-INDICATOR:CAPS"></a>BROWSER_ICON_MENU_INDICATOR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-ENTRY:CAPS"></a>BROWSER_ICON_LDAP_ENTRY</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-GROUP:CAPS"></a>BROWSER_ICON_LDAP_GROUP</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-ORGANIZATION:CAPS"></a>BROWSER_ICON_LDAP_ORGANIZATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-PERSON:CAPS"></a>BROWSER_ICON_LDAP_PERSON</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-CLASS-STRUCTURAL:CAPS"></a>BROWSER_ICON_LDAP_CLASS_STRUCTURAL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-CLASS-ABSTRACT:CAPS"></a>BROWSER_ICON_LDAP_CLASS_ABSTRACT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-CLASS-AUXILIARY:CAPS"></a>BROWSER_ICON_LDAP_CLASS_AUXILIARY</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LDAP-CLASS-UNKNOWN:CAPS"></a>BROWSER_ICON_LDAP_CLASS_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="BROWSER-ICON-LAST:CAPS"></a>BROWSER_ICON_LAST</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

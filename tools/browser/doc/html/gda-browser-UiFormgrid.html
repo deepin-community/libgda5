@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UiFormgrid: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="extrawidgets.html" title="Extra widgets">
+<link rel="prev" href="extrawidgets.html" title="Extra widgets">
+<link rel="next" href="gda-browser-gdaui-bar.html" title="GdauiBar">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gda-browser-UiFormgrid.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#gda-browser-UiFormgrid.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#gda-browser-UiFormgrid.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#gda-browser-UiFormgrid.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#gda-browser-UiFormgrid.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="extrawidgets.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="extrawidgets.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gda-browser-gdaui-bar.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gda-browser-UiFormgrid"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gda-browser-UiFormgrid.top_of_page"></a>UiFormgrid</span></h2>
+<p>UiFormgrid — Widget embedding both a form and a grid to display a <span class="type">GdaDataModel</span>'s contents</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-new" title="ui_formgrid_new ()">ui_formgrid_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-handle-user-prefs" title="ui_formgrid_handle_user_prefs ()">ui_formgrid_handle_user_prefs</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-get-selection" title="ui_formgrid_get_selection ()">ui_formgrid_get_selection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaDataModelIter</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-get-form-data-set" title="ui_formgrid_get_form_data_set ()">ui_formgrid_get_form_data_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdaDataModelIter</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-get-grid-data-set" title="ui_formgrid_get_grid_data_set ()">ui_formgrid_get_grid_data_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-set-sample-size" title="ui_formgrid_set_sample_size ()">ui_formgrid_set_sample_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GdauiRawGrid</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-get-grid-widget" title="ui_formgrid_get_grid_widget ()">ui_formgrid_get_grid_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-UiFormgrid.html#ui-formgrid-set-connection" title="ui_formgrid_set_connection ()">ui_formgrid_set_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid--compute-mod-statements" title="The “compute-mod-statements” property">compute-mod-statements</a></td>
+<td class="property_flags">Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GdauiRawGrid</span> *</td>
+<td class="property_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid--raw-form" title="The “raw-form” property">raw-form</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GdauiRawGrid</span> *</td>
+<td class="property_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid--raw-grid" title="The “raw-grid” property">raw-grid</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid--scroll-form" title="The “scroll-form” property">scroll-form</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GdauiDataProxyInfo</span> *</td>
+<td class="property_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid--widget-info" title="The “widget-info” property">widget-info</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid-data-set-changed" title="The “data-set-changed” signal">data-set-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<a name="UiFormGrid"></a><div class="refsect1">
+<a name="gda-browser-UiFormgrid.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid-struct" title="struct UiFormGrid">UiFormGrid</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+            <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+                <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkBox.html#GtkBox-struct">GtkBox</a>
+                    <span class="lineart">╰──</span> UiFormGrid
+</pre>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+UiFormGrid implements
+ AtkImplementorIface,  <a href="/usr/share/gtk-doc/html/gtk3/GtkBuildable.html#GtkBuildable-struct">GtkBuildable</a> and  <a href="/usr/share/gtk-doc/html/gtk3/gtk3-Orientable.html#GtkOrientable-struct">GtkOrientable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="ui-formgrid-new"></a><h3>ui_formgrid_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+ui_formgrid_new (<em class="parameter"><code><span class="type">GdaDataModel</span> *model</code></em>,
+                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> scroll_form</code></em>,
+                 <em class="parameter"><code><span class="type">GdauiDataProxyInfoFlag</span> flags</code></em>);</pre>
+<p>Creates a new <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget suitable to display the data in <em class="parameter"><code>model</code></em>
+</p>
+<div class="refsect3">
+<a name="ui-formgrid-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaDataModel</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scroll_form</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to wrap the embedded form in a scrolled window</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>the <span class="type">GdauiDataProxyInfoFlag</span>, specifying what to display in the new widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="ui-formgrid-new.returns"></a><h4>Returns</h4>
+<p> the new widget</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-handle-user-prefs"></a><h3>ui_formgrid_handle_user_prefs ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+ui_formgrid_handle_user_prefs (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>,
+                               <em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>,
+                               <em class="parameter"><code><span class="type">GdaStatement</span> *stmt</code></em>);</pre>
+<p>Takes into account the UI preferences of the user</p>
+<div class="refsect3">
+<a name="ui-formgrid-handle-user-prefs.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>formgrid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to let <em class="parameter"><code>formgrid</code></em>
+determine it itself. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>the <span class="type">GdaStatement</span> which has been executed to produce the <span class="type">GdaDataModel</span> displayed in <em class="parameter"><code>formgrid</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-get-selection"></a><h3>ui_formgrid_get_selection ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *
+ui_formgrid_get_selection (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>);</pre>
+<p>Returns the list of the currently selected rows in a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget. 
+The returned value is a list of integers, which represent each of the selected rows.</p>
+<p>If new rows have been inserted, then those new rows will have a row number equal to -1.
+This function is a wrapper around the <code class="function">gdaui_raw_grid_get_selection()</code> function.</p>
+<div class="refsect3">
+<a name="ui-formgrid-get-selection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>formgrid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="ui-formgrid-get-selection.returns"></a><h4>Returns</h4>
+<p> a new array, should be freed (by calling <a href="/usr/share/gtk-doc/html/glib/glib-Arrays.html#g-array-free"><code class="function">g_array_free()</code></a> and passing <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> as last argument) when no longer needed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-get-form-data-set"></a><h3>ui_formgrid_get_form_data_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaDataModelIter</span> *
+ui_formgrid_get_form_data_set (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-get-grid-data-set"></a><h3>ui_formgrid_get_grid_data_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdaDataModelIter</span> *
+ui_formgrid_get_grid_data_set (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-set-sample-size"></a><h3>ui_formgrid_set_sample_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+ui_formgrid_set_sample_size (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> sample_size</code></em>);</pre>
+<p>Set the size of the sample displayed in <em class="parameter"><code>formgrid</code></em>
+, see <code class="function">gdaui_raw_grid_set_sample_size()</code></p>
+<div class="refsect3">
+<a name="ui-formgrid-set-sample-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>formgrid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sample_size</p></td>
+<td class="parameter_description"><p>the sample size</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-get-grid-widget"></a><h3>ui_formgrid_get_grid_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdauiRawGrid</span> *
+ui_formgrid_get_grid_widget (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>);</pre>
+<div class="refsect3">
+<a name="ui-formgrid-get-grid-widget.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>formgrid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="ui-formgrid-get-grid-widget.returns"></a><h4>Returns</h4>
+<p> the <span class="type">GdauiRawGrid</span> embedded in <em class="parameter"><code>formgrid</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ui-formgrid-set-connection"></a><h3>ui_formgrid_set_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+ui_formgrid_set_connection (<em class="parameter"><code><a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *formgrid</code></em>,
+                            <em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Tells <em class="parameter"><code>formgrid</code></em>
+ to use <em class="parameter"><code>bcnc</code></em>
+ as connection when actions have to be executed</p>
+<div class="refsect3">
+<a name="ui-formgrid-set-connection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>formgrid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> widget</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UiFormGrid-struct"></a><h3>struct UiFormGrid</h3>
+<pre class="programlisting">struct UiFormGrid;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="UiFormGrid--compute-mod-statements"></a><h3>The <code class="literal">“compute-mod-statements”</code> property</h3>
+<pre class="programlisting">  “compute-mod-statements”   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: UiFormGrid</p>
+<p>Flags: Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UiFormGrid--raw-form"></a><h3>The <code class="literal">“raw-form”</code> property</h3>
+<pre class="programlisting">  “raw-form”                 <span class="type">GdauiRawGrid</span> *</pre>
+<p>Owner: UiFormGrid</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UiFormGrid--raw-grid"></a><h3>The <code class="literal">“raw-grid”</code> property</h3>
+<pre class="programlisting">  “raw-grid”                 <span class="type">GdauiRawGrid</span> *</pre>
+<p>Owner: UiFormGrid</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UiFormGrid--scroll-form"></a><h3>The <code class="literal">“scroll-form”</code> property</h3>
+<pre class="programlisting">  “scroll-form”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: UiFormGrid</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UiFormGrid--widget-info"></a><h3>The <code class="literal">“widget-info”</code> property</h3>
+<pre class="programlisting">  “widget-info”              <span class="type">GdauiDataProxyInfo</span> *</pre>
+<p>Owner: UiFormGrid</p>
+<p>Flags: Read</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-UiFormgrid.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="UiFormGrid-data-set-changed"></a><h3>The <code class="literal">“data-set-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="gda-browser-UiFormgrid.html#UiFormGrid"><span class="type">UiFormGrid</span></a> *uiformgrid,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

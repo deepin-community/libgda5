@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="transactions" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Transacciones</title>
+  <p>Las transacciones se pueden iniciar, efectuar o revertir basándose en una conexión:</p>
+  <list>
+    <item><p>use el botón <media type="image" mime="image/png" src="figures/trans-begin.png"/> de la barra de herramientas para iniciar una transacción</p></item>
+    <item><p>use el botón <media type="image" mime="image/png" src="figures/trans-commit.png"/> de la barra de herramientas para efectuar la transacción actual (aplicar todos los cambios)</p></item>
+    <item><p>use el botón <media type="image" mime="image/png" src="figures/trans-rollback.png"/> de la barra de herramientas para abortar la transacción actual (olvidar todos los cambios)</p></item>
+  </list>
+  <note>
+    <p>Una transacción se puede iniciar automáticamente cuando se ejecuta una sentencia SELECT que implica objetos binarios (BLOB), y se puede bloquear la transacción mientras el conjunto de datos resultante se mantiene en la memoria (para deshacerse de un conjunto de datos en una <link xref="query-execution-perspective">perspectiva de ejecución de la consulta</link>, limpie el elemento del histórico relativo al conjunto de datos).</p>
+  </note>
+</page>

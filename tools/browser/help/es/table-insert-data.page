@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="table-insert-data" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Insertar datos en una tabla</title>
+  <p>Desde la <link xref="schema-browser-perspective">perspectiva del visor de esquemas</link>, cuando las propiedades de una tabla se muestran en una pestaña, use el menú <guiseq><gui>Tabla</gui><gui>Insertar datos</gui></guiseq> para hacer que aparezca el menú contextual que contiene una entrada de datos por cada columna de la tabla en la que insertar los datos.</p>
+  <p>Aparecerá una ventana emergente similar a esta:</p>
+  <figure>
+    <title>Ventana emergente para insertar datos en una tabla</title>
+    <desc>Una ventana emergente para insertar datos en una tabla</desc>
+    <media type="image" mime="image/png" src="figures/table-insert-data.png"/>
+  </figure>
+  <p>Los puntos importantes están aquí:</p>
+  <list>
+    <item><p>Hay una entrada de datos por cada columna en la tabla, con la excepción (no mostrada en esta figura) de varios campos de clave externa para los que se muestra un único widget desplegable;</p></item>
+    <item><p>Cada entrada de datos tiene un pequeño botón a la derecha que da información sobre la entrada de datos correspondientes, y le permite reiniciar el valor de la entrada de datos al valor que tenía antes de hacer la modificaciones, establecerlo a NULL o establecerlo al valor predeterminado. El color del botón tiene el siguiente significado:</p>
+	<list>
+	  <item><p>Rojo: significa que el valor actual de la entrada de datos no es válido</p></item>
+	  <item><p>Azul: significa que el valor actual de la entrada de datos no se usa y que se usará el valor predeterminado de la columna en su lugar (útil, por ejemplo, para columnas auto-incrementadas)</p></item>
+	  <item><p>Verde: significa que el valor actual de la entrada de datos es NULL</p></item>
+	  <item><p>Mismo color que el resto del IGU: significa que no se aplica ninguna de las situaciones anteriores</p></item>
+	</list>
+    </item>
+    <item><p>Las columnas que son claves ajenas para otras tablas se presentan como cajas combinadas desplegables donde sólo puede seleccionar entre los valores de la tabla referenciada (pista: para tener esos valores actualizados debería cerrar el diálogo emergente y volver a abrirlo);</p></item>
+  </list>
+</page>

@@ -1,0 +1,3200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A single Value: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="data_models.html" title="Data handling">
+<link rel="next" href="data-select.html" title="Advanced GdaDataSelect usage">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Gda-Value.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Gda-Value.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="data_models.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="data-select.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Gda-Value"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Gda-Value.top_of_page"></a>A single Value</span></h2>
+<p>A single Value — Assorted functions for dealing with <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> values</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new" title="gda_value_new ()">gda_value_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-NULL:CAPS" title="GDA_VALUE_HOLDS_NULL()">GDA_VALUE_HOLDS_NULL</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-DEFAULT:CAPS" title="GDA_VALUE_HOLDS_DEFAULT()">GDA_VALUE_HOLDS_DEFAULT</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-BINARY:CAPS" title="GDA_VALUE_HOLDS_BINARY()">GDA_VALUE_HOLDS_BINARY</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-BLOB:CAPS" title="GDA_VALUE_HOLDS_BLOB()">GDA_VALUE_HOLDS_BLOB</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-GEOMETRIC-POINT:CAPS" title="GDA_VALUE_HOLDS_GEOMETRIC_POINT()">GDA_VALUE_HOLDS_GEOMETRIC_POINT</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-NUMERIC:CAPS" title="GDA_VALUE_HOLDS_NUMERIC()">GDA_VALUE_HOLDS_NUMERIC</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-SHORT:CAPS" title="GDA_VALUE_HOLDS_SHORT()">GDA_VALUE_HOLDS_SHORT</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-USHORT:CAPS" title="GDA_VALUE_HOLDS_USHORT()">GDA_VALUE_HOLDS_USHORT</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-TIME:CAPS" title="GDA_VALUE_HOLDS_TIME()">GDA_VALUE_HOLDS_TIME</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-VALUE-HOLDS-TIMESTAMP:CAPS" title="GDA_VALUE_HOLDS_TIMESTAMP()">GDA_VALUE_HOLDS_TIMESTAMP</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-null" title="gda_value_new_null ()">gda_value_new_null</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-null" title="gda_value_set_null ()">gda_value_set_null</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-default" title="gda_value_new_default ()">gda_value_new_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-copy" title="gda_value_copy ()">gda_value_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-free" title="gda_value_free ()">gda_value_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-from-string" title="gda_value_new_from_string ()">gda_value_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-from-string" title="gda_value_set_from_string ()">gda_value_set_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-from-value" title="gda_value_set_from_value ()">gda_value_set_from_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-stringify" title="gda_value_stringify ()">gda_value_stringify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-differ" title="gda_value_differ ()">gda_value_differ</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-compare" title="gda_value_compare ()">gda_value_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-from-xml" title="gda_value_new_from_xml ()">gda_value_new_from_xml</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNodePtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-to-xml" title="gda_value_to_xml ()">gda_value_to_xml</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-reset-with-type" title="gda_value_reset_with_type ()">gda_value_reset_with_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-is-null" title="gda_value_is_null ()">gda_value_is_null</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-is-number" title="gda_value_is_number ()">gda_value_is_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-isa" title="gda_value_isa()">gda_value_isa</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-binary" title="gda_value_new_binary ()">gda_value_new_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="returnvalue">GdaBinary</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-binary" title="gda_value_get_binary ()">gda_value_get_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-binary" title="gda_value_set_binary ()">gda_value_set_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-take-binary" title="gda_value_take_binary ()">gda_value_take_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-binary-copy" title="gda_binary_copy ()">gda_binary_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-binary-free" title="gda_binary_free ()">gda_binary_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-binary-to-string" title="gda_binary_to_string ()">gda_binary_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="returnvalue">GdaBinary</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-string-to-binary" title="gda_string_to_binary ()">gda_string_to_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-blob" title="gda_value_new_blob ()">gda_value_new_blob</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-blob-from-file" title="gda_value_new_blob_from_file ()">gda_value_new_blob_from_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-blob-copy" title="gda_blob_copy ()">gda_blob_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-blob-free" title="gda_blob_free ()">gda_blob_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="returnvalue">GdaBlob</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-blob" title="gda_value_get_blob ()">gda_value_get_blob</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-blob" title="gda_value_set_blob ()">gda_value_set_blob</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-take-blob" title="gda_value_take_blob ()">gda_value_take_blob</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-blob-set-op" title="gda_blob_set_op ()">gda_blob_set_op</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-blob-to-string" title="gda_blob_to_string ()">gda_blob_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-geometricpoint-copy" title="gda_geometricpoint_copy ()">gda_geometricpoint_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-geometricpoint-free" title="gda_geometricpoint_free ()">gda_geometricpoint_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaGeometricPoint"><span class="returnvalue">GdaGeometricPoint</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-geometric-point" title="gda_value_get_geometric_point ()">gda_value_get_geometric_point</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-geometric-point" title="gda_value_set_geometric_point ()">gda_value_set_geometric_point</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-new" title="gda_numeric_new ()">gda_numeric_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-copy" title="gda_numeric_copy ()">gda_numeric_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-free" title="gda_numeric_free ()">gda_numeric_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-get-string" title="gda_numeric_get_string ()">gda_numeric_get_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-get-double" title="gda_numeric_get_double ()">gda_numeric_get_double</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-get-precision" title="gda_numeric_get_precision ()">gda_numeric_get_precision</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-get-width" title="gda_numeric_get_width ()">gda_numeric_get_width</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-set-double" title="gda_numeric_set_double ()">gda_numeric_set_double</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-set-from-string" title="gda_numeric_set_from_string ()">gda_numeric_set_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-set-precision" title="gda_numeric_set_precision ()">gda_numeric_set_precision</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-numeric-set-width" title="gda_numeric_set_width ()">gda_numeric_set_width</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-numeric" title="gda_value_get_numeric ()">gda_value_get_numeric</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-numeric" title="gda_value_set_numeric ()">gda_value_set_numeric</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-time-copy" title="gda_time_copy ()">gda_time_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-time-free" title="gda_time_free ()">gda_time_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-time-valid" title="gda_time_valid ()">gda_time_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-time-change-timezone" title="gda_time_change_timezone ()">gda_time_change_timezone</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="returnvalue">GdaTime</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-time" title="gda_value_get_time ()">gda_value_get_time</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-time" title="gda_value_set_time ()">gda_value_set_time</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-timestamp-copy" title="gda_timestamp_copy ()">gda_timestamp_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-timestamp-free" title="gda_timestamp_free ()">gda_timestamp_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-timestamp-valid" title="gda_timestamp_valid ()">gda_timestamp_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-timestamp-change-timezone" title="gda_timestamp_change_timezone ()">gda_timestamp_change_timezone</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="returnvalue">GdaTimestamp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-timestamp" title="gda_value_get_timestamp ()">gda_value_get_timestamp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-timestamp" title="gda_value_set_timestamp ()">gda_value_set_timestamp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-new-timestamp-from-timet" title="gda_value_new_timestamp_from_timet ()">gda_value_new_timestamp_from_timet</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gshort"><span class="returnvalue">gshort</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-short" title="gda_value_get_short ()">gda_value_get_short</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-short" title="gda_value_set_short ()">gda_value_set_short</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="returnvalue">gushort</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-get-ushort" title="gda_value_get_ushort ()">gda_value_get_ushort</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-ushort" title="gda_value_set_ushort ()">gda_value_set_ushort</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GdaBinary"></a><a name="GdaGeometricPoint"></a><a name="GdaNumeric"></a><a name="GdaTime"></a><a name="GdaTimestamp"></a><div class="refsect1">
+<a name="libgda-5.0-Gda-Value.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaValueAttribute" title="enum GdaValueAttribute">GdaValueAttribute</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL">GDA_TYPE_NULL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-DEFAULT:CAPS" title="GDA_TYPE_DEFAULT">GDA_TYPE_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-BINARY:CAPS" title="GDA_TYPE_BINARY">GDA_TYPE_BINARY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-BLOB:CAPS" title="GDA_TYPE_BLOB">GDA_TYPE_BLOB</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-GEOMETRIC-POINT:CAPS" title="GDA_TYPE_GEOMETRIC_POINT">GDA_TYPE_GEOMETRIC_POINT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NUMERIC:CAPS" title="GDA_TYPE_NUMERIC">GDA_TYPE_NUMERIC</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-SHORT:CAPS" title="GDA_TYPE_SHORT">GDA_TYPE_SHORT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-USHORT:CAPS" title="GDA_TYPE_USHORT">GDA_TYPE_USHORT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-TIME:CAPS" title="GDA_TYPE_TIME">GDA_TYPE_TIME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-TIMESTAMP:CAPS" title="GDA_TYPE_TIMESTAMP">GDA_TYPE_TIMESTAMP</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary-struct" title="GdaBinary">GdaBinary</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob">GdaBlob</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaGeometricPoint-struct" title="GdaGeometricPoint">GdaGeometricPoint</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric-struct" title="struct GdaNumeric">GdaNumeric</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaTime-struct" title="GdaTime">GdaTime</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp-struct" title="GdaTimestamp">GdaTimestamp</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">├──</span> GdaBinary
+    <span class="lineart">├──</span> GdaGeometricPoint
+    <span class="lineart">├──</span> GdaNumeric
+    <span class="lineart">├──</span> GdaTime
+    <span class="lineart">╰──</span> GdaTimestamp
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-blob-op.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.description"></a><h2>Description</h2>
+<p><span class="application">Libgda</span> manages each individual value within an opaque <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> structure. Any GValue type can be used,
+and <span class="application">Libgda</span> adds a few more data types usually found in DBMS such as NUMERIC, TIME, TIMESTAMP, GEOMETRIC POINT, BINARY and BLOB.</p>
+<p>Libgda makes a distinction between binary and blob types</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>binary data can be inserted into an SQL statement using a
+(DBMS dependent) syntax, such as "X'ABCD'" syntax for SQLite or the binary strings syntax for PostgreSQL. Binary data
+is manipulated using a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> structure (which is basically a bytes buffer and a length attribute).
+  </p></li>
+<li class="listitem"><p>blob data are a special feature that some DBMS have which requires some non SQL code to manipulate them.
+Usually only a reference is stored in each table containing a blob, and the actual blob data resides somewhere on the disk
+(while still being managed transparently by the database). For example PotsgreSQL stores blobs as files on the disk and
+references them using object identifiers (Oid). Blob data
+is manipulated using a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> structure which encapsulates a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> structure and adds a reference to a
+<a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> object used to read and write data from and to the blob.
+  </p></li>
+</ul></div>
+<p>Please note that is distinction between binary data and blobs is Libgda only and does not reflect the DBMS's documentations; 
+for instance MySQL has several BLOB types but Libgda interprets them as binary types.</p>
+<p>Each provider or connection can be queried about its blob support using the <a class="link" href="GdaServerProvider.html#gda-server-provider-supports-feature" title="gda_server_provider_supports_feature ()"><code class="function">gda_server_provider_supports_feature()</code></a> or
+<a class="link" href="GdaConnection.html#gda-connection-supports-feature" title="gda_connection_supports_feature ()"><code class="function">gda_connection_supports_feature()</code></a> methods.</p>
+<p>There are two special value types which are:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the GDA_TYPE_NULL value which never changes and acutally represents an SQL NULL value</p></li>
+<li class="listitem"><p>the GDA_TYPE_DEFAULT value which represents a default value which <span class="application">Libgda</span> does not interpret (such as when a table column's default value is a function call)</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-value-new"></a><h3>gda_value_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <em class="parameter"><code>type</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the new value type.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> with the specified <em class="parameter"><code>type</code></em>
+. You need to set the value in the returned GValue.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-NULL:CAPS"></a><h3>GDA_VALUE_HOLDS_NULL()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_NULL(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-DEFAULT:CAPS"></a><h3>GDA_VALUE_HOLDS_DEFAULT()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_DEFAULT(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-BINARY:CAPS"></a><h3>GDA_VALUE_HOLDS_BINARY()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_BINARY(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-BLOB:CAPS"></a><h3>GDA_VALUE_HOLDS_BLOB()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_BLOB(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-GEOMETRIC-POINT:CAPS"></a><h3>GDA_VALUE_HOLDS_GEOMETRIC_POINT()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_GEOMETRIC_POINT(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-NUMERIC:CAPS"></a><h3>GDA_VALUE_HOLDS_NUMERIC()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_NUMERIC(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-SHORT:CAPS"></a><h3>GDA_VALUE_HOLDS_SHORT()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_SHORT(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-USHORT:CAPS"></a><h3>GDA_VALUE_HOLDS_USHORT()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_USHORT(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-TIME:CAPS"></a><h3>GDA_VALUE_HOLDS_TIME()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_TIME(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-VALUE-HOLDS-TIMESTAMP:CAPS"></a><h3>GDA_VALUE_HOLDS_TIMESTAMP()</h3>
+<pre class="programlisting">#define             GDA_VALUE_HOLDS_TIMESTAMP(value)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-null"></a><h3>gda_value_new_null ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_null (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> initiated to a <span class="type">GdaNull</span> structure with a <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>, to
+represent a NULL in the database.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-null.returns"></a><h4>Returns</h4>
+<p>a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of the type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-null"></a><h3>gda_value_set_null ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_null (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Sets the type of <em class="parameter"><code>value</code></em>
+ to <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-null.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store a value of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-default"></a><h3>gda_value_new_default ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_default (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *default_val</code></em>);</pre>
+<p>Creates a new default value.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>default_val</p></td>
+<td class="parameter_description"><p>the default value as a string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-default.returns"></a><h4>Returns</h4>
+<p>a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of the type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-DEFAULT:CAPS" title="GDA_TYPE_DEFAULT"><span class="type">GDA_TYPE_DEFAULT</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-copy"></a><h3>gda_value_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_copy (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Creates a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> from an existing one.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to get a copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-copy.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> with a copy of the data in <em class="parameter"><code>value</code></em>
+.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-free"></a><h3>gda_value_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Deallocates all memory associated to a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the resource to free (or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-from-string"></a><h3>gda_value_new_from_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_from_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *as_string</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <em class="parameter"><code>type</code></em>
+ from its string representation.</p>
+<p>For more information
+about the string format, see the <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-from-string" title="gda_value_set_from_string ()"><code class="function">gda_value_set_from_string()</code></a> function.
+This function is typically used when reading configuration files or other non-user input that should be locale
+independent.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>as_string</p></td>
+<td class="parameter_description"><p>stringified representation of the value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the new value type.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-from-string.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the string representation cannot be converted to the specified <em class="parameter"><code>type</code></em>
+.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-from-string"></a><h3>gda_value_set_from_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_value_set_from_string (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *as_string</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Stores the value data from its string representation as <em class="parameter"><code>type</code></em>
+.</p>
+<p>The accepted formats are:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>G_TYPE_BOOLEAN: a caseless comparison is made with "true" or "false"</p></li>
+<li class="listitem"><p>numerical types: C locale format (dot as a fraction separator)</p></li>
+<li class="listitem"><p>G_TYPE_DATE: see <a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-date" title="gda_parse_iso8601_date ()"><code class="function">gda_parse_iso8601_date()</code></a></p></li>
+<li class="listitem"><p>GDA_TYPE_TIME: see <a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-time" title="gda_parse_iso8601_time ()"><code class="function">gda_parse_iso8601_time()</code></a></p></li>
+<li class="listitem"><p>GDA_TYPE_TIMESTAMP: see <a class="link" href="libgda-5.0-Utility-functions.html#gda-parse-iso8601-timestamp" title="gda_parse_iso8601_timestamp ()"><code class="function">gda_parse_iso8601_timestamp()</code></a></p></li>
+</ul></div>
+<p>This function is typically used when reading configuration files or other non-user input that should be locale
+independent.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>as_string</p></td>
+<td class="parameter_description"><p>the stringified representation of the value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of the value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-set-from-string.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the value has been converted to <em class="parameter"><code>type</code></em>
+from
+its string representation; it not means that the value is converted
+successfully, just that the transformation is available. <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-from-value"></a><h3>gda_value_set_from_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_value_set_from_value (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *from</code></em>);</pre>
+<p>Sets the value of a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> from another <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>. This
+is different from <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-copy" title="gda_value_copy ()"><span class="type">gda_value_copy</span></a>, which creates a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.
+<a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-from-value" title="gda_value_set_from_value ()"><span class="type">gda_value_set_from_value</span></a>, on the other hand, copies the contents
+of <em class="parameter"><code>copy</code></em>
+ into <em class="parameter"><code>value</code></em>
+, which must already be allocated.</p>
+<p>If values are incompatible (see <em class="parameter"><code>g_value_type_compatible</code></em>
+) then <em class="parameter"><code>value</code></em>
+ is set to a
+<a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>, and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-from-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from</p></td>
+<td class="parameter_description"><p>the value to copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-set-from-value.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-stringify"></a><h3>gda_value_stringify ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_value_stringify (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Converts a GValue to its string representation which is a human readable value. Note that the
+returned string does not take into account the current locale of the user (on the contrary to the
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> objects). Using this function should be limited to debugging and values serialization
+purposes.</p>
+<p>Output is in the "C" locale for numbers, and dates are converted in a YYYY-MM-DD format.</p>
+<div class="refsect3">
+<a name="gda-value-stringify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-stringify.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the conversion cannot be done. Free the value with a <a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> when you've finished using it. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-differ"></a><h3>gda_value_differ ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_value_differ (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value1</code></em>,
+                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value2</code></em>);</pre>
+<p>Tells if two values are equal or not, by comparing memory representations. Unlike <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-compare" title="gda_value_compare ()"><code class="function">gda_value_compare()</code></a>,
+the returned value is boolean, and gives no idea about ordering.</p>
+<p>The two values must be of the same type, with the exception that a value of any type can be
+compared to a GDA_TYPE_NULL value, specifically:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> and <em class="parameter"><code>value2</code></em> are both GDA_TYPE_NULL values then the returned value is 0</p></li>
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> is a GDA_TYPE_NULL value and <em class="parameter"><code>value2</code></em> is of another type then the returned value is 1</p></li>
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> is of another type and <em class="parameter"><code>value2</code></em> is a GDA_TYPE_NULL value then the returned value is 1</p></li>
+<li class="listitem"><p>in all other cases, <em class="parameter"><code>value1</code></em> and <em class="parameter"><code>value2</code></em> must be of the same type and their values are compared</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-value-differ.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value1</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to compare.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value2</p></td>
+<td class="parameter_description"><p>the other <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to be compared to <em class="parameter"><code>value1</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-differ.returns"></a><h4>Returns</h4>
+<p> a non 0 value if <em class="parameter"><code>value1</code></em>
+and <em class="parameter"><code>value2</code></em>
+differ, and 0 if they are equal</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-compare"></a><h3>gda_value_compare ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_value_compare (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value1</code></em>,
+                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value2</code></em>);</pre>
+<p>Compares two values of the same type, with the exception that a value of any type can be
+compared to a GDA_TYPE_NULL value, specifically:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> and <em class="parameter"><code>value2</code></em> are both GDA_TYPE_NULL values then the returned value is 0</p></li>
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> is a GDA_TYPE_NULL value and <em class="parameter"><code>value2</code></em> is of another type then the returned value is -1</p></li>
+<li class="listitem"><p>if <em class="parameter"><code>value1</code></em> is of another type and <em class="parameter"><code>value2</code></em> is a GDA_TYPE_NULL value then the returned value is 1</p></li>
+<li class="listitem"><p>in all other cases, <em class="parameter"><code>value1</code></em> and <em class="parameter"><code>value2</code></em> must be of the same type and their values are compared</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-value-compare.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value1</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to compare (not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value2</p></td>
+<td class="parameter_description"><p>the other <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to be compared to <em class="parameter"><code>value1</code></em>
+(not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-compare.returns"></a><h4>Returns</h4>
+<p> if both values have the same type, returns 0 if both contain
+the same value, an integer less than 0 if <em class="parameter"><code>value1</code></em>
+is less than <em class="parameter"><code>value2</code></em>
+or
+an integer greater than 0 if <em class="parameter"><code>value1</code></em>
+is greater than <em class="parameter"><code>value2</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-from-xml"></a><h3>gda_value_new_from_xml ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_from_xml (<em class="parameter"><code>const <span class="type">xmlNodePtr</span> node</code></em>);</pre>
+<p>Creates a GValue from an XML representation of it. That XML
+node corresponds to the following string representation:
+&lt;value type="gdatype"&gt;value&lt;/value&gt;</p>
+<p>For more information
+about the string format, see the <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-from-string" title="gda_value_set_from_string ()"><code class="function">gda_value_set_from_string()</code></a> function.
+This function is typically used when reading configuration files or other non-user input that should be locale
+independent.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-from-xml.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>an XML node representing the value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-from-xml.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-to-xml"></a><h3>gda_value_to_xml ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNodePtr</span>
+gda_value_to_xml (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Serializes the given <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to an XML node string.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-to-xml.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-to-xml.returns"></a><h4>Returns</h4>
+<p>the XML node. Once not needed anymore, you should free it. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-reset-with-type"></a><h3>gda_value_reset_with_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_reset_with_type (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Resets the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> and set a new type to <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-reset-with-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to be reseted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> to set to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-is-null"></a><h3>gda_value_is_null ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_value_is_null (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Tests if a given <em class="parameter"><code>value</code></em>
+ is of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-is-null.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>value to test.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-is-null.returns"></a><h4>Returns</h4>
+<p> a boolean that says whether or not <em class="parameter"><code>value</code></em>
+is of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-is-number"></a><h3>gda_value_is_number ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_value_is_number (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Gets whether the value stored in the given <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> is of numeric type or not.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-is-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-is-number.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a number, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-isa"></a><h3>gda_value_isa()</h3>
+<pre class="programlisting">#define             gda_value_isa(value, type)</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-binary"></a><h3>gda_value_new_binary ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_binary (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *val</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> size</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-BINARY:CAPS" title="GDA_TYPE_BINARY"><span class="type">GDA_TYPE_BINARY</span></a> with value <em class="parameter"><code>val</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-binary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to set for the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the size of the memory pool pointer to by <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-binary.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-binary"></a><h3>gda_value_get_binary ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="returnvalue">GdaBinary</span></a> *
+gda_value_get_binary (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-binary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-binary.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-binary"></a><h3>gda_value_set_binary ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_binary (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                      <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> *binary</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-binary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>binary</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> structure with the data and its size to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-take-binary"></a><h3>gda_value_take_binary ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_take_binary (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                       <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> *binary</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+, but on the contrary to <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-binary" title="gda_value_set_binary ()"><code class="function">gda_value_set_binary()</code></a>, the <em class="parameter"><code>binary</code></em>
+
+argument is not copied, but used as-is and it should be considered owned by <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-take-binary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>binary</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> structure with the data and its size to be stored in <em class="parameter"><code>value</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-binary-copy"></a><h3>gda_binary_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_binary_copy (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> structure from an existing one.</p>
+<div class="refsect3">
+<a name="gda-binary-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>boxed</p></td>
+<td class="parameter_description"><p>source to get a copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-binary-copy.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> which contains a copy of information in <em class="parameter"><code>boxed</code></em>
+.</p>
+<p>Free-function: gda_binary_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-binary-free"></a><h3>gda_binary_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_binary_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<p>Deallocates all memory associated to the given <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a>.</p>
+<div class="refsect3">
+<a name="gda-binary-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>boxed</p></td>
+<td class="parameter_description"><p><a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> to free. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-binary-to-string"></a><h3>gda_binary_to_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_binary_to_string (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> *bin</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> maxlen</code></em>);</pre>
+<p>Converts all the non printable characters of bin-&gt;data into the "\xyz" representation
+where "xyz" is the octal representation of the byte, and the '\' (backslash) character
+is converted to "\". Printable characters (defined by <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-ascii-isprint"><code class="function">g_ascii_isprint()</code></a>) as well as newline
+character are not converted.</p>
+<p>Note that the backslash and newline characters are considered as printable characters and
+will not be represented by the "\xyz" representation.</p>
+<p>Use this function to get a representation as much readable by humans as possible of a binary
+chunk. Note that this function is internally called when transforming a binary value to
+a string for example when using <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#g-value-transform"><code class="function">g_value_transform()</code></a> or <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-stringify" title="gda_value_stringify ()"><code class="function">gda_value_stringify()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-binary-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bin</p></td>
+<td class="parameter_description"><p>a correctly filled <em class="parameter"><code>GdaBinary</code></em>
+structure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>maxlen</p></td>
+<td class="parameter_description"><p>a maximum len used to truncate, or <code class="literal">0</code> for no maximum length</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-binary-to-string.returns"></a><h4>Returns</h4>
+<p>a new string from <em class="parameter"><code>bin</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-string-to-binary"></a><h3>gda_string_to_binary ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="returnvalue">GdaBinary</span></a> *
+gda_string_to_binary (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Performs the reverse of <a class="link" href="libgda-5.0-Gda-Value.html#gda-binary-to-string" title="gda_binary_to_string ()"><code class="function">gda_binary_to_string()</code></a> (note that for any "\xyz" succession
+of 4 characters where "xyz" represents a valid octal value, the resulting read value will
+be modulo 256).</p>
+<p>I <em class="parameter"><code>str</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then an empty (i.e. where the <em class="parameter"><code>data</code></em>
+ part is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> is created and returned.</p>
+<div class="refsect3">
+<a name="gda-string-to-binary.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string to convert, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-string-to-binary.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> if no error were found in <em class="parameter"><code>str</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-blob"></a><h3>gda_value_new_blob ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_blob (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *val</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> size</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-BLOB:CAPS" title="GDA_TYPE_BLOB"><span class="type">GDA_TYPE_BLOB</span></a> with the data contained by <em class="parameter"><code>val</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-blob.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to set for the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the size of the memory pool pointer to by <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-blob.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-blob-from-file"></a><h3>gda_value_new_blob_from_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_blob_from_file (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-BLOB:CAPS" title="GDA_TYPE_BLOB"><span class="type">GDA_TYPE_BLOB</span></a> interfacing with the contents of the file
+named <em class="parameter"><code>filename</code></em>
+</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-blob-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>name of the file to manipulate</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-blob-from-file.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-copy"></a><h3>gda_blob_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_blob_copy (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> structure from an existing one.</p>
+<div class="refsect3">
+<a name="gda-blob-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>boxed</p></td>
+<td class="parameter_description"><p>source to get a copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-copy.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> which contains a copy of information in <em class="parameter"><code>boxed</code></em>
+.</p>
+<p>Free-function: gda_blob_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-free"></a><h3>gda_blob_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_blob_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<p>Deallocates all memory associated to the given <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a>.</p>
+<div class="refsect3">
+<a name="gda-blob-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>boxed</p></td>
+<td class="parameter_description"><p><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> to free. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-blob"></a><h3>gda_value_get_blob ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="returnvalue">GdaBlob</span></a> *
+gda_value_get_blob (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-blob.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-blob.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-blob"></a><h3>gda_value_set_blob ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_blob (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                    <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-blob.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> structure with the data and its size to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-take-blob"></a><h3>gda_value_take_blob ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_take_blob (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                     <em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+, but on the contrary to <a class="link" href="libgda-5.0-Gda-Value.html#gda-value-set-blob" title="gda_value_set_blob ()"><code class="function">gda_value_set_blob()</code></a>, the <em class="parameter"><code>blob</code></em>
+
+argument is not copied, but used as-is and it should be considered owned by <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-take-blob.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> structure with the data and its size to be stored in <em class="parameter"><code>value</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-set-op"></a><h3>gda_blob_set_op ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_blob_set_op (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>,
+                 <em class="parameter"><code><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *op</code></em>);</pre>
+<p>correctly assigns <em class="parameter"><code>op</code></em>
+ to <em class="parameter"><code>blob</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-blob-set-op.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-blob-to-string"></a><h3>gda_blob_to_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_blob_to_string (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaBlob" title="GdaBlob"><span class="type">GdaBlob</span></a> *blob</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> maxlen</code></em>);</pre>
+<p>Converts all the non printable characters of blob-&gt;data into the \xxx representation
+where xxx is the octal representation of the byte, and the '\' (backslash) character
+is converted to "\".</p>
+<div class="refsect3">
+<a name="gda-blob-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>blob</p></td>
+<td class="parameter_description"><p>a correctly filled <em class="parameter"><code>GdaBlob</code></em>
+structure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>maxlen</p></td>
+<td class="parameter_description"><p>a maximum len used to truncate, or 0 for no maximum length</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-blob-to-string.returns"></a><h4>Returns</h4>
+<p>a new string from <em class="parameter"><code>blob</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-geometricpoint-copy"></a><h3>gda_geometricpoint_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_geometricpoint_copy (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-geometricpoint-copy.returns"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-geometricpoint-free"></a><h3>gda_geometricpoint_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_geometricpoint_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-geometric-point"></a><h3>gda_value_get_geometric_point ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaGeometricPoint"><span class="returnvalue">GdaGeometricPoint</span></a> *
+gda_value_get_geometric_point (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-geometric-point.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-geometric-point.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-geometric-point"></a><h3>gda_value_set_geometric_point ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_geometric_point (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                               <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaGeometricPoint"><span class="type">GdaGeometricPoint</span></a> *val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-geometric-point.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-new"></a><h3>gda_numeric_new ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+gda_numeric_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> with defaults.</p>
+<div class="refsect3">
+<a name="gda-numeric-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-copy"></a><h3>gda_numeric_copy ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+gda_numeric_copy (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *src</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> structure from an existing one.</p>
+<div class="refsect3">
+<a name="gda-numeric-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>src</p></td>
+<td class="parameter_description"><p>source to get a copy from.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-numeric-copy.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> which contains a copy of information in <em class="parameter"><code>boxed</code></em>
+.</p>
+<p>Free-function: gda_numeric_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-free"></a><h3>gda_numeric_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_numeric_free (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>);</pre>
+<p>Deallocates all memory associated to the given <em class="parameter"><code>boxed</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-numeric-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> pointer. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-get-string"></a><h3>gda_numeric_get_string ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_numeric_get_string (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>);</pre>
+<p>Get the string representation of <em class="parameter"><code>numeric</code></em>
+, in the C locale format (dot as a fraction separator).</p>
+<div class="refsect3">
+<a name="gda-numeric-get-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-numeric-get-string.returns"></a><h4>Returns</h4>
+<p>a new string representing the stored valued in <em class="parameter"><code>numeric</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-get-double"></a><h3>gda_numeric_get_double ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+gda_numeric_get_double (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-numeric-get-double.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-numeric-get-double.returns"></a><h4>Returns</h4>
+<p> a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> representation of <em class="parameter"><code>numeric</code></em>
+</p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-get-precision"></a><h3>gda_numeric_get_precision ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_numeric_get_precision (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>);</pre>
+<p>Gets the precision of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>.</p>
+<div class="refsect3">
+<a name="gda-numeric-get-precision.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-numeric-get-precision.returns"></a><h4>Returns</h4>
+<p> an integer with the precision of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>.</p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-get-width"></a><h3>gda_numeric_get_width ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_numeric_get_width (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>);</pre>
+<p>Gets the width of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>. (Not yet implemented).</p>
+<div class="refsect3">
+<a name="gda-numeric-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-numeric-get-width.returns"></a><h4>Returns</h4>
+<p> an integer with the width of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>. (Not jet implemented).</p>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-set-double"></a><h3>gda_numeric_set_double ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_numeric_set_double (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> number</code></em>);</pre>
+<p>Sets <em class="parameter"><code>numeric</code></em>
+ using a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> represented by <em class="parameter"><code>number</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-numeric-set-double.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>number</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-set-from-string"></a><h3>gda_numeric_set_from_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_numeric_set_from_string (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Sets <em class="parameter"><code>numeric</code></em>
+ with a number represented by <em class="parameter"><code>str</code></em>
+, in the C locale format (dot as a fraction separator).</p>
+<div class="refsect3">
+<a name="gda-numeric-set-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string representing a number, in the C locale format</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-set-precision"></a><h3>gda_numeric_set_precision ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_numeric_set_precision (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> precision</code></em>);</pre>
+<p>Sets the precision of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>.</p>
+<div class="refsect3">
+<a name="gda-numeric-set-precision.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>precision</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-numeric-set-width"></a><h3>gda_numeric_set_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_numeric_set_width (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *numeric</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> width</code></em>);</pre>
+<p>Sets the width of a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a>. (Not yet implemented).</p>
+<div class="refsect3">
+<a name="gda-numeric-set-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>numeric</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>width</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.0.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-numeric"></a><h3>gda_value_get_numeric ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="returnvalue">GdaNumeric</span></a> *
+gda_value_get_numeric (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-numeric.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-numeric.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-numeric"></a><h3>gda_value_set_numeric ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_numeric (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                       <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaNumeric"><span class="type">GdaNumeric</span></a> *val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-numeric.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-time-copy"></a><h3>gda_time_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_time_copy (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-time-copy.returns"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-time-free"></a><h3>gda_time_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_time_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-time-valid"></a><h3>gda_time_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_time_valid (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> *time</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-time-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>time</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> value to check if it is valid</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-time-valid.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> is valid; <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-time-change-timezone"></a><h3>gda_time_change_timezone ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_time_change_timezone (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> *time</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> ntz</code></em>);</pre>
+<p>Changes <em class="parameter"><code>time</code></em>
+'s timezone (for example to convert from GMT to another time zone).
+If <em class="parameter"><code>time</code></em>
+'s current timezone is unset (i.e. equal to <code class="literal">GDA_TIMEZONE_INVALID</code>), then this function simply sets
+<em class="parameter"><code>time</code></em>
+'s timezone attribute; Otherwise, it adds or removes hours, minutes or seconds to reflect the time in the new timezone.</p>
+<p>Note: the resulting will always be a valid time.</p>
+<div class="refsect3">
+<a name="gda-time-change-timezone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>time</p></td>
+<td class="parameter_description"><p>a valid <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ntz</p></td>
+<td class="parameter_description"><p>a new timezone to use, in seconds added to GMT</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-time"></a><h3>gda_value_get_time ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="returnvalue">GdaTime</span></a> *
+gda_value_get_time (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-time.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-time"></a><h3>gda_value_set_time ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_time (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                    <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTime"><span class="type">GdaTime</span></a> *val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-timestamp-copy"></a><h3>gda_timestamp_copy ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_timestamp_copy (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-timestamp-copy.returns"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-timestamp-free"></a><h3>gda_timestamp_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_timestamp_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-timestamp-valid"></a><h3>gda_timestamp_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_timestamp_valid (<em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> *timestamp</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-timestamp-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> value to check if it is valid</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-timestamp-valid.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> if <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> is valid; <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-timestamp-change-timezone"></a><h3>gda_timestamp_change_timezone ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_timestamp_change_timezone (<em class="parameter"><code><a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> *ts</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> ntz</code></em>);</pre>
+<p>This function is similar to <a class="link" href="libgda-5.0-Gda-Value.html#gda-time-change-timezone" title="gda_time_change_timezone ()"><code class="function">gda_time_change_timezone()</code></a> but operates on time stamps.</p>
+<p>Note: the resulting will always be a valid time.</p>
+<div class="refsect3">
+<a name="gda-timestamp-change-timezone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ts</p></td>
+<td class="parameter_description"><p>a valid <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ntz</p></td>
+<td class="parameter_description"><p>a new timezone to use, in seconds added to GMT</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-timestamp"></a><h3>gda_value_get_timestamp ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="returnvalue">GdaTimestamp</span></a> *
+gda_value_get_timestamp (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-timestamp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-timestamp.returns"></a><h4>Returns</h4>
+<p>the value stored in <em class="parameter"><code>value</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-timestamp"></a><h3>gda_value_set_timestamp ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_timestamp (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                         <em class="parameter"><code>const <a class="link" href="libgda-5.0-Gda-Value.html#GdaTimestamp"><span class="type">GdaTimestamp</span></a> *val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-timestamp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-new-timestamp-from-timet"></a><h3>gda_value_new_timestamp_from_timet ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_value_new_timestamp_from_timet (<em class="parameter"><code><span class="type">time_t</span> val</code></em>);</pre>
+<p>Makes a new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> of type <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-TIMESTAMP:CAPS" title="GDA_TYPE_TIMESTAMP"><span class="type">GDA_TYPE_TIMESTAMP</span></a> with value <em class="parameter"><code>val</code></em>
+
+(of type time_t). The returned timestamp's value is relative to the current
+timezone (i.e. is localtime).</p>
+<p>For example, to get a time stamp representing the current date and time, use:</p>
+<code class="code">
+ts = gda_value_new_timestamp_from_timet (time (NULL));
+</code><p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-new-timestamp-from-timet.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to set for the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-new-timestamp-from-timet.returns"></a><h4>Returns</h4>
+<p>the newly created <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> in case of error</p>
+<p>Free-function: gda_value_free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-short"></a><h3>gda_value_get_short ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gshort"><span class="returnvalue">gshort</span></a>
+gda_value_get_short (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-short.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-short.returns"></a><h4>Returns</h4>
+<p> the value stored in <em class="parameter"><code>value</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-short"></a><h3>gda_value_set_short ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_short (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gshort"><span class="type">gshort</span></a> val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-short.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-get-ushort"></a><h3>gda_value_get_ushort ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="returnvalue">gushort</span></a>
+gda_value_get_ushort (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-get-ushort.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> whose value we want to get.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-value-get-ushort.returns"></a><h4>Returns</h4>
+<p> the value stored in <em class="parameter"><code>value</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-value-set-ushort"></a><h3>gda_value_set_ushort ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_value_set_ushort (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> val</code></em>);</pre>
+<p>Stores <em class="parameter"><code>val</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-value-set-ushort.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> that will store <em class="parameter"><code>val</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>val</p></td>
+<td class="parameter_description"><p>value to be stored in <em class="parameter"><code>value</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaValueAttribute"></a><h3>enum GdaValueAttribute</h3>
+<div class="refsect3">
+<a name="GdaValueAttribute.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-NONE:CAPS"></a>GDA_VALUE_ATTR_NONE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-IS-NULL:CAPS"></a>GDA_VALUE_ATTR_IS_NULL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-CAN-BE-NULL:CAPS"></a>GDA_VALUE_ATTR_CAN_BE_NULL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-IS-DEFAULT:CAPS"></a>GDA_VALUE_ATTR_IS_DEFAULT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-CAN-BE-DEFAULT:CAPS"></a>GDA_VALUE_ATTR_CAN_BE_DEFAULT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-IS-UNCHANGED:CAPS"></a>GDA_VALUE_ATTR_IS_UNCHANGED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-ACTIONS-SHOWN:CAPS"></a>GDA_VALUE_ATTR_ACTIONS_SHOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-DATA-NON-VALID:CAPS"></a>GDA_VALUE_ATTR_DATA_NON_VALID</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-HAS-VALUE-ORIG:CAPS"></a>GDA_VALUE_ATTR_HAS_VALUE_ORIG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-NO-MODIF:CAPS"></a>GDA_VALUE_ATTR_NO_MODIF</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-VALUE-ATTR-UNUSED:CAPS"></a>GDA_VALUE_ATTR_UNUSED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-NULL:CAPS"></a><h3>GDA_TYPE_NULL</h3>
+<pre class="programlisting">#define             GDA_TYPE_NULL</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-DEFAULT:CAPS"></a><h3>GDA_TYPE_DEFAULT</h3>
+<pre class="programlisting">#define             GDA_TYPE_DEFAULT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-BINARY:CAPS"></a><h3>GDA_TYPE_BINARY</h3>
+<pre class="programlisting">#define             GDA_TYPE_BINARY</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-BLOB:CAPS"></a><h3>GDA_TYPE_BLOB</h3>
+<pre class="programlisting">#define             GDA_TYPE_BLOB</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-GEOMETRIC-POINT:CAPS"></a><h3>GDA_TYPE_GEOMETRIC_POINT</h3>
+<pre class="programlisting">#define             GDA_TYPE_GEOMETRIC_POINT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-NUMERIC:CAPS"></a><h3>GDA_TYPE_NUMERIC</h3>
+<pre class="programlisting">#define             GDA_TYPE_NUMERIC</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-SHORT:CAPS"></a><h3>GDA_TYPE_SHORT</h3>
+<pre class="programlisting">#define             GDA_TYPE_SHORT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-USHORT:CAPS"></a><h3>GDA_TYPE_USHORT</h3>
+<pre class="programlisting">#define             GDA_TYPE_USHORT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-TIME:CAPS"></a><h3>GDA_TYPE_TIME</h3>
+<pre class="programlisting">#define             GDA_TYPE_TIME</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-TYPE-TIMESTAMP:CAPS"></a><h3>GDA_TYPE_TIMESTAMP</h3>
+<pre class="programlisting">#define             GDA_TYPE_TIMESTAMP</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaBinary-struct"></a><h3>GdaBinary</h3>
+<pre class="programlisting">typedef struct {
+	guchar *data;
+	glong   binary_length;
+} GdaBinary;
+</pre>
+<div class="refsect3">
+<a name="GdaBinary.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *<em class="structfield"><code><a name="GdaBinary-struct.data"></a>data</code></em>;</p></td>
+<td class="struct_member_description"><p>the actual data as an array. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a>]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> <em class="structfield"><code><a name="GdaBinary-struct.binary-length"></a>binary_length</code></em>;</p></td>
+<td class="struct_member_description"><p>length of <em class="parameter"><code>data</code></em>
+</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaBlob"></a><h3>GdaBlob</h3>
+<pre class="programlisting">typedef struct {
+	GdaBinary  data;
+	GdaBlobOp *op;
+} GdaBlob;
+</pre>
+<p>Represents some binary data, accessed through a <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> object.
+<em class="parameter"><code>op</code></em>
+ is generally set up by database providers when giving access to an existing BLOB in
+a database, but can be modified if needed using <a class="link" href="libgda-5.0-Gda-Value.html#gda-blob-set-op" title="gda_blob_set_op ()"><code class="function">gda_blob_set_op()</code></a>.</p>
+<div class="refsect3">
+<a name="GdaBlob.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a> <em class="structfield"><code><a name="GdaBlob.data"></a>data</code></em>;</p></td>
+<td class="struct_member_description"><p>data buffer, as a <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary"><span class="type">GdaBinary</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a> *<em class="structfield"><code><a name="GdaBlob.op"></a>op</code></em>;</p></td>
+<td class="struct_member_description"><p>a pointer to a <span class="type">GdaBlopOp</span>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaGeometricPoint-struct"></a><h3>GdaGeometricPoint</h3>
+<pre class="programlisting">typedef struct {
+	gdouble x;
+	gdouble y;
+} GdaGeometricPoint;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaNumeric-struct"></a><h3>struct GdaNumeric</h3>
+<pre class="programlisting">struct GdaNumeric {
+	gchar*   GSEAL(number);
+	glong    GSEAL(precision);
+	glong    GSEAL(width);
+};
+</pre>
+<p>Holds numbers represented as strings.</p>
+<p>This struct must be considered as opaque. Any access to its members must use its
+accessors added since version 5.0.2.</p>
+<div class="refsect3">
+<a name="GdaNumeric.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTime-struct"></a><h3>GdaTime</h3>
+<pre class="programlisting">typedef struct {
+	gushort hour;
+	gushort minute;
+	gushort second;
+	gulong  fraction;
+	glong   timezone;
+} GdaTime;
+</pre>
+<p>Represents a time information.</p>
+<div class="refsect3">
+<a name="GdaTime.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTime-struct.hour"></a>hour</code></em>;</p></td>
+<td class="struct_member_description"><p>hour representation of the time, as a number between 0 and 23</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTime-struct.minute"></a>minute</code></em>;</p></td>
+<td class="struct_member_description"><p>minute representation of the time, as a number between 0 and 59</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTime-struct.second"></a>second</code></em>;</p></td>
+<td class="struct_member_description"><p>second representation of the time, as a number between 0 and 59</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> <em class="structfield"><code><a name="GdaTime-struct.fraction"></a>fraction</code></em>;</p></td>
+<td class="struct_member_description"><p>fractionnal part of the seconds, in millionth' of second</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> <em class="structfield"><code><a name="GdaTime-struct.timezone"></a>timezone</code></em>;</p></td>
+<td class="struct_member_description"><p>number of seconds added to the GMT timezone</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTimestamp-struct"></a><h3>GdaTimestamp</h3>
+<pre class="programlisting">typedef struct {
+	gshort  year;
+	gushort month;
+	gushort day;
+	gushort hour;
+	gushort minute;
+	gushort second;
+	gulong  fraction;
+	glong   timezone;
+} GdaTimestamp;
+</pre>
+<p>Represents an instant (a time stamp)</p>
+<div class="refsect3">
+<a name="GdaTimestamp.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gshort"><span class="type">gshort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.year"></a>year</code></em>;</p></td>
+<td class="struct_member_description"><p>year representation of the time stamp</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.month"></a>month</code></em>;</p></td>
+<td class="struct_member_description"><p>month representation of the time stamp, as a number between 1 and 12</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.day"></a>day</code></em>;</p></td>
+<td class="struct_member_description"><p>day representation of the time stamp, as a number between 1 and 31</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.hour"></a>hour</code></em>;</p></td>
+<td class="struct_member_description"><p>hour representation of the time stamp, as a number between 0 and 23</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.minute"></a>minute</code></em>;</p></td>
+<td class="struct_member_description"><p>minute representation of the time stamp, as a number between 0 and 59</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.second"></a>second</code></em>;</p></td>
+<td class="struct_member_description"><p>second representation of the time stamp, as a number between 0 and 59</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.fraction"></a>fraction</code></em>;</p></td>
+<td class="struct_member_description"><p>fractionnal part of the seconds, in millionth' of second</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="type">glong</span></a> <em class="structfield"><code><a name="GdaTimestamp-struct.timezone"></a>timezone</code></em>;</p></td>
+<td class="struct_member_description"><p>number of seconds added to the GMT timezone</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Gda-Value.see-also"></a><h2>See Also</h2>
+<p><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> and <a class="link" href="GdaBlobOp.html" title="Blobs"><span class="type">GdaBlobOp</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

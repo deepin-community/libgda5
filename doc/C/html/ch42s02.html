@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Internal parameters: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-sql-manual-icommands.html" title="Detailed features">
+<link rel="prev" href="gda-sql-manual-icommands.html" title="Detailed features">
+<link rel="next" href="ch42s03.html" title="Embedded HTTP server">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-sql-manual-icommands.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-sql-manual-icommands.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch42s03.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.8.7.4"></a>Internal parameters</h2></div></div></div>
+<p>
+      Variables can be defined using the <span class="command"><strong>.set</strong></span> and <span class="command"><strong>.setex</strong></span> commands.
+      Variables are then automatically looked for
+      when executing SQL statements for which a variable is required; they are not typed and are converted to 
+      the correct type when needed. Note that variables are shared by all the opened connections.
+    </p>
+<p>
+      When setting values, the textual representation must respect the following format:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>for booleans: "true" or "false" (case insensitive)</p></li>
+<li class="listitem"><p>for numerical types: the dot as a fraction separator</p></li>
+<li class="listitem"><p>for dates, time and timestamp: the ISO 8601 format (dates as "YYYY-MM-DD", time as "HH:MM:SS")
+	</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      Use the <span class="command"><strong>.set &lt;variablename&gt; &lt;variable value&gt;</strong></span> command to define a variable,
+      and the <span class="command"><strong>.set</strong></span> command to list all defined variables. The following example illustrates
+      variables usage:
+      </p>
+<pre class="programlisting">
+SalesTest&gt; select * from customers where id = ##theid::int;
+ERROR: No internal parameter named 'theid' required by query
+SalesTest&gt; .set theid 3
+SalesTest&gt; select * from customers where id = ##theid::int;
+id | name       | default_served_by | country | city
+---+------------+-------------------+---------+-----
+ 3 | Lew Bonito |                 1 | FR      | TLS 
+(1 row)
+SalesTest&gt; .set theid 5
+SalesTest&gt; select * from customers where id = ##theid::int;
+id | name | default_served_by | country | city
+---+------+-------------------+---------+-----
+(0 rows)
+SalesTest&gt; .set
+List of defined parameters
+Name  | Value
+------+------
+theid | 5    
+(1 row)
+SalesTest&gt;
+    </pre>
+<p>
+    </p>
+<p>
+      The <span class="command"><strong>.setex</strong></span> command also sets an internal parameter, it has two usages:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The <span class="command"><strong>.set &lt;variablename&gt; &lt;filename&gt;</strong></span> usage loads the contents
+	    of the named filename into the named variable (usually to be used as a BLOB)</p></li>
+<li class="listitem">
+<p>The <span class="command"><strong>.set &lt;variablename&gt; &lt;table&gt; &lt;column&gt; &lt;row condition&gt;</strong></span>
+	    usage creates a named variable which contents is the value of the &lt;table&gt; table and
+	  &lt;column&gt; column for the row identified by &lt;row condition&gt;. Note that this command will fail
+	  if the &lt;row condition&gt; condition does not return exactly one value.</p>
+<p>
+	    The following example defined a "bl10" variable containing the value of the "blob" column in the "blobs" table
+	    for the "id=10" condition:
+	    </p>
+<pre class="programlisting">
+.setex bl10 blobs blob "id=10"
+	    </pre>
+<p>
+	  </p>
+</li>
+</ul></div>
+<p>
+    </p>
+<p>
+      The <span class="command"><strong>.export</strong></span> command exports to a file the contents of an internal variable or the
+      the contents of a table's value:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The <span class="command"><strong>.export &lt;variablename&gt; &lt;filename&gt;</strong></span> usage exports the contents
+	    of the named variable into the named filename</p></li>
+<li class="listitem"><p>The <span class="command"><strong>.set &lt;table&gt; &lt;column&gt; &lt;row condition&gt; &lt;filename&gt;</strong></span>
+	    usage exports the value of the &lt;table&gt; table and
+	  &lt;column&gt; column for the row identified by &lt;row condition&gt;. Note that this command will fail
+	  if the &lt;row condition&gt; condition does not return exactly one value.</p></li>
+</ul></div>
+<p>
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

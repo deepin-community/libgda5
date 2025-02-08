@@ -1,0 +1,3 @@
+version=4
+https://download.gnome.org/sources/libgda/(5\.[2468]+)/ \
+	libgda@ANY_VERSION@\.tar\.xz

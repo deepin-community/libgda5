@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-browser-perspective" xml:lang="cs">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+</info>
+<title>Hledisko pro prohlížení adresáře LDAP</title>
+<p>Použijte hledisko Prohlížeč adresáře LDAP k zobrazení a úpravám dat uložených v adresáři LDAP. Pro přepnutí do tohoto hlediska použijte nabídku <guiseq><gui>Hledisko</gui><gui>Prohlížeč adresáře LDAP</gui></guiseq> nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>P</key></keyseq>. Toto hledisko je samozřejmě dostupné, jen když je otevřené připojení <link xref="ldap-connection">připojením k adresáři LDAP</link>.</p>
+<p>Hledisko je vodorovně rozdělen do dvou panelů: levý panel pro uživatelem definované oblíbené položky (uchovává odkazy na konkrétní záznamy LDAP nebo konkrétní třídy LDAP) a pravý panel je oblastí, ve které se provádí akce.</p>
+<figure>
+  <title>Karta záznamů v prohlížeči adresáře LDAP</title>
+  <desc>Karta záznamů adresáře LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-browser-persp.png"/>
+</figure>
+
+<p>V levé části hlediska jsou vypsány oblíbené záznamy a třídy LDAP. Dvojitým kliknutím na oblíbenou položku otevřete její vlastnosti v pravém panelu. Všimněte si, že oblíbené záznamy jsou vždy uvedeny před oblíbenými třídami.</p>
+<p>Pravý panel se skládá z několika typů karet:</p>
+<list>
+  <item><p>karty ke zkoumání DIT (strom adresářových informací) LDAP: když je ve stromu vybrán nějaký záznam, zobrazí se jeho atributy (jsou zobrazeny pouze vyhodnocené atributy, ty bez hodnot jsou skryty) a DN (rozlišovací název) záznamu je vždy zobrazen první. Rovněž upozorňujeme, že potomci každého ze záznamů jsou získáni, jen když je nutné předejít nepotřebnému požadavku na server LDAP.</p></item>
+  <item><p>karty ke zkoumání tříd LDAP, viz obrázek níže. Pro vybranou třídu se zobrazí všechny informace, které se jí dotýkají (popis, OID, typ, …)</p></item>
+  <item><p>karty k provádění hledání v adresáři LDAP, viz obrázek níže. Definici hledání v adresáři LDAP je možné uložit jako virtuální tabulku, viz <link xref="ldap-connection#ldap-table-mapping">mapování tabulek adresáře LDAP</link>.</p></item>
+</list>
+<figure>
+  <title>Karta tříd v prohlížeči adresáře LDAP</title>
+  <desc>Karta tříd adresáře LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-classes.png"/>
+</figure>
+<figure>
+  <title>Karta hledání v prohlížeči adresáře LDAP</title>
+  <desc>Karta hledání v adresáři LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-search.png"/>
+</figure>
+<p>Odkazy na této kartě (signalizované modře podtrženým textem) otevřou novou kartu nebo použijí první kartu vedle aktuální k zobrazení informací o vybraném odkazu. Například na obrázku výše, kde je ukázána karta se záznamy LDAP, by se kliknutím na „inetOrgPerson“ otevřela nová karta „Třídy LDAP“, která by zobrazovala informace o třídě.</p>
+
+</page>

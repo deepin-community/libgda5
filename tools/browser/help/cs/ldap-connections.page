@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-connection" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>Připojení k adresáři LDAP</title>
+  <p>Připojení k adresáři LDAP se od ostatních připojení liší v tom, že databáze LDAP uchovávají data hierarchickým způsobem, v tzv. DIT (Directory Information Tree – stromě adresářových informací), zatímco ostatní databáze přístupné z aplikace <app>gda-browser</app> jsou relační databáze.</p>
+  <p>V důsledku toho jsou přípojení k adresářům LDAP spouštěna speciálně: jako normální připojení s tabulkami (viz mapování tabulek vysvětlené dále) a zobrazovány z <link xref="ldap-browser-perspective">hlediska Prohlížeč adresáře LDAP</link>.</p>
+  <p>Upozorňujeme, že připojení LDAP nemusí být k dispozici, pokud není nainstalován poskytovatel databáze LDAP nebo pokud byla podpora LDAP zakázána při překladu aplikace.</p>
+
+  <section id="ldap-table-mapping">
+    <title>Mapování tabulek adresáře LDAP</title>
+    <p>V rámci připojení k adresáři LDAP je možné deklarovat virtuální tabulky, které jsou mapovány na hledání LDAP. Tyto virtuální tabulky mohou být později použity podobně jako jiné tabulky. Prvním sloupcem každé takové virtuální tabulky LDAP je vždy DN (rozlišovací název) záznamu představujícího řádek; ostatní sloupce pak odvisejí od definice tabulky.</p>
+    <p>Virtuální tabulka LDAP je definována následujícími vlastnostmi:</p>
+    <list>
+      <item><p>název tabulky</p></item>
+      <item><p>základní rozlišovací název DN pro hledání: záznam LDAP, ve kterém hledání začíná (pokud není určen, je použit záznam nejvyšší úrovně v připojení)</p></item>
+      <item><p>vyhledávací filtr: platný filtr pro hledání v adresáři LDAP (pokud není zadán, je výchozí filtr „(objectClass=*)“, který je žádostí o libovolný záznam LDAP).</p></item>
+      <item><p>atributy: atributy, které mají být získány, přičemž každý atribut je mapován na sloupec tabulky. Atributy musí být v podobě seznamu odděleného čárkami, kde každému atributu může být volitelně přiřazen typ a volba pro vícenásobné hodnoty (viz dále).</p></item>
+      <item><p>rozsah: rozsah hledání, „subtree“ (pro hledání v základním DN a jeho podřízeném stromě), „onelevel“ (pro hledání jen v přímých potomcích základního DN) nebo „base“ (pro hledání jen v základním DN)</p></item>
+    </list>
+    <figure>
+      <title>Vlastnosti tabulek adresáře LDAP</title>
+      <desc>Vlastnosti tabulek adresáře LDAP</desc>
+      <media type="image" mime="image/png" src="figures/ldap-table-mapping.png"/>
+    </figure>
+    <p>Například na obrázku výše je tabulka „uzivatele“, která „obsahuje“ všechny záznamy adresáře LDAP od záznamu nejvyšší úrovně LDAP připojení a má tři sloupce: DN, „cn“ a „fotkaJPEG“.</p>
+  </section>
+
+  <section id="ldap-columns-mapping">
+    <title>Mapování atributů na sloupce</title>
+    <p>
+      As mentioned in the previous section, each attribute will be mapped to a column. The column type
+      is normally automatically determined (string, number, ...) but can be forced by appending to the attribute
+      name the "::&lt;type&gt;" for the requested type.
+    </p>
+    <p>Dále platí, že protože některé atributy mohou mít více hodnot, zpracovává konstrukce tabulky vícehodnotové atributy různými způsoby, v závislosti na volbách u jednotlivých atributů. Volbu lze zadat tak, že za název atributu připojíte „::&lt;volba&gt;“. Platné volby jsou:</p>
+    <list>
+      <item><p>„NULL“ nebo „0“: pro atribut bude vracen prázdná hodnota NULL</p></item>
+      <item><p>„CVS“: budou vráceny všechny hodnoty atributu jako seznam hodnot oddělených čárkou. To funguje jen pro atributy typu řetězec.</p></item>
+      <item><p>„MULT“ nebo „*“: pro každou hodnotu atributu bude vrácen řádek, což v praxi znásobuje počet vracených řádků</p></item>
+      <item><p>„1“: pro atribut bude použita pouze první hodnota, ostatní hodnoty jsou ignorovány</p></item>
+      <item><p>„CONCAT“: hodnoty atributu budou pospojovány (se znakem odřádkování mezi jednotlivými hodnotami)</p></item>
+      <item><p>„ERROR“: bude vrácena nějaká chybová hodnota (jde o výchozí chování)</p></item>
+    </list>
+  </section>
+
+  <section id="ldap-ddl-sql">
+    <title>SQL použitelné v rámci připojení k adresáři LDAP</title>
+    <p>V libovolném připojení LDAP můžete využít znalosti SQL z <link href="http://sqlite.org/lang.html">SQLite</link>. Uvědomte si ale, že pokud definujete databázové objekty (mimo rozšíření SQL uvedené v následujícím oddíle), budou při příštím otevření připojení LDAP ztraceny.</p>
+    <p>Proto je naprosto bezpečné například vytvořit tabulku, která bude uchovávat nějaká data z adresáře LDAP, která mohou být požadována pro operace, které trvají déle, ale po zavření připojení k adresáři LDAP, budou tabulka a data v ní ztraceny.</p>
+    <p>Více informací viz oddíl <link xref="sql-sqlite">Porozumění SQL v připojeních k adresáři LDAP a virtuálních připojeních</link>.</p>
+  </section>
+
+  <section id="ldap-sql">
+    <title>Rozšíření SQL pro práci s tabulkami adresáře LDAP</title>
+    <p>Tabulky LDAP je možné vytvářet pomocí rozšířené sady příkazů SQL:</p>
+    <list>
+      <item><p><code>CREATE LDAP TABLE &lt;název_tabulky&gt; [BASE='&lt;základní_dn&gt;'] [FILTER='&lt;filtr&gt;'] [ATTRIBUTES='&lt;filtr&gt;'] [SCOPE='&lt;filtr&gt;']</code> pro deklaraci nové virtuální tabulky LDAP</p></item>
+      <item><p><code>DESCRIBE LDAP TABLE &lt;název_tabulky&gt;</code> pro zobrazení definice virtuální tabulky adresáře LDAP</p></item>
+      <item><p><code>ALTER LDAP TABLE &lt;název_tabulky&gt; [BASE='&lt;základní_dn&gt;'] [FILTER='&lt;filtr&gt;'] [ATTRIBUTES='&lt;filtr&gt;'] [SCOPE='&lt;filtr&gt;']</code> pro změnu definice virtuální tabulky LDAP (prakticky je změněna jen zadaná část)</p></item>
+      <item><p><code>DROP LDAP TABLE &lt;název_tabulky&gt;</code> pro odstranění virtuální tabulky adresáře LDAP. Poznamenejme, že obvykle je místo toho možné použít <code>DROP TABLE &lt;název_tabulky&gt;</code>.</p></item>
+    </list>
+    <p>Například následující kód SQL:</p>
+    <code>
+      CREATE LDAP TABLE uzivatele FILTER='(objectClass=inetOrgPerson)'
+              ATTRIBUTES='cn,sn,givenName,seeAlso::*' SCOPE='subtree';
+      SELECT * FROM uzivatele WHERE cn like '%petr%';
+      ALTER LDAP TABLE uzivatele FILTER='(&amp;(objectClass=inetOrgPerson)(cn=*petr*))';
+      SELECT * FROM uzivatele;
+      DROP LDAP TABLE uzivatele;
+    </code>
+    <p>by měl zobrazit dvakrát ten stejný výsledek, kterým je seznam všech záznamů LDAP třídy „inetOrgPerson“ s atributem CommonName (cn) obsahujícím text „petr“.</p>
+  </section>
+</page>

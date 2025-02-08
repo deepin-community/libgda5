@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Virtual methods for recordsets: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_providers.html" title="Part VIII. Databases providers for developers">
+<link rel="prev" href="ch44s10.html" title="Methods - misc.">
+<link rel="next" href="libgda-provider-blobop.html" title="Virtual methods for Blob operations">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_providers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch44s10.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-provider-blobop.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-provider-recordset"></a>Virtual methods for recordsets</h2></div></div></div>
+<p>
+    This section explains how to write virtual methods for the <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> subclasses
+    implementations, which should be done when implementing a database provider.
+  </p>
+<p>
+    That data model implementation simplifies the implementation of provider's recordsets by having them implement only a
+    few virtual methods.
+  </p>
+<p>
+    The data model represents each row as a separate <a class="link" href="GdaRow.html" title="GdaRow">GdaRow</a> object, and virtual
+    methods to retrieve rows have to return new (and correctly initialized) objects of that class. The referencing
+    of these new objects is left up to the implementation which:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>can use the <a class="link" href="libgda-5.0-Subclassing-GdaDataSelect.html#gda-data-select-take-row" title="gda_data_select_take_row ()">gda_data_select_take_row ()</a> method for
+	on row object created which transfers the ownership of the <a class="link" href="GdaRow.html" title="GdaRow">GdaRow</a> object to the
+	data model (this is the easiest and the fastest as once created, the rows are available for further usage, 
+	but will consume more memory with each row read from the model).</p></li>
+<li class="listitem"><p>can keep the references to these objects to the subclass implementation which will consume less memory but
+	  will make it necessary to create a new row object each time a row is read which is slower</p></li>
+<li class="listitem"><p>can do a mix of the two solutions above: monitor the memory usage for the data model to 
+	enable to "cache" some rows and discard some when memory is needed</p></li>
+</ul></div>
+<p>
+    Note that the methods mentioned in the 1st and 3rd items should be reserved for random data access mode, 
+    and that cursor based access mode should implement the method mentioned in th 2nd item.
+  </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.5"></a>fetch_nb_rows()</h3></div></div></div>
+<p>
+      This method is called when the user calls
+      <a class="link" href="GdaDataModel.html#gda-data-model-get-n-rows" title="gda_data_model_get_n_rows ()">gda_data_model_get_n_rows ()</a>.
+    </p>
+<p>
+      Its implementation is mandatory if the data model supports random access.
+    </p>
+<p>
+      Note about the the data model's number of rows: it may not be known until the cursor has reached the last row of
+      the recordset, but once known, the number of rows can be stored in the
+      <em class="structfield"><code>advertized_nrows</code></em>'s member of the
+      <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> object.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.6"></a>fetch_random()</h3></div></div></div>
+<p>
+      This method is called when the user calls <a class="link" href="GdaDataModel.html#gda-data-model-get-value-at" title="gda_data_model_get_value_at ()">gda_data_model_get_value_at ()</a>,
+      and is used only when the data access mode for the data model is random (that is not cursor based) (i.e. when data
+      access is cursor based, this method will not be called).
+    </p>
+<p>
+      Its implementation is mandatory if the data model supports random access.
+    </p>
+<p>Also it is safe to assume that when called, the
+    <em class="parameter"><code>prow</code></em> parameter will not be NULL, and that <em class="parameter"><code>*prow</code></em> is actually NULL.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.7"></a>store_all()</h3></div></div></div>
+<p>
+      This method is called when the user sets the "store-all-rows" to TRUE or calls <a class="link" href="GdaDataSelect.html#gda-data-select-prepare-for-offline" title="gda_data_select_prepare_for_offline ()">gda_data_select_prepare_for_offline</a>. It has the effect of forcing the creation
+      of a <a class="link" href="GdaRow.html" title="GdaRow">GdaRow</a> object for each row of the data model (thus increasing the memory consumption
+      but reducing further access times). It is available only when the data access mode for the data model is random 
+      (that is not cursor based). When random data access is not supported, this method will not be called.
+    </p>
+<p>
+      Its implementation is optional.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.8"></a>fetch_next()</h3></div></div></div>
+<p>
+      This method is called when data access is cursor based and a data model iterator is moved one position forward. The
+      <em class="parameter"><code>rownum</code></em> is an indication of what the row number will be once the next row has been fetched (it can 
+      safely be discarded if that information is not necessary).
+    </p>
+<p>This method is not used when data is accessed in a random way. Also it is safe to assume that when called, the
+    <em class="parameter"><code>prow</code></em> parameter will not be NULL, and that <em class="parameter"><code>*prow</code></em> is actually NULL.
+    </p>
+<p>
+      Its implementation is mandatory if the data model supports forward cursor access.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.9"></a>fetch_prev()</h3></div></div></div>
+<p>
+      This method is called when data access is cursor based and a data model iterator is moved one position backward. The
+      <em class="parameter"><code>rownum</code></em> is an indication of what the row number will be once the previous row has been fetched (it can 
+      safely be discarded if that information is not necessary). Implementing this method is not necessary if the data model
+      does not support moving iterators backward.
+    </p>
+<p>This method is not used when data is accessed in a random way. Also it is safe to assume that when called, the
+    <em class="parameter"><code>prow</code></em> parameter will not be NULL, and that <em class="parameter"><code>*prow</code></em> is actually NULL.
+    </p>
+<p>
+      Its implementation is mandatory if the data model supports backward cursor access.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.8.10"></a>fetch_at()</h3></div></div></div>
+<p>
+      This method can be implemented (but it is not required) when data access is cursor based
+      and there is a shorter way of getting to a
+      specific row than having to call the fetch_next() or fetch_prev() methods several times.
+    </p>
+<p>
+      Its implementation is mandatory if the data model supports forward or backward cursor access.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

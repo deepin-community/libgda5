@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataPivot: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaDataModelImport.html" title="GdaDataModelImport">
+<link rel="next" href="GdaDataAccessWrapper.html" title="GdaDataAccessWrapper">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-GdaDataPivot.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaDataModelImport.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaDataAccessWrapper.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-GdaDataPivot"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-GdaDataPivot.top_of_page"></a>GdaDataPivot</span></h2>
+<p>GdaDataPivot — A data model for data summarisation</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataPivot.html#gda-data-pivot-new" title="gda_data_pivot_new ()">gda_data_pivot_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataPivot.html#gda-data-pivot-add-field" title="gda_data_pivot_add_field ()">gda_data_pivot_add_field</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataPivot.html#gda-data-pivot-add-data" title="gda_data_pivot_add_data ()">gda_data_pivot_add_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataPivot.html#gda-data-pivot-populate" title="gda_data_pivot_populate ()">gda_data_pivot_populate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot">GdaDataPivot</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotClass" title="struct GdaDataPivotClass">GdaDataPivotClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotPrivate" title="GdaDataPivotPrivate">GdaDataPivotPrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotError" title="enum GdaDataPivotError">GdaDataPivotError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotFieldType" title="enum GdaDataPivotFieldType">GdaDataPivotFieldType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotAggregate" title="enum GdaDataPivotAggregate">GdaDataPivotAggregate</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.description"></a><h2>Description</h2>
+<p>The <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> data model allows one to do some analysis and summarisation on the contents
+of a data model.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-pivot-new"></a><h3>gda_data_pivot_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_data_pivot_new (<em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> which will contain analysed data from <em class="parameter"><code>model</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-data-pivot-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> to analyse data from, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-pivot-new.returns"></a><h4>Returns</h4>
+<p>a pointer to the newly created <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-pivot-add-field"></a><h3>gda_data_pivot_add_field ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_pivot_add_field (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> *pivot</code></em>,
+                          <em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotFieldType" title="enum GdaDataPivotFieldType"><span class="type">GdaDataPivotFieldType</span></a> field_type</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *alias</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Specifies that <em class="parameter"><code>field</code></em>
+ has to be included in the analysis.
+<em class="parameter"><code>field</code></em>
+ is a field specification with the following accepted syntaxes:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a column name in the source data model (see <a class="link" href="GdaDataModel.html#gda-data-model-get-column-index" title="gda_data_model_get_column_index ()"><code class="function">gda_data_model_get_column_index()</code></a>); or</p></li>
+<li class="listitem">
+<p>an SQL expression involving a column name in the source data model, for example:
+  </p>
+<pre class="programlisting">
+price
+firstname || ' ' || lastname 
+nb BETWEEN 5 AND 10</pre>
+<p>
+</p>
+</li>
+</ul></div>
+<p>It is also possible to specify several fields to be added, while separating them by a comma (in effect
+still forming a valid SQL syntax).</p>
+<div class="refsect3">
+<a name="gda-data-pivot-add-field.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pivot</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_type</p></td>
+<td class="parameter_description"><p>the type of field to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field</p></td>
+<td class="parameter_description"><p>the field description, see below</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alias</p></td>
+<td class="parameter_description"><p>the field alias, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>ta place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-pivot-add-field.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-pivot-add-data"></a><h3>gda_data_pivot_add_data ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_pivot_add_data (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> *pivot</code></em>,
+                         <em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivotAggregate" title="enum GdaDataPivotAggregate"><span class="type">GdaDataPivotAggregate</span></a> aggregate_type</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *alias</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Specifies that <em class="parameter"><code>field</code></em>
+ has to be included in the analysis.
+<em class="parameter"><code>field</code></em>
+ is a field specification with the following accepted syntaxes:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a column name in the source data model (see <a class="link" href="GdaDataModel.html#gda-data-model-get-column-index" title="gda_data_model_get_column_index ()"><code class="function">gda_data_model_get_column_index()</code></a>); or</p></li>
+<li class="listitem">
+<p>an SQL expression involving a column name in the source data model, for examples:
+  </p>
+<pre class="programlisting">
+price
+firstname || ' ' || lastname 
+nb BETWEEN 5 AND 10</pre>
+<p>
+</p>
+</li>
+</ul></div>
+<p>It is also possible to specify several fields to be added, while separating them by a comma (in effect
+still forming a valid SQL syntax).</p>
+<div class="refsect3">
+<a name="gda-data-pivot-add-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pivot</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>aggregate_type</p></td>
+<td class="parameter_description"><p>the type of aggregate operation to perform</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field</p></td>
+<td class="parameter_description"><p>the field description, see below</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alias</p></td>
+<td class="parameter_description"><p>the field alias, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>ta place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-pivot-add-data.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-pivot-populate"></a><h3>gda_data_pivot_populate ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_pivot_populate (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> *pivot</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Acutally populates <em class="parameter"><code>pivot</code></em>
+ by analysing the data from the provided data model.</p>
+<div class="refsect3">
+<a name="gda-data-pivot-populate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pivot</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>ta place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-pivot-populate.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred.</p>
+</div>
+<p class="since">Since: 5.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataPivot.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataPivot"></a><h3>struct GdaDataPivot</h3>
+<pre class="programlisting">struct GdaDataPivot {
+	GObject                object;
+	GdaDataPivotPrivate   *priv;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataPivotClass"></a><h3>struct GdaDataPivotClass</h3>
+<pre class="programlisting">struct GdaDataPivotClass {
+	GObjectClass           parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataPivotPrivate"></a><h3>GdaDataPivotPrivate</h3>
+<pre class="programlisting">typedef struct _GdaDataPivotPrivate GdaDataPivotPrivate;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataPivotError"></a><h3>enum GdaDataPivotError</h3>
+<p>Possible <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> related errors.</p>
+<div class="refsect3">
+<a name="GdaDataPivotError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-INTERNAL-ERROR:CAPS"></a>GDA_DATA_PIVOT_INTERNAL_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-SOURCE-MODEL-ERROR:CAPS"></a>GDA_DATA_PIVOT_SOURCE_MODEL_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-FIELD-FORMAT-ERROR:CAPS"></a>GDA_DATA_PIVOT_FIELD_FORMAT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-USAGE-ERROR:CAPS"></a>GDA_DATA_PIVOT_USAGE_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-OVERFLOW-ERROR:CAPS"></a>GDA_DATA_PIVOT_OVERFLOW_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataPivotFieldType"></a><h3>enum GdaDataPivotFieldType</h3>
+<p>Define types of field to be used when defining a <a class="link" href="libgda-5.0-GdaDataPivot.html#GdaDataPivot" title="struct GdaDataPivot"><span class="type">GdaDataPivot</span></a> analysis.</p>
+<div class="refsect3">
+<a name="GdaDataPivotFieldType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-FIELD-ROW:CAPS"></a>GDA_DATA_PIVOT_FIELD_ROW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-FIELD-COLUMN:CAPS"></a>GDA_DATA_PIVOT_FIELD_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataPivotAggregate"></a><h3>enum GdaDataPivotAggregate</h3>
+<p>Possible operations for the data fields.</p>
+<div class="refsect3">
+<a name="GdaDataPivotAggregate.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-AVG:CAPS"></a>GDA_DATA_PIVOT_AVG</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-COUNT:CAPS"></a>GDA_DATA_PIVOT_COUNT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-MAX:CAPS"></a>GDA_DATA_PIVOT_MAX</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-MIN:CAPS"></a>GDA_DATA_PIVOT_MIN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-PIVOT-SUM:CAPS"></a>GDA_DATA_PIVOT_SUM</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

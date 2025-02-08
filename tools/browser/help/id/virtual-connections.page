@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="virtual-connections" xml:lang="id">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Pengikatan koneksi (yaitu koneksi virtual)</title>
+  <p>Pengikatan koneksi adalah suatu fitur yang mengijinkan "pengikatan" beberapa koneksi dan/atau set data yang diimpor ke dalam suatu koneksi tunggal, yang dapat dipakai hampir seperti koneksi biasa.</p>
+  <p>Fitur ini berguna ketika seseorang perlu mengeksekusi suatu perintah SQL (sebagai contoh untuk mengekstrak data) dengan mempertimbangkan bahwa data sebenarnya disimpan di basis data yang berbeda. Tanpa fitur ini, cara mencapai hasil yang sama adalah dengan mengekspor data yang diperlukan dari setiap basis data dan bekerja pada data di luar basis data.</p>
+  <p>Untuk membuat koneksi "terikat" baru (atau koneksi "virtual"), gunakan menu  <guiseq><gui>Koneksi</gui><gui>Ikat koneksi</gui></guiseq>, atau pintasan <keyseq><key>Ctrl</key><key>i</key></keyseq>. Ini memunculkan jendela dialog baru dimana kita dapat menentukan elemen mana yang akan disertakan dalam koneksi "terikat" seperti ditunjukkan di bawah.</p>
+  <figure>
+    <title>Dialog untuk membuat koneksi virtual baru</title>
+    <desc>Disini koneksi kini (c1) akan diikatkan dalam skema "c1"</desc>
+    <media type="image" mime="image/png" src="figures/virtual-cnc.png"/>
+  </figure>
+  <p>Gunakan tombol <guiseq><gui>Tambah ikatan</gui></guiseq> untuk:</p>
+  <list>	
+    <item><p>ikat suatu koneksi untuk menyertakan semua tabel dari koneksi tersebut: pakai opsi <guiseq><gui>Ikatkan koneksi</gui></guiseq>. Opsi ini hanya sekedar menambah elemen baru dalam dialog, untuk menyatakan nama skema dan memilih koneksi yang ada</p></item>
+    <item><p>ikat suatu set data untuk mengimpor data dari berkas teks sebagai suatu tabel tunggal: pakai opsi <guiseq><gui>Ikatkan set data</gui></guiseq>. Lihat seksi di bawah untuk informasi lebih lanjut.</p></item>
+  </list>
+
+  <section id="vcnc-use-case">
+    <title>Use case bagi koneksi virtual</title>
+    <p>Untuk mengilustrasikan penggunaan koneksi virtual, mari kita definisika suatu use case sederhana dan melihat bagaimana itu berguna. Misalnya Anda memiliki basis data yang memuat daftar server yang menjadi tanggung jawab Anda. Untuk kesederhanaan, kita asumsikan bahwa basis data memuat suatu tabel bernama "server" dengan definisi berikut:</p>
+    <code>CREATE TABLE servers (name string, location string);</code>
+    <p>Misalnya tabel ini memuat informasi berikut:</p>
+    <code>
+&gt; select * from servers ;
+name     | location
+---------+---------
+moon     | room1   
+darkstar | room2   
+flag     | room3   
+alf      | room2   
+vador    | room3   
+(5 rows)
+&gt;
+    </code>
+    <p>Kini asumsikan bahwa Anda memiliki program dari pihak ketiga yang memberikan daftar server yang mungkin punya masalah, keluaran program ini adakah berkas CSV dengan satu kolom untuk nama server, satu kolom untuk kode galat, dan satu kolom menjelaskan masalahnya. Asumsikan berkas CSV memiliki isi berikut:</p>
+    <code>
+$ cat problems.csv 
+Server name,Error code,Error description
+darkstar,0,file system full
+vador,1,outdated AV signature
+darkstar,2,overloaded
+flag,0,file system full
+$
+    </code>
+    <p>Misalkan Anda ingin tahu semua server, dimana lokasi ada masalah dengan kode galat 0. Solusinya adalah dengan mengikat koneksi ke basis data (sebagai contoh dalam skema "c1"), mengimpor berkas masalah CSV (sebagai contoh dalam tabel "tab"), dan mengeksekusi perintah SQL berikut:</p>
+    <code>
+SELECT 
+  "server name", 
+  location
+FROM tab
+  INNER JOIN c1.servers AS s ON (tab."server name" = s.name)
+WHERE "Error code"=0
+    </code>
+    <p>Yang mengembalikan hasil yang diharapkan yang ditunjukkan dalam gambar berikut:</p>
+    <figure>
+      <title>Hasil yang diharapkan dari koneksi virtual</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-4.png"/>
+    </figure>
+  </section>
+
+
+  <section id="vcnc-import-dataset">
+    <title>Mengimpor set data ke dalam koneksi virtual</title>
+    <p>Untuk mengimpor set data ke dalam tabel di koneksi virtual (sebagai contoh untuk mengimpor berkas "problems.csv" dari use case), gunakan opsi <guiseq><gui>Ikatkan set data</gui></guiseq> dari dialog pembuatan koneksi virtual:</p>
+    <figure>
+      <title>Mengimpor set data ke dalam koneksi virtual - 1</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-5.png"/>
+    </figure>
+    <p>Dari sana gunakan tombol <guiseq><gui>Impro</gui></guiseq> yang mengijinkan Anda memilih berkas untuk diimpor dan juga mendefinisikan beberapa opsi impor (pengkodean berkas, tipe berkas, ...). Setelah langkah ini, koneksi virtual siap untuk dipakai:</p>
+    <figure>
+      <title>Mengimpor set data ke dalam koneksi virtual - 2</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-2.png"/>
+    </figure>
+    <p>Koneksi virtual hasil, diidentifikasi sebagai "c2" disini dibuka dalam jendelanya sendiri:</p>
+    <figure>
+      <title>Koneksi virtual baru yang dibuka</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-3.png"/>
+    </figure>
+  </section>
+
+  <section id="virtual-ddl-sql">
+    <title>SQL yang dapat dipakai dengan koneksi virtual</title>
+    <p>Anda dapat memakai SQL yang dipahami oleh <link href="http://sqlite.org/lang.html">SQLite</link> dalam sebarang koneksi virtual. Namun sadarilah bahwa jika Anda menentukan objek basis data (di luar SQL yang diperluas yang disajikan di seksi berikutnya), mereka akan hilang saat berikutnya koneksi virtual dibuka.</p>
+    <p>Lihat bagian <link xref="sql-sqlite">SQL yang dipahami oleh koneksi LDAP dan koneksi virtual</link> untuk informasi lebih lanjut.</p>
+  </section>
+</page>

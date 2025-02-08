@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="transactions" xml:lang="zh-CN">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>事务</title>
+  <p>事务可以基于每个连接启动、提交或回滚：</p>
+  <list>
+    <item><p>使用 <media type="image" mime="image/png" src="figures/trans-begin.png"/> 工具栏按钮启动一个事务</p></item>
+    <item><p>使用 <media type="image" mime="image/png" src="figures/trans-commit.png"/> 工具栏按钮来提交当前事务(应用所有更改)</p></item>
+    <item><p>使用 <media type="image" mime="image/png" src="figures/trans-rollback.png"/> 工具栏按钮来中止当前事务(忽略所有更改)</p></item>
+  </list>
+  <note>
+    <p>在执行了包含二进制对象(BLOBs)的 SELECT 语句时可以自动启动一个事务，在结果数据集驻留在内存中时，事务可以锁定(以避免在<link xref="query-execution-perspective">查询执行透视</link>中的数据集清空与之相关的历史项目)。</p>
+  </note>
+</page>

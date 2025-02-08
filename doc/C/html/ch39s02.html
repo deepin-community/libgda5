@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Execution: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-sql-manual-run.html" title="Getting started">
+<link rel="prev" href="gda-sql-manual-run.html" title="Getting started">
+<link rel="next" href="ch39s03.html" title="Commands">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-sql-manual-run.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-sql-manual-run.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch39s03.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.8.4.3"></a>Execution</h2></div></div></div>
+<p>
+      The <span class="application">Libgda</span>'s SQL console tool runs is a terminal emulator, and can be launched using
+      the <span class="command"><strong>gda-sql</strong></span> (or <span class="command"><strong>gda-sql-&lt;version&gt;</strong></span> for a specific version):
+      </p>
+<div class="cmdsynopsis"><p><code class="command">gda-sql</code>  [--help] [-l] [-L] [-C <em class="replaceable"><code>command</code></em>] [-f <em class="replaceable"><code>commands file</code></em>] [-o <em class="replaceable"><code>output file</code></em>] [-s<em class="replaceable"><code>port to use to run embedded HTTP server</code></em>] [-t<em class="replaceable"><code>authentication token required to authenticate clients when running the embedded HTTP server</code></em>] [<em class="replaceable"><code>connection specification</code></em>...]</p></div>
+<p>
+      The options are the following ones:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the <code class="option">--help</code> option gives a short help summary</p></li>
+<li class="listitem">
+<p>the <code class="option">-l</code> and <code class="option">-L</code> options respectively
+	output a list of the defined data sources (DSN) and of the installed database adaptaters
+	(database providers):
+	    </p>
+<pre class="programlisting">
+[prompt]&gt; gda-sql -l
+                                                    List of defined data sources
+DSN       | Provider | Description                          | Connection string            | Username | Global
+----------+----------+--------------------------------------+------------------------------+----------+-------
+SalesTest | SQLite   | Test database for a sales department | DB_DIR=/adir;DB_NAME=data.db |          | FALSE
+[...]
+	    </pre>
+<p>
+	    </p>
+<pre class="programlisting">
+[prompt]&gt; gda-sql -L
+                                     Installed providers list
+Provider       | Description                                                                        
+---------------+------------------------------------------------------------------------------------
+Berkeley-DB    | Provider for Berkeley databases                                                    
+Firebird       | Provider for Firebird databases                                                    
+FirebirdEmbed  | Provider for embedded Firebird databases                                           
+Ldap           | Provider for database where tables are based on data contained in an LDAP directory
+MSAccess       | Provider for Microsoft Access files
+[...]            
+	    </pre>
+<p>
+	    </p>
+<pre class="programlisting">
+[prompt]&gt; ./gda-sql -L PostgreSQL                                  
+                                                                                       Provider 'PostgreSQL' description
+Attribute      | Value                                                                                                                                 
+---------------+---------------------------------------------------------------------------------------------------------------------------------------
+Provider       | PostgreSQL                                                                                                                            
+Description    | Provider for PostgreSQL databases                                                                                                     
+DSN parameters | DB_NAME: Database name. The name of a database to connect to (string),                                                                
+                 SEARCHPATH: Search Path. Search path among database's schemas ('search_path' variable) (string),                                      
+                 HOST: Database server. ost on which the database server is running (for servers running on unix domain sockets, enter the socket's path (usually /tmp), or leave this field empty),
+                 PORT: Port. Database server port (for servers running on unix domain sockets, enter the socket's file name extension (usually 5432), or leave this field empty),
+                 OPTIONS: Options. Extra connection options (string),                                                                                  
+                 USE_SSL: Require SSL. Whether or not to use SSL to establish the connection (boolean),                                                
+                 CONNECT_TIMEOUT: Connection timeout. Maximum wait for connection, in seconds. Zero or not specified means wait indefinitely. It is not recommended to use a timeout of less than 2 seconds,
+Authentication | USERNAME (string),                                                                                                                    
+                 PASSWORD (string)                                                                                                                     
+File           | /local/extra/lib/libgda-5.0/providers/libgda-postgres.so                                                                              
+(5 rows)
+	    </pre>
+<p>
+	</p>
+</li>
+<li class="listitem"><p>the <code class="option">-C</code> and <code class="option">-f</code> options repectively allow
+	    one to specify a single command to be run or a filename containing the commands to run
+	    before the tool exits</p></li>
+<li class="listitem"><p>the <code class="option">-o</code> option allows to specify a file to write the 
+	    output to</p></li>
+<li class="listitem"><p>the <code class="option">-s</code> requests the embedded HTTP server to be executed, listening on
+	    the port specified.</p></li>
+<li class="listitem"><p>the <code class="option">-t</code> specifies a token string which clients will have to
+	    supply to authenticate themselves to the HTTP server, if running.</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      Connections to be opened can be specified on the command line using either:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>defined data sources (the ones listed using the <code class="option">-l</code> option)</p></li>
+<li class="listitem"><p>connection strings which have the following format: 
+	    "[&lt;provider&gt;://][&lt;username&gt;[:&lt;password&gt;]@]&lt;connection_params&gt;". 
+	    If a username or password is required, and is not specified either by a DSN's definition or in
+	    the connection string, then it will be requested dynamically.
+	    Note that if provided, &lt;username&gt;, &lt;password&gt; and &lt;provider&gt; must be encoded as per RFC 1738</p></li>
+<li class="listitem"><p>for SQLite and MS Access files: the file name</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      Connections can also be opened while the tool is running using the <span class="command"><strong>.c</strong></span> 
+      internal command.
+    </p>
+<p>
+      Examples:
+      </p>
+<pre class="programlisting">
+[prompt]&gt; gda-sql Sales
+[prompt]&gt; gda-sql Postgresql://username@DB_NAME=mydb SQLite://DB_NAME=fspot Sales
+[prompt]&gt; gda-sql path/to/dbfile.db
+      </pre>
+<p>
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Virtual methods for Blob operations: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_providers.html" title="Part VIII. Databases providers for developers">
+<link rel="prev" href="libgda-provider-recordset.html" title="Virtual methods for recordsets">
+<link rel="next" href="libgda-provider-parser.html" title="SQL parser">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_providers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-provider-recordset.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-provider-parser.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-provider-blobop"></a>Virtual methods for Blob operations</h2></div></div></div>
+<p>
+    Blobs are a special feature of databases because they allow one to access the contents of a "cell" from the
+    API without using SQL (usually no SQL can be used to manipulate a blob's contents: an SQL statement is used to
+    create, delete or retrieve a blob, but the contents is accessed through the API).
+  </p>
+<p>
+    <span class="application">Libgda</span> encapsulates all blob operations in objects which must be implemented by each provider if they want to support
+    blobs; otherwise binary data may still be used if supported by the database, but the whole binary data is transferred in
+    the SQL statement which is not suitable for large data.
+  </p>
+<p>
+    <span class="application">Libgda</span> defines GdaBlob structure which is an extension of the
+    <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a> structure (which contains a pointer to some data and the size of the pointed
+    data). The extension simply adds a pointer to a GdaBlobOp object which has
+    to be implemented by each provider which supports blobs. The following documents the
+    GdaBlobOp's virtual methods which actually implement the reading from and
+    writing to a blob contained in the database.
+  </p>
+<p>
+    When reading from a blob in the database or writing to a blob in the database, data read or written is the stored in
+    the <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a> part of the GdaBlobOp.
+  </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.9.6"></a>get_length()</h3></div></div></div>
+<p>
+      This method returns the total length of a blob in bytes. In case of error, -1 is returned and the
+      provider should have added an error (a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent">GdaConnectionEvent</a>) to the connection.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.9.7"></a>read()</h3></div></div></div>
+<p>
+      This method requests that some data be read from the blob. The data read must be stored in the
+      <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a> part of the <em class="parameter"><code>blob</code></em> parameter. The data to read is
+      the data starting at the <em class="parameter"><code>offset</code></em> offset from the beginning of the blob, and
+      of the <em class="parameter"><code>size</code></em> length.
+    </p>
+<p>
+      Note that in this method, the <em class="structfield"><code>op</code></em> attribute of the <em class="parameter"><code>blob</code></em>
+      parameter is not used.
+    </p>
+<p>
+      The returned value is the number of bytes read, or -1 if an error
+      occured (then the provider should have added an error to the connection).
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.9.8"></a>write()</h3></div></div></div>
+<p>
+      This method requests the some data be written to the blob. The data has to be written
+      in the blob starting at the <em class="parameter"><code>offset</code></em> offset from the beginning of the blob.
+    </p>
+<p>
+      If the <em class="structfield"><code>op</code></em> attribute of the <em class="parameter"><code>blob</code></em> parameter is not NULL and is different
+      than the <em class="parameter"><code>op</code></em>, then the data to be written is the complete contents of the data stored in the
+      blob represented by the <em class="structfield"><code>op</code></em> attribute of the <em class="parameter"><code>blob</code></em> parameter. Otherwise
+      The data to be written is stored in the
+      <a class="link" href="libgda-5.0-Gda-Value.html#GdaBinary">GdaBinary</a> part of the <em class="parameter"><code>blob</code></em>.
+    </p>
+<p>
+      The returned value is the number of bytes written, or -1 if an error
+      occured (then the provider should have added an error to the connection).
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.9.9"></a>write_all()</h3></div></div></div>
+<p>
+      This method requests that all the contents of the blob be replaced by some data (if necessary the
+      blob is truncated from its previous length). The data to be written is the same as for the write() method, and
+      the returned value is also the same.
+    </p>
+<p>
+      If this virtual method is not implemented, then the write() virtual method is used with an <em class="parameter"><code>offset</code></em>
+      parameter of 0.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

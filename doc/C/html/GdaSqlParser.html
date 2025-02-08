@@ -1,0 +1,773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaSqlParser: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaConnection.html" title="GdaConnection">
+<link rel="next" href="GdaSqlBuilder.html" title="GdaSqlBuilder">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaSqlParser.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaSqlParser.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaSqlParser.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaSqlParser.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaSqlBuilder.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaSqlParser"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaSqlParser.top_of_page"></a>GdaSqlParser</span></h2>
+<p>GdaSqlParser — SQL parser</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaSqlParser.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="returnvalue">GdaSqlParser</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-parser-new" title="gda_sql_parser_new ()">gda_sql_parser_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-parser-parse-string" title="gda_sql_parser_parse_string ()">gda_sql_parser_parse_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaBatch.html" title="GdaBatch"><span class="returnvalue">GdaBatch</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-parser-parse-string-as-batch" title="gda_sql_parser_parse_string_as_batch ()">gda_sql_parser_parse_string_as_batch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaBatch.html" title="GdaBatch"><span class="returnvalue">GdaBatch</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-parser-parse-file-as-batch" title="gda_sql_parser_parse_file_as_batch ()">gda_sql_parser_parse_file_as_batch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-identifier-quote" title="gda_sql_identifier_quote ()">gda_sql_identifier_quote</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="GdaSqlParser.html#gda-sql-identifier-split" title="gda_sql_identifier_split ()">gda_sql_identifier_split</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaSqlParser.html#GdaSqlParser--column-error" title="The “column-error” property">column-error</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaSqlParser.html#GdaSqlParser--line-error" title="The “line-error” property">line-error</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaSqlParser.html#GdaSqlParser--mode" title="The “mode” property">mode</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaSqlParser.html#GdaSqlParser--tokenizer-flavour" title="The “tokenizer-flavour” property">tokenizer-flavour</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaSqlParser.html#GdaSqlParser-struct" title="GdaSqlParser">GdaSqlParser</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaSqlParser.html#GdaSqlParserMode" title="enum GdaSqlParserMode">GdaSqlParserMode</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaSqlParser
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaSqlParser implements
+ <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;sql-parser/gda-sql-parser.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> is an object dedicated to creating <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> and <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> objects from SQL strings. The actual contents
+of the parsed statements is represented as <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> structures (which can be obtained from any <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> through the
+"structure" property).</p>
+<p><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> parsers can be created by calling <a class="link" href="GdaServerProvider.html#gda-server-provider-create-parser" title="gda_server_provider_create_parser ()"><code class="function">gda_server_provider_create_parser()</code></a> for a provider adapted SQL parser, or using
+<a class="link" href="GdaSqlParser.html#gda-sql-parser-new" title="gda_sql_parser_new ()"><code class="function">gda_sql_parser_new()</code></a> for a general purpose SQL parser.</p>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> can either work in "parse" mode where it will try to parse the SQL string, or in "delimiter" mode where it will
+only attempt at delimiting SQL statements in a string which may contain several SQL statements (usually separated by a semi column).
+If operating in "parser" mode, and the parser can't correctly parse the string, then it will switch to the "delimiter" mode
+for the next statement in the string to parse (and create a GDA_SQL_STATEMENT_UNKNOWN statement).</p>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object parses and analyzes SQL statements and reports the following statement types:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>SELECT (and COMPOUND select), 
+    INSERT, UPDATE and DELETE SQL statements should be completely parsed. 
+</p></li>
+<li class="listitem"><p>Transaction related statements (corresponding to the BEGIN, COMMIT, ROLLBACK,
+SAVEPOINT, ROLLBACK SAVEPOINT and DELETE SAVEPOINT) are parsed and a minimalist structure is created to 
+extract some information (that structure is not enough per-se to re-create the complete SQL statement).
+</p></li>
+<li class="listitem"><p>Any other type of SQL statement (CREATE TABLE, ...) creates a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> of type 
+    GDA_SQL_STATEMENT_UNKNOWN, and it only able to locate place holders (variables) and end of statement
+    marks.</p></li>
+</ul></div>
+<p>NOTE: Any SQL of a type which should be parsed which but which creates a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> of type GDA_SQL_STATEMENT_UNKNOWN
+(check with <a class="link" href="GdaStatement.html#gda-statement-get-statement-type" title="gda_statement_get_statement_type ()"><code class="function">gda_statement_get_statement_type()</code></a>) should be reported as a bug.</p>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object recognizes place holders (variables), which can later be queried and valued using
+<a class="link" href="GdaStatement.html#gda-statement-get-parameters" title="gda_statement_get_parameters ()"><code class="function">gda_statement_get_parameters()</code></a>. The following syntax are recognized (other syntaxes might be 
+recognized for specific database providers if the <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> is created using <a class="link" href="GdaServerProvider.html#gda-server-provider-create-parser" title="gda_server_provider_create_parser ()"><code class="function">gda_server_provider_create_parser()</code></a>
+but for portability reasons it's better to avoid them):</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<pre class="programlisting">##NAME[::TYPE[::NULL]]]</pre>
+<p>: 
+    for a variable named NAME with the optional type TYPE (which can be a GType
+    name or a custom database type name), and with the optional "::NULL" to instruct that the variable can
+    be NULL.
+</p>
+</li>
+<li class="listitem">
+<p>
+ </p>
+<pre class="programlisting">## /* name:NAME [type:TYPE] [nullok:[TRUE|FALSE]] [descr:DESCR] */</pre>
+<p>
+    for a variable named NAME with the optional type TYPE (which can be a GType
+    name or a custom database type name), with the optional "nullok" attribute and an optional
+    description DESCR. Note that the NAME, TYPE and DESCR literals here must be quoted (simple or double quotes) if
+    they include non alphanumeric characters, and that there must always be at least a space between the 
+    ## and the opening and closing comments (C style).
+</p>
+</li>
+</ul></div>
+<p>Note that the type string must be a type recognized by the</p>
+<a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-from-string" title="gda_g_type_from_string ()"><code class="function">gda_g_type_from_string()</code></a> function (all valid GType names
+<p>plus a few synonyms). Examples of correct place holders definitions are:</p>
+<pre class="programlisting">
+## /* name:"+0" type:gchararray */
+## /* name:'-5' type:string */
+## /*name:myvar type:gint descr:ToBeDefined nullok:FALSE*/
+## /*name:myvar type:int descr:"A long description"*/
+##+0::gchararray
+##-5::timestamp
+</pre>
+<p>Also note that variables should not be used when an SQL identifier is expected. For example the following
+examples <span class="emphasis"><em>should be avoided</em></span> because they may not work properly (depending on the database being used):</p>
+<pre class="programlisting">
+SELECT * FROM ##tablename::string;
+DELETE FROM mytable WHERE ##tcol::string = 5;
+ALTER GROUP mygroup ADD USER ##name::gchararray;
+</pre>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object internally uses a LEMON generated parser (the same as the one used by SQLite).</p>
+<p>The <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object implements its own locking mechanism so it is thread-safe.</p>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-sql-parser-new"></a><h3>gda_sql_parser_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="returnvalue">GdaSqlParser</span></a> *
+gda_sql_parser_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object</p>
+<div class="refsect3">
+<a name="gda-sql-parser-new.returns"></a><h4>Returns</h4>
+<p> the new object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-parser-parse-string"></a><h3>gda_sql_parser_parse_string ()</h3>
+<pre class="programlisting"><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+gda_sql_parser_parse_string (<em class="parameter"><code><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> *parser</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **remain</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses <em class="parameter"><code>sql</code></em>
+ and creates a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> statement from the first SQL statement contained in <em class="parameter"><code>sql</code></em>
+: if <em class="parameter"><code>sql</code></em>
+
+contains more than one statement, then the remaining part of the string is not parsed at all, and <em class="parameter"><code>remain</code></em>
+ (if
+not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) will point at the first non parsed character.</p>
+<p>To include variables in the <em class="parameter"><code>sql</code></em>
+ string, see the</p>
+<a class="link" href="GdaSqlParser.html#GdaSqlParser.description" title="Description">GdaSqlParser's object description</a>.
+<div class="refsect3">
+<a name="gda-sql-parser-parse-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql</p></td>
+<td class="parameter_description"><p>the SQL string to parse</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remain</p></td>
+<td class="parameter_description"><p>location to store a pointer to remaining part of <em class="parameter"><code>sql</code></em>
+in case <em class="parameter"><code>sql</code></em>
+has multiple statement, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-parser-parse-string.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-parser-parse-string-as-batch"></a><h3>gda_sql_parser_parse_string_as_batch ()</h3>
+<pre class="programlisting"><a class="link" href="GdaBatch.html" title="GdaBatch"><span class="returnvalue">GdaBatch</span></a> *
+gda_sql_parser_parse_string_as_batch (<em class="parameter"><code><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> *parser</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **remain</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parse <em class="parameter"><code>sql</code></em>
+ and creates a <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object which contains all the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> objects created while parsing (one object
+per SQL statement). Empty statements (composed of spaces only) do not appear in the resulting object.</p>
+<p><em class="parameter"><code>sql</code></em>
+ is parsed and <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> objects are created as long as no error is found in <em class="parameter"><code>sql</code></em>
+. If an error is found
+at some point, then the parsing stops and <em class="parameter"><code>remain</code></em>
+ may contain a non <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> pointer, <em class="parameter"><code>error</code></em>
+ may be set, and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+is returned.</p>
+<p>if <em class="parameter"><code>sql</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the returned <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object will contain no statement.</p>
+<p>To include variables in the <em class="parameter"><code>sql</code></em>
+ string, see the</p>
+<a class="link" href="GdaSqlParser.html#GdaSqlParser.description" title="Description">GdaSqlParser's object description</a>.
+<div class="refsect3">
+<a name="gda-sql-parser-parse-string-as-batch.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql</p></td>
+<td class="parameter_description"><p>the SQL string to parse</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>remain</p></td>
+<td class="parameter_description"><p>location to store a pointer to remaining part of <em class="parameter"><code>sql</code></em>
+in case an error occurred while parsing <em class="parameter"><code>sql</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-parser-parse-string-as-batch.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-parser-parse-file-as-batch"></a><h3>gda_sql_parser_parse_file_as_batch ()</h3>
+<pre class="programlisting"><a class="link" href="GdaBatch.html" title="GdaBatch"><span class="returnvalue">GdaBatch</span></a> *
+gda_sql_parser_parse_file_as_batch (<em class="parameter"><code><a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> *parser</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parse <em class="parameter"><code>filename</code></em>
+'s contents and creates a <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object which contains all the
+ <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> objects created while parsing (one object per SQL statement).</p>
+<p><em class="parameter"><code>filename</code></em>
+'s contents are parsed and <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> objects are created as long as no error is found. If an error is found
+at some point, then the parsing stops, <em class="parameter"><code>error</code></em>
+ may be set and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned</p>
+<p>if <em class="parameter"><code>sql</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the returned <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object will contain no statement.</p>
+<div class="refsect3">
+<a name="gda-sql-parser-parse-file-as-batch.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>parser</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser"><span class="type">GdaSqlParser</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>name of the file to parse</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-parser-parse-file-as-batch.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaBatch.html" title="GdaBatch"><span class="type">GdaBatch</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-identifier-quote"></a><h3>gda_sql_identifier_quote ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_sql_identifier_quote (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                          <em class="parameter"><code><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *prov</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> meta_store_convention</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force_quotes</code></em>);</pre>
+<p>Use this function for any SQL identifier to make sure that:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>it is correctly formatted
+          to be used with <em class="parameter"><code>cnc</code></em> (if <em class="parameter"><code>cnc</code></em> is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then some default SQL quoting rules will be applied,
+          similar to PostgreSQL's way) if <em class="parameter"><code>for_meta_store</code></em> is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>;
+    </p></li>
+<li class="listitem"><p>it is correctly formatted to be used with the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a>'s object associated to <em class="parameter"><code>cnc</code></em>
+          is <em class="parameter"><code>for_meta_store</code></em> is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+    </p></li>
+</ul></div>
+<p>The <em class="parameter"><code>force_quotes</code></em>
+ allow some control of how to interpret <em class="parameter"><code>id</code></em>
+: if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then <em class="parameter"><code>id</code></em>
+ will be left
+unchanged most of the time (except for example if it's a reserved keyword), otherwise
+if <em class="parameter"><code>force_quotes</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then the returned string will most probably have quotes around it
+to request that the database keep the case sensitiveness (but again, this may vary depending
+on the database being accessed through <em class="parameter"><code>cnc</code></em>
+).</p>
+<p>For example, the following table gives the result of this function depending on the arguments
+when <em class="parameter"><code>cnc</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (and <em class="parameter"><code>prov</code></em>
+ is also <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>):</p>
+<div class="table">
+<a name="id-1.3.6.7.11.6.8"></a><p class="title"><b>Table 3. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">id</th>
+<th align="justify">for_meta_store=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, force_quotes=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+</th>
+<th align="justify">for_meta_store=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, force_quotes=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+</th>
+<th align="justify">for_meta_store=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, force_quotes=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>
+</th>
+<th align="justify">for_meta_store=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, force_quotes=<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>
+</th>
+<th align="justify">remark</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">"double word"</td>
+<td align="justify">"double word"</td>
+<td align="justify">"double word"</td>
+<td align="justify">"double word"</td>
+<td align="justify">"double word"</td>
+<td align="justify">non allowed character in SQL identifier</td>
+</tr>
+<tr>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">Mixed case SQL identifier, already quoted</td>
+</tr>
+<tr>
+<td align="justify">CapitalTest</td>
+<td align="justify">CapitalTest</td>
+<td align="justify">capitaltest</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">"CapitalTest"</td>
+<td align="justify">Mixed case SQL identifier, non quoted</td>
+</tr>
+<tr>
+<td align="justify">"mytable"</td>
+<td align="justify">"mytable"</td>
+<td align="justify">mytable</td>
+<td align="justify">"mytable"</td>
+<td align="justify">mytable</td>
+<td align="justify">All lowser case, quoted</td>
+</tr>
+<tr>
+<td align="justify">mytable</td>
+<td align="justify">mytable</td>
+<td align="justify">mytable</td>
+<td align="justify">"mytable"</td>
+<td align="justify">mytable</td>
+<td align="justify">All lowser case</td>
+</tr>
+<tr>
+<td align="justify">MYTABLE</td>
+<td align="justify">MYTABLE</td>
+<td align="justify">mytable</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">All upper case</td>
+</tr>
+<tr>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">"MYTABLE"</td>
+<td align="justify">All upper case, quoted</td>
+</tr>
+<tr>
+<td align="justify">desc</td>
+<td align="justify">"desc"</td>
+<td align="justify">"desc"</td>
+<td align="justify">"desc"</td>
+<td align="justify">"desc"</td>
+<td align="justify">SQL reserved keyword</td>
+</tr>
+<tr>
+<td align="justify">5ive</td>
+<td align="justify">"5ive"</td>
+<td align="justify">"5ive"</td>
+<td align="justify">"5ive"</td>
+<td align="justify">"5ive"</td>
+<td align="justify">SQL identifier starting with a digit</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><p>Here are a few examples of when and how to use this function:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+      When creating a table, the user has entered the table name, this function can be used to
+      create a valid SQL identifier from the user provided table name:
+      </p>
+<pre class="programlisting">
+gchar *user_sqlid=...
+gchar *valid_sqlid = gda_sql_identifier_quote (user_sqlid, cnc, NULL, FALSE, FALSE);
+gchar *sql = g_strdup_printf ("CREATE TABLE %s ...", valid_sqlid);
+g_free (valid_sqlid);
+      </pre>
+<p>
+      Note that this is an illustration and creating a table should be sone using a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a>
+      object.
+    </p>
+</li>
+<li class="listitem">
+<p>
+     When updating the meta data associated to a table which has been created with the code
+     above:
+     </p>
+<pre class="programlisting">
+GValue table_name_value = { 0 };
+gchar* column_names[] = { (gchar*)"table_name" };
+GValue* column_values[] = { &amp;table_name_value };
+GdaMetaContext mcontext = { (gchar*)"_tables", 1, column_names, column_values };
+g_value_init (&amp;table_name_value, G_TYPE_STRING);
+g_value_take_string (&amp;table_name_value, gda_sql_identifier_quote (user_sqlid, cnc, NULL, TRUE, FALSE);
+gda_connection_update_meta_store (cnc, &amp;mcontext, NULL);
+g_value_reset (&amp;table_name_value);
+      </pre>
+<p>
+    </p>
+</li>
+<li class="listitem">
+<p>
+     When using a <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> object to fetch information about a table (which has been created with
+     the code above):
+     </p>
+<pre class="programlisting">
+GValue table_name_value = { 0 };
+g_value_init (&amp;table_name_value, G_TYPE_STRING);
+g_value_take_string (&amp;table_name_value, gda_sql_identifier_quote (user_sqlid, cnc, NULL, TRUE, FALSE);
+GdaMetaDbObject *dbo;
+dbo = gda_meta_struct_complement (mstruct, GDA_META_DB_TABLE, NULL, NULL, &amp;table_name_value, NULL);
+g_value_reset (&amp;table_name_value);
+      </pre>
+<p>
+    </p>
+</li>
+</ul></div>
+<p>Note that <em class="parameter"><code>id</code></em>
+ must not be a composed SQL identifier (such as "mytable.mycolumn" which should be
+treated as the "mytable" and "mycolumn" SQL identifiers). If unsure, use <a class="link" href="GdaSqlParser.html#gda-sql-identifier-split" title="gda_sql_identifier_split ()"><code class="function">gda_sql_identifier_split()</code></a>.</p>
+<p>Also note that if <em class="parameter"><code>cnc</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then it's possible to pass an non <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>prov</code></em>
+ to have a result specific
+to <em class="parameter"><code>prov</code></em>
+.</p>
+<p>For more information, see the SQL identifiers and abstraction and</p>
+<a class="link" href="information_schema.html#information_schema:sql_identifiers" title="SQL identifiers">SQL identifiers in meta data</a> sections.
+<div class="refsect3">
+<a name="gda-sql-identifier-quote.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>an SQL identifier</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prov</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<em class="parameter"><code>for_meta_store</code></em>
+set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the returned string will be used in a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>force_quotes</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to force the returned string to be quoted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-identifier-quote.returns"></a><h4>Returns</h4>
+<p> the representation of <em class="parameter"><code>id</code></em>
+ready to be used in SQL statement, as a new string,
+or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>id</code></em>
+is in a wrong format</p>
+</div>
+<p class="since">Since: 4.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-sql-identifier-split"></a><h3>gda_sql_identifier_split ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+gda_sql_identifier_split (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>Splits <em class="parameter"><code>id</code></em>
+ into an array of it sub parts. <em class="parameter"><code>id</code></em>
+'s format has to be "&lt;part&gt;[.&lt;part&gt;[...]]" where
+each part is either a text surrounded by double quotes which can contain upper and lower cases or
+an SQL identifier in lower case.</p>
+<p>For example the "test.\"ATable\"" string will result in the array: {"test", "\"ATable\"", NULL}</p>
+<div class="refsect3">
+<a name="gda-sql-identifier-split.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>an SQL identifier</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-sql-identifier-split.returns"></a><h4>Returns</h4>
+<p>a new <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of strings, or NULL (use <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a> to free the returned array). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaSqlParser-struct"></a><h3>GdaSqlParser</h3>
+<pre class="programlisting">typedef struct _GdaSqlParser GdaSqlParser;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlParserMode"></a><h3>enum GdaSqlParserMode</h3>
+<div class="refsect3">
+<a name="GdaSqlParserMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SQL-PARSER-MODE-PARSE:CAPS"></a>GDA_SQL_PARSER_MODE_PARSE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-SQL-PARSER-MODE-DELIMIT:CAPS"></a>GDA_SQL_PARSER_MODE_DELIMIT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaSqlParser--column-error"></a><h3>The <code class="literal">“column-error”</code> property</h3>
+<pre class="programlisting">  “column-error”             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Owner: GdaSqlParser</p>
+<p>Flags: Read</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlParser--line-error"></a><h3>The <code class="literal">“line-error”</code> property</h3>
+<pre class="programlisting">  “line-error”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Owner: GdaSqlParser</p>
+<p>Flags: Read</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlParser--mode"></a><h3>The <code class="literal">“mode”</code> property</h3>
+<pre class="programlisting">  “mode”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Owner: GdaSqlParser</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: [0,1]</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlParser--tokenizer-flavour"></a><h3>The <code class="literal">“tokenizer-flavour”</code> property</h3>
+<pre class="programlisting">  “tokenizer-flavour”        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Owner: GdaSqlParser</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: [0,4]</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSqlParser.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaSqlBuilder.html" title="GdaSqlBuilder"><span class="type">GdaSqlBuilder</span></a>, <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> and <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

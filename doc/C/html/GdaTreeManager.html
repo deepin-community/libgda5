@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaTreeManager: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="trees.html" title="Trees">
+<link rel="prev" href="GdaTree.html" title="GdaTree">
+<link rel="next" href="GdaTreeNode.html" title="GdaTreeNode">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaTreeManager.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaTreeManager.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaTreeManager.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="trees.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaTree.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaTreeNode.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaTreeManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaTreeManager.top_of_page"></a>GdaTreeManager</span></h2>
+<p>GdaTreeManager — Base class for all the tree managers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaTreeManager.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GdaTreeManager.html#GdaTreeManagerNodesFunc" title="GdaTreeManagerNodesFunc ()">*GdaTreeManagerNodesFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-new-with-func" title="gda_tree_manager_new_with_func ()">gda_tree_manager_new_with_func</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-add-manager" title="gda_tree_manager_add_manager ()">gda_tree_manager_add_manager</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-get-managers" title="gda_tree_manager_get_managers ()">gda_tree_manager_get_managers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-add-new-node-attribute" title="gda_tree_manager_add_new_node_attribute ()">gda_tree_manager_add_new_node_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()">*GdaTreeManagerNodeFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-set-node-create-func" title="gda_tree_manager_set_node_create_func ()">gda_tree_manager_set_node_create_func</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="returnvalue">GdaTreeManagerNodeFunc</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-get-node-create-func" title="gda_tree_manager_get_node_create_func ()">gda_tree_manager_get_node_create_func</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeManager.html#gda-tree-manager-create-node" title="gda_tree_manager_create_node ()">gda_tree_manager_create_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdaTreeManager.html#GdaTreeManager--func" title="The “func” property">func</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaTreeManager.html#GdaTreeManager--recursive" title="The “recursive” property">recursive</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaTreeManager.html#GdaTreeManager-struct" title="GdaTreeManager">GdaTreeManager</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaTreeManager
+        <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrLdap.html" title="GdaTreeMgrLdap">GdaTreeMgrLdap</a>
+        <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns">GdaTreeMgrColumns</a>
+        <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrLabel.html" title="GdaTreeMgrLabel">GdaTreeMgrLabel</a>
+        <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas">GdaTreeMgrSchemas</a>
+        <span class="lineart">├──</span> <a class="link" href="GdaTreeMgrSelect.html" title="GdaTreeMgrSelect">GdaTreeMgrSelect</a>
+        <span class="lineart">╰──</span> <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.description"></a><h2>Description</h2>
+<p>A <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object is responsible for creating nodes in the tree(s) for which it
+operates.</p>
+<p>When creating nodes, a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object can (depending on its implementation), get some
+named attributes from the node below which it has to create nodes, using the <a class="link" href="GdaTreeNode.html#gda-tree-node-fetch-attribute" title="gda_tree_node_fetch_attribute ()"><code class="function">gda_tree_node_fetch_attribute()</code></a>
+or <a class="link" href="GdaTreeNode.html#gda-tree-node-get-node-attribute" title="gda_tree_node_get_node_attribute ()"><code class="function">gda_tree_node_get_node_attribute()</code></a>. For example the <a class="link" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns"><span class="type">GdaTreeMgrColumns</span></a> manager (which creates a node for each column
+of a table) needs the table name and the schema in which the table is; both can be specified using an
+object's property, or, if not specified that way, are fetched as attributes.</p>
+<p>The <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> itself is an abstract type (which can't be instantiated). Use an existing sub class or subclass
+it yourself.</p>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GdaTreeManagerNodesFunc"></a><h3>GdaTreeManagerNodesFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+<span class="c_punctuation">(</span>*GdaTreeManagerNodesFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *children_nodes</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *out_error</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-new-with-func"></a><h3>gda_tree_manager_new_with_func ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+gda_tree_manager_new_with_func (<em class="parameter"><code><a class="link" href="GdaTreeManager.html#GdaTreeManagerNodesFunc" title="GdaTreeManagerNodesFunc ()"><span class="type">GdaTreeManagerNodesFunc</span></a> update_func</code></em>);</pre>
+<p>Use this method to create a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> if it's more convenient than subclassing; all is needed
+is the <em class="parameter"><code>update_func</code></em>
+ function which is responsible for creating or updating the children nodes of a specified <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a>.</p>
+<div class="refsect3">
+<a name="gda-tree-manager-new-with-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>update_func</p></td>
+<td class="parameter_description"><p>the function to call when the manager object is requested to create or update its list of
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> nodes. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-manager-new-with-func.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-add-manager"></a><h3>gda_tree_manager_add_manager ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_manager_add_manager (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *sub</code></em>);</pre>
+<p>Adds a sub manager to <em class="parameter"><code>manager</code></em>
+. Use this method to create the skeleton structure
+of a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>. Note that a single <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> can be used by several <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> objects
+or several times in the same <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>'s structure.</p>
+<p>Please note that it's possible for <em class="parameter"><code>mgr</code></em>
+ and <em class="parameter"><code>sub</code></em>
+ to be the same object, but beware of the possible
+infinite recursive behaviour in this case when creating children nodes 
+(depending on the actual implementation of the <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a>).</p>
+<div class="refsect3">
+<a name="gda-tree-manager-add-manager.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sub</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-get-managers"></a><h3>gda_tree_manager_get_managers ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+gda_tree_manager_get_managers (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>);</pre>
+<p>Get the list of sub managers which have already been added using <a class="link" href="GdaTreeManager.html#gda-tree-manager-add-manager" title="gda_tree_manager_add_manager ()"><code class="function">gda_tree_manager_add_manager()</code></a></p>
+<div class="refsect3">
+<a name="gda-tree-manager-get-managers.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-manager-get-managers.returns"></a><h4>Returns</h4>
+<p>a list of <span class="type">GdaTreeMenager</span> which should not be modified. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.TreeManager]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-add-new-node-attribute"></a><h3>gda_tree_manager_add_new_node_attribute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_manager_add_new_node_attribute
+                               (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Requests that for any new node managed (eg. created) by <em class="parameter"><code>manager</code></em>
+, a new attribute will be set. This allows
+one to customize the attributes of new nodes created by an existing <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a>.</p>
+<p>As a side effect, if <em class="parameter"><code>value</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the corresponding attribute, if it was set, is unset.</p>
+<div class="refsect3">
+<a name="gda-tree-manager-add-new-node-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute</p></td>
+<td class="parameter_description"><p>an attribute name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the attribute's value, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTreeManagerNodeFunc"></a><h3>GdaTreeManagerNodeFunc ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+<span class="c_punctuation">(</span>*GdaTreeManagerNodeFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                           <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *parent</code></em>,
+                           <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-set-node-create-func"></a><h3>gda_tree_manager_set_node_create_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_tree_manager_set_node_create_func (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="type">GdaTreeManagerNodeFunc</span></a> func</code></em>);</pre>
+<p>Sets the function to be called when a new node is being created by <em class="parameter"><code>manager</code></em>
+. If <em class="parameter"><code>func</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+then each created node will be a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> object.</p>
+<p>Specifying a custom <a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="type">GdaTreeManagerNodeFunc</span></a> function for example allows one to use
+specialized sub-classed <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> objects.</p>
+<div class="refsect3">
+<a name="gda-tree-manager-set-node-create-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> tree manager object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="type">GdaTreeManagerNodeFunc</span></a> function pointer, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-get-node-create-func"></a><h3>gda_tree_manager_get_node_create_func ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="returnvalue">GdaTreeManagerNodeFunc</span></a>
+gda_tree_manager_get_node_create_func (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>);</pre>
+<p>Get the function used by <em class="parameter"><code>manager</code></em>
+ when creating new <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> nodes</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-tree-manager-get-node-create-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> tree manager object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-manager-get-node-create-func.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GdaTreeManager.html#GdaTreeManagerNodeFunc" title="GdaTreeManagerNodeFunc ()"><span class="type">GdaTreeManagerNodeFunc</span></a> function, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the default function is used</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-tree-manager-create-node"></a><h3>gda_tree_manager_create_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+gda_tree_manager_create_node (<em class="parameter"><code><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> *manager</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *parent</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>manager</code></em>
+ creates a new <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a>. The new node is not in any
+way linked to <em class="parameter"><code>manager</code></em>
+ yet, consider this method as a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> factory.</p>
+<p>This method is usually used when implementing a <a class="link" href="GdaTreeManager.html#GdaTreeManagerNodesFunc" title="GdaTreeManagerNodesFunc ()"><span class="type">GdaTreeManagerNodesFunc</span></a> function (to create nodes),
+or when subclassing the <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a>.</p>
+<div class="refsect3">
+<a name="gda-tree-manager-create-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>the parent the new node may have, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>name given to the new node, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-manager-create-node.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaTreeManager-struct"></a><h3>GdaTreeManager</h3>
+<pre class="programlisting">typedef struct _GdaTreeManager GdaTreeManager;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeManager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaTreeManager--func"></a><h3>The <code class="literal">“func”</code> property</h3>
+<pre class="programlisting">  “func”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>This property specifies the function which needs to be called when the list of <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> nodes
+managed has to be updated</p>
+<p>Owner: GdaTreeManager</p>
+<p>Flags: Read / Write / Construct</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTreeManager--recursive"></a><h3>The <code class="literal">“recursive”</code> property</h3>
+<pre class="programlisting">  “recursive”                <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>This property specifies if, when initially creating nodes or updating the list of nodes,
+the tree manager shoud also request that each node it has created or updated also
+initially create or update their children.</p>
+<p>This property can typically set to FALSE if the process of creating children nodes is lenghty
+and needs to be postponed while an event occurs.</p>
+<p>Owner: GdaTreeManager</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

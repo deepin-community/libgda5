@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaThreadWrapper: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="multi-threading.html" title="Multi threading">
+<link rel="prev" href="GdaLockable.html" title="GdaLockable">
+<link rel="next" href="misc.html" title="Miscellaneous">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaThreadWrapper.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaThreadWrapper.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="multi-threading.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaLockable.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="misc.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaThreadWrapper"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaThreadWrapper.top_of_page"></a>GdaThreadWrapper</span></h2>
+<p>GdaThreadWrapper — Execute functions in a sub thread</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="returnvalue">GdaThreadWrapper</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-new" title="gda_thread_wrapper_new ()">gda_thread_wrapper_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="returnvalue">GIOChannel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-io-channel" title="gda_thread_wrapper_get_io_channel ()">gda_thread_wrapper_get_io_channel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-unset-io-channel" title="gda_thread_wrapper_unset_io_channel ()">gda_thread_wrapper_unset_io_channel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperFunc" title="GdaThreadWrapperFunc ()">*GdaThreadWrapperFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()">gda_thread_wrapper_execute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperVoidFunc" title="GdaThreadWrapperVoidFunc ()">*GdaThreadWrapperVoidFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()">gda_thread_wrapper_execute_void</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-cancel" title="gda_thread_wrapper_cancel ()">gda_thread_wrapper_cancel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()">gda_thread_wrapper_iterate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()">gda_thread_wrapper_fetch_result</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-waiting-size" title="gda_thread_wrapper_get_waiting_size ()">gda_thread_wrapper_get_waiting_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperCallback" title="GdaThreadWrapperCallback ()">*GdaThreadWrapperCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="returnvalue">gulong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()">gda_thread_wrapper_connect_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-disconnect" title="gda_thread_wrapper_disconnect ()">gda_thread_wrapper_disconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-steal-signal" title="gda_thread_wrapper_steal_signal ()">gda_thread_wrapper_steal_signal</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapper-struct" title="struct GdaThreadWrapper">GdaThreadWrapper</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaThreadWrapper.html#GdaThreadNotification" title="GdaThreadNotification">GdaThreadNotification</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaThreadWrapper.html#GdaThreadNotificationType" title="enum GdaThreadNotificationType">GdaThreadNotificationType</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaThreadWrapper
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.description"></a><h2>Description</h2>
+<p>The purpose of the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object is to execute functions in an isolated sub thread. As the
+<a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> is thread safe, one is able to isolate some code's execution is a <span class="emphasis"><em>private</em></span>
+<span class="emphasis"><em>worker</em></span> thread, and make a non thread safe code thread safe.</p>
+<p>The downside of this is that the actual execution of the code will be slower as it requires
+threads to be synchronized.</p>
+<p>The <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> implements its own locking mechanism and can safely be used from multiple
+threads at once without needing further locking.</p>
+<p>Each thread using a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object can use it as if it was the only user: the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> will
+simply dispatch all the execution requests to its private <span class="emphasis"><em>worker</em></span> thread and report the
+execution's status only to the thread which made the request.</p>
+<p>The user can also specify a callback function to be called when an object emits a signal while being
+used by the worker thread, see the <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a> method.</p>
+<p>The following diagram illustrates the conceptual working of the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object: here two user threads
+are represented (assigned a red and green colors), both using a single <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a>, so in this diagram, 3 threads
+are present. The communication between the threads are handled by some <a href="/usr/share/gtk-doc/html/glib/glib-Asynchronous-Queues.html#GAsyncQueue"><span class="type">GAsyncQueue</span></a> objects (in a transparent way for
+the user, presented here only for illustration purposes). The queue represented in yellow is where jobs are
+pushed by each user thread (step 1), and popped by the worker thread (step 2). Once the worker thread has finished
+with a job, it stores the result along with the job and pushes it to the queue dedicated to the user thread
+(step 3) in this example the red queue (because the job was issued from the thread represented in red). The last
+step is when the user fetches the result (in its user thread), step 4.</p>
+<p>If, when the worker thread is busy with a job, a signal is emitted, and if the user has set up a signal handler
+using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>,
+then a "job as signal" is created by the worker thread and pushed to the user thread as illustrated
+at the bottom of the diagram.</p>
+<div class="mediaobject"><img src="thread-wrapper.png" width="602" alt="GdaThreadWrapper's conceptual working"></div>
+<p>It's the user's responsability to regularly check if a submitted job has completed
+(using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>) or if a signal
+has been emitted by an object while in the worker thread and needs to be handled by the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a>
+to call the associated callback (using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a> or automatically done when
+calling <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>).</p>
+<p>However, when a main loop is available, the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> can emit notifications through a
+<a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> which can be intregated in the main loop. The <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> can be created
+using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-io-channel" title="gda_thread_wrapper_get_io_channel ()"><code class="function">gda_thread_wrapper_get_io_channel()</code></a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-thread-wrapper-new"></a><h3>gda_thread_wrapper_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="returnvalue">GdaThreadWrapper</span></a> *
+gda_thread_wrapper_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if threads are not supported/enabled</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-get-io-channel"></a><h3>gda_thread_wrapper_get_io_channel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="returnvalue">GIOChannel</span></a> *
+gda_thread_wrapper_get_io_channel (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>);</pre>
+<p>Allow <em class="parameter"><code>wrapper</code></em>
+ to notify when an execution job is finished, by making its exec ID
+readable through a new <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a>. This function is useful when the notification needs
+to be included into a main loop. This also notifies that signals (emitted by objects in
+<em class="parameter"><code>wrapper</code></em>
+'s internal thread) are available.</p>
+<p>The returned <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> will have something to read everytime an execution job is finished
+for an execution job submitted from the calling thread. The user whould read <a class="link" href="GdaThreadWrapper.html#GdaThreadNotification" title="GdaThreadNotification"><span class="type">GdaThreadNotification</span></a>
+structures from the channel and analyse its contents to call <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a>
+or <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>.</p>
+<p>Note1: the new communication channel will only be operational for jobs submitted after this
+function returns, and for signals which have been connected after this function returns. A safe
+practice is to call this function before the <em class="parameter"><code>wrapper</code></em>
+ object has been used.</p>
+<p>Note2: this function will return the same <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> everytime it's called from the same thread.</p>
+<p>Note3: if the usage of the returned <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> reveals an error, then <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#g-io-channel-shutdown"><code class="function">g_io_channel_shutdown()</code></a> and
+<a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#g-io-channel-unref"><code class="function">g_io_channel_unref()</code></a> should be called on the <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> to let <em class="parameter"><code>wrapper</code></em>
+ know it should not use
+that object anymore.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-get-io-channel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-get-io-channel.returns"></a><h4>Returns</h4>
+<p>a new <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it could not be created. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-unset-io-channel"></a><h3>gda_thread_wrapper_unset_io_channel ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_thread_wrapper_unset_io_channel (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>);</pre>
+<p>Does the opposite of <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-io-channel" title="gda_thread_wrapper_get_io_channel ()"><code class="function">gda_thread_wrapper_get_io_channel()</code></a></p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-unset-io-channel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaThreadWrapperFunc"></a><h3>GdaThreadWrapperFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+<span class="c_punctuation">(</span>*GdaThreadWrapperFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> arg</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Specifies the type of function to be passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()"><code class="function">gda_thread_wrapper_execute()</code></a>.</p>
+<div class="refsect3">
+<a name="GdaThreadWrapperFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>arg</p></td>
+<td class="parameter_description"><p>pointer to the data (which is the <em class="parameter"><code>arg</code></em>
+argument passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaThreadWrapperFunc.returns"></a><h4>Returns</h4>
+<p>a pointer to some data which will be returned by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-execute"></a><h3>gda_thread_wrapper_execute ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_thread_wrapper_execute (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                            <em class="parameter"><code><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperFunc" title="GdaThreadWrapperFunc ()"><span class="type">GdaThreadWrapperFunc</span></a> func</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> arg</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> arg_destroy_func</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Make <em class="parameter"><code>wrapper</code></em>
+ execute the <em class="parameter"><code>func</code></em>
+ function with the <em class="parameter"><code>arg</code></em>
+ argument (along with a <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> which is not <em class="parameter"><code>error</code></em>
+)
+in the sub thread managed by <em class="parameter"><code>wrapper</code></em>
+. To execute a function which does not return anything,
+use <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a>.</p>
+<p>This method returns immediately, and the caller then needs to use <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a> to
+check if the execution has finished and get the result.</p>
+<p>Once <em class="parameter"><code>func</code></em>
+'s execution is finished, if <em class="parameter"><code>arg</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the <em class="parameter"><code>arg_destroy_func</code></em>
+ destruction function is called
+on <em class="parameter"><code>arg</code></em>
+. This call occurs in the thread calling <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>.</p>
+<p>If an error occurred in this function, then the <em class="parameter"><code>arg_destroy_func</code></em>
+ function is not called to free <em class="parameter"><code>arg</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-execute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>the function to execute, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg</p></td>
+<td class="parameter_description"><p>argument to pass to <em class="parameter"><code>func</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_destroy_func</p></td>
+<td class="parameter_description"><p>function to be called when the execution has finished, to destroy <em class="parameter"><code>arg</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, for errors occurring in this method, not errors occurring while <em class="parameter"><code>func</code></em>
+is executed, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-execute.returns"></a><h4>Returns</h4>
+<p> the job ID, or 0 if an error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaThreadWrapperVoidFunc"></a><h3>GdaThreadWrapperVoidFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GdaThreadWrapperVoidFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> arg</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Specifies the type of function to be passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a>.</p>
+<div class="refsect3">
+<a name="GdaThreadWrapperVoidFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>arg</p></td>
+<td class="parameter_description"><p>a pointer to the data (which is the <em class="parameter"><code>arg</code></em>
+argument passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-execute-void"></a><h3>gda_thread_wrapper_execute_void ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_thread_wrapper_execute_void (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperVoidFunc" title="GdaThreadWrapperVoidFunc ()"><span class="type">GdaThreadWrapperVoidFunc</span></a> func</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> arg</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> arg_destroy_func</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Make <em class="parameter"><code>wrapper</code></em>
+ execute the <em class="parameter"><code>func</code></em>
+ function with the <em class="parameter"><code>arg</code></em>
+ argument (along with a <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> which is not <em class="parameter"><code>error</code></em>
+)
+in the sub thread managed by <em class="parameter"><code>wrapper</code></em>
+. To execute a function which returns some pointer,
+use <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()"><code class="function">gda_thread_wrapper_execute()</code></a>.</p>
+<p>This method returns immediately. Calling <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a> is not necessary as <em class="parameter"><code>func</code></em>
+
+does not return any result. However, it may be necessary to call <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a> to give <em class="parameter"><code>wrapper</code></em>
+ a
+chance to execute the <em class="parameter"><code>arg_destroy_func</code></em>
+ function if not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (note that <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a> is
+called by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a> itself).</p>
+<p>Once <em class="parameter"><code>func</code></em>
+'s execution is finished, if <em class="parameter"><code>arg</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the <em class="parameter"><code>arg_destroy_func</code></em>
+ destruction function is called
+on <em class="parameter"><code>arg</code></em>
+. This call occurs in the thread calling <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>.</p>
+<p>If an error occurred in this function, then the <em class="parameter"><code>arg_destroy_func</code></em>
+ function is not called to free <em class="parameter"><code>arg</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-execute-void.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>the function to execute, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg</p></td>
+<td class="parameter_description"><p>argument to pass to <em class="parameter"><code>func</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_destroy_func</p></td>
+<td class="parameter_description"><p>function to be called when the execution has finished, to destroy <em class="parameter"><code>arg</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, for errors occurring in this method, not errors occurring while <em class="parameter"><code>func</code></em>
+is executed, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-execute-void.returns"></a><h4>Returns</h4>
+<p> the job ID, or 0 if an error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-cancel"></a><h3>gda_thread_wrapper_cancel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_thread_wrapper_cancel (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> id</code></em>);</pre>
+<p>Cancels a job not yet executed. This may fail for the following reasons:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the job <em class="parameter"><code>id</code></em> could not be found, either because it has already been treated or because
+                 it does not exist or because it was created in another thread</p></li>
+<li class="listitem"><p>the job <em class="parameter"><code>id</code></em> is currently being treated by the worker thread</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>the ID of a job as returned by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()"><code class="function">gda_thread_wrapper_execute()</code></a> or <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-cancel.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the job has been cancelled, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> in any other case.</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-iterate"></a><h3>gda_thread_wrapper_iterate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_thread_wrapper_iterate (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> may_block</code></em>);</pre>
+<p>This method gives <em class="parameter"><code>wrapper</code></em>
+ a chance to check if some functions to be executed have finished
+<span class="emphasis"><em>for the calling thread</em></span>. In this case it handles the execution result and
+makes it ready to be processed using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-fetch-result" title="gda_thread_wrapper_fetch_result ()"><code class="function">gda_thread_wrapper_fetch_result()</code></a>.</p>
+<p>This method also allows <em class="parameter"><code>wrapper</code></em>
+ to handle signals which may have been emitted by objects
+while in the worker thread, and call the callback function specified when <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>
+was used.</p>
+<p>If <em class="parameter"><code>may_block</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then it will block untill there is one finished execution 
+(functions returning void and signals are ignored regarding this argument).</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-iterate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>may_block</p></td>
+<td class="parameter_description"><p>whether the call may block</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-fetch-result"></a><h3>gda_thread_wrapper_fetch_result ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+gda_thread_wrapper_fetch_result (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> may_lock</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> exp_id</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Use this method to check if the execution of a function is finished. The function's execution must have
+been requested using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()"><code class="function">gda_thread_wrapper_execute()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-fetch-result.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>may_lock</p></td>
+<td class="parameter_description"><p>TRUE if this funct must lock the caller untill a result is available</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>exp_id</p></td>
+<td class="parameter_description"><p>ID of the job for which a result is expected</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, for errors which may have occurred during the execution, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-fetch-result.returns"></a><h4>Returns</h4>
+<p>the pointer returned by the execution, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no result is available. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-get-waiting-size"></a><h3>gda_thread_wrapper_get_waiting_size ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_thread_wrapper_get_waiting_size (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>);</pre>
+<p>Use this method to query the number of functions which have been queued to be executed
+but which have not yet been executed.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-get-waiting-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-get-waiting-size.returns"></a><h4>Returns</h4>
+<p> the number of jobs not yet executed</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaThreadWrapperCallback"></a><h3>GdaThreadWrapperCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GdaThreadWrapperCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> instance</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *signame</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_param_values</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *param_values</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> gda_reserved</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Specifies the type of function to be passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a></p>
+<div class="refsect3">
+<a name="GdaThreadWrapperCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>instance</p></td>
+<td class="parameter_description"><p>a pointer to the instance which emitted the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signame</p></td>
+<td class="parameter_description"><p>the name of the signal being emitted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_param_values</p></td>
+<td class="parameter_description"><p>number of GValue in <em class="parameter"><code>param_values</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>param_values</p></td>
+<td class="parameter_description"><p>array of <em class="parameter"><code>n_param_values</code></em>
+GValue</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gda_reserved</p></td>
+<td class="parameter_description"><p>reserved</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a pointer to the data (which is the <em class="parameter"><code>data</code></em>
+argument passed to <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-connect-raw"></a><h3>gda_thread_wrapper_connect_raw ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="returnvalue">gulong</span></a>
+gda_thread_wrapper_connect_raw (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> instance</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sig_name</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> private_thread</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> private_job</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperCallback" title="GdaThreadWrapperCallback ()"><span class="type">GdaThreadWrapperCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Connects a callback function to a signal for a particular object. The difference with <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#g-signal-connect"><code class="function">g_signal_connect()</code></a> and
+similar functions are:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the <em class="parameter"><code>callback</code></em> argument is not a <a href="/usr/share/gtk-doc/html/gobject/gobject-Closures.html#GCallback"><span class="type">GCallback</span></a> function, so the callback signature is not
+   dependent on the signal itself</p></li>
+<li class="listitem"><p>the signal handler must not have to return any value</p></li>
+<li class="listitem"><p>the <em class="parameter"><code>callback</code></em> function will be called asynchronously, the caller may need to use 
+   <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a> to get the notification</p></li>
+<li class="listitem"><p>if <em class="parameter"><code>private_job</code></em> and <em class="parameter"><code>private_thread</code></em> control in which case the signal is propagated.</p></li>
+</ul></div>
+<p>Also note that signal handling is done asynchronously: when emitted in the worker thread, it
+will be "queued" to be processed in the user thread when it has the chance (when <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-iterate" title="gda_thread_wrapper_iterate ()"><code class="function">gda_thread_wrapper_iterate()</code></a>
+is called directly or indirectly). The side effect is that the callback function is usually
+called long after the object emitting the signal has finished emitting it.</p>
+<p>To disconnect a signal handler, don't use any of the g_signal_handler_*() functions but the
+<a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-disconnect" title="gda_thread_wrapper_disconnect ()"><code class="function">gda_thread_wrapper_disconnect()</code></a> method.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-connect-raw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>instance</p></td>
+<td class="parameter_description"><p>the instance to connect to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sig_name</p></td>
+<td class="parameter_description"><p>a string of the form "signal-name::detail"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>private_thread</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>callback</code></em>
+is to be invoked only if the signal has
+been emitted while in <em class="parameter"><code>wrapper</code></em>
+'s private sub thread (ie. used when <em class="parameter"><code>wrapper</code></em>
+is executing some functions
+specified by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute" title="gda_thread_wrapper_execute ()"><code class="function">gda_thread_wrapper_execute()</code></a> or <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-execute-void" title="gda_thread_wrapper_execute_void ()"><code class="function">gda_thread_wrapper_execute_void()</code></a>), and to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if the
+callback is to be invoked whenever the signal is emitted, independently of the thread in which the
+signal is emitted.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>private_job</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>callback</code></em>
+is to be invoked only if the signal has
+been emitted when a job created for the calling thread is being executed, and to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+if <em class="parameter"><code>callback</code></em>
+has to be called whenever the <em class="parameter"><code>sig_name</code></em>
+signal is emitted by <em class="parameter"><code>instance</code></em>
+. Note that
+this argument is not taken into account if <em class="parameter"><code>private_thread</code></em>
+is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html#GdaThreadWrapperCallback" title="GdaThreadWrapperCallback ()"><span class="type">GdaThreadWrapperCallback</span></a> function. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>data to pass to <em class="parameter"><code>callback</code></em>
+'s calls. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-thread-wrapper-connect-raw.returns"></a><h4>Returns</h4>
+<p> the handler ID</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-disconnect"></a><h3>gda_thread_wrapper_disconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_thread_wrapper_disconnect (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> id</code></em>);</pre>
+<p>Disconnects the emission of a signal, does the opposite of <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>.</p>
+<p>As soon as this method returns, the callback function set when <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>
+was called will not be called anymore (even if the object has emitted the signal in the worker
+thread and this signal has not been handled in the user thread).</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-disconnect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>a handler ID, as returned by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-thread-wrapper-steal-signal"></a><h3>gda_thread_wrapper_steal_signal ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_thread_wrapper_steal_signal (<em class="parameter"><code><a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> *wrapper</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> id</code></em>);</pre>
+<p>Requests that the signal which ID is <em class="parameter"><code>id</code></em>
+ (which has been obtained using <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>)
+be treated by the calling thread instead of by the thread in which <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-connect-raw" title="gda_thread_wrapper_connect_raw ()"><code class="function">gda_thread_wrapper_connect_raw()</code></a>
+was called.</p>
+<div class="refsect3">
+<a name="gda-thread-wrapper-steal-signal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wrapper</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaThreadWrapper.html" title="GdaThreadWrapper"><span class="type">GdaThreadWrapper</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>a signal ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaThreadWrapper.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaThreadWrapper-struct"></a><h3>struct GdaThreadWrapper</h3>
+<pre class="programlisting">struct GdaThreadWrapper;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaThreadNotification"></a><h3>GdaThreadNotification</h3>
+<pre class="programlisting">typedef struct {
+	GdaThreadNotificationType type;
+	guint                     job_id;
+} GdaThreadNotification;
+</pre>
+<p>A notification to be read through the <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> which is returned by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-io-channel" title="gda_thread_wrapper_get_io_channel ()"><code class="function">gda_thread_wrapper_get_io_channel()</code></a>,
+for example:</p>
+<pre class="programlisting">
+gboolean
+wrapper_ioc_cb (GIOChannel *source, GIOCondition condition, gpointer data)
+{
+    GIOStatus status;
+    gsize nread;
+    GdaThreadNotification notif;
+    if (condition &amp; G_IO_IN) {
+   status = g_io_channel_read_chars (source, (gchar*) &amp;notif, sizeof (notif), &amp;nread, NULL);
+        if ((status != G_IO_STATUS_NORMAL) || (nread != sizeof (notif)))
+            goto onerror;
+   switch (notif.type) {
+   case GDA_THREAD_NOTIFICATION_JOB:
+            check_for_wrapper_result (bcnc);
+            break;
+        case GDA_THREAD_NOTIFICATION_SIGNAL:
+            gda_thread_wrapper_iterate (bcnc-&gt;priv-&gt;wrapper, FALSE);
+            break;
+        default:
+            goto onerror;
+            break;
+   }
+  }
+  if (condition &amp; (G_IO_ERR | G_IO_HUP | G_IO_NVAL))
+            goto onerror;
+  return TRUE; // keep callback
+
+onerror:
+  g_io_channel_shutdown (bcnc-&gt;priv-&gt;ioc, FALSE, NULL);
+  return FALSE; // removed callback
+}
+
+{
+[...]
+    GIOChannel *ioc;
+    ioc = gda_thread_wrapper_get_io_channel (wrapper);
+    if (!ioc)
+        [handle error]
+    else {
+        guint watch_id;
+        watch_id = g_io_add_watch (ioc, G_IO_IN | G_IO_HUP | G_IO_ERR | G_IO_NVAL,
+                                   (GIOFunc) wrapper_ioc_cb, NULL);
+    }
+}
+</pre>
+<div class="refsect3">
+<a name="GdaThreadNotification.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaThreadWrapper.html#GdaThreadNotificationType" title="enum GdaThreadNotificationType"><span class="type">GdaThreadNotificationType</span></a> <em class="structfield"><code><a name="GdaThreadNotification.type"></a>type</code></em>;</p></td>
+<td class="struct_member_description"><p>the notification type</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaThreadNotification.job-id"></a>job_id</code></em>;</p></td>
+<td class="struct_member_description"><p>the job ID, if <em class="parameter"><code>type</code></em>
+is a <a class="link" href="GdaThreadWrapper.html#GDA-THREAD-NOTIFICATION-JOB:CAPS"><span class="type">GDA_THREAD_NOTIFICATION_JOB</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaThreadNotificationType"></a><h3>enum GdaThreadNotificationType</h3>
+<p>Defines the kind of notification which can be obtained when reading from te <a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a>
+returned by <a class="link" href="GdaThreadWrapper.html#gda-thread-wrapper-get-io-channel" title="gda_thread_wrapper_get_io_channel ()"><code class="function">gda_thread_wrapper_get_io_channel()</code></a>.</p>
+<div class="refsect3">
+<a name="GdaThreadNotificationType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-THREAD-NOTIFICATION-JOB:CAPS"></a>GDA_THREAD_NOTIFICATION_JOB</p></td>
+<td class="enum_member_description">
+<p>the notification regards a job finished</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-THREAD-NOTIFICATION-SIGNAL:CAPS"></a>GDA_THREAD_NOTIFICATION_SIGNAL</p></td>
+<td class="enum_member_description">
+<p>the notification regards a signal</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

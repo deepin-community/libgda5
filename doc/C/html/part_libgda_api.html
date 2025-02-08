@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Part II. API reference: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="prev" href="limitations_jdbc.html" title="For JDBC based providers">
+<link rel="next" href="howto.html" title="HOWTO for common tasks">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="limitations_jdbc.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="howto.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="part">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="part_libgda_api"></a>Part II. API reference</h1></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="chapter"><a href="howto.html">HOWTO for common tasks</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="howto.html#id-1.3.3.3">Open a connection</a></span></dt>
+<dt><span class="sect1"><a href="ch12s02.html">Define a data source (DSN)</a></span></dt>
+<dt><span class="sect1"><a href="howto-sqlbuilder.html">Build statements without using a parser</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.4">INSERT INTO customers (e, f, g) VALUES (##p1::string, 15, 'joe')</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.5">SELECT people.firstname AS person, people.lastname, "date" AS birthdate, age FROM people</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.6">SELECT c."date", name AS person FROM "select" AS c INNER JOIN orders USING (id)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.7">UPDATE products set ref='A0E''FESP' WHERE id = 14</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.8">DELETE FROM items WHERE id = ##theid::int</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.9">SELECT myfunc (a, 5, 'Joe') FROM mytable</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.10">SELECT name FROM master WHERE id IN (SELECT id FROM subdata)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.11">INSERT INTO customers (e, f, g) SELECT id, name, location FROM subdate</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.12">SELECT id, name FROM subdata1 UNION SELECT ident, lastname FROM subdata2</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.13">SELECT CASE tag WHEN 'Alpha' THEN 1 WHEN 'Bravo' THEN 2 WHEN 'Charlie' THEN 3 ELSE 0 END FROM data</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.14">SELECT product_id, name, sum (4 * 5 * price * 1.200000) FROM invoice_lines</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.15">SELECT id, name, adress, cntry_id, countries.name FROM customers INNER JOIN countries ON (countries.id = cntry_id)</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="howto-exec-select.html">Execute a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-modify-select.html">Modify the result of a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-exec-non-select.html">Execute an INSERT, UPDATE or DELETE command</a></span></dt>
+<dt><span class="sect1"><a href="ch12s07.html">Get the last inserted row</a></span></dt>
+<dt><span class="sect1"><a href="ch12s08.html">Execute a DDL command</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta1.html">Get information about a table's columns</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta2.html">Update the meta data about a table</a></span></dt>
+<dt><span class="sect1"><a href="ch12s11.html">Validate a DML statement</a></span></dt>
+<dt><span class="sect1"><a href="ch12s12.html">Control value's assignment to various objects</a></span></dt>
+<dt><span class="sect1"><a href="ch12s13.html">Add your own data to a GdaMetaStore</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch13.html">Object Hierarchy</a></span></dt>
+<dt><span class="chapter"><a href="init_config.html">Initialization and configuration</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Libgda-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Configuration.html">Configuration</a></span><span class="refpurpose"> — Access/Management of libgda configuration</span>
+</dt>
+<dt><span class="sect1"><a href="init_config.html#libgda_env_variables">Configuring <span class="application">Libgda</span> with environment variables</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="connection.html">Connections &amp; commands</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaConnection.html">GdaConnection</a></span><span class="refpurpose"> — A connection to a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlParser.html">GdaSqlParser</a></span><span class="refpurpose"> — SQL parser</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlBuilder.html">GdaSqlBuilder</a></span><span class="refpurpose"> — Factory object for statements</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaStatement.html">GdaStatement</a></span><span class="refpurpose"> — Single SQL statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaRepetitiveStatement.html">GdaRepetitiveStatement</a></span><span class="refpurpose"> — Execute the same statement several times with different values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaBatch.html">GdaBatch</a></span><span class="refpurpose"> — Multiple SQL statements grouped together.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHolder.html">GdaHolder</a></span><span class="refpurpose"> — Container for a single <span class="type">GValue</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSet.html">GdaSet</a></span><span class="refpurpose"> — Container for several values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaConnectionEvent.html">GdaConnectionEvent</a></span><span class="refpurpose"> — Any event which has occurred on a <span class="type">GdaConnection</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTransactionStatus.html">GdaTransactionStatus</a></span><span class="refpurpose"> — Keeps track of the transaction status of a connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaXaTransaction.html">GdaXaTransaction</a></span><span class="refpurpose"> — Distributed transaction manager</span>
+</dt>
+<dt><span class="sect1"><a href="connection.html#GdaConnectionMetaTypeHead">Description of the data model returned by gda_connection_get_meta_store_data()</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_NAMESPACES">GDA_CONNECTION_META_NAMESPACES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TYPES">GDA_CONNECTION_META_TYPES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TABLES">GDA_CONNECTION_META_TABLES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_VIEWS">GDA_CONNECTION_META_VIEWS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_FIELDS">GDA_CONNECTION_META_FIELDS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_INDEXES">GDA_CONNECTION_META_INDEXES</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="virtual_connection.html">Virtual connections</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualProvider.html">GdaVirtualProvider</a></span><span class="refpurpose"> — Base class for all virtual provider objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderDataModel.html">GdaVproviderDataModel</a></span><span class="refpurpose"> — Virtual provider for connections based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderHub.html">GdaVproviderHub</a></span><span class="refpurpose"> — Virtual provider for connections based on other connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualConnection.html">GdaVirtualConnection</a></span><span class="refpurpose"> — Base class for all virtual connection objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionDataModel.html">GdaVconnectionDataModel</a></span><span class="refpurpose"> — Virtual connection based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionHub.html">GdaVconnectionHub</a></span><span class="refpurpose"> — Virtual connection which bind together connections</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaLdapConnection.html">GdaLdapConnection</a></span><span class="refpurpose"> — LDAP connection objects</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="data_models.html">Data handling</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Gda-Value.html">A single Value</a></span><span class="refpurpose"> — Assorted functions for dealing with <span class="type">GValue</span> values</span>
+</dt>
+<dt><span class="sect1"><a href="data_models.html#data-validation">Custom data validation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaHolder">GdaHolder controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaSet">GdaSet controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaDataProxy">GdaDataProxy controls</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="data-select.html">Advanced GdaDataSelect usage</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data-select.html#data-select-rerun">Automatic re-run of the SELECT statement</a></span></dt>
+<dt><span class="sect2"><a href="data-select.html#data-select-empty-rs">Invalid parameters</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaBlobOp.html">Blobs</a></span><span class="refpurpose"> — Binary data and BLOBs handling</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModel.html">GdaDataModel</a></span><span class="refpurpose"> — Data model interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataSelect.html">GdaDataSelect</a></span><span class="refpurpose"> — Base class for data models returned by the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaColumn.html">GdaDataModel columns</a></span><span class="refpurpose"> — Management of <span class="type">GdaDataModel</span> column attributes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelIter.html">GdaDataModelIter</a></span><span class="refpurpose"> — Data model iterator</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelImport.html">GdaDataModelImport</a></span><span class="refpurpose"> — Importing data from a string or a file</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataPivot.html">GdaDataPivot</a></span><span class="refpurpose"> — A data model for data summarisation</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataAccessWrapper.html">GdaDataAccessWrapper</a></span><span class="refpurpose"> — Offers a random access on top of a cursor-only access data model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelArray.html">GdaDataModelArray</a></span><span class="refpurpose"> — An implementation of <span class="type">GdaDataModel</span> based on a <span class="type">GArray</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaRow.html">GdaRow</a></span><span class="refpurpose"> — Individual row of a <span class="type">GdaDataModelArray</span> object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelLdap.html">GdaDataModelLdap</a></span><span class="refpurpose"> — GdaDataModel to extract LDAP information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataModelBdb.html">GdaDataModelBdb</a></span><span class="refpurpose"> — GdaDataModel to access Berkeley DB database contents</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelDir.html">GdaDataModelDir</a></span><span class="refpurpose"> — GdaDataModel to list files in filesystem</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataProxy.html">GdaDataProxy</a></span><span class="refpurpose"> — Proxy to hold modifications for any <span class="type">GdaDataModel</span>, providing the <span class="type">GdaDataModel</span> interface itself</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataComparator.html">GdaDataComparator</a></span><span class="refpurpose"> — Simple data model's contents comparison</span>
+</dt>
+<dt><span class="sect1"><a href="gda-data-model-writing.html">Implementing your own data model</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-virtual-methods">Virtual methods</a></span></dt>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-signalling">Signalling changes</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="trees.html">Trees</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaTree.html">GdaTree</a></span><span class="refpurpose"> — A tree-structure</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeManager.html">GdaTreeManager</a></span><span class="refpurpose"> — Base class for all the tree managers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeNode.html">GdaTreeNode</a></span><span class="refpurpose"> — A node in a <span class="type">GdaTree</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLabel.html">GdaTreeMgrLabel</a></span><span class="refpurpose"> — A tree manager which creates a single node</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSelect.html">GdaTreeMgrSelect</a></span><span class="refpurpose"> — A tree manager which creates a node for each row resulting from the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSchemas.html">GdaTreeMgrSchemas</a></span><span class="refpurpose"> — A tree manager which creates a node for each schema in a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrTables.html">GdaTreeMgrTables</a></span><span class="refpurpose"> — A tree manager which creates a node for each table in a schema</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrColumns.html">GdaTreeMgrColumns</a></span><span class="refpurpose"> — A tree manager which creates a node for each column of a table</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLdap.html">GdaTreeMgrLdap</a></span><span class="refpurpose"> — A tree manager which creates a node for each child entry of an LDAP entry</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="data_conv.html">Data conversions</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Default-Data-handlers.html">GdaDataHandler</a></span><span class="refpurpose"> — Interface which provides data handling (conversions) capabilities</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerString.html">GdaHanderString</a></span><span class="refpurpose"> — Default handler for string values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBoolean.html">GdaHanderBoolean</a></span><span class="refpurpose"> — Default handler for boolean values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerTime.html">GdaHanderTime</a></span><span class="refpurpose"> — Default handler for time values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerNumerical.html">GdaHanderNumerical</a></span><span class="refpurpose"> — Default handler for numeric values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBin.html">GdaHanderBin</a></span><span class="refpurpose"> — Default handler for binary values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerType.html">GdaHanderType</a></span><span class="refpurpose"> — Default handler for GType values</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="gda-dict.html">Dictionary - metadata</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="gda-dict.html#GdaMetaStoreSetup">Setup</a></span></dt>
+<dt><span class="sect1"><a href="GdaMetaStoreCustomData.html">Adding custom data</a></span></dt>
+<dt><span class="sect1"><a href="information_schema.html">Database structure</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:data_types">Data types</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:sql_identifiers">SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.5">Short and full names</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.6">Declared foreign keys</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.7">Individual table description</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStore.html">GdaMetaStore</a></span><span class="refpurpose"> — Dictionary object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStruct.html">GdaMetaStruct</a></span><span class="refpurpose"> — In memory representation of some database objects</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch21.html">Data definition (DDL) queries</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaServerOperation.html">GdaServerOperation</a></span><span class="refpurpose"> — Handles any DDL query in an abstract way</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-individual-nodes.html">GdaServerOperation: individual nodes</a></span><span class="refpurpose"> — Getting information about parts (nodes) composing a path</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-sequences.html">GdaServerOperation: sequences</a></span><span class="refpurpose"> — Manipulating sequences</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch22.html">User interface API reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-LibgdaUI-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiLogin.html">GdauiLogin</a></span><span class="refpurpose"> — Connection opening widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiProviderSelector.html">GdauiProviderSelector</a></span><span class="refpurpose"> — Select a database provider from a combo box</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataSelector.html">GdauiDataSelector</a></span><span class="refpurpose"> — Selecting data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxy.html">GdauiDataProxy</a></span><span class="refpurpose"> — Displaying and modifying data in a <span class="type">GdaDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiBasicForm.html">GdauiBasicForm</a></span><span class="refpurpose"> — Form widget mapping the values contained in a <span class="type">GdaSet</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiForm.html">GdauiForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawForm.html">GdauiRawForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiGrid.html">GdauiGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawGrid.html">GdauiRawGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCombo.html">GdauiCombo</a></span><span class="refpurpose"> — Combo box to choose from the contents of a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCloud.html">GdauiCloud</a></span><span class="refpurpose"> — Cloud widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRtEditor.html">GdauiRtEditor</a></span><span class="refpurpose"> — Rich text editor which uses a subset of the txt2tags markup.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-plugins.html">UI plugins</a></span><span class="refpurpose"> — Plugin to customize dana entry widgets and call renderers in tree views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataEntry.html">GdauiDataEntry</a></span><span class="refpurpose"> — Data entry widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataStore.html">GdauiDataStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaDataModel</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataFilter.html">GdauiDataFilter</a></span><span class="refpurpose"> — Entrer rules to filter the rows in a <span class="type">GdauiDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxyInfo.html">GdauiDataProxyInfo</a></span><span class="refpurpose"> — Shows information &amp; actions about a <span class="type">GdauiDataProxy</span> widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiServerOperation.html">GdauiServerOperation</a></span><span class="refpurpose"> — Enter information to perform a DDL query</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiTreeStore.html">GdauiTreeStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaTree</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-Utility-functions.html">UI Utility functions</a></span><span class="refpurpose"> — Set of UI related functions</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="multi-threading.html">Multi threading</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaMutex.html">GdaMutex</a></span><span class="refpurpose"> — Recursive mutex implementation</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaLockable.html">GdaLockable</a></span><span class="refpurpose"> — Interface for locking objects in a multi threaded environment</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaThreadWrapper.html">GdaThreadWrapper</a></span><span class="refpurpose"> — Execute functions in a sub thread</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="misc.html">Miscellaneous</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Utility-functions.html">Utility functions</a></span><span class="refpurpose"> — Utility functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Logging.html">Logging</a></span><span class="refpurpose"> — Log functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Attributes-manager.html">Attributes manager</a></span><span class="refpurpose"> — Manager for lists of attributes</span>
+</dt>
+</dl></dd>
+</dl>
+</div>
+<p>
+      The following sections describe the API available for <a href="http://foldoc.org/GDA"><span class="acronym">GDA</span></a> applications.
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

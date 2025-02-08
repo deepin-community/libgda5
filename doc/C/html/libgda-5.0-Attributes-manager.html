@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Attributes manager: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="misc.html" title="Miscellaneous">
+<link rel="prev" href="libgda-5.0-Logging.html" title="Logging">
+<link rel="next" href="other-languages.html" title="Part III. Using Other Programing Languages">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Attributes-manager.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="misc.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-Logging.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="other-languages.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Attributes-manager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Attributes-manager.top_of_page"></a>Attributes manager</span></h2>
+<p>Attributes manager — Manager for lists of attributes</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManagerSignal" title="GdaAttributesManagerSignal ()">*GdaAttributesManagerSignal</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManagerFunc" title="GdaAttributesManagerFunc ()">*GdaAttributesManagerFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="returnvalue">GdaAttributesManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-new" title="gda_attributes_manager_new ()">gda_attributes_manager_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-free" title="gda_attributes_manager_free ()">gda_attributes_manager_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-set" title="gda_attributes_manager_set ()">gda_attributes_manager_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-set-full" title="gda_attributes_manager_set_full ()">gda_attributes_manager_set_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-get" title="gda_attributes_manager_get ()">gda_attributes_manager_get</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-copy" title="gda_attributes_manager_copy ()">gda_attributes_manager_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-clear" title="gda_attributes_manager_clear ()">gda_attributes_manager_clear</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-foreach" title="gda_attributes_manager_foreach ()">gda_attributes_manager_foreach</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-NAME:CAPS" title="GDA_ATTRIBUTE_NAME">GDA_ATTRIBUTE_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-DESCRIPTION:CAPS" title="GDA_ATTRIBUTE_DESCRIPTION">GDA_ATTRIBUTE_DESCRIPTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-AUTO-INCREMENT:CAPS" title="GDA_ATTRIBUTE_AUTO_INCREMENT">GDA_ATTRIBUTE_AUTO_INCREMENT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-NUMERIC-PRECISION:CAPS" title="GDA_ATTRIBUTE_NUMERIC_PRECISION">GDA_ATTRIBUTE_NUMERIC_PRECISION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-NUMERIC-SCALE:CAPS" title="GDA_ATTRIBUTE_NUMERIC_SCALE">GDA_ATTRIBUTE_NUMERIC_SCALE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-IS-DEFAULT:CAPS" title="GDA_ATTRIBUTE_IS_DEFAULT">GDA_ATTRIBUTE_IS_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-TREE-NODE-UNKNOWN-CHILDREN:CAPS" title="GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN">GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager">GdaAttributesManager</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.description"></a><h2>Description</h2>
+<p>he <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> manages lists of named values (attributes) for the benefit of
+others (objects or resources for which only a pointer is known). It is used internally by <span class="application">Libgda</span>
+whenever an object or a simple structure may have several attributes.</p>
+<p>The features are similar to those of the <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-set-data"><GTKDOCLINK HREF="g-object-set-data"><code class="function">g_object_set_data()</code></a></GTKDOCLINK> and similar
+but with the following major differences:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>it works with GObject objects and also with simple pointers to data</p></li>
+<li class="listitem"><p>attributes names are considered static (they are not copied) and so they must either be static strings or allocated strings which exist (unchanged) while an attribute uses it as name</p></li>
+<li class="listitem"><p>it is possible to iterate through the attributes</p></li>
+<li class="listitem"><p>the associated values are expected to be <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> values</p></li>
+</ul></div>
+<p>Attibute names can be any string, but <span class="application">Libgda</span> reserves some for its own usage, see below.</p>
+<p>The <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> implements its own locking mechanism so it is thread-safe.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GdaAttributesManagerSignal"></a><h3>GdaAttributesManagerSignal ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GdaAttributesManagerSignal<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a> *obj</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                               <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaAttributesManagerFunc"></a><h3>GdaAttributesManagerFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GdaAttributesManagerFunc<span class="c_punctuation">)</span> (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-new"></a><h3>gda_attributes_manager_new ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="returnvalue">GdaAttributesManager</span></a> *
+gda_attributes_manager_new (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> for_objects</code></em>,
+                            <em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManagerSignal" title="GdaAttributesManagerSignal ()"><span class="type">GdaAttributesManagerSignal</span></a> signal_func</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> signal_data</code></em>);</pre>
+<p>Creates a new <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a>, which can store (name, value) attributes for pointers or GObject objects
+(in the latter case, the attributes are destroyed when objects are also destroyed).</p>
+<p>Free-function: gda_attributes_manager_free</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>for_objects</p></td>
+<td class="parameter_description"><p>set to TRUE if attributes will be set on objects.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signal_func</p></td>
+<td class="parameter_description"><p>a function to be called whenever an attribute changes on an object (if <em class="parameter"><code>for_objects</code></em>
+is TRUE), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signal_data</p></td>
+<td class="parameter_description"><p>user data passed as last argument of <em class="parameter"><code>signal_func</code></em>
+when it is called</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-attributes-manager-new.returns"></a><h4>Returns</h4>
+<p> the new <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-free"></a><h3>gda_attributes_manager_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_free (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>);</pre>
+<p>Frees all the resssources managed by <em class="parameter"><code>mgr</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-set"></a><h3>gda_attributes_manager_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_set (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Associates an attribute named <em class="parameter"><code>att_name</code></em>
+ to <em class="parameter"><code>ptr</code></em>
+, with the value <em class="parameter"><code>value</code></em>
+. Any previous association is replaced by
+this one, and if <em class="parameter"><code>value</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the association is removed.</p>
+<p>Note: <em class="parameter"><code>att_name</code></em>
+ is *not* copied, so it should be a string which exists as long as <em class="parameter"><code>mgr</code></em>
+ exists.
+Libgda provides several predefined names for common attributes,
+see this section.</p>
+<p>If <em class="parameter"><code>att_name</code></em>
+ needs to be freed when not used anymore, then use <a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-set-full" title="gda_attributes_manager_set_full ()"><code class="function">gda_attributes_manager_set_full()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptr</p></td>
+<td class="parameter_description"><p>a pointer to the resources to which the attribute will apply</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_name</p></td>
+<td class="parameter_description"><p>an attribute's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-set-full"></a><h3>gda_attributes_manager_set_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_set_full (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                                 <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy</code></em>);</pre>
+<p>Does the same as <a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-set" title="gda_attributes_manager_set ()"><code class="function">gda_attributes_manager_set()</code></a> except that <em class="parameter"><code>destroy</code></em>
+ is called when <em class="parameter"><code>att_name</code></em>
+ needs
+to be freed.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-set-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptr</p></td>
+<td class="parameter_description"><p>a pointer to the resources to which the attribute will apply</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_name</p></td>
+<td class="parameter_description"><p>an attribute's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy</p></td>
+<td class="parameter_description"><p>function called when <em class="parameter"><code>att_name</code></em>
+has to be freed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-get"></a><h3>gda_attributes_manager_get ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_attributes_manager_get (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>);</pre>
+<p>Retrieves the value of an attribute previously set using <a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-set" title="gda_attributes_manager_set ()"><code class="function">gda_attributes_manager_set()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-get.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptr</p></td>
+<td class="parameter_description"><p>a pointer to the resources to which the attribute will apply</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_name</p></td>
+<td class="parameter_description"><p>an attribute's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-attributes-manager-get.returns"></a><h4>Returns</h4>
+<p>the attribute's value, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the attribute is not set. </p>
+<p><span class="annotation">[tranfer none]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-copy"></a><h3>gda_attributes_manager_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_copy (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *from_mgr</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *from</code></em>,
+                             <em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *to_mgr</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *to</code></em>);</pre>
+<p>For each attribute set for <em class="parameter"><code>from</code></em>
+ (in <em class="parameter"><code>from_mgr</code></em>
+), set the same attribute to <em class="parameter"><code>to</code></em>
+ (in <em class="parameter"><code>to_mgr</code></em>
+). <em class="parameter"><code>from_mgr</code></em>
+ and
+<em class="parameter"><code>to_mgr</code></em>
+ can be equal.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>from_mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from</p></td>
+<td class="parameter_description"><p>a pointer from which attributes are copied</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>to_mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>to</p></td>
+<td class="parameter_description"><p>a pointer to which attributes are copied</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-clear"></a><h3>gda_attributes_manager_clear ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_clear (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>);</pre>
+<p>Remove all the attributes managed by <em class="parameter"><code>mgr</code></em>
+ for the <em class="parameter"><code>ptr</code></em>
+ resource.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptr</p></td>
+<td class="parameter_description"><p>a pointer to the resources for which all the attributes will be removed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-attributes-manager-foreach"></a><h3>gda_attributes_manager_foreach ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_attributes_manager_foreach (<em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a> *mgr</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManagerFunc" title="GdaAttributesManagerFunc ()"><span class="type">GdaAttributesManagerFunc</span></a> func</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Calls <em class="parameter"><code>func</code></em>
+ for every attribute set to <em class="parameter"><code>ptr</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-attributes-manager-foreach.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>mgr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManager" title="GdaAttributesManager"><span class="type">GdaAttributesManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptr</p></td>
+<td class="parameter_description"><p>a pointer to the resources for which all the attributes used</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-Attributes-manager.html#GdaAttributesManagerFunc" title="GdaAttributesManagerFunc ()"><span class="type">GdaAttributesManagerFunc</span></a> function. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/scope%20call"><span class="acronym">scope call</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>user data to be passed as last argument of <em class="parameter"><code>func</code></em>
+each time it is called. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/closure"><span class="acronym">closure</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Attributes-manager.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-NAME:CAPS"></a><h3>GDA_ATTRIBUTE_NAME</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_NAME</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-DESCRIPTION:CAPS"></a><h3>GDA_ATTRIBUTE_DESCRIPTION</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_DESCRIPTION</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-AUTO-INCREMENT:CAPS"></a><h3>GDA_ATTRIBUTE_AUTO_INCREMENT</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_AUTO_INCREMENT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-NUMERIC-PRECISION:CAPS"></a><h3>GDA_ATTRIBUTE_NUMERIC_PRECISION</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_NUMERIC_PRECISION</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-NUMERIC-SCALE:CAPS"></a><h3>GDA_ATTRIBUTE_NUMERIC_SCALE</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_NUMERIC_SCALE</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-IS-DEFAULT:CAPS"></a><h3>GDA_ATTRIBUTE_IS_DEFAULT</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_IS_DEFAULT</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GDA-ATTRIBUTE-TREE-NODE-UNKNOWN-CHILDREN:CAPS"></a><h3>GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN</h3>
+<pre class="programlisting">#define             GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaAttributesManager"></a><h3>GdaAttributesManager</h3>
+<pre class="programlisting">typedef struct _GdaAttributesManager GdaAttributesManager;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

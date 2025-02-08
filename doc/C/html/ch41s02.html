@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Meta data: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-sql-manual-open.html" title="Connections management">
+<link rel="prev" href="gda-sql-manual-open.html" title="Connections management">
+<link rel="next" href="gda-sql-manual-icommands.html" title="Detailed features">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-sql-manual-open.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-sql-manual-open.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gda-sql-manual-icommands.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.8.6.6"></a>Meta data</h2></div></div></div>
+<p>
+      When a connection is opened for the first time, the tool get all the possible meta data associated to that connection (list of
+      tables, table's columns and their constraints, views, etc). The meta data are referred to when the user wants for example
+      to list a table's attributes, or for command line completion.
+    </p>
+<p>
+      If some modifications to the database structure have been made using a tool not using <span class="application">Libgda</span>, then
+      the meta data must be updated using the <span class="command"><strong>.meta</strong></span> command, which does not output
+      anything unless an error occurred. Updates to the meta data are automatic when a shema change
+      is done using <span class="application">Libgda</span> if the connection has been opened using the GDA_CONNECTION_OPTIONS_AUTO_META_DATA flag
+      (which is the case for <span class="application">Libgda</span>'s own tools).
+    </p>
+<p>
+      As the meta data are also stored in a database, the console tool allows one to directly execute SQL commands in the
+      meta data database associated to a connection. The meta data connection associated to a connection is by convention named
+      as the tilde character concatenated with the connection name (for example if the connection is named "cnc1", then the connection
+      to its meta data will be named "~cnc1"). To open a meta data connection, make sure the current connection is the one for which
+      you want to access the meta data, and then use the <span class="command"><strong>.c ~</strong></span> command (note that the same command will
+      return to the "cnc1" connection):
+      </p>
+<pre class="programlisting">
+cnc1&gt; .c ~
+Getting database schema information, this may take some time... Done.
+~cnc1&gt; .dt
+                           List of tables
+Schema | Name                             | Type       | Owner | Description
+-------+----------------------------------+------------+-------+------------
+main   | _attributes                      | BASE TABLE |       |            
+main   | _builtin_data_types              | BASE TABLE |       |            
+main   | _character_sets                  | BASE TABLE |       |            
+main   | _check_column_usage              | BASE TABLE |       |            
+main   | _collations                      | BASE TABLE |       |            
+main   | _columns                         | BASE TABLE |       |            
+main   | _domain_constraints              | BASE TABLE |       |            
+main   | _domains                         | BASE TABLE |       |            
+main   | _element_types                   | BASE TABLE |       |            
+main   | _enums                           | BASE TABLE |       |            
+main   | _information_schema_catalog_name | BASE TABLE |       |            
+main   | _key_column_usage                | BASE TABLE |       |            
+main   | _parameters                      | BASE TABLE |       |            
+main   | _referential_constraints         | BASE TABLE |       |            
+main   | _routine_columns                 | BASE TABLE |       |            
+main   | _routines                        | BASE TABLE |       |            
+main   | _schemata                        | BASE TABLE |       |            
+main   | _table_constraints               | BASE TABLE |       |            
+main   | _tables                          | BASE TABLE |       |            
+main   | _triggers                        | BASE TABLE |       |            
+main   | _udt                             | BASE TABLE |       |            
+main   | _udt_columns                     | BASE TABLE |       |            
+main   | _view_column_usage               | BASE TABLE |       |            
+main   | _views                           | BASE TABLE |       |            
+main   | gda_sql_query_buffers            | BASE TABLE |       |            
+(25 rows)
+~cnc1&gt; SELECT table_name FROM _tables;
+table_name     
+---------------
+customers      
+locations      
+orders         
+order_contents 
+roles          
+salesrep       
+sales_orga     
+warehouses     
+categories     
+products       
+products_copied
+(11 rows)
+~cnc1&gt; .c ~
+cnc1&gt;
+      </pre>
+<p>
+      Also note that the meta data's connections are listed among the opened connections, as shown:
+      </p>
+<pre class="programlisting">
+cnc1&gt; .c
+                       List of opened connections
+Name  | Provider | DSN or connection string                              | Username
+------+----------+-------------------------------------------------------+---------
+cnc1  | SQLite   | SalesTest                                             |         
+~cnc1 | SQLite   | DB_DIR=/home/vivien/.libgda;DB_NAME=gda-sql-SalesTest |         
+(2 rows)
+cnc1&gt;
+      </pre>
+<p>
+    </p>
+<p>
+      It is possible for any application to create some extra objects in that database for its own purposes, with the
+      constraint that it <span class="emphasis"><em>should not</em></span> create objects with names starting with an underscore (these
+      names are reserved for <span class="application">Libgda</span>'s own purposes). In the previous example, the table named "gda_sql_query_buffers"
+      is the table internally used by the console tool to store the contents of named query buffers.
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.8.6.6.6"></a>Information about tables</h3></div></div></div>
+<p>
+	Use the <span class="command"><strong>.dt</strong></span> command to list all the tables (or list only one table if the table name is specified as
+	an argument to the command):
+	</p>
+<pre class="programlisting">
+cnc1&gt; .dt
+                  List of tables
+Schema | Name            | Type       | Owner | Description
+-------+-----------------+------------+-------+------------
+main   | categories      | BASE TABLE |       |            
+main   | customers       | BASE TABLE |       |            
+main   | locations       | BASE TABLE |       |            
+main   | order_contents  | BASE TABLE |       |            
+main   | orders          | BASE TABLE |       |            
+main   | products        | BASE TABLE |       |            
+main   | products_copied | BASE TABLE |       |            
+main   | roles           | BASE TABLE |       |            
+main   | sales_orga      | BASE TABLE |       |            
+main   | salesrep        | BASE TABLE |       |            
+main   | warehouses      | BASE TABLE |       |            
+(11 rows)
+cnc1&gt; .dt customers
+               List of tables
+Schema | Name      | Type       | Owner | Description
+-------+-----------+------------+-------+------------
+main   | customers | BASE TABLE |       |            
+(1 row)
+cnc1&gt;
+	</pre>
+<p>
+      </p>
+<p>
+	To display the details about a single table, use the <span class="command"><strong>.d &lt;table_name&gt;</strong></span> command:
+	</p>
+<pre class="programlisting">
+cnc1&gt; .d customers
+          List of columns for table 'customers'
+Column            | Type    | Nullable | Default | Extra         
+------------------+---------+----------+---------+---------------
+id                | integer | no       |         | Auto increment
+name              | string  | no       | ''      |               
+default_served_by | integer | yes      |         |               
+country           | string  | yes      |         |               
+city              | string  | yes      |         |               
+(5 rows)
+
+Primary key 'primary_key' (id)
+Foreign key 'fk_locations' (country, city) references  main.locations (country, city)
+Foreign key 'fk_salesrep' (default_served_by) references  main.salesrep (default_served_by)
+cnc1&gt;
+	</pre>
+<p>
+      </p>
+<p>
+	Finally, the <span class="command"><strong>.graph [TABLE1 [TABLE2...]]</strong></span> will create a graph of all the tables (or
+	only the tables mentioned as arguments). The graph creates a <span class="application">GraphViz</span> file
+	named "graph.dot" which can then be processed with the GraphViz'<span class="command"><strong>dot</strong></span> command to
+	produce an image or a PDF file for example.
+      </p>
+<p>
+	If the <code class="envar">GDA_SQL_VIEWER_PNG</code> or <code class="envar">GDA_SQL_VIEWER_PDF</code> environment variables are set
+	(for example to <span class="application">eog</span> or <span class="application">evince</span>) and if the <span class="command"><strong>dot</strong></span> command
+	is installed, then the console tool will perform the transformation and display the graph (if under a graphical session).
+	The following figure shows an example of graph:
+	</p>
+<div class="mediaobject"><img src="gda-sql-graph.png" width="496" alt='Sample output from the ".graph" command'></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.8.6.6.7"></a>Information about views</h3></div></div></div>
+<p>
+	The console tool can report information about views. Use the <span class="command"><strong>.dv</strong></span> command to list all the views
+	(or list only one view if the view name is specified as	an argument to the command):
+	</p>
+<pre class="programlisting">
+cnc1&gt; .dv
+              List of views
+Schema | Name         | Type | Owner | Description
+-------+--------------+------+-------+------------
+main   | cust_summary | VIEW |       |            
+(1 row)
+cnc1&gt;
+	</pre>
+<p>
+      </p>
+<p>
+	One can also get more information for a single view using the <span class="command"><strong>.d &lt;view name&gt;</strong></span> command, 
+	for example:
+	</p>
+<pre class="programlisting">
+cnc1&gt; .d cust_summary 
+List of columns for view 'cust_summary'
+Column   | Type   | Nullable | Default | Extra
+---------+--------+----------+---------+------
+name     | string | yes      |         |      
+shortcut | string | yes      |         |      
+(2 rows)
+View definition: CREATE VIEW cust_summary as SELECT c.name, l.shortcut FROM customers c LEFT JOIN locations l ON (c.country=l.country AND c.city=l.city)
+cnc1&gt;
+	</pre>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.8.6.6.8"></a>Information about schemas</h3></div></div></div>
+<p>
+	Some databases feature the notion of <span class="emphasis"><em>schema</em></span> which is a container for database objects such as
+	tables, views, etc. Use the <span class="command"><strong>.dn</strong></span> command to get a list of all the schemas in a database. For
+	example with a PostgreSQL database:
+	</p>
+<pre class="programlisting">
+          List of schemas
+Schema             | Owner    | Internal
+-------------------+----------+---------
+information_schema | postgres | yes     
+pg_catalog         | postgres | yes     
+pg_temp_1          | postgres | yes     
+pg_toast           | postgres | yes     
+pg_toast_temp_1    | postgres | yes     
+public             | postgres | no      
+(6 rows)
+cnc1&gt;
+	</pre>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.8.6.6.9"></a>Information about other objects</h3></div></div></div>
+<p>
+	The meta data database holds a lot of information about the many objects which exist in a database, but the
+	console tool does not provide internal commands to display all of them. The solution is to run SELECT commands
+	in the meta data connection associated to a connection. For example to get a list of triggers where the "cnc2"
+	is a connection opened to a PostgreSQL's database, one first needs to connection to the meta data connection
+	and lookup into the "_triggers" table:
+	</p>
+<pre class="programlisting">
+cnc2&gt; .c ~
+~cnc2&gt; select trigger_name, event_manipulation, event_object_table from _triggers;
+trigger_name            | event_manipulation | event_object_table
+------------------------+--------------------+-------------------
+pg_sync_pg_database     | INSERT             | pg_database       
+pg_sync_pg_database     | DELETE             | pg_database       
+pg_sync_pg_database     | UPDATE             | pg_database       
+pg_sync_pg_authid       | INSERT             | pg_authid         
+pg_sync_pg_authid       | DELETE             | pg_authid         
+pg_sync_pg_authid       | UPDATE             | pg_authid         
+pg_sync_pg_auth_members | INSERT             | pg_auth_members   
+pg_sync_pg_auth_members | DELETE             | pg_auth_members   
+pg_sync_pg_auth_members | UPDATE             | pg_auth_members   
+(9 rows)
+~cnc2&gt;
+	</pre>
+<p>
+      </p>
+<p>
+	The meta data's database structure is described in the <a class="link" href="information_schema.html" title="Database structure">related section</a>.
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

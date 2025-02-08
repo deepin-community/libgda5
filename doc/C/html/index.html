@@ -1,0 +1,879 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GNOME Data Access 5 manual: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<meta name="description" content="GNOME Data Access (GDA) is an architecture whose purpose is to provide universal access to many different kinds and types of data sources. This goes from traditional relational database systems, to any imaginable kind of data source such as a mail server, a LDAP directory... This universality is obtained through the use of an easily extensible plug-in system as the mechanism for communication between the different components in the architecture.">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="next" href="part_begin.html" title="Part I. Getting started">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">GNOME Data Access 5 manual</p></th></tr></table></div>
+<div><div class="authorgroup">
+<div class="author">
+<h3 class="author">
+<span class="firstname">Michael</span> <span class="surname">Lausch</span>
+</h3>
+<div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:michael.lausch@1012surf.net">michael.lausch@1012surf.net</a>&gt;</code></p></div></div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Rodrigo</span> <span class="surname">Moya</span>
+</h3>
+<div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:rodrigo@gnome-db.org">rodrigo@gnome-db.org</a>&gt;</code></p></div></div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Sean</span> <span class="surname">Allen</span>
+</h3>
+<span class="contrib">GDP compliance, FDL, added mark-up, English and syntax
+        </span> <div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:zeroone@worldonline.co.za">zeroone@worldonline.co.za</a>&gt;</code></p></div></div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Xabier</span> <span class="surname">Rodriguez Calvar</span>
+</h3>
+<span class="contrib">How to begin and migration formulae
+        </span> <div class="affiliation">
+<span class="orgname"><span class="emphasis"><em><a class="ulink" href="http://www.igalia.com" target="_top">Igalia, S.L.</a></em></span><br></span><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:xrcalvar@igalia.com">xrcalvar@igalia.com</a>&gt;</code></p></div>
+</div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Jose</span> <span class="surname">Dapena Paz</span>
+</h3>
+<span class="contrib">Some examples
+        </span> <div class="affiliation">
+<span class="orgname"><span class="emphasis"><em><a class="ulink" href="http://www.igalia.com" target="_top">Igalia, S.L.</a></em></span><br></span><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:jdapena@igalia.com">jdapena@igalia.com</a>&gt;</code></p></div>
+</div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Bas</span> <span class="surname">Driessen</span>
+</h3>
+<span class="contrib">libgda, gda-postgres, gda-mysql
+        </span> <div class="affiliation">
+<span class="orgname"><span class="emphasis"><em><a class="ulink" href="http://www.xobas.com" target="_top">Xobas Software</a></em></span><br></span><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:bas.driessen@xobas.com">bas.driessen@xobas.com</a>&gt;</code></p></div>
+</div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Daniel</span> <span class="surname">Espinosa Ortiz</span>
+</h3>
+<span class="contrib">libgda, Vala, GObject Introspection
+        </span> <div class="affiliation">
+<span class="orgname"><br></span><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:esodan@gmail.com">esodan@gmail.com</a>&gt;</code></p></div>
+</div>
+</div>
+<div class="author">
+<h3 class="author">
+<span class="firstname">Vivien</span> <span class="surname">Malerba</span>
+</h3>
+<span class="contrib">Current maintainer
+        </span> <div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:malerba@gnome-db.org">malerba@gnome-db.org</a>&gt;</code></p></div></div>
+</div>
+</div></div>
+<div><p class="releaseinfo">for version 5.2.10
+</p></div>
+<div><p class="copyright">Copyright © 1999 - 2011 The GNOME Foundation</p></div>
+<div><div class="legalnotice">
+<a name="legalnotice"></a><p>
+        Permission is granted to copy, distribute and/or modify this document
+        under the terms of the <a class="link" href="fdl.html" title="Appendix A. GNU Free Documentation License"><em class="citetitle">GNU
+        Free Documentation License</em></a>, Version 1.1 or any later
+        version published by the Free Software Foundation with no Invariant
+        Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the
+        license can be found in <a class="link" href="fdl.html" title="Appendix A. GNU Free Documentation License">the appendix</a>.
+      </p>
+<p>
+        Many of the names used by companies to distinguish their products and
+        services are claimed as trademarks. Where those names appear in any
+        GNOME documentation, and those trademarks are made aware to the members
+        of the GNOME Documentation Project, the names have been printed in caps
+        or initial caps.
+      </p>
+</div></div>
+<div><div class="abstract">
+<p class="title"><b>Abstract</b></p>
+<p>
+        GNOME Data Access (<a href="http://foldoc.org/GDA"><span class="acronym">GDA</span></a>) is an architecture whose 
+        purpose is to provide universal access to many different kinds and
+        types of data sources. This goes from traditional relational database
+        systems, to any imaginable kind of data source such as a mail server,
+        a <a href="http://foldoc.org/LDAP"><span class="acronym">LDAP</span></a> directory...
+      </p>
+<p>
+        This universality is obtained through the use of
+        an easily extensible plug-in system as the mechanism for
+	communication between the different components in the architecture.
+      </p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl class="toc">
+<dt><span class="part"><a href="part_begin.html">I. Getting started</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="features.html">Features</a></span></dt>
+<dt><span class="chapter"><a href="architecture.html">Architecture</a></span></dt>
+<dt><span class="chapter"><a href="ch04.html">Foreword about abstraction</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="ch04.html#placeholders">Variables syntax in SQL</a></span></dt>
+<dt><span class="sect1"><a href="null_handling.html">NULL handling when using variables</a></span></dt>
+<dt><span class="sect1"><a href="gen_sql_identifiers.html">SQL identifiers</a></span></dt>
+<dt><span class="sect1"><a href="gen_blobs.html">Binary large objects (BLOBs)</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="installation.html">Installation</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="installation.html#installation-introduction">Getting the library</a></span></dt>
+<dt><span class="sect1"><a href="installation-installing.html">Installing from the sources</a></span></dt>
+<dt><span class="sect1"><a href="compiling.html">Compiling your code using the <span class="application">Libgda</span> library</a></span></dt>
+<dt><span class="sect1"><a href="installation-configuring.html">Configuring</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-development">Configuration for development</a></span></dt>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-client">Configuration for accessing a database</a></span></dt>
+<dt><span class="sect2"><a href="installation-configuring.html#installation-provider">Provider's specific information</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="getting_started.html">Code examples</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="getting_started.html#initializing">Initializing</a></span></dt>
+<dt><span class="sect1"><a href="connections.html">Connecting</a></span></dt>
+<dt><span class="sect1"><a href="ch06s03.html">Executing queries</a></span></dt>
+<dt><span class="sect1"><a href="data-model.html">Managing data models</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data-model.html#data-model-table-access">Example using random access</a></span></dt>
+<dt><span class="sect2"><a href="data-model.html#data-model-row-access">Example using an iterator</a></span></dt>
+<dt><span class="sect2"><a href="data-model.html#data-model-free">Freeing data models</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="transactions.html">Managing transactions</a></span></dt>
+<dt><span class="sect1"><a href="managing-errors.html">Managing connection's events and errors</a></span></dt>
+<dt><span class="sect1"><a href="main_example.html">Full example</a></span></dt>
+<dt><span class="sect1"><a href="ddl_example.html">DDL example</a></span></dt>
+<dt><span class="sect1"><a href="blobs_example.html">Binary large objects (BLOBs) example</a></span></dt>
+<dt><span class="sect1"><a href="other_examples.html">Other examples</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-1.html">Migration from 1.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-1.html#id-1.2.8.2">GdaValue and GdaDataModel changes</a></span></dt>
+<dt><span class="sect1"><a href="ch07s02.html">GdaClient, GdaConnection and GdaError</a></span></dt>
+<dt><span class="sect1"><a href="ch07s03.html">Various API changes</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-2.html">Migration from 3.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-2.html#id-1.2.9.2">Overview</a></span></dt>
+<dt><span class="sect1"><a href="ch08s02.html">New unique parser</a></span></dt>
+<dt><span class="sect1"><a href="ch08s03.html">GdaQuery and GdaCommand merge into GdaStatement</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-dict.html">Dictionary changes</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-exec.html">Statement execution</a></span></dt>
+<dt><span class="sect1"><a href="migration-2-report.html">Reports</a></span></dt>
+<dt><span class="sect1"><a href="ch08s07.html">Other changes</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.2">Multi threading environment</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.3">Configuration management</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.4">Database provider's changes</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.5">API changes</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.6">List of removed objects and interfaces</a></span></dt>
+<dt><span class="sect2"><a href="ch08s07.html#id-1.2.9.8.7">List of removed functions</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="migration-3.html">Migration from 4.X versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="migration-3.html#id-1.2.10.2">Overview</a></span></dt>
+<dt><span class="sect1"><a href="ch09s02.html">GDA_TYPE_NULL</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="provider-notes.html">Provider's notes</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="provider-notes.html#provider_notes_oracle">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="provider_notes_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.3">The <code class="function">gda_file_exists()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.4">The <code class="function">gda_hex_print()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.5">The <code class="function">gda_hex()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.6">The <code class="function">gda_rmdiacr()</code> function</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.7">The <code class="function">gda_upper()</code> and <code class="function">gda_lower()</code> functions</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlite.html#id-1.2.11.5.8">The <code class="function">regexp_match()</code> function</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_sqlcipher.html">For SQLCipher</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.4">How to create and encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.5">How to encrypt an existing plaintext database to an encrypted database file</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.6">How to change the passphrase of an encrypted database</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_sqlcipher.html#id-1.2.11.6.7">How to decrypt an existing database to a plaintext database</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.2">Authentication</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_ldap.html#id-1.2.11.7.3">Mapping to GdaDataModel</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="provider_notes_jdbc.html">For JDBC</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.2">How it works</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.3">JDBC drivers' location</a></span></dt>
+<dt><span class="sect2"><a href="provider_notes_jdbc.html#id-1.2.11.8.4">Connection parameters</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="limitations.html">Limitations</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="limitations.html#limitations_global">Global limitations</a></span></dt>
+<dt><span class="sect1"><a href="limitations_mysql.html">For MySQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.2">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.3">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_mysql.html#id-1.2.12.3.4">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_oracle.html">For Oracle</a></span></dt>
+<dt><span class="sect1"><a href="limitations_postgres.html">For PostgreSQL</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.3">BLOB handling</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.4">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.5">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.6">Statements execution</a></span></dt>
+<dt><span class="sect2"><a href="limitations_postgres.html#id-1.2.12.5.7">Timezone information</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlite.html">For SQLite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.4">Date and time</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.5">Timezone information</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.6">Multi threaded environment</a></span></dt>
+<dt><span class="sect2"><a href="limitations_sqlite.html#id-1.2.12.6.7">Error reporting</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_sqlcipher.html">For SQLCipher</a></span></dt>
+<dt><span class="sect1"><a href="limitations_ldap.html">For LDAP</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.2">User name</a></span></dt>
+<dt><span class="sect2"><a href="limitations_ldap.html#id-1.2.12.8.3">SSL/TLS certificate validation</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="limitations_jdbc.html">For JDBC based providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.3">Last inserted row's values</a></span></dt>
+<dt><span class="sect2"><a href="limitations_jdbc.html#id-1.2.12.9.4">Multi threaded environment</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="part_libgda_api.html">II. API reference</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="howto.html">HOWTO for common tasks</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="howto.html#id-1.3.3.3">Open a connection</a></span></dt>
+<dt><span class="sect1"><a href="ch12s02.html">Define a data source (DSN)</a></span></dt>
+<dt><span class="sect1"><a href="howto-sqlbuilder.html">Build statements without using a parser</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.4">INSERT INTO customers (e, f, g) VALUES (##p1::string, 15, 'joe')</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.5">SELECT people.firstname AS person, people.lastname, "date" AS birthdate, age FROM people</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.6">SELECT c."date", name AS person FROM "select" AS c INNER JOIN orders USING (id)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.7">UPDATE products set ref='A0E''FESP' WHERE id = 14</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.8">DELETE FROM items WHERE id = ##theid::int</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.9">SELECT myfunc (a, 5, 'Joe') FROM mytable</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.10">SELECT name FROM master WHERE id IN (SELECT id FROM subdata)</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.11">INSERT INTO customers (e, f, g) SELECT id, name, location FROM subdate</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.12">SELECT id, name FROM subdata1 UNION SELECT ident, lastname FROM subdata2</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.13">SELECT CASE tag WHEN 'Alpha' THEN 1 WHEN 'Bravo' THEN 2 WHEN 'Charlie' THEN 3 ELSE 0 END FROM data</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.14">SELECT product_id, name, sum (4 * 5 * price * 1.200000) FROM invoice_lines</a></span></dt>
+<dt><span class="sect2"><a href="howto-sqlbuilder.html#id-1.3.3.5.15">SELECT id, name, adress, cntry_id, countries.name FROM customers INNER JOIN countries ON (countries.id = cntry_id)</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="howto-exec-select.html">Execute a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-modify-select.html">Modify the result of a SELECT command</a></span></dt>
+<dt><span class="sect1"><a href="howto-exec-non-select.html">Execute an INSERT, UPDATE or DELETE command</a></span></dt>
+<dt><span class="sect1"><a href="ch12s07.html">Get the last inserted row</a></span></dt>
+<dt><span class="sect1"><a href="ch12s08.html">Execute a DDL command</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta1.html">Get information about a table's columns</a></span></dt>
+<dt><span class="sect1"><a href="howto-meta2.html">Update the meta data about a table</a></span></dt>
+<dt><span class="sect1"><a href="ch12s11.html">Validate a DML statement</a></span></dt>
+<dt><span class="sect1"><a href="ch12s12.html">Control value's assignment to various objects</a></span></dt>
+<dt><span class="sect1"><a href="ch12s13.html">Add your own data to a GdaMetaStore</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch13.html">Object Hierarchy</a></span></dt>
+<dt><span class="chapter"><a href="init_config.html">Initialization and configuration</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Libgda-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Configuration.html">Configuration</a></span><span class="refpurpose"> — Access/Management of libgda configuration</span>
+</dt>
+<dt><span class="sect1"><a href="init_config.html#libgda_env_variables">Configuring <span class="application">Libgda</span> with environment variables</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="connection.html">Connections &amp; commands</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaConnection.html">GdaConnection</a></span><span class="refpurpose"> — A connection to a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlParser.html">GdaSqlParser</a></span><span class="refpurpose"> — SQL parser</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlBuilder.html">GdaSqlBuilder</a></span><span class="refpurpose"> — Factory object for statements</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaStatement.html">GdaStatement</a></span><span class="refpurpose"> — Single SQL statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaRepetitiveStatement.html">GdaRepetitiveStatement</a></span><span class="refpurpose"> — Execute the same statement several times with different values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaBatch.html">GdaBatch</a></span><span class="refpurpose"> — Multiple SQL statements grouped together.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHolder.html">GdaHolder</a></span><span class="refpurpose"> — Container for a single <span class="type">GValue</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSet.html">GdaSet</a></span><span class="refpurpose"> — Container for several values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaConnectionEvent.html">GdaConnectionEvent</a></span><span class="refpurpose"> — Any event which has occurred on a <span class="type">GdaConnection</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTransactionStatus.html">GdaTransactionStatus</a></span><span class="refpurpose"> — Keeps track of the transaction status of a connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaXaTransaction.html">GdaXaTransaction</a></span><span class="refpurpose"> — Distributed transaction manager</span>
+</dt>
+<dt><span class="sect1"><a href="connection.html#GdaConnectionMetaTypeHead">Description of the data model returned by gda_connection_get_meta_store_data()</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_NAMESPACES">GDA_CONNECTION_META_NAMESPACES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TYPES">GDA_CONNECTION_META_TYPES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TABLES">GDA_CONNECTION_META_TABLES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_VIEWS">GDA_CONNECTION_META_VIEWS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_FIELDS">GDA_CONNECTION_META_FIELDS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_INDEXES">GDA_CONNECTION_META_INDEXES</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="virtual_connection.html">Virtual connections</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualProvider.html">GdaVirtualProvider</a></span><span class="refpurpose"> — Base class for all virtual provider objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderDataModel.html">GdaVproviderDataModel</a></span><span class="refpurpose"> — Virtual provider for connections based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVproviderHub.html">GdaVproviderHub</a></span><span class="refpurpose"> — Virtual provider for connections based on other connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVirtualConnection.html">GdaVirtualConnection</a></span><span class="refpurpose"> — Base class for all virtual connection objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionDataModel.html">GdaVconnectionDataModel</a></span><span class="refpurpose"> — Virtual connection based on a list of GdaDataModel</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaVconnectionHub.html">GdaVconnectionHub</a></span><span class="refpurpose"> — Virtual connection which bind together connections</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaLdapConnection.html">GdaLdapConnection</a></span><span class="refpurpose"> — LDAP connection objects</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="data_models.html">Data handling</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Gda-Value.html">A single Value</a></span><span class="refpurpose"> — Assorted functions for dealing with <span class="type">GValue</span> values</span>
+</dt>
+<dt><span class="sect1"><a href="data_models.html#data-validation">Custom data validation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaHolder">GdaHolder controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaSet">GdaSet controls</a></span></dt>
+<dt><span class="sect2"><a href="data_models.html#data-validation-GdaDataProxy">GdaDataProxy controls</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="data-select.html">Advanced GdaDataSelect usage</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="data-select.html#data-select-rerun">Automatic re-run of the SELECT statement</a></span></dt>
+<dt><span class="sect2"><a href="data-select.html#data-select-empty-rs">Invalid parameters</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaBlobOp.html">Blobs</a></span><span class="refpurpose"> — Binary data and BLOBs handling</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModel.html">GdaDataModel</a></span><span class="refpurpose"> — Data model interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataSelect.html">GdaDataSelect</a></span><span class="refpurpose"> — Base class for data models returned by the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaColumn.html">GdaDataModel columns</a></span><span class="refpurpose"> — Management of <span class="type">GdaDataModel</span> column attributes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelIter.html">GdaDataModelIter</a></span><span class="refpurpose"> — Data model iterator</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelImport.html">GdaDataModelImport</a></span><span class="refpurpose"> — Importing data from a string or a file</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataPivot.html">GdaDataPivot</a></span><span class="refpurpose"> — A data model for data summarisation</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataAccessWrapper.html">GdaDataAccessWrapper</a></span><span class="refpurpose"> — Offers a random access on top of a cursor-only access data model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelArray.html">GdaDataModelArray</a></span><span class="refpurpose"> — An implementation of <span class="type">GdaDataModel</span> based on a <span class="type">GArray</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaRow.html">GdaRow</a></span><span class="refpurpose"> — Individual row of a <span class="type">GdaDataModelArray</span> object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelLdap.html">GdaDataModelLdap</a></span><span class="refpurpose"> — GdaDataModel to extract LDAP information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataModelBdb.html">GdaDataModelBdb</a></span><span class="refpurpose"> — GdaDataModel to access Berkeley DB database contents</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataModelDir.html">GdaDataModelDir</a></span><span class="refpurpose"> — GdaDataModel to list files in filesystem</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaDataProxy.html">GdaDataProxy</a></span><span class="refpurpose"> — Proxy to hold modifications for any <span class="type">GdaDataModel</span>, providing the <span class="type">GdaDataModel</span> interface itself</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaDataComparator.html">GdaDataComparator</a></span><span class="refpurpose"> — Simple data model's contents comparison</span>
+</dt>
+<dt><span class="sect1"><a href="gda-data-model-writing.html">Implementing your own data model</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-virtual-methods">Virtual methods</a></span></dt>
+<dt><span class="sect2"><a href="gda-data-model-writing.html#gda-data-model-writing-signalling">Signalling changes</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="trees.html">Trees</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaTree.html">GdaTree</a></span><span class="refpurpose"> — A tree-structure</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeManager.html">GdaTreeManager</a></span><span class="refpurpose"> — Base class for all the tree managers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeNode.html">GdaTreeNode</a></span><span class="refpurpose"> — A node in a <span class="type">GdaTree</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLabel.html">GdaTreeMgrLabel</a></span><span class="refpurpose"> — A tree manager which creates a single node</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSelect.html">GdaTreeMgrSelect</a></span><span class="refpurpose"> — A tree manager which creates a node for each row resulting from the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSchemas.html">GdaTreeMgrSchemas</a></span><span class="refpurpose"> — A tree manager which creates a node for each schema in a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrTables.html">GdaTreeMgrTables</a></span><span class="refpurpose"> — A tree manager which creates a node for each table in a schema</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrColumns.html">GdaTreeMgrColumns</a></span><span class="refpurpose"> — A tree manager which creates a node for each column of a table</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLdap.html">GdaTreeMgrLdap</a></span><span class="refpurpose"> — A tree manager which creates a node for each child entry of an LDAP entry</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="data_conv.html">Data conversions</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Default-Data-handlers.html">GdaDataHandler</a></span><span class="refpurpose"> — Interface which provides data handling (conversions) capabilities</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerString.html">GdaHanderString</a></span><span class="refpurpose"> — Default handler for string values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBoolean.html">GdaHanderBoolean</a></span><span class="refpurpose"> — Default handler for boolean values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerTime.html">GdaHanderTime</a></span><span class="refpurpose"> — Default handler for time values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerNumerical.html">GdaHanderNumerical</a></span><span class="refpurpose"> — Default handler for numeric values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBin.html">GdaHanderBin</a></span><span class="refpurpose"> — Default handler for binary values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerType.html">GdaHanderType</a></span><span class="refpurpose"> — Default handler for GType values</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="gda-dict.html">Dictionary - metadata</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="gda-dict.html#GdaMetaStoreSetup">Setup</a></span></dt>
+<dt><span class="sect1"><a href="GdaMetaStoreCustomData.html">Adding custom data</a></span></dt>
+<dt><span class="sect1"><a href="information_schema.html">Database structure</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:data_types">Data types</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#information_schema:sql_identifiers">SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.5">Short and full names</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.6">Declared foreign keys</a></span></dt>
+<dt><span class="sect2"><a href="information_schema.html#id-1.3.11.8.7">Individual table description</a></span></dt>
+</dl></dd>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStore.html">GdaMetaStore</a></span><span class="refpurpose"> — Dictionary object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaMetaStruct.html">GdaMetaStruct</a></span><span class="refpurpose"> — In memory representation of some database objects</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch21.html">Data definition (DDL) queries</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaServerOperation.html">GdaServerOperation</a></span><span class="refpurpose"> — Handles any DDL query in an abstract way</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-individual-nodes.html">GdaServerOperation: individual nodes</a></span><span class="refpurpose"> — Getting information about parts (nodes) composing a path</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-sequences.html">GdaServerOperation: sequences</a></span><span class="refpurpose"> — Manipulating sequences</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch22.html">User interface API reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-LibgdaUI-Initialization.html">Library initialization</a></span><span class="refpurpose"> — Library initialization and information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiLogin.html">GdauiLogin</a></span><span class="refpurpose"> — Connection opening widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiProviderSelector.html">GdauiProviderSelector</a></span><span class="refpurpose"> — Select a database provider from a combo box</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataSelector.html">GdauiDataSelector</a></span><span class="refpurpose"> — Selecting data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxy.html">GdauiDataProxy</a></span><span class="refpurpose"> — Displaying and modifying data in a <span class="type">GdaDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiBasicForm.html">GdauiBasicForm</a></span><span class="refpurpose"> — Form widget mapping the values contained in a <span class="type">GdaSet</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiForm.html">GdauiForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawForm.html">GdauiRawForm</a></span><span class="refpurpose"> — Form widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiGrid.html">GdauiGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span>, with decorations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRawGrid.html">GdauiRawGrid</a></span><span class="refpurpose"> — Grid widget to manipulate data in a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCombo.html">GdauiCombo</a></span><span class="refpurpose"> — Combo box to choose from the contents of a <span class="type">GdaDataModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiCloud.html">GdauiCloud</a></span><span class="refpurpose"> — Cloud widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiRtEditor.html">GdauiRtEditor</a></span><span class="refpurpose"> — Rich text editor which uses a subset of the txt2tags markup.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-plugins.html">UI plugins</a></span><span class="refpurpose"> — Plugin to customize dana entry widgets and call renderers in tree views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataEntry.html">GdauiDataEntry</a></span><span class="refpurpose"> — Data entry widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataStore.html">GdauiDataStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaDataModel</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataFilter.html">GdauiDataFilter</a></span><span class="refpurpose"> — Entrer rules to filter the rows in a <span class="type">GdauiDataProxy</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiDataProxyInfo.html">GdauiDataProxyInfo</a></span><span class="refpurpose"> — Shows information &amp; actions about a <span class="type">GdauiDataProxy</span> widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiServerOperation.html">GdauiServerOperation</a></span><span class="refpurpose"> — Enter information to perform a DDL query</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdauiTreeStore.html">GdauiTreeStore</a></span><span class="refpurpose"> — Bridge between a <span class="type">GdaTree</span> and a <span class="type">GtkTreeModel</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-UI-Utility-functions.html">UI Utility functions</a></span><span class="refpurpose"> — Set of UI related functions</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="multi-threading.html">Multi threading</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaMutex.html">GdaMutex</a></span><span class="refpurpose"> — Recursive mutex implementation</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaLockable.html">GdaLockable</a></span><span class="refpurpose"> — Interface for locking objects in a multi threaded environment</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaThreadWrapper.html">GdaThreadWrapper</a></span><span class="refpurpose"> — Execute functions in a sub thread</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="misc.html">Miscellaneous</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Utility-functions.html">Utility functions</a></span><span class="refpurpose"> — Utility functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Logging.html">Logging</a></span><span class="refpurpose"> — Log functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Attributes-manager.html">Attributes manager</a></span><span class="refpurpose"> — Manager for lists of attributes</span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="other-languages.html">III. Using Other Programing Languages</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="other-languages-introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="other-languages-vala.html">Vala Extensions</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="part_tools.html">IV. <a href="http://foldoc.org/GDA"><span class="acronym">GDA</span></a> Tools</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="libgda-tools-introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="libgda-sql.html"><span class="command"><strong>gda-sql</strong></span></a></span></dt>
+<dt><span class="chapter"><a href="libgda-tools-list-config.html"><span class="command"><strong>gda-list-config-5.0</strong></span></a></span></dt>
+<dt><span class="chapter"><a href="libgda-tools-test-connection.html"><span class="command"><strong>gda-test-connection-5.0</strong></span></a></span></dt>
+<dt><span class="chapter"><a href="libgda-list-server-op.html"><span class="command"><strong>gda-list-server-op-5.0</strong></span></a></span></dt>
+<dt><span class="chapter"><a href="libgda-tools-controlcenter.html">Control center</a></span></dt>
+<dt><span class="chapter"><a href="libgda-tools-gdabrowser.html">GdaBrowser</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="part_libgda-reports.html">V. Reports</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="libgda-reports-introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="ch35.html">API reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaReportEngine.html">GdaReportEngine</a></span><span class="refpurpose"> — Low level report generator based on XML</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaReportDocument.html">GdaReportDocument</a></span><span class="refpurpose"> — Report document</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaReportDocbookDocument.html">GdaReportDocbookDocument</a></span><span class="refpurpose"> — Report document based on the DocBook dialect</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaReportRmlDocument.html">GdaReportRmlDocument</a></span><span class="refpurpose"> — Report document based on the RML dialect</span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="part_libgda-xslt.html">VI. XSLT extension</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="libgda-xslt-introduction.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="libgda-xslt-api.html">API reference</a></span></dt>
+<dt><span class="chapter"><a href="ch38.html">Example</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="gda-sql.html">VII. Gda SQL console's user manual</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="gda-sql-manual-run.html">Getting started</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="gda-sql-manual-run.html#id-1.8.4.2">Features</a></span></dt>
+<dt><span class="sect1"><a href="ch39s02.html">Execution</a></span></dt>
+<dt><span class="sect1"><a href="ch39s03.html">Commands</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="gda-sql-manual-dsn.html">DSN management</a></span></dt>
+<dt><span class="chapter"><a href="gda-sql-manual-open.html">Connections management</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="gda-sql-manual-open.html#id-1.8.6.5">Virtual connections</a></span></dt>
+<dt><span class="sect1"><a href="ch41s02.html">Meta data</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.6">Information about tables</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.7">Information about views</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.8">Information about schemas</a></span></dt>
+<dt><span class="sect2"><a href="ch41s02.html#id-1.8.6.6.9">Information about other objects</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="gda-sql-manual-icommands.html">Detailed features</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="gda-sql-manual-icommands.html#id-1.8.7.3">Query buffer</a></span></dt>
+<dt><span class="sect1"><a href="ch42s02.html">Internal parameters</a></span></dt>
+<dt><span class="sect1"><a href="ch42s03.html">Embedded HTTP server</a></span></dt>
+<dt><span class="sect1"><a href="ch42s04.html">Environment variables</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="part_providers.html">VIII. Databases providers for developers</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch43.html">Getting started</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-class.html">Virtual methods for providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-class.html#id-1.9.7.5">Synchronous / asynchronous mode</a></span></dt>
+<dt><span class="sect1"><a href="ch44s02.html">Multi threaded environment</a></span></dt>
+<dt><span class="sect1"><a href="ch44s03.html">Methods - provider's information</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-name">get_name() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-version">get_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-server-version">get_server_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#id-1.9.7.7.5">supports_feature()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s04.html">Methods - connection management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s04.html#prov-open-connection">open_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#prov-close-connection">close_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#id-1.9.7.8.4">get_database()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s05.html">Methods - DDL queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.4">supports_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.5">create_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.6">render_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.7">perform_operation()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s06.html">Methods - transactions management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.3">begin_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.4">commit_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.5">rollback_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.6">add_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.7">rollback_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.8">delete_savepoint()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s07.html">Methods - DML queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.4">create_parser()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.5">statement_to_sql()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.6">statement_prepare()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.7">statement_execute() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.8">handle_async()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s08.html">Methods - data representation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.3">get_data_handler()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.4">get_def_dbms_type()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.5">escape_string()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.6">unescape_string()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="prov-metadata.html">Methods - metadata</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.6">Important note about SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.7">Reserved SQL keywords</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.8">_info()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.9">_btypes()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.10">schemata() and _schemata()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.11">tables_views() and _tables_views()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.12">columns() and _columns()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.13">constraints_tab() and _constraints_tab()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.14">constraints_ref() and _constraints_ref()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.15">key_columns() and _key_columns()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s10.html">Methods - misc.</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.2">cancel()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.3">create_connection()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.4">is_busy()</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="libgda-provider-recordset.html">Virtual methods for recordsets</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-blobop.html">Virtual methods for Blob operations</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-parser.html">SQL parser</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-parser.html#id-1.9.10.3">Implementation overview</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.3">Generic SQL parser</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.4">Provider specific SQL parser</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch47s02.html">Tips to write a custom parser</a></span></dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaSqlStatement.html">GdaSqlStatement</a></span><span class="refpurpose"> — SQL statement</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="libgda-provider-pack.html">Assembling all the parts</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-pack.html#id-1.9.11.4">libmain.c</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.4">plugin_init()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.5">plugin_get_name()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.6">plugin_get_description()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.7">plugin_get_dsn_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.8">plugin_get_auth_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.9">plugin_create_provider()</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="psupport.html">Providers' support API</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaServerProvider.html">GdaServerProvider</a></span><span class="refpurpose"> — Base class for all the DBMS providers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Subclassing-GdaDataSelect.html">Subclassing GdaDataSelect</a></span><span class="refpurpose"> — Base class for all the data models returned by DBMS providers when a SELECT statement is executed</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaPStmt.html">GdaPstmt</a></span><span class="refpurpose"> — Base class for prepared statement's</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Quark-lists.html">Quark list</a></span><span class="refpurpose"> — Manages lists of KEY=VALUE pairs</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-SQL-rendering-API.html">SQL rendering API</a></span><span class="refpurpose"> — Adapting the SQL to the database's own SQL dialect</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Misc-API.html">Misc API for database providers</a></span><span class="refpurpose"> — Methods dedicated to implementing providers</span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="pt09.html">IX. Packaging</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="libgda-packaging.html">Packaging <span class="application">Libgda</span></a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-packaging.html#id-1.10.2.3">Overview of the components</a></span></dt>
+<dt><span class="sect1"><a href="ch50s02.html">Runtime component</a></span></dt>
+<dt><span class="sect1"><a href="ch50s03.html">GObject introspection</a></span></dt>
+<dt><span class="sect1"><a href="ch50s04.html">Tools</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch50s04.html#id-1.10.2.6.3">Diagnostic tools</a></span></dt>
+<dt><span class="sect2"><a href="ch50s04.html#id-1.10.2.6.4">SQL console</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch50s05.html">Database providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch50s05.html#id-1.10.2.7.3">'Generic' provider</a></span></dt>
+<dt><span class="sect2"><a href="ch50s05.html#id-1.10.2.7.4">The SQLite provider</a></span></dt>
+<dt><span class="sect2"><a href="ch50s05.html#id-1.10.2.7.5">The JDBC provider</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch50s06.html">Development files</a></span></dt>
+<dt><span class="sect1"><a href="ch50s07.html">Documentation</a></span></dt>
+<dt><span class="sect1"><a href="ch50s08.html">Localization</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="libgdaui-packaging.html">Packaging <span class="application">Libgda</span> UI extension</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgdaui-packaging.html#id-1.10.3.3">Overview of the components</a></span></dt>
+<dt><span class="sect1"><a href="ch51s02.html">Runtime component</a></span></dt>
+<dt><span class="sect1"><a href="ch51s03.html">GObject introspection</a></span></dt>
+<dt><span class="sect1"><a href="ch51s04.html">Tools</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch51s04.html#id-1.10.3.6.2">Control center</a></span></dt>
+<dt><span class="sect2"><a href="ch51s04.html#id-1.10.3.6.3">Gda browser</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch51s05.html">Development files</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="part_index.html">X. Appendix</a></span></dt>
+<dd><dl>
+<dt><span class="index"><a href="index_main.html">Index</a></span></dt>
+<dt><span class="index"><a href="index-4-2.html">Index of new symbols in 4.2</a></span></dt>
+<dt><span class="index"><a href="index-4-2-1.html">Index of new symbols in 4.2.1</a></span></dt>
+<dt><span class="index"><a href="index-4-2-2.html">Index of new symbols in 4.2.2</a></span></dt>
+<dt><span class="index"><a href="index-4-2-3.html">Index of new symbols in 4.2.3</a></span></dt>
+<dt><span class="index"><a href="index-4-2-4.html">Index of new symbols in 4.2.4</a></span></dt>
+<dt><span class="index"><a href="index-4-2-5.html">Index of new symbols in 4.2.5</a></span></dt>
+<dt><span class="index"><a href="index-4-2-6.html">Index of new symbols in 4.2.6</a></span></dt>
+<dt><span class="index"><a href="index-4-2-7.html">Index of new symbols in 4.2.7</a></span></dt>
+<dt><span class="index"><a href="index-4-2-8.html">Index of new symbols in 4.2.8</a></span></dt>
+<dt><span class="index"><a href="index-4-2-9.html">Index of new symbols in 4.2.9</a></span></dt>
+<dt><span class="index"><a href="index-4-2-10.html">Index of new symbols in 4.2.10</a></span></dt>
+<dt><span class="index"><a href="index-5-0.html">Index of new symbols in 5.0</a></span></dt>
+<dt><span class="index"><a href="index-5-0-2.html">Index of new symbols in 5.0.2</a></span></dt>
+<dt><span class="index"><a href="index-5-0-3.html">Index of new symbols in 5.0.3</a></span></dt>
+<dt><span class="index"><a href="index-5-2-0.html">Index of new symbols in 5.2.0</a></span></dt>
+<dt><span class="index"><a href="index-deprecated.html">Index of deprecated symbols</a></span></dt>
+<dt><span class="appendix"><a href="fdl.html">A. GNU Free Documentation License</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="fdl.html#fdl-preamble">0. PREAMBLE</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section1.html">1. APPLICABILITY AND DEFINITIONS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section2.html">2. VERBATIM COPYING</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section3.html">3. COPYING IN QUANTITY</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section4.html">4. MODIFICATIONS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section5.html">5. COMBINING DOCUMENTS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section6.html">6. COLLECTIONS OF DOCUMENTS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section7.html">7. AGGREGATION WITH INDEPENDENT WORKS</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section8.html">8. TRANSLATION</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section9.html">9. TERMINATION</a></span></dt>
+<dt><span class="sect1"><a href="fdl-section10.html">10. FUTURE REVISIONS OF THIS LICENSE</a></span></dt>
+<dt><span class="sect1"><a href="fdl-using.html">Addendum</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl></div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

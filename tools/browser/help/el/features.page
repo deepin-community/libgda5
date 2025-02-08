@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="features" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>	
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Χαρακτηριστικά</title>
+  <p>τα τρέχοντα γνωρίσματα του <app>gda-browser</app> είναι:</p>
+  <section id="features-gen-ui">
+    <title>Γενική διεπαφή χρήστη</title>
+    <list>	
+      <item><p>πολλαπλά νήματα: κάθε σύνδεση επεξεργάζεται στο δικό της νήμα, που σημαίνει ότι καμία μονή σύνδεση δεν μπορεί να κλειδώσει την εφαρμογή</p></item>
+      <item><p>πολλαπλά παράθυρα μπορούν να ανοιχτούν για μια μονή σύνδεση</p></item>
+      <item><p>προσβάσιμη κατάσταση πλήρους οθόνης για μεγιστοποίηση της χρήσης του χώρου της οθόνης</p></item>
+    </list>
+  </section>
+  <section id="features-cnc-mgmt">
+    <title>Διαχείριση σύνδεσης</title>
+    <list>
+      <item><p>πολλαπλές ταυτόχρονες συνδέσεις μπορούν να ανοιχτούν μονομιάς</p></item>
+      <item><p>συσχέτιση συνδέσεων: είναι δυνατό να <link type="topic" xref="virtual-connections">"συσχετιστούν"</link> πολλές συνδέσεις σε μια για εκτέλεση εντολών SQL σε πολλές συνδέσεις μονομιάς</p></item>
+      <item><p>πολλαπλά νήματα: κάθε σύνδεση επεξεργάζεται στο δικό της νήμα, που σημαίνει ότι καμία μονή σύνδεση δεν μπορεί να κλειδώσει την εφαρμογή</p></item>
+    </list>
+  </section>
+  <section id="features-activities">
+    <title>Ενέργειες</title>
+    <p>Οι ενέργειες ομαδοποιούνται κατά θέμα γύρω από την ιδέα των <link type="topic" xref="general-ui">προοπτικών</link>, τα επόμενα εφαρμόζονται προς το παρόν:</p>
+    <list>	
+      <item><p>ανάλυση του σχήματος της βάσης δεδομένων (πίνακες, σχέσεις, ...), δείτε την <link xref="schema-browser-perspective">προοπτική περιηγητή σχήματος</link></p></item>
+      <item><p>εκτέλεση εντολών SQL, δείτε την <link xref="query-execution-perspective">προοπτική εκτέλεσης ερωτήματος</link></p></item>
+      <item><p>ανάλυση των περιεχομένων του πίνακα, δείτε την <link xref="data-manager-perspective">προοπτική διαχειριστή δεδομένων</link></p></item>
+      <item><p>για <link xref="ldap-connection">συνδέσεις LDAP</link>, διαχείριση των ιεραρχικών δεδομένων στο δένδρο LDAP, δείτε την <link xref="ldap-browser-perspective">προοπτική περιηγητή LDAP</link></p></item>
+    </list>
+    <p>Δείτε επίσης την ενότητα για τις <link xref="actions">ενέργειες</link></p>
+  </section>
+  <section id="features-open">
+    <title>Άνοιγμα</title>
+    <list>
+      <item><p>CSV και άλλα αρχεία κειμένου μπορούν να εισαχθούν και να χρησιμοποιηθούν μαζί με την <link type="topic" xref="virtual-connections">συσχέτιση σύνδεσης</link></p></item>
+      <item><p>ο γενικός σκελετός ανοίγεται αρκετά για προσθήκη νέων ενσωματωμένων γνωρισμάτων· ειδικά οποιοσδήποτε μπορεί να αναπτύξει νέες <link type="topic" xref="general-ui">προοπτικές</link></p></item>      
+    </list>
+  </section>
+</page>

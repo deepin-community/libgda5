@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataHandler: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_conv.html" title="Data conversions">
+<link rel="prev" href="data_conv.html" title="Data conversions">
+<link rel="next" href="GdaHandlerString.html" title="GdaHanderString">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Default-Data-handlers.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Default-Data-handlers.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Default-Data-handlers.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-Default-Data-handlers.implementations" class="shortcut">Known Implementations</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_conv.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="data_conv.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaHandlerString.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-Default-Data-handlers"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-Default-Data-handlers.top_of_page"></a>GdaDataHandler</span></h2>
+<p>GdaDataHandler — Interface which provides data handling (conversions) capabilities</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-sql-from-value" title="gda_data_handler_get_sql_from_value ()">gda_data_handler_get_sql_from_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-str-from-value" title="gda_data_handler_get_str_from_value ()">gda_data_handler_get_str_from_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-value-from-sql" title="gda_data_handler_get_value_from_sql ()">gda_data_handler_get_value_from_sql</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-value-from-str" title="gda_data_handler_get_value_from_str ()">gda_data_handler_get_value_from_str</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-sane-init-value" title="gda_data_handler_get_sane_init_value ()">gda_data_handler_get_sane_init_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-accepts-g-type" title="gda_data_handler_accepts_g_type ()">gda_data_handler_accepts_g_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-descr" title="gda_data_handler_get_descr ()">gda_data_handler_get_descr</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-default" title="gda_data_handler_get_default ()">gda_data_handler_get_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GdaDataHandler"></a><div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler-struct" title="GdaDataHandler">GdaDataHandler</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> GdaDataHandler
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GdaDataHandler requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.implementations"></a><h2>Known Implementations</h2>
+<p>
+GdaDataHandler is implemented by
+ <a class="link" href="GdaHandlerBin.html" title="GdaHanderBin">GdaHandlerBin</a>,  <a class="link" href="GdaHandlerBoolean.html" title="GdaHanderBoolean">GdaHandlerBoolean</a>,  <a class="link" href="GdaHandlerNumerical.html" title="GdaHanderNumerical">GdaHandlerNumerical</a>,  <a class="link" href="GdaHandlerString.html" title="GdaHanderString">GdaHandlerString</a>,  <a class="link" href="GdaHandlerTime.html" title="GdaHanderTime">GdaHandlerTime</a> and  <a class="link" href="GdaHandlerType.html" title="GdaHanderType">GdaHandlerType</a>.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-blob-op.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.description"></a><h2>Description</h2>
+<p>Because data types vary a lot from a DBMS to another, the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface helps
+managing data in its various representations, and converting from one to another:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>as a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> which is a generic value container for the C language</p></li>
+<li class="listitem"><p>as a human readable string (in the user defined locale)</p></li>
+<li class="listitem"><p>as an SQL string (a string which can be used in SQL statements)</p></li>
+</ul></div>
+<p>For each data type, a corresponding <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> object can be requested using the</p>
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-default" title="gda_data_handler_get_default ()"><code class="function">gda_data_handler_get_default()</code></a> function. However, when working
+<p>with a specific database provider, it's better to use a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> which may be specific to the
+database provider which will correctly handle each database specifics using</p>
+<a class="link" href="GdaServerProvider.html#gda-server-provider-get-data-handler-g-type" title="gda_server_provider_get_data_handler_g_type ()"><code class="function">gda_server_provider_get_data_handler_g_type()</code></a> or
+<a class="link" href="GdaServerProvider.html#gda-server-provider-get-data-handler-dbms" title="gda_server_provider_get_data_handler_dbms ()"><code class="function">gda_server_provider_get_data_handler_dbms()</code></a>.
+
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-handler-get-sql-from-value"></a><h3>gda_data_handler_get_sql_from_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_data_handler_get_sql_from_value (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Creates a new string which is an SQL representation of the given value, the returned string
+can be used directly in an SQL statement. For example if <em class="parameter"><code>value</code></em>
+ is a G_TYPE_STRING, then
+the returned string will be correctly quoted. Note however that it is a better practice
+to use variables in statements instead of value literals, see
+the <a class="link" href="GdaSqlParser.html#GdaSqlParser.description" title="Description">GdaSqlParser</a> for more information.</p>
+<p>If the value is NULL or is of type GDA_TYPE_NULL,
+or is a G_TYPE_STRING and <a href="/usr/share/gtk-doc/html/gobject/gobject-Standard-Parameter-and-Value-Types.html#g-value-get-string"><code class="function">g_value_get_string()</code></a> returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the returned string is "NULL".</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-sql-from-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to be converted to a string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-sql-from-value.returns"></a><h4>Returns</h4>
+<p>the new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-str-from-value"></a><h3>gda_data_handler_get_str_from_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_data_handler_get_str_from_value (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>Creates a new string which is a "user friendly" representation of the given value
+(in the user's locale, specially for the dates). If the value is 
+NULL or is of type GDA_TYPE_NULL, the returned string is a copy of "" (empty string).</p>
+<p>Note: the returned value will be in the current locale representation.</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-str-from-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the value to be converted to a string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-str-from-value.returns"></a><h4>Returns</h4>
+<p>the new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-value-from-sql"></a><h3>gda_data_handler_get_value_from_sql ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_handler_get_value_from_sql (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Creates a new GValue which represents the SQL value given as argument. This is
+the opposite of the function <a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-sql-from-value" title="gda_data_handler_get_sql_from_value ()"><code class="function">gda_data_handler_get_sql_from_value()</code></a>. The type argument
+is used to determine the real data type requested for the returned value.</p>
+<p>If the <em class="parameter"><code>sql</code></em>
+ string is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the returned GValue is of type GDA_TYPE_NULL;
+if the <em class="parameter"><code>sql</code></em>
+ string does not correspond to a valid SQL string for the requested type, then
+the <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned.</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-value-from-sql.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql</p></td>
+<td class="parameter_description"><p>an SQL string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a GType</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-value-from-sql.returns"></a><h4>Returns</h4>
+<p>the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-value-from-str"></a><h3>gda_data_handler_get_value_from_str ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_handler_get_value_from_str (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Creates a new GValue which represents the <em class="parameter"><code>str</code></em>
+ value given as argument. This is
+the opposite of the function <a class="link" href="libgda-5.0-Default-Data-handlers.html#gda-data-handler-get-str-from-value" title="gda_data_handler_get_str_from_value ()"><code class="function">gda_data_handler_get_str_from_value()</code></a>. The type argument
+is used to determine the real data type requested for the returned value.</p>
+<p>If the <em class="parameter"><code>str</code></em>
+ string is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the returned GValue is of type GDA_TYPE_NULL;
+if the <em class="parameter"><code>str</code></em>
+ string does not correspond to a valid string for the requested type, then
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned.</p>
+<p>Note: the <em class="parameter"><code>str</code></em>
+ string must be in the current locale representation</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-value-from-str.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a GType</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-value-from-str.returns"></a><h4>Returns</h4>
+<p>the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-sane-init-value"></a><h3>gda_data_handler_get_sane_init_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_handler_get_sane_init_value (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Creates a new GValue which holds a sane initial value to be used if no value is specifically
+provided. For example for a simple string, this would return a new value containing the "" string.</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-sane-init-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-sane-init-value.returns"></a><h4>Returns</h4>
+<p>the new <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such value can be created. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-accepts-g-type"></a><h3>gda_data_handler_accepts_g_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_handler_accepts_g_type (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Checks wether the GdaDataHandler is able to handle the gda type given as argument.</p>
+<div class="refsect3">
+<a name="gda-data-handler-accepts-g-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-accepts-g-type.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the gda type can be handled</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-descr"></a><h3>gda_data_handler_get_descr ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_data_handler_get_descr (<em class="parameter"><code><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> *dh</code></em>);</pre>
+<p>Get a short description of the GdaDataHandler</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-descr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-descr.returns"></a><h4>Returns</h4>
+<p>the description. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-handler-get-default"></a><h3>gda_data_handler_get_default ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_data_handler_get_default (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> for_type</code></em>);</pre>
+<p>Obtain a pointer to a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> which can manage <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> values of type <em class="parameter"><code>for_type</code></em>
+. The returned
+data handler will be adapted to use the current locale information (for example dates will be formatted
+taking into account the locale).</p>
+<p>The returned pointer is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there is no default data handler available for the <em class="parameter"><code>for_type</code></em>
+ data type</p>
+<div class="refsect3">
+<a name="gda-data-handler-get-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>for_type</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-handler-get-default.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> which must not be modified or destroyed. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.3</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-Default-Data-handlers.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataHandler-struct"></a><h3>GdaDataHandler</h3>
+<pre class="programlisting">typedef struct _GdaDataHandler GdaDataHandler;</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

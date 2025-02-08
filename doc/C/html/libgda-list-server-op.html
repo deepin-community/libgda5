@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gda-list-server-op-5.0: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_tools.html" title="Part IV. GDA Tools">
+<link rel="prev" href="libgda-tools-test-connection.html" title="gda-test-connection-5.0">
+<link rel="next" href="libgda-tools-controlcenter.html" title="Control center">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_tools.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-tools-test-connection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-tools-controlcenter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-list-server-op"></a><span class="command"><strong>gda-list-server-op-5.0</strong></span>
+</h2></div></div></div>
+<p>
+	The <span class="command"><strong>gda-list-server-op-5.0</strong></span> tool lists available DDL operations for one or all of the installed
+	providers. For each type of operation (and each provider), the named parameters are also displayed.
+	See the <a class="link" href="ch21.html#DDLIntro" title="General words about DDL queries">General words about DDL queries</a> for more information
+	about possible operations and usage. This tool has got several options, use the <code class="option">--help</code> option
+	to list them all.
+      </p>
+<p>
+	For example listing all the possible operations (for all the providers) is:
+	</p>
+<pre class="programlisting">
+[prompt]&gt; gda-list-server-op-5.0 -l
+Using XML descriptions in /usr/share/libgda-5.0
+Existing operation types:
+CREATE_DB
+DROP_DB
+CREATE_TABLE
+DROP_TABLE
+RENAME_TABLE
+ADD_COLUMN
+DROP_COLUMN
+CREATE_INDEX
+DROP_INDEX
+	</pre>
+<p>
+	Listing all the operations supported by the SQLite provider (notice that the SQLite provider does not support the
+	DROP_COLUMN operation as SQLite does not support it):
+	</p>
+<pre class="programlisting">
+[prompt]&gt; gda-list-server-op-5.0 -l -p SQLite
+Using XML descriptions in /usr/share/libgda-5.0
+For provider SQLite
+Existing operation types for provider 'SQLite':
+CREATE_DB
+DROP_DB
+CREATE_TABLE
+DROP_TABLE
+RENAME_TABLE
+ADD_COLUMN
+CREATE_INDEX
+DROP_INDEX
+	</pre>
+<p>
+	Listing all the possible parameters for the MySQL provider and for the DROP_COLUMN operation:
+	</p>
+<pre class="programlisting">
+[prompt]&gt; gda-list-server-op-5.0 -o DROP_COLUMN -p MySQL
+Using XML descriptions in /usr/share/libgda-5.0
+For provider MySQL
+Description for type: DROP_COLUMN
+&lt;?xml version="1.0"?&gt;
+&lt;server_op&gt;
+  &lt;path id="/COLUMN_DESC_P" node_type="PARAMLIST" name="Column's description"/&gt;
+  &lt;path id="/COLUMN_DESC_P/TABLE_NAME" node_type="PARAMETER" gdatype="gchararray" name="Table" descr="Table's name"/&gt;
+  &lt;path id="/COLUMN_DESC_P/COLUMN_NAME" node_type="PARAMETER" gdatype="gchararray" name="Field name"/&gt;
+&lt;/server_op&gt;
+	</pre>
+<p>
+	Listing all the possible parameters for the all the installed providers and for the DROP_COLUMN operation:
+	</p>
+<pre class="programlisting">
+[prompt]&gt; gda-list-server-op-5.0 -o DROP_COLUMN 
+Using XML descriptions in /usr/share/libgda-5.0
+Description for type: DROP_COLUMN
+&lt;?xml version="1.0"?&gt;
+&lt;server_op&gt;
+  &lt;path id="/COLUMN_DESC_P" node_type="PARAMLIST"&gt;
+    &lt;prov prov_name="mysql" name="Column's description"/&gt;
+    &lt;prov prov_name="postgres" name="Column's description"/&gt;
+  &lt;/path&gt;
+  &lt;path id="/COLUMN_DESC_P/TABLE_NAME" node_type="PARAMETER" gdatype="gchararray"&gt;
+    &lt;prov prov_name="mysql" name="Table" descr="Table's name"/&gt;
+    &lt;prov prov_name="postgres" name="Table" descr="Table's name"/&gt;
+  &lt;/path&gt;
+  &lt;path id="/COLUMN_DESC_P/COLUMN_NAME" node_type="PARAMETER" gdatype="gchararray"&gt;
+    &lt;prov prov_name="mysql" name="Field name"/&gt;
+    &lt;prov prov_name="postgres" name="Field name"/&gt;
+  &lt;/path&gt;
+  &lt;path id="/COLUMN_DESC_P/REFERENCED_ACTION" node_type="PARAMETER" gdatype="gchararray"&gt;
+    &lt;prov prov_name="postgres" name="References" descr="What to do with references on the column to delete"/&gt;
+  &lt;/path&gt;
+&lt;/server_op&gt;
+	</pre>
+<p>
+      </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

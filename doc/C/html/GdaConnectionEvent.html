@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaConnectionEvent: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaSet.html" title="GdaSet">
+<link rel="next" href="GdaTransactionStatus.html" title="GdaTransactionStatus">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaConnectionEvent.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaConnectionEvent.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaConnectionEvent.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaSet.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaTransactionStatus.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaConnectionEvent"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaConnectionEvent.top_of_page"></a>GdaConnectionEvent</span></h2>
+<p>GdaConnectionEvent — Any event which has occurred on a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaConnectionEvent.html#GdaConnectionEventType" title="enum GdaConnectionEventType"><span class="returnvalue">GdaConnectionEventType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-event-type" title="gda_connection_event_get_event_type ()">gda_connection_event_get_event_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-description" title="gda_connection_event_get_description ()">gda_connection_event_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-code" title="gda_connection_event_get_code ()">gda_connection_event_get_code</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaConnectionEvent.html#GdaConnectionEventCode" title="enum GdaConnectionEventCode"><span class="returnvalue">GdaConnectionEventCode</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-gda-code" title="gda_connection_event_get_gda_code ()">gda_connection_event_get_gda_code</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-source" title="gda_connection_event_get_source ()">gda_connection_event_get_source</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaConnectionEvent.html#gda-connection-event-get-sqlstate" title="gda_connection_event_get_sqlstate ()">gda_connection_event_get_sqlstate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEvent--type" title="The “type” property">type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEvent-struct" title="GdaConnectionEvent">GdaConnectionEvent</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventType" title="enum GdaConnectionEventType">GdaConnectionEventType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventCode" title="enum GdaConnectionEventCode">GdaConnectionEventCode</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaConnectionEvent
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.description"></a><h2>Description</h2>
+<p>Events occurring on a connection are each represented as a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> object. Each <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>
+is responsible for keeping a list of past events; that list can be consulted using the 
+<a class="link" href="GdaConnection.html#gda-connection-get-events" title="gda_connection_get_events ()"><code class="function">gda_connection_get_events()</code></a> function.</p>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-connection-event-get-event-type"></a><h3>gda_connection_event_get_event_type ()</h3>
+<pre class="programlisting"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventType" title="enum GdaConnectionEventType"><span class="returnvalue">GdaConnectionEventType</span></a>
+gda_connection_event_get_event_type (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<p>Get <em class="parameter"><code>event</code></em>
+'s severity (from a simple notice to a fatal event)</p>
+<div class="refsect3">
+<a name="gda-connection-event-get-event-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-event-type.returns"></a><h4>Returns</h4>
+<p> the event type</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-get-description"></a><h3>gda_connection_event_get_description ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_connection_event_get_description (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<p>Get the description of the event. Note that is <em class="parameter"><code>event</code></em>
+'s type is GDA_CONNECTION_EVENT_COMMAND,
+the the description is the SQL of the command.</p>
+<div class="refsect3">
+<a name="gda-connection-event-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-description.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>event</code></em>
+'s description.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-get-code"></a><h3>gda_connection_event_get_code ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#glong"><span class="returnvalue">glong</span></a>
+gda_connection_event_get_code (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-connection-event-get-code.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-code.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>event</code></em>
+'s code (the code is specific to the provider being used)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-get-gda-code"></a><h3>gda_connection_event_get_gda_code ()</h3>
+<pre class="programlisting"><a class="link" href="GdaConnectionEvent.html#GdaConnectionEventCode" title="enum GdaConnectionEventCode"><span class="returnvalue">GdaConnectionEventCode</span></a>
+gda_connection_event_get_gda_code (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<p>Retrieve the code associated to <em class="parameter"><code>event</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-connection-event-get-gda-code.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-gda-code.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="GdaConnectionEvent.html#GdaConnectionEventCode" title="enum GdaConnectionEventCode"><span class="type">GdaConnectionEventCode</span></a> event's code</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-get-source"></a><h3>gda_connection_event_get_source ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_connection_event_get_source (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-connection-event-get-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-source.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>event</code></em>
+'s source. </p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-connection-event-get-sqlstate"></a><h3>gda_connection_event_get_sqlstate ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_connection_event_get_sqlstate (<em class="parameter"><code><a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a> *event</code></em>);</pre>
+<p>Get the SQLSTATE value of <em class="parameter"><code>event</code></em>
+. Even though the SQLSTATE values are specified by ANSI SQL and ODBC,
+consult each DBMS for the possible values. However, the "00000" (success) value means that there is no error,
+and the "HY000" (general error) value means an error but no better error code available.</p>
+<div class="refsect3">
+<a name="gda-connection-event-get-sqlstate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>event</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnectionEvent.html" title="GdaConnectionEvent"><span class="type">GdaConnectionEvent</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-connection-event-get-sqlstate.returns"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>event</code></em>
+'s SQL state.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaConnectionEvent-struct"></a><h3>GdaConnectionEvent</h3>
+<pre class="programlisting">typedef struct _GdaConnectionEvent GdaConnectionEvent;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConnectionEventType"></a><h3>enum GdaConnectionEventType</h3>
+<div class="refsect3">
+<a name="GdaConnectionEventType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-NOTICE:CAPS"></a>GDA_CONNECTION_EVENT_NOTICE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-WARNING:CAPS"></a>GDA_CONNECTION_EVENT_WARNING</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-ERROR:CAPS"></a>GDA_CONNECTION_EVENT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-COMMAND:CAPS"></a>GDA_CONNECTION_EVENT_COMMAND</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaConnectionEventCode"></a><h3>enum GdaConnectionEventCode</h3>
+<div class="refsect3">
+<a name="GdaConnectionEventCode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-CONSTRAINT-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_CONSTRAINT_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-RESTRICT-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_RESTRICT_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-NOT-NULL-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_NOT_NULL_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-FOREIGN-KEY-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_FOREIGN_KEY_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-UNIQUE-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_UNIQUE_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-CHECK-VIOLATION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_CHECK_VIOLATION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-INSUFFICIENT-PRIVILEGES:CAPS"></a>GDA_CONNECTION_EVENT_CODE_INSUFFICIENT_PRIVILEGES</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-UNDEFINED-COLUMN:CAPS"></a>GDA_CONNECTION_EVENT_CODE_UNDEFINED_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-UNDEFINED-FUNCTION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_UNDEFINED_FUNCTION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-UNDEFINED-TABLE:CAPS"></a>GDA_CONNECTION_EVENT_CODE_UNDEFINED_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-COLUMN:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_COLUMN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-DATABASE:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_DATABASE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-FUNCTION:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_FUNCTION</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-SCHEMA:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_SCHEMA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-TABLE:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_TABLE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-ALIAS:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_ALIAS</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-DUPLICATE-OBJECT:CAPS"></a>GDA_CONNECTION_EVENT_CODE_DUPLICATE_OBJECT</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-SYNTAX-ERROR:CAPS"></a>GDA_CONNECTION_EVENT_CODE_SYNTAX_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-CONNECTION-EVENT-CODE-UNKNOWN:CAPS"></a>GDA_CONNECTION_EVENT_CODE_UNKNOWN</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaConnectionEvent--type"></a><h3>The <code class="literal">“type”</code> property</h3>
+<pre class="programlisting">  “type”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Connection event type.</p>
+<p>Owner: GdaConnectionEvent</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: [0,3]</p>
+<p>Default value: 2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaConnectionEvent.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

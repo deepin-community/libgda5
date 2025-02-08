@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaReportEngine: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch35.html" title="API reference">
+<link rel="prev" href="ch35.html" title="API reference">
+<link rel="next" href="GdaReportDocument.html" title="GdaReportDocument">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaReportEngine.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaReportEngine.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaReportEngine.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch35.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch35.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaReportDocument.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaReportEngine"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaReportEngine.top_of_page"></a>GdaReportEngine</span></h2>
+<p>GdaReportEngine — Low level report generator based on XML</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaReportEngine.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-new" title="gda_report_engine_new ()">gda_report_engine_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-new-from-string" title="gda_report_engine_new_from_string ()">gda_report_engine_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-new-from-file" title="gda_report_engine_new_from_file ()">gda_report_engine_new_from_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-declare-object" title="gda_report_engine_declare_object ()">gda_report_engine_declare_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-find-declared-object" title="gda_report_engine_find_declared_object ()">gda_report_engine_find_declared_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNodePtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-run-as-node" title="gda_report_engine_run_as_node ()">gda_report_engine_run_as_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlDocPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaReportEngine.html#gda-report-engine-run-as-doc" title="gda_report_engine_run_as_doc ()">gda_report_engine_run_as_doc</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaReportEngine.html#GdaReportEngine--output-directory" title="The “output-directory” property">output-directory</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdaReportEngine.html#GdaReportEngine--spec" title="The “spec” property">spec</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaReportEngine.html#GdaReportEngine--spec-filename" title="The “spec-filename” property">spec-filename</a></td>
+<td class="property_flags">Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaReportEngine.html#GdaReportEngine--spec-string" title="The “spec-string” property">spec-string</a></td>
+<td class="property_flags">Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaReportEngine.html#GdaReportEngine-struct" title="struct GdaReportEngine">GdaReportEngine</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaReportEngine
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda-report/gda-report-engine.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object generates a report based on a specifications file in any XML format. It browses
+through the XML file and replaces the parts of it which are &lt;gda_report...&gt; action nodes. The generated
+XML file may then need to be processed using other post-processor tools depending on the XML file format.</p>
+<p>The following "action" tags known are:</p>
+<div class="table">
+<a name="id-1.6.3.2.9.4"></a><p class="title"><b>Table 22. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Node name</th>
+<th align="justify">Description</th>
+<th align="justify">Attributes</th>
+<th align="justify">&lt;gda_report...&gt; sub nodes</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">&lt;gda_report_section&gt;</td>
+<td align="justify">
+    <p>Starts a section which runs a SELECT query to generate a data model (<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>).
+    </p>
+    <p>
+      A parameter named "&lt;query_name&gt;|?nrows" is created and is available in any sub node
+      of the &lt;gda_report_section&gt; node, which contains the number of rows in the section's data model.
+    </p>
+  </td>
+<td align="justify">
+    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"query_name": the name of a SELECT <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> to be run; using this attribute
+	  implies that a GdaStatement has
+	  already been created and that the query has been declared to the GdaReportEngine object
+	  with the "query_name "name. 
+	  To define a query within the report spec., add a &lt;gda_report_query&gt;
+	  sub node instead
+      </p></li>
+<li class="listitem"><p>"cnc_name": name of the connection to use (the <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object has
+	  already been created and has been declared to the GdaReportEngine object with the "cnc_name" name)
+      </p></li>
+</ul></div>
+  </td>
+<td align="justify">
+    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>&lt;gda_report_query&gt; to define the SELECT query which will be run. It is also
+      possible to use a named query using the "query_name" attribute of the &lt;gda_report_section&gt; node
+      </p></li>
+<li class="listitem"><p>&lt;gda_report_if_empty_section&gt; to define the contents by which the &lt;gda_report_section&gt; 
+	  node is replaced if the data model for the section contains no row.
+      </p></li>
+</ul></div>
+  </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_iter&gt;</td>
+<td align="justify">
+    <p>Repeats is list of children nodes for each row in the section's data model. Note that is that data
+      model has no row, then the contents of the &lt;gda_report_iter&gt; node will not appear at all in the
+      final result.
+    </p>
+    <p>
+      For each column of the data model, several parameters are created, named 
+      &lt;query_name&gt;|@&lt;column_name&gt; (such as "customers|@<em class="parameter"><code>name</code></em>" for the "name" column)
+      and &lt;query_name&gt;|#&lt;column_number&gt;,
+      (such as "customers|##0" for the first column). 
+      Those parameters can be used in any child node (recursively),
+      and have their value updated for each row of the data model.
+      For more information about the parameter's syntax, 
+      see the GDA SQL query syntax.
+    </p>
+  </td>
+<td align="justify"> </td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_query&gt;</td>
+<td align="justify">Specifies the SQL of the SELECT query in a &lt;gda_report_section&gt; section. The SQL should be
+  in the contents of that node</td>
+<td align="justify">
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"query_name": name of the query</p></li>
+<li class="listitem"><p>"cnc_name": name of the connection to use (the <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object has
+	  already been created and has been declared to the GdaReportEngine object with the "cnc_name" name)
+      </p></li>
+</ul></div>
+  </td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_param_value&gt;</td>
+<td align="justify">Replace the node with the value of a parameter. The parameter can either by defined globally
+  (and declared to the GdaReportEngine), or defined as part of a section</td>
+<td align="justify">
+    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"param_name" specifies the name of the parameter</p></li>
+<li class="listitem"><p>"converter" optionnally specifies a conversion to apply to the parameter's
+	  contents (for now only "richtext::docbook" to convert text
+	  in <a class="ulink" href="http://txt2tags.org/" target="_top">rich text format</a> to
+	  the DocBook syntax)</p></li>
+</ul></div>
+  </td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_expr&gt;</td>
+<td align="justify">Replace the node with the evaluation of an expression. The expression can be any SQLite valid expression,
+  and can contain any reference to any parameter. For example the node:
+    <pre class="programlisting">
+&lt;gda_report_expr&gt;
+##customers|@col IS NULL
+&lt;/gda_report_expr&gt;</pre>
+    will return a TRUE value if the parameter named "customers|@<em class="parameter"><code>col</code></em>" is not NULL. For more
+    information about the parameter's syntax, see the GDA SQL query syntax.
+  </td>
+<td align="justify"> </td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_if&gt;</td>
+<td align="justify">Creates an "IF THEN ELSE" flow control, based on the evaluation of an expression (in the same way as for the
+  &lt;gda_report_expr&gt; node). If the expression evaluates as TRUE, then the &lt;gda_report_if&gt; node will
+  be replaced by the children nodes of the &lt;gda_report_if_true&gt; node if it exists, and otherwise by 
+    the children nodes of the &lt;gda_report_if_false&gt; node if it exists.</td>
+<td align="justify">"expr" to define the expression to evaluate</td>
+<td align="justify">&lt;gda_report_if_true&gt; and &lt;gda_report_if_false&gt;</td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_if_true&gt;</td>
+<td align="justify">Defines the contents to use when the expression of a &lt;gda_report_if&gt; is evaluated as TRUE</td>
+<td align="justify"> </td>
+<td align="justify"> </td>
+</tr>
+<tr>
+<td align="justify">&lt;gda_report_if_false&gt;</td>
+<td align="justify">Defines the contents to use when the expression of a &lt;gda_report_if&gt; is evaluated as FALSE</td>
+<td align="justify"> </td>
+<td align="justify"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break">
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-report-engine-new"></a><h3>gda_report_engine_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+gda_report_engine_new (<em class="parameter"><code><span class="type">xmlNodePtr</span> spec_node</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> using <em class="parameter"><code>spec_node</code></em>
+ as the specifications. Note that <em class="parameter"><code>spec_node</code></em>
+ is
+not copied, but "stolen" by the new report engine object.</p>
+<div class="refsect3">
+<a name="gda-report-engine-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>spec_node</p></td>
+<td class="parameter_description"><p>a <span class="type">xmlNodePtr</span> node</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-new-from-string"></a><h3>gda_report_engine_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+gda_report_engine_new_from_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *spec_string</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> using <em class="parameter"><code>spec_string</code></em>
+ as the specifications.</p>
+<div class="refsect3">
+<a name="gda-report-engine-new-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>spec_string</p></td>
+<td class="parameter_description"><p>an XML string</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-new-from-string.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-new-from-file"></a><h3>gda_report_engine_new_from_file ()</h3>
+<pre class="programlisting"><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="returnvalue">GdaReportEngine</span></a> *
+gda_report_engine_new_from_file (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *spec_file_name</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> using the contents of <em class="parameter"><code>spec_file_name</code></em>
+ as the specifications.</p>
+<div class="refsect3">
+<a name="gda-report-engine-new-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>spec_file_name</p></td>
+<td class="parameter_description"><p>a file name</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-new-from-file.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-declare-object"></a><h3>gda_report_engine_declare_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_report_engine_declare_object (<em class="parameter"><code><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> *engine</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *obj_name</code></em>);</pre>
+<p>Declares an object which will be used in <em class="parameter"><code>engine</code></em>
+, referenced by the <em class="parameter"><code>obj_name</code></em>
+ name.</p>
+<p><em class="parameter"><code>object</code></em>
+ must be of a supported types, that it must be a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> or <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object.</p>
+<div class="refsect3">
+<a name="gda-report-engine-declare-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>engine</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="type">GObject</span></a> to declare</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>obj_name</p></td>
+<td class="parameter_description"><p>the name to give to <em class="parameter"><code>object</code></em>
+within <em class="parameter"><code>engine</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-find-declared-object"></a><h3>gda_report_engine_find_declared_object ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+gda_report_engine_find_declared_object
+                               (<em class="parameter"><code><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> *engine</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> obj_type</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *obj_name</code></em>);</pre>
+<p>Finds an object which has previously been declared using <a class="link" href="GdaReportEngine.html#gda-report-engine-declare-object" title="gda_report_engine_declare_object ()"><code class="function">gda_report_engine_declare_object()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-report-engine-find-declared-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>engine</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>obj_type</p></td>
+<td class="parameter_description"><p>the type of requested object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>obj_name</p></td>
+<td class="parameter_description"><p>the name (in <em class="parameter"><code>engine</code></em>
+) of the object to find</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-find-declared-object.returns"></a><h4>Returns</h4>
+<p> a pointer to the requested object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-run-as-node"></a><h3>gda_report_engine_run_as_node ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNodePtr</span>
+gda_report_engine_run_as_node (<em class="parameter"><code><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> *engine</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Execute the <em class="parameter"><code>engine</code></em>
+ engine and creates a new xmlNodePtr XML node</p>
+<div class="refsect3">
+<a name="gda-report-engine-run-as-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>engine</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-run-as-node.returns"></a><h4>Returns</h4>
+<p> a new xmlNodePtr or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-report-engine-run-as-doc"></a><h3>gda_report_engine_run_as_doc ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlDocPtr</span>
+gda_report_engine_run_as_doc (<em class="parameter"><code><a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> *engine</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Execute the <em class="parameter"><code>engine</code></em>
+ engine and creates a new XML document</p>
+<div class="refsect3">
+<a name="gda-report-engine-run-as-doc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>engine</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaReportEngine.html" title="GdaReportEngine"><span class="type">GdaReportEngine</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-report-engine-run-as-doc.returns"></a><h4>Returns</h4>
+<p> a new xmlDocPtr or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaReportEngine-struct"></a><h3>struct GdaReportEngine</h3>
+<pre class="programlisting">struct GdaReportEngine;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaReportEngine.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaReportEngine--output-directory"></a><h3>The <code class="literal">“output-directory”</code> property</h3>
+<pre class="programlisting">  “output-directory”         <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Owner: GdaReportEngine</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaReportEngine--spec"></a><h3>The <code class="literal">“spec”</code> property</h3>
+<pre class="programlisting">  “spec”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdaReportEngine</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaReportEngine--spec-filename"></a><h3>The <code class="literal">“spec-filename”</code> property</h3>
+<pre class="programlisting">  “spec-filename”            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Owner: GdaReportEngine</p>
+<p>Flags: Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaReportEngine--spec-string"></a><h3>The <code class="literal">“spec-string”</code> property</h3>
+<pre class="programlisting">  “spec-string”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Owner: GdaReportEngine</p>
+<p>Flags: Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

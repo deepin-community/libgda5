@@ -1,0 +1,1444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaLdapConnection: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="virtual_connection.html" title="Virtual connections">
+<link rel="prev" href="GdaVconnectionHub.html" title="GdaVconnectionHub">
+<link rel="next" href="data_models.html" title="Data handling">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaLdapConnection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaLdapConnection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaLdapConnection.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaLdapConnection.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="virtual_connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaVconnectionHub.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="data_models.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaLdapConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaLdapConnection.top_of_page"></a>GdaLdapConnection</span></h2>
+<p>GdaLdapConnection — LDAP connection objects</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaLdapConnection.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-connection-get-base-dn" title="gda_ldap_connection_get_base_dn ()">gda_ldap_connection_get_base_dn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-connection-declare-table" title="gda_ldap_connection_declare_table ()">gda_ldap_connection_declare_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-connection-undeclare-table" title="gda_ldap_connection_undeclare_table ()">gda_ldap_connection_undeclare_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-is-dn" title="gda_ldap_is_dn ()">gda_ldap_is_dn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-dn-split" title="gda_ldap_dn_split ()">gda_ldap_dn_split</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-describe-entry" title="gda_ldap_describe_entry ()">gda_ldap_describe_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-entry-free" title="gda_ldap_entry_free ()">gda_ldap_entry_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-get-entry-children" title="gda_ldap_get_entry_children ()">gda_ldap_get_entry_children</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-entry-add-attribute" title="gda_ldap_entry_add_attribute ()">gda_ldap_entry_add_attribute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-entry-new" title="gda_ldap_entry_new ()">gda_ldap_entry_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-entry-get-attributes-list" title="gda_ldap_entry_get_attributes_list ()">gda_ldap_entry_get_attributes_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-attributes-list-free" title="gda_ldap_attributes_list_free ()">gda_ldap_attributes_list_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-add-entry" title="gda_ldap_add_entry ()">gda_ldap_add_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-remove-entry" title="gda_ldap_remove_entry ()">gda_ldap_remove_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-rename-entry" title="gda_ldap_rename_entry ()">gda_ldap_rename_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-modify-entry" title="gda_ldap_modify_entry ()">gda_ldap_modify_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="returnvalue">GdaLdapClass</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-get-class-info" title="gda_ldap_get_class_info ()">gda_ldap_get_class_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaLdapConnection.html#gda-ldap-get-top-classes" title="gda_ldap_get_top_classes ()">gda_ldap_get_top_classes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaLdapConnection.html#GdaLdapConnection--startup-file" title="The “startup-file” property">startup-file</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapConnection-struct" title="struct GdaLdapConnection">GdaLdapConnection</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapConnectionClass" title="struct GdaLdapConnectionClass">GdaLdapConnectionClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapConnectionPrivate" title="GdaLdapConnectionPrivate">GdaLdapConnectionPrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapAttribute" title="GdaLdapAttribute">GdaLdapAttribute</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry">GdaLdapEntry</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapAttributeDefinition" title="GdaLdapAttributeDefinition">GdaLdapAttributeDefinition</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapModificationType" title="enum GdaLdapModificationType">GdaLdapModificationType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapClassKind" title="enum GdaLdapClassKind">GdaLdapClassKind</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass">GdaLdapClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a>
+        <span class="lineart">╰──</span> <a class="link" href="GdaVirtualConnection.html" title="GdaVirtualConnection">GdaVirtualConnection</a>
+            <span class="lineart">╰──</span> <a class="link" href="GdaVconnectionDataModel.html" title="GdaVconnectionDataModel">GdaVconnectionDataModel</a>
+                <span class="lineart">╰──</span> GdaLdapConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaLdapConnection implements
+ <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.description"></a><h2>Description</h2>
+<p>This is a connection, as opened by the LDAP provider. Use
+<a class="link" href="GdaConnection.html#gda-connection-open-from-string" title="gda_connection_open_from_string ()"><code class="function">gda_connection_open_from_string()</code></a> or <a class="link" href="GdaConnection.html#gda-connection-open-from-dsn" title="gda_connection_open_from_dsn ()"><code class="function">gda_connection_open_from_dsn()</code></a> to create
+a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> connection.</p>
+<p>Warning: if you create a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> using <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a>, then the resulting
+object won't be functionnal.</p>
+<p>A <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> is a virtual connection which accepts any of SQLite's SQL dialect.
+However, some SQL commands have been added to manipulate virtual tables mapped to
+LDAP searches. These commands are:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>The CREATE LDAP TABLE: </p>
+<pre class="synopsis">CREATE LDAP TABLE &lt;table name&gt; [BASE=&lt;base DN&gt;] [FILTER=&lt;LDAP filter&gt;] [ATTRIBUTES=&lt;LDAP attributes&gt;] [SCOPE=&lt;search scope&gt;]</pre>
+<p>
+     </p>
+<p>Each of the BASE, FILTER, ATTRIBUTES and SCOPE specifications is optional. Use this command to declare a table, for example: </p>
+<pre class="programlisting">CREATE LDAP TABLE users FILTER='(cn=*doe*)' SCOPE= 'SUBTREE';</pre>
+<p>.
+       The allowed SCOPE values are: 'BASE', 'ONELEVEL' and 'SUBTREE'.
+     </p>
+<p>See the <a class="link" href="GdaLdapConnection.html#gda-ldap-connection-declare-table" title="gda_ldap_connection_declare_table ()"><code class="function">gda_ldap_connection_declare_table()</code></a>
+       for more information about the ATTRIBUTES syntax.
+     </p>
+</li>
+<li class="listitem">
+<p>The DROP LDAP TABLE: </p>
+<pre class="synopsis">DROP LDAP TABLE &lt;table name&gt;</pre>
+<p>
+     </p>
+<p>Use this command to undeclare a table, for example: </p>
+<pre class="programlisting">DROP LDAP TABLE users;</pre>
+<p> Note that it is also possible to use the normal command to remove a table: </p>
+<pre class="programlisting">DROP TABLE users;</pre>
+<p>
+     </p>
+</li>
+<li class="listitem">
+<p>The ALTER LDAP TABLE: </p>
+<pre class="synopsis">ALTER LDAP TABLE &lt;table name&gt;</pre>
+<p> or
+           </p>
+<pre class="synopsis">ALTER LDAP TABLE &lt;table name&gt; [BASE=&lt;base DN&gt;] [FILTER=&lt;LDAP filter&gt;] [ATTRIBUTES=&lt;LDAP attributes&gt;] [SCOPE=&lt;search scope&gt;]</pre>
+<p>
+     </p>
+<p>Use this command to modify the definition of a virtual table, for example: </p>
+<pre class="programlisting">ALTER LDAP TABLE users FILTER='(cn=*doe*)' SCOPE='BASE';</pre>
+<p> If no argument is specified after the table name, then
+       the definition of the virtual table is returned instead. When altering the virtual table, only the
+       specified parameters are altered (ie. you don't need to repeat the parameters you don't want to
+       be modified)
+     </p>
+</li>
+<li class="listitem">
+<p>The DESCRIBE LDAP TABLE: </p>
+<pre class="synopsis">DESCRIBE LDAP TABLE &lt;table name&gt;</pre>
+<p> 
+     </p>
+<p>Use this command to get the definition of the virtual table.
+     </p>
+</li>
+</ul></div>
+<p>Each "LDAP" table can then be used like any other table, but you should keep in mind that <span class="application">Libgda</span>
+can optimize the LDAP search command executed when the table's data is actually read if you use
+a "WHERE" clause which involves a search criteria on an LDAP attribute. For example the following
+SQL: </p>
+<pre class="programlisting">SELECT * FROM users WHERE cn MATCH '<code class="literal">doe</code>%';</pre>
+<p> will actually
+be optimized by requesting an LDAP search with the filter </p>
+<pre class="programlisting">(cn=*doe*)</pre>
+<p>
+Optimizations can be done on MATCH, =, &lt;, &lt;=, &gt; and &gt;= operators, the LIKE operator
+will not be optimized.</p>
+<p>However a command like </p>
+<pre class="programlisting">SELECT * FROM users WHERE cn MATCH '<code class="literal">doe</code>%' OR uid=123;</pre>
+<p>
+can't be optimized (because of the "OR") whereas the</p>
+<pre class="programlisting">SELECT * FROM users WHERE cn MATCH '%doe%' AND uid=123;</pre>
+<p>will be optimized because of the "AND".</p>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-ldap-connection-get-base-dn"></a><h3>gda_ldap_connection_get_base_dn ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_ldap_connection_get_base_dn (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>);</pre>
+<p>Get the base DN which was used when the LDAP connection was opened</p>
+<div class="refsect3">
+<a name="gda-ldap-connection-get-base-dn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-connection-get-base-dn.returns"></a><h4>Returns</h4>
+<p> the base DN, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-connection-declare-table"></a><h3>gda_ldap_connection_declare_table ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_connection_declare_table (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *base_dn</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filter</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attributes</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GdaDataModelLdap.html#GdaLdapSearchScope" title="enum GdaLdapSearchScope"><span class="type">GdaLdapSearchScope</span></a> scope</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Declare a virtual table based on an LDAP search.</p>
+<p>The <em class="parameter"><code>filter</code></em>
+ argument, if not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, must be a valid LDAP filter string (including the opening and
+closing parenthesis).</p>
+<p>The <em class="parameter"><code>attribute</code></em>
+, if not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, is a list of comma separated LDAP entry attribute names. For each attribute
+it is also possible to specify a requested <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>, and how to behave in case of multi valued attributes
+So the general format for an attribute is:
+"&lt;attribute name&gt;::&amp;lt;type&amp;gt;", where:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"::&lt;type&gt;" is optional, see <a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-from-string" title="gda_g_type_from_string ()"><code class="function">gda_g_type_from_string()</code></a> for more
+    information about valie values for &lt;type&gt;</p></li>
+<li class="listitem">
+<p>"::&lt;muti value handler&gt;" is also optional and specifies how a multi
+   values attributed is treated. The possibilities for &lt;muti value handler&gt; are:
+   </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>"NULL" or "0": a NULL value will be returned</p></li>
+<li class="listitem"><p>"CSV": a comma separated value with all the values of the attribute will be
+          returned. This only works for G_TYPE_STRING attribute types.</p></li>
+<li class="listitem"><p>"MULT" of "*": a row will be returned for each value of the attribute, effectively
+          multiplying the number of returned rows</p></li>
+<li class="listitem"><p>"1": only the first vakue of the attribute will be used, the other values ignored</p></li>
+<li class="listitem"><p>"CONCAT": the attributes' values are concatenated (with a newline char between each value)</p></li>
+<li class="listitem"><p>"ERROR": an error value will be returned (this is the default behaviour)</p></li>
+</ul></div>
+<p>
+</p>
+</li>
+</ul></div>
+<p> After each attribute
+name (and before the comma for the next attribute if any), it is possible to specify the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type using
+the "::&lt;type&gt;" syntax (see <a class="link" href="libgda-5.0-Utility-functions.html#gda-g-type-from-string" title="gda_g_type_from_string ()"><code class="function">gda_g_type_from_string()</code></a> for more information). </p>
+<p>The following example specifies the "uidNumber" attribute to be returned as a string, the "mail" attribute,
+and the "objectClass" attribute to be handled as one row per value of that attribute:</p>
+<pre class="programlisting">"uidNumber::string,mail,objectClass::*"</pre>
+<div class="refsect3">
+<a name="gda-ldap-connection-declare-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>a table name, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>base_dn</p></td>
+<td class="parameter_description"><p>the base DN of the LDAP search, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for <em class="parameter"><code>cnc</code></em>
+'s own base DN. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filter</p></td>
+<td class="parameter_description"><p>the search filter of the LDAP search, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for a default filter of "(ObjectClass=*)". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attributes</p></td>
+<td class="parameter_description"><p>the search attributes of the LDAP search, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if only the DN is required. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scope</p></td>
+<td class="parameter_description"><p>the search scope of the LDAP search</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-connection-declare-table.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-connection-undeclare-table"></a><h3>gda_ldap_connection_undeclare_table ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_connection_undeclare_table (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table_name</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Remove a table which has been declared using <a class="link" href="GdaLdapConnection.html#gda-ldap-connection-declare-table" title="gda_ldap_connection_declare_table ()"><code class="function">gda_ldap_connection_declare_table()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-ldap-connection-undeclare-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table_name</p></td>
+<td class="parameter_description"><p>a table name, not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-connection-undeclare-table.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-is-dn"></a><h3>gda_ldap_is_dn ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_is_dn (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>dn</code></em>
+ represents a distinguished name (it only checks for the syntax, not for
+the actual existence of the entry with that distinguished name).</p>
+<div class="refsect3">
+<a name="gda-ldap-is-dn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>a Distinguished Name string</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-is-dn.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>dn</code></em>
+is a valid representation of a distinguished name</p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-dn-split"></a><h3>gda_ldap_dn_split ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+gda_ldap_dn_split (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>,
+                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> all</code></em>);</pre>
+<p>Splits <em class="parameter"><code>dn</code></em>
+ into its components.</p>
+<div class="refsect3">
+<a name="gda-ldap-dn-split.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>a Distinguished Name string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>all</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to split <em class="parameter"><code>dn</code></em>
+into its RND and its parent DN, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to completely split <em class="parameter"><code>dn</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-dn-split.returns"></a><h4>Returns</h4>
+<p>a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated array containing the DN parts (free using <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>), or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred because <em class="parameter"><code>dn</code></em>
+is not a valid DN expression. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][Free-function: g_strfreev]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-describe-entry"></a><h3>gda_ldap_describe_entry ()</h3>
+<pre class="programlisting"><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> *
+gda_ldap_describe_entry (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Describes the LDAP entry which DN is <em class="parameter"><code>dn</code></em>
+. If <em class="parameter"><code>dn</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the top entry (as specified when 
+the LDAP connection was opened) is described.</p>
+<div class="refsect3">
+<a name="gda-ldap-describe-entry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>the Distinguished Name of the LDAP entry to describe. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-describe-entry.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred or if the <em class="parameter"><code>dn</code></em>
+entry does not exist. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][Free-function: gda_ldap_entry_free]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-entry-free"></a><h3>gda_ldap_entry_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_ldap_entry_free (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *entry</code></em>);</pre>
+<p>Frees <em class="parameter"><code>entry</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-ldap-entry-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> pointer. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-get-entry-children"></a><h3>gda_ldap_get_entry_children ()</h3>
+<pre class="programlisting"><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> **
+gda_ldap_get_entry_children (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **attributes</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the list of children entries for the LDAP entry which DN is <em class="parameter"><code>dn</code></em>
+. If the <em class="parameter"><code>dn</code></em>
+ entry does not have any
+child, then this function returns an array which first element is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>If <em class="parameter"><code>dn</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the top entry (as specified when the LDAP connection was opened) is used.</p>
+<div class="refsect3">
+<a name="gda-ldap-get-entry-children.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>the Distinguished Name of the LDAP entry to get children from. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attributes</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated array of attributes to fetch for each child, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no attribute is requested. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> gchar*]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-get-entry-children.returns"></a><h4>Returns</h4>
+<p>a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated array of <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> for each child entry, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred or if the <em class="parameter"><code>dn</code></em>
+entry does not exist. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][element_type GdaLdapEntry][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-entry-add-attribute"></a><h3>gda_ldap_entry_add_attribute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_ldap_entry_add_attribute (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *entry</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> merge</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attr_name</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> nb_values</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> **values</code></em>);</pre>
+<p>Add an attribute (ans its values) to <em class="parameter"><code>entry</code></em>
+. If the attribute is already present in <em class="parameter"><code>entry</code></em>
+,
+then the attribute's values are merged or replaced depending on the <em class="parameter"><code>merge</code></em>
+ argument.</p>
+<div class="refsect3">
+<a name="gda-ldap-entry-add-attribute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> pointer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>merge</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to merge the values in case of an existing attribute in <em class="parameter"><code>entry</code></em>
+, and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to replace any existing attribute's values in <em class="parameter"><code>entry</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_name</p></td>
+<td class="parameter_description"><p>the name of the attribute to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nb_values</p></td>
+<td class="parameter_description"><p>number of values in <em class="parameter"><code>values</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>values</p></td>
+<td class="parameter_description"><p>an array of <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> (as much values as specified by <em class="parameter"><code>nb_values</code></em>
+). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_values]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-entry-new"></a><h3>gda_ldap_entry_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="returnvalue">GdaLdapEntry</span></a> *
+gda_ldap_entry_new (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a>. This function is useful when using <a class="link" href="GdaLdapConnection.html#gda-ldap-modify-entry" title="gda_ldap_modify_entry ()"><code class="function">gda_ldap_modify_entry()</code></a></p>
+<div class="refsect3">
+<a name="gda-ldap-entry-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>a Distinguished name, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-entry-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a></p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-entry-get-attributes-list"></a><h3>gda_ldap_entry_get_attributes_list ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+gda_ldap_entry_get_attributes_list (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *entry</code></em>);</pre>
+<p>Get a list of all the possible attributes which <em class="parameter"><code>entry</code></em>
+ can have. Each possible attribute is represented
+by a <a class="link" href="GdaLdapConnection.html#GdaLdapAttributeDefinition" title="GdaLdapAttributeDefinition"><span class="type">GdaLdapAttributeDefinition</span></a> strunture.</p>
+<div class="refsect3">
+<a name="gda-ldap-entry-get-attributes-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-entry-get-attributes-list.returns"></a><h4>Returns</h4>
+<p>a <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="GdaLdapConnection.html#GdaLdapAttributeDefinition" title="GdaLdapAttributeDefinition"><span class="type">GdaLdapAttributeDefinition</span></a> pointers, free the list using <a class="link" href="GdaLdapConnection.html#gda-ldap-attributes-list-free" title="gda_ldap_attributes_list_free ()"><code class="function">gda_ldap_attributes_list_free()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaLdapAttributeDefinition]</span></p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-attributes-list-free"></a><h3>gda_ldap_attributes_list_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_ldap_attributes_list_free (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
+<p>Frees the list returned by <a class="link" href="GdaLdapConnection.html#gda-ldap-entry-get-attributes-list" title="gda_ldap_entry_get_attributes_list ()"><code class="function">gda_ldap_entry_get_attributes_list()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-ldap-attributes-list-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="GdaLdapConnection.html#GdaLdapAttributeDefinition" title="GdaLdapAttributeDefinition"><span class="type">GdaLdapAttributeDefinition</span></a> pointers, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-add-entry"></a><h3>gda_ldap_add_entry ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_add_entry (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                    <em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *entry</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new LDAP entry.</p>
+<div class="refsect3">
+<a name="gda-ldap-add-entry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaLDapEntry</span> describing the LDAP entry to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-add-entry.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-remove-entry"></a><h3>gda_ldap_remove_entry ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_remove_entry (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Delete an LDAP entry.</p>
+<div class="refsect3">
+<a name="gda-ldap-remove-entry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaLDapEntry</span> describing the LDAP entry to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-remove-entry.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-rename-entry"></a><h3>gda_ldap_rename_entry ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_rename_entry (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *current_dn</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_dn</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Renames an LDAP entry.</p>
+<div class="refsect3">
+<a name="gda-ldap-rename-entry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>current_dn</p></td>
+<td class="parameter_description"><p>the current DN of the entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_dn</p></td>
+<td class="parameter_description"><p>the new DN of the entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-rename-entry.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-modify-entry"></a><h3>gda_ldap_modify_entry ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_ldap_modify_entry (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                       <em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapModificationType" title="enum GdaLdapModificationType"><span class="type">GdaLdapModificationType</span></a> modtype</code></em>,
+                       <em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *entry</code></em>,
+                       <em class="parameter"><code><a class="link" href="GdaLdapConnection.html#GdaLdapEntry" title="GdaLdapEntry"><span class="type">GdaLdapEntry</span></a> *ref_entry</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Modifies an LDAP entry.</p>
+<div class="refsect3">
+<a name="gda-ldap-modify-entry.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>modtype</p></td>
+<td class="parameter_description"><p>the type of modification to perform</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entry</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaLDapEntry</span> describing the LDAP entry to apply modifications, along with the attributes which will be modified</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_entry</p></td>
+<td class="parameter_description"><p>a <span class="type">GdaLDapEntry</span> describing the reference LDAP entry, if <em class="parameter"><code>modtype</code></em>
+is <a class="link" href="GdaLdapConnection.html#GDA-LDAP-MODIFICATION-ATTR-DIFF:CAPS"><code class="literal">GDA_LDAP_MODIFICATION_ATTR_DIFF</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store an error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-modify-entry.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-get-class-info"></a><h3>gda_ldap_get_class_info ()</h3>
+<pre class="programlisting"><a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="returnvalue">GdaLdapClass</span></a> *
+gda_ldap_get_class_info (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);</pre>
+<p>Get information about an LDAP class</p>
+<div class="refsect3">
+<a name="gda-ldap-get-class-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>classname</p></td>
+<td class="parameter_description"><p>an LDAP class name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-get-class-info.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="type">GdaLdapClass</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-ldap-get-top-classes"></a><h3>gda_ldap_get_top_classes ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+gda_ldap_get_top_classes (<em class="parameter"><code><a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *cnc</code></em>);</pre>
+<p>get a list of the top level LDAP classes (ie. classes which don't have any parent)</p>
+<div class="refsect3">
+<a name="gda-ldap-get-top-classes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-ldap-get-top-classes.returns"></a><h4>Returns</h4>
+<p>a list of <a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="type">GdaLdapClass</span></a> pointers (don't modify it). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaLdapClass]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaLdapConnection-struct"></a><h3>struct GdaLdapConnection</h3>
+<pre class="programlisting">struct GdaLdapConnection;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapConnectionClass"></a><h3>struct GdaLdapConnectionClass</h3>
+<pre class="programlisting">struct GdaLdapConnectionClass {
+	GdaVconnectionDataModelClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapConnectionPrivate"></a><h3>GdaLdapConnectionPrivate</h3>
+<pre class="programlisting">typedef struct _GdaLdapConnectionPrivate GdaLdapConnectionPrivate;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapAttribute"></a><h3>GdaLdapAttribute</h3>
+<pre class="programlisting">typedef struct {
+	gchar   *attr_name;
+	guint    nb_values;
+	GValue **values;
+} GdaLdapAttribute;
+</pre>
+<p>This structure holds information about the values of a single attribute (of a single LDAP entry).</p>
+<div class="refsect3">
+<a name="GdaLdapAttribute.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaLdapAttribute.attr-name"></a>attr_name</code></em>;</p></td>
+<td class="struct_member_description"><p>the name of the attribute</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaLdapAttribute.nb-values"></a>nb_values</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of values in <em class="parameter"><code>values</code></em>
+, or <code class="literal">0</code></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> **<em class="structfield"><code><a name="GdaLdapAttribute.values"></a>values</code></em>;</p></td>
+<td class="struct_member_description"><p>the attribute' values as <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> values, (terminated by a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_values][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapEntry"></a><h3>GdaLdapEntry</h3>
+<pre class="programlisting">typedef struct {
+	gchar             *dn;
+	guint              nb_attributes;
+	GdaLdapAttribute **attributes;
+	GHashTable        *attributes_hash;
+} GdaLdapEntry;
+</pre>
+<p>This structure holds information about the attributes of a single LDAP entry.</p>
+<div class="refsect3">
+<a name="GdaLdapEntry.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaLdapEntry.dn"></a>dn</code></em>;</p></td>
+<td class="struct_member_description"><p>the Distinguished Name of the entry</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaLdapEntry.nb-attributes"></a>nb_attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of attributes in <em class="parameter"><code>attributes</code></em>
+, or <code class="literal">0</code></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaLdapConnection.html#GdaLdapAttribute" title="GdaLdapAttribute"><span class="type">GdaLdapAttribute</span></a> **<em class="structfield"><code><a name="GdaLdapEntry.attributes"></a>attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>the entry's attributes, (terminated by a <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_attributes][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *<em class="structfield"><code><a name="GdaLdapEntry.attributes-hash"></a>attributes_hash</code></em>;</p></td>
+<td class="struct_member_description"><p>a hash table where the key is an attribute name, and the value the correcponding <a class="link" href="GdaLdapConnection.html#GdaLdapAttribute" title="GdaLdapAttribute"><span class="type">GdaLdapAttribute</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapAttributeDefinition"></a><h3>GdaLdapAttributeDefinition</h3>
+<pre class="programlisting">typedef struct {
+	gchar   *name;
+	GType    g_type;
+	gboolean required;
+} GdaLdapAttributeDefinition;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapModificationType"></a><h3>enum GdaLdapModificationType</h3>
+<p>Speficies the type of operation requested when writing to an LDAP directory.</p>
+<div class="refsect3">
+<a name="GdaLdapModificationType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-INSERT:CAPS"></a>GDA_LDAP_MODIFICATION_INSERT</p></td>
+<td class="enum_member_description">
+<p>modification corresponds to a new LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-DELETE:CAPS"></a>GDA_LDAP_MODIFICATION_DELETE</p></td>
+<td class="enum_member_description">
+<p>modification corresponds to removing an LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-ATTR-ADD:CAPS"></a>GDA_LDAP_MODIFICATION_ATTR_ADD</p></td>
+<td class="enum_member_description">
+<p>modification correspond to adding attributes to an existing LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-ATTR-DEL:CAPS"></a>GDA_LDAP_MODIFICATION_ATTR_DEL</p></td>
+<td class="enum_member_description">
+<p>modification correspond to removing attributes from an existing LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-ATTR-REPL:CAPS"></a>GDA_LDAP_MODIFICATION_ATTR_REPL</p></td>
+<td class="enum_member_description">
+<p>modification correspond to replacing attributes of an existing LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-MODIFICATION-ATTR-DIFF:CAPS"></a>GDA_LDAP_MODIFICATION_ATTR_DIFF</p></td>
+<td class="enum_member_description">
+<p>modification correspond to modifying attributes to an existing LDAP entry</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapClassKind"></a><h3>enum GdaLdapClassKind</h3>
+<p>Defines the LDAP class type</p>
+<div class="refsect3">
+<a name="GdaLdapClassKind.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-CLASS-KIND-ABSTRACT:CAPS"></a>GDA_LDAP_CLASS_KIND_ABSTRACT</p></td>
+<td class="enum_member_description">
+<p>the LDAP class is an abstract class</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-CLASS-KIND-STRUTURAL:CAPS"></a>GDA_LDAP_CLASS_KIND_STRUTURAL</p></td>
+<td class="enum_member_description">
+<p>the LDAP class is a structural class</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-CLASS-KIND-AUXILIARY:CAPS"></a>GDA_LDAP_CLASS_KIND_AUXILIARY</p></td>
+<td class="enum_member_description">
+<p>the LDAP class is auxilliary</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-CLASS-KIND-UNKNOWN:CAPS"></a>GDA_LDAP_CLASS_KIND_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>the LDAP class type is not known</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapClass"></a><h3>GdaLdapClass</h3>
+<pre class="programlisting">typedef struct {
+	gchar            *oid;
+	guint             nb_names; /* always &gt;= 1 */
+	gchar           **names;
+	gchar            *description;
+	GdaLdapClassKind  kind;
+	gboolean          obsolete;
+
+	guint             nb_req_attributes;
+	gchar           **req_attributes;
+	guint             nb_opt_attributes;
+	gchar           **opt_attributes;
+
+	GSList           *parents; /* list of #GdaLdapClass */
+	GSList           *children; /* list of #GdaLdapClass */
+} GdaLdapClass;
+</pre>
+<p>Represents an LDAP declared class.</p>
+<div class="refsect3">
+<a name="GdaLdapClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaLdapClass.oid"></a>oid</code></em>;</p></td>
+<td class="struct_member_description"><p>the OID of the class</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaLdapClass.nb-names"></a>nb_names</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of values in <em class="parameter"><code>values</code></em>
+(always &gt;= 1)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **<em class="structfield"><code><a name="GdaLdapClass.names"></a>names</code></em>;</p></td>
+<td class="struct_member_description"><p>all the class names</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaLdapClass.description"></a>description</code></em>;</p></td>
+<td class="struct_member_description"><p>the class's description, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaLdapConnection.html#GdaLdapClassKind" title="enum GdaLdapClassKind"><span class="type">GdaLdapClassKind</span></a> <em class="structfield"><code><a name="GdaLdapClass.kind"></a>kind</code></em>;</p></td>
+<td class="struct_member_description"><p>the class kind</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> <em class="structfield"><code><a name="GdaLdapClass.obsolete"></a>obsolete</code></em>;</p></td>
+<td class="struct_member_description"><p>defines is LDAP class is obsolete</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaLdapClass.nb-req-attributes"></a>nb_req_attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of values in <em class="parameter"><code>req_attributes</code></em>
+</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **<em class="structfield"><code><a name="GdaLdapClass.req-attributes"></a>req_attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>names of required attributes in class</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GdaLdapClass.nb-opt-attributes"></a>nb_opt_attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>the number of values in <em class="parameter"><code>opt_attributes</code></em>
+</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **<em class="structfield"><code><a name="GdaLdapClass.opt-attributes"></a>opt_attributes</code></em>;</p></td>
+<td class="struct_member_description"><p>names of optional attributes in class</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaLdapClass.parents"></a>parents</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of the parent classes (pointers to <a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="type">GdaLdapClass</span></a>)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaLdapClass.children"></a>children</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of the children classes (pointers to <a class="link" href="GdaLdapConnection.html#GdaLdapClass" title="GdaLdapClass"><span class="type">GdaLdapClass</span></a>)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaLdapConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaLdapConnection--startup-file"></a><h3>The <code class="literal">“startup-file”</code> property</h3>
+<pre class="programlisting">  “startup-file”             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>File used to store startup data.</p>
+<p>Owner: GdaLdapConnection</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

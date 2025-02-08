@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="general-ui" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>
+  </info>
+  <title>Obecně o uspořádání rozhraní</title>
+  <p>Aplikace <app>gda-browser</app> sestává z jednoho nebo více oken nejvyšší úrovně, přičemž každé z oken přísluší jednomu připojení (jehož název je uveden v záhlaví okna). Pro libovolné připojení může být otevřeno i více oken (použijte nabídku <guiseq><gui>Okno</gui><gui>Nové okno</gui></guiseq> nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>N</key></keyseq>).</p>
+  <figure>
+    <title>Okno připojení</title>
+    <desc>Okno otevřené pro připojení „p1“ (a hledisko Prohlížeč schématu)</desc>
+    <media type="image" mime="image/png" src="figures/mainwin.png"/>
+  </figure>
+
+  <p>V rámci každého z oken je dispozici několik <em>hledisek</em>, které jsou uzpůsobené pro různé činnosti:</p>
+  <list>
+    <item><p><link xref="schema-browser-perspective">hledisko Prohlížeč schématu</link> který vám pomůže se vyznat v návrhu databáze</p></item>
+    <item><p><link xref="query-execution-perspective">hledisko Provádění dotazu</link> k provádění libovolných příkazů SQL</p></item>
+    <item><p><link xref="data-manager-perspective">hledisko Správce dat</link> k procházení obsahu databáze</p></item>
+  </list>
+  <p>Aktuálně vybrané hledisko můžete měnit u každého okna zvlášť a všechna hlediska mají akční část složenou z karet, které můžete z jednoho do druhého okna přesouvat, za předpokladu že oboje okna jsou pro totéž připojení a zobrazují stejný typ hlediska (prostě jen kartu chytněte za ouško s popisem a přetáhněte do jiného okna).</p>
+</page>

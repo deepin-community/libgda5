@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-browser-perspective" xml:lang="es">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+<title>La perspectiva del visor LDAP</title>
+<p>Use la perspectiva del visor LDAP ver y manipular los datos almacenados en un directorio LDAP. Para cambiar a esta perspectiva, use el menú <guiseq><gui>Perspectiva</gui><gui>Visor LDAP</gui></guiseq> o el atajo <keyseq><key>Ctrl</key><key>P</key></keyseq>. Por supuesto, esta perspectiva sólo está disponible cuando la conexión abierta es una <link xref="ldap-connection">conexión LDAP</link>.</p>
+<p>La perspectiva se divide en dos paneles horizontales: el panel de la izquierda para las declaraciones favoritas del usuario (para mantener las referencias a entradas o clases específicas de LDAP), y el panel de la derecha que es el área de acción.</p>
+<figure>
+  <title>Pestaña de entradas del visor LDAP</title>
+  <desc>Pestaña de entradas LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-browser-persp.png"/>
+</figure>
+
+<p>La parte izquierda de la perspectiva lista las clases o las entradas LDAP favoritas. Una doble pulsación sobre un favorito abre sus propiedades en el panel derecho. Tenga en cuenta que las entradas LDAP favoritas aparecerán siempre antes que las clases favoritas.</p>
+<p>El panel derecho se compone de distintos tipos de pestañas:</p>
+<list>
+  <item><p>pestañas para examinar el DIT («Directory Information Tree», Árbol de Información del Directorio) del LDAP: cuando se selecciona una entrada del árbol, se muestran sus atributos (sólo se muestran los atributos que tienen valores, se ocultan los atributos sin valor), y siempre se muestra primero el DN (Nombre Distintivo) de la entrada. Además, tenga en cuenta que los hijos de cada entrada sólo se buscan cuando es necesario para evitar solicitudes innecesarias al servidor LDAP.</p></item>
+  <item><p>pestañas para examinar las clases del LDAP, consulte la figura de más abajo. Cuando se selecciona una clase, se muestra toda la información referente a la clase (descripción, OID, tipo, ...)</p></item>
+  <item><p>pestañas para realizar búsquedas LDAP, consulte la figura de más abajo. Una definición de búsqueda LDAP se puede guardar como una tabla virtual, consulte el <link xref="ldap-connection#ldap-table-mapping">mapeado de la tabla LDAP</link>.</p></item>
+</list>
+<figure>
+  <title>pestaña de clases del visor LDAP</title>
+  <desc>pestaña de clases LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-classes.png"/>
+</figure>
+<figure>
+  <title>pestaña de búsqueda del visor LDAP</title>
+  <desc>pestaña de búsqueda LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-search.png"/>
+</figure>
+<p>Los enlaces en estas pestañas (que se identifican por tener texto azul y subrayado) abren una nueva pestaña, o utilizan la primera pestaña junto a la pestaña actual para mostrar la información del enlace seleccionado. Por ejemplo, en la figura anterior en la que se ilustra una pestaña de entradas LDAP, al pulsar en «inetOrgPerson» se abrirá una pestaña de «clases LDAP» y se mostrará la información sobre esa clase.</p>
+
+</page>

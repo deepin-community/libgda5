@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-browser-perspective" xml:lang="id">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+<title>Perspektif peramban LDAP</title>
+<p>Pakai perspektif peramban LDAP untuk melihat dan memanipulasi data yang disimpan dalam direktori LDAP. Untuk berpindah ke perspektif ini, pakai menu <guiseq><gui>Perspective</gui><gui>Peramban LDAP</gui></guiseq> atau pintasan <keyseq><key>Ctrl</key><key>P</key></keyseq>. Perspektif ini tentu saja hanya tersedia ketika koneksi yang dibuka adalah suatu <link xref="ldap-connection">koneksi LDAP</link>.</p>
+<p>Perspektif dibagi menjadi dua panel horisontal: panel kiri bagi favorit yang didefinisikan pengguna (untuk memuat acuan ke entri LDAP tertentu atau kelas LDAP tertentu), dan panel kanan adalah area aksi.</p>
+<figure>
+  <title>Tab entri peramban LDAP</title>
+  <desc>Tab entri LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-browser-persp.png"/>
+</figure>
+
+<p>Perspektif bagian kiri menampilkan daftar kelas atau entri LDAP favorit. Klik ganda pada suatu favorit membuka propertinya pada panel kanan. Perhatikan bahwa favorit entri LDAP selalu muncul sebelum favorit kelas.</p>
+<p>Panel kanan tersusun atas beberapa tipe tab:</p>
+<list>
+  <item><p>tab untuk mengeksplorasi DIT (Directory Information Tree) LDAP: ketika suatu entri dipilih dari pohon, atributnya ditampilkan (hanya atribut yang punya nilai ditampilkan, yang tak punya nilai disembunyikan), dan DN (Distinguished Name) entri selalu ditampilkan pertama. Perhatikan juga bahwa anak dari setiap entri hanya akan diambil ketika diperlukan untuk menghindari permintaan yang tak diperlukan ke server LDAP.</p></item>
+  <item><p>tab untuk mengeksplorasi kelas LDAP, lihat gambar di bawah. Bagi suatu kelas yang dipilih, semua informasi tentang kelas tersebut ditampilkan (deskripsi, OID, tipe, ...)</p></item>
+  <item><p>tab untuk melakukan pencarian LDAP, lihat gambar di bawah. Suatu definisi pencarian LDAP dapat disimpan sebagai tabel virtual, lihat <link xref="ldap-connection#ldap-table-mapping">pemetaan tabel LDAP</link>.</p></item>
+</list>
+<figure>
+  <title>tab kelas peramban LDAP</title>
+  <desc>tab kelas LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-classes.png"/>
+</figure>
+<figure>
+  <title>tab pencarian peramban LDAP</title>
+  <desc>tab pencarian LDAP</desc>
+  <media type="image" mime="image/png" src="figures/ldap-search.png"/>
+</figure>
+<p>Taut dalam tab ini (ditandai oleh teks biru dan yang digarisbawahi) membuka tab baru, atau memakai tab pertama setelah tab kini untuk menampilkan informasi tentang taut yang dipilih. Sebagai contoh pada gambar di atas yang mengilustrasikan tab entri LDAP, mengklik "inetOrgPerson" akan membuka tab baru "kelas LDAP" dan menampilkan informasi tentang kelas tersebut.</p>
+
+</page>

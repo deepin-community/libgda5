@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>For SQLite: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="provider-notes.html" title="Provider's notes">
+<link rel="prev" href="provider-notes.html" title="Provider's notes">
+<link rel="next" href="provider_notes_sqlcipher.html" title="For SQLCipher">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="provider-notes.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="provider-notes.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="provider_notes_sqlcipher.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="provider_notes_sqlite"></a>For SQLite</h2></div></div></div>
+<p>
+      The following arguments are used to connect to an SQLite database:
+      </p>
+<div class="table">
+<a name="id-1.2.11.5.2.1"></a><p class="title"><b>Table 2. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Argument name</th>
+<th align="justify">Description</th>
+<th align="justify">Required</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">DB_NAME</td>
+<td align="justify">Name of the database. This should be the name of the database file without
+	      the ".db" extension. However when opening a database, if a file named after the DB_NAME
+	      value exists then it is used (so beware, for example if DB_NAME is set to "mydb" and a file
+	      named "mydb" exists but is not an SQLite database, then an error will occur).
+	      Using the ":memory:" database name will result in a database residing purely in memory, the database
+	      ceases to exist as soon as the database connection is closed (every memory database is distinct from
+	      every other); refer to
+	      <a class="ulink" href="http://www.sqlite.org/inmemorydb.html" target="_top">SQLite's in memory databases</a> for more
+	      information.
+	      </td>
+<td align="justify">Yes</td>
+</tr>
+<tr>
+<td align="justify">APPEND_DB_EXTENSION</td>
+<td align="justify">Defines if the '.db' extension need to be appended to the name of the database. Defaults to TRUE if not
+	      specified.</td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">DB_DIR</td>
+<td align="justify">The directory where the database file is; if not specified, the current working
+	      directory is used.</td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">EXTRA_FUNCTIONS</td>
+<td align="justify">If set to TRUE (or unspecified), then some extra functions defined by <span class="application">Libgda</span> are added. The functions are:
+	      <code class="function">gda_file_exists()</code>, <code class="function">gda_hex_print()</code>,
+	      <code class="function">gda_hex()</code>, <code class="function">gda_rmdiacr()</code>,
+	      <code class="function">gda_lower()</code> and <code class="function">gda_upper()</code>; see below 
+	      for more information about them.
+	      </td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">EXTRA_COLLATIONS</td>
+<td align="justify">If set to TRUE (or unspecified), then some extra collations defined by <span class="application">Libgda</span> are added.
+	      They are:
+	      <code class="function">LOCALE</code> (the strings are compared taking into account UTF8 sorting and the
+	      current locale) and <code class="function">DCASE</code> (before comparison, all the diacritical
+	      signs (for example accents) are removed from the strings and they are converted to lower case).
+	      </td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">REGEXP</td>
+<td align="justify">If set to TRUE (or unspecified), then the <code class="function">regexp()</code> and <code class="function">regexp_match()</code>
+	      functions are defined. The <code class="function">regexp()</code> function is used by SQL statement with a
+	      construct as "x REGEXP y", and the <code class="function">regexp_match()</code> is more general. The default for
+	      this option is TRUE. See below for more information about this function.
+	      </td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">FK</td>
+<td align="justify">Defines if foreign keys are enforced, by default, they are.</td>
+<td align="justify">No</td>
+</tr>
+<tr>
+<td align="justify">EXTENSIONS</td>
+<td align="justify">Defines if SQLite extensions are allowed to be loaded, using the load_extension() function, default is to
+	      deny loading extensions.</td>
+<td align="justify">No</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.3"></a>The <code class="function">gda_file_exists()</code> function</h3></div></div></div>
+<p>
+	This function accepts a filename as argument, and returns 0 if the file with that filename does not
+	exist, or 1 if it does.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.4"></a>The <code class="function">gda_hex_print()</code> function</h3></div></div></div>
+<p>
+	This function accepts at most 2 arguments, in that order:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a blob value</p></li>
+<li class="listitem"><p>a length (not mandatory)</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	It returns a string suitable to be printed (where all the non ascii characters are converted to
+	the "\xyz" syntax where "xyz" is the decimal value of the character), limited to the specified
+	length if any. 
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.5"></a>The <code class="function">gda_hex()</code> function</h3></div></div></div>
+<p>
+	This function accepts at most 2 arguments, in that order:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a blob value</p></li>
+<li class="listitem"><p>a length (not mandatory)</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	It returns a hex dump string of the blob value, limited to the specified length if any.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.6"></a>The <code class="function">gda_rmdiacr()</code> function</h3></div></div></div>
+<p>
+	This function accepts at most 2 arguments, in that order:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a string value</p></li>
+<li class="listitem"><p>a case conversion to do (not mandatory), as a string which must be
+	  'upper' or 'lower'</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	It returns a string where all the diacritical signs (for example accents) from the input string,
+	and optionally converts the string to upper or lower case if specified. This function takes into
+	account the current locale and is useful to do some text search.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.7"></a>The <code class="function">gda_upper()</code> and <code class="function">gda_lower()</code> functions</h3></div></div></div>
+<p>
+	These function accept one string argument and convert it to upper or lower case, taking into account
+	the locale (the standard SQLite <code class="function">upper()</code> and <code class="function">lower()</code>
+	functions only operating on ASCII characters).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.5.8"></a>The <code class="function">regexp_match()</code> function</h3></div></div></div>
+<p>
+	This function accepts at most 3 arguments, in that order:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the string on which the regular expression will be applied</p></li>
+<li class="listitem"><p>the regular expression to apply</p></li>
+<li class="listitem"><p>the options (not mandatory)</p></li>
+</ul></div>
+<p>
+      </p>
+<p>
+	The options are specified as a string where each character corresponds to a boolean flag (the presence of the
+	character meaning the flag is set). They are:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>'i': specifies a case insensitive matching</p></li>
+<li class="listitem"><p>'m': specifies that the the "start of line" and "end of line" constructs match immediately
+	  following or immediately before any newline in the string, respectively, as well as at the very start
+	  and end of the string</p></li>
+<li class="listitem"><p>'v': specifies that instead of returning 0 or 1 as a result for matching or non
+	  matching, the function returns the string which actually matches, or NULL if not match was found</p></li>
+</ul></div>
+<p>	
+      </p>
+<p>
+	This function is implemented using GLib's Perl-compatible regular expressions implementation:
+	<a href="/usr/share/gtk-doc/html/glib/glib-Perl-compatible-regular-expressions.html#GRegex">GRegex</a>, itself based on the <a class="ulink" href="http://www.pcre.org/" target="_top">PCRE</a> library.
+      </p>
+</div>
+<p>
+      Also refer to the <a class="link" href="limitations_sqlite.html" title="For SQLite">SQLite's provider's limitations</a>.
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

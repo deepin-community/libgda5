@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="actions" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Ενέργειες</title>
+  <p>Ενέργειες είναι κώδικας SQL που εξαρτώνται από μεταβλητές και μπορούν να εκτελεστούν από το μενού συμφραζομένων οποιουδήποτε συνόλου δεδομένων που παρουσιάζεται σε ένα πλέγμα.</p>
+  <p>Για παράδειγμα εάν υπάρχει ένας πίνακας "products" που εμφανίζει τη λίστα μερικών ειδών προϊόντων και ένας πίνακας "comments" που εμφανίζει όλα τα σχόλια που αφήνονται από τους χρήστες για ένα προϊόν (πιθανόν τον πίνακα "comments" θα έχει ένα ξένο κλειδί στον πίνακα "products" για αναφορά του).</p>
+  <p>Μια ενέργεια μπορεί να οριστεί για να εμφανίσει όλες τις καταχωρίσεις στον πίνακα "comments" με την προϋπόθεση ότι το κλειδί ορίζει ένα προϊόν. Έπειτα οποτεδήποτε ένα προϊόν εμφανίζεται σε ένα σύνολο αποτελέσματος, το μενού συμφραζομένων θα επιτρέπει στον χρήστη να εκτελέσει αυτήν την ενέργεια και έτσι εμφανίζονται όλα τα σχόλια στο επιλεγμένο προϊόν. Αυτή η κατάσταση επεξηγείται στις επόμενες εικόνες.</p>
+  <p>Το πρώτο βήμα είναι ο ορισμός μιας ενέργειας, που είναι απλά η αγαπημένη στην προοπτική <link xref="query-execution-perspective">εκτέλεση ερωτήματος</link> που ορίζεται ως μια ενέργεια: εμφανίζει τις ιδιότητες για το αγαπημένο και βεβαιώνει ότι η εναλλαγή "Is action" έχει σημειωθεί:</p>
+  <figure>
+    <title>Ενέργεια - ορισμός μιας ενέργειας</title>
+    <desc>Ορισμός της ενέργειας για εμφάνιση των σχολίων για ένα προϊόν, από την προοπτική εκτέλεσης του ερωτήματος</desc>
+    <media type="image" mime="image/png" src="figures/action-4.png"/>
+  </figure>
+  <figure>
+    <title>Ενέργεια - εμφάνιση μιας λίστας προϊόντων</title>
+    <desc>Στην προοπτική εκτέλεσης ερωτήματος, ας διαλέξουμε όλα τα προϊόντα. Σημειώστε ότι υπάρχουν εδώ δύο ορισμένες ενέργειες: "προσθήκη σχολίου για το προϊόν" και "λίστα σχολίων για το προϊόν"</desc>
+    <media type="image" mime="image/png" src="figures/action-1.png"/>
+  </figure>
+  <p>Τώρα ας εμφανίσουμε το μενού συμφραζομένων:</p>
+  <figure>
+    <title>Ενέργεια - μενού συμφραζομένων</title>
+    <desc>Ας ανοίξουμε το μενού συμφραζομένων και ας επιλέξουμε <guiseq><gui>εκτέλεση ενέργειας</gui><gui>λίστα σχολίων για προϊόν</gui></guiseq></desc>
+    <media type="image" mime="image/png" src="figures/action-2.png"/>
+  </figure>
+  <p>Μετά από επιβεβαίωση των παραμέτρων για εκτέλεση της ενέργειας, το αποτέλεσμα είναι εκεί:</p>
+  <figure>
+    <title>Ενέργεια - εκτελείται</title>
+    <desc>Η ενέργεια τώρα εκτελείται</desc>
+    <media type="image" mime="image/png" src="figures/action-3.png"/>
+  </figure>
+</page>

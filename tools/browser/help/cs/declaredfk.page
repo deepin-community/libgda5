@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="declared-fk" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  </info>
+  <title>Deklarované cizí klíče</title>
+  <p>Všechny cizí klíče (kde je obsah jednoho nebo více sloupců v tabulce je omezen na hodnoty pocházející z jednoho nebo více sloupců v jiné tabulce) jsou analyzovány a zobrazeny v <link xref="schema-browser-perspective">hledisku Prohlížeč schématu</link>. Cizí klíče pomáhají pochopit databázové schéma a jsou automaticky používány příslušnou aplikací.</p>
+  <p>Někdy však návrhář databáze zapomene nebo si nepřeje použít omezení cizím klíčem a proto máte možnost „deklarovat cizí klíče“, které jsou deklarovány pouze v nástroji a ne v databázi.</p>
+  <figure>
+    <title>Deklarované cizí klíče v diagramech</title>
+    <desc>Při zobrazení v diagramu jsou deklarované cizí klíče reprezentovány pomocí přerušované čáry namísto plné čáry, jako u cizích klíčů</desc>
+    <media type="image" mime="image/png" src="figures/declaredfk.png"/>
+  </figure>
+  <p>Poznámky:</p>
+  <list>
+    <item><p>trojice (název cizího klíče, tabulka, odkazovaná tabulka) jednoznačně identifikují deklarovaný cizí klíč a proto deklarování nového cizího klíče se stejnou trojicí odstraní deklaraci toho předchozího.</p></item>
+    <item><p>Pokud je stejné omezení současně představováno skutečným cizím klíčem a zároveň deklarovaným cizím klíčem, je definice skutečného cizího klíče zamaskována tím deklarovaným</p></item>
+    <item><p>Deklarovaný cizí klíč nemá žádné zásady určující, jaké akce se mají provést při aktualizace (UPDATE) a smazání (DELETE), takže vracená zásada je „nic neprovádět“</p></item>
+  </list>
+
+  <section id="declare-new-fk">
+    <title>Deklarování nového cizího klíče</title>
+    <p>Nový cizí klíč může být deklarován z <link xref="schema-browser-perspective">z hlediska prohlížeče schématu</link> pomocí nabídky <guiseq><gui>Tabulka</gui><gui>Deklarovat cizí klíč</gui></guiseq>, které je přítomno v případě, že jsou v aktuální kartě zobrazeny vlastnosti tabulky.</p>
+    <p>Jiným způsobem, jak deklarovat cizí klíč je použít kontextovou nabídku u tabulky v diagramu a vybrat volbu <guiseq><gui>Deklarovat cizí klíč pro tuto tabulku</gui></guiseq>.</p>
+    <p>V každém případě je pro deklaraci nového cizího klíče zapotřebí zadat následující informace:</p>
+    <list>
+      <item><p>Název cizího klíče</p></item>
+      <item><p>Odkazovaná tabulka</p></item>
+      <item><p>Sloupce a odkazované sloupce pro každý z dotčených sloupců v cizím klíči</p></item>
+    </list>
+    <figure>
+      <title>Informace pro deklaraci nového cizího klíče</title>
+      <desc>Uživatelské rozhraní dialogového okna, které se zobrazí pro deklaraci nového klíče. Odkazovanou tabulkou jsou „sklady“ a dotčené sloupce „země“ a „město“.</desc>
+      <media type="image" mime="image/png" src="figures/declaredfk-dialog.png"/>
+    </figure>
+  </section>
+  
+  <section id="remove-fk">
+    <title>Odstranění deklarovaného cizího klíče</title>
+    <p>Deklarovaný cizí klíč je možné odstranit kliknutím na odkaz <guiseq><gui>(Odstranit)</gui></guiseq> zobrazený pod vlastnostmi každého z deklarovaných cizích klíčů ve vlastnostech tabulky (v <link xref="schema-browser-perspective">hledisku prohlížeče schématu</link>).</p>
+    <p>Dalším způsobem, jak odstranit deklarovaný cizí klíč je na stránce <link xref="diagram">diagramu</link> přes kontextovou nabídku patřící k přerušované čáře reprezentující deklarovaný cizí klíč výběrem volby <guiseq><gui>Odstranit tento deklarovaný cizí klíč</gui></guiseq>.</p>
+  </section>
+</page>

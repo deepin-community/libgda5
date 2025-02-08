@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Managing data models: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="getting_started.html" title="Code examples">
+<link rel="prev" href="ch06s03.html" title="Executing queries">
+<link rel="next" href="transactions.html" title="Managing transactions">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="getting_started.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch06s03.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="transactions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="data-model"></a>Managing data models</h2></div></div></div>
+<p>
+      Each time a SELECT query is executed, it returns a <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>
+      object, which contains methods to access the returned data. Note that <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>
+      is in fact an interface and is implemented in very various ways depending on the database provider executing the
+      query; however any GdaDataModel object is used the same way. Note that GdaDataModel objects are also generally used to 
+      represent an array of data where all the data in a column is of the same type.
+    </p>
+<p>
+      Some data models can be modified, some can't and knowing the features of a specific data model instance
+      can be done using the <a class="link" href="GdaDataModel.html#gda-data-model-get-access-flags" title="gda_data_model_get_access_flags ()">gda_data_model_get_access_flags ()</a>
+      and <a class="link" href="GdaDataModel.html#gda-data-model-get-attributes-at" title="gda_data_model_get_attributes_at ()">gda_data_model_get_attributes_at ()</a> methods.
+      Data models returned when SELECT queries are executed usually are not modifiable.
+    </p>
+<p>
+      The value stored in each cell of a data model (at a <span class="emphasis"><em>(column, row)</em></span> position) is a 
+      read-only <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct">GValue</a> pointer. 
+      Accessing the data in a GdaDataModel can be done using two methods:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>in a random access way using 
+	    <a class="link" href="GdaDataModel.html#gda-data-model-get-value-at" title="gda_data_model_get_value_at ()">gda_data_model_get_value_at ()</a> if the data model
+	    supports random access</p></li>
+<li class="listitem"><p>using a data model iterator as a cursor: a 
+	    <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter">GdaDataModelIter</a> object which is always supported by any data model.
+	</p></li>
+</ul></div>
+<p>
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-model-table-access"></a>Example using random access</h3></div></div></div>
+<p>
+        The following example displays the contents of a GdaDataModel using random access:
+        </p>
+<pre class="programlisting">
+void
+show_data_model (GdaDataModel *dm)
+{
+          gint row_id;
+          gint column_id;
+          const GValue *value;
+          
+          for (column_id = 0; column_id &lt; gda_data_model_get_n_columns (dm);
+               column_id++)
+          g_print("%s\t", gda_data_model_get_column_title (dm, column_id));
+          g_print("\n");
+          
+          for (row_id = 0; row_id &lt; gda_data_model_get_n_rows (dm); row_id++) {
+                    for (column_id = 0; column_id &lt; gda_data_model_get_n_columns (dm);
+                         column_id++) {
+                              char *str;
+
+                              value = gda_data_model_get_value_at (dm, column_id, row_id, NULL);
+                              str = gda_value_stringify (value);
+                              g_print ("%s\t", str);
+                              g_free (str);
+                    }
+                    g_print("\n");
+          }
+}
+        </pre>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-model-row-access"></a>Example using an iterator</h3></div></div></div>
+<p>
+        </p>
+<pre class="programlisting">
+void
+show_data_model (GdaDataModel *dm)
+{
+          gint column_id;
+          GdaDataModelIter *iter;
+          
+          for (column_id = 0; column_id &lt; gda_data_model_get_n_columns (dm);
+               column_id++)
+          g_print("%s\t", gda_data_model_get_column_title (dm, column_id));
+          g_print("\n");
+          
+          iter = gda_data_model_create_iter (dm);
+          gda_data_model_iter_move_next (iter);
+          while (gda_data_model_iter_is_valid (iter)) {
+                    GSList *list;
+                    for (list = GDA_SET (iter)-&gt;holder; list; list = list-&gt;next) {
+                              str = gda_holder_get_value_str (GDA_HOLDER (list-&gt;data), NULL);
+                              g_print ("%s\t", str);
+                              g_free (str);
+                    }
+                    g_print("\n");
+          }
+          g_object_unref (iter);
+}
+        </pre>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="data-model-free"></a>Freeing data models</h3></div></div></div>
+<p>
+        When you finish using data models you must free it, using <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref ()</a>.
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

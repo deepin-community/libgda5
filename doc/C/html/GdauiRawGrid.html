@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiRawGrid: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiGrid.html" title="GdauiGrid">
+<link rel="next" href="GdauiCombo.html" title="GdauiCombo">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiRawGrid.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiRawGrid.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdauiRawGrid.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdauiRawGrid.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiRawGrid.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiGrid.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiCombo.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiRawGrid"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiRawGrid.top_of_page"></a>GdauiRawGrid</span></h2>
+<p>GdauiRawGrid — Grid widget to manipulate data in a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"><img src="vi-raw-grid.png"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiRawGrid.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRawGrid.html#gdaui-raw-grid-new" title="gdaui_raw_grid_new ()">gdaui_raw_grid_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRawGrid.html#gdaui-raw-grid-set-sample-size" title="gdaui_raw_grid_set_sample_size ()">gdaui_raw_grid_set_sample_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRawGrid.html#gdaui-raw-grid-set-sample-start" title="gdaui_raw_grid_set_sample_start ()">gdaui_raw_grid_set_sample_start</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRawGrid.html#gdaui-raw-grid-set-layout-from-file" title="gdaui_raw_grid_set_layout_from_file ()">gdaui_raw_grid_set_layout_from_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid--global-actions-visible" title="The “global-actions-visible” property">global-actions-visible</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid--info-cell-visible" title="The “info-cell-visible” property">info-cell-visible</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</td>
+<td class="property_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid--model" title="The “model” property">model</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid--xml-layout" title="The “xml-layout” property">xml-layout</a></td>
+<td class="property_flags">Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid-double-clicked" title="The “double-clicked” signal">double-clicked</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid-populate-popup" title="The “populate-popup” signal">populate-popup</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdauiRawGrid.html#GdauiRawGrid-struct" title="struct GdauiRawGrid">GdauiRawGrid</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+            <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+                <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct">GtkTreeView</a>
+                    <span class="lineart">╰──</span> GdauiRawGrid
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdauiRawGrid implements
+ AtkImplementorIface,  <a href="/usr/share/gtk-doc/html/gtk3/GtkBuildable.html#GtkBuildable-struct">GtkBuildable</a>,  <a href="/usr/share/gtk-doc/html/gtk3/GtkScrollable.html#GtkScrollable-struct">GtkScrollable</a>,  <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy">GdauiDataProxy</a> and  <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector">GdauiDataSelector</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiGrid.html" title="GdauiGrid"><span class="type">GdauiGrid</span></a> widget which uses the <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> and adds decorations such as
+information about data model size, and features searching.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-raw-grid-new"></a><h3>gdaui_raw_grid_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_raw_grid_new (<em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> widget suitable to display the data in <em class="parameter"><code>model</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-raw-grid-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-raw-grid-new.returns"></a><h4>Returns</h4>
+<p>the new widget. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-raw-grid-set-sample-size"></a><h3>gdaui_raw_grid_set_sample_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_raw_grid_set_sample_size (<em class="parameter"><code><a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> *grid</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> sample_size</code></em>);</pre>
+<p>Sets the size of each chunk of data to display: the maximum number of rows which
+can be displayed at a time. See <a class="link" href="GdauiGrid.html#gdaui-grid-set-sample-size" title="gdaui_grid_set_sample_size ()"><code class="function">gdaui_grid_set_sample_size()</code></a> and <a class="link" href="GdaDataProxy.html#gda-data-proxy-set-sample-size" title="gda_data_proxy_set_sample_size ()"><code class="function">gda_data_proxy_set_sample_size()</code></a></p>
+<div class="refsect3">
+<a name="gdaui-raw-grid-set-sample-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>grid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sample_size</p></td>
+<td class="parameter_description"><p>the size of the sample displayed in <em class="parameter"><code>grid</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-raw-grid-set-sample-start"></a><h3>gdaui_raw_grid_set_sample_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_raw_grid_set_sample_start (<em class="parameter"><code><a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> *grid</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> sample_start</code></em>);</pre>
+<div class="refsect3">
+<a name="gdaui-raw-grid-set-sample-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>grid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-raw-grid-set-layout-from-file"></a><h3>gdaui_raw_grid_set_layout_from_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_raw_grid_set_layout_from_file (<em class="parameter"><code><a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> *grid</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *file_name</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *grid_name</code></em>);</pre>
+<p>Sets a grid's columns layout according an XML description contained in <em class="parameter"><code>file_name</code></em>
+, for the grid identified
+by the <em class="parameter"><code>grid_name</code></em>
+ name (as an XML layout file can contain the descriptions of several forms and grids).</p>
+<div class="refsect3">
+<a name="gdaui-raw-grid-set-layout-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>grid</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file_name</p></td>
+<td class="parameter_description"><p>XML file name to use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>grid_name</p></td>
+<td class="parameter_description"><p>the name of the grid to use, in <em class="parameter"><code>file_name</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiRawGrid-struct"></a><h3>struct GdauiRawGrid</h3>
+<pre class="programlisting">struct GdauiRawGrid;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdauiRawGrid--global-actions-visible"></a><h3>The <code class="literal">“global-actions-visible”</code> property</h3>
+<pre class="programlisting">  “global-actions-visible”   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Global Actions visible.</p>
+<p>Owner: GdauiRawGrid</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRawGrid--info-cell-visible"></a><h3>The <code class="literal">“info-cell-visible”</code> property</h3>
+<pre class="programlisting">  “info-cell-visible”        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Info cell visible.</p>
+<p>Owner: GdauiRawGrid</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRawGrid--model"></a><h3>The <code class="literal">“model”</code> property</h3>
+<pre class="programlisting">  “model”                    <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</pre>
+<p>Owner: GdauiRawGrid</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRawGrid--xml-layout"></a><h3>The <code class="literal">“xml-layout”</code> property</h3>
+<pre class="programlisting">  “xml-layout”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Owner: GdauiRawGrid</p>
+<p>Flags: Write</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiRawGrid-double-clicked"></a><h3>The <code class="literal">“double-clicked”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> *grid,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>          row,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>Emitted when the user double clicks on a row</p>
+<div class="refsect3">
+<a name="GdauiRawGrid-double-clicked.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>grid</p></td>
+<td class="parameter_description"><p>GdauiRawGrid</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>row</p></td>
+<td class="parameter_description"><p>the row that was double clicked</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRawGrid-populate-popup"></a><h3>The <code class="literal">“populate-popup”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> *grid,
+               <a href="/usr/share/gtk-doc/html/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a>      *menu,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>Connect this signal and modify the popup menu.</p>
+<div class="refsect3">
+<a name="GdauiRawGrid-populate-popup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>grid</p></td>
+<td class="parameter_description"><p>GdauiRawGrid</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>menu</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gtk3/GtkMenu.html#GtkMenu-struct"><span class="type">GtkMenu</span></a> to modify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRawGrid.see-also"></a><h2>See Also</h2>
+<p>the <a class="link" href="GdauiGrid.html" title="GdauiGrid"><span class="type">GdauiGrid</span></a> widget which uses the <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid"><span class="type">GdauiRawGrid</span></a> and adds decorations such as information about data model size, and features searching.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

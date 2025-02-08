@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaTreeMgrSchemas: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="trees.html" title="Trees">
+<link rel="prev" href="GdaTreeMgrSelect.html" title="GdaTreeMgrSelect">
+<link rel="next" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrSchemas.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrSchemas.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrSchemas.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="trees.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaTreeMgrSelect.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaTreeMgrTables.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaTreeMgrSchemas"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaTreeMgrSchemas.top_of_page"></a>GdaTreeMgrSchemas</span></h2>
+<p>GdaTreeMgrSchemas — A tree manager which creates a node for each schema in a database</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="function_type">
+<a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeMgrSchemas.html#gda-tree-mgr-schemas-new" title="gda_tree_mgr_schemas_new ()">gda_tree_mgr_schemas_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaTreeMgrSchemas.html#GdaTreeMgrSchemas--connection" title="The “connection” property">connection</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaTreeMgrSchemas.html#GdaTreeMgrSchemas--meta-store" title="The “meta-store” property">meta-store</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaTreeMgrSchemas.html#GdaTreeMgrSchemas-struct" title="struct GdaTreeMgrSchemas">GdaTreeMgrSchemas</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a>
+        <span class="lineart">╰──</span> GdaTreeMgrSchemas
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas"><span class="type">GdaTreeMgrSchemas</span></a> is a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object which creates a node for
+each schema in a database.</p>
+<p>It uses the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> associated to a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> to get the schemas list; it's up to the
+caller to make sure the data in the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> is up to date.</p>
+<p>The <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> to be used needs to be specified when the object is created.</p>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-tree-mgr-schemas-new"></a><h3>gda_tree_mgr_schemas_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+gda_tree_mgr_schemas_new (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object which will add one tree node for each database schema found
+in <em class="parameter"><code>cnc</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-tree-mgr-schemas-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-mgr-schemas-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaTreeMgrSchemas-struct"></a><h3>struct GdaTreeMgrSchemas</h3>
+<pre class="programlisting">struct GdaTreeMgrSchemas;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrSchemas.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaTreeMgrSchemas--connection"></a><h3>The <code class="literal">“connection”</code> property</h3>
+<pre class="programlisting">  “connection”               <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</pre>
+<p>Defines the <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> to display information for. Necessary upon construction unless
+the <span class="type">“meta-store”</span> property is specified instead.</p>
+<p>Owner: GdaTreeMgrSchemas</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTreeMgrSchemas--meta-store"></a><h3>The <code class="literal">“meta-store”</code> property</h3>
+<pre class="programlisting">  “meta-store”               <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *</pre>
+<p>Defines the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> to extract information from. Necessary upon construction unless
+the <span class="type">“connection”</span> property is specified instead. This property has
+priority over the GdaTreeMgrSchema:connection property.</p>
+<p>Owner: GdaTreeMgrSchemas</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p class="since">Since: 4.2.4</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

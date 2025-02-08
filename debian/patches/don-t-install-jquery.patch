@@ -1,0 +1,24 @@
+From: Jeremy Bicha <jbicha@debian.org>
+Date: Thu, 27 Sep 2018 13:38:32 -0400
+Subject: don't install jquery
+
+Since this file is listed in Files-Excluded, we need to
+update the build system to not try to install the missing file.
+
+We use the distro copy of jQuery instead.
+---
+ tools/Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/tools/Makefile.am b/tools/Makefile.am
+index 39314fe..beb10e7 100644
+--- a/tools/Makefile.am
++++ b/tools/Makefile.am
+@@ -111,7 +111,6 @@ webdatadir = $(datadir)/libgda-5.0/web
+ webdata_DATA = \
+ 	cnc.js \
+ 	md5.js \
+-	jquery.js \
+ 	mouseapp_2.js \
+ 	mouseirb_2.js \
+ 	irb.js \

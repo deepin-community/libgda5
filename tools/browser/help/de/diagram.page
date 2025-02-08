@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="diagram" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Diagramme</title>
+  <p>Diagramme werden über den <app>gda-browser</app> dargestellt. Sie bestehen aus einer Darstellungsfläche, auf der grafische Elemente angezeigt werden, wie beispielsweise Tabellen.</p>
+  <figure>
+    <title>Diagramm</title>
+    <desc>Ein Diagramm, das einige Tabellen und deren Bezüge darstellt, die durch eingeschränkte fremde Schlüssel repräsentiert werden (Lesen Sie auch <link xref="declared-fk">Die deklarierten fremden Schlüssel</link>)</desc>
+    <media type="image" mime="image/png" src="figures/diagram.png"/>
+  </figure>
+  <p>Die Objekte können innerhalb der Darstellungsfläche bewegt werden. Beachten Sie hierbei, dass das Diagramm auf der Fläche zentriert wird, solange es vollständig hineinpasst. Weitere Anpassungen sind möglich:</p>
+  <list>
+    <item><p>Ändern des Vergrößerungsmaßstabes mit Hilfe des Mausrades oder über das Kontextmenü, welches Sie mit einem Klick mit der rechten Maustaste auf die Darstellungsfläche erreichen. Ein vordefinierter Vergrößerungsmaßstab zum korrekten Einpassen des Diagramms in die Darstellungsfläche ist ebenfalls im Kontextmenü vorhanden.</p></item>
+    <item><p>Ändern der Abstände der einzelnen Objekte zueinander mit Hilfe des Mausrades, wobei die <key>Umschalttaste</key> gedrückt gehalten wird</p></item>
+    <item><p>Lineare oder radiale Anordnung von Objekten mit Hilfe des Kontextmenüs</p></item>
+    <item><p>Drucken mit Hilfe des Kontextmenüs</p></item>
+    <item><p>Exportieren als PNG-Bild oder SVG-Grafik mit Hilfe des Kontextmenüs</p></item>
+    <item><p>Hinzufügen von Objekten mit Hilfe des Kontextmenüs</p></item>
+    <item><p>Entfernen von Objekten mit Hilfe des Kontextmenüs des jeweiligen Objekts</p></item>
+  </list>
+</page>

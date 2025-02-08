@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index" xml:lang="cs">
+  <info>
+    <credit type="author">
+      <name>Vivien Malerba</name>
+      <email>malerba@gnome-db.org</email>
+    </credit>
+  </info>
+
+  <title>Nápověda k prohlížeči gda</title>
+  <p><app>gda-browser</app> je nástroj pro správce databází: mohou analyzovat databázová schémata, aby získali přehled o struktuře dat, spouštět interaktivně příkazy SQL a v krajním případě i spravovat data obsažená v databázích.</p>
+
+  <p>Připojení k databázi je možné otevřít několik naráz, takže uživatel může pracovat na více databázích naráz (lze také provádět příkazy na několika přípojeních ve stejnou chvíli).</p>
+
+  <p>Protože <app>gda-browser</app> používá knihovnu <app>libgda</app>, dokáže otevřít připojení ke všem databázím, pro které existuje databázový ovladač (poskytovatel) v <app>libgda</app> (v současnosti jsou podporovány <link href="http://www.oracle.com">Oracle</link>, <link href="http://www.mysql.org">MySQL</link>, <link href="http://www.postgresql.org/">PostgreSQL</link>, <link href="http://www.sqlite.org">SQLite</link>, MS Access (přes <link href="http://sourceforge.net/projects/mdbtools/">MDBTools</link> library), <link href="http://en.wikipedia.org/wiki/LDAP">LDAP</link> a <link href="http://java.sun.com/docs/books/tutorial/jdbc/index.html">JDBC</link>).</p>
+
+  <section id="presentation" style="1column">
+    <title>Představení</title>
+  </section>
+  <section id="perspectives" style="1column">
+    <title>Hlediska</title>
+  </section>
+
+  <section id="connections" style="1column">
+    <title>Správa připojení</title>
+  </section>
+
+</page>

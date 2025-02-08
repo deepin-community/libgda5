@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="virtual-connections" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Verbindungsbündelung (d.h. virtuelle Verbindungen)</title>
+  <p>Verbindungsbündelung ist ein Funktionsmerkmal, das es ermöglicht, verschiedene Verbindungen und/oder importierte Datensätze in eine einzige Verbindung »zu bündeln«, die beinahe wie eine gewöhnliche Verbindung genutzt werden kann.</p>
+  <p>Dieses Funktionsmerkmal ist nützlich, wenn ein SQL-Befehl ausgeführt werden soll (zum Beispiel zum Extrahieren von Daten) und dabei Daten in verschiedenen Datenbanken berücksichtigt werden müssen. Ohne dieses Merkmal müssen für den gleichen Vorgang die erforderlichen Daten aus jeder Datenbank exportiert werden und dann damit weiter gearbeitet werden.</p>
+  <p>Verwenden Sie zum Erstellen einer neuen »gebündelten« (oder virtuellen) Verbindung das Menü <guiseq><gui>Verbindung</gui><gui>Verbindung bündeln</gui></guiseq> oder die Tastenkombination <keyseq><key>Strg</key><key>i</key></keyseq>. Ein neues Dialogfenster öffnet sich, in dem Elemente für die neue »gebündelte« Verbindung ausgewählt werden können, so wie unten gezeigt.</p>
+  <figure>
+    <title>Dialog zum Erstellen einer neuen virtuellen Verbindung</title>
+    <desc>In diesem Fall wird die aktuelle Verbindung c1 in dem Schema »c1« gebündelt</desc>
+    <media type="image" mime="image/png" src="figures/virtual-cnc.png"/>
+  </figure>
+  <p>Verwenden Sie den Knopf <guiseq><gui>Bündelung hinzufügen</gui></guiseq>, um entweder:</p>
+  <list>	
+    <item><p>eine Verbindung so zu bündeln, dass sie alle Tabellen dieser Verbindung enthält: Verwenden Sie die Option <guiseq><gui>Eine Verbindung bündeln</gui></guiseq>. Damit wird dem Dialog ein neues Element hinzugefügt, mit dem ein Schemenname angegeben und eine vorhandene Verbindung gewählt werden kann</p></item>
+    <item><p>einen Datensatz zum Importieren von Daten aus einer Textdatei als eine Tabelle zu bündeln: Verwenden Sie die Option <guiseq><gui>Einen Datensatz bündeln</gui></guiseq>. Lesen Sie den folgenden Abschnitt für weitere Informationen.</p></item>
+  </list>
+
+  <section id="vcnc-use-case">
+    <title>Anwendungsfälle für virtuelle Verbindungen</title>
+    <p>Zur Veranschaulichung des Einsatzes von virtuellen Verbindungen soll ein einfacher Anwendungsfall betrachtet werden. Angenommen, es gibt eine Datenbank mit der Liste der Server, für die Sie verantwortlich sind. Zur Vereinfachung soll angenommen werden, dass die Datenbank eine Tabelle namens »server« mit den folgenden Definitionen enthält:</p>
+    <code>CREATE TABLE servers (name string, location string);</code>
+    <p>Nehmen wir an, diese Tabelle enthält die folgenden Informationen:</p>
+    <code>
+&gt; select * from servers ;
+name     | location
+---------+---------
+moon     | room1   
+darkstar | room2   
+flag     | room3   
+alf      | room2   
+vador    | room3   
+(5 rows)
+&gt;
+    </code>
+    <p>Angenommen, es gäbe ein Programm eines Drittanbieters, welches eine Liste aller Server ausgibt, die ein potenzielles Problem haben. Die Ausgabe erfolgt als CSV-Datei mit einer Spalte für den Server-Namen, einer für den Fehlercode und einer Spalte mit der Problembeschreibung. Die CSV-Datei soll folgenden Inhalt haben:</p>
+    <code>
+$ cat problems.csv 
+Server name,Error code,Error description
+darkstar,0,file system full
+vador,1,outdated AV signature
+darkstar,2,overloaded
+flag,0,file system full
+$
+    </code>
+    <p>Sie möchten nun alle Server sehen, die ein Problem mittels Fehlercode 0 melden und den Standort erfahren. Die Lösung besteht darin, die Verbindung zur Datenbank zu öffnen (zum Beispiel mit dem Schema »c1«), die CSV-Datei zu importieren (zum Beispiel in die Tabelle »Reiter«) und den folgenden SQL-Befehl auszuführen:</p>
+    <code>
+SELECT 
+  "server name", 
+  location
+FROM tab
+  INNER JOIN c1.servers AS s ON (tab."server name" = s.name)
+WHERE "Error code"=0
+    </code>
+    <p>womit das gesuchte Ergebnis ermittelt wird, wie in der folgenden Abbildung zu sehen ist:</p>
+    <figure>
+      <title>Erwartete Ergebnisse von der virtuellen Verbindung</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-4.png"/>
+    </figure>
+  </section>
+
+
+  <section id="vcnc-import-dataset">
+    <title>Importieren eines Datensatzes in eine virtuelle Verbindung</title>
+    <p>Um einen Datensatz in eine Tabelle mittels einer virtuellen Verbindung (z.B. die Datei »problems.csv« des Anwendungsfalls) zu importieren, verwenden Sie die Option <guiseq><gui>Einen Datensatz binden</gui></guiseq> aus dem Dialog zur Erstellung einer virtuellen Verbindung:</p>
+    <figure>
+      <title>Importieren eines Datensatzes in eine virtuelle Verbindung - 1</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-5.png"/>
+    </figure>
+    <p>Wählen Sie dort den Knopf <guiseq><gui>Importieren</gui></guiseq> und wählen Sie anschließend eine Datei zum Importieren. Dabei können Sie wichtige Optionen (wie die Dateikodierung, den Dateityp usw.) festlegen. Daraufhin ist die virtuelle Verbindung bereit:</p>
+    <figure>
+      <title>Importieren eines Datensatzes in eine virtuelle Verbindung - 2 </title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-2.png"/>
+    </figure>
+    <p>Die resultierende virtuelle Verbindung, hier als »c2« identifiziert, wird in ihrem eigenen neuen Fenster geöffnet:</p>
+    <figure>
+      <title>Neu geöffnete virtuelle Verbindung</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-3.png"/>
+    </figure>
+  </section>
+
+  <section id="virtual-ddl-sql">
+    <title>Verwendung von SQL mit virtuellen Verbindungen</title>
+    <p>Sie können das von <link href="http://sqlite.org/lang.html">SQLite</link> verstandene SQL in jeder virtuellen Verbindung verwenden. Seien Sie sich jedoch bewusst, dass wenn Sie Datenbankobjekte (außerhalb des erweiterten SQL, das im nächsten Abschnitt dargestellt wird) definieren, diese das nächste Mal verloren gehen, wenn die virtuelle Verbindung geöffnet wird.</p>
+    <p>Lesen Sie auch den Abschnitt <link xref="sql-sqlite">Das LDAP-Verbindungen bekannte SQL und virtuelle Verbindungen</link> für weitere Informationen.</p>
+  </section>
+</page>

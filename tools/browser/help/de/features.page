@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="features" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>	
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Funktionsmerkmale</title>
+  <p>Die gegenwärtigen Funktionsmerkmale von <app>gda-browser</app> sind:</p>
+  <section id="features-gen-ui">
+    <title>Allgemeiner Aufbau der Benutzeroberfläche</title>
+    <list>	
+      <item><p>Unabhängigkeit: Jede Verbindung wird als eigener Thread geführt, was bedeutet, dass eine bestimmte Verbindung die Anwendung nicht blockieren kann.</p></item>
+      <item><p>Mehrere Fenster können für eine einzelne Verbindung geöffnet sein.</p></item>
+      <item><p>Ein Vollbildmodus ist zur vollständigen Nutzung des verfügbaren Platzes auf dem Bildschirm verfügbar.</p></item>
+    </list>
+  </section>
+  <section id="features-cnc-mgmt">
+    <title>Verbindungsverwaltung</title>
+    <list>
+      <item><p>Mehrere Verbindungen können gleichzeitig geöffnet werden.</p></item>
+      <item><p>Verbindungsbündelung: es ist möglich, mehrere Verbindungen in eine zu <link type="topic" xref="virtual-connections">»bündeln«</link>, um SQL-Befehle auf mehrere Verbindungen gleichzeitig anzuwenden</p></item>
+      <item><p>Unabhängigkeit: Jede Verbindung wird als eigener Thread geführt, was bedeutet, dass eine bestimmte Verbindung die Anwendung nicht blockieren kann.</p></item>
+    </list>
+  </section>
+  <section id="features-activities">
+    <title>Aktivitäten</title>
+    <p>Die Aktivitäten sind nach Thema um den Begriff <link type="topic" xref="general-ui">Perspektive</link> angeordnet. Die folgenden sind derzeit implementiert:</p>
+    <list>	
+      <item><p>Analyse der Datenbank-Schemata (Tabellen, Beziehungen usw.). Lesen Sie bitte dazu auch über die <link xref="schema-browser-perspective">Schemata-Browser-Perspektive</link></p></item>
+      <item><p>Die <link xref="query-execution-perspective">Abfrageausführungs-Perspektive</link> zum Ausführen eines SQL-Befehls</p></item>
+      <item><p>Die <link xref="data-manager-perspective">Datenverwaltungs-Perspektive</link> zum Navigieren durch den Inhalt der Datenbank</p></item>
+      <item><p>für <link xref="ldap-connection">LDAP-Verbindungen</link>, Verwaltung der hierarchischen Daten im LDAP-Baum. Lesen Sie dazu bitte auch <link xref="ldap-browser-perspective">LDAP-Browser-Perspektive</link></p></item>
+    </list>
+    <p>Lesen Sie auch den Abschnitt <link xref="actions">Aktionen</link></p>
+  </section>
+  <section id="features-open">
+    <title>Offenheit</title>
+    <list>
+      <item><p>CSV- und andere Textdateien können importiert und in Verbindung mit <link type="topic" xref="virtual-connections">Verbindungsbündelung</link> verwendet werden</p></item>
+      <item><p>das allgemeine Framework ist offen genug, um neue integrierte Funktionsmerkmale hinzufügen zu können. Genau genommen kann jeder neue <link type="topic" xref="general-ui">Perspektiven</link> entwickeln</p></item>      
+    </list>
+  </section>
+</page>

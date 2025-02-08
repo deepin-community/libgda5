@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index" xml:lang="id">
+  <info>
+    <credit type="author">
+      <name>Vivien Malerba</name>
+      <email>malerba@gnome-db.org</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Bantuan Peramban Gda</title>
+  <p><app>gda-browser</app> adalah perkakas untuk para administrator basis data: mereka dapat menganalisa skema basis data untuk memahami bagaimana data diorganisasi, menjalankan perintah SQL secara interaktif, dan secara luas mengelola data yang dimuat dalam basis data.</p>
+
+  <p>Beberapa koneksi ke basis data dapat dibuka sekaligus, mengijinkan pengguna untuk bekerja pada beberapa basis data sekaligus (juga mungkin untuk mengeksekusi perintah pada beberapa koneksi pada saat yang sama).</p>
+
+  <p>Karena <app>gda-browser</app> memakai pustaka <app>libgda</app>, ini dapat membuka koneksi ke basis data yang driver basis datanya (penyedia) ada dalam <app>libgda</app> (<link href="http://www.oracle.com">Oracle</link>, <link href="http://www.mysql.org">MySQL</link>, <link href="http://www.postgresql.org/">PostgreSQL</link>, <link href="http://www.sqlite.org">SQLite</link>, MS Access (through the <link href="http://sourceforge.net/projects/mdbtools/">MDBTools</link> library), <link href="http://en.wikipedia.org/wiki/LDAP">LDAP</link> dan <link href="http://java.sun.com/docs/books/tutorial/jdbc/index.html">JDBC</link> didukung pada saat ini).</p>
+
+  <section id="presentation" style="1column">
+    <title>Presentasi</title>
+  </section>
+  <section id="perspectives" style="1column">
+    <title>Perspektif</title>
+  </section>
+
+  <section id="connections" style="1column">
+    <title>Manajemen koneksi</title>
+  </section>
+
+</page>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-xml-syntax" xml:lang="es">
+<info>
+  <title type="sort">1</title>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+<title>La sintaxis XML del administrador de datos</title>
+<p>La raíz del árbol XML debe ser una etiqueta<code>&lt;data&gt;</code>, que permite contener una o más definiciones de fuentes de datos. Cada fuente de datos se define por nodos <code>&lt;query&gt;</code> o <code>&lt;table&gt;</code>, y ambos aceptan los siguientes atributos opcionales:</p>
+<list>
+  <item><p>«id» para especificar el ID de cadena de una fuente de datos, usado cuando se enlazan unas fuentes de datos con otras;</p></item>
+  <item><p>«title» para especificar un título.</p></item>
+</list>
+<p>Por supuesto, es posible usar ambas etiquetas <code>&lt;query&gt;</code> o <code>&lt;table&gt;</code> en la misma especificación de fuentes de datos.</p>
+
+<section id="data-manager-exp-variables">
+  <title>Variables exportadas</title>
+  <p>Cada fuente de datos exporta algunas variables que se otras fuentes de datos pueden reutilizar para introducir una dependencia. Cuando se ejecutan las fuentes de datos, los contenidos de esas variables exportadas se reinician dependiendo de la fila seleccionada actualmente en la vista tabular resultante. si no hay ninguna fila seleccionada, la variable pierde su valor.</p>
+  <p>Cualquier fuente de datos que dependa de una variable se ejecuta de nuevo cuando cambia la variable, y en el caso de que la variable no tenga valor, el resultado de la ejecución de la fuente de datos es un conjunto de datos vacío.</p>
+</section>
+<section id="data-manager-query-tag">
+  <title>La etiqueta <code>&lt;query&gt;</code></title>
+  <p>Use la etiqueta <code>&lt;query&gt;</code> para especificar una sentencia SQL SELECT, así como los contenidos de la etiqueta. Puede enlazar otras fuentes de datos usando <link xref="variables-syntax">variables</link> en el SELECT de SQL.</p>
+
+  <code>
+&lt;data&gt;
+  &lt;query title="Customers" id="customers"&gt;
+    SELECT id, name FROM customers where name like ##name::string
+  &lt;/query&gt;
+  &lt;query title="Customer's details" id="cust_details"&gt;
+    SELECT * FROM customers WHERE id=##customers@id::int
+  &lt;/query&gt;
+&lt;/data&gt;
+  </code>
+  <p>Por ejemplo, la especificación XML anterior define dos orígenes de datos:</p>
+  <list>
+    <item><p>la fuente de datos <code>customers</code> que selecciona algunos campos de la tabla <em>clientes</em>, y que depende de una variable de cadena llamada <code>name</code>. Esta variable se debe establecer cuando las fuentes de datos se ejecutan porque, en esta especificación, ninguna fuente de datos la exportará.</p></item>
+    <item><p>la fuente de datos <code>cust_details</code> que selecciona todos los detalles de un cliente especificado usando su ID. Esta segunda fuente de datos depende de la anterior porque la variable <code>customers@id</code> se exporta desde la fuente de datos <code>customers</code>.</p></item>
+  </list>
+  <p>Ejecutar esta especificación de fuentes de datos creará dos vistas tabulares: una donde puede seleccionar un cliente, y otra que muestra todos los atributos del cliente seleccionado.</p>
+
+  <section id="data-manager-query-exp-variables">
+    <title>Variables exportadas</title>
+    <p>Cada fuente de datos definida por una etiqueta <code>&lt;query&gt;</code> exporta la siguiente variable para cada columna del conjunto de datos resultante (el tipo de la variable es el mismo que el de la columna):</p>
+    <list>
+      <item><p><code>&lt;data source ID&gt;@&lt;column position&gt;</code> donde la posición de la columna empieza en 1</p></item>
+      <item><p><code>&lt;data source ID&gt;@&lt;column name&gt; if the data set's column is a table column</code></p></item>
+    </list>
+  </section>
+
+</section>
+
+<section id="data-manager-table-tag">
+  <title>La etiqueta <code>&lt;table&gt;</code></title>
+  <p>Use la etiqueta <code>&lt;table&gt;</code> para definir una fuente de datos que mostrará los contenidos de la tabla. Esta etiqueta:</p>
+  <list>
+    <item><p>requiere el atributo «nombre» que representa el nombre de la tabla.</p></item>
+    <item><p>puede tener un atributo «id» correspondiente al ID de la fuente de datos. Si no está presente, se asignará un ID automáticamente.</p></item>
+    <item><p>puede contener una etiqueta <code>&lt;depend&gt;</code> que define la dependencia de otra fuente de datos con el atributo «foreign_key_table» definiendo el nombre de la tabla en la que hay claves ajenas usadas para determinar la dependencia, y el atributo «id» puede especificar el ID de una fuente de datos si es diferente del de la tabla mencionada.</p></item>
+  </list>
+  <p>La etiqueta <code>&lt;depend&gt;</code> que, para una fuente de datos de una tabla, define la dependencia de otra fuente de datos de la tabla:</p>
+    <list>
+    <item><p>requiere el atributo «foreign_key_table» que define el nombre de la tabla de la que son claves externa para determinar la dependencia</p></item>
+    <item><p>puede tener un atributo «id» correspondiente al ID de la fuente de datos referenciada. Si no se proporciona, la dependencia puede fallar si no hay ninguna fuente de datos cuyo ID sea el atributo «foreign_key_table».</p></item>
+    <item><p>puede contener una o más etiquetas <code>&lt;column&gt;</code> cuyo contenido define las columnas para identificar la clave externa que usar; esto es necesario si hay varias claves externas, y se puede omitir si sólo hay una clave externa posible. Las columnas listadas son las de la tabla donde existe la clave externa. </p></item>
+  </list>
+
+
+  <code>
+&lt;data&gt;
+  &lt;table id="the_cust" name="customers"/&gt;
+  &lt;table name="orders"&gt;
+    &lt;depend id="the_cust" foreign_key_table="customers"&gt;
+      &lt;column&gt;customer_id&lt;/column&gt;
+    &lt;/depend&gt;
+  &lt;/table&gt;
+&lt;/data&gt;
+  </code>
+  <p>Por ejemplo, la especificación XML anterior define dos orígenes de datos:</p>
+  <list>
+    <item><p>la fuente de datos <code>customers</code> que selecciona todos los contenidos de la tabla <em>clientes</em>.</p></item>
+    <item><p>la fuente de datos <code>orders</code> que selecciona entre los contenidos de la tabla <code>orders</code> las filas que corresponden a una fila en la tabla <code>customers</code> usando la clave ajena en la tabla «pedidos» que involucra a la columna «orders.customer_id» y la clave primaria de la tabla «clientes». El atributo «id» de la etiqueta <code>&lt;depend&gt;</code> es necesario para identificar la fuente de datos referenciada.</p></item>
+  </list>
+  <p>Vea en este ejemplo que:</p>
+  <list>
+    <item><p>no tiene que especificar los cmapos involucrados en la clave externa que une las tablas <code>orders</code> y <code>customers</code></p></item>
+    <item><p>los ID de las fuentes de datos se han asignado como nombres a las tablas seleccionadas, y no se ha especificado ningún atributo «id» para las etiquetas <code>&lt;table&gt;</code>.</p></item>
+  </list>
+
+  <section id="data-manager-table-exp-variables">
+    <title>Variables exportadas</title>
+    <p>Cada origen de datos definido por una etiqueta <code>&lt;query&gt;</code> exporta la siguiente variable para cada columna de la tabla (el tipo de la variable es el mismo que el de la columna):</p>
+    <list>
+      <item><p><code>&lt;data source ID&gt;@&lt;column name&gt;</code></p></item>
+      <item><p><code>&lt;data source ID&gt;@&lt;column position&gt;</code> donde la posición de la columna empieza en 1</p></item>
+    </list>
+  </section>
+
+
+</section>
+</page>

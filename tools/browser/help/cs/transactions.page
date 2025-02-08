@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="transactions" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>Transakce</title>
+  <p>Transakce mohou být spuštěny, potvrzeny nebo vráceny zpět pro jednotlivá připojení:</p>
+  <list>
+    <item><p>použijte tlačítko lišty nástrojů <media type="image" mime="image/png" src="figures/trans-begin.png"/> ke spuštění transakce</p></item>
+    <item><p>použijte tlačítko lišty nástrojů <media type="image" mime="image/png" src="figures/trans-commit.png"/> k potvrzení aktuální transakce (použijí se všechny změny)</p></item>
+    <item><p>použijte tlačítko lišty nástrojů <media type="image" mime="image/png" src="figures/trans-rollback.png"/> ke zrušení aktuální transakce (všechny změny budou zapomenuty)</p></item>
+  </list>
+  <note>
+    <p>Transakce může být spuštěna automaticky, pokud prováděný příkaz SELECT manipuluje s binárními objekty (BLOB) a transakce může být uzamknuta po dobu, co jsou výsledná data uchována v paměti (abyste se datové sady v <link xref="query-execution-perspective">hledisku provádění dotazu</link> zbavili, vymažte položku historie vztahující se k datové sadě).</p>
+  </note>
+</page>

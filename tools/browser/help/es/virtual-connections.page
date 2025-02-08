@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="virtual-connections" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Vincular conexiones (ej. conexiones virtuales)</title>
+  <p>La vinculación de conexiones es una característica que permite «vincular» varias conexiones y/o conjuntos de datos importados en una única conexión, que se puede usar casi como una conexión regular.</p>
+  <p>Esta característica es útil cuando se necesita ejecutar un comando SQL (por ejemplo, para extraer datos) tomando datos de cuentas almacenados actualmente en diferentes bases de datos. Sin esta característica, la manera de obtener el mismo resultado es exportar los datos necesarios desde cada base de datos y trabajar sobre ellos fuera de las bases de datos.</p>
+  <p>Para crear una nueva conexión «ligada» (o conexión «virtual»), use el menú <guiseq><gui>Conexión</gui><gui>Vincular conexión</gui></guiseq>, o el atajo <keyseq><key>Ctrl</key><key>i</key></keyseq>. Esto abre una nueva ventana de diálogo desde la que se pueden definir los elementos que se incluirán en la conexión «ligada», como se muestra a continuación.</p>
+  <figure>
+    <title>Diálogo para crear una conexión virtual nueva</title>
+    <desc>Aquí se ligará la conexión actual (c1) con el esquema «c1»</desc>
+    <media type="image" mime="image/png" src="figures/virtual-cnc.png"/>
+  </figure>
+  <p>Use el botón <guiseq><gui>Añadir vinculación</gui></guiseq> o:</p>
+  <list>	
+    <item><p>vincular una conexión para incluir todas las tablas de esa conexión: use la opción <guiseq><gui>Vincular una conexión</gui></guiseq>. Esta opción simplemente añade un elemento nuevo en el diálogo, para especificar un nombre de esquema y seleccionar una conexión existente.</p></item>
+    <item><p>vincular un conjunto de datos para importar datos desde un archivo de texto como una única tabla: use la opción <guiseq><gui>Vincular un conjunto de datos</gui></guiseq>. Consulte la siguiente sección para obtener más información.</p></item>
+  </list>
+
+  <section id="vcnc-use-case">
+    <title>Caso de uso para conexiones virtuales</title>
+    <p>Para ilustrar el uso de una conexión virtual, se definirá un caso de uso sencillo y se verá qué útil es. Se supone que tiene una base de datos que contiene la lista de servidores de la que es responsable. Para simplificar, se asumirá que la base de datos contiene una tabla «servidores» con la siguiente definición:</p>
+    <code>CREATE TABLE servidores (cadena de nombre, cadena de ubicación);</code>
+    <p>Se supone que tiene una tabla que contiene la siguiente información:</p>
+    <code>
+&gt; select * from servidores ;
+nombre     | ubicacion
+---------+---------
+moon     | sala1   
+darkstar | sala2   
+flag     | sala3   
+alf      | sala2   
+vador    | sala3   
+(5 rows)
+&gt;
+    </code>
+    <p>Ahora se asume que tiene un programa de terceras partes que le da una lista de servidores que pueden tener un problema. La salida de este programa es un archivo CSV con una columna para el nombre del servidor, una columna para el código de error y una columna que describe el problema. Se asume que el archivo CSV contiene lo siguiente:</p>
+    <code>
+$ cat problemas.csv 
+Nombre servidor,Codigo error,Descripcion error
+darkstar,0,sistema de archivos lleno
+vador,1,firma AV caducada
+darkstar,2,sobrecargado
+flag,0,sistema de archivos lleno
+$
+    </code>
+    <p>Ahora se supone que quiere conocer todos los servidores, dónde están ubicados y dónde hay un problema con código de error «0». La solución es vincular la conexión a la base de datos (por ejemplo, en el esquema «c1»), importar el archivo CSV de problemas (por ejemplo, en la tabla «tab») y ejecutar el siguiente comando SQL:</p>
+    <code>
+SELECT 
+  "nombre servidor", 
+  ubicacion
+FROM tab
+  INNER JOIN c1.servidores AS s ON (tab."nombre servidor" = s.nombre)
+WHERE "Codigo error"=0
+    </code>
+    <p>Lo que devuelve los resultados esperados, como se muestra en la siguiente figura:</p>
+    <figure>
+      <title>Resultados esperados desde una conexión virtual</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-4.png"/>
+    </figure>
+  </section>
+
+
+  <section id="vcnc-import-dataset">
+    <title>Importar un conjunto de datos en una conexión virtual</title>
+    <p>Para importar un conjunto de datos en una tabla en la conexión virtual (por ejemplo, para importar el archivo «problemas.csv» desde el caso de uso), use la opción <guiseq><gui>Vincular un conjunto de datos</gui></guiseq> desde el diálogo de creación de una conexión virtual.</p>
+    <figure>
+      <title>Importar un conjunto de datos en una conexión virtual - 1</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-5.png"/>
+    </figure>
+    <p>Desde ahí use el botón <guiseq><gui>Importar</gui></guiseq>, que le permite seleccionar un archivo que importar y también definir algunas opciones de importación (codificación del archivo, tipo de archivo, ...). Después de este paso, la conexión virtual ya está lista para usarse:</p>
+    <figure>
+      <title>Importar un conjunto de datos en una conexión virtual - 2</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-2.png"/>
+    </figure>
+    <p>La conexión virtual resultante, identificada aquí como «c2», está abierta es su propia ventana nueva:</p>
+    <figure>
+      <title>Nueva conexión virtual abierta</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-3.png"/>
+    </figure>
+  </section>
+
+  <section id="virtual-ddl-sql">
+    <title>SQL usable con conexiones virtuales</title>
+    <p>Puede usar el SQL que entiende <link href="http://sqlite.org/lang.html">SQLite</link> en cualquier conexión LDAP. Tenga en cuenta, sin embargo, que si define los objetos de base de datos (fuera del SQL extendido que se presenta en la siguiente sección), se perderán la próxima vez que se abra la conexión LDAP.</p>
+    <p>Para obtener más información, consulte la sección <link xref="sql-sqlite">SQL que entienden las conexiones LDAP y las conexiones virtuales</link>.</p>
+  </section>
+</page>

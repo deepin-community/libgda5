@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>For SQLCipher: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="provider-notes.html" title="Provider's notes">
+<link rel="prev" href="provider_notes_sqlite.html" title="For SQLite">
+<link rel="next" href="provider_notes_ldap.html" title="For LDAP">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="provider-notes.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="provider_notes_sqlite.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="provider_notes_ldap.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="provider_notes_sqlcipher"></a>For SQLCipher</h2></div></div></div>
+<p>
+    The SQLCipher database provider allows one to connect to a database encrypted using the
+    <a class="ulink" href="http://www.zetetic.net/code/sqlcipher" target="_top">SQLCipher</a> adaptations to the SQLite
+    database. This section deals about how to manage the passphrase associated with a database file, please
+    also consult the information <a class="ulink" href="http://sqlcipher.net/sqlcipher-api/" target="_top">provided by SQLCipher</a>
+    before attempting to use this database provider.
+  </p>
+<p>
+    The first noticeable point is that any SQLite database file can be opened using the SQLCipher and
+    will remain useable with the "standard" SQLite provider as long as it's not explicitely encrypted using
+    a passphrase.
+  </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.6.4"></a>How to create and encrypted database</h3></div></div></div>
+<p>
+      To create an encrypted database, you can use the <span class="application">gda-sql</span> and when prompted
+      enter the requested passphrase, as:
+      </p>
+<pre class="programlisting">prompt&gt; gda-sql-5.0 "SQLCipher://DB_NAME=testcrypt"
+Welcome to the GDA SQL console, version 5.1.0
+
+Type: .copyright to show usage and distribution terms
+      .? for help with internal commands
+      .q (or CTRL-D) to quit
+      (the '.' can be replaced by a '\')
+      or any query terminated by a semicolon
+
+Opening connection 'c0' for: SQLCipher://DB_NAME=testcrypt
+	Password for 'c0':</pre>
+<p>
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.6.5"></a>How to encrypt an existing plaintext database to an encrypted database file</h3></div></div></div>
+<p>
+      To encrypt an existing (SQLite) database, connect to the plaintext database using the SQLCipher provider and execute the
+      following SQL commands (replace the passphrase with the requested passphrase):
+      </p>
+<pre class="programlisting">ATTACH DATABASE 'encrypted.db' AS encrypted KEY 'passphrase';
+SELECT sqlcipher_export('encrypted');
+DETACH DATABASE encrypted; </pre>
+<p>
+      This step prevents opening the database file by the "standard" SQLite provider.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.6.6"></a>How to change the passphrase of an encrypted database</h3></div></div></div>
+<p>
+      To change an encrypted database's passphrase, open a connection to the database and enter the following
+      SQL command (replace the passphrase with the requested new passphrase):
+      </p>
+<pre class="programlisting">PRAGMA rekey = 'passphrase';</pre>
+<p>
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.11.6.7"></a>How to decrypt an existing database to a plaintext database</h3></div></div></div>
+<p>
+      To decrypt an existing encrypted database, connect to the database using the SQLCipher provider and execute the
+      following SQL commands (replace the passphrase with the requested passphrase):
+      </p>
+<pre class="programlisting">ATTACH DATABASE 'plaintext.db' AS plaintext KEY '';
+SELECT sqlcipher_export('plaintext');
+DETACH DATABASE plaintext; </pre>
+<p>
+      This step allows opening the database file by the "standard" SQLite provider.
+    </p>
+</div>
+<p>
+    Also refer to the <a class="link" href="provider_notes_sqlite.html" title="For SQLite">SQLite's provider's notes</a>,
+    and <a class="link" href="limitations_sqlcipher.html" title="For SQLCipher">SQLCipher provider's limitations</a>.
+  </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="table-insert-data" xml:lang="zh-CN">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  </info>
+  <title>在表中插入数据</title>
+  <p>
+    From the <link xref="schema-browser-perspective">schema browser perspective</link>, when a table's
+    properties is displayed in a tab, use the <guiseq><gui>Table</gui><gui>Insert data</gui></guiseq> menu
+    to have a popup appear containing a data entry for each column of the table to insert data into.
+  </p>
+  <p>会出现一个类似下图的弹出窗口：</p>
+  <figure>
+    <title>向表插入数据的弹出窗口</title>
+    <desc>一个向表中插入数据的弹出窗口</desc>
+    <media type="image" mime="image/png" src="figures/table-insert-data.png"/>
+  </figure>
+  <p>这里需要注意以下几点：</p>
+  <list>
+    <item><p>表中每列都有一条数据记录，除了多外键字段(图中未显示)，这种字段显示为一个单选下拉选择控件；</p></item>
+    <item><p>每条数据记录的右侧有一个小按钮，给出相应数据记录的信息，并可用来在应用修改前将数据记录值重设为修改前的值、NULL 或默认值。按钮的颜色有以下几种意义：</p>
+	<list>
+	  <item><p>红色：表示数据记录的当前值无效</p></item>
+	  <item><p>蓝色：表示数据记录的当前值未使用，将使用该列的默认值代替(自动递增列等情况下有用)</p></item>
+	  <item><p>绿色：表示数据记录中的当前值为 NULL</p></item>
+	  <item><p>与用户界面其他部分相同的颜色：表示以上情况都不适用</p></item>
+	</list>
+    </item>
+    <item><p>指向其他表的外键列用下拉列表组合框表示，您只能在引用表的值中选择(提示：要刷新值列表，您需要关闭弹出对话框并重新打开它)；</p></item>
+  </list>
+</page>

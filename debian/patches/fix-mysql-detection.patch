@@ -1,0 +1,21 @@
+From: Andrey Rakhmatullin <wrar@debian.org>
+Date: Sat, 23 Mar 2024 16:10:52 +0500
+Subject: Fix MySQL detection with -Werror=implicit-function-declaration
+
+Bug-Debian: https://bugs.debian.org/1066768
+---
+ m4/mysql.m4 | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/m4/mysql.m4 b/m4/mysql.m4
+index 535a081..fda32cf 100644
+--- a/m4/mysql.m4
++++ b/m4/mysql.m4
+@@ -176,6 +176,7 @@ int main() {
+ 	    LIBS="$LIBS $MYSQL_LIBS"
+ 
+             AC_LINK_IFELSE([AC_LANG_SOURCE([
++#include <stdio.h>
+ #include <mysql.h>
+ int main() {
+     printf("%p", mysql_real_connect);

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="variables-syntax" xml:lang="el">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Σπίγγος Δημήτρης</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Τσιβίκης Βασίλης</mal:name>
+      <mal:email>undersec.tr3los@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Θουκυδίδου</mal:name>
+      <mal:email>marablack3@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+  <title>Μεταβλητές σε κώδικα SQL</title>
+  <p>Οι μεταβλητές (μερικές φορές αναφερόμενες ως <em>αντικαταστάτες</em>) είναι περιοχές στον κώδικα SQL που αντικαθιστούντε από πραγματικές τιμές όταν ο κώδικας SQL εκτελείτε. Τα οφέλη είναι ο ταχύτερος χρόνος εκτέλεσης (Αφού ο κώδικας SQL αναλύετε μόνο μία φορά) και η προστασία ενάντια στα κενά ασφαλείας του SQL.</p>
+  <p>Οι μεταβλητές μπορούν να χρησιμοποιηθούν σε οποιοδήποτε κώδικα SQL, και καθορίζονται χρησιμοποιώντας την ακόλουθη σύνταξη:</p>
+  <code>
+##&lt;όνομα μεταβλητής&gt;[::&lt;τύπος μεταβλητής&gt;[::NULL]]</code>
+  <p>Σημειώσεις:</p>
+  <list>
+    <item><p>Το <em>όνομα της μεταβλητής</em> μπορεί να περιέχει οποιοδήποτε χαρακτήρα αναγνώρισης SQL ή αναμεταξύ των χαρακτήρων <code>+-.|@?</code> (δεν επιτρέπονται κενά)</p></item>
+    <item><p>Ο <em>τύπος της μεταβλητής</em> μπορεί να είναι οτιδήποτε από: <code>συμβολοσειρά</code>, <code>boolean</code>, <code>int</code>, <code>ημερομηνία</code>, <code>ώρα</code>, <code>χρονική ένδειξη</code>, <code>guint</code>, <code>blob</code> και <code>δυαδική</code></p></item>
+    <item><p>ο <code>::NULL</code> μπορεί να προσαρτηθεί για να ορίσει ότι η μεταβλητή ίσως πάρει την ειδική τιμή <code>NULL</code>.</p></item>
+  </list>
+  <p>Παραδείγματα:</p>
+  <code>
+##όνομα::συμβολοσειρά
+##id::int::NULL
+##πωλήσεις@3::ημερομηνία::NULL
+##πελάτες@id::int</code>
+</page>

@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaServerOperation: sequences: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch21.html" title="Data definition (DDL) queries">
+<link rel="prev" href="libgda-5.0-GdaServerOperation-individual-nodes.html" title="GdaServerOperation: individual nodes">
+<link rel="next" href="ch22.html" title="User interface API reference">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-GdaServerOperation-sequences.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch21.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-GdaServerOperation-individual-nodes.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch22.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-GdaServerOperation-sequences"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-GdaServerOperation-sequences.top_of_page"></a>GdaServerOperation: sequences</span></h2>
+<p>GdaServerOperation: sequences — Manipulating sequences</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-get-sequence-name" title="gda_server_operation_get_sequence_name ()">gda_server_operation_get_sequence_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-get-sequence-size" title="gda_server_operation_get_sequence_size ()">gda_server_operation_get_sequence_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-get-sequence-max-size" title="gda_server_operation_get_sequence_max_size ()">gda_server_operation_get_sequence_max_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-get-sequence-min-size" title="gda_server_operation_get_sequence_min_size ()">gda_server_operation_get_sequence_min_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-get-sequence-item-names" title="gda_server_operation_get_sequence_item_names ()">gda_server_operation_get_sequence_item_names</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-add-item-to-sequence" title="gda_server_operation_add_item_to_sequence ()">gda_server_operation_add_item_to_sequence</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaServerOperation-sequences.html#gda-server-operation-del-item-from-sequence" title="gda_server_operation_del_item_from_sequence ()">gda_server_operation_del_item_from_sequence</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object can contain sequences of templates. For example when creating a table,
+one can specify several foreign keys where for each foreign key, one must define the column(s) on which the
+foreign key applies, the referenced table and the corresponding columns of the referenced table (plus some
+additional information). In this case the foreign keys are defined as a sequence of templates (the foreign key
+definition): there can be zero or more foreign keys.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-server-operation-get-sequence-name"></a><h3>gda_server_operation_get_sequence_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_server_operation_get_sequence_name
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a sequence node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-name.returns"></a><h4>Returns</h4>
+<p>the name of the sequence at <em class="parameter"><code>path</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sequence-size"></a><h3>gda_server_operation_get_sequence_size ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_server_operation_get_sequence_size
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a sequence node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-size.returns"></a><h4>Returns</h4>
+<p> the number of items in the sequence at <em class="parameter"><code>path</code></em>
+, or 0 if <em class="parameter"><code>path</code></em>
+is not a sequence node</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sequence-max-size"></a><h3>gda_server_operation_get_sequence_max_size ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_server_operation_get_sequence_max_size
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-max-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a sequence node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-max-size.returns"></a><h4>Returns</h4>
+<p> the maximum number of items in the sequence at <em class="parameter"><code>path</code></em>
+, or 0 if <em class="parameter"><code>path</code></em>
+is not a sequence node</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sequence-min-size"></a><h3>gda_server_operation_get_sequence_min_size ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_server_operation_get_sequence_min_size
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-min-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a sequence node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-min-size.returns"></a><h4>Returns</h4>
+<p> the minimum number of items in the sequence at <em class="parameter"><code>path</code></em>
+, or 0 if <em class="parameter"><code>path</code></em>
+is not a sequence node</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-get-sequence-item-names"></a><h3>gda_server_operation_get_sequence_item_names ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+gda_server_operation_get_sequence_item_names
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>Fetch the contents of a sequence. <em class="parameter"><code>path</code></em>
+ can describe either a sequence (for example "/SEQNAME") or an item in a sequence
+(for example "/SEQNAME/3")</p>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-item-names.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>a complete path to a sequence node (starting with "/")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-get-sequence-item-names.returns"></a><h4>Returns</h4>
+<p>a array of strings containing the complete paths of the nodes contained at <em class="parameter"><code>path</code></em>
+(free with <a href="/usr/share/gtk-doc/html/glib/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-add-item-to-sequence"></a><h3>gda_server_operation_add_item_to_sequence ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+gda_server_operation_add_item_to_sequence
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *seq_path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-add-item-to-sequence.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>seq_path</p></td>
+<td class="parameter_description"><p>the path to the sequence to which an item must be added (like "/SEQ_NAME" for instance)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-add-item-to-sequence.returns"></a><h4>Returns</h4>
+<p> the index of the new entry in the sequence (like 5 for example if a 6th item has
+been added to the sequence.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-server-operation-del-item-from-sequence"></a><h3>gda_server_operation_del_item_from_sequence ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_server_operation_del_item_from_sequence
+                               (<em class="parameter"><code><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> *op</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *item_path</code></em>);</pre>
+<div class="refsect3">
+<a name="gda-server-operation-del-item-from-sequence.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>op</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>item_path</p></td>
+<td class="parameter_description"><p>the path to the sequence's item to remove (like "/SEQ_NAME/5" for instance)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-server-operation-del-item-from-sequence.returns"></a><h4>Returns</h4>
+<p> TRUE if the specified node has been removed from the sequence</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaServerOperation-sequences.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaServerOperation.html" title="GdaServerOperation"><span class="type">GdaServerOperation</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

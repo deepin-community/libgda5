@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiRtEditor: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiCloud.html" title="GdauiCloud">
+<link rel="next" href="libgda-5.0-UI-plugins.html" title="UI plugins">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiRtEditor.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiRtEditor.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdauiRtEditor.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdauiRtEditor.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiRtEditor.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiCloud.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-UI-plugins.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiRtEditor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiRtEditor.top_of_page"></a>GdauiRtEditor</span></h2>
+<p>GdauiRtEditor — Rich text editor which uses a subset of the <a class="ulink" href="http://www.txt2tags.org/markup.html" target="_top">txt2tags</a> markup.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"><img src="vi-rte.png"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiRtEditor.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRtEditor.html#gdaui-rt-editor-new" title="gdaui_rt_editor_new ()">gdaui_rt_editor_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRtEditor.html#gdaui-rt-editor-get-contents" title="gdaui_rt_editor_get_contents ()">gdaui_rt_editor_get_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRtEditor.html#gdaui-rt-editor-set-contents" title="gdaui_rt_editor_set_contents ()">gdaui_rt_editor_set_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiRtEditor.html#gdaui-rt-editor-set-editable" title="gdaui_rt_editor_set_editable ()">gdaui_rt_editor_set_editable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkTextBuffer.html#GtkTextBuffer-struct"><span class="type">GtkTextBuffer</span></a> *</td>
+<td class="property_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor--buffer" title="The “buffer” property">buffer</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor--in-scrolled-window" title="The “in-scrolled-window” property">in-scrolled-window</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor--no-background" title="The “no-background” property">no-background</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor--show-markup" title="The “show-markup” property">show-markup</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdauiRtEditor.html#GdauiRtEditor-struct" title="struct GdauiRtEditor">GdauiRtEditor</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+            <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+                <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/gtk3/GtkBox.html#GtkBox-struct">GtkBox</a>
+                    <span class="lineart">╰──</span> GdauiRtEditor
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdauiRtEditor implements
+ AtkImplementorIface,  <a href="/usr/share/gtk-doc/html/gtk3/GtkBuildable.html#GtkBuildable-struct">GtkBuildable</a> and  <a href="/usr/share/gtk-doc/html/gtk3/gtk3-Orientable.html#GtkOrientable-struct">GtkOrientable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.description"></a><h2>Description</h2>
+<p>The text entered in the editor can be formatted using bold, underline, title, ... attributes
+and then extracted using a subset of the <a class="ulink" href="http://www.txt2tags.org/markup.html" target="_top">txt2tags</a>
+markup. Use this widget to edit textual fields where some markup is desirable to organize the text.</p>
+<p>For example the real text used to obtain the formatting in the figure is:</p>
+<pre class="programlisting">
+blah //italic// blah.
+and ** BOLD!//both italic and bold// Bold!**
+Nice Picture: [[[R2RrUAA...y8vLy8tYQwAA]]] Yes
+- List item --One--
+- List item **Two**
+- sub1
+- sub2</pre>
+<p>where the picture's serialized data has been truncated here for readability
+(between the [[[ and ]]] markers). Pictures are usually inserted using the incorporated
+tollbar and not y hand (even though it's possible).</p>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-rt-editor-new"></a><h3>gdaui_rt_editor_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+gdaui_rt_editor_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a> widget</p>
+<div class="refsect3">
+<a name="gdaui-rt-editor-new.returns"></a><h4>Returns</h4>
+<p>the new widget. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-rt-editor-get-contents"></a><h3>gdaui_rt_editor_get_contents ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gdaui_rt_editor_get_contents (<em class="parameter"><code><a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a> *editor</code></em>);</pre>
+<p>Get the contents of <em class="parameter"><code>editor</code></em>
+, using the markup syntax</p>
+<div class="refsect3">
+<a name="gdaui-rt-editor-get-contents.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>editor</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-rt-editor-get-contents.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there was an error. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-rt-editor-set-contents"></a><h3>gdaui_rt_editor_set_contents ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_rt_editor_set_contents (<em class="parameter"><code><a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a> *editor</code></em>,
+                              <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *markup</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);</pre>
+<p>Set <em class="parameter"><code>editor</code></em>
+'s contents. If <em class="parameter"><code>length</code></em>
+ is -1, <em class="parameter"><code>markup</code></em>
+ must be nul-terminated</p>
+<div class="refsect3">
+<a name="gdaui-rt-editor-set-contents.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>editor</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>markup</p></td>
+<td class="parameter_description"><p>the text to set in <em class="parameter"><code>editor</code></em>
+, using the markup syntax (must be valid UTF-8)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>length of text in bytes.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-rt-editor-set-editable"></a><h3>gdaui_rt_editor_set_editable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_rt_editor_set_editable (<em class="parameter"><code><a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a> *editor</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);</pre>
+<p>Set <em class="parameter"><code>editor</code></em>
+'s editability</p>
+<div class="refsect3">
+<a name="gdaui-rt-editor-set-editable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>editor</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>editable</p></td>
+<td class="parameter_description"><p>whether it's editable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiRtEditor-struct"></a><h3>struct GdauiRtEditor</h3>
+<pre class="programlisting">struct GdauiRtEditor;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdauiRtEditor--buffer"></a><h3>The <code class="literal">“buffer”</code> property</h3>
+<pre class="programlisting">  “buffer”                   <a href="/usr/share/gtk-doc/html/gtk3/GtkTextBuffer.html#GtkTextBuffer-struct"><span class="type">GtkTextBuffer</span></a> *</pre>
+<p>Get access to the actual <a href="/usr/share/gtk-doc/html/gtk3/GtkTextBuffer.html#GtkTextBuffer-struct"><span class="type">GtkTextBuffer</span></a> used. Do not modify it!</p>
+<p>Owner: GdauiRtEditor</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRtEditor--in-scrolled-window"></a><h3>The <code class="literal">“in-scrolled-window”</code> property</h3>
+<pre class="programlisting">  “in-scrolled-window”       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Determines if the contents of the widget appears in a scrolled window or not.</p>
+<p>Owner: GdauiRtEditor</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRtEditor--no-background"></a><h3>The <code class="literal">“no-background”</code> property</h3>
+<pre class="programlisting">  “no-background”            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>If set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then the default text background is removed
+and thus the textbackground is the default widget's background.</p>
+<p>This property has to be set before the widget is realized, and is taken into account only
+if the widget is not editable (when it's realized).</p>
+<p>Owner: GdauiRtEditor</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiRtEditor--show-markup"></a><h3>The <code class="literal">“show-markup”</code> property</h3>
+<pre class="programlisting">  “show-markup”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Instead of showing the formatted text, display the raw text (in the txt2tags syntax)</p>
+<p>Owner: GdauiRtEditor</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiRtEditor.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiRtEditor-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiRtEditor.html" title="GdauiRtEditor"><span class="type">GdauiRtEditor</span></a> *gdauirteditor,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

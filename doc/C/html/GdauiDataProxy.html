@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiDataProxy: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiDataSelector.html" title="GdauiDataSelector">
+<link rel="next" href="GdauiBasicForm.html" title="GdauiBasicForm">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiDataProxy.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiDataProxy.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GdauiDataProxy.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations">  <span class="dim">|</span> 
+                  <a href="#GdauiDataProxy.implementations" class="shortcut">Known Implementations</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiDataProxy.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiDataSelector.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdauiBasicForm.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiDataProxy"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiDataProxy.top_of_page"></a>GdauiDataProxy</span></h2>
+<p>GdauiDataProxy — Displaying and modifying data in a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiDataProxy.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="returnvalue">GdaDataProxy</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-get-proxy" title="gdaui_data_proxy_get_proxy ()">gdaui_data_proxy_get_proxy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-get-actions-group" title="gdaui_data_proxy_get_actions_group ()">gdaui_data_proxy_get_actions_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-perform-action" title="gdaui_data_proxy_perform_action ()">gdaui_data_proxy_perform_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-column-set-editable" title="gdaui_data_proxy_column_set_editable ()">gdaui_data_proxy_column_set_editable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-column-show-actions" title="gdaui_data_proxy_column_show_actions ()">gdaui_data_proxy_column_show_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-set-write-mode" title="gdaui_data_proxy_set_write_mode ()">gdaui_data_proxy_set_write_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdauiDataProxy.html#GdauiDataProxyWriteMode" title="enum GdauiDataProxyWriteMode"><span class="returnvalue">GdauiDataProxyWriteMode</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-get-write-mode" title="gdaui_data_proxy_get_write_mode ()">gdaui_data_proxy_get_write_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdauiDataProxy.html#GdauiDataProxy-proxy-changed" title="The “proxy-changed” signal">proxy-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdauiDataProxy.html#GdauiDataProxy-struct" title="GdauiDataProxy">GdauiDataProxy</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdauiDataProxy.html#GdauiDataProxyIface" title="GdauiDataProxyIface">GdauiDataProxyIface</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdauiDataProxy.html#GdauiAction" title="enum GdauiAction">GdauiAction</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdauiDataProxy.html#GdauiDataProxyWriteMode" title="enum GdauiDataProxyWriteMode">GdauiDataProxyWriteMode</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> GdauiDataProxy
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GdauiDataProxy requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.implementations"></a><h2>Known Implementations</h2>
+<p>
+GdauiDataProxy is implemented by
+ <a class="link" href="GdauiForm.html" title="GdauiForm">GdauiForm</a>,  <a class="link" href="GdauiGrid.html" title="GdauiGrid">GdauiGrid</a>,  <a class="link" href="GdauiRawForm.html" title="GdauiRawForm">GdauiRawForm</a> and  <a class="link" href="GdauiRawGrid.html" title="GdauiRawGrid">GdauiRawGrid</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface is implemented by widgets which allow modifications
+to a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> (through a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> to actually proxy the changes before they
+are written to the data model).</p>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-data-proxy-get-proxy"></a><h3>gdaui_data_proxy_get_proxy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="returnvalue">GdaDataProxy</span></a> *
+gdaui_data_proxy_get_proxy (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>);</pre>
+<p>Get a pointer to the <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> being used by <em class="parameter"><code>iface</code></em>
+</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-proxy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-proxy.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> pointer. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-get-actions-group"></a><h3>gdaui_data_proxy_get_actions_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+gdaui_data_proxy_get_actions_group (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>);</pre>
+<p>Each widget imlplementing the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface provides actions. Actions can be triggered
+using the <a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-perform-action" title="gdaui_data_proxy_perform_action ()"><code class="function">gdaui_data_proxy_perform_action()</code></a> method, but using this method allows for the creation of
+toolbars, menus, etc calling these actions.</p>
+<p>The actions are among: </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Data edition actions: "ActionNew", "ActionCommit", 
+   "ActionDelete", "ActionReset". Note that the "ActionDelete" action is actually a <a href="/usr/share/gtk-doc/html/gtk3/GtkToggleAction.html#GtkToggleAction-struct"><span class="type">GtkToggleAction</span></a>
+   action which can be used to delete a row or undelete it.</p></li>
+<li class="listitem"><p>Record by record moving: "ActionFirstRecord", "ActionPrevRecord", 
+   "ActionNextRecord", "ActionLastRecord".</p></li>
+<li class="listitem"><p>Chuncks of records moving: "ActionFirstChunck", "ActionPrevChunck", 
+    "ActionNextChunck", "ActionLastChunck".</p></li>
+<li class="listitem"><p>Filtering: "ActionFilter".</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-actions-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-actions-group.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a> with all the possible actions on the widget. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-perform-action"></a><h3>gdaui_data_proxy_perform_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_proxy_perform_action (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GdauiDataProxy.html#GdauiAction" title="enum GdauiAction"><span class="type">GdauiAction</span></a> action</code></em>);</pre>
+<p>Forces the widget to perform the selected <em class="parameter"><code>action</code></em>
+, as if the user
+had pressed on the corresponding action button in the <em class="parameter"><code>iface</code></em>
+ widget,
+if the corresponding action is possible and if the <em class="parameter"><code>iface</code></em>
+ widget
+supports the action.</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-perform-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiDataProxy.html#GdauiAction" title="enum GdauiAction"><span class="type">GdauiAction</span></a> action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-column-set-editable"></a><h3>gdaui_data_proxy_column_set_editable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_proxy_column_set_editable (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> column</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);</pre>
+<p>Sets if the data entry in the <em class="parameter"><code>iface</code></em>
+ widget at <em class="parameter"><code>column</code></em>
+ (in the data model <em class="parameter"><code>iface</code></em>
+ operates on)
+can be edited or not.</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-column-set-editable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>column number of the data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>editable</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to make the column editable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-column-show-actions"></a><h3>gdaui_data_proxy_column_show_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gdaui_data_proxy_column_show_actions (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> column</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> show_actions</code></em>);</pre>
+<p>Sets if the data entry in the <em class="parameter"><code>iface</code></em>
+ widget at <em class="parameter"><code>column</code></em>
+ (in the data model <em class="parameter"><code>iface</code></em>
+ operates on) must show its
+actions menu or not.</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-column-show-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>column number of the data, or -1 to apply the setting to all the columns</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>show_actions</p></td>
+<td class="parameter_description"><p>set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the actions menu must be shown</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-set-write-mode"></a><h3>gdaui_data_proxy_set_write_mode ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_data_proxy_set_write_mode (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GdauiDataProxy.html#GdauiDataProxyWriteMode" title="enum GdauiDataProxyWriteMode"><span class="type">GdauiDataProxyWriteMode</span></a> mode</code></em>);</pre>
+<p>Specifies the way the modifications stored in the <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> used internally by <em class="parameter"><code>iface</code></em>
+ are written back to
+the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> which holds the data displayed in <em class="parameter"><code>iface</code></em>
+.</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-set-write-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mode</p></td>
+<td class="parameter_description"><p>the requested <a class="link" href="GdauiDataProxy.html#GdauiDataProxyWriteMode" title="enum GdauiDataProxyWriteMode"><span class="type">GdauiDataProxyWriteMode</span></a> mode</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-proxy-set-write-mode.returns"></a><h4>Returns</h4>
+<p> TRUE if the proposed mode has been taken into account</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-data-proxy-get-write-mode"></a><h3>gdaui_data_proxy_get_write_mode ()</h3>
+<pre class="programlisting"><a class="link" href="GdauiDataProxy.html#GdauiDataProxyWriteMode" title="enum GdauiDataProxyWriteMode"><span class="returnvalue">GdauiDataProxyWriteMode</span></a>
+gdaui_data_proxy_get_write_mode (<em class="parameter"><code><a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *iface</code></em>);</pre>
+<p>Get the way the modifications stored in the <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> used internally by <em class="parameter"><code>iface</code></em>
+ are written back to
+the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> which holds the data displayed in <em class="parameter"><code>iface</code></em>
+.</p>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-write-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>an object which implements the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-data-proxy-get-write-mode.returns"></a><h4>Returns</h4>
+<p> the write mode used by <em class="parameter"><code>iface</code></em>
+</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiDataProxy-struct"></a><h3>GdauiDataProxy</h3>
+<pre class="programlisting">typedef struct _GdauiDataProxy GdauiDataProxy;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataProxyIface"></a><h3>GdauiDataProxyIface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface           g_iface;
+
+	/* virtual table */
+	GdaDataProxy        *(* get_proxy)           (GdauiDataProxy *iface);
+	void                 (* set_column_editable) (GdauiDataProxy *iface, gint column, gboolean editable);
+	void                 (* show_column_actions) (GdauiDataProxy *iface, gint column, gboolean show_actions);
+	GtkActionGroup      *(* get_actions_group)   (GdauiDataProxy *iface);
+	gboolean             (* set_write_mode)      (GdauiDataProxy *iface, GdauiDataProxyWriteMode mode);
+	GdauiDataProxyWriteMode (* get_write_mode)(GdauiDataProxy *iface);
+
+	/* signals */
+	void                 (* proxy_changed)       (GdauiDataProxy *iface, GdaDataProxy *proxy);
+} GdauiDataProxyIface;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiAction"></a><h3>enum GdauiAction</h3>
+<div class="refsect3">
+<a name="GdauiAction.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-NEW-DATA:CAPS"></a>GDAUI_ACTION_NEW_DATA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-WRITE-MODIFIED-DATA:CAPS"></a>GDAUI_ACTION_WRITE_MODIFIED_DATA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-DELETE-SELECTED-DATA:CAPS"></a>GDAUI_ACTION_DELETE_SELECTED_DATA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-UNDELETE-SELECTED-DATA:CAPS"></a>GDAUI_ACTION_UNDELETE_SELECTED_DATA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-RESET-DATA:CAPS"></a>GDAUI_ACTION_RESET_DATA</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-FIRST-RECORD:CAPS"></a>GDAUI_ACTION_MOVE_FIRST_RECORD</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-PREV-RECORD:CAPS"></a>GDAUI_ACTION_MOVE_PREV_RECORD</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-NEXT-RECORD:CAPS"></a>GDAUI_ACTION_MOVE_NEXT_RECORD</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-LAST-RECORD:CAPS"></a>GDAUI_ACTION_MOVE_LAST_RECORD</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-FIRST-CHUNCK:CAPS"></a>GDAUI_ACTION_MOVE_FIRST_CHUNCK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-PREV-CHUNCK:CAPS"></a>GDAUI_ACTION_MOVE_PREV_CHUNCK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-NEXT-CHUNCK:CAPS"></a>GDAUI_ACTION_MOVE_NEXT_CHUNCK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-ACTION-MOVE-LAST-CHUNCK:CAPS"></a>GDAUI_ACTION_MOVE_LAST_CHUNCK</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiDataProxyWriteMode"></a><h3>enum GdauiDataProxyWriteMode</h3>
+<p>Defines when the data modifications held in the underlying <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> are written to the
+data model being proxied (using <a class="link" href="GdaDataProxy.html#gda-data-proxy-apply-row-changes" title="gda_data_proxy_apply_row_changes ()"><code class="function">gda_data_proxy_apply_row_changes()</code></a>).</p>
+<div class="refsect3">
+<a name="GdauiDataProxyWriteMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-DATA-PROXY-WRITE-ON-DEMAND:CAPS"></a>GDAUI_DATA_PROXY_WRITE_ON_DEMAND</p></td>
+<td class="enum_member_description">
+<p>write only when explicitly requested </p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-DATA-PROXY-WRITE-ON-ROW-CHANGE:CAPS"></a>GDAUI_DATA_PROXY_WRITE_ON_ROW_CHANGE</p></td>
+<td class="enum_member_description">
+<p>write when the current selected row changes</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-DATA-PROXY-WRITE-ON-VALUE-ACTIVATED:CAPS"></a>GDAUI_DATA_PROXY_WRITE_ON_VALUE_ACTIVATED</p></td>
+<td class="enum_member_description">
+<p>write when user activates a value change</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDAUI-DATA-PROXY-WRITE-ON-VALUE-CHANGE:CAPS"></a>GDAUI_DATA_PROXY_WRITE_ON_VALUE_CHANGE</p></td>
+<td class="enum_member_description">
+<p>write when a parameters's value changes</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiDataProxy-proxy-changed"></a><h3>The <code class="literal">“proxy-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> *gdauidataproxy,
+               <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a>   *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>The ::proxy-changed signal is emitted each time the <a class="link" href="GdaDataProxy.html" title="GdaDataProxy"><span class="type">GdaDataProxy</span></a> which would be
+returned by <a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-get-proxy" title="gdaui_data_proxy_get_proxy ()"><code class="function">gdaui_data_proxy_get_proxy()</code></a> changes. This is generally the result
+of changes in the structure of the proxied data model (different number and/or type
+of columns for example).</p>
+<div class="refsect3">
+<a name="GdauiDataProxy-proxy-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>gdauidataproxy</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg1</p></td>
+<td class="parameter_description"><p>the GdaDataProxy which would be returned by <a class="link" href="GdauiDataProxy.html#gdaui-data-proxy-get-proxy" title="gdaui_data_proxy_get_proxy ()"><code class="function">gdaui_data_proxy_get_proxy()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiDataProxy.see-also"></a><h2>See Also</h2>
+<p>The <a class="link" href="GdauiDataSelector.html" title="GdauiDataSelector"><span class="type">GdauiDataSelector</span></a> interface which is usually also implemented by the widgets which implement the <a class="link" href="GdauiDataProxy.html" title="GdauiDataProxy"><span class="type">GdauiDataProxy</span></a> interface.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

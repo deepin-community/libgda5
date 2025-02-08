@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Part VIII. Databases providers for developers: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="prev" href="ch42s04.html" title="Environment variables">
+<link rel="next" href="ch43.html" title="Getting started">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="ch42s04.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch43.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="part">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="part_providers"></a>Part VIII. Databases providers for developers</h1></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="chapter"><a href="ch43.html">Getting started</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-class.html">Virtual methods for providers</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-class.html#id-1.9.7.5">Synchronous / asynchronous mode</a></span></dt>
+<dt><span class="sect1"><a href="ch44s02.html">Multi threaded environment</a></span></dt>
+<dt><span class="sect1"><a href="ch44s03.html">Methods - provider's information</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-name">get_name() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-version">get_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-server-version">get_server_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#id-1.9.7.7.5">supports_feature()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s04.html">Methods - connection management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s04.html#prov-open-connection">open_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#prov-close-connection">close_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#id-1.9.7.8.4">get_database()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s05.html">Methods - DDL queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.4">supports_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.5">create_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.6">render_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.7">perform_operation()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s06.html">Methods - transactions management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.3">begin_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.4">commit_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.5">rollback_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.6">add_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.7">rollback_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.8">delete_savepoint()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s07.html">Methods - DML queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.4">create_parser()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.5">statement_to_sql()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.6">statement_prepare()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.7">statement_execute() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.8">handle_async()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s08.html">Methods - data representation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.3">get_data_handler()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.4">get_def_dbms_type()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.5">escape_string()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.6">unescape_string()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="prov-metadata.html">Methods - metadata</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.6">Important note about SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.7">Reserved SQL keywords</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.8">_info()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.9">_btypes()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.10">schemata() and _schemata()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.11">tables_views() and _tables_views()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.12">columns() and _columns()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.13">constraints_tab() and _constraints_tab()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.14">constraints_ref() and _constraints_ref()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.15">key_columns() and _key_columns()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s10.html">Methods - misc.</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.2">cancel()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.3">create_connection()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.4">is_busy()</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="libgda-provider-recordset.html">Virtual methods for recordsets</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-blobop.html">Virtual methods for Blob operations</a></span></dt>
+<dt><span class="chapter"><a href="libgda-provider-parser.html">SQL parser</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-parser.html#id-1.9.10.3">Implementation overview</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.3">Generic SQL parser</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-parser.html#id-1.9.10.3.4">Provider specific SQL parser</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch47s02.html">Tips to write a custom parser</a></span></dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaSqlStatement.html">GdaSqlStatement</a></span><span class="refpurpose"> — SQL statement</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="libgda-provider-pack.html">Assembling all the parts</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="libgda-provider-pack.html#id-1.9.11.4">libmain.c</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.4">plugin_init()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.5">plugin_get_name()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.6">plugin_get_description()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.7">plugin_get_dsn_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.8">plugin_get_auth_spec()</a></span></dt>
+<dt><span class="sect2"><a href="libgda-provider-pack.html#id-1.9.11.4.9">plugin_create_provider()</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="psupport.html">Providers' support API</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GdaServerProvider.html">GdaServerProvider</a></span><span class="refpurpose"> — Base class for all the DBMS providers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Subclassing-GdaDataSelect.html">Subclassing GdaDataSelect</a></span><span class="refpurpose"> — Base class for all the data models returned by DBMS providers when a SELECT statement is executed</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaPStmt.html">GdaPstmt</a></span><span class="refpurpose"> — Base class for prepared statement's</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Quark-lists.html">Quark list</a></span><span class="refpurpose"> — Manages lists of KEY=VALUE pairs</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-SQL-rendering-API.html">SQL rendering API</a></span><span class="refpurpose"> — Adapting the SQL to the database's own SQL dialect</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Misc-API.html">Misc API for database providers</a></span><span class="refpurpose"> — Methods dedicated to implementing providers</span>
+</dt>
+</dl></dd>
+</dl>
+</div>
+<p>
+	For each database engine, <span class="application">Libgda</span> requires an object which maps <span class="application">Libgda</span>'s API
+	to the native API offered by that database engine. That object, a <span class="emphasis"><em>database provider</em></span> 
+	needs to inherit <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> and implement its
+	virtual methods.
+      </p>
+<p>
+	Database provider objects are generally instantiated once by the <span class="application">Libgda</span> framework and can be used several
+	times to open and work on connections to several databases of the same type.
+      </p>
+<p>
+	Since <span class="application">Libgda</span> itself is developed in the C language, and that most
+	providers are also implemented in that language, the <span class="application">Libgda</span> library
+	itself contains a set of helper classes and functions to guide you
+	in the addition of a new provider to the GDA framework. Two reference implementations
+	are provided in the <code class="filename">providers/skel-implementation</code>
+	directory of <span class="application">Libgda</span>'s sources:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>in <code class="filename">providers/skel-implementation/capi</code>: a skeleton
+	    implementation from scratch for a database accessed through a C API, where all the methods to implement are partially
+	    coded</p></li>
+<li class="listitem"><p>in <code class="filename">providers/skel-implementation/models</code>: a skeleton
+	    implementation to write a provider for sources which are not databases (which do not implement any SQL) such
+	    as the Berkeley DB provider (a BDB database is a key/value collection) or the MDB (MS Access files) provider.
+	    This kind of provider "export" tables which are in fact data models.</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      The helper objects and functions to write database providers are documented in the 
+      <a class="link" href="psupport.html" title="Providers' support API">Providers' support API</a> section.
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

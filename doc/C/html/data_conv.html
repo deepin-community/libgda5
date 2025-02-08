@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data conversions: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="GdaTreeMgrLdap.html" title="GdaTreeMgrLdap">
+<link rel="next" href="libgda-5.0-Default-Data-handlers.html" title="GdaDataHandler">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaTreeMgrLdap.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Default-Data-handlers.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="data_conv"></a>Data conversions</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-Default-Data-handlers.html">GdaDataHandler</a></span><span class="refpurpose"> — Interface which provides data handling (conversions) capabilities</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerString.html">GdaHanderString</a></span><span class="refpurpose"> — Default handler for string values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBoolean.html">GdaHanderBoolean</a></span><span class="refpurpose"> — Default handler for boolean values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerTime.html">GdaHanderTime</a></span><span class="refpurpose"> — Default handler for time values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerNumerical.html">GdaHanderNumerical</a></span><span class="refpurpose"> — Default handler for numeric values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerBin.html">GdaHanderBin</a></span><span class="refpurpose"> — Default handler for binary values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHandlerType.html">GdaHanderType</a></span><span class="refpurpose"> — Default handler for GType values</span>
+</dt>
+</dl></div>
+<p>
+	A single piece of data can have several representations
+	depending on its usage: a string representation, an SQL representation and of course a 
+	<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct">GValue</a> representation. Conversions from one representation to
+	the other is DBMS dependent as each database can have its own SQL representation rules. The
+	<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler">GdaDataHandler</a> object's purpose is to do all these conversions in a easy way.
+	Except when mentioned otherwise, conversions take into account locale settings and DBMS specifications.
+      </p>
+<p>
+	To convert a data, one needs to instantiate a new data handler from one of the many classes which implement this interface, or
+	better to get a pointer to a <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler">GdaDataHandler</a> object (no
+	need to unref() it after usage, data handler objects are stateless), and so to obtain such a pointer one can:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Use the gda_data_handler_get_default(): the returned data handler
+	      is a generic one and should not be used to convert data to use with any connection, but only to have
+	      a portable way of storing and loading data in a locale independent fashion (for serialization purposes).</p></li>
+<li class="listitem"><p>Ask a <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> object for one using the
+	    <a class="link" href="GdaServerProvider.html#gda-server-provider-get-data-handler-g-type" title="gda_server_provider_get_data_handler_g_type ()">gda_server_provider_get_data_handler_g_type()</a>
+	    or <a class="link" href="GdaServerProvider.html#gda-server-provider-get-data-handler-dbms" title="gda_server_provider_get_data_handler_dbms ()">gda_server_provider_get_data_handler_dbms()</a>:
+	    the returned data handler can then safely be used to convert any data to be used with any connection
+	    relying on the GdaServerProvider object.</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

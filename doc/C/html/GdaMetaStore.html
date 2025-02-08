@@ -1,0 +1,1670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaMetaStore: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="gda-dict.html" title="Dictionary - metadata">
+<link rel="prev" href="information_schema.html" title="Database structure">
+<link rel="next" href="GdaMetaStruct.html" title="GdaMetaStruct">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaMetaStore.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaMetaStore.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaMetaStore.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaMetaStore.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gda-dict.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="information_schema.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaMetaStruct.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaMetaStore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaMetaStore.top_of_page"></a>GdaMetaStore</span></h2>
+<p>GdaMetaStore — Dictionary object</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaMetaStore.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="returnvalue">GdaMetaStore</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-new" title="gda_meta_store_new ()">gda_meta_store_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="returnvalue">GdaMetaStore</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-new-with-file" title="gda_meta_store_new_with_file ()">gda_meta_store_new_with_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-get-version" title="gda_meta_store_get_version ()">gda_meta_store_get_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-sql-identifier-quote" title="gda_meta_store_sql_identifier_quote ()">gda_meta_store_sql_identifier_quote</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-extract" title="gda_meta_store_extract ()">gda_meta_store_extract</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-extract-v" title="gda_meta_store_extract_v ()">gda_meta_store_extract_v</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="returnvalue">GdaMetaStruct</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-schema-get-structure" title="gda_meta_store_schema_get_structure ()">gda_meta_store_schema_get_structure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-get-attribute-value" title="gda_meta_store_get_attribute_value ()">gda_meta_store_get_attribute_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-set-attribute-value" title="gda_meta_store_set_attribute_value ()">gda_meta_store_set_attribute_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-schema-add-custom-object" title="gda_meta_store_schema_add_custom_object ()">gda_meta_store_schema_add_custom_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="returnvalue">GdaConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-get-internal-connection" title="gda_meta_store_get_internal_connection ()">gda_meta_store_get_internal_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-declare-foreign-key" title="gda_meta_store_declare_foreign_key ()">gda_meta_store_declare_foreign_key</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-store-undeclare-foreign-key" title="gda_meta_store_undeclare_foreign_key ()">gda_meta_store_undeclare_foreign_key</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-get-type" title="gda_meta_context_get_type ()">gda_meta_context_get_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="returnvalue">GdaMetaContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-new" title="gda_meta_context_new ()">gda_meta_context_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="returnvalue">GdaMetaContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-copy" title="gda_meta_context_copy ()">gda_meta_context_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-set-table" title="gda_meta_context_set_table ()">gda_meta_context_set_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-get-table" title="gda_meta_context_get_table ()">gda_meta_context_get_table</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-set-column" title="gda_meta_context_set_column ()">gda_meta_context_set_column</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-set-columns" title="gda_meta_context_set_columns ()">gda_meta_context_set_columns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaMetaStore.html#gda-meta-context-free" title="gda_meta_context_free ()">gda_meta_context_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore--catalog" title="The “catalog” property">catalog</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore--cnc" title="The “cnc” property">cnc</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore--cnc-string" title="The “cnc-string” property">cnc-string</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore--schema" title="The “schema” property">schema</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore-meta-changed" title="The “meta-changed” signal">meta-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore-meta-reset" title="The “meta-reset” signal">meta-reset</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*</td>
+<td class="signal_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore-suggest-update" title="The “suggest-update” signal">suggest-update</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaMetaStore.html#GdaMetaStore-struct" title="GdaMetaStore">GdaMetaStore</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaMetaStore.html#GdaMetaStoreError" title="enum GdaMetaStoreError">GdaMetaStoreError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaMetaStore.html#GdaMetaStoreChange" title="GdaMetaStoreChange">GdaMetaStoreChange</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaMetaStore.html#GdaMetaStoreChangeType" title="enum GdaMetaStoreChangeType">GdaMetaStoreChangeType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext">GdaMetaContext</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaMetaStore
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/sql-parser/gda-sql-statement.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.description"></a><h2>Description</h2>
+<p>Previous versions of <span class="application">Libgda</span> relied on an XML based file to store dictionary information, such as
+the database's schema (tables, views, etc) and various other information. The problems were that it was
+difficult for an application to integrate its own data into the dictionary and that there were some
+performances problems as the XML file needed to be parsed (and converted into its own in-memory structure)
+before any data could be read out of it.</p>
+<p>The new dictionary now relies on a database structure to store its data (see the </p>
+<a class="link" href="information_schema.html" title="Database structure">database schema</a> section for a detailed description). The actual database can be a
+<p>single file (using an SQLite database), an entirely in memory database (also using an SQLite database), or
+a more conventional backend such as a PostgreSQL database for a shared dictionary on a server.</p>
+<p>The <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object is thread safe.</p>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-meta-store-new"></a><h3>gda_meta_store_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="returnvalue">GdaMetaStore</span></a> *
+gda_meta_store_new (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *cnc_string</code></em>);</pre>
+<p>Create a new <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object.</p>
+<div class="refsect3">
+<a name="gda-meta-store-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cnc_string</p></td>
+<td class="parameter_description"><p>a connection string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for an in-memory internal database. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-new.returns"></a><h4>Returns</h4>
+<p>the newly created object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-new-with-file"></a><h3>gda_meta_store_new_with_file ()</h3>
+<pre class="programlisting"><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="returnvalue">GdaMetaStore</span></a> *
+gda_meta_store_new_with_file (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *file_name</code></em>);</pre>
+<p>Create a new <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object using <em class="parameter"><code>file_name</code></em>
+ as its internal
+database</p>
+<div class="refsect3">
+<a name="gda-meta-store-new-with-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>file_name</p></td>
+<td class="parameter_description"><p>a file name</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-new-with-file.returns"></a><h4>Returns</h4>
+<p>the newly created object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-get-version"></a><h3>gda_meta_store_get_version ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_meta_store_get_version (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>);</pre>
+<p>Get <em class="parameter"><code>store</code></em>
+'s internal schema's version</p>
+<div class="refsect3">
+<a name="gda-meta-store-get-version.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-get-version.returns"></a><h4>Returns</h4>
+<p> the version (incremented each time the schema changes, backward compatible)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-sql-identifier-quote"></a><h3>gda_meta_store_sql_identifier_quote ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_meta_store_sql_identifier_quote (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Use this method to get a correctly quoted (if necessary) SQL identifier which can be used
+to retrieve or filter information in a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> which stores meta data about <em class="parameter"><code>cnc</code></em>
+.</p>
+<p>The returned SQL identifier can be used in conjunction with <a class="link" href="GdaConnection.html#gda-connection-update-meta-store" title="gda_connection_update_meta_store ()"><code class="function">gda_connection_update_meta_store()</code></a>,
+<a class="link" href="GdaConnection.html#gda-connection-get-meta-store-data" title="gda_connection_get_meta_store_data ()"><code class="function">gda_connection_get_meta_store_data()</code></a>, <a class="link" href="GdaConnection.html#gda-connection-get-meta-store-data-v" title="gda_connection_get_meta_store_data_v ()"><code class="function">gda_connection_get_meta_store_data_v()</code></a> and
+<a class="link" href="GdaMetaStore.html#gda-meta-store-extract" title="gda_meta_store_extract ()"><code class="function">gda_meta_store_extract()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-meta-store-sql-identifier-quote.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>an SQL identifier</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-sql-identifier-quote.returns"></a><h4>Returns</h4>
+<p>a new string, to free with <a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> once not needed anymore. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.0.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-extract"></a><h3>gda_meta_store_extract ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_meta_store_extract (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                        <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *select_sql</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                        <em class="parameter"><code>...</code></em>);</pre>
+<p>Extracts some data stored in <em class="parameter"><code>store</code></em>
+ using a custom SELECT query. If the <em class="parameter"><code>select_sql</code></em>
+ filter involves
+SQL identifiers (such as table or column names), then the values should have been adapted using
+<a class="link" href="GdaMetaStore.html#gda-meta-store-sql-identifier-quote" title="gda_meta_store_sql_identifier_quote ()"><code class="function">gda_meta_store_sql_identifier_quote()</code></a>.</p>
+<p>For more information about
+SQL identifiers are represented in <em class="parameter"><code>store</code></em>
+, see the</p>
+<a class="link" href="information_schema.html#information_schema:sql_identifiers" title="SQL identifiers">meta data section about SQL identifiers</a>.
+<div class="refsect3">
+<a name="gda-meta-store-extract.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>select_sql</p></td>
+<td class="parameter_description"><p>a SELECT statement</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>a list of (variable name (gchar *), GValue *value) terminated with NULL, representing values for all the
+variables mentioned in <em class="parameter"><code>select_sql</code></em>
+. If there is no variable then this part can be omitted.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-extract.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-extract-v"></a><h3>gda_meta_store_extract_v ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_meta_store_extract_v (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *select_sql</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *vars</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Extracts some data stored in <em class="parameter"><code>store</code></em>
+ using a custom SELECT query. If the <em class="parameter"><code>select_sql</code></em>
+ filter involves
+SQL identifiers (such as table or column names), then the values should have been adapted using
+<a class="link" href="GdaMetaStore.html#gda-meta-store-sql-identifier-quote" title="gda_meta_store_sql_identifier_quote ()"><code class="function">gda_meta_store_sql_identifier_quote()</code></a>.</p>
+<p>For more information about
+SQL identifiers are represented in <em class="parameter"><code>store</code></em>
+, see the</p>
+<a class="link" href="information_schema.html#information_schema:sql_identifiers" title="SQL identifiers">meta data section about SQL identifiers</a>.
+
+<p><span class="annotation">[<a href="http://foldoc.org/rename-to"><span class="acronym">rename-to</span></a> gda_meta_store_extract]</span></p>
+<div class="refsect3">
+<a name="gda-meta-store-extract-v.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>select_sql</p></td>
+<td class="parameter_description"><p>a SELECT statement</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>vars</p></td>
+<td class="parameter_description"><p>a hash table with all variables names as keys and GValue* as
+value, representing values for all the variables mentioned in <em class="parameter"><code>select_sql</code></em>
+. If there is no variable then this part can be
+omitted. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> utf8 GObject.Value][<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-extract-v.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-schema-get-structure"></a><h3>gda_meta_store_schema_get_structure ()</h3>
+<pre class="programlisting"><a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="returnvalue">GdaMetaStruct</span></a> *
+gda_meta_store_schema_get_structure (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> object representing <em class="parameter"><code>store</code></em>
+'s internal database structure.</p>
+<div class="refsect3">
+<a name="gda-meta-store-schema-get-structure.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-schema-get-structure.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-get-attribute-value"></a><h3>gda_meta_store_get_attribute_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_get_attribute_value (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **att_value</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>The <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object maintains a list of (name,value) attributes (attributes names starting with a '_'
+character are for internal use only and cannot be altered). This method and the <a class="link" href="GdaMetaStore.html#gda-meta-store-set-attribute-value" title="gda_meta_store_set_attribute_value ()"><code class="function">gda_meta_store_set_attribute_value()</code></a>
+method allows the user to add, set or remove attributes specific to their usage.</p>
+<p>This method allows to get the value of a attribute stored in <em class="parameter"><code>store</code></em>
+. The returned attribute value is
+placed at <em class="parameter"><code>att_value</code></em>
+, the caller is responsible for free that string.</p>
+<p>If there is no attribute named <em class="parameter"><code>att_name</code></em>
+ then <em class="parameter"><code>att_value</code></em>
+ is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+and <em class="parameter"><code>error</code></em>
+ will contain the GDA_META_STORE_ATTRIBUTE_NOT_FOUND_ERROR error code, and FALSE is returned.</p>
+<div class="refsect3">
+<a name="gda-meta-store-get-attribute-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_name</p></td>
+<td class="parameter_description"><p>name of the attribute to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_value</p></td>
+<td class="parameter_description"><p>the place to store the attribute value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-get-attribute-value.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-set-attribute-value"></a><h3>gda_meta_store_set_attribute_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_set_attribute_value (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_name</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *att_value</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Set the value of the attribute named <em class="parameter"><code>att_name</code></em>
+ to <em class="parameter"><code>att_value</code></em>
+; see <a class="link" href="GdaMetaStore.html#gda-meta-store-get-attribute-value" title="gda_meta_store_get_attribute_value ()"><code class="function">gda_meta_store_get_attribute_value()</code></a> for
+more information.</p>
+<div class="refsect3">
+<a name="gda-meta-store-set-attribute-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_name</p></td>
+<td class="parameter_description"><p>name of the attribute to set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>att_value</p></td>
+<td class="parameter_description"><p>value of the attribute to set, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset the attribute. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-set-attribute-value.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-schema-add-custom-object"></a><h3>gda_meta_store_schema_add_custom_object ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_schema_add_custom_object
+                               (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml_description</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>The internal database used by <em class="parameter"><code>store</code></em>
+ can be 'augmented' with some user-defined database objects
+(such as tables or views). This method allows one to add a new database object.</p>
+<p>If the internal database already contains the object, then:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>if the object is equal to the provided description then TRUE is returned</p></li>
+<li class="listitem"><p>if the object exists but differs from the provided description, then FALSE is returned,
+     with the GDA_META_STORE_SCHEMA_OBJECT_CONFLICT_ERROR error code</p></li>
+</ul></div>
+<p>The <em class="parameter"><code>xml_description</code></em>
+ defines the table of view's definition, for example:</p>
+<pre class="programlisting">&lt;table name="mytable"&gt;
+    &lt;column name="id" pkey="TRUE"/&gt;
+    &lt;column name="value"/&gt;
+&lt;/table&gt;</pre>
+<p>The partial DTD for this XML description of the object to add is the following (the top node must be
+a &lt;table&gt; or a &lt;view&gt;):</p>
+<pre class="programlisting">&lt;!ELEMENT table (column*,check*,fkey*,unique*)&gt;
+&lt;!ATTLIST table
+          name NMTOKEN #REQUIRED&gt;
+
+&lt;!ELEMENT column EMPTY&gt;
+&lt;!ATTLIST column
+          name NMTOKEN #REQUIRED
+          type CDATA #IMPLIED
+          pkey (TRUE|FALSE) #IMPLIED
+          autoinc (TRUE|FALSE) #IMPLIED
+          nullok (TRUE|FALSE) #IMPLIED&gt;
+
+&lt;!ELEMENT check (#PCDATA)&gt;
+
+&lt;!ELEMENT fkey (part+)&gt;
+&lt;!ATTLIST fkey
+          ref_table NMTOKEN #REQUIRED&gt;
+
+&lt;!ELEMENT part EMPTY&gt;
+&lt;!ATTLIST part
+          column NMTOKEN #IMPLIED
+          ref_column NMTOKEN #IMPLIED&gt;
+
+&lt;!ELEMENT unique (column)&gt;
+
+&lt;!ELEMENT view (definition)&gt;
+&lt;!ATTLIST view
+          name NMTOKEN #REQUIRED
+          descr CDATA #IMPLIED&gt;
+
+&lt;!ELEMENT definition (#PCDATA)&gt;</pre>
+<div class="refsect3">
+<a name="gda-meta-store-schema-add-custom-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>xml_description</p></td>
+<td class="parameter_description"><p>an XML description of the table or view to add to <em class="parameter"><code>store</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-schema-add-custom-object.returns"></a><h4>Returns</h4>
+<p> TRUE if the new object has successfully been added</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-get-internal-connection"></a><h3>gda_meta_store_get_internal_connection ()</h3>
+<pre class="programlisting"><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="returnvalue">GdaConnection</span></a> *
+gda_meta_store_get_internal_connection
+                               (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>);</pre>
+<p>Get a pointer to the <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object internally used by <em class="parameter"><code>store</code></em>
+ to store
+its contents.</p>
+<p>The returned connection can be used to access some other data than the one managed by <em class="parameter"><code>store</code></em>
+
+itself. The returned object is not owned by the caller (if you need to keep it, then use <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-ref"><code class="function">g_object_ref()</code></a>).
+Do not close the connection.</p>
+<div class="refsect3">
+<a name="gda-meta-store-get-internal-connection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-get-internal-connection.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-declare-foreign-key"></a><h3>gda_meta_store_declare_foreign_key ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_declare_foreign_key (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> *mstruct</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fk_name</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *catalog</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *schema</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_catalog</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_schema</code></em>,
+                                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_table</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> nb_cols</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **colnames</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **ref_colnames</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Defines a new declared foreign key into <em class="parameter"><code>store</code></em>
+. If another declared foreign key is already defined
+between the two tables and with the same name, then it is first removed.</p>
+<p>This method begins a transaction if possible (ie. none is already started), and if it can't,
+then if there is an error, the job may be partially done.</p>
+<p>A check is always performed to make sure all the database objects actually
+exist and returns an error if not. The check is performed using <em class="parameter"><code>mstruct</code></em>
+ if it's not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (in
+this case only the tables already represented in <em class="parameter"><code>mstruct</code></em>
+ will be considered, in other words: <em class="parameter"><code>mstruct</code></em>
+
+will not be modified), and using an internal <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>The <em class="parameter"><code>catalog</code></em>
+, <em class="parameter"><code>schema</code></em>
+, <em class="parameter"><code>table</code></em>
+, <em class="parameter"><code>ref_catalog</code></em>
+, <em class="parameter"><code>ref_schema</code></em>
+ and <em class="parameter"><code>ref_table</code></em>
+ must follow the SQL
+identifiers naming convention, see the SQL identifiers
+section. The same convention needs to be respected for the strings in <em class="parameter"><code>conames</code></em>
+ and <em class="parameter"><code>ref_colnames</code></em>
+.</p>
+<p>If <em class="parameter"><code>catalog</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then <em class="parameter"><code>schema</code></em>
+ must also be not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (the same restriction applies to
+<em class="parameter"><code>ref_catalog</code></em>
+ and <em class="parameter"><code>ref_schema</code></em>
+).</p>
+<div class="refsect3">
+<a name="gda-meta-store-declare-foreign-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mstruct</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fk_name</p></td>
+<td class="parameter_description"><p>the name of the foreign key to declare</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>catalog</p></td>
+<td class="parameter_description"><p>the catalog in which the table (for which the foreign key is for) is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>schema</p></td>
+<td class="parameter_description"><p>the schema in which the table (for which the foreign key is for) is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table</p></td>
+<td class="parameter_description"><p>the name of the table (for which the foreign key is for)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_catalog</p></td>
+<td class="parameter_description"><p>the catalog in which the referenced table is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_schema</p></td>
+<td class="parameter_description"><p>the schema in which the referenced table is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_table</p></td>
+<td class="parameter_description"><p>the name of the referenced table</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nb_cols</p></td>
+<td class="parameter_description"><p>the number of columns involved (&gt;0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>colnames</p></td>
+<td class="parameter_description"><p>an array of column names from the table for which the foreign key is for. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_cols]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_colnames</p></td>
+<td class="parameter_description"><p>an array of column names from the referenced table. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_cols]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-declare-foreign-key.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-store-undeclare-foreign-key"></a><h3>gda_meta_store_undeclare_foreign_key ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_meta_store_undeclare_foreign_key (<em class="parameter"><code><a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store</code></em>,
+                                      <em class="parameter"><code><a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> *mstruct</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fk_name</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *catalog</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *schema</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_catalog</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_schema</code></em>,
+                                      <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *ref_table</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Removes a declared foreign key from <em class="parameter"><code>store</code></em>
+.</p>
+<p>This method begins a transaction if possible (ie. none is already started), and if it can't, then if there
+is an error, the job may be partially done.</p>
+<p>A check is always performed to make sure all the database objects actually
+exist and returns an error if not. The check is performed using <em class="parameter"><code>mstruct</code></em>
+ if it's not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (in
+this case only the tables already represented in <em class="parameter"><code>mstruct</code></em>
+ will be considered, in other words: <em class="parameter"><code>mstruct</code></em>
+
+will not be modified), and using an internal <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a> is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>See <a class="link" href="GdaMetaStore.html#gda-meta-store-declare-foreign-key" title="gda_meta_store_declare_foreign_key ()"><code class="function">gda_meta_store_declare_foreign_key()</code></a> for more information anout the <em class="parameter"><code>catalog</code></em>
+, <em class="parameter"><code>schema</code></em>
+, <em class="parameter"><code>name</code></em>
+,
+<em class="parameter"><code>ref_catalog</code></em>
+, <em class="parameter"><code>ref_schema</code></em>
+ and <em class="parameter"><code>ref_name</code></em>
+ arguments.</p>
+<div class="refsect3">
+<a name="gda-meta-store-undeclare-foreign-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mstruct</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fk_name</p></td>
+<td class="parameter_description"><p>the name of the foreign key to declare</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>catalog</p></td>
+<td class="parameter_description"><p>the catalog in which the table (for which the foreign key is for) is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>schema</p></td>
+<td class="parameter_description"><p>the schema in which the table (for which the foreign key is for) is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table</p></td>
+<td class="parameter_description"><p>the name of the table (for which the foreign key is for)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_catalog</p></td>
+<td class="parameter_description"><p>the catalog in which the referenced table is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_schema</p></td>
+<td class="parameter_description"><p>the schema in which the referenced table is, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ref_table</p></td>
+<td class="parameter_description"><p>the name of the referenced table</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-store-undeclare-foreign-key.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-get-type"></a><h3>gda_meta_context_get_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+gda_meta_context_get_type (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-new"></a><h3>gda_meta_context_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="returnvalue">GdaMetaContext</span></a> *
+gda_meta_context_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct with a <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> to store column/value pairs.</p>
+<p>Return: (transfer full): a new <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct with a new created hash to
+store column name/value pairs.</p>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-copy"></a><h3>gda_meta_context_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="returnvalue">GdaMetaContext</span></a> *
+gda_meta_context_copy (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>);</pre>
+<p>Copy constructor.</p>
+<div class="refsect3">
+<a name="gda-meta-context-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-meta-context-copy.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a></p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-set-table"></a><h3>gda_meta_context_set_table ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_context_set_table (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table</code></em>);</pre>
+<p>Set table's name to use in the context. The table is one of <a class="link" href="information_schema.html" title="Database structure">database
+schema</a> used to store meta information about the database. Use "_tables" to update meta information
+about database's tables.</p>
+<div class="refsect3">
+<a name="gda-meta-context-set-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct to set table to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>table</p></td>
+<td class="parameter_description"><p>a string with the table's name to use in context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-get-table"></a><h3>gda_meta_context_get_table ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_meta_context_get_table (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>);</pre>
+<p>Get table's name to used in the context.</p>
+<p>Return: (transfer none): A string with the table's name used in the context.</p>
+<div class="refsect3">
+<a name="gda-meta-context-get-table.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct to get table's name from</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-set-column"></a><h3>gda_meta_context_set_column ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_context_set_column (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *column</code></em>,
+                             <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                             <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Sets a new column/value pair to the given context <em class="parameter"><code>ctx</code></em>
+. Column, must be a column in the given table's
+name setted by <a class="link" href="GdaMetaStore.html#gda-meta-context-set-table" title="gda_meta_context_set_table ()"><code class="function">gda_meta_context_set_table()</code></a> (a table in the <a class="link" href="information_schema.html" title="Database structure">database
+schema</a>). If the given <em class="parameter"><code>column</code></em>
+ already exists it's value is overwrited.</p>
+<p>Column's name and value is copied and destroyed when <a class="link" href="GdaMetaStore.html#gda-meta-context-free" title="gda_meta_context_free ()"><span class="type">gda_meta_context_free</span></a> is called.</p>
+<div class="refsect3">
+<a name="gda-meta-context-set-column.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct to add column/value pais to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>column</p></td>
+<td class="parameter_description"><p>the column's name. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the column's value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> to be used when identifier are normalized, or NULL. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-set-columns"></a><h3>gda_meta_context_set_columns ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_context_set_columns (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *columns</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>);</pre>
+<p>Set columns to use in the context. The <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> use column's name as key and a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> as value,
+to represent its value.</p>
+<p><em class="parameter"><code>columns</code></em>
+ incements its reference counting. Is recommended to use <a class="link" href="GdaMetaStore.html#gda-meta-context-free" title="gda_meta_context_free ()"><span class="type">gda_meta_context_free</span></a> in order to free them.</p>
+<div class="refsect3">
+<a name="gda-meta-context-set-columns.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct to set colums to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>columns</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> with the table's columns' name and their values
+to use in context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> utf8 GObject.Value]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> to used to normalize identifiers quoting, or NULL. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-meta-context-free"></a><h3>gda_meta_context_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_meta_context_free (<em class="parameter"><code><a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> *ctx</code></em>);</pre>
+<p>Frees any resources taken by <em class="parameter"><code>ctx</code></em>
+ struct. If <em class="parameter"><code>ctx</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then nothing happens.</p>
+<div class="refsect3">
+<a name="gda-meta-context-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> struct to free. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/nullable"><span class="acronym">nullable</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaMetaStore-struct"></a><h3>GdaMetaStore</h3>
+<pre class="programlisting">typedef struct _GdaMetaStore GdaMetaStore;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStoreError"></a><h3>enum GdaMetaStoreError</h3>
+<div class="refsect3">
+<a name="GdaMetaStoreError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-INCORRECT-SCHEMA-ERROR:CAPS"></a>GDA_META_STORE_INCORRECT_SCHEMA_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-UNSUPPORTED-PROVIDER-ERROR:CAPS"></a>GDA_META_STORE_UNSUPPORTED_PROVIDER_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-INTERNAL-ERROR:CAPS"></a>GDA_META_STORE_INTERNAL_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-META-CONTEXT-ERROR:CAPS"></a>GDA_META_STORE_META_CONTEXT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-MODIFY-CONTENTS-ERROR:CAPS"></a>GDA_META_STORE_MODIFY_CONTENTS_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-EXTRACT-SQL-ERROR:CAPS"></a>GDA_META_STORE_EXTRACT_SQL_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-ATTRIBUTE-NOT-FOUND-ERROR:CAPS"></a>GDA_META_STORE_ATTRIBUTE_NOT_FOUND_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-ATTRIBUTE-ERROR:CAPS"></a>GDA_META_STORE_ATTRIBUTE_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-SCHEMA-OBJECT-NOT-FOUND-ERROR:CAPS"></a>GDA_META_STORE_SCHEMA_OBJECT_NOT_FOUND_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-SCHEMA-OBJECT-CONFLICT-ERROR:CAPS"></a>GDA_META_STORE_SCHEMA_OBJECT_CONFLICT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-SCHEMA-OBJECT-DESCR-ERROR:CAPS"></a>GDA_META_STORE_SCHEMA_OBJECT_DESCR_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-TRANSACTION-ALREADY-STARTED-ERROR:CAPS"></a>GDA_META_STORE_TRANSACTION_ALREADY_STARTED_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStoreChange"></a><h3>GdaMetaStoreChange</h3>
+<pre class="programlisting">typedef struct {
+	/* change general information */
+	GdaMetaStoreChangeType  c_type;
+	gchar                  *table_name;
+	GHashTable             *keys; /* key = ('+' or '-') and a column position in @table (string) starting at 0,
+
+	                               * value = a GValue pointer */
+} GdaMetaStoreChange;
+</pre>
+<div class="refsect3">
+<a name="GdaMetaStoreChange.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaMetaStore.html#GdaMetaStoreChangeType" title="enum GdaMetaStoreChangeType"><span class="type">GdaMetaStoreChangeType</span></a> <em class="structfield"><code><a name="GdaMetaStoreChange.c-type"></a>c_type</code></em>;</p></td>
+<td class="struct_member_description"> </td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaMetaStoreChange.table-name"></a>table_name</code></em>;</p></td>
+<td class="struct_member_description"> </td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *<em class="structfield"><code><a name="GdaMetaStoreChange.keys"></a>keys</code></em>;</p></td>
+<td class="struct_member_description"><p>. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> utf8 GObject.Value]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStoreChangeType"></a><h3>enum GdaMetaStoreChangeType</h3>
+<div class="refsect3">
+<a name="GdaMetaStoreChangeType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-ADD:CAPS"></a>GDA_META_STORE_ADD</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-REMOVE:CAPS"></a>GDA_META_STORE_REMOVE</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-META-STORE-MODIFY:CAPS"></a>GDA_META_STORE_MODIFY</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaContext"></a><h3>GdaMetaContext</h3>
+<pre class="programlisting">typedef struct {
+	gchar                  *table_name;
+	gint                    size;
+	gchar                 **column_names;
+	GValue                **column_values;
+	GHashTable             *columns;/* Added since 5.2 */
+} GdaMetaContext;
+</pre>
+<p>The <span class="structname">GdaMetaContext</span> represents a meta data modification
+context: the <span class="emphasis"><em>how</em></span> when used with <a class="link" href="libgda-5.0-Misc-API.html#gda-meta-store-modify-with-context" title="gda_meta_store_modify_with_context ()"><code class="function">gda_meta_store_modify_with_context()</code></a>,
+and the <span class="emphasis"><em>what</em></span> when used with <a class="link" href="GdaConnection.html#gda-connection-update-meta-store" title="gda_connection_update_meta_store ()"><code class="function">gda_connection_update_meta_store()</code></a>.</p>
+<p>To create a new <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> use <a class="link" href="GdaMetaStore.html#gda-meta-context-new" title="gda_meta_context_new ()"><span class="type">gda_meta_context_new</span></a>. </p>
+<p>To add a new column/value pair use <span class="type">gda_meta_context_add_column</span>.</p>
+<p>To free a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a>, created by <a class="link" href="GdaMetaStore.html#gda-meta-context-new" title="gda_meta_context_new ()"><span class="type">gda_meta_context_new</span></a>, use <a class="link" href="libgda-5.0-Attributes-manager.html#gda-attributes-manager-free" title="gda_attributes_manager_free ()"><span class="type">gda_attributes_manager_free</span></a>.</p>
+<p>Since 5.2, you must consider this struct as opaque. Any access to its internal must use public API.
+Don't try to use <a class="link" href="GdaMetaStore.html#gda-meta-context-free" title="gda_meta_context_free ()"><span class="type">gda_meta_context_free</span></a> on a struct that was created manually.</p>
+<div class="refsect3">
+<a name="GdaMetaContext.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GdaMetaContext.table-name"></a>table_name</code></em>;</p></td>
+<td class="struct_member_description"><p>the name of the table <span class="emphasis"><em>in the GdaMetaStore's internal database</em></span></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> <em class="structfield"><code><a name="GdaMetaContext.size"></a>size</code></em>;</p></td>
+<td class="struct_member_description"><p>the size of the <em class="parameter"><code>column_names</code></em>
+and <em class="parameter"><code>column_values</code></em>
+arrays</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **<em class="structfield"><code><a name="GdaMetaContext.column-names"></a>column_names</code></em>;</p></td>
+<td class="struct_member_description"><p>an array of column names (columns of the <em class="parameter"><code>table_name</code></em>
+table). </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=size][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> **<em class="structfield"><code><a name="GdaMetaContext.column-values"></a>column_values</code></em>;</p></td>
+<td class="struct_member_description"><p>an array of values, one for each column named in <em class="parameter"><code>column_names</code></em>
+. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=size][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *<em class="structfield"><code><a name="GdaMetaContext.columns"></a>columns</code></em>;</p></td>
+<td class="struct_member_description"><p>A <a href="/usr/share/gtk-doc/html/glib/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> storing columns' name as key and <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> as column's
+value. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> utf8 GObject.Value]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaMetaStore--catalog"></a><h3>The <code class="literal">“catalog”</code> property</h3>
+<pre class="programlisting">  “catalog”                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Catalog in which the database objects will be created.</p>
+<p>Owner: GdaMetaStore</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStore--cnc"></a><h3>The <code class="literal">“cnc”</code> property</h3>
+<pre class="programlisting">  “cnc”                      <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</pre>
+<p>Connection object internally used.</p>
+<p>Owner: GdaMetaStore</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStore--cnc-string"></a><h3>The <code class="literal">“cnc-string”</code> property</h3>
+<pre class="programlisting">  “cnc-string”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Connection string for the internal connection to use.</p>
+<p>Owner: GdaMetaStore</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStore--schema"></a><h3>The <code class="literal">“schema”</code> property</h3>
+<pre class="programlisting">  “schema”                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Schema in which the database objects will be created.</p>
+<p>Owner: GdaMetaStore</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaMetaStore-meta-changed"></a><h3>The <code class="literal">“meta-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      changes,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>This signal is emitted when the <em class="parameter"><code>store</code></em>
+'s contents have changed (the changes are in the <em class="parameter"><code>changes</code></em>
+ list)</p>
+<div class="refsect3">
+<a name="GdaMetaStore-meta-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> instance that emitted the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>changes</p></td>
+<td class="parameter_description"><p>a list of changes made, as a <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of pointers to <a class="link" href="GdaMetaStore.html#GdaMetaStoreChange" title="GdaMetaStoreChange"><span class="type">GdaMetaStoreChange</span></a> (which must not be modified). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> GLib.SList][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.MetaStoreChange]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStore-meta-reset"></a><h3>The <code class="literal">“meta-reset”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>This signal is emitted when the <em class="parameter"><code>store</code></em>
+'s contents have been reset completely and when
+no detailed changes are available</p>
+<div class="refsect3">
+<a name="GdaMetaStore-meta-reset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> instance that emitted the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaMetaStore-suggest-update"></a><h3>The <code class="literal">“suggest-update”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*
+user_function (<a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> *store,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      suggest,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>      user_data)</pre>
+<p>This signal is emitted when the contents of a table should be updated (data to update or insert only;
+deleting data is done automatically). This signal is used for internal purposes by the <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a>
+object.</p>
+<div class="refsect3">
+<a name="GdaMetaStore-suggest-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaMetaStore.html" title="GdaMetaStore"><span class="type">GdaMetaStore</span></a> instance that emitted the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>suggest</p></td>
+<td class="parameter_description"><p>the suggested update, as a <a class="link" href="GdaMetaStore.html#GdaMetaContext" title="GdaMetaContext"><span class="type">GdaMetaContext</span></a> structure. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> Gda.MetaContext]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaMetaStore-suggest-update.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> error structure if there was an error when processing the
+signal, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if signal propagation should continue</p>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaMetaStore.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaMetaStruct.html" title="GdaMetaStruct"><span class="type">GdaMetaStruct</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

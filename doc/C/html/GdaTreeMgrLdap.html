@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaTreeMgrLdap: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="trees.html" title="Trees">
+<link rel="prev" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns">
+<link rel="next" href="data_conv.html" title="Data conversions">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrLdap.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrLdap.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaTreeMgrLdap.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="trees.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaTreeMgrColumns.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="data_conv.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaTreeMgrLdap"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaTreeMgrLdap.top_of_page"></a>GdaTreeMgrLdap</span></h2>
+<p>GdaTreeMgrLdap — A tree manager which creates a node for each child entry of an LDAP entry</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="function_type">
+<a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaTreeMgrLdap.html#gda-tree-mgr-ldap-new" title="gda_tree_mgr_ldap_new ()">gda_tree_mgr_ldap_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaTreeMgrLdap.html#GdaTreeMgrLdap--connection" title="The “connection” property">connection</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaTreeMgrLdap.html#GdaTreeMgrLdap--dn" title="The “dn” property">dn</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaTreeMgrLdap.html#GdaTreeMgrLdap-struct" title="struct GdaTreeMgrLdap">GdaTreeMgrLdap</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a>
+        <span class="lineart">╰──</span> GdaTreeMgrLdap
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaTreeMgrLdap.html" title="GdaTreeMgrLdap"><span class="type">GdaTreeMgrLdap</span></a> is a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object which creates a node for
+each child entry of an LDAP entry.</p>
+<p>Note: this type of tree manager is available only if the LDAP library was found at compilation time and
+if the LDAP provider is correctly installed.</p>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-tree-mgr-ldap-new"></a><h3>gda_tree_mgr_ldap_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="returnvalue">GdaTreeManager</span></a> *
+gda_tree_mgr_ldap_new (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dn</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object which will list the children of the LDAP entry which Distinguished name
+is <em class="parameter"><code>dn</code></em>
+. If <em class="parameter"><code>dn</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the tree manager will look in the tree itself for an attribute named "dn" and
+use it.</p>
+<div class="refsect3">
+<a name="gda-tree-mgr-ldap-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dn</p></td>
+<td class="parameter_description"><p>an LDAP Distinguished Name or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-tree-mgr-ldap-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaTreeManager.html" title="GdaTreeManager"><span class="type">GdaTreeManager</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaTreeMgrLdap-struct"></a><h3>struct GdaTreeMgrLdap</h3>
+<pre class="programlisting">struct GdaTreeMgrLdap;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaTreeMgrLdap.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaTreeMgrLdap--connection"></a><h3>The <code class="literal">“connection”</code> property</h3>
+<pre class="programlisting">  “connection”               <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> *</pre>
+<p>Defines the <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a> to get information from.</p>
+<p>Owner: GdaTreeMgrLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaTreeMgrLdap--dn"></a><h3>The <code class="literal">“dn”</code> property</h3>
+<pre class="programlisting">  “dn”                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Defines the Distinguised Name of the LDAP entry to list children from</p>
+<p>Owner: GdaTreeMgrLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

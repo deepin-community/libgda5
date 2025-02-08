@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Connections &amp; commands: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="libgda-5.0-Configuration.html" title="Configuration">
+<link rel="next" href="GdaConnection.html" title="GdaConnection">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-Configuration.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="connection"></a>Connections &amp; commands</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="GdaConnection.html">GdaConnection</a></span><span class="refpurpose"> — A connection to a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlParser.html">GdaSqlParser</a></span><span class="refpurpose"> — SQL parser</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSqlBuilder.html">GdaSqlBuilder</a></span><span class="refpurpose"> — Factory object for statements</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaStatement.html">GdaStatement</a></span><span class="refpurpose"> — Single SQL statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaRepetitiveStatement.html">GdaRepetitiveStatement</a></span><span class="refpurpose"> — Execute the same statement several times with different values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaBatch.html">GdaBatch</a></span><span class="refpurpose"> — Multiple SQL statements grouped together.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaHolder.html">GdaHolder</a></span><span class="refpurpose"> — Container for a single <span class="type">GValue</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaSet.html">GdaSet</a></span><span class="refpurpose"> — Container for several values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaConnectionEvent.html">GdaConnectionEvent</a></span><span class="refpurpose"> — Any event which has occurred on a <span class="type">GdaConnection</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTransactionStatus.html">GdaTransactionStatus</a></span><span class="refpurpose"> — Keeps track of the transaction status of a connection</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaXaTransaction.html">GdaXaTransaction</a></span><span class="refpurpose"> — Distributed transaction manager</span>
+</dt>
+<dt><span class="sect1"><a href="connection.html#GdaConnectionMetaTypeHead">Description of the data model returned by gda_connection_get_meta_store_data()</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_NAMESPACES">GDA_CONNECTION_META_NAMESPACES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TYPES">GDA_CONNECTION_META_TYPES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_TABLES">GDA_CONNECTION_META_TABLES</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_VIEWS">GDA_CONNECTION_META_VIEWS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_FIELDS">GDA_CONNECTION_META_FIELDS</a></span></dt>
+<dt><span class="sect2"><a href="connection.html#GdaConnectionMetaTypeGDA_CONNECTION_META_INDEXES">GDA_CONNECTION_META_INDEXES</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+	The <span class="application">Libgda</span> library allows several connections to databases to be opened at once.
+	Once a connection (manipulated through the <a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> object)
+	has been created and is opened, it is able to proceed <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> statements.
+      </p>
+<p>
+	Each <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> can only hold one SQL statement (such as SELECT, INSERT,
+	CREATE TABLE, BEGIN, etc); statements can be grouped together into  <a class="link" href="GdaBatch.html" title="GdaBatch">GdaBatch</a> batches
+	objects. There are two ways for creating a <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object:
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+	       either by passing an SQL string to a parser (a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a>).
+	     </p>
+<p>
+	       <span class="application">Libgda</span> unifies the way variables (also known as "placeholders") are defined (because each database type
+	       has its own syntax for doing so); consult the <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a> object's
+	       documentation for a description of this syntax.
+	     </p>
+</li>
+<li class="listitem"><p>by building it from its structure: see the 
+	       <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement">GdaSqlStatement</a> for reference.
+	       However keep in mind that this API is meant to be used primarily by database
+	       provider's implementations and for <span class="application">Libgda</span>'s internal usage. A more user friendly
+	       API will be added in the future.
+	   </p></li>
+</ul></div>
+<p>
+
+      </p>
+<p>
+	The following schema illustrates how a statement is created and executed:
+	</p>
+<div class="mediaobject"><img src="GdaStatement.png" alt="Statement execution illustrated"></div>
+<p>
+      </p>
+<p>
+
+      </p>
+<p>
+	As each database implements its own SQL variant (all variants more or less close to the SQL92 or SQL99 standards), the
+	<span class="application">Libgda</span> library allows one to use either a generic SQL parser, or a parser provided by each database adapter (database
+	provider), through the <a class="link" href="GdaConnection.html#gda-connection-create-parser" title="gda_connection_create_parser ()">gda_connection_create_parser()</a> method.
+      </p>
+<p>
+	The following schema illustrates how a statement is executed:
+	</p>
+<div class="mediaobject"><img src="howto-exec.png" alt="Statement execution illustrated"></div>
+<p>
+      </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="GdaConnectionMetaTypeHead"></a>Description of the data model returned by gda_connection_get_meta_store_data()</h2></div></div></div>
+<p>
+    The <a class="link" href="GdaConnection.html#gda-connection-get-meta-store-data" title="gda_connection_get_meta_store_data ()">gda_connection_get_meta_store_data()</a> method allows
+    one to get the meta-data information about a database such as its structure (schema). The following table describes
+    the actual data retrieved by each <a class="link" href="GdaConnection.html#GdaConnectionMetaType" title="enum GdaConnectionMetaType">GdaConnectionMetaType</a> type of request.
+  </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_NAMESPACES"></a>GDA_CONNECTION_META_NAMESPACES</h3></div></div></div>
+<p>Lists the namespaces (also known as "schemas" by PostgreSQL).
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): the name of the namespace</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.3.4.1"></a><p class="title"><b>Table 4. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Namespace name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Namespace owner</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_BOOLEAN</td>
+<td align="justify">TRUE if this namespace is reserved for internal use by the database</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_TYPES"></a>GDA_CONNECTION_META_TYPES</h3></div></div></div>
+<p>Lists all the data types
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): a type name</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.4.4.1"></a><p class="title"><b>Table 5. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Type name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Type's associated GType type</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Type's comments</td>
+</tr>
+<tr>
+<td align="justify">3</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Synonyms (separated by commas)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_TABLES"></a>GDA_CONNECTION_META_TABLES</h3></div></div></div>
+<p>Lists the tables which are "visible" without having to specify a schema name.
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): the name of the table</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.5.4.1"></a><p class="title"><b>Table 6. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Table's name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Namespace in which the table is</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Table's complete name (ie. schema name + table name)</td>
+</tr>
+<tr>
+<td align="justify">3</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Table owner</td>
+</tr>
+<tr>
+<td align="justify">4</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Table's associated comments</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_VIEWS"></a>GDA_CONNECTION_META_VIEWS</h3></div></div></div>
+<p>Lists the views.
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): the name of the view</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.6.4.1"></a><p class="title"><b>Table 7. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">View's name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Namespace in which the view is</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">View's complete name (if the view is not in the default namespace)</td>
+</tr>
+<tr>
+<td align="justify">3</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">View owner</td>
+</tr>
+<tr>
+<td align="justify">4</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">View's associated comments</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_FIELDS"></a>GDA_CONNECTION_META_FIELDS</h3></div></div></div>
+<p>Lists a table or view's fields
+    </p>
+<p>Mandatory filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): the name of the table or view</p></li></ul></div>
+<p>
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"field_name" (G_TYPE_STRING): the name of a field</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.7.5.1"></a><p class="title"><b>Table 8. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Field's name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Field's data type</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Field's GType type</td>
+</tr>
+<tr>
+<td align="justify">3</td>
+<td align="justify">G_TYPE_INT</td>
+<td align="justify">Field's size</td>
+</tr>
+<tr>
+<td align="justify">4</td>
+<td align="justify">G_TYPE_INT</td>
+<td align="justify">Field's scale</td>
+</tr>
+<tr>
+<td align="justify">5</td>
+<td align="justify">G_TYPE_BOOLEAN</td>
+<td align="justify">TRUE if the field does not have a NOT NULL constraint</td>
+</tr>
+<tr>
+<td align="justify">6</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Field's default value</td>
+</tr>
+<tr>
+<td align="justify">7</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Extra attributes for the field as a comma separated values list of keywords (AUTO_INCREMENT)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="GdaConnectionMetaTypeGDA_CONNECTION_META_INDEXES"></a>GDA_CONNECTION_META_INDEXES</h3></div></div></div>
+<p>Lists a table's associated indexes
+    </p>
+<p>Mandatory filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"name" (G_TYPE_STRING): the name of the table</p></li></ul></div>
+<p>
+    </p>
+<p>Optional filter:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>"index_name" (G_TYPE_STRING): the name of an index</p></li></ul></div>
+<p>
+    </p>
+<p>Columns of the returned data model:
+      </p>
+<div class="table">
+<a name="id-1.3.6.17.8.5.1"></a><p class="title"><b>Table 9. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Column #</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">0</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Table's name</td>
+</tr>
+<tr>
+<td align="justify">1</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Namespace in which the table is</td>
+</tr>
+<tr>
+<td align="justify">2</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Index's name</td>
+</tr>
+<tr>
+<td align="justify">3</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Column's name involved in the index</td>
+</tr>
+<tr>
+<td align="justify">4</td>
+<td align="justify">G_TYPE_INT</td>
+<td align="justify">Sequence order</td>
+</tr>
+<tr>
+<td align="justify">5</td>
+<td align="justify">G_TYPE_STRING</td>
+<td align="justify">Index's type</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+    </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

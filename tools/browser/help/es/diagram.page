@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="diagram" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Diagramas</title>
+  <p>Los diagramas se presentan a mediante <app>gda-browser</app>, y constan de una ventana en la que se muestran elementos gráficos (igual que, por ejemplo, las tablas).</p>
+  <figure>
+    <title>Diagrama</title>
+    <desc>Diagrama que muestra algunas tablas y sus relaciones representadas por restricciones de clave externa (vea también la <link xref="declared-fk">las claves externas declaradas</link>)</desc>
+    <media type="image" mime="image/png" src="figures/diagram.png"/>
+  </figure>
+  <p>Los elementos se pueden mover alrededor de la ventana (tenga en cuenta que mientras el diagrama completo cabe en la ventana, se mantiene centrado en él). Son posibles otras manipulaciones:</p>
+  <list>
+    <item><p>ampliar y reducir usando la rueda del ratón, o a través del menú contextual (pulse con el botón derecho sobre el canvas); también está disponible una ampliación hasta ajustar a la ventana en el menú contextual</p></item>
+    <item><p>acerque o aleje los elementos entre sí usando la rueda del ratón mientras se mantiene pulsada la tecla <key> Mayús </key></p></item>
+    <item><p>alinear elementos lineal o radialmente, a través del menú contextual</p></item>
+    <item><p>imprimir, a través del menú contextual</p></item>
+    <item><p>exportar como imágenes PNG o SVG, a través del menú contextual</p></item>
+    <item><p>añadir elementos, a través del menú contextual</p></item>
+    <item><p>quitar elementos, a través del menú contextual del elemento</p></item>
+  </list>
+</page>

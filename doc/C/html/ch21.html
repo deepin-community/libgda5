@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data definition (DDL) queries: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="GdaMetaStruct.html" title="GdaMetaStruct">
+<link rel="next" href="GdaServerOperation.html" title="GdaServerOperation">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaMetaStruct.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaServerOperation.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="id-1.3.12"></a>Data definition (DDL) queries</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="GdaServerOperation.html">GdaServerOperation</a></span><span class="refpurpose"> — Handles any DDL query in an abstract way</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-individual-nodes.html">GdaServerOperation: individual nodes</a></span><span class="refpurpose"> — Getting information about parts (nodes) composing a path</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libgda-5.0-GdaServerOperation-sequences.html">GdaServerOperation: sequences</a></span><span class="refpurpose"> — Manipulating sequences</span>
+</dt>
+</dl></div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="DDLIntro"></a>General words about DDL queries</h3></div></div></div>
+<p>
+    On the contrary to data manipulation (DML) queries, data definition queries are not very well standardized (the SQL varies a 
+    lot from one DBMS to the other), and <span class="application">Libgda</span> proposes to bypass the SQL usage and uses a different approach based on the 
+    information required to perform a task (or operation, thus the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a>
+    object).
+  </p>
+<p>
+    Here is an overview the steps involved:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Make sure the database provider (associated to the connection)  supports the requested operation using the 
+	  <a class="link" href="GdaServerProvider.html#gda-server-provider-supports-operation" title="gda_server_provider_supports_operation ()">gda_server_provider_supports_operation()</a> method</p></li>
+<li class="listitem">
+<p>Ask the provider to create a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a> object
+	  using the <a class="link" href="GdaServerProvider.html#gda-server-provider-create-operation" title="gda_server_provider_create_operation ()">gda_server_provider_create_operation()</a> method. 
+	  The resulting new object will hold all the information required (and some optional) to perform the requested
+	  operation. For example to create a table, the required information will be the table name and the description of its
+	  columns, and the optional information might be the schema in which to create the table for a PostgreSQL provider.</p>
+<p>
+	  Additionally some options can be passed when using that function in the form of named parameters, see <a class="link" href="ch21.html#gda-server-op-information-std" title="Standard named information">this section</a> for more information.
+	</p>
+</li>
+<li class="listitem"><p>Fill in the values (required or optional) of the <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a> 
+	  object (see the GdaServerOperation object's <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">documentation</a> for more information).
+	</p></li>
+<li class="listitem"><p>Use that object to request the actual operation to be done using the 
+	  <a class="link" href="GdaServerProvider.html#gda-server-provider-perform-operation" title="gda_server_provider_perform_operation ()">gda_server_provider_perform_operation()</a> method.
+	Afterwards that object can be discarded using <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref()</a></p></li>
+</ul></div>
+<p>
+    
+    The information stored within a <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a> object can also be stored within 
+    an XML structure and re-loaded later, which for example allows to create "scripts" of operations to do.
+  </p>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.3.12.2.4"></a>Organization of the required information</h4></div></div></div>
+<p>
+      The required information to perform an operation is stored entirely in a 
+      <a class="link" href="GdaServerOperation.html" title="GdaServerOperation">GdaServerOperation</a> object using named paths which are strings like 
+      "/TABLE_DEF_P/TABLE_NAME" or "/TABLE_CONSTRAINTS_S/0/CONSTRAINT_STRING" (for details about the path format, refer to the
+      <a class="link" href="GdaServerOperation.html#gda-server-operation-set-value-at" title="gda_server_operation_set_value_at ()">gda_server_operation_set_value_at()</a> method). 
+      Each path is similar to a Unix file path
+      (names separated by a '/'). Each part of the path corresponds to a node (represented as a 
+      <a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNode" title="GdaServerOperationNode">GdaServerOperationNode</a> structure) which has a type listed as 
+      a <a class="link" href="libgda-5.0-GdaServerOperation-individual-nodes.html#GdaServerOperationNodeType" title="enum GdaServerOperationNodeType">GdaServerOperationNodeType</a>; basically the types of node are:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>a node containing a <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a> object which just contains one value</p></li>
+<li class="listitem"><p>a node containing a <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a> object which is just a list
+	    of named parameters (for example all the attributes of the table to create such as the table's name and 
+	    storage type for a MySQL provider)</p></li>
+<li class="listitem"><p>a node containing a <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a> object when the needed information
+	  is tabular (rows and columns), for example the definition of all the columns to create in a table, each column having 
+	  a name, type, CHECK constraint, etc</p></li>
+<li class="listitem"><p>a node defining a sequence of items: the sequence node can have zero or more items composed of nodes. 
+	    For example when 
+	  defining the foreign keys for a new table, a sequence node can be created which can contain zero or more foreign key
+	  definition items (each composed of the referenced table, the referenced fields, the referential integrity rules, etc)
+	  </p></li>
+<li class="listitem"><p>a node representing an 'item' in a sequence node (that is a list of nodes).</p></li>
+<li class="listitem"><p>a node representing a data model's column.</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      Note: the list and complete structure of the information required to perform an operation is imposed by each provider and cannot
+      be modified. The information stored in each node can be modified (depending on the node's type):
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="gda-server-op-information-specif"></a>Provider specific information</h4></div></div></div>
+<p>
+      To list the possible/required parameters for each provider, use the 
+      <a class="link" href="libgda-list-server-op.html" title="gda-list-server-op-5.0">gda-list-server-op</a> tool.
+    </p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="gda-server-op-information-std"></a>Standard named information</h4></div></div></div>
+<p>
+      For most of the possible operations, the required information from one provider to the other does not vary, only the
+      optional features correspond to optional information, so <span class="application">Libgda</span> imposes the names of the required information for
+      some of the most common operations, which is shown next. Some optional information which is shared by several providers
+      is also named but not enforced.
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_CREATE_DB:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.1.1.1"></a><p class="title"><b>Table 10. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/DB_DEF_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Database's description</td>
+</tr>
+<tr>
+<td align="justify">/DB_DEF_P/DB_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Database name (string)</td>
+</tr>
+<tr>
+<td align="justify">/DB_DEF_P/DB_CSET</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Character set (string)</td>
+</tr>
+<tr>
+<td align="justify">/DB_DEF_P/DB_OWNER</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Database owner (string)</td>
+</tr>
+<tr>
+<td align="justify">/DB_DEF_P/DB_TABLESPACE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Tablespace the database is in (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	  Note also that if creating a database requires an access to a server, then the access parameters to that server
+	  will all be in the "/SERVER_CNX_P" PARAMLIST, as shown:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.1.1.2"></a><p class="title"><b>Table 11. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/SERVER_CNX_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Parameters to connect to a server</td>
+</tr>
+<tr>
+<td align="justify">/SERVER_CNX_P/HOST</td>
+<td align="justify">PARAM</td>
+<td align="justify">Name of the server (string)</td>
+</tr>
+<tr>
+<td align="justify">/SERVER_CNX_P/PORT</td>
+<td align="justify">PARAM</td>
+<td align="justify">Port number on the server (gint)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_DROP_DB:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.2.1.1"></a><p class="title"><b>Table 12. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/DB_DESC_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Database's description</td>
+</tr>
+<tr>
+<td align="justify">/DB_DESC_P/DB_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Database name (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	  Note also that if creating a database requires an access to a server, then the access parameters to that server
+	  will all be in the "/SERVER_CNX_P" PARAMLIST, as for the GDA_SERVER_OPERATION_CREATE_DB operation.
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_CREATE_TABLE:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.3.1.1"></a><p class="title"><b>Table 13. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/TABLE_DEF_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's description</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DEF_P/TABLE_TABLESPACE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Tablespace in which to create the table (string)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DEF_P/TABLE_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Table name (string)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DEF_P/TABLE_TEMP</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if the table to create is temporary (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DEF_P/TABLE_COMMENT</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Comment on a table (string)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A</td>
+<td align="justify">DATA_MODEL</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's fields description</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_NAME</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify">Yes</td>
+<td align="justify">A table's field name (string)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_TYPE</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify">Yes</td>
+<td align="justify">A table's field type (string)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_SIZE</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A table's field defined size (unsigned integer)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_SCALE</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A table's field number of decimals (unsigned integer)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_NNUL</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if table's field can't be NULL (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_AUTOINC</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if table's field must be auto incremented (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_UNIQUE</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if table's field must be unique (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_PKEY</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if table's field is a primary key (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_DEFAULT</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A table's field default value (string)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_CHECK</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A table's field CHECK condition (string)</td>
+</tr>
+<tr>
+<td align="justify">/FIELDS_A/@COLUMN_COMMENT</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A comment on the table's field (string)</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S</td>
+<td align="justify">DATA_SEQUENCE</td>
+<td align="justify"> </td>
+<td align="justify">Sequence representing foreign keys description</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_REF_TABLE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">The foreign key's referenced table (string)</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_FIELDS_A</td>
+<td align="justify">DATA_MODEL</td>
+<td align="justify"> </td>
+<td align="justify">The foreign key's field's being used</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_FIELDS_A/@FK_FIELD</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A foreign key's field's from the table to create</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_FIELDS_A/@FK_REF_PK_FIELD</td>
+<td align="justify">DATA_MODEL_COLUMN</td>
+<td align="justify"> </td>
+<td align="justify">A foreign key's field's from the referenced table</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_ONUPDATE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">The action to take when the referenced field is updated (string)</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_ONDELETE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">The action to take when the referenced field is deleted (string)</td>
+</tr>
+<tr>
+<td align="justify">/FKEY_S/FKEY_DEFERRABLE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">TRUE if the foreign key is deferrable until the end of a transaction (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_CONSTRAINTS_S</td>
+<td align="justify">SEQUENCE</td>
+<td align="justify"> </td>
+<td align="justify">Sequence representing table constraints</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_CONSTRAINTS_S/CONSTRAINT_STRING</td>
+<td align="justify">SEQUENCE</td>
+<td align="justify"> </td>
+<td align="justify">A table constraint (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_DROP_TABLE:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.4.1.1"></a><p class="title"><b>Table 14. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/TABLE_DESC_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's description</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DESC_P/TABLE_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's name (string)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DESC_P/REFERENCED_ACTION</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Action to perform for objects referencing the table to drop (CASCADE, RESTRICT, ...) (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+<p>
+	  Optional parameters for the creation of a GdaServerOperation object for such an operation type:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.4.1.2.1"></a><p class="title"><b>Table 15. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Id</th>
+<th align="justify">Type</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody><tr>
+<td align="justify">TABLE_DESC_P/TABLE_NAME</td>
+<td align="justify">string</td>
+<td align="justify">Name of the table to delete</td>
+</tr></tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+<p>
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_RENAME_TABLE:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.5.1.1"></a><p class="title"><b>Table 16. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/TABLE_DESC_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's description</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DESC_P/TABLE_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's name (string)</td>
+</tr>
+<tr>
+<td align="justify">/TABLE_DESC_P/TABLE_NEW_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Table's new name (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_ADD_COLUMN:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.6.1.1"></a><p class="title"><b>Table 17. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/COLUMN_DEF_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Column's description</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DEF_P/TABLE_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the table to add a column to (string)</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DEF_P/COLUMN_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">New column's name (string)</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DEF_P/COLUMN_TYPE</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">New column's type (string)</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DEF_P/COLUMN_SIZE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">New column's defined size (unsigned integer)</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DEF_P/COLUMN_SCALE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">New column's number of decimals (unsigned integer)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+<p>
+	  The other bits of information for the column description, which are not required, are the same as for "/FIELDS_A" array of 
+	  the GDA_SERVER_OPERATION_CREATE_TABLE (replace "/FIELDS_A" with "/COLUMN_DEF_P").
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_DROP_COLUMN:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.7.1.1"></a><p class="title"><b>Table 18. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/COLUMN_DESC_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Column's description</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DESC_P/TABLE_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the table to remove a column from (string)</td>
+</tr>
+<tr>
+<td align="justify">/COLUMN_DESC_P/COLUMN_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Name of the column to remove (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_CREATE_INDEX:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.8.1.1"></a><p class="title"><b>Table 19. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/INDEX_DEF_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Index's description</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DEF_P/INDEX_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Index name (string)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DEF_P/INDEX_TYPE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Index type: UNIQUE, etc (string)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DEF_P/INDEX_ON_TABLE</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Table on which the index is applied (string)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_FIELDS_S</td>
+<td align="justify">SEQUENCE</td>
+<td align="justify">Yes</td>
+<td align="justify">List of fields on which the index is applied (min: 1 item)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_FIELDS_S/INDEX_FIELD</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">A field on which the index is applied (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_DROP_INDEX:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.9.1.1"></a><p class="title"><b>Table 20. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/INDEX_DESC_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">Index's description</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DESC_P/INDEX_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">Index's name (string)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DEF_P/INDEX_ON_TABLE</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Table on which the index is applied (string)</td>
+</tr>
+<tr>
+<td align="justify">/INDEX_DESC_P/REFERENCED_ACTION</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Action to perform for objects referencing the index to drop (CASCADE, RESTRICT, ...) (string)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+<li class="listitem">
+<p>Named and required information for GDA_SERVER_OPERATION_CREATE_USER:
+	  </p>
+<div class="table">
+<a name="id-1.3.12.2.6.3.10.1.1"></a><p class="title"><b>Table 21. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="justify">Path</th>
+<th align="justify">Type</th>
+<th align="justify">Required?</th>
+<th align="justify">Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="justify">/USER_DEF_P</td>
+<td align="justify">PARAMLIST</td>
+<td align="justify">Yes</td>
+<td align="justify">User's description</td>
+</tr>
+<tr>
+<td align="justify">/USER_DEF_P/USER_NAME</td>
+<td align="justify">PARAM</td>
+<td align="justify">Yes</td>
+<td align="justify">User name (string)</td>
+</tr>
+<tr>
+<td align="justify">/USER_DEF_P/PASSWORD</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">User's password (string)</td>
+</tr>
+<tr>
+<td align="justify">/USER_DEF_P/CAP_CREATEDB</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Set to TRUE if the user is allowed to create databases (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/USER_DEF_P/CAP_CREATEUSER</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Set to TRUE if the user is allowed to create users (boolean)</td>
+</tr>
+<tr>
+<td align="justify">/USER_DEF_P/VALIDITY</td>
+<td align="justify">PARAM</td>
+<td align="justify"> </td>
+<td align="justify">Set the expiration timestamp (timestamp)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+	</p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-connection" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>LDAP-Verbindungen</title>
+  <p>LDAP-Verbindungen unterscheiden sich von anderen Verbindungen dadurch, dass LDAP-Datenbanken Daten als hierarchische Struktur in einem DIT (Directory Information Tree) speichern. Andere Datenbanken sind relationale Datenbanken, die mit Hilfe der Anwendung <app>gda-browser</app> zugänglich sind.</p>
+  <p>Aus diesem Grund werden LDAP-Verbindungen gesondert behandelt, und zwar als normale Verbindungen mit Tabellen (lesen Sie dazu Tabellen-Abbildung weiter unten) und einer eigenen <link xref="ldap-browser-perspective"> LDAP-Browser-Perspektive</link></p>
+  <p>Beachten Sie, dass LDAP-Verbindungen nicht verfügbar sein könnten, wenn entweder der LDAP-Datenbanktreiber nicht installiert ist oder die LDAP-Unterstützung beim Kompilieren deaktiviert wurde.</p>
+
+  <section id="ldap-table-mapping">
+    <title>LDAP-Tabellenzuordnung</title>
+    <p>In einer LDAP-Verbindung ist es möglich, virtuelle Tabellen zu deklarieren, die einer LDAP-Suche zugeordnet werden können. Diese virtuellen Tabellen können dann wie jede andere Tabelle verwendet werden. Die erste Spalte jeder virtuellen LDAP-Tabelle enthält immer den DN (Distinguished Name = Eindeutiger Name) des durch die Zeile dargestellten Eintrags. Die anderen Spalten ergeben sich aus der Tabellendefinition.</p>
+    <p>Eine virtuelle LDAP-Tabelle wird über die folgenden Attribute definiert:</p>
+    <list>
+      <item><p>einen Tabellennamen</p></item>
+      <item><p>die Basis-DN für die Suche: der LDAP-Eintrag, bei welchem die Suche beginnt. Falls nicht angegeben, wird der Eintrag der obersten Ebene der verwendeten LDAP-Verbindung angenommen</p></item>
+      <item><p>den Suchfilter: ein gültiger LDAP-Suchfilter. Falls keiner angegeben ist, ist der vorgegebene Suchfilter »(objectClass=*)«, der jeden LDAP-Eintrag berücksichtigt</p></item>
+      <item><p>die Attribute: die zu holenden Attribute, wobei jedes Attribut einer Tabellenspalte zugeordnet wird. Die Attribute müssen in einer durch Kommata getrennten Liste angegeben werden, wobei jedes Attribut optional einem Typ und einer Multiwert-Option zugeordnet werden kann (siehe unten).</p></item>
+      <item><p>der Bereich: der Suchbereich, »subtree« zum Durchsuchen der Basis-DN und der gesamten nachgeordneten Hierarchie, »onlevel«, wenn ausschließlich die Basis-DN und deren direkte Untereinträge berücksichtigt werden sollen, oder »base«, wenn nur die Basis-DN durchsucht werden soll</p></item>
+    </list>
+    <figure>
+      <title>LDAP-Tabelleneigenschaften</title>
+      <desc>LDAP-Tabelleneigenschaften</desc>
+      <media type="image" mime="image/png" src="figures/ldap-table-mapping.png"/>
+    </figure>
+    <p>Im Bild oben <em>enthält</em> die Tabelle »users« alle LDAP-Einträge aus dem LDAP-Eintrag der obersten Ebene der Verbindung. Sie enthält drei Spalten: die DN, »cn« und »jpegPhoto«.</p>
+  </section>
+
+  <section id="ldap-columns-mapping">
+    <title>Attribute zur Spaltenzuordnung</title>
+    <p>Wie im vorangegangenen Abschnitt bereits erwähnt, wird jedes Attribut einer Spalte zugeordnet. Der Spaltentyp wird dabei normalerweise automatisch bestimmt (Zeichenkette, Zahl usw.), kann aber durch Anhängen von »::&lt;type&gt;« an den Attributnamen auf einen bestimmten Typ erzwungen werden.</p>
+    <p>Weil auch einige Attribute mehrere Werte besitzen können, behandelt die Tabellenkonstruktion diese Attribute auf verschiedene Arten, abhängig von den Optionen jedes Attributs. Optionen können durch Anhängen von »::&lt;Option&gt;« an den Attributnamen angegeben werden. Gültige Optionen sind:</p>
+    <list>
+      <item><p>»NULL« oder »0«: Ein NULL-Wert wird für das Attribut zurück gegeben</p></item>
+      <item><p>»CSV«: Eine durch Kommata getrennte Liste mit allen Werten eines Attributs wird zurück gegeben. Dies funktioniert nur für Attributtypen mit Zeichenketten.</p></item>
+      <item><p>»MULT« oder »*«: Eine Zeile wird für jeden der Attributwerte zurück gegeben, womit effektiv die Anzahl der zurückgegebenen Zeilen multipliziert wird</p></item>
+      <item><p>»1«: Nur der erste Attributwert wird verwendet, alle anderen werden ignoriert</p></item>
+      <item><p>»CONCAT«: Die Attributwerte werden aneinander angehängt (mit einem Zeilenumbruch-Zeichen zwischen jedem Wert)</p></item>
+      <item><p>»ERROR«: Ein Fehlerwert wird zurück gegeben (dies ist das Standard-Verhalten)</p></item>
+    </list>
+  </section>
+
+  <section id="ldap-ddl-sql">
+    <title>Verwenden von SQL mit LDAP-Verbindungen</title>
+    <p>Sie können das von <link href="http://sqlite.org/lang.html">SQLite</link> verstandene SQL in jeder LDAP-Verbindung verwenden. Seien Sie sich jedoch bewusst, dass wenn Sie Datenbankobjekte (außerhalb des erweiterten SQL, das im nächsten Abschnitt dargestellt wird) definieren, diese das nächste Mal verloren gehen, wenn die LDAP-Verbindung geöffnet wird.</p>
+    <p>Somit ist es absolut sicher, zum Beispiel eine Tabelle zum Speichern irgendwelcher LDAP-Daten zu erstellen, welche längere Zeit zum Holen erfordern, aber nach dem Schließen der LDAP-Verbindung werden die Tabelle und die enthaltenen Daten verloren gehen.</p>
+    <p>Lesen Sie auch den Abschnitt <link xref="sql-sqlite">Das LDAP-Verbindungen bekannte SQL und virtuelle Verbindungen</link> für weitere Informationen.</p>
+  </section>
+
+  <section id="ldap-sql">
+    <title>SQL-Erweiterung für die Handhabung von LDAP-Tabellen</title>
+    <p>LDAP-Tabellen könne mit Hilfe eines erweiterten Satzes von SQL-Befehlen erstellt werden:</p>
+    <list>
+      <item><p><code>CREATE LDAP TABLE &lt;Tabellenname&gt; [BASE='&lt;Basis_dn&gt;'] [FILTER='&lt;Filter&gt;'] [ATTRIBUTES='&lt;Filter&gt;'] [SCOPE='&lt;Filter&gt;']</code> zur Deklaration einer neuen virtuellen LDAP-Tabelle</p></item>
+      <item><p><code>DESCRIBE LDAP TABLE &lt;Tabellenname&gt;</code> zum Anzeigen der Definition der virtuellen LDAP-Tabelle</p></item>
+      <item><p><code>ALTER LDAP TABLE &lt;Tabellenname&gt; [BASE='&lt;Basis_dn&gt;'] [FILTER='&lt;Filter&gt;'] [ATTRIBUTES='&lt;Filter&gt;'] [SCOPE='&lt;Filter&gt;']</code> zum Verändern der Definition der virtuellen LDAP-Tabelle (nur der angegebene Teil wird tatsächlich verändert)</p></item>
+      <item><p><code>DROP LDAP TABLE &lt;Tabellenname&gt;</code> zum Entfernen einer virtuellen LDAP-Tabelle. Beachten Sie, dass das übliche <code>DROP TABLE &lt;Tabellenname&gt;</code> statt dessen verwendet werden kann.</p></item>
+    </list>
+    <p>Zum Beispiel sollte der folgende SQL-Code</p>
+    <code>
+      CREATE LDAP TABLE users FILTER='(objectClass=inetOrgPerson)'
+              ATTRIBUTES='cn,sn,givenName,seeAlso::*' SCOPE='subtree';
+      SELECT * FROM users WHERE cn like '%john%';
+      ALTER LDAP TABLE users FILTER='(&amp;(objectClass=inetOrgPerson)(cn=*john*))';
+      SELECT * FROM users;
+      DROP LDAP TABLE users;
+    </code>
+    <p>zweimal das gleiche Ergebnis liefern, d.h. alle LDAP-Einträge der Klasse »inetOrgPerson« aufführen, die im CommonName (cn) die Zeichenkette »john« enthalten.</p>
+  </section>
+</page>

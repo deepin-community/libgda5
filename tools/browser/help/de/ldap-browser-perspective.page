@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-browser-perspective" xml:lang="de">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+<title>Die LDAP-Browser-Perspektive</title>
+<p>Mit Hilfe der LDAP-Browser-Perspektive können Sie die im LDAP-Verzeichnis hinterlegten Daten einsehen und manipulieren. Um in diese Perspektive zu wechseln, verwenden Sie das Menü <guiseq><gui>Perspektive</gui><gui>LDAP-Browser</gui></guiseq> oder die Tastenkombination <keyseq><key>Strg</key><key>P</key></keyseq>. Diese Perspektive steht natürlich nur dann zur Verfügung, wenn die geöffnete Verbindung eine <link xref="ldap-connection">LDAP-Verbindung</link> ist.</p>
+<p>Die Perspektive ist horizontal in zwei Bereiche unterteilt: der linke Bereich für benutzerdefinierte bevorzugte Anweisungen (zum Vorhalten von Bezügen auf bestimmte LDAP-Einträge oder -Klassen) und der rechte Bereich als Bedienfläche.</p>
+<figure>
+  <title>Reiter für LDAP-Browsereinträge</title>
+  <desc>Reiter für LDAP-Einträge</desc>
+  <media type="image" mime="image/png" src="figures/ldap-browser-persp.png"/>
+</figure>
+
+<p>Der linke Bereich der Perspektive listet die bevorzugten LDAP-Einträge oder Klassen auf. Durch Doppelklick auf einen der Favoriten werden dessen Eigenschaften im rechten Bereich geöffnet. Beachten Sie, dass die LDAP-Einträge hierbei stets vor den LDAP-Klassen angezeigt werden.</p>
+<p>Die rechte Leiste besteht aus verschiedenen Reitertypen:</p>
+<list>
+  <item><p>Reiter zum Ermitteln der LDAP-DIT (Directory Information Tree): Wenn ein Eintrag im Baum ausgewählt wird, werden dessen Attribute angezeigt (nur die Attribute mit Wert werden angezeigt, alle anderen verborgen). Der DN (Distinguished Name) des Eintrags wird immer zuerst angezeigt. Beachten Sie auch, dass die Unterelemente jedes Eintrags nur bei Bedarf geholt werden, um unnötige Anfragen an den LDAP-Server zu vermeiden.</p></item>
+  <item><p>Reiter zum Erforschen der LDAP-Klassen. Schauen Sie dazu auch die Abbildung unten an. Alle Informationen einer ausgewählten Klasse werden angezeigt (Beschreibung, OID, Typ …)</p></item>
+  <item><p>Reiter zum Suchen in der LDAP. Sehen Sie sich dazu die Abbildung unten an. Eine Definition für eine LDAP-Suche kann als eine virtuelle Tabelle gespeichert werden. Lesen Sie dazu auch <link xref="ldap-connection#ldap-table-mapping">LDAP-Tabellenzuordnung</link>.</p></item>
+</list>
+<figure>
+  <title>Klassenreiter des LDAP-Browsers</title>
+  <desc>Reiter für LDAP-Klassen</desc>
+  <media type="image" mime="image/png" src="figures/ldap-classes.png"/>
+</figure>
+<figure>
+  <title>Suchreiter des LDAP-Browsers</title>
+  <desc>LDAP-Suchreiter</desc>
+  <media type="image" mime="image/png" src="figures/ldap-search.png"/>
+</figure>
+<p>(Durch blauen unterstrichenen Text markierte) Verknüpfungen in diesen Reitern öffnen einen neuen Reiter oder verwenden den Reiter neben dem aktuellen, um die Informationen über die ausgewählte Verknüpfung anzuzeigen. Zum Beispiel zeigt die Abbildung oben einen Reiter mit LDAP-Einträgen. Ein Klick auf »inetOrgPerson« öffnet einen neuen Reiter »LDAP-Klassen« und zeigt Informationen über diese Klasse an.</p>
+
+</page>

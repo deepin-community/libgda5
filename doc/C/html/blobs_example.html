@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Binary large objects (BLOBs) example: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="getting_started.html" title="Code examples">
+<link rel="prev" href="ddl_example.html" title="DDL example">
+<link rel="next" href="other_examples.html" title="Other examples">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="getting_started.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ddl_example.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="other_examples.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="blobs_example"></a>Binary large objects (BLOBs) example</h2></div></div></div>
+<p>
+       The following example is available in the <code class="filename">samples/Blobs</code> source directory
+       and illustrate how to manipulate BLOBs. This test program offers 2 operations which are to
+       store the contents of a file to the database (which returns the ID of the stored data), and to
+       fetch a stored data from the database from its ID (which creates a fetched_&lt;ID&gt; file).
+    </p>
+<p>
+      The code is:
+</p>
+<pre class="programlisting">
+#include &lt;libgda/libgda.h&gt;
+#include &lt;libgda/sql-parser/gda-sql-parser.h&gt;
+#include &lt;libgda/gda-blob-op.h&gt;
+
+GdaConnection *open_connection (void);
+static gboolean do_store (GdaConnection *cnc, const gchar *filename, GError **error);
+static gboolean do_fetch (GdaConnection *cnc, gint id, GError **error);
+
+int
+main (int argc, char *argv[])
+{
+        GdaConnection *cnc;
+	const gchar *filename = NULL;
+	gint id = 0;
+	gboolean store;
+	GError *error = NULL;
+	gboolean result;
+
+	/* parse arguments */
+	if (argc != 3)
+		goto help;
+	if (! g_ascii_strcasecmp (argv[1], "store")) {
+		filename = argv[2];
+		store = TRUE;
+	}
+	else if (! g_ascii_strcasecmp (argv[1], "fetch")) {
+		id = atoi (argv[2]);
+		store = FALSE;
+	}
+	else
+		goto help;
+
+	/* do the job */
+        gda_init ();
+	cnc = open_connection ();
+	if (store)
+		result = do_store (cnc, filename, &amp;error);
+	else
+		result = do_fetch (cnc, id, &amp;error);
+
+	if (gda_connection_get_transaction_status (cnc))
+		g_print ("Still in a transaction, all modifications will be lost when connection is closed\n");
+        gda_connection_close (cnc);
+
+	if (!result) {
+		g_print ("ERROR: %s\n", error &amp;&amp; error-&gt;message ? error-&gt;message : "No detail");
+		g_clear_error (&amp;error);
+	}
+	else
+		g_print ("Ok.\n");
+
+        return result ? 0 : 1;
+
+ help:
+	g_print ("%s [store &lt;filename&gt; | fetch &lt;ID&gt;]\n", argv[0]);
+	return 0;
+}
+
+/*
+ * Open a connection to the example.db file
+ */
+GdaConnection *
+open_connection (void)
+{
+        GdaConnection *cnc;
+        GError *error = NULL;
+        cnc = gda_connection_open_from_string ("SQLite", "DB_DIR=.;DB_NAME=testblob", NULL,
+					       GDA_CONNECTION_OPTIONS_NONE,
+					       &amp;error);
+        if (!cnc) {
+                g_print ("Could not open connection to SQLite database in testblob.db file: %s\n",
+                         error &amp;&amp; error-&gt;message ? error-&gt;message : "No detail");
+                exit (1);
+        }
+        return cnc;
+}
+
+static gboolean
+do_store (GdaConnection *cnc, const gchar *filename, GError **error)
+{
+	if (! g_file_test (filename, G_FILE_TEST_EXISTS) ||
+	    g_file_test (filename, G_FILE_TEST_IS_DIR)) {
+		g_set_error (error, 0, 0,
+			     "%s", "File does not exist or is a directory");
+		return FALSE;
+	}
+
+	GdaSqlParser *parser;
+	GdaStatement *stmt;
+	GdaSet *params, *newrow;
+	GdaHolder *holder;
+	GValue *value;
+	GdaBlob *blob;
+	gint res;
+
+	parser = gda_sql_parser_new ();
+	stmt = gda_sql_parser_parse_string (parser,
+					    "INSERT INTO blobstable (data) VALUES (##blob::blob)",
+					    NULL, error);
+	g_object_unref (parser);
+	if (!stmt)
+		return FALSE;
+
+	if (! gda_statement_get_parameters (stmt, &amp;params, error)) {
+		g_object_unref (stmt);
+		return FALSE;
+	}
+
+	holder = gda_set_get_holder (params, "blob");
+	value = gda_value_new_blob_from_file (filename);
+	blob = (GdaBlob*) gda_value_get_blob (value);
+	g_assert (gda_holder_take_value (holder, value, NULL));
+
+	g_print ("Before writing BLOB: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	g_print ("STORING file '%s' to database BLOB\n", filename);
+	res = gda_connection_statement_execute_non_select (cnc, stmt, params, &amp;newrow, error);
+	g_object_unref (params);
+	g_object_unref (stmt);
+
+	g_print ("After writing BLOB: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	if (newrow) {
+		GSList *list;
+		g_print ("Inserted row is (for each numbered column in the table):\n");
+		for (list = newrow-&gt;holders; list; list = list-&gt;next) {
+			const GValue *value;
+			gchar *tmp;
+			value = gda_holder_get_value (GDA_HOLDER (list-&gt;data));
+			tmp = gda_value_stringify (value);
+			g_print ("  [%s] = [%s]\n", gda_holder_get_id (GDA_HOLDER (list-&gt;data)), tmp);
+			g_free (tmp);
+		}
+		g_object_unref (newrow);
+	}
+	else
+		g_print ("Provider did not return the inserted row\n");
+
+	gda_connection_rollback_transaction (cnc, NULL, NULL);
+	g_print ("After rolling back blob READ transaction: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	return (res == -1) ? FALSE : TRUE;
+}
+
+static gboolean
+do_fetch (GdaConnection *cnc, gint id, GError **error)
+{
+	GdaSqlParser *parser;
+	GdaStatement *stmt;
+	GdaSet *params;
+	GdaDataModel *model;
+	const GValue *value;
+	GdaBlob *blob;
+	gboolean result = TRUE;
+
+	g_print ("Before reading BLOB: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	gchar *filename;
+	filename = g_strdup_printf ("fetched_%d", id);
+	g_print ("FETCHING BLOB with ID %d to file '%s'\n", id, filename);
+
+	parser = gda_sql_parser_new ();
+	stmt = gda_sql_parser_parse_string (parser,
+					    "SELECT data FROM blobstable WHERE id=##id::int",
+					    NULL, error);
+	g_object_unref (parser);
+	if (!stmt)
+		return FALSE;
+
+	if (! gda_statement_get_parameters (stmt, &amp;params, error)) {
+		g_object_unref (stmt);
+		return FALSE;
+	}
+	g_assert (gda_set_set_holder_value (params, NULL, "id", id));
+	model = gda_connection_statement_execute_select (cnc, stmt, params, error);
+	g_object_unref (params);
+	g_object_unref (stmt);
+	if (! model)
+		return FALSE;
+
+	g_print ("After reading BLOB: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	value = gda_data_model_get_value_at (model, 0, 0, error);
+	if (!value) {
+		g_object_unref (model);
+		return FALSE;
+	}
+	g_assert (G_VALUE_TYPE (value) == GDA_TYPE_BLOB);
+	
+	blob = (GdaBlob*) gda_value_get_blob (value);
+	if (blob-&gt;op) {
+		GValue *dest_value;
+		GdaBlob *dest_blob;
+		
+		dest_value = gda_value_new_blob_from_file (filename);
+		dest_blob = (GdaBlob*) gda_value_get_blob (dest_value);
+		result = gda_blob_op_write_all (dest_blob-&gt;op, (GdaBlob*) blob);
+		gda_value_free (dest_value);
+	}
+	else
+		result = g_file_set_contents (filename, (gchar *) ((GdaBinary*)blob)-&gt;data,
+					     ((GdaBinary*)blob)-&gt;binary_length, error);
+	g_free (filename);
+	g_object_unref (model);
+
+	gda_connection_rollback_transaction (cnc, NULL, NULL);
+	g_print ("After rolling back blob READ transaction: %s\n", gda_connection_get_transaction_status (cnc) ?
+		 "Transaction started" : "No transaction started");
+
+	return result;
+}
+
+</pre>
+<p>
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

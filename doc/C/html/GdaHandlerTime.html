@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaHanderTime: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_conv.html" title="Data conversions">
+<link rel="prev" href="GdaHandlerBoolean.html" title="GdaHanderBoolean">
+<link rel="next" href="GdaHandlerNumerical.html" title="GdaHanderNumerical">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaHandlerTime.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaHandlerTime.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaHandlerTime.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_conv.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaHandlerBoolean.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaHandlerNumerical.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaHandlerTime"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaHandlerTime.top_of_page"></a>GdaHanderTime</span></h2>
+<p>GdaHanderTime — Default handler for time values</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaHandlerTime.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaHandlerTime.html#gda-handler-time-new" title="gda_handler_time_new ()">gda_handler_time_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaHandlerTime.html#gda-handler-time-new-no-locale" title="gda_handler_time_new_no_locale ()">gda_handler_time_new_no_locale</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaHandlerTime.html#gda-handler-time-set-sql-spec" title="gda_handler_time_set_sql_spec ()">gda_handler_time_set_sql_spec</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaHandlerTime.html#gda-handler-time-set-str-spec" title="gda_handler_time_set_str_spec ()">gda_handler_time_set_str_spec</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaHandlerTime.html#gda-handler-time-get-format" title="gda_handler_time_get_format ()">gda_handler_time_get_format</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaHandlerTime.html#GdaHandlerTime-struct" title="struct GdaHandlerTime">GdaHandlerTime</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaHandlerTime.html#GdaHandlerTimeClass" title="struct GdaHandlerTimeClass">GdaHandlerTimeClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaHandlerTime.html#GdaHandlerTimePriv" title="GdaHandlerTimePriv">GdaHandlerTimePriv</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaHandlerTime
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaHandlerTime implements
+ <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler">GdaDataHandler</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-blob-op.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.description"></a><h2>Description</h2>
+<p>You should normally not need to use this API, refer to the <a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a>
+interface documentation for more information.</p>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-handler-time-new"></a><h3>gda_handler_time_new ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_handler_time_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a data handler for time values</p>
+<div class="refsect3">
+<a name="gda-handler-time-new.returns"></a><h4>Returns</h4>
+<p>the new object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-handler-time-new-no-locale"></a><h3>gda_handler_time_new_no_locale ()</h3>
+<pre class="programlisting"><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="returnvalue">GdaDataHandler</span></a> *
+gda_handler_time_new_no_locale (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a data handler for time values, but using the default C locale
+instead of the current user locale.</p>
+<div class="refsect3">
+<a name="gda-handler-time-new-no-locale.returns"></a><h4>Returns</h4>
+<p>the new object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-handler-time-set-sql-spec"></a><h3>gda_handler_time_set_sql_spec ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_handler_time_set_sql_spec (<em class="parameter"><code><a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> *dh</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> first</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> sec</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> third</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> separator</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> twodigits_years</code></em>);</pre>
+<p>Specifies the SQL output style of the <em class="parameter"><code>dh</code></em>
+ data handler. The general format is "FIRSTsSECsTHIRD"
+where FIRST, SEC and THIRD are specified by <em class="parameter"><code>first</code></em>
+, <em class="parameter"><code>sec</code></em>
+ and <em class="parameter"><code>trird</code></em>
+ and 's' is the separator,
+specified by <em class="parameter"><code>separator</code></em>
+.</p>
+<p>The default implementation is <em class="parameter"><code>first</code></em>
+=G_DATE_MONTH, <em class="parameter"><code>sec</code></em>
+=G_DATE_DAY and <em class="parameter"><code>third</code></em>
+=G_DATE_YEAR
+(the year is rendered on 4 digits) and the separator is '-'</p>
+<div class="refsect3">
+<a name="gda-handler-time-set-sql-spec.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first</p></td>
+<td class="parameter_description"><p>what comes first in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sec</p></td>
+<td class="parameter_description"><p>what comes second in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>third</p></td>
+<td class="parameter_description"><p>what comes third in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>separator</p></td>
+<td class="parameter_description"><p>separator character used between year, month and day</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>twodigits_years</p></td>
+<td class="parameter_description"><p>TRUE if year part of date must be rendered on 2 digits</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-handler-time-set-str-spec"></a><h3>gda_handler_time_set_str_spec ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_handler_time_set_str_spec (<em class="parameter"><code><a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> *dh</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> first</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> sec</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html#GDateDMY"><span class="type">GDateDMY</span></a> third</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> separator</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> twodigits_years</code></em>);</pre>
+<p>Specifies the human readable output style of the <em class="parameter"><code>dh</code></em>
+ data handler.
+The general format is "FIRSTsSECsTHIRD"
+where FIRST, SEC and THIRD are specified by <em class="parameter"><code>first</code></em>
+, <em class="parameter"><code>sec</code></em>
+ and <em class="parameter"><code>trird</code></em>
+ and 's' is the separator,
+specified by <em class="parameter"><code>separator</code></em>
+.</p>
+<p>The default implementation depends on the current locale, except if <em class="parameter"><code>dh</code></em>
+ was created
+using <a class="link" href="GdaHandlerTime.html#gda-handler-time-new-no-locale" title="gda_handler_time_new_no_locale ()"><code class="function">gda_handler_time_new_no_locale()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-handler-time-set-str-spec.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first</p></td>
+<td class="parameter_description"><p>what comes first in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sec</p></td>
+<td class="parameter_description"><p>what comes second in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>third</p></td>
+<td class="parameter_description"><p>what comes third in the date representation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>separator</p></td>
+<td class="parameter_description"><p>separator character used between year, month and day</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>twodigits_years</p></td>
+<td class="parameter_description"><p>TRUE if year part of date must be rendered on 2 digits</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-handler-time-get-format"></a><h3>gda_handler_time_get_format ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_handler_time_get_format (<em class="parameter"><code><a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> *dh</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>Get a string representing the locale-dependent way to enter a date/time/datetime, using
+a syntax suitable for the <span class="type">GdauiFormatEntry</span> widget</p>
+<div class="refsect3">
+<a name="gda-handler-time-get-format.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dh</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHandlerTime.html" title="GdaHanderTime"><span class="type">GdaHandlerTime</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of data being handled</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-handler-time-get-format.returns"></a><h4>Returns</h4>
+<p> a new string</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaHandlerTime-struct"></a><h3>struct GdaHandlerTime</h3>
+<pre class="programlisting">struct GdaHandlerTime;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaHandlerTimeClass"></a><h3>struct GdaHandlerTimeClass</h3>
+<pre class="programlisting">struct GdaHandlerTimeClass {
+	GObjectClass         parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaHandlerTimePriv"></a><h3>GdaHandlerTimePriv</h3>
+<pre class="programlisting">typedef struct _GdaHandlerTimePriv GdaHandlerTimePriv;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaHandlerTime.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="libgda-5.0-Default-Data-handlers.html#GdaDataHandler"><span class="type">GdaDataHandler</span></a> interface</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

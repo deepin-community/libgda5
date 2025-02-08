@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Methods - DML queries: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="libgda-provider-class.html" title="Virtual methods for providers">
+<link rel="prev" href="ch44s06.html" title="Methods - transactions management">
+<link rel="next" href="ch44s08.html" title="Methods - data representation">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="libgda-provider-class.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch44s06.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch44s08.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.9.7.11"></a>Methods - DML queries</h2></div></div></div>
+<p>
+      This group of virtual methods is related to executing SQL queries of any kind. <span class="application">Libgda</span> imposes that SQL
+      statements be converted to one or more <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object(s), each
+      GdaStatement object containing exactly one SQL statement (usually terminated
+      by a semi colon). Each GdaStatement can then be prepared and/or executed individually.
+    </p>
+<p>
+      Creating a <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object from some SQL is the job of a
+      <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a> object.
+    </p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.11.4"></a>create_parser()</h3></div></div></div>
+<p>
+	This method instantiates a <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a> object which is
+	adapted to the database's specific SQL dialect. If the provider does not implement its own parser,
+	then this method should not be implemented.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.11.5"></a>statement_to_sql()</h3></div></div></div>
+<p>
+	This method converts a <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object to its SQL representation. It should be
+	implemented only if the default rendering is incorrect (to support some SQL specific dialect). The rendering process
+	is decomposed into several rendering methods, and it is possible to override only some of the methods (see the
+	PostgreSQL's implementation as an example).
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.11.6"></a>statement_prepare()</h3></div></div></div>
+<p>
+	This method requests that a <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object be prepared for a future execution.
+	It is called when <a class="link" href="GdaConnection.html#gda-connection-statement-prepare" title="gda_connection_statement_prepare ()">gda_connection_statement_prepare()</a> is called.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.11.7"></a>statement_execute() - mandatory</h3></div></div></div>
+<p>
+	This method actually executes a query represented by a <a class="link" href="GdaStatement.html" title="GdaStatement">GdaStatement</a> object. See
+	<a class="link" href="GdaConnection.html#gda-connection-statement-execute" title="gda_connection_statement_execute ()">gda_connection_statement_execute()</a> for more information, note that
+	this method is also always the one called when any of the gda_connection_statement_execute*() methods are called.
+      </p>
+<p>
+	A non NULL <em class="parameter"><code>exec_cb</code></em> parameter specifies that the user requests an asynchronous execution: the
+	function has to return the NULL value immediately (it must not be blocking), and the <em class="parameter"><code>task_id</code></em>
+	parameter must be set to contain a provider specific task ID.
+	The <em class="parameter"><code>exec_cb</code></em> parameter points to a callback function (specified by the
+	<a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a>) which the provider has to call once the statement has been
+	executed, using the same task ID which was defined when the statement_execute() function was called, and
+	the <em class="parameter"><code>cb_data</code></em> specified when the statement_execute() function was called.
+      </p>
+<p>
+	Note that if an asynchronous execution is requested, then the <em class="parameter"><code>stmt</code></em>, <em class="parameter"><code>params</code></em>,
+	<em class="parameter"><code>col_types</code></em>, <em class="parameter"><code>last_inserted_row</code></em>, and <em class="parameter"><code>cb_data</code></em>
+	parameters are supposed to exist and not be altered during the time the statement is executed (the
+	<a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> ensures this) which means it's not necessary to make copies
+	of them during the execution.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.9.7.11.8"></a>handle_async()</h3></div></div></div>
+<p>
+        This method is called by <a class="link" href="GdaConnection.html#gda-connection-async-fetch-result" title="gda_connection_async_fetch_result ()">gda_connection_async_fetch_result().</a>
+      </p>
+<p>
+	This method, if implemented, is called to give the database provider a chance to execute some code in case an
+	asynchronous statement's execution has been requested. Often providers will send some data over the network to the
+	database server when the statement_execute() is called, and implement this virtual function as a way to get
+	some data from the database server to see if the execution is terminated.
+      </p>
+<p>
+        This function must return FALSE in case an error occurs, and TRUE if no error occurred (even if nothing was to be done).
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

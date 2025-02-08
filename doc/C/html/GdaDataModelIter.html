@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataModelIter: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaColumn.html" title="GdaDataModel columns">
+<link rel="next" href="GdaDataModelImport.html" title="GdaDataModelImport">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelIter.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelIter.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelIter.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelIter.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaColumn.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaDataModelImport.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaDataModelIter"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaDataModelIter.top_of_page"></a>GdaDataModelIter</span></h2>
+<p>GdaDataModelIter — Data model iterator</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaDataModelIter.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-at" title="gda_data_model_iter_get_value_at ()">gda_data_model_iter_get_value_at</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-at-e" title="gda_data_model_iter_get_value_at_e ()">gda_data_model_iter_get_value_at_e</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-for-field" title="gda_data_model_iter_get_value_for_field ()">gda_data_model_iter_get_value_for_field</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-set-value-at" title="gda_data_model_iter_set_value_at ()">gda_data_model_iter_set_value_at</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()">gda_data_model_iter_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-to-row" title="gda_data_model_iter_move_to_row ()">gda_data_model_iter_move_to_row</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-next" title="gda_data_model_iter_move_next ()">gda_data_model_iter_move_next</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-prev" title="gda_data_model_iter_move_prev ()">gda_data_model_iter_move_prev</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-row" title="gda_data_model_iter_get_row ()">gda_data_model_iter_get_row</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-holder-for-field" title="gda_data_model_iter_get_holder_for_field ()">gda_data_model_iter_get_holder_for_field</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-invalidate-contents" title="gda_data_model_iter_invalidate_contents ()">gda_data_model_iter_invalidate_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter--current-row" title="The “current-row” property">current-row</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter--data-model" title="The “data-model” property">data-model</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter--forced-model" title="The “forced-model” property">forced-model</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter--update-model" title="The “update-model” property">update-model</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter-end-of-data" title="The “end-of-data” signal">end-of-data</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter-row-changed" title="The “row-changed” signal">row-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaDataModelIter.html#GdaDataModelIter-struct" title="GdaDataModelIter">GdaDataModelIter</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a>
+        <span class="lineart">╰──</span> GdaDataModelIter
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;virtual/gda-ldap-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.description"></a><h2>Description</h2>
+<p>A <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object is used to iterate through the rows of a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. If the data model is accessible
+in a random access way then any number of <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> objects can be created on the same data model, and
+if the data model only supports a cursor based access then only one <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> can be created. In any case
+creating a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> should be done using the <a class="link" href="GdaDataModel.html#gda-data-model-create-iter" title="gda_data_model_create_iter ()"><code class="function">gda_data_model_create_iter()</code></a> method. Note that if 
+the data model only supports a cursor based access, then calling this method several times will always return
+the same <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a>, but with its reference count increased by 1 (so you should call <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> when
+finished with it).</p>
+<p>When a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> is valid (that is when it points to an existing row in the data model it iterates through),
+the individual values (corresponding to each column of the data model, at the pointer row) can be accessed 
+using the <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-at" title="gda_data_model_iter_get_value_at ()"><code class="function">gda_data_model_iter_get_value_at()</code></a> or <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-for-field" title="gda_data_model_iter_get_value_for_field ()"><code class="function">gda_data_model_iter_get_value_for_field()</code></a> methods
+(or in the same way <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>'s values are accessed as <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> inherits the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>).</p>
+<p>Right after being created, a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> is invalid (does not point to any row of its data model). To read the
+first row of the data model, use the <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-next" title="gda_data_model_iter_move_next ()"><code class="function">gda_data_model_iter_move_next()</code></a> method. Calling this method several times will
+move the iterator forward, up to when the data model has no more rows and the <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> will be declared invalid
+(and <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-next" title="gda_data_model_iter_move_next ()"><code class="function">gda_data_model_iter_move_next()</code></a> has returned FALSE). Note that at this point, the number of rows in the data
+model will be known.</p>
+<p>If the data model supports it, a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> can be moved backwards using the <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-prev" title="gda_data_model_iter_move_prev ()"><code class="function">gda_data_model_iter_move_prev()</code></a>
+method. However if the iterator is invalid, moving backwards will not be possible (on the contrary to 
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-next" title="gda_data_model_iter_move_next ()"><code class="function">gda_data_model_iter_move_next()</code></a> which moves to the first row).</p>
+<p>The <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-move-to-row" title="gda_data_model_iter_move_to_row ()"><code class="function">gda_data_model_iter_move_to_row()</code></a> method, if the iterator can be moved both forward and backwards, can move the 
+iterator to a specific row (sometimes faster than moving it forward or backwards a number of times).</p>
+<p>The following figure illustrates the <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> usage:</p>
+<div class="mediaobject"><img src="GdaDataModelIter.png" width="673" alt="GdaDataModelIter's usage"></div>
+<p>Note: the new <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> does not hold any reference to the data model it iterates through (ie.
+if this data model is destroyed at some point, the new iterator will become useless but in
+any case it will not prevent the data model from being destroyed).</p>
+<p>Note: when the data model emits the "reset" signal, then:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the number of columns of the iterator can change to reflect the new data model
+   being itered on. In this case the iterator's position is reset as if it was
+   just created</p></li>
+<li class="listitem"><p>some column types which were unknown (i.e. GDA_TYPE_NULL type), can change
+   to their correct type. In this case there is no other iterator change</p></li>
+<li class="listitem"><p>some column types which were not GDA_TYPE_NULL can change, and in this case
+   the iterator's position is reset as if it was just created</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-model-iter-get-value-at"></a><h3>gda_data_model_iter_get_value_at ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_model_iter_get_value_at (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> col</code></em>);</pre>
+<p>Get the value stored at the column <em class="parameter"><code>col</code></em>
+ in <em class="parameter"><code>iter</code></em>
+. The returned value must not be modified.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-at.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col</p></td>
+<td class="parameter_description"><p>the requested column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-at.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value could not be fetched. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-get-value-at-e"></a><h3>gda_data_model_iter_get_value_at_e ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_model_iter_get_value_at_e (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> col</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the value stored at the column <em class="parameter"><code>col</code></em>
+ in <em class="parameter"><code>iter</code></em>
+. The returned value must not be modified.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-at-e.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col</p></td>
+<td class="parameter_description"><p>the requested column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-at-e.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the value could not be fetched. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-get-value-for-field"></a><h3>gda_data_model_iter_get_value_for_field ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_data_model_iter_get_value_for_field
+                               (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *field_name</code></em>);</pre>
+<p>Get the value stored at the column <em class="parameter"><code>field_name</code></em>
+ in <em class="parameter"><code>iter</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-for-field.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>field_name</p></td>
+<td class="parameter_description"><p>the requested column name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-value-for-field.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-set-value-at"></a><h3>gda_data_model_iter_set_value_at ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_model_iter_set_value_at (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> col</code></em>,
+                                  <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Sets a value in <em class="parameter"><code>iter</code></em>
+, at the column specified by <em class="parameter"><code>col</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-set-value-at.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col</p></td>
+<td class="parameter_description"><p>the column number</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> (not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-set-value-at.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-is-valid"></a><h3>gda_data_model_iter_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_model_iter_is_valid (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>);</pre>
+<p>Tells if <em class="parameter"><code>iter</code></em>
+ is a valid iterator (if it actually corresponds to a valid row in the model)</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-is-valid.returns"></a><h4>Returns</h4>
+<p> TRUE if <em class="parameter"><code>iter</code></em>
+is valid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-move-to-row"></a><h3>gda_data_model_iter_move_to_row ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_model_iter_move_to_row (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                 <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);</pre>
+<p>Synchronizes the values of the parameters in <em class="parameter"><code>iter</code></em>
+ with the values at the <em class="parameter"><code>row</code></em>
+ row.</p>
+<p>If <em class="parameter"><code>row</code></em>
+ is not a valid row, then the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, and the "current-row"
+property is set to -1 (which means that <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()"><code class="function">gda_data_model_iter_is_valid()</code></a> would return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>),
+with the exception that if <em class="parameter"><code>row</code></em>
+ is -1, then the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
+<p>This function can return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if it was not allowed to be moved (as it emits the
+"validate-set" signal before being moved).</p>
+<p>When this function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <em class="parameter"><code>iter</code></em>
+ has actually been moved to the next row,
+but some values may not have been read correctly in the row, in which case the
+correcsponding <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> will be left invalid.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-to-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>row</p></td>
+<td class="parameter_description"><p>the row to set <em class="parameter"><code>iter</code></em>
+to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-to-row.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-move-next"></a><h3>gda_data_model_iter_move_next ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_model_iter_move_next (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>);</pre>
+<p>Moves <em class="parameter"><code>iter</code></em>
+ one row further than where it already is 
+(synchronizes the values of the parameters in <em class="parameter"><code>iter</code></em>
+ with the values at the new row).</p>
+<p>If the iterator was on the data model's last row, then it can't be moved forward
+anymore, and the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>; note also that the "current-row" property
+is set to -1 (which means that <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()"><code class="function">gda_data_model_iter_is_valid()</code></a> would return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>)</p>
+<p>This function can return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if it was not allowed to be moved (as it emits the
+"validate-set" signal before being moved).</p>
+<p>When this function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <em class="parameter"><code>iter</code></em>
+ has actually been moved to the next row,
+but some values may not have been read correctly in the row, in which case the
+correcsponding <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> will be left invalid.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-next.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-next.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the iterator is now at the next row</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-move-prev"></a><h3>gda_data_model_iter_move_prev ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_model_iter_move_prev (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>);</pre>
+<p>Moves <em class="parameter"><code>iter</code></em>
+ one row before where it already is (synchronizes the values of the parameters in <em class="parameter"><code>iter</code></em>
+ 
+with the values at the new row).</p>
+<p>If the iterator was on the data model's first row, then it can't be moved backwards
+anymore, and the returned value is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>; note also that the "current-row" property
+is set to -1 (which means that <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()"><code class="function">gda_data_model_iter_is_valid()</code></a> would return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>).</p>
+<p>This function can return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if it was not allowed to be moved (as it emits the
+"validate-set" signal before being moved).</p>
+<p>When this function returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <em class="parameter"><code>iter</code></em>
+ has actually been moved to the next row,
+but some values may not have been read correctly in the row, in which case the
+correcsponding <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> will be left invalid.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-prev.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-move-prev.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the iterator is now at the previous row</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-get-row"></a><h3>gda_data_model_iter_get_row ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_data_model_iter_get_row (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>);</pre>
+<p>Get the row which <em class="parameter"><code>iter</code></em>
+ represents in the data model</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-row.returns"></a><h4>Returns</h4>
+<p> the row number, or -1 if <em class="parameter"><code>iter</code></em>
+is invalid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-get-holder-for-field"></a><h3>gda_data_model_iter_get_holder_for_field ()</h3>
+<pre class="programlisting"><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+gda_data_model_iter_get_holder_for_field
+                               (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> col</code></em>);</pre>
+<p>Fetch a pointer to the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object which is synchronized with data at 
+column <em class="parameter"><code>col</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-holder-for-field.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col</p></td>
+<td class="parameter_description"><p>the requested column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-iter-get-holder-for-field.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-iter-invalidate-contents"></a><h3>gda_data_model_iter_invalidate_contents ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_data_model_iter_invalidate_contents
+                               (<em class="parameter"><code><a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter</code></em>);</pre>
+<p>Declare all the parameters in <em class="parameter"><code>iter</code></em>
+ invalid, without modifying the
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> <em class="parameter"><code>iter</code></em>
+ is for or changing the row it represents. This method
+is for internal usage. Note that for <a class="link" href="GdaDataModelIter.html#gda-data-model-iter-is-valid" title="gda_data_model_iter_is_valid ()"><code class="function">gda_data_model_iter_is_valid()</code></a> to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>,
+it is also necessary to set the "current-row" property to -1.</p>
+<div class="refsect3">
+<a name="gda-data-model-iter-invalidate-contents.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataModelIter-struct"></a><h3>GdaDataModelIter</h3>
+<pre class="programlisting">typedef struct _GdaDataModelIter GdaDataModelIter;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaDataModelIter--current-row"></a><h3>The <code class="literal">“current-row”</code> property</h3>
+<pre class="programlisting">  “current-row”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>Current represented row in the data model.</p>
+<p>Owner: GdaDataModelIter</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelIter--data-model"></a><h3>The <code class="literal">“data-model”</code> property</h3>
+<pre class="programlisting">  “data-model”               <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</pre>
+<p>Data model for which the iter is for.</p>
+<p>Owner: GdaDataModelIter</p>
+<p>Flags: Read / Write / Construct</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelIter--forced-model"></a><h3>The <code class="literal">“forced-model”</code> property</h3>
+<pre class="programlisting">  “forced-model”             <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *</pre>
+<p>Overrides the data model the iter is attached to (reserved for internal usage).</p>
+<p>Owner: GdaDataModelIter</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelIter--update-model"></a><h3>The <code class="literal">“update-model”</code> property</h3>
+<pre class="programlisting">  “update-model”             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Owner: GdaDataModelIter</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaDataModelIter-end-of-data"></a><h3>The <code class="literal">“end-of-data”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>          user_data)</pre>
+<p>Gets emitted when <em class="parameter"><code>iter</code></em>
+ has reached the end of available data (which means the previous
+row it was on was the last one).</p>
+<div class="refsect3">
+<a name="GdaDataModelIter-end-of-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelIter-row-changed"></a><h3>The <code class="literal">“row-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a> *iter,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>              row,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>          user_data)</pre>
+<p>Gets emitted when the row <em class="parameter"><code>iter</code></em>
+ is currently pointing has changed</p>
+<div class="refsect3">
+<a name="GdaDataModelIter-row-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter"><span class="type">GdaDataModelIter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>row</p></td>
+<td class="parameter_description"><p>the new iter's row</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelIter.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

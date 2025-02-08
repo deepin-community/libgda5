@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="features" xml:lang="cs">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="index#presentation"/>	
+  </info>
+  <title>Funkce</title>
+  <p>Funkčnost aplikace <app>gda-browser</app> v současnosti zahrnuje:</p>
+  <section id="features-gen-ui">
+    <title>Uživatelské rozhraní obecně</title>
+    <list>	
+      <item><p>vícevláknová aplikace: každé připojení je obsluhováno ve svém vlastním vlákně, takže nemůže jedno připojení zablokovat celou aplikaci</p></item>
+      <item><p>pro jedno připojení může být otevřeno několik oken</p></item>
+      <item><p>režim celé obrazovky zpřístupňuje k použití maximum možného místa</p></item>
+    </list>
+  </section>
+  <section id="features-cnc-mgmt">
+    <title>Správa připojení</title>
+    <list>
+      <item><p>v jednu chvíli může být otevřeno více připojení současně</p></item>
+      <item><p>svazování spojení: je možné několik připojení <link type="topic" xref="virtual-connections">„svázat“</link> dohromady do jednoho, aby se mohly prováděl příkazy SQL nad více připojeními naráz</p></item>
+      <item><p>vícevláknová aplikace: každé připojení je obsluhováno ve svém vlastním vlákně, takže nemůže jedno připojení zablokovat celou aplikaci</p></item>
+    </list>
+  </section>
+  <section id="features-activities">
+    <title>Aktivity</title>
+    <p>Aktivity jsou seskupeny podle tématu do <link type="topic" xref="general-ui">hledisek</link>. V současnosti jsou implementovány tyto:</p>
+    <list>	
+      <item><p>analýza databázového schématu (tabulky, vztahy mezi nimi, …), viz <link xref="schema-browser-perspective">hledisko Prohlížeč schématu</link></p></item>
+      <item><p>spouštění příkazů SQL, viz <link xref="query-execution-perspective">hledisko Prováděn dotazu</link></p></item>
+      <item><p>analýza obsahu tabulky, viz <link xref="data-manager-perspective">hledisko Správce dat</link></p></item>
+      <item><p>pro <link xref="ldap-connection">připojení k adresářům LDAP</link>, správu hierarchických dat ve stromu LDAP, viz <link xref="ldap-browser-perspective">hledisko Prohlížeč adresáře LDAP</link></p></item>
+    </list>
+    <p>Viz také oddíl věnovaný <link xref="actions">akcím</link></p>
+  </section>
+  <section id="features-open">
+    <title>Otevřenost</title>
+    <list>
+      <item><p>je možné importovat soubory CSV a další textové soubory a používat je ve spojení se <link type="topic" xref="virtual-connections">svazováním připojení</link></p></item>
+      <item><p>obecný vývojářský rámec aplikace je dostatečně otevřeny, aby šli přidávat nové vestavěné funkce, hlavně se každý může přidat k vývoji nových <link type="topic" xref="general-ui">hledisek</link></p></item>      
+    </list>
+  </section>
+</page>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="virtual-connections" xml:lang="zh-CN">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>连接绑定(即虚拟连接)</title>
+  <p>连接绑定功能是一个可以 "联合" 几个连接 并/或输入数据集到一个单一连接，与使用普通连接几乎一样。</p>
+  <p>
+    This feature is useful when one needs to execute an SQL command (for example to extract data)
+    taking into account data actually stored in different databases. Without this feature, the way
+    to achieve the same result is by exporting the necessary data from each database and work on
+    the data outside of the databases.
+  </p>
+  <p>
+    To create a new "bound" connection (or "virtual" connection), use the
+    <guiseq><gui>Connection</gui><gui>Bind connection</gui></guiseq> menu, or the
+    <keyseq><key>Ctrl</key><key>i</key></keyseq> shortcut. This pops up a new dialog window
+    from which elements to be included in the "bound" connection can be defined as shown below.
+  </p>
+  <figure>
+    <title>建立新虚拟连接对话框</title>
+    <desc>这里的当前连接 (c1) 将绑定到 "c1" 架构</desc>
+    <media type="image" mime="image/png" src="figures/virtual-cnc.png"/>
+  </figure>
+  <p>
+    Use the <guiseq><gui>Add binding</gui></guiseq> button to either:
+  </p>
+  <list>	
+    <item><p>bind a connection to include all the tables of that connection: use the <guiseq><gui>Bind a connection</gui></guiseq> option. This option simply adds a new element in the dialog, to specify a schema name and select an existing connection</p></item>
+    <item><p>bind a data set to import data from a text file as a single table: use the <guiseq><gui>Bind a data set</gui></guiseq> option. See section below for more information.</p></item>
+  </list>
+
+  <section id="vcnc-use-case">
+    <title>虚拟连接的用例</title>
+    <p>为了图解虚拟连接的使用，让我们定义一个简单的用例来看看虚拟连接是多么的有用。假设您有一个包含自己负责的服务器列表的数据库。简单起见，假定这个数据库中包含一张名为“server”的、使用以下方式定义的表：</p>
+    <code>CREATE TABLE servers (name string, location string);</code>
+    <p>我们假设表里含有下列信息：</p>
+    <code>
+&gt; select * from servers ;
+name     | location
+---------+---------
+moon     | room1   
+darkstar | room2   
+flag     | room3   
+alf      | room2   
+vador    | room3   
+(5 rows)
+&gt;
+    </code>
+    <p>现在我们假设你有一个第三方的程序给你了一份有可能出问题的服务器列表, 这个程序输出的CSV文件中有一列是服务器名，一列是错误代码，还有一列是错误的描述。让我们假设这个CSV文件有下列内容： </p>
+    <code>
+$ cat problems.csv 
+Server name,Error code,Error description
+darkstar,0,文件系统已满
+vador,1,过期的AV签名
+darkstar,2,过载
+flag,0,文件系统已满
+$
+    </code>
+    <p>
+      Let's suppose now you want to know all the servers, where they are located where there is a problem with
+      error code 0. The solution is to bind the connection to the database (for example in the "c1" schema), import
+      the problems CSV file (for example in the "tab" table), and execute the following SQL command:
+    </p>
+    <code>
+SELECT 
+  "server name", 
+  location
+FROM tab
+  INNER JOIN c1.servers AS s ON (tab."server name" = s.name)
+WHERE "Error code"=0
+    </code>
+    <p>
+      Which returns the expected results as shown in the following figure:
+    </p>
+    <figure>
+      <title>Expected results from virtual connection</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-4.png"/>
+    </figure>
+  </section>
+
+
+  <section id="vcnc-import-dataset">
+    <title>Importing a data set into a virtual connection</title>
+    <p>
+      To import a data set into a table in the virtual connection (for example to import the "problems.csv" file
+      from the use case), use the <guiseq><gui>Bind a data set</gui></guiseq> option from the virtual connection
+      creation dialog:
+    </p>
+    <figure>
+      <title>Import a data set into a virtual connection - 1</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-5.png"/>
+    </figure>
+    <p>
+      From there use the <guiseq><gui>Import</gui></guiseq> button which allows you to select a file
+      to import and also define some import options (file encoding, file type, ...) After this step,
+      the virtual connection is ready to be used:
+    </p>
+    <figure>
+      <title>Import a data set into a virtual connection - 2</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-2.png"/>
+    </figure>
+    <p>
+      The resulting virtual connection, identified as "c2" here is opened in its own new window:
+    </p>
+    <figure>
+      <title>New opened virtual connection</title>
+      <media type="image" mime="image/png" src="figures/virtual-cnc-3.png"/>
+    </figure>
+  </section>
+
+  <section id="virtual-ddl-sql">
+    <title>虚拟连接可以使用的 SQL</title>
+    <p>
+      You can use the SQL understood by <link href="http://sqlite.org/lang.html">SQLite</link> in any virtual
+      connection. Be aware however that if you define database objects (outside of the extended SQL
+      presented next section), they will be lost the next time the virtual connection is opened.
+    </p>
+    <p>
+      See the <link xref="sql-sqlite">SQL understood by LDAP connections and virtual connections</link>
+      section for more information.
+    </p>
+  </section>
+</page>

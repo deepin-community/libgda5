@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataModelLdap: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaRow.html" title="GdaRow">
+<link rel="next" href="libgda-5.0-GdaDataModelBdb.html" title="GdaDataModelBdb">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelLdap.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelLdap.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelLdap.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaDataModelLdap.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaRow.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-GdaDataModelBdb.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaDataModelLdap"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaDataModelLdap.top_of_page"></a>GdaDataModelLdap</span></h2>
+<p>GdaDataModelLdap — GdaDataModel to extract LDAP information</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Unstable"><span class="acronym">Unstable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelLdap.html#gda-data-model-ldap-new" title="gda_data_model_ldap_new ()">gda_data_model_ldap_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaDataModelLdap.html" title="GdaDataModelLdap"><span class="returnvalue">GdaDataModelLdap</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelLdap.html#gda-data-model-ldap-new-with-config" title="gda_data_model_ldap_new_with_config ()">gda_data_model_ldap_new_with_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataModelLdap.html#gda-data-model-ldap-compute-columns" title="gda_data_model_ldap_compute_columns ()">gda_data_model_ldap_compute_columns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap--attributes" title="The “attributes” property">attributes</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap--base" title="The “base” property">base</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap--cnc" title="The “cnc” property">cnc</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap--filter" title="The “filter” property">filter</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap--scope" title="The “scope” property">scope</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdap-struct" title="struct GdaDataModelLdap">GdaDataModelLdap</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdapClass" title="struct GdaDataModelLdapClass">GdaDataModelLdapClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaDataModelLdap.html#GdaDataModelLdapPrivate" title="GdaDataModelLdapPrivate">GdaDataModelLdapPrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaDataModelLdap.html#GdaLdapSearchScope" title="enum GdaLdapSearchScope">GdaLdapSearchScope</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaDataModelLdap
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaDataModelLdap implements
+ <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaDataModelLdap.html" title="GdaDataModelLdap"><span class="type">GdaDataModelLdap</span></a> object allows to perform LDAP searches.</p>
+<p>Note: this type of data model is available only if the LDAP library was found at compilation time and
+if the LDAP provider is correctly installed.</p>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-model-ldap-new"></a><h3>gda_data_model_ldap_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="returnvalue">GdaDataModel</span></a> *
+gda_data_model_ldap_new (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *base_dn</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filter</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attributes</code></em>,
+                         <em class="parameter"><code><a class="link" href="GdaDataModelLdap.html#GdaLdapSearchScope" title="enum GdaLdapSearchScope"><span class="type">GdaLdapSearchScope</span></a> scope</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gda_data_model_ldap_new</code> has been deprecated since version 5.2 and should not be used in newly-written code.</p>
+<p>use <a class="link" href="GdaDataModelLdap.html#gda-data-model-ldap-new-with-config" title="gda_data_model_ldap_new_with_config ()"><span class="type">gda_data_model_ldap_new_with_config</span></a></p>
+</div>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object to extract some LDAP contents. The returned data model will
+contain one row for each LDAP entry returned by the search, and will
+always return the DN (Distinguished Name) of the LDAP entry as first column. Other atttibutes
+may be mapped to other columns, see the <em class="parameter"><code>attributes</code></em>
+ argument.</p>
+<p>Note that the actual LDAP search command is not executed until necessary (when using the returned
+data model).</p>
+<p>The <em class="parameter"><code>base_dn</code></em>
+ is the point in the LDAP's DIT (Directory Information Tree) from where the search will
+occur, for example "dc=gda,dc=org". A <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value indicates that the starting point for the
+search will be the one specified when opening the LDAP connection.</p>
+<p>The <em class="parameter"><code>filter</code></em>
+ argument is a valid LDAP filter string, for example "(uidNumber=1001)". If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then
+a default search filter of "(objectClass=*)" will be used.</p>
+<p><em class="parameter"><code>attributes</code></em>
+ specifies which LDAP attributes the search must return. It is a comma separated list
+of attribute names, for example "uidNumber, mail, uid, jpegPhoto" (spaces between attribute names
+are ignored). If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then no attribute will be fetched. See <a class="link" href="GdaLdapConnection.html#gda-ldap-connection-declare-table" title="gda_ldap_connection_declare_table ()"><code class="function">gda_ldap_connection_declare_table()</code></a>
+for more information about this argument.</p>
+<p><em class="parameter"><code>scope</code></em>
+ is the scope of search specified when the LDAP search is actually executed.</p>
+<p>In case of multi valued attributes, an error will be returned when trying to read the attribute:
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-at" title="gda_data_model_iter_get_value_at ()"><code class="function">gda_data_model_iter_get_value_at()</code></a> will return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> when using an iterator.</p>
+<div class="refsect3">
+<a name="gda-data-model-ldap-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>an LDAP opened connection (must be a balid <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>base_dn</p></td>
+<td class="parameter_description"><p>the base DN to search on, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filter</p></td>
+<td class="parameter_description"><p>an LDAP filter, for example "(objectClass=*)". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attributes</p></td>
+<td class="parameter_description"><p>the list (CSV format) of attributes to fetch, each in the format &lt;attname&gt;[::&lt;GType&gt;]. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scope</p></td>
+<td class="parameter_description"><p>the search scope</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-ldap-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-ldap-new-with-config"></a><h3>gda_data_model_ldap_new_with_config ()</h3>
+<pre class="programlisting"><a class="link" href="GdaDataModelLdap.html" title="GdaDataModelLdap"><span class="returnvalue">GdaDataModelLdap</span></a> *
+gda_data_model_ldap_new_with_config (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *base_dn</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filter</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attributes</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GdaDataModelLdap.html#GdaLdapSearchScope" title="enum GdaLdapSearchScope"><span class="type">GdaLdapSearchScope</span></a> scope</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object to extract some LDAP contents. The returned data model will
+contain one row for each LDAP entry returned by the search, and will
+always return the DN (Distinguished Name) of the LDAP entry as first column. Other atttibutes
+may be mapped to other columns, see the <em class="parameter"><code>attributes</code></em>
+ argument.</p>
+<p>Note that the actual LDAP search command is not executed until necessary (when using the returned
+data model).</p>
+<p>The <em class="parameter"><code>base_dn</code></em>
+ is the point in the LDAP's DIT (Directory Information Tree) from where the search will
+occur, for example "dc=gda,dc=org". A <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value indicates that the starting point for the
+search will be the one specified when opening the LDAP connection.</p>
+<p>The <em class="parameter"><code>filter</code></em>
+ argument is a valid LDAP filter string, for example "(uidNumber=1001)". If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then
+a default search filter of "(objectClass=*)" will be used.</p>
+<p><em class="parameter"><code>attributes</code></em>
+ specifies which LDAP attributes the search must return. It is a comma separated list
+of attribute names, for example "uidNumber, mail, uid, jpegPhoto" (spaces between attribute names
+are ignored). If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then no attribute will be fetched. See <a class="link" href="GdaLdapConnection.html#gda-ldap-connection-declare-table" title="gda_ldap_connection_declare_table ()"><code class="function">gda_ldap_connection_declare_table()</code></a>
+for more information about this argument.</p>
+<p><em class="parameter"><code>scope</code></em>
+ is the scope of search specified when the LDAP search is actually executed.</p>
+<p>In case of multi valued attributes, an error will be returned when trying to read the attribute:
+<a class="link" href="GdaDataModelIter.html#gda-data-model-iter-get-value-at" title="gda_data_model_iter_get_value_at ()"><code class="function">gda_data_model_iter_get_value_at()</code></a> will return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> when using an iterator.</p>
+<p>This is a convenience function intended to be used by bindings.</p>
+<div class="refsect3">
+<a name="gda-data-model-ldap-new-with-config.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>an LDAP opened connection (must be a balid <a class="link" href="GdaLdapConnection.html" title="GdaLdapConnection"><span class="type">GdaLdapConnection</span></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>base_dn</p></td>
+<td class="parameter_description"><p>the base DN to search on, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filter</p></td>
+<td class="parameter_description"><p>an LDAP filter, for example "(objectClass=*)". </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attributes</p></td>
+<td class="parameter_description"><p>the list (CSV format) of attributes to fetch, each in the format &lt;attname&gt;[::&lt;GType&gt;]. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>scope</p></td>
+<td class="parameter_description"><p>the search scope</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-ldap-new-with-config.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaDataModelLdap.html" title="GdaDataModelLdap"><span class="type">GdaDataModelLdap</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 5.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-model-ldap-compute-columns"></a><h3>gda_data_model_ldap_compute_columns ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+gda_data_model_ldap_compute_columns (<em class="parameter"><code><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *cnc</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attributes</code></em>);</pre>
+<p>Computes the <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> of the data model which would be created using <em class="parameter"><code>attributes</code></em>
+ when calling
+<a class="link" href="GdaDataModelLdap.html#gda-data-model-ldap-new" title="gda_data_model_ldap_new ()"><code class="function">gda_data_model_ldap_new()</code></a>.</p>
+<div class="refsect3">
+<a name="gda-data-model-ldap-compute-columns.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attributes</p></td>
+<td class="parameter_description"><p>a string describing which LDAP attributes to retreive, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-model-ldap-compute-columns.returns"></a><h4>Returns</h4>
+<p>a list of <a class="link" href="GdaColumn.html" title="GdaDataModel columns"><span class="type">GdaColumn</span></a> objects. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaColumn]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataModelLdap-struct"></a><h3>struct GdaDataModelLdap</h3>
+<pre class="programlisting">struct GdaDataModelLdap;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdapClass"></a><h3>struct GdaDataModelLdapClass</h3>
+<pre class="programlisting">struct GdaDataModelLdapClass {
+	GObjectClass             parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdapPrivate"></a><h3>GdaDataModelLdapPrivate</h3>
+<pre class="programlisting">typedef struct _GdaDataModelLdapPrivate GdaDataModelLdapPrivate;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaLdapSearchScope"></a><h3>enum GdaLdapSearchScope</h3>
+<p>Defines the search scope of an LDAP search command, relative to the base object.</p>
+<div class="refsect3">
+<a name="GdaLdapSearchScope.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-SEARCH-BASE:CAPS"></a>GDA_LDAP_SEARCH_BASE</p></td>
+<td class="enum_member_description">
+<p>search of the base object only</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-SEARCH-ONELEVEL:CAPS"></a>GDA_LDAP_SEARCH_ONELEVEL</p></td>
+<td class="enum_member_description">
+<p>search of immediate children of the base object, but does not include the base object itself</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-LDAP-SEARCH-SUBTREE:CAPS"></a>GDA_LDAP_SEARCH_SUBTREE</p></td>
+<td class="enum_member_description">
+<p>search of the base object and the entire subtree below the base object</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaDataModelLdap--attributes"></a><h3>The <code class="literal">“attributes”</code> property</h3>
+<pre class="programlisting">  “attributes”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>LDAP attributes.</p>
+<p>Owner: GdaDataModelLdap</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdap--base"></a><h3>The <code class="literal">“base”</code> property</h3>
+<pre class="programlisting">  “base”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Base DN.</p>
+<p>Owner: GdaDataModelLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdap--cnc"></a><h3>The <code class="literal">“cnc”</code> property</h3>
+<pre class="programlisting">  “cnc”                      <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</pre>
+<p>LDAP connection.</p>
+<p>Owner: GdaDataModelLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdap--filter"></a><h3>The <code class="literal">“filter”</code> property</h3>
+<pre class="programlisting">  “filter”                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>LDAP filter.</p>
+<p>Owner: GdaDataModelLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataModelLdap--scope"></a><h3>The <code class="literal">“scope”</code> property</h3>
+<pre class="programlisting">  “scope”                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>LDAP search scope.</p>
+<p>Owner: GdaDataModelLdap</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: [1,3]</p>
+<p>Default value: 1</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataModelLdap.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Other changes: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="migration-2.html" title="Migration from 3.X versions">
+<link rel="prev" href="migration-2-report.html" title="Reports">
+<link rel="next" href="migration-3.html" title="Migration from 4.X versions">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="migration-2.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="migration-2-report.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="migration-3.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.9.8"></a>Other changes</h2></div></div></div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.2"></a>Multi threading environment</h3></div></div></div>
+<p>
+	Previous versions of <span class="application">Libgda</span> only supported being used in a single thread at a time; this new version
+	still keeps this limitation except for objects which implement the <a class="link" href="GdaLockable.html" title="GdaLockable">GdaLockable</a>
+	interface which can be used from any thread at the same time: the 
+	<a class="link" href="GdaConnection.html" title="GdaConnection">GdaConnection</a> and <a class="link" href="GdaSqlParser.html" title="GdaSqlParser">GdaSqlParser</a>
+	objects implement that interface.
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.3"></a>Configuration management</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Data sources and installed providers are now handled using the 
+	      <a class="link" href="libgda-5.0-Configuration.html#GdaConfig">GdaConfig</a> object, with the particularity that there can only be one 
+	      such object instantiated per program.</p></li>
+<li class="listitem"><p>The GDA_DSN_LIST_IN_MEMORY environment variable which , if set, prevented <span class="application">Libgda</span> from
+	      writing the list of defined data sources to a file has been removed. To obtain the same result,
+	      one must force the creation of the unique <a class="link" href="libgda-5.0-Configuration.html#GdaConfig">GdaConfig</a> object with
+	      the user-file property set to NULL.</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.4"></a>Database provider's changes</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>BLOB handling in the PostgreSQL provider has changed and is now similar to JDBC and ODBC: 
+	      the provider does not handle orphaned BLOBs (which is a problem specific to PostgreSQL). See the section
+	      about <a class="link" href="limitations_postgres.html" title="For PostgreSQL">PostgreSQL's limitations</a> for more information.</p></li></ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.5"></a>API changes</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Connections are now opened using 
+	      <a class="link" href="GdaConnection.html#gda-connection-open-from-dsn" title="gda_connection_open_from_dsn ()">gda_connection_open_from_dsn ()</a> or
+	      <a class="link" href="GdaConnection.html#gda-connection-open-from-string" title="gda_connection_open_from_string ()">gda_connection_open_from_string () depending
+		on how the connection is defined</a></p></li>
+<li class="listitem"><p>Upon opening a connection, the <em class="parameter"><code>username</code></em> and <em class="parameter"><code>password</code></em>
+	      arguments have been replaced by a more flexible arguments passing mechanism where providers can specify
+	      what authorization parameters they use</p></li>
+<li class="listitem"><p>gda_server_provider_get_last_insert_id() has been removed in favor of the "last_insert_row" argument
+	  of the <a class="link" href="GdaConnection.html#gda-connection-statement-execute" title="gda_connection_statement_execute ()">gda_connection_statement_execute ()</a> and
+	  <a class="link" href="GdaConnection.html#gda-connection-statement-execute-non-select" title="gda_connection_statement_execute_non_select ()">gda_connection_statement_execute_non_select ()</a>
+	  methods. If that argument is not NULL, then if the statement is an INSERT statement, the argument will
+	  contain a list of values, one for each column of the modified table.</p></li>
+<li class="listitem"><p>The GdaServerProviderInfo structure has been removed as it was useless, and the 
+	  gda_server_provider_get_info() has been replaced by a 
+	      <a class="link" href="GdaServerProvider.html#gda-server-provider-get-name" title="gda_server_provider_get_name ()">gda_server_provider_get_name ()</a> method to access the
+	  provider's name.</p></li>
+<li class="listitem"><p><a class="link" href="GdaDataModel.html#gda-data-model-get-value-at" title="gda_data_model_get_value_at ()">gda_data_model_get_value_at ()</a> now has an extra
+	      <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError">GError</a> argument to return an error if getting the value has failed</p></li>
+<li class="listitem"><p>gda_data_model_get_column_index_by_name() has been replaced by 
+	      <a class="link" href="GdaDataModel.html#gda-data-model-get-column-index" title="gda_data_model_get_column_index ()">gda_data_model_get_column_index()</a></p></li>
+<li class="listitem"><p>gda_data_model_get_value_at_col_name() has been replaced by 
+	      gda_data_model_get_value_at_column()</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.6"></a>List of removed objects and interfaces</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>GdaClient</p></li>
+<li class="listitem"><p>GdaRenderer, GdaXmlStorage, GdaEntity, GdaEntityField and GdaReferer interfaces</p></li>
+<li class="listitem"><p>GdaDict, GdaDictType, GdaDictDatabase, GdaDictTable, GdaDictAggregate, GdaDictField, 
+	      GdaDictConstraint and GdaDictFunction dictionary related objects</p></li>
+<li class="listitem"><p>GdaQuery, GdaQueryObject, GdaQueryFieldAgg, GdaQueryFieldAll, GdaQueryCondition, GdaQueryJoin, 
+	      GdaQueryFieldField, GdaQueryTarget, GdaQueryFieldFunc, GdaQueryFieldValue and GdaQueryField query related
+	      objects</p></li>
+<li class="listitem"><p>GdaCommand</p></li>
+<li class="listitem"><p>GdaParameterList (replaced by <a class="link" href="GdaSet.html" title="GdaSet">GdaSet</a>), 
+	      GdaParameter (replaced by <a class="link" href="GdaHolder.html" title="GdaHolder">GdaHolder</a>)</p></li>
+<li class="listitem"><p>GdaObject, GdaObjectRef</p></li>
+<li class="listitem"><p>GdaDataModelFilterSQL</p></li>
+<li class="listitem"><p>GdaGraph, GdaGraphItem, GdaGraphQuery</p></li>
+<li class="listitem"><p>GdaGraphviz</p></li>
+<li class="listitem"><p>GdaDataModelQuery (features redundant with the 
+	      <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> object) </p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.9.8.7"></a>List of removed functions</h3></div></div></div>
+<p>
+	</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>gda_delimiter_*()</p></li>
+<li class="listitem"><p>gda_sql_transaction_parse*()</p></li>
+<li class="listitem"><p>sql_*() (from the libsql library)</p></li>
+<li class="listitem"><p>gda_server_provider_change_database()</p></li>
+<li class="listitem"><p>gda_value_compare_ext()</p></li>
+<li class="listitem"><p>gda_data_access_wrapper_row_exists()</p></li>
+</ul></div>
+<p>
+      </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

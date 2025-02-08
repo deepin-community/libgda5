@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ldap-connection" xml:lang="pt-BR">
+  <info>
+    <title type="sort">1</title>
+    <link type="guide" xref="features"/>
+    <link type="guide" xref="index#connections"/>
+  </info>
+  <title>Conexões LDAP</title>
+  <p>Conexões LDAP são diferentes de outras conexões de modo que um banco de dados LDAP registra informações de modo hierárquico, na Árvore de Informações de Diretório (DIT), enquanto que outros bancos de dados acessados usando o aplicativo <app>gda-browser</app> são bancos de dados relacionais.</p>
+  <p>Como consequência, conexões LDAP são tratadas de forma especial: como conexões normais com tabelas (veja o mapeamento de tabela a explicado a seguir), e enquanto estiver presente o <link xref="ldap-browser-perspective">navegador de perspectiva LDAP</link></p>
+  <p>Note que conexões LDAP podem não estar disponíveis caso o banco de dados LDAP não esteja instalado ou o suporte a LDAP foi desabilitado durante a compilação.</p>
+
+  <section id="ldap-table-mapping">
+    <title>Mapeamento de tabela LDAP</title>
+    <p>Em uma conexão LDAP, é possível declarar tabelas virtuais que são mapeadas à uma pesquisa LDAP. Essas tabelas virtuais podem então ser usadas posteriormente como qualquer outra tabela. A primeira coluna de cada tabela virtual LDAP será sempre o DN (Nome distinto) de cada registro representado na linha; as outras colunas dependem da definição da tabela.</p>
+    <p>Uma tabela virtual LDAP é definida pelos seguintes atributos:</p>
+    <list>
+      <item><p>um nome de tabela</p></item>
+      <item><p>a base DN para pesquisa: o registro LDAP o qual a pesquisa começa (caso não seja especificado, é utilizado o registro de nível superior da conexão LDAP)</p></item>
+      <item><p>o filtro de pesquisa: um filtro de pesquisa LDAP válido (se nenhum for fornecido, o filtro de pesquisa padrão é "(objectClass=*)", requisitando qualquer registro LDAP).</p></item>
+      <item><p>os atributos: os atributos a receber, cada atributo será mapeado a uma coluna da tabela. Os atributos devem estar em uma lista de atributos, separados por vírgulas, onde a cada atributo pode opcionalmente ser atribuído um tipo e uma opção multi valor (veja abaixo).</p></item>
+      <item><p>o escopo: o escopo da pesquisa, "subtree" (para pesquisar a base DN e a subárvore completa abaixo), "onelevel" (para pesquisar apenas o filho imediato do registro base DN), ou "base" (para pesquisar apenas o registro base DN)</p></item>
+    </list>
+    <figure>
+      <title>Propriedades da tabela LDAP</title>
+      <desc>Propriedades da tabela LDAP</desc>
+      <media type="image" mime="image/png" src="figures/ldap-table-mapping.png"/>
+    </figure>
+    <p>Por exemplo, na figura acima, a tabela "users" "contém" todos os registros LDAP do registro de nível superior LDAP da conexão, e tem 3 colunas: o DN, a "cn" e a "jpegPhoto".</p>
+  </section>
+
+  <section id="ldap-columns-mapping">
+    <title>Attributes to columns mapping</title>
+    <p>
+      As mentioned in the previous section, each attribute will be mapped to a column. The column type
+      is normally automatically determined (string, number, ...) but can be forced by appending to the attribute
+      name the "::&lt;type&gt;" for the requested type.
+    </p>
+    <p>
+      Also, because
+      some attributes can have multiple values, the table construction handles multi-valued attributes in
+      different ways, depending on each attribute's options. An option can be specified by appending the
+      "::&lt;option&gt;" to the attribute name. Valid options are:
+    </p>
+    <list>
+      <item><p>"NULL" or "0": a NULL value will be returned for the attribute</p></item>
+      <item><p>"CSV": a comma separated value with all the values of the attribute will be returned.
+      This only works for string attribute types.</p></item>
+      <item><p>"MULT" or "*": a row will be returned for each value of the attribute, effectively
+      multiplying the number of returned rows</p></item>
+      <item><p>"1": only the first value of the attribute will be used, the other values ignored</p></item>
+      <item><p>"CONCAT": the attributes' values are concatenated (with a newline char
+      between each value)</p></item>
+      <item><p>"ERROR": an error value will be returned (this is the default behaviour)</p></item>
+    </list>
+  </section>
+
+  <section id="ldap-ddl-sql">
+    <title>SQL usable with LDAP connections</title>
+    <p>
+      You can use the SQL understood by <link href="http://sqlite.org/lang.html">SQLite</link> in any LDAP
+      connection. Be aware however that if you define database objects (outside of the extended SQL
+      presented next section), they will be lost the next time the LDAP connection is opened.
+    </p>
+    <p>
+      So it is perfectly safe for example to create a table to store some LDAP data which
+      may require a long operation to obtain, but after closing the LDAP connection, the table
+      and its data will be lost.
+    </p>
+    <p>
+      See the <link xref="sql-sqlite">SQL understood by LDAP connections and virtual connections</link>
+      section for more information.
+    </p>
+  </section>
+
+  <section id="ldap-sql">
+    <title>SQL extension to handle LDAP tables</title>
+    <p>
+      LDAP tables can be created using an extended set of SQL commands:
+    </p>
+    <list>
+      <item><p><code>CREATE LDAP TABLE &lt;table_name&gt; [BASE='&lt;base_dn&gt;'] [FILTER='&lt;filter&gt;'] [ATTRIBUTES='&lt;filter&gt;'] [SCOPE='&lt;filter&gt;']</code> to declare a new LDAP virtual table</p></item>
+      <item><p><code>DESCRIBE LDAP TABLE &lt;table_name&gt;</code> to show LDAP virtual table's definition</p></item>
+      <item><p><code>ALTER LDAP TABLE &lt;table_name&gt; [BASE='&lt;base_dn&gt;'] [FILTER='&lt;filter&gt;'] [ATTRIBUTES='&lt;filter&gt;'] [SCOPE='&lt;filter&gt;']</code> to modify an LDAP virtual table's definition (only the specified part is actually modified)</p></item>
+      <item><p><code>DROP LDAP TABLE &lt;table_name&gt;</code> to remove an LDAP virtual table. Note that the
+      usual <code>DROP TABLE &lt;table_name&gt;</code> can also be used instead.</p></item>
+    </list>
+    <p>
+      For example the following SQL code:
+    </p>
+    <code>
+      CREATE LDAP TABLE users FILTER='(objectClass=inetOrgPerson)'
+              ATTRIBUTES='cn,sn,givenName,seeAlso::*' SCOPE='subtree';
+      SELECT * FROM users WHERE cn like '%john%';
+      ALTER LDAP TABLE users FILTER='(&amp;(objectClass=inetOrgPerson)(cn=*john*))';
+      SELECT * FROM users;
+      DROP LDAP TABLE users;
+    </code>
+    <p>
+    should display twice the same results, which list all the LDAP entries of the "inetOrgPerson" class with
+    a CommonName (cn) containing the "john" string.
+    </p>
+  </section>
+</page>

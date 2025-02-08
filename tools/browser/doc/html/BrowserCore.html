@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BrowserCore: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="core.html" title="Core objects">
+<link rel="prev" href="core.html" title="Core objects">
+<link rel="next" href="BrowserConnection.html" title="BrowserConnection">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#BrowserCore.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#BrowserCore.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#BrowserCore.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="core.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="BrowserConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="BrowserCore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="BrowserCore.top_of_page"></a>BrowserCore</span></h2>
+<p>BrowserCore — Singleton holding the global browser information</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="BrowserCore.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="BrowserCore.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="BrowserCore.html#BrowserCoreInitFactories" title="BrowserCoreInitFactories ()">*BrowserCoreInitFactories</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-exists" title="browser_core_exists ()">browser_core_exists</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserCore.html" title="BrowserCore"><span class="returnvalue">BrowserCore</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get" title="browser_core_get ()">browser_core_get</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-take-window" title="browser_core_take_window ()">browser_core_take_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get-windows" title="browser_core_get_windows ()">browser_core_get_windows</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-close-window" title="browser_core_close_window ()">browser_core_close_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-take-connection" title="browser_core_take_connection ()">browser_core_take_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get-connections" title="browser_core_get_connections ()">browser_core_get_connections</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-close-connection" title="browser_core_close_connection ()">browser_core_close_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-quit" title="browser_core_quit ()">browser_core_quit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="returnvalue">BrowserPerspectiveFactory</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get-default-factory" title="browser_core_get_default_factory ()">browser_core_get_default_factory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-set-default-factory" title="browser_core_set_default_factory ()">browser_core_set_default_factory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get-factories" title="browser_core_get_factories ()">browser_core_get_factories</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="returnvalue">BrowserPerspectiveFactory</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="BrowserCore.html#browser-core-get-factory" title="browser_core_get_factory ()">browser_core_get_factory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserCore.html#BrowserCore-connection-added" title="The “connection-added” signal">connection-added</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="BrowserCore.html#BrowserCore-connection-removed" title="The “connection-removed” signal">connection-removed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserCore.html#BrowserCorePrivate" title="BrowserCorePrivate">BrowserCorePrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserCore.html#BrowserCore-struct" title="BrowserCore">BrowserCore</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory">BrowserPerspectiveFactory</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> BrowserCore
+</pre>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.description"></a><h2>Description</h2>
+<p>A single instance of a <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> is created when the browser is started,
+accessible using <a class="link" href="BrowserCore.html#browser-core-get" title="browser_core_get ()"><code class="function">browser_core_get()</code></a>.</p>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="BrowserCoreInitFactories"></a><h3>BrowserCoreInitFactories ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+<span class="c_punctuation">(</span>*BrowserCoreInitFactories<span class="c_punctuation">)</span> (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-exists"></a><h3>browser_core_exists ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+browser_core_exists (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Tells if a <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> has already been created</p>
+<div class="refsect3">
+<a name="browser-core-exists.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> singleton has already been created</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get"></a><h3>browser_core_get ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserCore.html" title="BrowserCore"><span class="returnvalue">BrowserCore</span></a> *
+browser_core_get (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Returns a <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> object which holds the browser's configuration. This is
+a singleton factory.</p>
+<div class="refsect3">
+<a name="browser-core-get.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-take-window"></a><h3>browser_core_take_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_take_window (<em class="parameter"><code><a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> *bwin</code></em>);</pre>
+<p>Makes sure <em class="parameter"><code>bwin</code></em>
+ is handled by the <a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a> object, reference to <em class="parameter"><code>bwin</code></em>
+ is stolen here.
+This method should be called after a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> has been created to have it managed properly.</p>
+<div class="refsect3">
+<a name="browser-core-take-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bwin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get-windows"></a><h3>browser_core_get_windows ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+browser_core_get_windows (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a list of <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> mananged by the browser (windows must have been
+declared using <a class="link" href="BrowserCore.html#browser-core-take-window" title="browser_core_take_window ()"><code class="function">browser_core_take_window()</code></a>).</p>
+<div class="refsect3">
+<a name="browser-core-get-windows.returns"></a><h4>Returns</h4>
+<p> a new list, free it with <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#g-slist-free"><code class="function">g_slist_free()</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-close-window"></a><h3>browser_core_close_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_close_window (<em class="parameter"><code><a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> *bwin</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>bwin</code></em>
+ be closed.</p>
+<div class="refsect3">
+<a name="browser-core-close-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bwin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-take-connection"></a><h3>browser_core_take_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_take_connection (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Makes sure <em class="parameter"><code>bcnc</code></em>
+ is handled by <em class="parameter"><code>dbata</code></em>
+, reference to <em class="parameter"><code>bcnc</code></em>
+ is stolen here</p>
+<div class="refsect3">
+<a name="browser-core-take-connection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get-connections"></a><h3>browser_core_get_connections ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+browser_core_get_connections (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a list of <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a></p>
+<div class="refsect3">
+<a name="browser-core-get-connections.returns"></a><h4>Returns</h4>
+<p> a new list, free it with <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#g-slist-free"><code class="function">g_slist_free()</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-close-connection"></a><h3>browser_core_close_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_close_connection (<em class="parameter"><code><a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *bcnc</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>bcnc</code></em>
+ be closed.</p>
+<div class="refsect3">
+<a name="browser-core-close-connection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>bcnc</p></td>
+<td class="parameter_description"><p>a <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-quit"></a><h3>browser_core_quit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_quit (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Quits the browser after having made some clean-ups</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get-default-factory"></a><h3>browser_core_get_default_factory ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="returnvalue">BrowserPerspectiveFactory</span></a> *
+browser_core_get_default_factory (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get the default <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a> used when making new <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> if none
+is provided when calling <a class="link" href="BrowserWindow.html#browser-window-new" title="browser_window_new ()"><code class="function">browser_window_new()</code></a>.</p>
+<div class="refsect3">
+<a name="browser-core-get-default-factory.returns"></a><h4>Returns</h4>
+<p> the default <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-set-default-factory"></a><h3>browser_core_set_default_factory ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+browser_core_set_default_factory (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *factory</code></em>);</pre>
+<p>Sets the default <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a> used when making new <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a> if none
+is provided when calling <a class="link" href="BrowserWindow.html#browser-window-new" title="browser_window_new ()"><code class="function">browser_window_new()</code></a>.</p>
+<div class="refsect3">
+<a name="browser-core-set-default-factory.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>the name of a <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get-factories"></a><h3>browser_core_get_factories ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+browser_core_get_factories (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get a list of all the known Perspective factories</p>
+<div class="refsect3">
+<a name="browser-core-get-factories.returns"></a><h4>Returns</h4>
+<p> a constant list which must not be altered</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-core-get-factory"></a><h3>browser_core_get_factory ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="returnvalue">BrowserPerspectiveFactory</span></a> *
+browser_core_get_factory (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *factory</code></em>);</pre>
+<p>Get a pointer to a <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a>, from its name</p>
+<div class="refsect3">
+<a name="browser-core-get-factory.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>the name of the requested factory</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-core-get-factory.returns"></a><h4>Returns</h4>
+<p> a pointer to the <a class="link" href="BrowserCore.html#BrowserPerspectiveFactory" title="BrowserPerspectiveFactory"><span class="type">BrowserPerspectiveFactory</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="BrowserCorePrivate"></a><h3>BrowserCorePrivate</h3>
+<pre class="programlisting">typedef struct _BrowserCorePrivate BrowserCorePrivate;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserCore-struct"></a><h3>BrowserCore</h3>
+<pre class="programlisting">typedef struct _BrowserCore BrowserCore;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserPerspectiveFactory"></a><h3>BrowserPerspectiveFactory</h3>
+<pre class="programlisting">typedef struct {
+	const gchar          *perspective_name;
+	const gchar          *menu_shortcut;
+	BrowserPerspective *(*perspective_create) (BrowserWindow *);
+} BrowserPerspectiveFactory;
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="BrowserCore.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="BrowserCore-connection-added"></a><h3>The <code class="literal">“connection-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a>       *browsercore,
+               <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserCore-connection-removed"></a><h3>The <code class="literal">“connection-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="BrowserCore.html" title="BrowserCore"><span class="type">BrowserCore</span></a>       *browsercore,
+               <a class="link" href="BrowserConnection.html" title="BrowserConnection"><span class="type">BrowserConnection</span></a> *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

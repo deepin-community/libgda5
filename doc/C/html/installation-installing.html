@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Installing from the sources: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="installation.html" title="Installation">
+<link rel="prev" href="installation.html" title="Installation">
+<link rel="next" href="compiling.html" title="Compiling your code using the Libgda library">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="installation.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="installation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="compiling.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="installation-installing"></a>Installing from the sources</h2></div></div></div>
+<p>
+      If you downloaded the source code (in a tarball), you must
+      compile the software. To do so, once you have unpacked
+      the source tree, you must:
+      </p>
+<pre class="programlisting">
+<code class="prompt">$ </code>./configure
+<code class="prompt">$ </code>make
+<code class="prompt">$ </code>make install
+      </pre>
+<p>
+    </p>
+<p>
+      This will generate the makefiles for your specific platform,
+      compile all the source tree, and install the binaries and
+      documentation in your system. This method works in the following environments:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; ">
+<li class="listitem" style="list-style-type: disc"><p>On Linux (or other Unix systems, including MacOSX)</p></li>
+<li class="listitem" style="list-style-type: disc"><p>On linux using the MinGW compiler in a cross compilation environment to generate Windows binaries</p></li>
+<li class="listitem" style="list-style-type: disc"><p>On Windows using the MinGW compiler</p></li>
+</ul></div>
+<p>
+    </p>
+<p>
+      If you don't find a file named <code class="filename">configure</code>, usually because you use
+      non packaged sources which come from a Git repository, then
+      execute the <code class="filename">autogen.sh</code> script which will create and run the
+      generated <code class="filename">configure</code> file (please not that for this script to work,
+      you'll need to have the autotools components installed on your system).
+    </p>
+<p>
+      You can specify several arguments to <code class="filename">configure</code> (or
+      <code class="filename">autogen.sh</code>). You can
+      check all the available arguments by running
+      <span class="command"><strong>configure --help</strong></span>, but the most significant ones are:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; ">
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--prefix=&lt;directory&gt;</code></strong>: Prefix where
+          package will be installed
+        </p></li>
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--enable-gtk-doc</code></strong>: Specify that the library's documentation
+	  must be built (using the gtk-doc program)
+        </p></li>
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--enable-warnings</code></strong>: Specify compilation warnings, to choose from:
+	  min, max, fatal or no.
+        </p></li>
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--with-&lt;provider name&gt;=[yes/no/&lt;directory&gt;]</code></strong>: Specify, for
+	  each supported database type (bdb, mysql, postgres, oracle, java, mdb) if the corresponding
+	  provider is resquired ("yes"), should not be built ("no"), or can be built if its development
+	  files can be detected by the configure script (you can specify a directory to look into if these
+	  files are installed in a non standard location, for example
+	  <strong class="userinput"><code>--with-oracle=/local/BASES/OCI32</code></strong>).
+        </p></li>
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--enable-system-sqlite</code></strong>: Specify that the SQLite installed with the
+	  system must be used instead of the embedded version.
+        </p></li>
+<li class="listitem" style="list-style-type: disc"><p>
+          <strong class="userinput"><code>--with-ui</code></strong>: Require that the UI extension (using GTK+) be built. This
+	  also enables building the graphical tools such as the control center and GdaBrowser.
+        </p></li>
+</ul></div>
+<p>
+      Libraries needed by providers are searched by default, so, if found, providers are
+      compiled by default. Those libraries are searched in hard-coded directories, so
+      if the installation of these libraries is in an uncommon place, the above arguments
+      should be used to specify the directories where the libraries and header files
+      are installed. Note that the SQLite provider is now always built using the sources
+      of the SQLite library that are bundled within <span class="application">Libgda</span>'s sources.
+    </p>
+<p>
+      If you find any problem during the configuration, compilation or
+      installation process, do not hesitate in contacting the
+      <a href="http://foldoc.org/Gnome-Db"><span class="acronym">Gnome-Db</span></a> mailing list (<code class="email">&lt;<a class="email" href="mailto:gnome-db-list@gnome.org">gnome-db-list@gnome.org</a>&gt;</code>, first
+      send an email to <code class="email">&lt;<a class="email" href="mailto:gnome-db-list-request@gnome.org">gnome-db-list-request@gnome.org</a>&gt;</code> with 
+      the subject SUBSCRIBE, if you are not already subscribed).
+    </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

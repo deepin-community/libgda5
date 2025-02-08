@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="de">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+<title>Die Perspektive des Schema-Browsers</title>
+<p>Mit Hilfe der Perspektive des Schema-Browsers können Sie die Organisation (das Schema) der Datenbank besser verstehen. Um in diese Perspektive zu wechseln, verwenden Sie das Menü <guiseq><gui>Perspektive</gui><gui>Schema-Browser</gui></guiseq> oder die Tastenkombination <keyseq><key>Strg</key><key>B</key></keyseq>.</p>
+<p>Die Perspektive ist horizontal in zwei Bereiche unterteilt: der linke Bereich für die benutzerdefinierten Favoriten und der rechte Bereich als Bedienfläche.</p>
+<figure>
+  <title>Standardansicht der Schema-Browser-Perspektive</title>
+  <desc>Die voreingestellte Schema-Browser-Perspektive</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>Der linke Bereich der Perspektive listet die bevorzugten Objekte oder Diagramme der Datenbank auf. Durch Doppelklick auf einen der Favoriten werden dessen Eigenschaften im rechten Bereich geöffnet.</p>
+<p>Die rechte Leiste besteht aus verschiedenen Reitertypen:</p>
+<list>
+  <item><p>Einem Reiter, der alle Tabellen und Ansichten der Datenbank in einer <em>Wolke</em> auflistet, wobei die Tabellen abhängig von der Anzahl der Bezüge zu anderen Tabellen in entsprechend großer Schrift angezeigt werden. Dieser Reiter ist immer sichtbar.</p></item>
+  <item><p>Null oder mehr Reitern, die die Eigenschaften einer Tabelle oder Ansicht darstellen: Die Liste der Spalten, die Liste der Beschränkungen (Primär- oder Fremdschlüssel), ein <link xref="diagram">Diagramm</link>, welches die Bezugstabellen anzeigt und einen Bereich zum Festlegen von Einstellungen für die Daten jeder Spalte</p></item>
+  <item><p>Null oder mehr <link xref="diagram">Diagrammen</link>, in welchen eine beliebige Anzahl von Tabellen dargestellt werden kann, wobei diese anhand ihrer Beziehungen verknüpft sind (als Fremdschlüsselbeschränkungen)</p></item>
+</list>
+
+<figure>
+  <title>Karteireiter mit Informationen zu einer Tabelle</title>
+  <desc>Ein Beispiel der für jede Tabelle angezeigten Datensätze. Beachten Sie den Unterschied zwischen fremden Schlüsseln, die in der Datenbank implementiert sind, und <link xref="declared-fk">deklarierten fremden Schlüsseln</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>

@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataComparator: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaDataProxy.html" title="GdaDataProxy">
+<link rel="next" href="gda-data-model-writing.html" title="Implementing your own data model">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-GdaDataComparator.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaDataProxy.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gda-data-model-writing.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-GdaDataComparator"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-GdaDataComparator.top_of_page"></a>GdaDataComparator</span></h2>
+<p>GdaDataComparator — Simple data model's contents comparison</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-new" title="gda_data_comparator_new ()">gda_data_comparator_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-set-key-columns" title="gda_data_comparator_set_key_columns ()">gda_data_comparator_set_key_columns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-compute-diff" title="gda_data_comparator_compute_diff ()">gda_data_comparator_compute_diff</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-get-n-diffs" title="gda_data_comparator_get_n_diffs ()">gda_data_comparator_get_n_diffs</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="returnvalue">GdaDiff</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-get-diff" title="gda_data_comparator_get_diff ()">gda_data_comparator_get_diff</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator">GdaDataComparator</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparatorClass" title="struct GdaDataComparatorClass">GdaDataComparatorClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparatorPrivate" title="GdaDataComparatorPrivate">GdaDataComparatorPrivate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff">GdaDiff</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiffType" title="enum GdaDiffType">GdaDiffType</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.description"></a><h2>Description</h2>
+<p>The <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> is a simple object which takes two <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> objects and compare them.
+Actual comparison is performed when the <a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-compute-diff" title="gda_data_comparator_compute_diff ()"><code class="function">gda_data_comparator_compute_diff()</code></a> is called; for each
+difference found, the diff-computed signal
+is emitted (any user installed signal handler which returns FALSE stops the computing process).</p>
+<p>There are some limitations to this object:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The data models compared must have the same number and type of columns</p></li>
+<li class="listitem"><p>The comparison is done column-for-column: one cannot omit columns in the comparison, nor compare
+  columns with different positions</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-comparator-new"></a><h3>gda_data_comparator_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct"><span class="returnvalue">GObject</span></a> *
+gda_data_comparator_new (<em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *old_model</code></em>,
+                         <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *new_model</code></em>);</pre>
+<p>Creates a new comparator to compute the differences from <em class="parameter"><code>old_model</code></em>
+ to <em class="parameter"><code>new_model</code></em>
+: if one applies
+all the computed differences (as <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="type">GdaDiff</span></a> structures) to <em class="parameter"><code>old_model</code></em>
+, the resulting data model
+should have the same contents as <em class="parameter"><code>new_model</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-data-comparator-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>old_model</p></td>
+<td class="parameter_description"><p>Data model to which the modifications should be applied</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_model</p></td>
+<td class="parameter_description"><p>Target data model.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-comparator-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> GdaDataComparator][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-comparator-set-key-columns"></a><h3>gda_data_comparator_set_key_columns ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_data_comparator_set_key_columns (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> *comp</code></em>,
+                                     <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *col_numbers</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nb_cols</code></em>);</pre>
+<p>Defines the columns which will be used as a key when searching data. This is not mandatory but
+will speed things up as less data will be processed.</p>
+<div class="refsect3">
+<a name="gda-data-comparator-set-key-columns.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>comp</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nb_cols</p></td>
+<td class="parameter_description"><p>the size of the <em class="parameter"><code>col_numbers</code></em>
+array</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>col_numbers</p></td>
+<td class="parameter_description"><p>an array of <em class="parameter"><code>nb_cols</code></em>
+values. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=nb_cols]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-comparator-compute-diff"></a><h3>gda_data_comparator_compute_diff ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_comparator_compute_diff (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> *comp</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Actually computes the differences between the data models for which <em class="parameter"><code>comp</code></em>
+ is defined. </p>
+<p>For each difference computed, stored in a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="type">GdaDiff</span></a> structure, the "diff-computed" signal is emitted.
+If one connects to this signal and returns FALSE in the signal handler, then computing differences will be
+stopped and an error will be returned.</p>
+<div class="refsect3">
+<a name="gda-data-comparator-compute-diff.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>comp</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-comparator-compute-diff.returns"></a><h4>Returns</h4>
+<p> TRUE if all the differences have been successfully computed, and FALSE if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-comparator-get-n-diffs"></a><h3>gda_data_comparator_get_n_diffs ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gda_data_comparator_get_n_diffs (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> *comp</code></em>);</pre>
+<p>Get the number of differences as computed by the last time <a class="link" href="libgda-5.0-GdaDataComparator.html#gda-data-comparator-compute-diff" title="gda_data_comparator_compute_diff ()"><code class="function">gda_data_comparator_compute_diff()</code></a> was called.</p>
+<div class="refsect3">
+<a name="gda-data-comparator-get-n-diffs.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>comp</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-comparator-get-n-diffs.returns"></a><h4>Returns</h4>
+<p> the number of computed differences</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-comparator-get-diff"></a><h3>gda_data_comparator_get_diff ()</h3>
+<pre class="programlisting">const <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="returnvalue">GdaDiff</span></a> *
+gda_data_comparator_get_diff (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> *comp</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> pos</code></em>);</pre>
+<p>Get a pointer to the <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="type">GdaDiff</span></a> structure representing the difference which number is <em class="parameter"><code>pos</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-data-comparator-get-diff.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>comp</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDataComparator" title="struct GdaDataComparator"><span class="type">GdaDataComparator</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pos</p></td>
+<td class="parameter_description"><p>the requested difference number (starting at 0)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-comparator-get-diff.returns"></a><h4>Returns</h4>
+<p>a pointer to a <a class="link" href="libgda-5.0-GdaDataComparator.html#GdaDiff" title="GdaDiff"><span class="type">GdaDiff</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>pos</code></em>
+is invalid. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataComparator"></a><h3>struct GdaDataComparator</h3>
+<pre class="programlisting">struct GdaDataComparator {
+	GObject                   object;
+	GdaDataComparatorPrivate *priv;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataComparatorClass"></a><h3>struct GdaDataComparatorClass</h3>
+<pre class="programlisting">struct GdaDataComparatorClass {
+	GObjectClass              parent_class;
+	gboolean               (* diff_computed)  (GdaDataComparator *comp, GdaDiff *diff);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataComparatorPrivate"></a><h3>GdaDataComparatorPrivate</h3>
+<pre class="programlisting">typedef struct _GdaDataComparatorPrivate GdaDataComparatorPrivate;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDiff"></a><h3>GdaDiff</h3>
+<pre class="programlisting">typedef struct {
+	GdaDiffType  type;
+	gint         old_row;
+	gint         new_row;
+	GHashTable  *values; /* key = ('+' or '-') and a column position starting at 0 (string)
+			      * value = a GValue pointer */
+} GdaDiff;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDiffType"></a><h3>enum GdaDiffType</h3>
+<div class="refsect3">
+<a name="GdaDiffType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DIFF-ADD-ROW:CAPS"></a>GDA_DIFF_ADD_ROW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DIFF-REMOVE-ROW:CAPS"></a>GDA_DIFF_REMOVE_ROW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DIFF-MODIFY-ROW:CAPS"></a>GDA_DIFF_MODIFY_ROW</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-GdaDataComparator.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BrowserPage: GdaBrowser hacking manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GdaBrowser hacking manual">
+<link rel="up" href="windows.html" title="Browser windows">
+<link rel="prev" href="BrowserPerspective.html" title="BrowserPerspective">
+<link rel="next" href="extrawidgets.html" title="Extra widgets">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gda-browser-BrowserPage.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="windows.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="BrowserPerspective.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="extrawidgets.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gda-browser-BrowserPage"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gda-browser-BrowserPage.top_of_page"></a>BrowserPage</span></h2>
+<p>BrowserPage — A "page" within a <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> widget</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.stability-level"></a><h2>Stability Level</h2>
+<acronym title="The intention of a Stable interface is to enable arbitrary third parties to
+develop applications to these interfaces, release them, and have confidence that
+they will run on all minor releases of the product (after the one in which the
+interface was introduced, and within the same major release). Even at a major
+release, incompatible changes are expected to be rare, and to have strong
+justifications.
+"><span class="acronym">Stable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#BROWSER-PAGE:CAPS" title="BROWSER_PAGE()">BROWSER_PAGE</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#IS-BROWSER-PAGE:CAPS" title="IS_BROWSER_PAGE()">IS_BROWSER_PAGE</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#BROWSER-PAGE-GET-CLASS:CAPS" title="BROWSER_PAGE_GET_CLASS()">BROWSER_PAGE_GET_CLASS</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#browser-page-get-type" title="browser_page_get_type ()">browser_page_get_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#browser-page-get-actions-group" title="browser_page_get_actions_group ()">browser_page_get_actions_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#browser-page-get-actions-ui" title="browser_page_get_actions_ui ()">browser_page_get_actions_ui</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="returnvalue">BrowserPerspective</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#browser-page-get-perspective" title="browser_page_get_perspective ()">browser_page_get_perspective</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gda-browser-BrowserPage.html#browser-page-get-tab-label" title="browser_page_get_tab_label ()">browser_page_get_tab_label</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gda-browser-BrowserPage.html#BROWSER-PAGE-TYPE:CAPS" title="BROWSER_PAGE_TYPE">BROWSER_PAGE_TYPE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gda-browser-BrowserPage.html#BrowserPageIface" title="BrowserPageIface">BrowserPageIface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.description"></a><h2>Description</h2>
+<p>Some widgets packed within a <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> can implement
+the <span class="type">BrowserPage</span> interface to specify their specific actions and menu and
+toolbar customizations. When they are packed in a notebook, they can also
+request some specific tab labels.</p>
+</div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="BROWSER-PAGE:CAPS"></a><h3>BROWSER_PAGE()</h3>
+<pre class="programlisting">#define BROWSER_PAGE(obj)            (G_TYPE_CHECK_INSTANCE_CAST (obj, BROWSER_PAGE_TYPE, BrowserPage))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="IS-BROWSER-PAGE:CAPS"></a><h3>IS_BROWSER_PAGE()</h3>
+<pre class="programlisting">#define IS_BROWSER_PAGE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE (obj, BROWSER_PAGE_TYPE))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BROWSER-PAGE-GET-CLASS:CAPS"></a><h3>BROWSER_PAGE_GET_CLASS()</h3>
+<pre class="programlisting">#define BROWSER_PAGE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_INTERFACE ((obj), BROWSER_PAGE_TYPE, BrowserPageIface))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-page-get-type"></a><h3>browser_page_get_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>
+browser_page_get_type (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-page-get-actions-group"></a><h3>browser_page_get_actions_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="returnvalue">GtkActionGroup</span></a> *
+browser_page_get_actions_group (<em class="parameter"><code><span class="type">BrowserPage</span> *page</code></em>);</pre>
+<p>Get the <a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a> from a <em class="parameter"><code>page</code></em>
+ to represent its specific actions.</p>
+<div class="refsect3">
+<a name="browser-page-get-actions-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>an object implementing the <span class="type">BrowserPage</span> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-page-get-actions-group.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/gtk3/GtkActionGroup.html#GtkActionGroup-struct"><span class="type">GtkActionGroup</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-page-get-actions-ui"></a><h3>browser_page_get_actions_ui ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+browser_page_get_actions_ui (<em class="parameter"><code><span class="type">BrowserPage</span> *page</code></em>);</pre>
+<p>Get the UI definition from <em class="parameter"><code>page</code></em>
+ to represent how its specific actions (obtained
+using <a class="link" href="gda-browser-BrowserPage.html#browser-page-get-actions-group" title="browser_page_get_actions_group ()"><code class="function">browser_page_get_actions_group()</code></a>) are to be integrated in a <a class="link" href="BrowserWindow.html" title="BrowserWindow"><span class="type">BrowserWindow</span></a>'s menu
+and toolbar.</p>
+<div class="refsect3">
+<a name="browser-page-get-actions-ui.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>an object implementing the <span class="type">BrowserPage</span> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-page-get-actions-ui.returns"></a><h4>Returns</h4>
+<p> a read-only string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-page-get-perspective"></a><h3>browser_page_get_perspective ()</h3>
+<pre class="programlisting"><a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="returnvalue">BrowserPerspective</span></a> *
+browser_page_get_perspective (<em class="parameter"><code><span class="type">BrowserPage</span> *page</code></em>);</pre>
+<p>Finds the BrowserPerspective in which <em class="parameter"><code>page</code></em>
+ is. Note that the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> may
+have changed since a previous call as users are allowed to do some drag and drop between
+browser's windows which contain different <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a> objects.</p>
+<div class="refsect3">
+<a name="browser-page-get-perspective.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>an object implementing the <span class="type">BrowserPage</span> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-page-get-perspective.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="BrowserPerspective.html" title="BrowserPerspective"><span class="type">BrowserPerspective</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="browser-page-get-tab-label"></a><h3>browser_page_get_tab_label ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
+browser_page_get_tab_label (<em class="parameter"><code><span class="type">BrowserPage</span> *page</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a> **out_close_button</code></em>);</pre>
+<p>Get a new widget to be packed in a notebook's tab label.</p>
+<p>If <em class="parameter"><code>out_close_button</code></em>
+ is not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the implementation may decide to add
+a button to close the tab; if <em class="parameter"><code>out_close_button</code></em>
+ is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then it should not add
+any close button.</p>
+<div class="refsect3">
+<a name="browser-page-get-tab-label.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>page</p></td>
+<td class="parameter_description"><p>an object implementing the <span class="type">BrowserPage</span> interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_close_button</p></td>
+<td class="parameter_description"><p>a place holder to hold a pointer to a close button</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="browser-page-get-tab-label.returns"></a><h4>Returns</h4>
+<p> a new <a href="/usr/share/gtk-doc/html/gtk3/GtkWidget.html#GtkWidget-struct"><span class="type">GtkWidget</span></a>, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gda-browser-BrowserPage.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="BROWSER-PAGE-TYPE:CAPS"></a><h3>BROWSER_PAGE_TYPE</h3>
+<pre class="programlisting">#define BROWSER_PAGE_TYPE            (browser_page_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="BrowserPageIface"></a><h3>BrowserPageIface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface           g_iface;
+
+	/* virtual table */
+	GtkActionGroup      *(* i_get_actions_group) (BrowserPage *page);
+	const gchar         *(* i_get_actions_ui) (BrowserPage *page);
+	GtkWidget           *(* i_get_tab_label) (BrowserPage *page, GtkWidget **out_close_button);
+} BrowserPageIface;
+</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

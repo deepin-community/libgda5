@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SQL rendering API: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="psupport.html" title="Providers' support API">
+<link rel="prev" href="libgda-5.0-Quark-lists.html" title="Quark list">
+<link rel="next" href="libgda-5.0-Misc-API.html" title="Misc API for database providers">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libgda-5.0-SQL-rendering-API.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="psupport.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-Quark-lists.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Misc-API.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libgda-5.0-SQL-rendering-API"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgda-5.0-SQL-rendering-API.top_of_page"></a>SQL rendering API</span></h2>
+<p>SQL rendering API — Adapting the SQL to the database's own SQL dialect</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingValue" title="GdaSqlRenderingValue ()">*GdaSqlRenderingValue</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingPSpecFunc" title="GdaSqlRenderingPSpecFunc ()">*GdaSqlRenderingPSpecFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingExpr" title="GdaSqlRenderingExpr ()">*GdaSqlRenderingExpr</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()">*GdaSqlRenderingFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libgda-5.0-SQL-rendering-API.html#gda-statement-to-sql-real" title="gda_statement_to_sql_real ()">gda_statement_to_sql_real</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext">GdaSqlRenderingContext</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/gda-statement-extra.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.description"></a><h2>Description</h2>
+<p><span class="application">Libgda</span> is able to render a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> statement to SQL in a generic way (as close as possible to the SQL
+standard). However as each database has ultimately its own SQL dialect, some parts of the rendering has
+to be specialized.</p>
+<p>Customization is achieved by providing custom implementations of SQL rendering functions for each kind of
+part in a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> structure, all packed in a <a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> context structure. Functions
+which are not customized will be implemented by the default ones.</p>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GdaSqlRenderingValue"></a><h3>GdaSqlRenderingValue ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<span class="c_punctuation">(</span>*GdaSqlRenderingValue<span class="c_punctuation">)</span> (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> *value</code></em>,
+                         <em class="parameter"><code><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> *context</code></em>,
+                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Rendering function type to render a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a></p>
+<div class="refsect3">
+<a name="GdaSqlRenderingValue.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to render</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the rendering context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSqlRenderingValue.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlRenderingPSpecFunc"></a><h3>GdaSqlRenderingPSpecFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<span class="c_punctuation">(</span>*GdaSqlRenderingPSpecFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlParamSpec" title="struct GdaSqlParamSpec"><span class="type">GdaSqlParamSpec</span></a> *pspec</code></em>,
+                             <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> *expr</code></em>,
+                             <em class="parameter"><code><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> *context</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *is_default</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *is_null</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Rendering function type to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlParamSpec" title="struct GdaSqlParamSpec"><span class="type">GdaSqlParamSpec</span></a></p>
+<div class="refsect3">
+<a name="GdaSqlRenderingPSpecFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pspec</p></td>
+<td class="parameter_description"><p><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlParamSpec" title="struct GdaSqlParamSpec"><span class="type">GdaSqlParamSpec</span></a> to render</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr</p></td>
+<td class="parameter_description"><p><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> which may hold the default value for the parameter, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the rendering context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_default</p></td>
+<td class="parameter_description"><p>pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> which is set to TRUE if value should be considered as a default value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_null</p></td>
+<td class="parameter_description"><p>pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> which is set to TRUE if value should be considered as NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSqlRenderingPSpecFunc.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlRenderingExpr"></a><h3>GdaSqlRenderingExpr ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<span class="c_punctuation">(</span>*GdaSqlRenderingExpr<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> *expr</code></em>,
+                        <em class="parameter"><code><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> *context</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *is_default</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *is_null</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Rendering function type to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a></p>
+<div class="refsect3">
+<a name="GdaSqlRenderingExpr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>expr</p></td>
+<td class="parameter_description"><p><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> to render</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the rendering context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_default</p></td>
+<td class="parameter_description"><p>pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> which is set to TRUE if value should be considered as a default value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_null</p></td>
+<td class="parameter_description"><p>pointer to a <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> which is set to TRUE if value should be considered as NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSqlRenderingExpr.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSqlRenderingFunc"></a><h3>GdaSqlRenderingFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<span class="c_punctuation">(</span>*GdaSqlRenderingFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a> *node</code></em>,
+                        <em class="parameter"><code><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> *context</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Function to render any <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a>.</p>
+<div class="refsect3">
+<a name="GdaSqlRenderingFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlAnyPart" title="struct GdaSqlAnyPart"><span class="type">GdaSqlAnyPart</span></a> pointer, to be cast to the correct type depending on which part the function has to render</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>the rendering context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSqlRenderingFunc.returns"></a><h4>Returns</h4>
+<p>a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-statement-to-sql-real"></a><h3>gda_statement_to_sql_real ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gda_statement_to_sql_real (<em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>,
+                           <em class="parameter"><code><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> *context</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Renders <em class="parameter"><code>stmt</code></em>
+ to its SQL representation, using <em class="parameter"><code>context</code></em>
+ to specify how each part of <em class="parameter"><code>stmt</code></em>
+ must
+be rendered. This function is mainly used by database provider's implementations which require
+to specialize some aspects of SQL rendering to be adapted to the database,'s own SQL dialect
+(for example SQLite rewrites the 'FALSE' and 'TRUE' literals as '0' and 'NOT 0').</p>
+<div class="refsect3">
+<a name="gda-statement-to-sql-real.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingContext" title="struct GdaSqlRenderingContext"><span class="type">GdaSqlRenderingContext</span></a> context</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-statement-to-sql-real.returns"></a><h4>Returns</h4>
+<p> a new string, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libgda-5.0-SQL-rendering-API.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaSqlRenderingContext"></a><h3>struct GdaSqlRenderingContext</h3>
+<pre class="programlisting">struct GdaSqlRenderingContext {
+	GdaStatementSqlFlag      flags;
+	GdaSet                  *params;
+	GSList                  *params_used;
+	GdaServerProvider       *provider; /* may be NULL */
+	GdaConnection           *cnc;      /* may be NULL */
+
+	/* rendering functions */
+	GdaSqlRenderingValue     render_value;
+	GdaSqlRenderingPSpecFunc render_param_spec;
+
+	GdaSqlRenderingExpr      render_expr;
+
+	GdaSqlRenderingFunc      render_unknown;
+
+	GdaSqlRenderingFunc      render_begin;
+	GdaSqlRenderingFunc      render_rollback;
+	GdaSqlRenderingFunc      render_commit;
+	GdaSqlRenderingFunc      render_savepoint;
+	GdaSqlRenderingFunc      render_rollback_savepoint;
+	GdaSqlRenderingFunc      render_delete_savepoint;
+
+	GdaSqlRenderingFunc      render_select;
+	GdaSqlRenderingFunc      render_insert;
+	GdaSqlRenderingFunc      render_delete;
+	GdaSqlRenderingFunc      render_update;
+	GdaSqlRenderingFunc      render_compound;
+
+	GdaSqlRenderingFunc      render_field;
+	GdaSqlRenderingFunc      render_table;
+	GdaSqlRenderingFunc      render_function;
+	GdaSqlRenderingFunc      render_operation;
+	GdaSqlRenderingFunc      render_case;
+	GdaSqlRenderingFunc      render_select_field;
+	GdaSqlRenderingFunc      render_select_target;
+	GdaSqlRenderingFunc      render_select_join;
+	GdaSqlRenderingFunc      render_select_from;
+	GdaSqlRenderingFunc      render_select_order;
+	GdaSqlRenderingFunc      render_distinct;
+};
+</pre>
+<p>Specifies the context in which a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatement" title="GdaSqlStatement"><span class="type">GdaSqlStatement</span></a> is being converted to SQL.</p>
+<div class="refsect3">
+<a name="GdaSqlRenderingContext.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaStatement.html#GdaStatementSqlFlag" title="enum GdaStatementSqlFlag"><span class="type">GdaStatementSqlFlag</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.flags"></a>flags</code></em>;</p></td>
+<td class="struct_member_description"><p>Global rendering options</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *<em class="structfield"><code><a name="GdaSqlRenderingContext.params"></a>params</code></em>;</p></td>
+<td class="struct_member_description"><p>Parameters to be used while doing the rendering</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaSqlRenderingContext.params-used"></a>params_used</code></em>;</p></td>
+<td class="struct_member_description"><p>When rendering is complete, contains the ordered list of parameters which have been used while doing the rendering. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> GdaHolder]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaServerProvider.html" title="GdaServerProvider"><span class="type">GdaServerProvider</span></a> *<em class="structfield"><code><a name="GdaSqlRenderingContext.provider"></a>provider</code></em>;</p></td>
+<td class="struct_member_description"><p>Pointer to the server provider to be used</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *<em class="structfield"><code><a name="GdaSqlRenderingContext.cnc"></a>cnc</code></em>;</p></td>
+<td class="struct_member_description"><p>Pointer to the connection to be used</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingValue" title="GdaSqlRenderingValue ()"><span class="type">GdaSqlRenderingValue</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-value"></a>render_value</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingPSpecFunc" title="GdaSqlRenderingPSpecFunc ()"><span class="type">GdaSqlRenderingPSpecFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-param-spec"></a>render_param_spec</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlParamSpec" title="struct GdaSqlParamSpec"><span class="type">GdaSqlParamSpec</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingExpr" title="GdaSqlRenderingExpr ()"><span class="type">GdaSqlRenderingExpr</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-expr"></a>render_expr</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-unknown"></a>render_unknown</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementUnknown" title="GdaSqlStatementUnknown"><span class="type">GdaSqlStatementUnknown</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-begin"></a>render_begin</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a BEGIN <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-rollback"></a>render_rollback</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a ROLLBACK <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-commit"></a>render_commit</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a COMMIT <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-savepoint"></a>render_savepoint</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a ADD SAVEPOINT <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-rollback-savepoint"></a>render_rollback_savepoint</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a ROLBACK SAVEPOINT <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-delete-savepoint"></a>render_delete_savepoint</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a DELETE SAVEPOINT <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementTransaction" title="GdaSqlStatementTransaction"><span class="type">GdaSqlStatementTransaction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select"></a>render_select</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementSelect" title="GdaSqlStatementSelect"><span class="type">GdaSqlStatementSelect</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-insert"></a>render_insert</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementInsert" title="GdaSqlStatementInsert"><span class="type">GdaSqlStatementInsert</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-delete"></a>render_delete</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementDelete" title="GdaSqlStatementDelete"><span class="type">GdaSqlStatementDelete</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-update"></a>render_update</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementUpdate" title="GdaSqlStatementUpdate"><span class="type">GdaSqlStatementUpdate</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-compound"></a>render_compound</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlStatementCompound" title="GdaSqlStatementCompound"><span class="type">GdaSqlStatementCompound</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-field"></a>render_field</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlField" title="struct GdaSqlField"><span class="type">GdaSqlField</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-table"></a>render_table</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlTable" title="struct GdaSqlTable"><span class="type">GdaSqlTable</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-function"></a>render_function</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlFunction" title="struct GdaSqlFunction"><span class="type">GdaSqlFunction</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-operation"></a>render_operation</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlOperation" title="struct GdaSqlOperation"><span class="type">GdaSqlOperation</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-case"></a>render_case</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlCase" title="struct GdaSqlCase"><span class="type">GdaSqlCase</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select-field"></a>render_select_field</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectField" title="struct GdaSqlSelectField"><span class="type">GdaSqlSelectField</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select-target"></a>render_select_target</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectTarget" title="struct GdaSqlSelectTarget"><span class="type">GdaSqlSelectTarget</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select-join"></a>render_select_join</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectJoin" title="struct GdaSqlSelectJoin"><span class="type">GdaSqlSelectJoin</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select-from"></a>render_select_from</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectFrom" title="struct GdaSqlSelectFrom"><span class="type">GdaSqlSelectFrom</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-select-order"></a>render_select_order</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlSelectOrder" title="struct GdaSqlSelectOrder"><span class="type">GdaSqlSelectOrder</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libgda-5.0-SQL-rendering-API.html#GdaSqlRenderingFunc" title="GdaSqlRenderingFunc ()"><span class="type">GdaSqlRenderingFunc</span></a> <em class="structfield"><code><a name="GdaSqlRenderingContext.render-distinct"></a>render_distinct</code></em>;</p></td>
+<td class="struct_member_description"><p>function to render the DISTINCT clause in a SELECT</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

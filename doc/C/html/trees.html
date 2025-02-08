@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Trees: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_libgda_api.html" title="Part II. API reference">
+<link rel="prev" href="gda-data-model-writing.html" title="Implementing your own data model">
+<link rel="next" href="GdaTree.html" title="GdaTree">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_libgda_api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gda-data-model-writing.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaTree.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="trees"></a>Trees</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="GdaTree.html">GdaTree</a></span><span class="refpurpose"> — A tree-structure</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeManager.html">GdaTreeManager</a></span><span class="refpurpose"> — Base class for all the tree managers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeNode.html">GdaTreeNode</a></span><span class="refpurpose"> — A node in a <span class="type">GdaTree</span></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLabel.html">GdaTreeMgrLabel</a></span><span class="refpurpose"> — A tree manager which creates a single node</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSelect.html">GdaTreeMgrSelect</a></span><span class="refpurpose"> — A tree manager which creates a node for each row resulting from the execution of a SELECT statement</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrSchemas.html">GdaTreeMgrSchemas</a></span><span class="refpurpose"> — A tree manager which creates a node for each schema in a database</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrTables.html">GdaTreeMgrTables</a></span><span class="refpurpose"> — A tree manager which creates a node for each table in a schema</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrColumns.html">GdaTreeMgrColumns</a></span><span class="refpurpose"> — A tree manager which creates a node for each column of a table</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GdaTreeMgrLdap.html">GdaTreeMgrLdap</a></span><span class="refpurpose"> — A tree manager which creates a node for each child entry of an LDAP entry</span>
+</dt>
+</dl></div>
+<p>
+	<span class="application">Libgda</span> supports data organized hierarchically in a tree. The specific aspect of this object is that
+	one does not actually create nodes in it directly, but rather specifies the tree structure (ie. what
+	top level nodes represent, whan their children represent, ...) using 
+	<a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a> objects: any node in the tree
+	is managed by one and only one such object. This approach makes it very easy to produce trees organized
+	around repetitive data coming from a database. So again, one does not create or remove nodes in a tree,
+	but asks that the tree be specifically updated, in part or starting from a specific node (note that
+	nodes can also be added and removed on events depending on each GdaTreeManager object).
+      </p>
+<p>
+	A tree is represented by a
+	unique <a class="link" href="GdaTree.html" title="GdaTree">GdaTree</a> object,
+	in which each node is represented by a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode">GdaTreeNode</a> object. As mentioned previously, any
+	<a class="link" href="GdaTreeNode.html" title="GdaTreeNode">GdaTreeNode</a> in a <a class="link" href="GdaTree.html" title="GdaTree">GdaTree</a> is created (and destroyed)
+	by a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a> object: the nodes hierarchy itself is
+	represented by a hierarchy of <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a> objects
+	(with the one(s) managing the nodes immediately under the tree root attached to the <a class="link" href="GdaTree.html" title="GdaTree">GdaTree</a>
+	itself and the others attached to the <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a> which act as their parent).
+      </p>
+<p>
+	When populating a tree (or updating a part of it), a <a class="link" href="GdaTreeManager.html" title="GdaTreeManager">GdaTreeManager</a> 
+	is requested to create (or update) nodes
+	below a parent node. For any node it creates (or updates), and for any sub tree managers it has, it
+	requests those sub managers to populate (or update) the sub nodes of that node; this is a recursive process. Note that
+	the tree manager itself does not store any information about the nodes it has created (this information is stored in
+	the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode">GdaTreeNode</a> themselves): it is stateless
+	(much in the same way as the <a href="/usr/share/gtk-doc/html/gtk3/GtkCellRenderer.html#GtkCellRenderer-struct">GtkCellRenderer</a> objects are stateless in a
+	<a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct">GtkTreeView</a> widget).
+      </p>
+<p>
+	The following figure illustrates a simple tree:
+	</p>
+<div class="mediaobject"><img src="tree-overview.png" alt="Overview of the GdaTree"></div>
+<p>
+	The tree has 3 top level nodes (labelled "Node 0", "Node 1" and "Node 2" in the schema), which have been created
+	by the GdaTreeManager labelled "GdaTreeManager 0". These top level nodes have sub 
+	nodes (two for the "Node 0" and "Node 1", and none for "Node 2") which have been created by
+	the GdaTreeManager labelled "GdaTreeManager 1"
+      </p>
+<p>
+	The following figure illustrates a mode complicated tree which, when dumped is (truncated here for readability):
+	</p>
+<pre class="programlisting">
+.
+|-- information_schema
+|   |-- sql_features
+|   |   |-- feature_name
+|   |   `-- feature_id
+|   `-- sql_parts
+|       |-- comments
+|       `-- feature_id
+|-- public
+|   |-- customers
+|   |   |-- name
+|   |   `-- id
+|   `-- products
+|       |-- name
+|       `-- ref
+|-- customers
+|   |-- name
+|   `-- id
+`-- products
+    |-- name
+    `-- ref
+	</pre>
+<p>
+	</p>
+<div class="mediaobject"><img src="tree-overview2.png" alt="Overview of the GdaTree"></div>
+<p>
+	The tree has 4 top level nodes ("information_schema", "public" which in fact represent schemas in a PostgreSQL database
+	and "customers" and "products" which are the tables in the "public" schema). Two GdaTreeManager objects are
+	associated to the GdaTree object: the <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas">GdaTreeMgrSchemas</a> manager (which
+	creates nodes for each schema in a database) and the <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a>
+	manager (which creates nodes for each table in a schema, or, if no schema is specified creates nodes for
+	each table visible by default).
+	Here the <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas">GdaTreeMgrSchemas</a> manager created the "information_schema" and "public"
+	top level nodes and the <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a> manager created the
+	"customers" and "products" top level nodes.
+      </p>
+<p>
+	The topmost GdaTreeMgrSchemas tree manager object has a child tree manager which is also a GdaTreeManagerTables
+	(and which here is the same object as the GdaTreeManagerTables object which created two of the top level nodes
+	to avoid the unnecessary complication of creating too many tree manager objects). This GdaTreeManagerTables object
+	created the "sql_features", "sql_parts" nodes below the "information_schema" node and the "customers" and
+	"products" nodes below the "public" node.
+      </p>
+<p>
+	As the GdaTreeManagerTables object also has a child tree manager, the 
+	<a class="link" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns">GdaTreeMgrColumns</a> manager, some nodes are created below the "customers"
+	nodes and below the "products" nodes (some of these nodes are not represented in the figure above for
+	clarity).
+      </p>
+<p>
+	As illustrated on the figure above, tree nodes can be assigned named attributes as <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct">GValue</a>
+	values. For instance the <a class="link" href="GdaTreeMgrSchemas.html" title="GdaTreeMgrSchemas">GdaTreeMgrSchemas</a> manager sets the "schema" attribute
+	to the nodes it creates, the <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a> manager sets the "table_name"
+	attribute (and the "schema" attribute if the node has been created as a table which is visible by default) and
+	the <a class="link" href="GdaTreeMgrColumns.html" title="GdaTreeMgrColumns">GdaTreeMgrColumns</a> manager sets the "column_name" attribute to the nodes
+	it creates.
+      </p>
+<p>
+	Node attributes can be read and changed at will by the programmer, and are used extensively by the
+	tree manager objects themselves to determine the nodes they nees to create as children of a given node. For example
+	the <a class="link" href="GdaTreeMgrTables.html" title="GdaTreeMgrTables">GdaTreeMgrTables</a> manager, uses
+	<a class="link" href="GdaTreeNode.html#gda-tree-node-fetch-attribute" title="gda_tree_node_fetch_attribute ()">gda_tree_node_fetch_attribute()</a> to get the
+	"schema" attribute from the node below which it has to create children nodes. If the attribute exists, it
+	then creates a node for each table in the mentioned schema, and otherwise creates a node for each table
+	visible by default.
+      </p>
+<p>
+	The code to set up this tree would be the following one:
+	</p>
+<pre class="programlisting">
+GdaConnection *cnc = ...
+GdaTree *tree;
+GdaTreeManager *schemas_mgr, *tables_mgr, *columns_mgr;
+
+tree = gda_tree_new ();
+
+schemas_mgr = gda_tree_mgr_schemas_new (cnc);
+tables_mgr = gda_tree_mgr_tables_new (cnc, NULL);
+columns_mgr = gda_tree_mgr_columns_new (cnc, NULL, NULL);
+
+gda_tree_manager_add_manager (schemas_mgr, tables_mgr);
+gda_tree_manager_add_manager (tables_mgr, columns_mgr);
+
+gda_tree_add_manager (tree, schemas_mgr);
+gda_tree_add_manager (tree, tables_mgr);
+
+g_object_unref (schemas_mgr);
+g_object_unref (tables_mgr);
+g_object_unref (columns_mgr);
+
+if (!gda_tree_update_all (tree, NULL)) {
+        /* ERROR */
+}
+else {
+        gda_tree_dump (tree, NULL, NULL);
+}
+g_object_unref (tree);
+	</pre>
+<p>
+      </p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

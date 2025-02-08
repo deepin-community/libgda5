@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="declared-fk" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Deklarierte Fremdschlüssel</title>
+  <p>Alle eingeschränkten fremden Schlüssel (d.h. die auf eine oder mehrere Spalten einer anderen Tabelle eingeschränkten Inhalte einer oder mehrerer Spalten einer Tabelle) werden in der <link xref="schema-browser-perspective">Schema-Browser-Perspektive</link> analysiert und dargestellt. Eingeschränkte fremde Schlüssel verbessern das Verständnis von Datenbank-Schemata und werden - sofern sinnvoll - automatisch von der Anwendung eingesetzt.</p>
+  <p>Jedoch hat manchmal der Designer einer Datenbank eingeschränkte fremde Schlüssel vergessen oder wollte diese nicht einsetzen, so dass es möglich ist, »fremde Schlüssel zu deklarieren«, die nur eine Deklaration im Werkzeug sind, aber tatsächlich nicht in der Datenbank definiert sind.</p>
+  <figure>
+    <title>Deklarierte Fremdschlüssel in Diagrammen</title>
+    <desc>In Diagrammen werden deklarierte Fremdschlüssel durch eine gestrichelte Linie an Stelle einer durchgezogenen Linie für tatsächliche Fremdschlüssel dargestellt</desc>
+    <media type="image" mime="image/png" src="figures/declaredfk.png"/>
+  </figure>
+  <p>Hinweise:</p>
+  <list>
+    <item><p>das Triple (Name des Fremdschlüssels, Tabelle, Bezugstabelle) identifiziert eindeutig einen deklarierten Fremdschlüssel. Eine Deklaration eines neuen Fremdschlüssels mit dem selben Triple löscht damit alle vorgerhenden Deklarationen.</p></item>
+    <item><p>Wenn die selbe Beschränkung tatsächlich durch einen echten Fremdschlüssel und durch einen deklarierten repräsentiert wird, so überdeckt die Definition des echten Fremdschlüssels die des deklarierten.</p></item>
+    <item><p>Deklarierte Fremdschlüssel haben keine Richtlinie, welche Aktionen im Falle von UPDATE oder DELETE auszuführen sind. Die gemeldete Richtlinie wird immer »nicht erzwungen« sein.</p></item>
+  </list>
+
+  <section id="declare-new-fk">
+    <title>Deklarieren eines neuen Fremdschlüssels</title>
+    <p>Wenn in der <link xref="schema-browser-perspective">Schema-Browser-Perspektive</link> die Eigenschaften einer Tabelle in einem Reiter angezeigt werden, so verwenden Sie das Menü <guiseq><gui>Tabelle</gui><gui>Daten einfügen</gui></guiseq>, um ein Einblendfenster anzuzeigen, das einen Dateneintrag für jede Spalte der Tabelle enthält, in die Daten eingefügt werden sollen.</p>
+    <p>Eine andere Möglichkeit zur Deklaration von Fremdschlüsseln ist die Verwendung eines Kontextmenüs einer Tabelle in einem Diagramm und der Auswahl der Option <guiseq><gui>Fremdschlüssel für diese Tabelle deklarieren</gui></guiseq>.</p>
+    <p>In jedem Fall müssen beim Deklarieren eines neuen Fremdschlüssels folgende Informationen angegeben werden:</p>
+    <list>
+      <item><p>Ein Fremdschlüsselname</p></item>
+      <item><p>Die Bezugstabelle</p></item>
+      <item><p>Spalten und referenzierte Spalten für jede in den Fremdschlüssel einbezogene Spalte</p></item>
+    </list>
+    <figure>
+      <title>Informationen zum Deklarieren eines neuen Fremdschlüssels</title>
+      <desc>Einblenddialog zur Deklaration eines neuen Fremdschlüssels. Die Bezugstabelle ist in diesem Fall »warehouses«, und die einbezogenen Spalten sind »country« und »city«.</desc>
+      <media type="image" mime="image/png" src="figures/declaredfk-dialog.png"/>
+    </figure>
+  </section>
+  
+  <section id="remove-fk">
+    <title>Einen deklarierten Fremdschlüssel entfernen</title>
+    <p>Ein deklarierter Fremdschlüssel kann durch Klicken auf den Verweis <guiseq><gui>(Entfernen)</gui></guiseq> entfernt werden, der unter den Eigenschaften eines jeden Fremdschlüssels in den Tabelleneigenschaften angezeigt wird (in der <link xref="schema-browser-perspective">Schema-Browser-Perspektive</link>.</p>
+    <p>Eine weitere Möglichkeit, einen deklarierten Fremdschlüssel zu entfernen, besteht darin, in einer <link xref="diagram">Diagramm-</link>-Seite das Kontextmenü aufzurufen, das sich für die gestrichelte Linie öffnet, welche einen deklarierten Fremdschlüssel repräsentiert, und die Option <guiseq><gui>Diesen deklarierten Fremdschlüssel entfernen</gui></guiseq> auswählt.</p>
+  </section>
+</page>

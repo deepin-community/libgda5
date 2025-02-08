@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaPstmt: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="psupport.html" title="Providers' support API">
+<link rel="prev" href="libgda-5.0-Subclassing-GdaDataSelect.html" title="Subclassing GdaDataSelect">
+<link rel="next" href="libgda-5.0-Quark-lists.html" title="Quark list">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaPStmt.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaPStmt.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="psupport.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libgda-5.0-Subclassing-GdaDataSelect.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-Quark-lists.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaPStmt"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaPStmt.top_of_page"></a>GdaPstmt</span></h2>
+<p>GdaPstmt — Base class for prepared statement's</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaPStmt.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaPStmt.html#gda-pstmt-set-gda-statement" title="gda_pstmt_set_gda_statement ()">gda_pstmt_set_gda_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaPStmt.html#gda-pstmt-get-gda-statement" title="gda_pstmt_get_gda_statement ()">gda_pstmt_get_gda_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaPStmt.html#gda-pstmt-copy-contents" title="gda_pstmt_copy_contents ()">gda_pstmt_copy_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaPStmt.html#GdaPStmt-struct" title="struct GdaPStmt">GdaPStmt</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaPStmt
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/providers-support/gda-pstmt.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> represents the association between a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> statement and a <span class="emphasis"><em>prepared statement</em></span>
+which is database dependent and is an in-memory representation of a statement. Using prepared statement has the
+following advantages:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the parsing of the SQL has to be done only once, which improves performances if the statement
+has to be executed more than once</p></li>
+<li class="listitem"><p>if a statement has been prepared, then it means it is syntactically correct and has been
+<span class="emphasis"><em>understood</em></span> by the database's API</p></li>
+<li class="listitem"><p>it is possible to use variables in prepared statement which eliminates the risk
+of SQL code injection</p></li>
+</ul></div>
+<p>The <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> is not intended to be instantiated, but subclassed by database provider's implementation.
+Once created, the database provider's implementation can decide to associate (for future lookup) to
+a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object in a connection using <a class="link" href="libgda-5.0-Misc-API.html#gda-connection-add-prepared-statement" title="gda_connection_add_prepared_statement ()"><code class="function">gda_connection_add_prepared_statement()</code></a>.</p>
+<p>The <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object can keep a reference to the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object (which can be set and get using
+the <a class="link" href="GdaPStmt.html#gda-pstmt-set-gda-statement" title="gda_pstmt_set_gda_statement ()"><code class="function">gda_pstmt_set_gda_statement()</code></a> and <a class="link" href="GdaPStmt.html#gda-pstmt-get-gda-statement" title="gda_pstmt_get_gda_statement ()"><code class="function">gda_pstmt_get_gda_statement()</code></a>), however that reference
+if a weak one (which means it will be lost if the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object is destroyed).</p>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-pstmt-set-gda-statement"></a><h3>gda_pstmt_set_gda_statement ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_pstmt_set_gda_statement (<em class="parameter"><code><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *pstmt</code></em>,
+                             <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *stmt</code></em>);</pre>
+<p>Informs <em class="parameter"><code>pstmt</code></em>
+ that it corresponds to the preparation of the <em class="parameter"><code>stmt</code></em>
+ statement</p>
+<div class="refsect3">
+<a name="gda-pstmt-set-gda-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pstmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-pstmt-get-gda-statement"></a><h3>gda_pstmt_get_gda_statement ()</h3>
+<pre class="programlisting"><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="returnvalue">GdaStatement</span></a> *
+gda_pstmt_get_gda_statement (<em class="parameter"><code><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *pstmt</code></em>);</pre>
+<p>Get a pointer to the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> which led to the creation of this prepared statement.</p>
+<p>Note: if that statement has been modified since the creation of <em class="parameter"><code>pstmt</code></em>
+, then this method
+will return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+<div class="refsect3">
+<a name="gda-pstmt-get-gda-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pstmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-pstmt-get-gda-statement.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-pstmt-copy-contents"></a><h3>gda_pstmt_copy_contents ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_pstmt_copy_contents (<em class="parameter"><code><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *src</code></em>,
+                         <em class="parameter"><code><a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *dest</code></em>);</pre>
+<p>Copies <em class="parameter"><code>src</code></em>
+'s data to <em class="parameter"><code>dest</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-pstmt-copy-contents.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>src</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dest</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaPStmt.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaPStmt-struct"></a><h3>struct GdaPStmt</h3>
+<pre class="programlisting">struct GdaPStmt;</pre>
+<div class="refsect3">
+<a name="GdaPStmt.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

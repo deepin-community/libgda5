@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Virtual methods for providers: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="part_providers.html" title="Part VIII. Databases providers for developers">
+<link rel="prev" href="ch43.html" title="Getting started">
+<link rel="next" href="ch44s02.html" title="Multi threaded environment">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="part_providers.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch43.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch44s02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="libgda-provider-class"></a>Virtual methods for providers</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="sect1"><a href="libgda-provider-class.html#id-1.9.7.5">Synchronous / asynchronous mode</a></span></dt>
+<dt><span class="sect1"><a href="ch44s02.html">Multi threaded environment</a></span></dt>
+<dt><span class="sect1"><a href="ch44s03.html">Methods - provider's information</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-name">get_name() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-version">get_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#prov-get-server-version">get_server_version() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s03.html#id-1.9.7.7.5">supports_feature()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s04.html">Methods - connection management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s04.html#prov-open-connection">open_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#prov-close-connection">close_connection() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s04.html#id-1.9.7.8.4">get_database()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s05.html">Methods - DDL queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.4">supports_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.5">create_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.6">render_operation()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s05.html#id-1.9.7.9.7">perform_operation()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s06.html">Methods - transactions management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.3">begin_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.4">commit_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.5">rollback_transaction()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.6">add_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.7">rollback_savepoint()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s06.html#id-1.9.7.10.8">delete_savepoint()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s07.html">Methods - DML queries</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.4">create_parser()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.5">statement_to_sql()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.6">statement_prepare()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.7">statement_execute() - mandatory</a></span></dt>
+<dt><span class="sect2"><a href="ch44s07.html#id-1.9.7.11.8">handle_async()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s08.html">Methods - data representation</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.3">get_data_handler()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.4">get_def_dbms_type()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.5">escape_string()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s08.html#id-1.9.7.12.6">unescape_string()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="prov-metadata.html">Methods - metadata</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.6">Important note about SQL identifiers</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.7">Reserved SQL keywords</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.8">_info()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.9">_btypes()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.10">schemata() and _schemata()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.11">tables_views() and _tables_views()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.12">columns() and _columns()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.13">constraints_tab() and _constraints_tab()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.14">constraints_ref() and _constraints_ref()</a></span></dt>
+<dt><span class="sect2"><a href="prov-metadata.html#id-1.9.7.13.15">key_columns() and _key_columns()</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="ch44s10.html">Methods - misc.</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.2">cancel()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.3">create_connection()</a></span></dt>
+<dt><span class="sect2"><a href="ch44s10.html#id-1.9.7.14.4">is_busy()</a></span></dt>
+</dl></dd>
+</dl></div>
+<p>
+    Database providers usually (that is except for <span class="emphasis"><em>virtual</em></span> providers explained later) subclass
+    the <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> class and implement at least the mandatory
+    virtual methods.
+  </p>
+<p>
+    Virtual providers are database providers when the database engine accessed does not support SQL (or
+    supports it poorly), such as Berkeley databases or MDB (or even LDAP). These provider's implementation's
+    design is to create <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a> data model objects and make
+    each of them appear as a named table once the connection is opened. For example the MDB provider creates
+    a read-only data model for each table in an MDB file and make it appear using the original table
+    name used in MS Access (the tables cannot be modified but it is possible to use all SQLite's SQL
+    to make SELECT queries).
+  </p>
+<p>
+    Virtual providers inherit the <a class="link" href="GdaVproviderDataModel.html" title="GdaVproviderDataModel">GdaVproviderDataModel</a> class
+    and not the <a class="link" href="GdaServerProvider.html" title="GdaServerProvider">GdaServerProvider</a> as "normal" providers do,
+    and the number of virtual methods to implement is very limited: only the <a class="link" href="ch44s03.html#prov-get-name" title="get_name() - mandatory">get_name()</a>,
+    <a class="link" href="ch44s03.html#prov-get-version" title="get_version() - mandatory">get_version()</a>, <a class="link" href="ch44s03.html#prov-get-server-version" title="get_server_version() - mandatory">get_server_version()</a>, 
+    <a class="link" href="ch44s04.html#prov-open-connection" title="open_connection() - mandatory">open_connection()</a> and get_database()
+    should be implemented, optionnally the <a class="link" href="ch44s04.html#prov-close-connection" title="close_connection() - mandatory">close_connection()</a> can
+    also be implemented.
+  </p>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.9.7.5"></a>Synchronous / asynchronous mode</h2></div></div></div>
+<p>
+      All the provider's commands are executed in a synchronous mode (the caller is blocked until the provider's
+      method terminates). However some virtual methods have the a <em class="parameter"><code>task_id</code></em> parameter, 
+      an <em class="parameter"><code>async_cb</code></em> or <em class="parameter"><code>exec_cb</code></em> callback function pointer and 
+      a <em class="parameter"><code>cb_data</code></em> parameter which can be set when an asynchronous mode 
+      is required; asynchronous mode is requested if and only if the <em class="parameter"><code>async_cb</code></em> or
+      <em class="parameter"><code>exec_cb</code></em> parmeter is not NULL.
+    </p>
+<p>
+      When an asynchronous mode is requested, the method should return TRUE if it returns a boolean or NULL if it returns a
+      pointer and set a task identifier
+      into the <em class="parameter"><code>task_id</code></em> parameter if not NULL. The task identifier is passed again when
+      the <em class="parameter"><code>async_cb</code></em> or <em class="parameter"><code>exec_cb</code></em> callback functions are called by the
+      provider when the execution is finished.
+    </p>
+<p>
+      When the provider's method terminates, it then should call the function passed as <em class="parameter"><code>async_cb</code></em>
+      with the <em class="parameter"><code>cb_data</code></em> as last parameters.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

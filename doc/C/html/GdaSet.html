@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaSet: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="connection.html" title="Connections &amp; commands">
+<link rel="prev" href="GdaHolder.html" title="GdaHolder">
+<link rel="next" href="GdaConnectionEvent.html" title="GdaConnectionEvent">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaSet.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaSet.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaSet.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdaSet.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="connection.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaHolder.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaConnectionEvent.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaSet"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaSet.top_of_page"></a>GdaSet</span></h2>
+<p>GdaSet — Container for several values</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaSet.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaSet.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-new" title="gda_set_new ()">gda_set_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-new-read-only" title="gda_set_new_read_only ()">gda_set_new_read_only</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-copy" title="gda_set_copy ()">gda_set_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-new-inline" title="gda_set_new_inline ()">gda_set_new_inline</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-new-from-spec-string" title="gda_set_new_from_spec_string ()">gda_set_new_from_spec_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-new-from-spec-node" title="gda_set_new_from_spec_node ()">gda_set_new_from_spec_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-is-valid" title="gda_set_is_valid ()">gda_set_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-holder-value" title="gda_set_get_holder_value ()">gda_set_get_holder_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-set-holder-value" title="gda_set_set_holder_value ()">gda_set_set_holder_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-holder" title="gda_set_get_holder ()">gda_set_get_holder</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-nth-holder" title="gda_set_get_nth_holder ()">gda_set_get_nth_holder</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-add-holder" title="gda_set_add_holder ()">gda_set_add_holder</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-remove-holder" title="gda_set_remove_holder ()">gda_set_remove_holder</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-merge-with-set" title="gda_set_merge_with_set ()">gda_set_merge_with_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-replace-source-model" title="gda_set_replace_source_model ()">gda_set_replace_source_model</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="returnvalue">GdaSetNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-node" title="gda_set_get_node ()">gda_set_get_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="returnvalue">GdaSetSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-source-for-model" title="gda_set_get_source_for_model ()">gda_set_get_source_for_model</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="returnvalue">GdaSetSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-source" title="gda_set_get_source ()">gda_set_get_source</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="returnvalue">GdaSetGroup</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdaSet.html#gda-set-get-group" title="gda_set_get_group ()">gda_set_get_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaSet.html#GdaSet--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="GdaSet.html#GdaSet--holders" title="The “holders” property">holders</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaSet.html#GdaSet--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaSet.html#GdaSet--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaSet.html#GdaSet--validate-changes" title="The “validate-changes” property">validate-changes</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-holder-attr-changed" title="The “holder-attr-changed” signal">holder-attr-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-holder-changed" title="The “holder-changed” signal">holder-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-holder-type-set" title="The “holder-type-set” signal">holder-type-set</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-public-data-changed" title="The “public-data-changed” signal">public-data-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-source-model-changed" title="The “source-model-changed” signal">source-model-changed</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></td>
+</tr>
+<tr>
+<td class="signal_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*</td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-validate-holder-change" title="The “validate-holder-change” signal">validate-holder-change</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*</td>
+<td class="signal_name"><a class="link" href="GdaSet.html#GdaSet-validate-set" title="The “validate-set” signal">validate-set</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaSet.html#GdaSet-struct" title="GdaSet">GdaSet</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode">GdaSetNode</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource">GdaSetSource</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup">GdaSetGroup</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaSet
+        <span class="lineart">╰──</span> <a class="link" href="GdaDataModelIter.html" title="GdaDataModelIter">GdaDataModelIter</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSet.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda-report/gda-report-engine.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaSet.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object is a container for several values (as <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects). The list of <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects is
+publicly accessible (and should not be modified), using the "holders" attribute. Each <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object also
+maintains some publicly accessible information about the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects, through the <a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="type">GdaSetNode</span></a>, <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> and
+<a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="type">GdaSetGroup</span></a> structures (see <a class="link" href="GdaSet.html#gda-set-get-node" title="gda_set_get_node ()"><code class="function">gda_set_get_node()</code></a>, <a class="link" href="GdaSet.html#gda-set-get-source" title="gda_set_get_source ()"><code class="function">gda_set_get_source()</code></a> and <a class="link" href="GdaSet.html#gda-set-get-group" title="gda_set_get_group ()"><code class="function">gda_set_get_group()</code></a>).</p>
+<p>It is possible to control the values a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> can have in the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> by connecting to the </p>
+"before-holder-change" signal.
+
+</div>
+<div class="refsect1">
+<a name="GdaSet.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-set-new"></a><h3>gda_set_new ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_new (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *holders</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object, and populates it with the list given as argument.
+The list can then be freed as it is copied. All the value holders in <em class="parameter"><code>holders</code></em>
+ are referenced counted
+and modified, so they should not be used anymore afterwards.</p>
+<div class="refsect3">
+<a name="gda-set-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>holders</p></td>
+<td class="parameter_description"><p>a list of <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.Holder][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-new.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-new-read-only"></a><h3>gda_set_new_read_only ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_new_read_only (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *holders</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> like <a class="link" href="GdaSet.html#gda-set-new" title="gda_set_new ()"><code class="function">gda_set_new()</code></a>, but does not allow modifications to any of the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>
+object in <em class="parameter"><code>holders</code></em>
+. This function is used for Libgda's database providers' implementation.</p>
+<div class="refsect3">
+<a name="gda-set-new-read-only.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>holders</p></td>
+<td class="parameter_description"><p>a list of <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.Holder][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-new-read-only.returns"></a><h4>Returns</h4>
+<p> a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-copy"></a><h3>gda_set_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_copy (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object, copy of <em class="parameter"><code>set</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-set-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-copy.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-new-inline"></a><h3>gda_set_new_inline ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_new_inline (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nb</code></em>,
+                    <em class="parameter"><code>...</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> containing holders defined by each triplet in ...
+For each triplet (id, Glib type and value), 
+the value must be of the correct type (gchar * if type is G_STRING, ...)</p>
+<p>Note that this function is a utility function and that only a limited set of types are supported. Trying
+to use an unsupported type will result in a warning, and the returned value holder holding a safe default
+value.</p>
+<div class="refsect3">
+<a name="gda-set-new-inline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>nb</p></td>
+<td class="parameter_description"><p>the number of value holders which will be contained in the new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>a serie of a (const gchar*) id, (GType) type, and value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-new-inline.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-new-from-spec-string"></a><h3>gda_set_new_from_spec_string ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_new_from_spec_string (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml_spec</code></em>,
+                              <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object from the <em class="parameter"><code>xml_spec</code></em>
+
+specifications</p>
+<div class="refsect3">
+<a name="gda-set-new-from-spec-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>xml_spec</p></td>
+<td class="parameter_description"><p>a string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store the error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-new-from-spec-string.returns"></a><h4>Returns</h4>
+<p>a new object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-new-from-spec-node"></a><h3>gda_set_new_from_spec_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html" title="GdaSet"><span class="returnvalue">GdaSet</span></a> *
+gda_set_new_from_spec_node (<em class="parameter"><code><span class="type">xmlNodePtr</span> xml_spec</code></em>,
+                            <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object from the <em class="parameter"><code>xml_spec</code></em>
+
+specifications</p>
+<div class="refsect3">
+<a name="gda-set-new-from-spec-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>xml_spec</p></td>
+<td class="parameter_description"><p>a <span class="type">xmlNodePtr</span> for a &lt;parameters&gt; tag</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store the error, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-new-from-spec-node.returns"></a><h4>Returns</h4>
+<p>a new object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-is-valid"></a><h3>gda_set_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_set_is_valid (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>This method tells if all <em class="parameter"><code>set</code></em>
+'s <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects are valid, and if
+they represent a valid combination of values, as defined by rules
+external to Libgda: the "validate-set" signal is emitted and if none of the signal handlers return an
+error, then the returned value is TRUE, otherwise the return value is FALSE as soon as a signal handler
+returns an error.</p>
+<div class="refsect3">
+<a name="gda-set-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store validation errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-is-valid.returns"></a><h4>Returns</h4>
+<p> TRUE if the set is valid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-holder-value"></a><h3>gda_set_get_holder_value ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="returnvalue">GValue</span></a> *
+gda_set_get_holder_value (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *holder_id</code></em>);</pre>
+<p>Get the value of the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> which ID is <em class="parameter"><code>holder_id</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-set-get-holder-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder_id</p></td>
+<td class="parameter_description"><p>the ID of the holder to set the value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-holder-value.returns"></a><h4>Returns</h4>
+<p>the requested GValue, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (see <a class="link" href="GdaHolder.html#gda-holder-get-value" title="gda_holder_get_value ()"><code class="function">gda_holder_get_value()</code></a>). </p>
+<p><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-set-holder-value"></a><h3>gda_set_set_holder_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_set_set_holder_value (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                          <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *holder_id</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Set the value of the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> which ID is <em class="parameter"><code>holder_id</code></em>
+ to a specified value</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-set-set-holder-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder_id</p></td>
+<td class="parameter_description"><p>the ID of the holder to set the value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>value, of the correct type, depending on the requested holder's type (not NULL)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-set-holder-value.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred and the value was set correctly</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-holder"></a><h3>gda_set_get_holder ()</h3>
+<pre class="programlisting"><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+gda_set_get_holder (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                    <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *holder_id</code></em>);</pre>
+<p>Finds a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> using its ID</p>
+<div class="refsect3">
+<a name="gda-set-get-holder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder_id</p></td>
+<td class="parameter_description"><p>the ID of the requested value holder</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-holder.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-nth-holder"></a><h3>gda_set_get_nth_holder ()</h3>
+<pre class="programlisting"><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="returnvalue">GdaHolder</span></a> *
+gda_set_get_nth_holder (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                        <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> pos</code></em>);</pre>
+<p>Finds a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> using its position</p>
+<div class="refsect3">
+<a name="gda-set-get-nth-holder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pos</p></td>
+<td class="parameter_description"><p>the position of the requested <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>, starting at <code class="literal">0</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-nth-holder.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-add-holder"></a><h3>gda_set_add_holder ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_set_add_holder (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                    <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Adds <em class="parameter"><code>holder</code></em>
+ to the list of holders managed within <em class="parameter"><code>set</code></em>
+.</p>
+<p>NOTE: if <em class="parameter"><code>set</code></em>
+ already has a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> with the same ID as <em class="parameter"><code>holder</code></em>
+, then <em class="parameter"><code>holder</code></em>
+
+will not be added to the set (even if <em class="parameter"><code>holder</code></em>
+'s type or value is not the same as the
+one already in <em class="parameter"><code>set</code></em>
+).</p>
+<div class="refsect3">
+<a name="gda-set-add-holder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-add-holder.returns"></a><h4>Returns</h4>
+<p> TRUE if <em class="parameter"><code>holder</code></em>
+has been added to <em class="parameter"><code>set</code></em>
+(and FALSE if it has not been added because there is another <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>
+with the same ID)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-remove-holder"></a><h3>gda_set_remove_holder ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_set_remove_holder (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                       <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Removes a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> from the list of holders managed by <em class="parameter"><code>set</code></em>
+</p>
+<div class="refsect3">
+<a name="gda-set-remove-holder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> to remove from <em class="parameter"><code>set</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-merge-with-set"></a><h3>gda_set_merge_with_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_set_merge_with_set (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                        <em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set_to_merge</code></em>);</pre>
+<p>Add to <em class="parameter"><code>set</code></em>
+ all the holders of <em class="parameter"><code>set_to_merge</code></em>
+. 
+Note1: only the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> of <em class="parameter"><code>set_to_merge</code></em>
+ for which no holder in <em class="parameter"><code>set</code></em>
+ has the same ID are merged
+Note2: all the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> merged in <em class="parameter"><code>set</code></em>
+ are still used by <em class="parameter"><code>set_to_merge</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-set-merge-with-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>set_to_merge</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-replace-source-model"></a><h3>gda_set_replace_source_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_set_replace_source_model (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> *source</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Replaces <em class="parameter"><code>source-&gt;data_model</code></em>
+ with <em class="parameter"><code>model</code></em>
+, which must have the same
+characteristics as <em class="parameter"><code>source-&gt;data_model</code></em>
+ (same column types)</p>
+<p>Also for each <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> for which <em class="parameter"><code>source-&gt;data_model</code></em>
+ is a source model,
+this method calls <a class="link" href="GdaHolder.html#gda-holder-set-source-model" title="gda_holder_set_source_model ()"><code class="function">gda_holder_set_source_model()</code></a> with <em class="parameter"><code>model</code></em>
+ to replace
+the source by the new model</p>
+<div class="refsect3">
+<a name="gda-set-replace-source-model.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>a pointer to a <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> in <em class="parameter"><code>set</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-node"></a><h3>gda_set_get_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="returnvalue">GdaSetNode</span></a> *
+gda_set_get_node (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                  <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Finds a <a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="type">GdaSetNode</span></a> holding information for <em class="parameter"><code>holder</code></em>
+, don't modify the returned structure</p>
+<div class="refsect3">
+<a name="gda-set-get-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-node.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="type">GdaSetNode</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-source-for-model"></a><h3>gda_set_get_source_for_model ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="returnvalue">GdaSetSource</span></a> *
+gda_set_get_source_for_model (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                              <em class="parameter"><code><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> *model</code></em>);</pre>
+<p>Finds the <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> structure used in <em class="parameter"><code>set</code></em>
+ for which <em class="parameter"><code>model</code></em>
+ is a
+the data model (the returned structure should not be modified).</p>
+<div class="refsect3">
+<a name="gda-set-get-source-for-model.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-source-for-model.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> pointer or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-source"></a><h3>gda_set_get_source ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="returnvalue">GdaSetSource</span></a> *
+gda_set_get_source (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                    <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Finds a <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> which contains the <a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> restricting the possible values of
+<em class="parameter"><code>holder</code></em>
+, don't modify the returned structure.</p>
+<div class="refsect3">
+<a name="gda-set-get-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-source.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-set-get-group"></a><h3>gda_set_get_group ()</h3>
+<pre class="programlisting"><a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="returnvalue">GdaSetGroup</span></a> *
+gda_set_get_group (<em class="parameter"><code><a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *set</code></em>,
+                   <em class="parameter"><code><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder</code></em>);</pre>
+<p>Finds a <a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="type">GdaSetGroup</span></a> which lists a  <a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="type">GdaSetNode</span></a> containing <em class="parameter"><code>holder</code></em>
+,
+don't modify the returned structure.</p>
+<div class="refsect3">
+<a name="gda-set-get-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-set-get-group.returns"></a><h4>Returns</h4>
+<p>the requested <a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="type">GdaSetGroup</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaSet-struct"></a><h3>GdaSet</h3>
+<pre class="programlisting">typedef struct {
+	GSList         *holders;   /* list of GdaHolder objects */
+	GSList         *nodes_list;   /* list of GdaSetNode */
+        GSList         *sources_list; /* list of GdaSetSource */
+	GSList         *groups_list;  /* list of GdaSetGroup */
+} GdaSet;
+</pre>
+<div class="refsect3">
+<a name="GdaSet.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaSet-struct.holders"></a>holders</code></em>;</p></td>
+<td class="struct_member_description"><p>list of GdaHolder objects. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.Holder]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaSet-struct.nodes-list"></a>nodes_list</code></em>;</p></td>
+<td class="struct_member_description"><p>list of GdaSetNode. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.SetNode]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaSet-struct.sources-list"></a>sources_list</code></em>;</p></td>
+<td class="struct_member_description"><p>list of GdaSetSource. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.SetSource]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *<em class="structfield"><code><a name="GdaSet-struct.groups-list"></a>groups_list</code></em>;</p></td>
+<td class="struct_member_description"><p>list of GdaSetGroup. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> Gda.SetGroup]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSetNode"></a><h3>GdaSetNode</h3>
+<pre class="programlisting">typedef struct {
+	GdaHolder*    GSEAL(holder);
+	GdaDataModel* GSEAL(source_model);
+	gint          GSEAL(source_column);
+} GdaSetNode;
+</pre>
+<p>Since 5.2, you must consider this struct as opaque. Any access to its internal must use public API.
+Don't try to use <span class="type">gda_set_node_free</span> on a struct that was created manually.</p>
+<div class="refsect3">
+<a name="GdaSetNode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSetSource"></a><h3>GdaSetSource</h3>
+<pre class="programlisting">typedef struct {
+	GdaDataModel*   GSEAL(data_model);   /* Can't be NULL */
+	GSList*         GSEAL(nodes);        /* list of #GdaSetNode for which source_model == @data_model */
+} GdaSetSource;
+</pre>
+<p>Since 5.2, you must consider this struct as opaque. Any access to its internal must use public API.
+Don't try to use <span class="type">gda_set_source_free</span> on a struct that was created manually.</p>
+<div class="refsect3">
+<a name="GdaSetSource.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSetGroup"></a><h3>GdaSetGroup</h3>
+<pre class="programlisting">typedef struct {
+	GSList*       GSEAL(nodes);       /* list of GdaSetNode, at least one entry */
+	GdaSetSource* GSEAL(nodes_source); /* if NULL, then @nodes contains exactly one entry */
+} GdaSetGroup;
+</pre>
+<p>Since 5.2, you must consider this struct as opaque. Any access to its internal must use public API.
+Don't try to use <span class="type">gda_set_group_free</span> on a struct that was created manually.</p>
+<div class="refsect3">
+<a name="GdaSetGroup.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaSet--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Description.</p>
+<p>Owner: GdaSet</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet--holders"></a><h3>The <code class="literal">“holders”</code> property</h3>
+<pre class="programlisting">  “holders”                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>GdaHolder objects the set should contain.</p>
+<p>Owner: GdaSet</p>
+<p>Flags: Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Id.</p>
+<p>Owner: GdaSet</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Name.</p>
+<p>Owner: GdaSet</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet--validate-changes"></a><h3>The <code class="literal">“validate-changes”</code> property</h3>
+<pre class="programlisting">  “validate-changes”         <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Defines if the "validate-set" signal gets emitted when
+any holder in the data set changes. This property also affects the
+GdaHolder:validate-changes property.</p>
+<p>Owner: GdaSet</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+<p class="since">Since: 5.2.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdaSet-holder-attr-changed"></a><h3>The <code class="literal">“holder-attr-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>    *set,
+               <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>     *attr_name,
+               <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>    *attr_value,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted when an attribute for any of the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> objects managed by <em class="parameter"><code>set</code></em>
+ has changed</p>
+<div class="refsect3">
+<a name="GdaSet-holder-attr-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>the GdaHolder for which an attribute changed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_name</p></td>
+<td class="parameter_description"><p>attribute's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_value</p></td>
+<td class="parameter_description"><p>attribute's value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-holder-changed"></a><h3>The <code class="literal">“holder-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>    *gdaset,
+               <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-holder-type-set"></a><h3>The <code class="literal">“holder-type-set”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>    *set,
+               <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted when <em class="parameter"><code>holder</code></em>
+ in <em class="parameter"><code>set</code></em>
+ has its type finally set, in case
+it was <a class="link" href="libgda-5.0-Gda-Value.html#GDA-TYPE-NULL:CAPS" title="GDA_TYPE_NULL"><span class="type">GDA_TYPE_NULL</span></a></p>
+<div class="refsect3">
+<a name="GdaSet-holder-type-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> for which the <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> has been set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-public-data-changed"></a><h3>The <code class="literal">“public-data-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>  *set,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data)</pre>
+<p>Gets emitted when <em class="parameter"><code>set</code></em>
+'s public data (<a class="link" href="GdaSet.html#GdaSetNode" title="GdaSetNode"><span class="type">GdaSetNode</span></a>, <a class="link" href="GdaSet.html#GdaSetGroup" title="GdaSetGroup"><span class="type">GdaSetGroup</span></a> or <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> values) have changed</p>
+<div class="refsect3">
+<a name="GdaSet-public-data-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-source-model-changed"></a><h3>The <code class="literal">“source-model-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>  *set,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> source,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data)</pre>
+<p>Gets emitted when the data model in <em class="parameter"><code>source</code></em>
+ has changed</p>
+<div class="refsect3">
+<a name="GdaSet-source-model-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html#GdaSetSource" title="GdaSetSource"><span class="type">GdaSetSource</span></a> for which the <em class="parameter"><code>data_model</code></em>
+attribute has changed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-FIRST:CAPS">Run First</a></p>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-validate-holder-change"></a><h3>The <code class="literal">“validate-holder-change”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>    *set,
+               <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> *holder,
+               <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a>    *new_value,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>   user_data)</pre>
+<p>Gets emitted when a <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a>'s in <em class="parameter"><code>set</code></em>
+ is going to change its value. One can connect to
+this signal to control which values <em class="parameter"><code>holder</code></em>
+ can have (for example to implement some business rules)</p>
+<div class="refsect3">
+<a name="GdaSet-validate-holder-change.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>holder</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a> which is going to change</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_value</p></td>
+<td class="parameter_description"><p>the proposed new value for <em class="parameter"><code>holder</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSet-validate-holder-change.returns"></a><h4>Returns</h4>
+<p> NULL if <em class="parameter"><code>holder</code></em>
+is allowed to change its value to <em class="parameter"><code>new_value</code></em>
+, or a <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>
+otherwise.</p>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaSet-validate-set"></a><h3>The <code class="literal">“validate-set”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a>*
+user_function (<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a>  *set,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data)</pre>
+<p>Gets emitted when <a class="link" href="GdaSet.html#gda-set-is-valid" title="gda_set_is_valid ()"><code class="function">gda_set_is_valid()</code></a> is called, use
+this signal to control which combination of values <em class="parameter"><code>set</code></em>
+'s holder can have (for example to implement some business rules)</p>
+<div class="refsect3">
+<a name="GdaSet-validate-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>set</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GdaSet-validate-set.returns"></a><h4>Returns</h4>
+<p> NULL if <em class="parameter"><code>set</code></em>
+'s contents has been validated, or a <a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>
+otherwise.</p>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaSet.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaHolder.html" title="GdaHolder"><span class="type">GdaHolder</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

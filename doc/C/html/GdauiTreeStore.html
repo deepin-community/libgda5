@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdauiTreeStore: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="ch22.html" title="User interface API reference">
+<link rel="prev" href="GdauiServerOperation.html" title="GdauiServerOperation">
+<link rel="next" href="libgda-5.0-UI-Utility-functions.html" title="UI Utility functions">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdauiTreeStore.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdauiTreeStore.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdauiTreeStore.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdauiTreeStore.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GdauiTreeStore.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch22.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdauiServerOperation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libgda-5.0-UI-Utility-functions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdauiTreeStore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdauiTreeStore.top_of_page"></a>GdauiTreeStore</span></h2>
+<p>GdauiTreeStore — Bridge between a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> and a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdauiTreeStore.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiTreeStore.html#gdaui-tree-store-new" title="gdaui_tree_store_new ()">gdaui_tree_store_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiTreeStore.html#gdaui-tree-store-newv" title="gdaui_tree_store_newv ()">gdaui_tree_store_newv</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GdauiTreeStore.html#gdaui-tree-store-get-node" title="gdaui_tree_store_get_node ()">gdaui_tree_store_get_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdauiTreeStore.html#gdaui-tree-store-get-iter" title="gdaui_tree_store_get_iter ()">gdaui_tree_store_get_iter</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *</td>
+<td class="property_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore--tree" title="The “tree” property">tree</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-drag-can-drag" title="The “drag-can-drag” signal">drag-can-drag</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-drag-can-drop" title="The “drag-can-drop” signal">drag-can-drop</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-drag-delete" title="The “drag-delete” signal">drag-delete</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-drag-drop" title="The “drag-drop” signal">drag-drop</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+<tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-drag-get" title="The “drag-get” signal">drag-get</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdauiTreeStore.html#GdauiTreeStore-struct" title="struct GdauiTreeStore">GdauiTreeStore</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdauiTreeStore
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdauiTreeStore implements
+ <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct">GtkTreeModel</a>,  <a href="/usr/share/gtk-doc/html/gtk3/gtk3-GtkTreeView-drag-and-drop.html#GtkTreeDragSource-struct">GtkTreeDragSource</a> and  <a href="/usr/share/gtk-doc/html/gtk3/gtk3-GtkTreeView-drag-and-drop.html#GtkTreeDragDest-struct">GtkTreeDragDest</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/thread-wrapper/gda-thread-wrapper.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> implements the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> interface required
+to display data from a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> in a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-struct"><span class="type">GtkTreeView</span></a> widget.</p>
+<p>To allow a tree to be populated only on request (ie. when the user expands a row), each
+<a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> can give the attribute named <a class="link" href="libgda-5.0-Attributes-manager.html#GDA-ATTRIBUTE-TREE-NODE-UNKNOWN-CHILDREN:CAPS" title="GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN"><span class="type">GDA_ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN</span></a>
+a boolean <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue-struct"><span class="type">GValue</span></a> to tell the <a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> data model to artificially add
+a dummy child for the row corresponding to the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a>. Then the programmer
+can connect to the <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeView.html#GtkTreeView-test-expand-row">GtkTreeView::test-expand-row</a>
+signal and update the requested children.</p>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gdaui-tree-store-new"></a><h3>gdaui_tree_store_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+gdaui_tree_store_new (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_columns</code></em>,
+                      <em class="parameter"><code>...</code></em>);</pre>
+<p>Creates a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> interface with a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>, mapping columns to attributes' values.</p>
+<p>As an example, <code class="literal">gdaui_tree_store_new (tree, 2, G_TYPE_STRING, "name", G_TYPE_STRING, "schema");</code> creates
+a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeStore.html#GtkTreeStore-struct"><span class="type">GtkTreeStore</span></a> with two columns (of type G_TYPE_STRING), one with the values of the "name" attribute, and one with
+the values of the "schema" attribute.</p>
+<p>Note that the GType has to correspond to the type of value associated with the attribute name (no type
+conversion is done), and a warning will be displayed in case of type mismatch.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gdaui-tree-store-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_columns</p></td>
+<td class="parameter_description"><p>number of columns in the tree store</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>couples of (GType, attribute name) for each column, from first to last </p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-tree-store-new.returns"></a><h4>Returns</h4>
+<p> the new object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an attribute's name was NULL or an empty string</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-tree-store-newv"></a><h3>gdaui_tree_store_newv ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="returnvalue">GtkTreeModel</span></a> *
+gdaui_tree_store_newv (<em class="parameter"><code><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *tree</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_columns</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> *types</code></em>,
+                       <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **attribute_names</code></em>);</pre>
+<p>Creates a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeModel-struct"><span class="type">GtkTreeModel</span></a> interface with a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a>, mapping columns to attributes' values.
+For more information and limitations, see <a class="link" href="GdauiTreeStore.html#gdaui-tree-store-new" title="gdaui_tree_store_new ()"><code class="function">gdaui_tree_store_new()</code></a>.</p>
+<div class="refsect3">
+<a name="gdaui-tree-store-newv.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>tree</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_columns</p></td>
+<td class="parameter_description"><p>number of columns in the tree store</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>types</p></td>
+<td class="parameter_description"><p>an array of <em class="parameter"><code>n_columns</code></em>
+GType to specify the type of each column</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attribute_names</p></td>
+<td class="parameter_description"><p>an array of <em class="parameter"><code>n_columns</code></em>
+strings to specify the attribute name
+to map each column on</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-tree-store-newv.returns"></a><h4>Returns</h4>
+<p>the new object, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an inconsistency exists in the parameters. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-tree-store-get-node"></a><h3>gdaui_tree_store_get_node ()</h3>
+<pre class="programlisting"><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="returnvalue">GdaTreeNode</span></a> *
+gdaui_tree_store_get_node (<em class="parameter"><code><a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *store</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>);</pre>
+<p>Get the  <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> represented by <em class="parameter"><code>iter</code></em>
+.</p>
+<div class="refsect3">
+<a name="gdaui-tree-store-get-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a valid <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-tree-store-get-node.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> represented by <em class="parameter"><code>iter</code></em>
+, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurred. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdaui-tree-store-get-iter"></a><h3>gdaui_tree_store_get_iter ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gdaui_tree_store_get_iter (<em class="parameter"><code><a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *store</code></em>,
+                           <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a> *iter</code></em>,
+                           <em class="parameter"><code><a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> *node</code></em>);</pre>
+<div class="warning"><p><code class="literal">gdaui_tree_store_get_iter</code> has been deprecated since version 5.2 and should not be used in newly-written code.</p></div>
+<p>Sets <em class="parameter"><code>iter</code></em>
+ to represent <em class="parameter"><code>node</code></em>
+ in the tree.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gdaui-tree-store-get-iter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iter</p></td>
+<td class="parameter_description"><p>a pointer to a <a href="/usr/share/gtk-doc/html/gtk3/GtkTreeModel.html#GtkTreeIter-struct"><span class="type">GtkTreeIter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>node</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaTreeNode.html" title="GdaTreeNode"><span class="type">GdaTreeNode</span></a> in <em class="parameter"><code>store</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gdaui-tree-store-get-iter.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred and <em class="parameter"><code>iter</code></em>
+is valid</p>
+</div>
+<p class="since">Since: 4.2.8</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdauiTreeStore-struct"></a><h3>struct GdauiTreeStore</h3>
+<pre class="programlisting">struct GdauiTreeStore;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdauiTreeStore--tree"></a><h3>The <code class="literal">“tree”</code> property</h3>
+<pre class="programlisting">  “tree”                     <a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a> *</pre>
+<p>Owner: GdauiTreeStore</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GdauiTreeStore-drag-can-drag"></a><h3>The <code class="literal">“drag-can-drag”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *gdauitreestore,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>          *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiTreeStore-drag-can-drop"></a><h3>The <code class="literal">“drag-can-drop”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *gdauitreestore,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>          *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiTreeStore-drag-delete"></a><h3>The <code class="literal">“drag-delete”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *gdauitreestore,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>          *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiTreeStore-drag-drop"></a><h3>The <code class="literal">“drag-drop”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *gdauitreestore,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>          *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdauiTreeStore-drag-get"></a><h3>The <code class="literal">“drag-get”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GdauiTreeStore.html" title="GdauiTreeStore"><span class="type">GdauiTreeStore</span></a> *gdauitreestore,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>          *arg1,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        arg2,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)</pre>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdauiTreeStore.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaTree.html" title="GdaTree"><span class="type">GdaTree</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

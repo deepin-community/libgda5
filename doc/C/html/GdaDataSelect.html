@@ -1,0 +1,982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GdaDataSelect: GNOME Data Access 5 manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GNOME Data Access 5 manual">
+<link rel="up" href="data_models.html" title="Data handling">
+<link rel="prev" href="GdaDataModel.html" title="GdaDataModel">
+<link rel="next" href="GdaColumn.html" title="GdaDataModel columns">
+<meta name="generator" content="GTK-Doc V1.32 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GdaDataSelect.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GdaDataSelect.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GdaDataSelect.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GdaDataSelect.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="data_models.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GdaDataModel.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GdaColumn.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GdaDataSelect"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GdaDataSelect.top_of_page"></a>GdaDataSelect</span></h2>
+<p>GdaDataSelect — Base class for data models returned by the execution of a SELECT statement</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GdaDataSelect.stability-level"></a><h2>Stability Level</h2>
+<a href="http://foldoc.org/Stable"><span class="acronym">Stable</span></a>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition-sql" title="gda_data_select_set_row_selection_condition_sql ()">gda_data_select_set_row_selection_condition_sql</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition" title="gda_data_select_set_row_selection_condition ()">gda_data_select_set_row_selection_condition</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-compute-row-selection-condition" title="gda_data_select_compute_row_selection_condition ()">gda_data_select_compute_row_selection_condition</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-set-modification-statement" title="gda_data_select_set_modification_statement ()">gda_data_select_set_modification_statement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-set-modification-statement-sql" title="gda_data_select_set_modification_statement_sql ()">gda_data_select_set_modification_statement_sql</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-compute-modification-statements" title="gda_data_select_compute_modification_statements ()">gda_data_select_compute_modification_statements</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-compute-modification-statements-ext" title="gda_data_select_compute_modification_statements_ext ()">gda_data_select_compute_modification_statements_ext</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-compute-columns-attributes" title="gda_data_select_compute_columns_attributes ()">gda_data_select_compute_columns_attributes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-rerun" title="gda_data_select_rerun ()">gda_data_select_rerun</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-add-exception" title="gda_data_select_add_exception ()">gda_data_select_add_exception</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GdaDataSelect.html#gda-data-select-prepare-for-offline" title="gda_data_select_prepare_for_offline ()">gda_data_select_prepare_for_offline</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--auto-reset" title="The “auto-reset” property">auto-reset</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--connection" title="The “connection” property">connection</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--delete-stmt" title="The “delete-stmt” property">delete-stmt</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--exec-params" title="The “exec-params” property">exec-params</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--execution-delay" title="The “execution-delay” property">execution-delay</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--insert-stmt" title="The “insert-stmt” property">insert-stmt</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--model-usage" title="The “model-usage” property">model-usage</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--prepared-stmt" title="The “prepared-stmt” property">prepared-stmt</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--select-stmt" title="The “select-stmt” property">select-stmt</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--store-all-rows" title="The “store-all-rows” property">store-all-rows</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</td>
+<td class="property_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect--update-stmt" title="The “update-stmt” property">update-stmt</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GdaDataSelect.html#GdaDataSelect-struct" title="struct GdaDataSelect">GdaDataSelect</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaDataSelect.html#GdaDataSelectError" title="enum GdaDataSelectError">GdaDataSelectError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GdaDataSelect.html#GdaDataSelectConditionType" title="enum GdaDataSelectConditionType">GdaDataSelectConditionType</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GdaDataSelect
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GdaDataSelect implements
+ <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libgda/sql-parser/gda-sql-statement.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.description"></a><h2>Description</h2>
+<p>This data model implements the <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a> interface and is the required
+ base object when database providers implement a data model returned when a SELECT statement has been executed.
+ As the <a class="link" href="GdaDataModel.html" title="GdaDataModel">GdaDataModel</a> interface is implemented, consult the API
+ to access and modify the data held in a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> object.</p>
+<p>Depending on the requested data model usage (as specified by the "model_usage" parameter of the</p>
+<a class="link" href="GdaConnection.html#gda-connection-statement-execute" title="gda_connection_statement_execute ()"><code class="function">gda_connection_statement_execute()</code></a> and similar
+<p>methods, the <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> will allow random access, cursor based access or both.</p>
+<p>Also, when later you'll be reading the data contained in a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> object, depending on the actual
+implementation (which adapts to the API providede by the database server), some calls to the database server
+may be necessary to actually obtain the data. If this behaviour is not the one intended and if you need to
+access the data without having to contact the database server (for example for performances reasons), then
+you can use the <a class="link" href="GdaDataSelect.html#gda-data-select-prepare-for-offline" title="gda_data_select_prepare_for_offline ()"><code class="function">gda_data_select_prepare_for_offline()</code></a>
+method or specify the <a class="link" href="GdaStatement.html#GDA-STATEMENT-MODEL-OFFLINE:CAPS">GDA_STATEMENT_MODEL_OFFLINE</a>
+flag when executing the SELECT statement.</p>
+<p> The default behaviour however is to disallow modifications, and this section documents how to parametrize
+ a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect">GdaDataSelect</a> to allow modifications. Once this is done, any modification
+ done to the data model will be propagated to the modified table in the database using INSERT, UPDATE or DELETE
+ statements.</p>
+<p> After any modification, it is still possible to read values from the data model (even values for rows which have
+ been modified or inserted). The data model might then execute some SELECT statement to fetch some actualized values.</p>
+<p> Note: there is a corner case where a modification made to a row would make the row not selected at first in the data model
+ (for example is the original SELECT statement included a clause "WHERE id &lt; 100" and the modification sets the 
+ "id" value to 110), then the row will still be in the data model even though it would not be if the SELECT statement
+ which execution created the data model in the first place was re-run. This is illustrated in the schema below:</p>
+<div class="mediaobject"><img src="writable_data_model.png" width="354" alt="GdaDataSelect data model's contents after some modifications"></div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gda-data-select-set-row-selection-condition-sql"></a><h3>gda_data_select_set_row_selection_condition_sql ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_set_row_selection_condition_sql
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql_where</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Specifies the SQL condition corresponding to the WHERE part of a SELECT statement which would
+return only 1 row (the expression of the primary key).</p>
+<p>For example for a table created as "CREATE TABLE mytable (part1 int NOT NULL, part2 string NOT NULL,
+name string, PRIMARY KEY (part1, part2))", and if <em class="parameter"><code>pmodel</code></em>
+ corresponds to the execution of the
+"SELECT name, part1, part2 FROM mytable", then the sensible value for <em class="parameter"><code>sql_where</code></em>
+ would be
+"part1 = ##-1::int AND part2 = ##-2::string" because the values of the 'part1' field are located
+in <em class="parameter"><code>pmodel</code></em>
+'s column number 1 and the values of the 'part2' field are located
+in <em class="parameter"><code>pmodel</code></em>
+'s column number 2 and the primary key is composed of (part1, part2).</p>
+<p>For more information about the syntax of the parameters (named "##-1::int" for example), see the</p>
+<a class="link" href="GdaSqlParser.html#GdaSqlParser.description" title="Description">GdaSqlParser</a> documentation, and
+<p>gda_data_select_set_modification_statement().</p>
+<div class="refsect3">
+<a name="gda-data-select-set-row-selection-condition-sql.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql_where</p></td>
+<td class="parameter_description"><p>an SQL condition (without the WHERE keyword)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-set-row-selection-condition-sql.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-set-row-selection-condition"></a><h3>gda_data_select_set_row_selection_condition ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_set_row_selection_condition
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> *expr</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Offers the same features as <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition-sql" title="gda_data_select_set_row_selection_condition_sql ()"><code class="function">gda_data_select_set_row_selection_condition_sql()</code></a> but using a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a>
+structure instead of an SQL syntax.</p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+<div class="refsect3">
+<a name="gda-data-select-set-row-selection-condition.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expr</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libgda-5.0-GdaSqlStatement.html#GdaSqlExpr" title="struct GdaSqlExpr"><span class="type">GdaSqlExpr</span></a> expression. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-set-row-selection-condition.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-compute-row-selection-condition"></a><h3>gda_data_select_compute_row_selection_condition ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_compute_row_selection_condition
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Offers the same features as <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition" title="gda_data_select_set_row_selection_condition ()"><code class="function">gda_data_select_set_row_selection_condition()</code></a> but the expression
+is computed from the meta data associated to the connection being used when <em class="parameter"><code>model</code></em>
+ was created.</p>
+<p>NOTE1: make sure the meta data associated to the connection is up to date before using this
+method, see <a class="link" href="GdaConnection.html#gda-connection-update-meta-store" title="gda_connection_update_meta_store ()"><code class="function">gda_connection_update_meta_store()</code></a>.</p>
+<p>NOTE2: if the SELECT statement from which <em class="parameter"><code>model</code></em>
+ has been created uses more than one table, or
+if the table used does not have any primary key, then this method will fail</p>
+<div class="refsect3">
+<a name="gda-data-select-compute-row-selection-condition.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-compute-row-selection-condition.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-set-modification-statement"></a><h3>gda_data_select_set_modification_statement ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_set_modification_statement
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *mod_stmt</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Informs <em class="parameter"><code>model</code></em>
+ that it should allow modifications to the data in some columns and some rows
+using <em class="parameter"><code>mod_stmt</code></em>
+ to propagate those modifications into the database.</p>
+<p>If <em class="parameter"><code>mod_stmt</code></em>
+ is:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>an UPDATE statement, then all the rows in <em class="parameter"><code>model</code></em> will be writable</p></li>
+<li class="listitem"><p>a DELETE statement, then it will be possible to delete rows in <em class="parameter"><code>model</code></em></p></li>
+<li class="listitem"><p>in INSERT statement, then it will be possible to add some rows to <em class="parameter"><code>model</code></em></p></li>
+<li class="listitem"><p>any other statement, then this method will return an error</p></li>
+</ul></div>
+<p>This method can be called several times to specify different types of modification statements. </p>
+<p>Each modification statement will be executed when one or more values are modified in the data model;
+each statement should then include variables which will be set to either the old value or the
+new value of a column at the specified modified row (but can also contain other variables). Each variable
+named as "+&lt;number&gt;" will be mapped to the new value of the number'th column (starting at 0), and
+each variable named as "-&lt;number&gt;" will be mapped to the old value of the number'th column.</p>
+<p>Examples of the SQL equivalent of each statement are (for example if "mytable" has the "id" field as
+primary key, and if that field is auto incremented and if the data model is the result of
+executing "SELECT * from mytable").</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"INSERT INTO mytable (name) VALUES (##+1::string)": the column ID can not be set
+  for new rows</p></li>
+<li class="listitem"><p>"DELETE FROM mytable WHERE id=#&lt;link linkend="0-int"&gt;&lt;type&gt;“int”&lt;/type&gt;&lt;/link&gt;"</p></li>
+<li class="listitem"><p>"UPDATE mytable SET name=##+1::string WHERE id=#&lt;link linkend="0-int"&gt;&lt;type&gt;“int”&lt;/type&gt;&lt;/link&gt;": the column ID cannot be
+  modified</p></li>
+</ul></div>
+<p>Also see the <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition-sql" title="gda_data_select_set_row_selection_condition_sql ()"><code class="function">gda_data_select_set_row_selection_condition_sql()</code></a> for more information about the WHERE
+part of the UPDATE and DELETE statement types.</p>
+<p>If <em class="parameter"><code>mod_stmt</code></em>
+ is an UPDATE or DELETE statement then it should have a WHERE part which identifies
+a unique row in <em class="parameter"><code>model</code></em>
+ (please note that this property can't be checked but may result
+in <em class="parameter"><code>model</code></em>
+ behaving in an unpredictable way).</p>
+<p>NOTE1: However, if the <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition" title="gda_data_select_set_row_selection_condition ()"><code class="function">gda_data_select_set_row_selection_condition()</code></a>
+or <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition-sql" title="gda_data_select_set_row_selection_condition_sql ()"><code class="function">gda_data_select_set_row_selection_condition_sql()</code></a> have been successfully be called before, the WHERE
+part of <em class="parameter"><code>mod_stmt</code></em>
+ <span class="emphasis"><em>WILL</em></span> be modified to use the row selection condition specified through one of
+these methods (please not that it is then possible to avoid specifying a WHERE part in <em class="parameter"><code>mod_stmt</code></em>
+ then).</p>
+<p>NOTE2: if <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition" title="gda_data_select_set_row_selection_condition ()"><code class="function">gda_data_select_set_row_selection_condition()</code></a>
+or <a class="link" href="GdaDataSelect.html#gda-data-select-set-row-selection-condition-sql" title="gda_data_select_set_row_selection_condition_sql ()"><code class="function">gda_data_select_set_row_selection_condition_sql()</code></a> have not yet been successfully be called before, then
+the WHERE part of <em class="parameter"><code>mod_stmt</code></em>
+ will be used as if one of these functions had been called.</p>
+<div class="refsect3">
+<a name="gda-data-select-set-modification-statement.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mod_stmt</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> (INSERT, UPDATE or DELETE)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-set-modification-statement.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-set-modification-statement-sql"></a><h3>gda_data_select_set_modification_statement_sql ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_set_modification_statement_sql
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *sql</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Offers the same feature as <a class="link" href="GdaDataSelect.html#gda-data-select-set-modification-statement" title="gda_data_select_set_modification_statement ()"><code class="function">gda_data_select_set_modification_statement()</code></a> but using an SQL statement.</p>
+<div class="refsect3">
+<a name="gda-data-select-set-modification-statement-sql.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sql</p></td>
+<td class="parameter_description"><p>an SQL text</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-set-modification-statement-sql.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-compute-modification-statements"></a><h3>gda_data_select_compute_modification_statements ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_compute_modification_statements
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Makes <em class="parameter"><code>model</code></em>
+ try to compute INSERT, UPDATE and DELETE statements to be used when modifying <em class="parameter"><code>model</code></em>
+'s contents.
+Note: any modification statement set using <a class="link" href="GdaDataSelect.html#gda-data-select-set-modification-statement" title="gda_data_select_set_modification_statement ()"><code class="function">gda_data_select_set_modification_statement()</code></a> will first be unset</p>
+<p>This function is similar to calling <a class="link" href="GdaDataSelect.html#gda-data-select-compute-modification-statements-ext" title="gda_data_select_compute_modification_statements_ext ()"><code class="function">gda_data_select_compute_modification_statements_ext()</code></a> with
+<em class="parameter"><code>cond_type</code></em>
+ set to <a class="link" href="GdaDataSelect.html#GDA-DATA-SELECT-COND-PK:CAPS"><code class="literal">GDA_DATA_SELECT_COND_PK</code></a></p>
+<div class="refsect3">
+<a name="gda-data-select-compute-modification-statements.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-compute-modification-statements.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred. If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned, then some modification statement may still have been computed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-compute-modification-statements-ext"></a><h3>gda_data_select_compute_modification_statements_ext ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_compute_modification_statements_ext
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a class="link" href="GdaDataSelect.html#GdaDataSelectConditionType" title="enum GdaDataSelectConditionType"><span class="type">GdaDataSelectConditionType</span></a> cond_type</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Makes <em class="parameter"><code>model</code></em>
+ try to compute INSERT, UPDATE and DELETE statements to be used when modifying <em class="parameter"><code>model</code></em>
+'s contents.
+Note: any modification statement set using <a class="link" href="GdaDataSelect.html#gda-data-select-set-modification-statement" title="gda_data_select_set_modification_statement ()"><code class="function">gda_data_select_set_modification_statement()</code></a> will first be unset</p>
+<div class="refsect3">
+<a name="gda-data-select-compute-modification-statements-ext.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cond_type</p></td>
+<td class="parameter_description"><p>the type of condition for the modifications where one row only should be identified</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-compute-modification-statements-ext.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred. If <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned, then some modification statement may still have been computed</p>
+</div>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-compute-columns-attributes"></a><h3>gda_data_select_compute_columns_attributes ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_compute_columns_attributes
+                               (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Computes correct attributes for each of <em class="parameter"><code>model</code></em>
+'s columns, which includes the "NOT NULL" attribute, the
+default value, the precision and scale for numeric values.</p>
+<div class="refsect3">
+<a name="gda-data-select-compute-columns-attributes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-compute-columns-attributes.returns"></a><h4>Returns</h4>
+<p> TRUE if no error occurred</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-rerun"></a><h3>gda_data_select_rerun ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_rerun (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Requests that <em class="parameter"><code>model</code></em>
+ be re-run to have an updated result. If an error occurs,
+then <em class="parameter"><code>model</code></em>
+ will not be changed.</p>
+<div class="refsect3">
+<a name="gda-data-select-rerun.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> data model</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-rerun.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 4.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-add-exception"></a><h3>gda_data_select_add_exception ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gda_data_select_add_exception (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>Add an exception to <em class="parameter"><code>model</code></em>
+.</p>
+<div class="refsect3">
+<a name="gda-data-select-add-exception.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>an error to add as exception. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 4.2.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gda-data-select-prepare-for-offline"></a><h3>gda_data_select_prepare_for_offline ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gda_data_select_prepare_for_offline (<em class="parameter"><code><a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> *model</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Use this method to make sure all the data contained in the data model are stored on the client
+side (and that no subsquent call to the server will be necessary to access that data), at the cost of
+a higher memory consumption.</p>
+<p>This method is useful in the following situations:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>You need to disconnect from the server and continue to use the data in the data model</p></li>
+<li class="listitem"><p>You need to make sure the data in the data model can be used even though the connection to the server may be used for other purposes (for example executing other queries)</p></li>
+</ul></div>
+<p>Note that this method will fail if:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the data model contains any blobs (because blobs reading requires acces to the server);
+    binary values are Ok, though.</p></li>
+<li class="listitem"><p>the data model has been modified since it was created</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="gda-data-select-prepare-for-offline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>model</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GdaDataSelect.html" title="GdaDataSelect"><span class="type">GdaDataSelect</span></a> object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a place to store errors, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gda-data-select-prepare-for-offline.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if no error occurred</p>
+</div>
+<p class="since">Since: 5.2.0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GdaDataSelect-struct"></a><h3>struct GdaDataSelect</h3>
+<pre class="programlisting">struct GdaDataSelect;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelectError"></a><h3>enum GdaDataSelectError</h3>
+<div class="refsect3">
+<a name="GdaDataSelectError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-MODIFICATION-STATEMENT-ERROR:CAPS"></a>GDA_DATA_SELECT_MODIFICATION_STATEMENT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-MISSING-MODIFICATION-STATEMENT-ERROR:CAPS"></a>GDA_DATA_SELECT_MISSING_MODIFICATION_STATEMENT_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-CONNECTION-ERROR:CAPS"></a>GDA_DATA_SELECT_CONNECTION_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-ACCESS-ERROR:CAPS"></a>GDA_DATA_SELECT_ACCESS_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-SQL-ERROR:CAPS"></a>GDA_DATA_SELECT_SQL_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-SAFETY-LOCKED-ERROR:CAPS"></a>GDA_DATA_SELECT_SAFETY_LOCKED_ERROR</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelectConditionType"></a><h3>enum GdaDataSelectConditionType</h3>
+<p>Defines what criteria <a class="link" href="GdaDataSelect.html#gda-data-select-compute-modification-statements-ext" title="gda_data_select_compute_modification_statements_ext ()"><code class="function">gda_data_select_compute_modification_statements_ext()</code></a> uses
+to uniquely identify a single row in a table when creating modification statements.</p>
+<div class="refsect3">
+<a name="GdaDataSelectConditionType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-COND-PK:CAPS"></a>GDA_DATA_SELECT_COND_PK</p></td>
+<td class="enum_member_description">
+<p>only primary key fields are used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GDA-DATA-SELECT-COND-ALL-COLUMNS:CAPS"></a>GDA_DATA_SELECT_COND_ALL_COLUMNS</p></td>
+<td class="enum_member_description">
+<p>all the columns of the tables are used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GdaDataSelect--auto-reset"></a><h3>The <code class="literal">“auto-reset”</code> property</h3>
+<pre class="programlisting">  “auto-reset”               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Automatically re-run the SELECT statement if any parameter has changed since it was first executed.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--connection"></a><h3>The <code class="literal">“connection”</code> property</h3>
+<pre class="programlisting">  “connection”               <a class="link" href="GdaConnection.html" title="GdaConnection"><span class="type">GdaConnection</span></a> *</pre>
+<p>Connection from which this data model is created.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--delete-stmt"></a><h3>The <code class="literal">“delete-stmt”</code> property</h3>
+<pre class="programlisting">  “delete-stmt”              <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</pre>
+<p>DELETE Statement to be executed to remove data.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--exec-params"></a><h3>The <code class="literal">“exec-params”</code> property</h3>
+<pre class="programlisting">  “exec-params”              <a class="link" href="GdaSet.html" title="GdaSet"><span class="type">GdaSet</span></a> *</pre>
+<p>GdaSet used when the SELECT statement was executed.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--execution-delay"></a><h3>The <code class="literal">“execution-delay”</code> property</h3>
+<pre class="programlisting">  “execution-delay”          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a></pre>
+<p>This property stores the execution delay which has been necessary to obtain the data</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+<p class="since">Since: 4.2.9</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--insert-stmt"></a><h3>The <code class="literal">“insert-stmt”</code> property</h3>
+<pre class="programlisting">  “insert-stmt”              <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</pre>
+<p>INSERT Statement to be executed to add data.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--model-usage"></a><h3>The <code class="literal">“model-usage”</code> property</h3>
+<pre class="programlisting">  “model-usage”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
+<p>Determines how the data model may be used.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--prepared-stmt"></a><h3>The <code class="literal">“prepared-stmt”</code> property</h3>
+<pre class="programlisting">  “prepared-stmt”            <a class="link" href="GdaPStmt.html" title="GdaPstmt"><span class="type">GdaPStmt</span></a> *</pre>
+<p>Associated prepared statement (for internal usage).</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--select-stmt"></a><h3>The <code class="literal">“select-stmt”</code> property</h3>
+<pre class="programlisting">  “select-stmt”              <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</pre>
+<p>SELECT statement which was executed to yield to the data model.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--store-all-rows"></a><h3>The <code class="literal">“store-all-rows”</code> property</h3>
+<pre class="programlisting">  “store-all-rows”           <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Tells if model has analyzed all the rows.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GdaDataSelect--update-stmt"></a><h3>The <code class="literal">“update-stmt”</code> property</h3>
+<pre class="programlisting">  “update-stmt”              <a class="link" href="GdaStatement.html" title="GdaStatement"><span class="type">GdaStatement</span></a> *</pre>
+<p>UPDATE Statement to be executed to update data.</p>
+<p>Owner: GdaDataSelect</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GdaDataSelect.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GdaDataModel.html" title="GdaDataModel"><span class="type">GdaDataModel</span></a> and the <a class="link" href="data-select.html" title="Advanced GdaDataSelect usage">Advanced GdaDataSelect usage</a> section.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32</div>
+</body>
+</html>

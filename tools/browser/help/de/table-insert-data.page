@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="table-insert-data" xml:lang="de">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="schema-browser-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2010, 2011, 2016.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Einfügen von Daten in eine Tabelle</title>
+  <p>Wenn in der <link xref="schema-browser-perspective">Schema-Browser-Perspektive</link> die Eigenschaften einer Tabelle in einem Reiter angezeigt werden, so verwenden Sie das Menü <guiseq><gui>Tabelle</gui><gui>Daten einfügen</gui></guiseq>, um ein Einblendfenster anzuzeigen, das einen Dateneintrag für jede Spalte der Tabelle enthält, in die Daten eingefügt werden sollen.</p>
+  <p>Ein Einblendfenster ähnlich Folgendem wird geöffnet:</p>
+  <figure>
+    <title>Einblendfenster zum Einfügen von Daten in eine Tabelle</title>
+    <desc>Einblendfenster zum Einfügen von Daten in eine Tabelle</desc>
+    <media type="image" mime="image/png" src="figures/table-insert-data.png"/>
+  </figure>
+  <p>Erwähnenswert wäre hier:</p>
+  <list>
+    <item><p>Es gibt für jede Spalte der Tabelle nur einen Dateneintrag, mit Ausnahme von mehrfachen Fremdschlüsselfeldern (in der Abbildung nicht angezeigt), für die nur ein einzelnes Auswahlfeld angezeigt wird;</p></item>
+    <item><p>Für jeden Dateneintrag gibt es einen kleinen Knopf rechts davon, welcher Informationen zum korrespondierenden Dateneintrag anzeigt. Dieser Knopf ermöglicht Ihnen das Zurücksetzen des Dateneintrags auf den Wert vor der Änderung, auf den Wert Null oder auf einen Standardwert. Die Farbe des Knopfes zeigt dabei Folgendes an:</p>
+	<list>
+	  <item><p>Rot: Der Wert des Dateneintrages ist ungültig</p></item>
+	  <item><p>Blau: Der aktuelle Wert des Dateneintrages ist ungenutzt und der Standardwert der Spalte wird stattdessen angenommen (beispielsweise sinnvoll für Spalten mit automatisch hochgezählten Werten)</p></item>
+	  <item><p>Grün: Der aktuelle Wert des Dateneintrages ist Null</p></item>
+	  <item><p>Gleiche Farbe wie die umgebende Programmoberfläche: Keiner der oben beschriebenen Zustände</p></item>
+	</list>
+    </item>
+    <item><p>Spalten, die Fremdschlüssel für andere Tabellen bezeichnen, werden als ausklappbares Auswahlfeld dargestellt, wobei Sie nur aus den Werten der referenzierten Tabelle wählen können. Zum Aktualisieren der aufgelisteten Werte sollten Sie den Einblenddialog schließen und erneut öffnen.</p></item>
+  </list>
+</page>

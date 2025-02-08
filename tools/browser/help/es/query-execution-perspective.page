@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="query-execution-perspective" xml:lang="es">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+<title>La perspectiva de ejecución de la consulta</title>
+<p>Use la perspectiva de consulta para ejecutar sentencias SQL. Para cambiar a esta perspectiva, use el menú <guiseq><gui>Perspectiva</gui><gui>Ejecución de consulta (SQL)</gui></guiseq> o el atajo <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+<figure>
+  <title>Perspectiva de ejecución de la consulta</title>
+  <desc>La perspectiva de ejecución de la consulta con una sentencia SELECT ejecutada</desc>
+  <media type="image" mime="image/png" src="figures/query-exec-persp.png"/>
+</figure>
+
+<p>La perspectiva se divide en dos paneles horizontales: el panel de la izquierda para las declaraciones favoritas del usuario, y el panel de la derecha que es el área de acción.</p>
+<p>En la figura anterior, hay dos favoritos: una sentencia SELECT (llamada «Lista de clientes») y una sentencia INSERT (llamada «Cliente nuevo...»). La sentencia INSERT necesita un parámetro «nombre», mientras que la setencia SELECT no necesita ningún parámetro para ejecutarse.</p>
+<p>La diferencia entre el icono de los dos ilustra el hecho de que el favorito INSERT también se marca para ser una <link xref="actions">acción</link>: se propone como una acción que se ejecutará cuando el menú contextual se muestra en cualquier representación de rejilla de un conjunto de resultados.</p>
+<p>La parte izquierda de la perspectiva lista las sentencias favoritas definidas por el usuario. Activa una favorita (doble pulsación) reinicia el contenido del área de texto SQL a la setencia SQL seleccionada.</p>
+<p>El panel de la derecha se compone de cero o más pestañas donde se introduce y ejecuta la sentencia SQL. En cada pestaña hay:</p>
+<list>
+  <item><p>un área SQL en la parte superior izquierda</p></item>
+  <item><p>botones de comandos en la parte superior derecha</p></item>
+  <item><p>histórico de ejecución en la parte inferior izquierda</p></item>
+  <item><p>resultados de ejecución en la parte inferior derecha</p></item>
+</list>
+
+<section id="query-exec-sql">
+  <title>Área SQL</title>
+  <p>El área SQL es un editor de SQL. El código SQL puede ser cualquiera que la base de datos entienda, con la excepción de las <link xref="variables-syntax">variables</link> (que deben tener una sintaxis específica).</p>
+  <p>Los atajos de teclado en el editor SQL son:</p>
+  <list>
+    <item><p><keyseq><key>Ctrl</key><key>Espacio</key></keyseq> para obtener una lista de finalización</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>Intro</key></keyseq> para ejecutar el código SQL</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>l</key></keyseq> para limpiar el editor</p></item>
+    <item><p><keyseq><key>Ctrl</key><key>Arriba</key></keyseq> y <keyseq><key>Ctrl</key><key>Abajo</key></keyseq> para navegar por el histórico del editor</p></item>
+  </list>
+</section>
+
+<section id="query-exec-command-buttons">
+  <title>Botones de comandos</title>
+  <p>Los comandos disponibles a través de los botones de comandos son:</p>
+  <list>
+    <item><p><gui>Limpiar</gui>: limpia el editor (similar al atajo <keyseq><key>Ctrl</key><key>l</key></keyseq>)</p></item>
+    <item><p><gui>Variables</gui>: muestra u oculta el panel de <link xref="variables-syntax">variables</link> donde puede dar valores a las variables presentes en el código SQL. El panel se muestra automáticamente cuando se detecta una variable en el código SQL.</p></item>
+    <item><p><gui>Ejecutar</gui>: ejecuta el código SQL. Si el código SQL contiene algunas variables que no se han establecido, aparecerá primero una ventana emergente pidiendo que se asigne un valor a esas variables. Esto es similar al atajo <keyseq><key>Ctrl</key><key>Intro</key></keyseq>.</p></item>
+    <item><p><gui>Sangrar</gui>: reindenta el código SQL (aviso: esto quita cualquier comentario)</p></item>
+    <item><p><gui>Favoritos</gui>: añade el código SQL actual a los favoritos</p></item>
+  </list>
+</section>
+
+<section id="query-exec-history">
+  <title>Histórico de ejecución</title>
+  <p>La parte del histórico de ejecución contiene una lista de las sentencias ejecutadas, ordenadas por fecha de ejecución con una indicación de cuándo se ejecutó la sentencia (11 minutos en la figura anterior). Al seleccionar un elemento del histórico se muestra el resultado correspondiente en la parte de resultados.</p>
+  <p>El botón <gui>Copiar</gui> copia el elemento de código SQL del histórico seleccionado actualmente al editor SQL, y el botón <gui>Limpiar</gui> quita todos los elementos del histórico.</p>
+  <p>Tenga en cuenta que se puede quitar individualmente cualquier elemento del histórico usando la tecla <key>Supr</key>.</p>
+</section>
+
+<section id="query-exec-results">
+  <title>Resultados de la ejecución</title>
+  <p>La parte de resultados de la ejecución muestra el resultado de la ejecución del elemento del histórico de ejecución seleccionado actualmente, como una tabla para la sentencia SELECT, dando información para otros tipos de sentencias, o dando un error de ejecución si ésta falló.</p>
+</section>
+</page>

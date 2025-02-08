@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="data-manager-perspective" xml:lang="id">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+<title>Perspektif manajer data</title>
+<p>Gunakan perspektif manajer data untuk menavigasi data dalam basis data. Untuk bertukar ke perspektif ini, gunakan menu <guiseq><gui>Perspektif</gui><gui>Manajer Data</gui></guiseq> atau pintasan <keyseq><key>Ctrl</key><key>D</key></keyseq>.</p>
+<p>Alur kerja dalam perspektif ini diorganisasikan di sekitar definisi dari satu atau lebih <em>sumber data</em> (yang memilih data dalam basis data) yang ketika dieksekusi, menghasilkan suatu set data yang ditampilkan dalam tilikan berbentuk tabel.</p>
+<p>Perspektif dibagi menjadi dua panel horisontal: panel kiri untuk menyimpan definisi set sumber data favorit, dan panel kanan adalah area aksi, dimana setiap sumber data dieksekusi dan hasilnya ditampilkan dalam tilikan bentuk tabel.</p>
+<figure>
+  <title>Perspektif manajer data</title>
+  <desc>Perspektif manajer data, dengan dua sumber data</desc>
+  <media type="image" mime="image/png" src="figures/data-man-persp.png"/>
+</figure>
+<p>Dalam gambar di atas, ada dua sumber data: satu bagi tabel 'customers' dan satu bagi tabel 'orders' (yang disini mendaftar pesan dari seorang pelanggan), sumber data kedua bergantung kepada yang pertama karena ada foreign key dari tabel 'orders' yang mengacu ke tabel 'customers'. Dua sumber data telah dieksekusi dan hasilnya tersusun dari dua tilikan bentuk tabel berdampingan.</p>
+<p>Karena sumber data 'orders' bergantung kepada sumber data 'customers', viewnya ada di sebelah kanan dari view yang berkaitan dengan sumber data 'customers'. Ketika pilihan baris dari view 'customers' berubah, seluruh isi view 'orders' disegarkan.</p>
+<section id="data-manager-def-data-source">
+  <title>Mendefinisikan sumber data</title>
+  <p>Sumber data paling sederhana adalah sumber data yang mewakili semua data dari suatu tabel, ditampilkan ketika dieksekusi sebagai tilikan bentuk tabel tunggal, seolah seperti ketika seseorang mengeksekusi pernyataan <code>SELECT * FROM mytable</code> dalam <link xref="query-execution-perspective">perspektif eksekusi query</link>.</p>
+  <p>Gambar berikut menunjukkan mode penyuntingan sumber data (bertukar ke mode penyuntingan memakai tombol bilah alat <media type="image" mime="image/png" src="figures/data-man-mode.png"/>).</p>
+  <p>Sumber data dapat didefinisikan memakai <link xref="data-manager-xml-syntax">XML sintaks</link>, atau memakai <link xref="data-manager-source-editor">antar muka baku</link>.</p>
+  <figure>
+    <title>Penyuntingan sumber data</title>
+    <desc>Menyunting sumber data dalam perspektif manajer data, dari sintaks XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-xmlcompose.png"/>
+  </figure>
+  <figure>
+    <title>Penyuntingan sumber data</title>
+    <desc>Menyunting sumber data dalam perspektif manajer data, memakai antar muka baku: dua sumber data didefinisikan, yang menampilkan isi tabel "customers" dan "orders". Penyiapan sama dengan gambar di atas yang menampilkan sintaks XML</desc>
+    <media type="image" mime="image/png" src="figures/data-man-uicompose.png"/>
+  </figure>
+
+  <p>Perintah yang tersedia melalui tombol perintah adalah:</p>
+  <list>
+    <item><p><gui>Reset</gui>: mereset penyunting XML ke templat baku XML, hanya tersedia ketika tilikan XML sedang ditampilkan</p></item>
+    <item><p><gui>Tambah</gui>: menampilkan menu popup dengan pintasan untuk mendefinisikan secara cepat sumber data baru sebagai isi seluruh tabel (juga menganalisa skema basis data untuk mengusulkan pilihan-pilihan yang relevan), hanya tersedia ketika mode edisi XML tak dipilih</p></item>
+    <item><p><gui>Variabel</gui>: menampilkan/menyembunyikan panel <link xref="variables-syntax">variabel</link> dimana Anda dapat mengisikan nilai ke variabel yang ada dalam kode SQL dari sebarang definisi sumber data. Panel secara otomatis ditunjukkan ketika suatu variabel terdeteksi dalam kode SQL.</p></item>
+    <item><p><gui>Eksekusi</gui>: eksekusi sumber data yang didefinisikan</p></item>
+    <item><p><gui>Tilik XML</gui>: menjungkit antara penyunting XML dan penyunting UI</p></item>
+    <item><p><gui>Bantuan</gui>: menampilkan bantuan</p></item>
+  </list>
+</section>
+<section id="data-manager-exec-data-source">
+  <title>Menjalankan sumber data yang terdefinisi</title>
+  <p>Untuk mengeksekusi sumber data dari set yang didefinisikan, tukar saja ke mode eksekusi memakai tombol bilah alat <media type="image" mime="image/png" src="figures/data-man-mode.png"/> atau tombol <gui>Execute</gui>.</p>
+  <p>Tata letak dari tilikan bentuk tabel bagi setiap sumber data dibuat secara otomatis dalam kolom memakai aturan berikut: bila suatu sumber data B bergantung kepada sumber data A, maka tilikan bentuk tabelnya ditampilkan di sebelah kanan A.</p>
+  <p>Juga bila Anda mengubah baris yang dipilih dari tilikan bentuk tabel dari sumber data A, maka tilikan bentuk tabel dari semua sumber data yang bergantung pada A juga akan disegarkan tilikan bentuk tabelnya.</p>
+</section>
+</page>

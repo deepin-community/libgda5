@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="variables-syntax" xml:lang="es">
+  <info>
+    <title type="sort">1</title>
+    <link type="topic" xref="query-execution-perspective"/>
+    <link type="topic" xref="data-manager-perspective"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  </info>
+  <title>Variables en el código SQL</title>
+  <p>Las variables (algunas veces denominadas <em>contenedores</em>) son lugares del código SQL que se reemplazan con valores actuales cuando se ejecuta el código SQL. Los beneficios son una ejecución más rápida (ya que el código se analiza una sola vez) y protección frente a vulnerabilidades de inyección de código SQL.</p>
+  <p>Las variables se pueden usar en cualquier código SQL, y se definen usando la siguiente sintaxis:</p>
+  <code>
+##&lt;variable name&gt;[::&lt;variable type&gt;[::NULL]]</code>
+  <p>Notas:</p>
+  <list>
+    <item><p>el <em>nombre de la variable</em> puede contener cualquier carácter identificador de SQL o entre los caracteres <code>+-.|@?</code> (no se permiten espacios)</p></item>
+    <item><p>el <em>tipo de variable</em> puede ser: <code>string</code>, <code>boolean</code>, <code>int</code>, <code>date</code>, <code>time</code>, <code>timestamp</code>, <code>guint</code>, <code>blob</code> y <code>binary</code></p></item>
+    <item><p>se puede añadir <code>::NULL</code> para especificar que la variable puede tener el valor especial <code>NULL</code>.</p></item>
+  </list>
+  <p>Ejemplos:</p>
+  <code>
+##name::string
+##id::int::NULL
+##sales@3::date::NULL
+##customers@id::int</code>
+</page>

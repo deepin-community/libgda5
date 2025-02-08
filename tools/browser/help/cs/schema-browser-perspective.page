@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="schema-browser-perspective" xml:lang="cs">
+<info>
+  <title type="sort">1</title>
+  <link type="guide" xref="index#perspectives"/>
+</info>
+<title>Hledisko pro prohlížení schématu</title>
+<p>Hledisko prohlížeče schématu použijte k získání přehledu o struktuře databáze (schématu). Do tohoto hlediska se přepnete pomocí nabídky <guiseq><gui>Hledisko</gui><gui>Prohlížeč schématu</gui></guiseq> nebo klávesové zkratky <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+<p>Hledisko je vodorovně rozděleno do dvou panelů: levý panel pro uživatelem definované oblíbené položky a pravý panel je oblastí, ve které se provádí akce.</p>
+<figure>
+  <title>Výchozí zobrazení hlediska prohlížeče schématu</title>
+  <desc>Výchozí podoba hlediska prohlížeče schématu</desc>
+  <media type="image" mime="image/png" src="figures/mainwin.png"/>
+</figure>
+
+<p>V levé části hlediska jsou vypsány oblíbené databázové objekty nebo diagramy. Dvojitým kliknutím na oblíbené položce otevřete její vlastnosti v pravém panelu.</p>
+<p>Pravý panel se skládá z několika typů karet:</p>
+<list>
+  <item><p>karta vypisující všechny tabulky a pohledy databáze v podobě <em>„obláčkového“</em> zobrazení, ve kterém jsou tabulky s více vztahy k ostatním tabulkám zobrazeny větším písmem; tato karta je zobrazena vždy</p></item>
+  <item><p>žádná nebo více karet představujících vlastnosti tabulky nebo pohledu: seznam sloupců, seznam omezení (primární nebo cizí klíče a jedinečnosti), <link xref="diagram">diagram</link> zobrazující vztahy mezi tabulkami a oblast pro definování předvoleb zobrazení pro každý datový sloupec</p></item>
+  <item><p>žádný nebo více <link xref="diagram">diagramů</link> a v každém z nich může být zobrazen libovolný počet tabulek, které jsou pospojované podle vztahů mezi nimi (podle cizích klíčů)</p></item>
+</list>
+
+<figure>
+  <title>Karta zobrazující informace o tabulce</title>
+  <desc>Příklad informací zobrazených pro každou tabulku, všimněte si rozdílu mezi cizími klíči, které jsou součástí databáze a <link xref="declared-fk">deklarovanými cizími klíči</link></desc>
+  <media type="image" mime="image/png" src="figures/schema-browser-persp.png"/>
+</figure>
+
+</page>
